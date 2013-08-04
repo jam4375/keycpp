@@ -1,0 +1,45 @@
+\hypertarget{class_gnuplot_exception}{\section{Gnuplot\-Exception Class Reference}
+\label{class_gnuplot_exception}\index{Gnuplot\-Exception@{Gnuplot\-Exception}}
+}
+
+
+A C++ interface to gnuplot.  
+
+
+
+
+{\ttfamily \#include $<$gnuplot\-\_\-i.\-h$>$}
+
+Inheritance diagram for Gnuplot\-Exception\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gnuplot_exception}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_gnuplot_exception_a8b324a9ef4d3f75079d41ecd61c62d44}{{\bfseries Gnuplot\-Exception} (const std\-::string \&msg)}\label{class_gnuplot_exception_a8b324a9ef4d3f75079d41ecd61c62d44}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The interface uses pipes and so won't run on a system that doesn't have P\-O\-S\-I\-X pipe support Tested on Windows (Min\-G\-W and Visual C++) and Linux (G\-C\-C)
+
+Version history\-: 0. C interface by N. Devillard (27/01/03)
+\begin{DoxyEnumerate}
+\item C++ interface\-: direct translation from the C interface by Rajarshi Guha (07/03/03)
+\item corrections for Win32 compatibility by V. Chyzhdzenka (20/05/03)
+\item some member functions added, corrections for Win32 and Linux compatibility by M. Burgis (10/03/08)
+\end{DoxyEnumerate}
+
+Requirements\-:
+\begin{DoxyItemize}
+\item gnuplot has to be installed (\href{http://www.gnuplot.info/download.html}{\tt http\-://www.\-gnuplot.\-info/download.\-html})
+\item for Windows\-: set Path-\/\-Variable for \hyperlink{class_gnuplot}{Gnuplot} path (e.\-g. C\-:/program files/gnuplot/bin) or set \hyperlink{class_gnuplot}{Gnuplot} path with\-: \hyperlink{class_gnuplot_a67cae885c26ced821e335d98986f1967}{Gnuplot\-::set\-\_\-\-G\-N\-U\-Plot\-Path(const std\-::string \&path)}; 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+gnuplot\-\_\-i.\-h\end{DoxyCompactItemize}
