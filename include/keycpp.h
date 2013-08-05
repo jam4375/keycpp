@@ -17,6 +17,7 @@
 #include "Spline.h"
 #include "Figure.h"
 
+
 namespace keycpp
 {
 	#define pi 3.1415926535897932384626433832795
@@ -207,6 +208,29 @@ namespace keycpp
 		return v2;
 	}
 	
+	template<class T> std::vector<T> operator-(const std::vector<T>& v1)
+	{
+		std::vector<T> v2(v1.size());
+		for(int ii = 0; ii < v2.size(); ii++)
+		{
+			v2[ii] = -v1[ii];
+		}
+		return v2;
+	}
+	
+	template<class T> matrix<T> operator-(const matrix<T>& A)
+	{
+		matrix<T> B(A.size(1),A.size(2));
+		for(int ii = 0; ii < B.size(1); ii++)
+		{
+			for(int jj = 0; jj < B.size(2); jj++)
+			{
+				B(ii,jj) = -A(ii,jj);
+			}
+		}
+		return B;
+	}
+	
 	template<class T> std::vector<T> exp(const std::vector<T> v1)
 	{
 		std::vector<T> v2(v1.size());
@@ -238,6 +262,18 @@ namespace keycpp
 			A(ii,ii) = 1.0;
 		}
 	
+		return A;
+	}
+	
+	template<class T> matrix<T> diag(const std::initializer_list<T>& lst)
+	{
+		matrix<T> A(lst.size(),lst.size());
+		int ii = 0;
+		for(const auto& l : lst)
+		{
+			A(ii,ii) = l;
+			ii++;
+		}
 		return A;
 	}
 	
@@ -953,6 +989,174 @@ namespace keycpp
 	inline void set(Figure &h, std::string property, double val)
 	{
 		h.set(property,val);
+	}
+	
+	template<class T>
+	struct Sort_Matrix
+	{
+		matrix<T> B;
+		matrix<int> index;
+	};
+	
+	template<class T> Sort_Matrix<T> sort(matrix<T> A, int dim = 2, std::string method = "ascend")
+	{
+		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
+		if(method.compare("ascend") != 0 && method.compare("descend") != 0)
+		{
+			throw KeyCppException("Invalid sort method!");
+		}
+		if(A.size(1) <= 0 || A.size(2) <= 0)
+		{
+			throw KeyCppException("Tried to sort empty matrix!");
+		}
+		bool swapped = true;
+		T temp;
+		int temp_i;
+		matrix<T> B(A.size(1), A.size(2));
+		matrix<int> index(A.size(1),A.size(2));
+		if(dim == 2)
+		{
+			for(int ii = 0; ii < A.size(1); ii++)
+			{
+				for(int jj = 0; jj < A.size(2); jj++)
+				{
+					index(ii,jj) = ii;
+				}
+			}
+			for(int jj = 0; jj < A.size(2); jj++)
+			{
+				swapped = true;
+				while(swapped)
+				{     
+					swapped = false;
+					for(int ii = 1; ii < A.size(1); ii++)
+					{
+						if(((A(ii-1,jj)) > (A(ii,jj)) && method.compare("ascend") == 0) || ((A(ii-1,jj)) < (A(ii,jj)) && method.compare("descend") == 0))
+						{
+							temp = A(ii-1,jj);
+							A(ii-1,jj) = A(ii,jj);
+							A(ii,jj) = temp;
+							temp_i = index(ii-1,jj);
+							index(ii-1,jj) = index(ii,jj);
+							index(ii,jj) = temp_i;
+							swapped = true;
+						}
+					}
+				}
+			}
+			for(int ii = 0; ii < A.size(2); ii++)
+			{
+				for(int jj = 0; jj < A.size(2); jj++)
+				{
+					B(ii,jj) = A(index(ii,jj),jj);
+				}
+			}
+		}
+		else if(dim == 1)
+		{
+			for(int ii = 0; ii < A.size(1); ii++)
+			{
+				for(int jj = 0; jj < A.size(2); jj++)
+				{
+					index(ii,jj) = jj;
+				}
+			}
+			for(int ii = 0; ii < A.size(1); ii++)
+			{
+				swapped = true;
+				while(swapped)
+				{     
+					swapped = false;
+					for(int jj = 1; jj < A.size(2); jj++)
+					{
+						if(((A(ii,jj-1)) > (A(ii,jj)) && method.compare("ascend") == 0) || ((A(ii,jj-1)) < (A(ii,jj)) && method.compare("descend") == 0))
+						{
+							temp = A(ii,jj-1);
+							A(ii,jj-1) = A(ii,jj);
+							A(ii,jj) = temp;
+							temp_i = index(ii,jj-1);
+							index(ii,jj-1) = index(ii,jj);
+							index(ii,jj) = temp_i;
+							swapped = true;
+						}
+					}
+				}
+			}
+			for(int ii = 0; ii < A.size(1); ii++)
+			{
+				for(int jj = 0; jj < A.size(2); jj++)
+				{
+					B(ii,jj) = A(ii,index(ii,jj));
+				}
+			}
+		}
+		else
+		{
+			throw KeyCppException("Invalid dimension in sort().");
+		}
+		
+		Sort_Matrix<T> sort_matrix;
+		sort_matrix.B = B;
+		sort_matrix.index = index;
+
+		return sort_matrix;
+	}
+	
+	template<class T>
+	struct Sort_Vector
+	{
+		std::vector<T> v;
+		std::vector<int> index;
+	};
+	
+	template<class T> Sort_Vector<T> sort(std::vector<T> v1, std::string method = "ascend")
+	{
+		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
+		if(method.compare("ascend") != 0 && method.compare("descend") != 0)
+		{
+			throw KeyCppException("Invalid sort method!");
+		}
+		if(v1.empty())
+		{
+			throw KeyCppException("Tried to sort empty vector!");
+		}
+		bool swapped = true;
+		T temp;
+		int temp_i;
+		std::vector<int> index(v1.size());
+		for(int ii = 0; ii < v1.size(); ii++)
+		{
+			index[ii] = ii;
+		}
+		swapped = true;
+		while(swapped)
+		{     
+			swapped = false;
+			for(int ii = 1; ii < v1.size(); ii++)
+			{
+				if(((v1[ii-1]) > (v1[ii]) && method.compare("ascend") == 0) || ((v1[ii-1]) < (v1[ii]) && method.compare("descend") == 0))
+				{
+					temp = v1[ii-1];
+					v1[ii-1] = v1[ii];
+					v1[ii] = temp;
+					temp_i = index[ii-1];
+					index[ii-1] = index[ii];
+					index[ii] = temp_i;
+					swapped = true;
+				}
+			}
+		}
+		std::vector<T> v2(v1.size());
+		for(int ii = 0; ii < v2.size(); ii++)
+		{
+			v2[ii] = v1[index[ii]];
+		}
+		
+		Sort_Vector<T> sort_vector;
+		sort_vector.v = v2;
+		sort_vector.index = index;
+
+		return sort_vector;
 	}
 }
 

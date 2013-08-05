@@ -37,6 +37,10 @@ namespace keycpp
 		std::string m_xlabel;
 		std::string m_ylabel;
 		std::string m_title;
+		double ymin;
+		double ymax;
+		double xmin;
+		double xmax;
 		bool grid_on_bool = false;
 		int fontsize = 10;
 	
@@ -53,6 +57,8 @@ namespace keycpp
 		void hold_on();
 		void hold_off();
 		void legend(std::initializer_list<std::string> lst);
+		void ylim(std::initializer_list<double> lst);
+		void xlim(std::initializer_list<double> lst);
 		void replot_all();
 		void setFontsize(int p_fontsize) {fontsize = p_fontsize;};
 		int getFontsize() {return fontsize;};
@@ -81,6 +87,11 @@ namespace keycpp
 			{1.0,0.758620689655172,0.517241379310345},
 			{0.137931034482759,0.137931034482759,0.0344827586206897},
 			{0.551724137931035,0.655172413793103,0.482758620689655}};
+			
+		ymin = nan("");
+		ymax = nan("");
+		xmin = nan("");
+		xmax = nan("");
 	}
 	catch(GnuplotException ge)
 	{
@@ -366,6 +377,21 @@ namespace keycpp
 			g.cmd("set termoption dashed");
 			g.cmd("set border linewidth 1.5");
 			
+			if(xmin == xmin && xmax == xmax) // Check for NaNs
+			{
+				std::stringstream temp_stream;
+				temp_stream << "set xrange [";
+				temp_stream << xmin << ":" << xmax << "]";
+				g.cmd(temp_stream.str());
+			}
+			if(ymin == ymin && ymax == ymax) // Check for NaNs
+			{
+				std::stringstream temp_stream;
+				temp_stream << "set yrange [";
+				temp_stream << ymin << ":" << ymax << "]";
+				g.cmd(temp_stream.str());
+			}
+			
 			std::stringstream stream1;
 			std::stringstream stream2;
 			if(lt > 0 && pt > 0)
@@ -610,6 +636,58 @@ namespace keycpp
 		{
 			throw FigureException("Unknown property in set!");
 		}
+	}
+	
+	inline void Figure::ylim(const std::initializer_list<double> lst)
+	{
+		if(lst.size() <= 0)
+		{
+			throw FigureException("ylim() called with no limits!");
+		}
+		if(lst.size() > 2)
+		{
+			throw FigureException("Error! More than 2 limits provided!");
+		}
+		int ii = 0;
+		for(const auto& l : lst)
+		{
+			if(ii == 0)
+			{
+				ymin = l;
+			}
+			else if(ii == 1)
+			{
+				ymax = l;
+			}
+			ii++;
+		}
+		replot_all();
+	}
+	
+	inline void Figure::xlim(const std::initializer_list<double> lst)
+	{
+		if(lst.size() <= 0)
+		{
+			throw FigureException("ylim() called with no limits!");
+		}
+		if(lst.size() > 2)
+		{
+			throw FigureException("Error! More than 2 limits provided!");
+		}
+		int ii = 0;
+		for(const auto& l : lst)
+		{
+			if(ii == 0)
+			{
+				xmin = l;
+			}
+			else if(ii == 1)
+			{
+				xmax = l;
+			}
+			ii++;
+		}
+		replot_all();
 	}
 
 }
