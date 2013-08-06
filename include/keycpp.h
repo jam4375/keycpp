@@ -231,6 +231,29 @@ namespace keycpp
 		return B;
 	}
 	
+	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator/(const matrix<T>& A, const U& a)
+	{
+		matrix<decltype(std::declval<T>()*std::declval<U>())> B(A.size(1),A.size(2));
+		for(int ii = 0; ii < B.size(1); ii++)
+		{
+			for(int jj = 0; jj < B.size(2); jj++)
+			{
+				B(ii,jj) = A(ii,jj)/a;
+			}
+		}
+		return B;
+	}
+	
+	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> operator/(const std::vector<T>& v1, const U& a)
+	{
+		std::vector<decltype(std::declval<T>()*std::declval<U>())> v2(v1.size());
+		for(int ii = 0; ii < v2.size(); ii++)
+		{
+			v2[ii] = v1[ii]/a;
+		}
+		return v2;
+	}
+	
 	template<class T> std::vector<T> exp(const std::vector<T> v1)
 	{
 		std::vector<T> v2(v1.size());
@@ -334,6 +357,29 @@ namespace keycpp
 		}
 		return v3;
 	}
+	
+	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> edivide(const matrix<T>& A, const matrix<U>& B)
+	{
+		matrix<decltype(std::declval<T>()*std::declval<U>())> C(A.size(1),B.size(2));
+		for(int ii = 0; ii < A.size(1); ii++)
+		{
+			for(int jj = 0; jj < A.size(2); jj++)
+			{
+				C(ii,jj) = A(ii,jj)/B(ii,jj);
+			}
+		}
+		return C;
+	}
+	
+	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> edivide(const std::vector<T>& v1, const std::vector<U>& v2)
+	{
+		std::vector<decltype(std::declval<T>()*std::declval<U>())> v3(v1.size());
+		for(int ii = 0; ii < v1.size(); ii++)
+		{
+			v3[ii] = v1[ii]/v2[ii];
+		}
+		return v3;
+	}
 
 	template<class T> int sign(T val)
 	{
@@ -342,13 +388,78 @@ namespace keycpp
 
 	template<class T> T max(std::vector<T> x)
 	{
-		double a = 0;
+		double a = nan("");
 		int index = 0;
 		for(int ii = 0; ii < x.size(); ii++)
 		{
-			if(abs(x[ii]) > a)
+			if(x[ii] == x[ii] && (x[ii] > a || a != a))
+			{
+				a = x[ii];
+				index = ii;
+			}
+		}
+		return x[index];
+	}
+
+	template<class T> T min(std::vector<T> x)
+	{
+		double a = nan("");
+		int index = 0;
+		for(int ii = 0; ii < x.size(); ii++)
+		{
+			if(x[ii] == x[ii] && (x[ii] < a || a != a))
+			{
+				a = x[ii];
+				index = ii;
+			}
+		}
+		return x[index];
+	}
+	
+	template<class T> double angle(T x)
+	{
+		return arg(x);
+	}
+	
+	template<class T> std::vector<double> angle(std::vector<T> x)
+	{
+		std::vector<double> y(x.size());
+		for(int ii = 0; ii < y.size(); ii++)
+		{
+			y[ii] = angle(x[ii]);
+		}
+		
+		return y;
+	}
+
+	inline std::complex<double> max(std::vector<std::complex<double> > x)
+	{
+		double a = nan("");
+		double b = nan("");
+		int index = 0;
+		for(int ii = 0; ii < x.size(); ii++)
+		{
+			if(x[ii] == x[ii] && ((abs(x[ii]) > a && angle(x[ii]) > b) || ( a != a || b != b)))
 			{
 				a = abs(x[ii]);
+				b = angle(x[ii]);
+				index = ii;
+			}
+		}
+		return x[index];
+	}
+
+	inline std::complex<double> min(std::vector<std::complex<double> > x)
+	{
+		double a = nan("");
+		double b = nan("");
+		int index = 0;
+		for(int ii = 0; ii < x.size(); ii++)
+		{
+			if(x[ii] == x[ii] && ((abs(x[ii]) < a && angle(x[ii]) < b) || ( a != a || b != b)))
+			{
+				a = abs(x[ii]);
+				b = angle(x[ii]);
 				index = ii;
 			}
 		}
