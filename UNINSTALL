@@ -1,0 +1,8 @@
+#!/bin/sh
+
+rm /usr/lib/libkeycpp.a
+rm -r /usr/include/keycpp
+
+cd ./src/
+make clean;
+cd ..
