@@ -88,6 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3>Ubuntu (and various <a href="https://wiki.ubuntu.com/UbuntuFlavors">flavors</a>)</h3>
 <p>To acquire all the required dependencies you can execute the following commands:</p>
 <p><code>sudo apt-get install build-essential</code></p>
+<p>Until Ubuntu 13.10 comes out in October 2013, you need to install <a href="http://headmyshoulder.github.io/odeint-v2/">odeint</a> from their website. The way I did it was to install Boost (see below) and then copy the odeint header and source files into the appropriate Boost folders. This is because odeint first appears in Boost 1.53 and the newest version in the repository for Ubuntu 13.04 is 1.49.</p>
 <p><code>sudo apt-get install libboost-all-dev</code></p>
 <p><code>sudo apt-get install libblas3gf libblas-doc libblas-dev</code></p>
 <p><code>sudo apt-get install liblapack3gf liblapack-doc liblapack-dev</code></p>
@@ -97,9 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><em>This library uses features only available in the <a href="https://en.wikipedia.org/wiki/C%2B%2B11">C++11 standard</a>. YOU MUST <a href="http://gcc.gnu.org/projects/cxx0x.html">COMPILE</a> WITH THIS STANDARD.</em></p>
 <p>To install KeyCpp onto your system first clone the git repository to a directory of your choice: <code>git clone <a href="https://code.google.com/p/keycpp/">https://code.google.com/p/keycpp/</a></code></p>
 <p>The following command will compile the KeyCpp library and provide links to the library and header files in Ubuntu's default location:</p>
-<p><code>./INSTALL</code></p>
+<p><code>sudo ./INSTALL</code></p>
 <p>To uninstall the KeyCpp library, use the following command:</p>
-<p><code>./UNINSTALL</code></p>
+<p><code>sudo ./UNINSTALL</code></p>
 <p>If everything was successful, you should be able to compile and run the example program:</p>
 <p><code>cd examples</code></p>
 <p><code>g++ -c -o obj/example.o example.cpp -std=c++11</code></p>
@@ -239,7 +240,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 8 2013 15:12:11 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 8 2013 16:41:05 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -14,6 +14,8 @@ To acquire all the required dependencies you can execute the following commands\
 
 {\ttfamily sudo apt-\/get install build-\/essential}
 
+Until Ubuntu 13.\-10 comes out in October 2013, you need to install \href{http://headmyshoulder.github.io/odeint-v2/}{\tt odeint} from their website. The way I did it was to install Boost (see below) and then copy the odeint header and source files into the appropriate Boost folders. This is because odeint first appears in Boost 1.\-53 and the newest version in the repository for Ubuntu 13.\-04 is 1.\-49.
+
 {\ttfamily sudo apt-\/get install libboost-\/all-\/dev}
 
 {\ttfamily sudo apt-\/get install libblas3gf libblas-\/doc libblas-\/dev}
@@ -32,11 +34,11 @@ To install Key\-Cpp onto your system first clone the git repository to a directo
 
 The following command will compile the Key\-Cpp library and provide links to the library and header files in Ubuntu's default location\-:
 
-{\ttfamily ./\-I\-N\-S\-T\-A\-L\-L}
+{\ttfamily sudo ./\-I\-N\-S\-T\-A\-L\-L}
 
 To uninstall the Key\-Cpp library, use the following command\-:
 
-{\ttfamily ./\-U\-N\-I\-N\-S\-T\-A\-L\-L}
+{\ttfamily sudo ./\-U\-N\-I\-N\-S\-T\-A\-L\-L}
 
 If everything was successful, you should be able to compile and run the example program\-:
 
