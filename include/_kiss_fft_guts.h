@@ -16,6 +16,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
    defines kiss_fft_scalar as either short or a float type
    and defines
    typedef struct { kiss_fft_scalar r; kiss_fft_scalar i; }kiss_fft_cpx; */
+#ifndef KISS_FFT_GUTS_H
+#define KISS_FFT_GUTS_H
+
 #include "kiss_fft.h"
 #include <limits.h>
 
@@ -161,4 +164,5 @@ struct kiss_fft_state{
 #else
 #define  KISS_FFT_TMP_ALLOC(nbytes) KISS_FFT_MALLOC(nbytes)
 #define  KISS_FFT_TMP_FREE(ptr) KISS_FFT_FREE(ptr)
+#endif
 #endif

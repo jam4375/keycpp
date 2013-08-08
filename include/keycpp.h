@@ -1,4 +1,5 @@
 // Matlab.h -- Common Matlab functions implemented in C++
+/** @file */
 
 #ifndef KEYCPP_H_
 #define KEYCPP_H_
@@ -17,7 +18,9 @@
 #include "Spline.h"
 #include "Figure.h"
 
-
+/** \brief The keycpp namespace prevents KeyCpp functions and classes from interfering with
+ *         other C++ libraries, for instance the std library.
+ */
 namespace keycpp
 {
 	#define pi 3.1415926535897932384626433832795
@@ -28,17 +31,73 @@ namespace keycpp
 			KeyCppException(const std::string &msg) : std::runtime_error(msg){}
 	};
 	
-	/** \brief This provides a C interface to the fortran LAPACK function "zggev_"
-	 */
 	extern "C"{
-	void zggev_(char *jobvl, char *jobvr, int *n, std::complex<double> *a,
-		    int *lda, std::complex<double> *b, int *ldb, std::complex<double> *alpha,
-		    std::complex<double> *beta, std::complex<double> *vl,
-		    int *ldvl, std::complex<double> *vr, int *ldvr,
-		    std::complex<double> *work, int *lwork, double *rwork, int *info);
+	/** \brief This provides a C interface to LAPACK's complex generalized eigenvalue solver. */
+	void zggev_(const char *jobvl, const char *jobvr, const int *n, std::complex<double> *a,
+		        const int *lda, std::complex<double> *b, const int *ldb, std::complex<double> *alpha,
+		        std::complex<double> *beta, std::complex<double> *vl,
+		        const int *ldvl, std::complex<double> *vr, const int *ldvr,
+		        std::complex<double> *work, const int *lwork, double *rwork, int *info);
+		    
+    /** \brief This provides a C interface to LAPACK's double precision reciprocal condition number estimator. */
+    void dgecon_(const char *norm, const int *n, double *a,
+                 const int *lda, const double *anorm, double *rcond,
+                 double *work, int *iwork, int *info);
+    
+    /** \brief This provides a C interface to LAPACK's double precision LU decomposition function. */
+    void dgetrf_(const int *m, const int *n, double *a, const int *lda,
+                 int *lpiv, int *info);
+    
+    /** \brief This provides a C interface to LAPACK's double precision LU solver. */
+    void dgetrs_(const char *trans, int *n, int *nrhs, double *a, const int *lda,
+                 int *ipiv, double *b, int *ldb, int *info);
+    
+    /** \brief This provides a C interface to LAPACK's double precision norm function. */
+    double dlange_(const char *norm, const int *m, const int *n,
+                   const double *a, const int *lda, double *work);
+		    
+    /** \brief This provides a C interface to LAPACK's complex-valued reciprocal condition number estimator. */
+    void zgecon_(const char *norm, const int *n, std::complex<double> *a,
+                 const int *lda, const double *anorm, double *rcond,
+                 std::complex<double> *work, double *rwork, int *info);
+    
+    /** \brief This provides a C interface to LAPACK's complex LU decomposition function. */
+    void zgetrf_(const int *m, const int *n, std::complex<double> *a, const int *lda,
+                 int *lpiv, int *info);
+    
+    /** \brief This provides a C interface to LAPACK's complex LU solver. */
+    void zgetrs_(const char *trans, int *n, int *nrhs, std::complex<double> *a, const int *lda,
+                 int *ipiv, std::complex<double> *b, int *ldb, int *info);
+    
+    /** \brief This provides a C interface to LAPACK's complex norm function. */
+    double zlange_(const char *norm, const int *m, const int *n,
+                   const std::complex<double> *a, const int *lda, double *work);
+                   
+    /** \brief This provides a C interface to LAPACK's double precision linear system solver. */
+    void dgesv_(const int *n, const int *nrhs, double *a, const int *lda, int *ipiv,
+                double *b, const int *ldb, const int *info);
+                
+    /** \brief This provides a C interface to LAPACK's double precision matrix inverse function. */
+    void dgetri_(const int* n, double* A, const int* lda, const int* ipiv, double* work, const int* lwork, int* info);
+    
+    /** \brief This provides a C interface to LAPACK's complex matrix inverse function. */
+    void zgetri_(const int* n, std::complex<double>* A, const int* lda, const int* ipiv,
+                 std::complex<double>* work, const int* lwork, int* info);
 	}
 
-	std::vector<std::complex<double> > eig(matrix<std::complex<double> > A, matrix<std::complex<double> > B, matrix<std::complex<double> > *vr_return = NULL, matrix<std::complex<double> > *vl_return = NULL);
+	std::vector<std::complex<double> > eig(const matrix<std::complex<double> > A,
+	                                       const matrix<std::complex<double> > B,
+	                                       matrix<std::complex<double> > *vr_return = NULL,
+	                                       matrix<std::complex<double> > *vl_return = NULL);
+	
+	double rcond(const matrix<double> A);
+	double rcond(const matrix<std::complex<double>> A);
+	std::vector<std::complex<double>> linsolve(const matrix<std::complex<double>>& A_in,
+                                               const std::vector<std::complex<double>>& b_in);
+	std::vector<double> linsolve(const matrix<double>& A_in,
+                                 const std::vector<double>& b_in);
+    matrix<double> inv(const matrix<double>& A_in);
+    matrix<std::complex<double>> inv(const matrix<std::complex<double>>& A_in);
 
 	std::complex<double> interp1(double *x, std::complex<double> **y, double x_interp, int index, int N);
 	double rand_limits(double a, double b);
@@ -56,6 +115,31 @@ namespace keycpp
 			x_ode.push_back(x_temp);
 		}
 	};
+	
+	template<class T>
+	std::ostream& operator<<(std::ostream &out, const matrix<T> &A)
+	{
+        for(int ii = 0; ii < A.size(1); ii++)
+        {
+            for(int jj = 0; jj < A.size(2); jj++)
+            {
+                out << A(ii,jj) << " ";
+            }
+            out << std::endl;
+        }
+        return out;
+    }
+	
+	template<class T>
+	std::ostream& operator<<(std::ostream &out, const std::vector<T> &v1)
+	{
+        for(int ii = 0; ii < v1.size(); ii++)
+        {
+            out << v1[ii];
+            out << std::endl;
+        }
+        return out;
+    }
 
 	template<class T> std::vector<std::complex<double> > conj(const std::vector<T> x)
 	{
@@ -118,6 +202,20 @@ namespace keycpp
 			y[ii] = arg(x[ii]);
 		}
 		return y;
+	}
+	
+	inline double sqrt(const double& a)
+	{
+	    if(a < 0)
+	    {
+	        throw KeyCppException("sqrt() was called with a negative value, use csqrt() instead!");
+	    }
+	    return std::sqrt(a);
+	}
+	
+	inline std::complex<double> csqrt(const double& a)
+	{
+	    return std::sqrt((std::complex<double>)a);
 	}
 
 	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> operator+(const std::vector<T>& v1, const std::vector<U>& v2)
@@ -277,7 +375,7 @@ namespace keycpp
 		return B;
 	}
 
-	template<class T> matrix<T> eye(int N)
+	template<class T> matrix<T> eye(const int N)
 	{
 		matrix<T> A(N,N);
 		for(int ii = 0; ii < N; ii++)
@@ -285,6 +383,67 @@ namespace keycpp
 			A(ii,ii) = 1.0;
 		}
 	
+		return A;
+	}
+	
+    /**  \brief Returns the number of elements along dimension dim.
+     *   @details
+     *    Returns the number of elements along dimension dim.
+     *   @param[in] A matrix for which you want to know the size.
+     *   @param[in] dim Dimension along which you want the number of elements.
+     *              1 = number of rows, 2 = number of columns
+     *   @return An integer value of the number of elements along the desired dimension. 
+     */
+	template<class T> int size(const matrix<T> A, const int dim)
+	{
+		return A.size(dim);
+	}
+	
+    /**  \brief Returns the size of matrix A.
+     *   @details
+     *    Returns the size of matrix A in a matrix_size_type variable.
+     *   @usage auto msize = size(A); int num_rows = msize.rows; int num_cols = msize.cols;
+     *   @param[in] A matrix for which you want to know the size.
+     *   @return A matrix_size_type variable containing the number of rows and cols.
+     */
+	template<class T> matrix_size_type size(const matrix<T> A)
+	{
+	    matrix_size_type msize;
+	    msize.rows = A.size(1);
+	    msize.cols = A.size(2);
+		return msize;
+	}
+	
+    /**  \brief Returns a matrix of size M x N containing all zeros.
+     *   @details
+     *    Returns a matrix of size M x N containing all zeros.
+     *   @param[in] M Number of rows.
+     *   @param[in] N Number of columns.
+     *   @return An M x N matrix containing zeros for each element. 
+     */
+	template<class T> matrix<T> zeros(const int M, const int N)
+	{
+		matrix<T> A(M,N);
+		return A;
+	}
+	
+    /**  \brief Returns a matrix of size M x N containing all ones.
+     *   @details
+     *    Returns a matrix of size M x N containing all ones.
+     *   @param[in] M Number of rows.
+     *   @param[in] N Number of columns.
+     *   @return An M x N matrix containing ones for each element. 
+     */
+	template<class T> matrix<T> ones(const int M, const int N)
+	{
+		matrix<T> A(M,N);
+		for(int ii = 0; ii < M; ii++)
+		{
+		    for(int jj = 0; jj < N; jj++)
+		    {
+		        A(ii,jj) = 1.0;
+		    }
+		}
 		return A;
 	}
 	
@@ -532,8 +691,18 @@ namespace keycpp
 		}
 		return A;
 	}
-
-	template<class T> std::vector<T> linspace(T x1, T x2, int N)
+	
+    /**  \brief Produces a vector containing N values equally spaced between
+     *          x1 and x2, inclusively.
+     *   @details
+     *    Produces a vector containing N values equally spaced between
+     *    x1 and x2, inclusively.
+     *   @param[in] x1 The minimum value.
+     *   @param[in] x2 The maximum value.
+     *   @param[in] N The number of values between x1 and x2. 
+     *   @return A vector containing N equally spaced values between x1 and x2, inclusively. 
+     */
+	template<class T> std::vector<T> linspace(const T x1, const T x2, const int N)
 	{
 		std::vector<T> x(N);
 		if(N == 1)
@@ -554,7 +723,19 @@ namespace keycpp
 		return x;
 	}
 
-	template<class T> std::vector<T> logspace(T x1, T x2, int N)
+	
+    /**  \brief Produces a vector containing N values logarithmically spaced between
+     *          10^(x1) and 10^(x2), inclusively.
+     *   @details
+     *    Produces a vector containing N values logarithmically spaced between
+     *    10^(x1) and 10^(x2), inclusively.
+     *   @param[in] x1 The base 10 logarithm of the minimum value.
+     *   @param[in] x2 The base 10 logarithm of the maximum value.
+     *   @param[in] N The number of values between 10^(x1) and 10^(x2). 
+     *   @return A vector containing N logarithmically spaced values between
+     *          10^(x1) and 10^(x2), inclusively. 
+     */
+	template<class T> std::vector<T> logspace(const T x1, const T x2, int N)
 	{
 		std::vector<T> x(N);
 		if(N == 1)
@@ -848,63 +1029,6 @@ namespace keycpp
 		}
 
 		return y2;
-	}
-
-	template<class T> std::vector<T> linsolve(const matrix<T>& A_in, const std::vector<T>& b_in)
-	{
-		if(b_in.empty() | A_in.size(1) <= 0 || A_in.size(2) <= 0)
-		{
-			throw KeyCppException("Error in linsolve()! Empty matrix or vector supplied!");
-		}
-		if(A_in.size(2) != b_in.size())
-		{
-			throw KeyCppException("Error in linsolve()! Matrix and vector sizes are not compatible!");
-		}
-		int N = b_in.size();
-		matrix<T> A = A_in;
-		std::vector<T> b = b_in;
-		std::vector<T> x_out(N);
-
-		T ratio, temp;
-
-		// Gaussian elimination
-		for(int ii = 0; ii < (N-1); ii++)
-		{
-			if(std::abs(A(ii,ii)) == 0.0)
-			{
-				throw KeyCppException("ERROR! Divide by zero in linsolve!!");
-			}
-			for(int jj = (ii+1); jj < N; jj++)
-			{
-				ratio = A(jj,ii)/A(ii,ii);
-				for(int count=ii; count<N; count++)
-				{
-					A(jj,count) -= (ratio*A(ii,count));
-				}
-				b[jj] -= (ratio*b[ii]);
-			}
-		}
-
-		// Back substitution
-		if(std::abs(A(N-1,N-1)) == 0.0)
-		{
-			throw KeyCppException("ERROR! Divide by zero in linsolve!!");
-		}
-		else
-		{
-			x_out[N-1] = b[N-1]/A(N-1,N-1);
-		}
-		for(int ii = (N-2); ii >= 0; ii--)
-		{
-			temp = b[ii];
-			for(int jj=(ii+1); jj<N; jj++)
-			{
-				temp -= (A(ii,jj)*x_out[jj]);
-			}
-			x_out[ii] = temp/A(ii,ii);
-		}
-
-		return x_out;
 	}
 
 	template<class U, class T> T trapz(std::vector<U> eta, std::vector<T> integrand)

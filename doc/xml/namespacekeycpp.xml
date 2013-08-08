@@ -1,0 +1,2754 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+  <compounddef id="namespacekeycpp" kind="namespace">
+    <compoundname>keycpp</compoundname>
+    <innerclass refid="classkeycpp_1_1_figure_exception" prot="public">keycpp::FigureException</innerclass>
+    <innerclass refid="classkeycpp_1_1_figure" prot="public">keycpp::Figure</innerclass>
+    <innerclass refid="classkeycpp_1_1_key_cpp_exception" prot="public">keycpp::KeyCppException</innerclass>
+    <innerclass refid="structkeycpp_1_1observe" prot="public">keycpp::observe</innerclass>
+    <innerclass refid="structkeycpp_1_1_sort___matrix" prot="public">keycpp::Sort_Matrix</innerclass>
+    <innerclass refid="structkeycpp_1_1_sort___vector" prot="public">keycpp::Sort_Vector</innerclass>
+    <innerclass refid="structkeycpp_1_1matrix__size__type" prot="public">keycpp::matrix_size_type</innerclass>
+    <innerclass refid="classkeycpp_1_1_matrix_exception" prot="public">keycpp::MatrixException</innerclass>
+    <innerclass refid="classkeycpp_1_1matrix" prot="public">keycpp::matrix</innerclass>
+    <innerclass refid="classkeycpp_1_1_spline_exception" prot="public">keycpp::SplineException</innerclass>
+    <innerclass refid="classkeycpp_1_1_extrap" prot="public">keycpp::Extrap</innerclass>
+    <innerclass refid="classkeycpp_1_1_spline" prot="public">keycpp::Spline</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacekeycpp_1ace2501951ab3db3a91c3520ae89750b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void keycpp::zggev_</definition>
+        <argsstring>(const char *jobvl, const char *jobvr, const int *n, std::complex&lt; double &gt; *a, const int *lda, std::complex&lt; double &gt; *b, const int *ldb, std::complex&lt; double &gt; *alpha, std::complex&lt; double &gt; *beta, std::complex&lt; double &gt; *vl, const int *ldvl, std::complex&lt; double &gt; *vr, const int *ldvr, std::complex&lt; double &gt; *work, const int *lwork, double *rwork, int *info)</argsstring>
+        <name>zggev_</name>
+        <param>
+          <type>const char *</type>
+          <declname>jobvl</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>jobvr</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ldb</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>beta</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>vl</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ldvl</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>vr</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ldvr</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>work</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lwork</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>rwork</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>This provides a C interface to LAPACK&apos;s complex generalized eigenvalue solver. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="40"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1aca3be6524e195662cbb74a810305e721" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void keycpp::dgecon_</definition>
+        <argsstring>(const char *norm, const int *n, double *a, const int *lda, const double *anorm, double *rcond, double *work, int *iwork, int *info)</argsstring>
+        <name>dgecon_</name>
+        <param>
+          <type>const char *</type>
+          <declname>norm</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>const double *</type>
+          <declname>anorm</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>rcond</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>work</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>iwork</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>This provides a C interface to LAPACK&apos;s double precision reciprocal condition number estimator. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="45"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a75e334ffaf1864d7191e9e0b64189783" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void keycpp::dgetrf_</definition>
+        <argsstring>(const int *m, const int *n, double *a, const int *lda, int *lpiv, int *info)</argsstring>
+        <name>dgetrf_</name>
+        <param>
+          <type>const int *</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>lpiv</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>This provides a C interface to LAPACK&apos;s double precision LU decomposition function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="49"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ab9c33788a2c083aa5738eda1fe62a261" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void keycpp::dgetrs_</definition>
+        <argsstring>(const char *trans, int *n, int *nrhs, double *a, const int *lda, int *ipiv, double *b, int *ldb, int *info)</argsstring>
+        <name>dgetrs_</name>
+        <param>
+          <type>const char *</type>
+          <declname>trans</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>nrhs</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ldb</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>This provides a C interface to LAPACK&apos;s double precision LU solver. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="53"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a4507ef954be960fec70ca0f93258d730" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double keycpp::dlange_</definition>
+        <argsstring>(const char *norm, const int *m, const int *n, const double *a, const int *lda, double *work)</argsstring>
+        <name>dlange_</name>
+        <param>
+          <type>const char *</type>
+          <declname>norm</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>const double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>work</declname>
+        </param>
+        <briefdescription>
+<para>This provides a C interface to LAPACK&apos;s double precision norm function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="57"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a444e3cdc7e7929414370b6b50ea1218c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void keycpp::zgecon_</definition>
+        <argsstring>(const char *norm, const int *n, std::complex&lt; double &gt; *a, const int *lda, const double *anorm, double *rcond, std::complex&lt; double &gt; *work, double *rwork, int *info)</argsstring>
+        <name>zgecon_</name>
+        <param>
+          <type>const char *</type>
+          <declname>norm</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>const double *</type>
+          <declname>anorm</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>rcond</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>work</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>rwork</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>This provides a C interface to LAPACK&apos;s complex-valued reciprocal condition number estimator. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="62"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ab18d58d53d8e19a37d74d24da27a64dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void keycpp::zgetrf_</definition>
+        <argsstring>(const int *m, const int *n, std::complex&lt; double &gt; *a, const int *lda, int *lpiv, int *info)</argsstring>
+        <name>zgetrf_</name>
+        <param>
+          <type>const int *</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>lpiv</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>This provides a C interface to LAPACK&apos;s complex LU decomposition function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="66"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1abbe4322276dcdb7d864e85854b5b90f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void keycpp::zgetrs_</definition>
+        <argsstring>(const char *trans, int *n, int *nrhs, std::complex&lt; double &gt; *a, const int *lda, int *ipiv, std::complex&lt; double &gt; *b, int *ldb, int *info)</argsstring>
+        <name>zgetrs_</name>
+        <param>
+          <type>const char *</type>
+          <declname>trans</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>nrhs</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ldb</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>This provides a C interface to LAPACK&apos;s complex LU solver. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="70"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a1477c910b07baef984fe8528c29b2774" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double keycpp::zlange_</definition>
+        <argsstring>(const char *norm, const int *m, const int *n, const std::complex&lt; double &gt; *a, const int *lda, double *work)</argsstring>
+        <name>zlange_</name>
+        <param>
+          <type>const char *</type>
+          <declname>norm</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>const std::complex&lt; double &gt; *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>work</declname>
+        </param>
+        <briefdescription>
+<para>This provides a C interface to LAPACK&apos;s complex norm function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="74"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a12719f4b48de048f9642066666a920bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void keycpp::dgesv_</definition>
+        <argsstring>(const int *n, const int *nrhs, double *a, const int *lda, int *ipiv, double *b, const int *ldb, const int *info)</argsstring>
+        <name>dgesv_</name>
+        <param>
+          <type>const int *</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>nrhs</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ldb</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>This provides a C interface to LAPACK&apos;s double precision linear system solver. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="78"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1af92d0d887ae48cc4222f7167232a7f82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void keycpp::dgetri_</definition>
+        <argsstring>(const int *n, double *A, const int *lda, const int *ipiv, double *work, const int *lwork, int *info)</argsstring>
+        <name>dgetri_</name>
+        <param>
+          <type>const int *</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>work</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lwork</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>This provides a C interface to LAPACK&apos;s double precision matrix inverse function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="81"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a4190e125fe33133aafa586089ca6e174" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void keycpp::zgetri_</definition>
+        <argsstring>(const int *n, std::complex&lt; double &gt; *A, const int *lda, const int *ipiv, std::complex&lt; double &gt; *work, const int *lwork, int *info)</argsstring>
+        <name>zgetri_</name>
+        <param>
+          <type>const int *</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lda</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ipiv</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>work</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>lwork</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>This provides a C interface to LAPACK&apos;s complex matrix inverse function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="85"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a6aca656320e1b26861469a979a96066f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::complex&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::complex&lt;double&gt; &gt; keycpp::eig</definition>
+        <argsstring>(const matrix&lt; std::complex&lt; double &gt; &gt; A, const matrix&lt; std::complex&lt; double &gt; &gt; B, matrix&lt; std::complex&lt; double &gt; &gt; *vr_return=NULL, matrix&lt; std::complex&lt; double &gt; &gt; *vl_return=NULL)</argsstring>
+        <name>eig</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt; &gt;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt; &gt;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt; &gt; *</type>
+          <declname>vr_return</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt; &gt; *</type>
+          <declname>vl_return</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="91"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a08b7545ff5c1295647680d08f2953875" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double keycpp::rcond</definition>
+        <argsstring>(const matrix&lt; double &gt; A)</argsstring>
+        <name>rcond</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="93" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="132" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a5cc586899ece36154e39201f18e6db55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double keycpp::rcond</definition>
+        <argsstring>(const matrix&lt; std::complex&lt; double &gt;&gt; A)</argsstring>
+        <name>rcond</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt;&gt;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="94" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="179" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a9f68b3d9143ad3582e59dd0a4b1998b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::complex&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::complex&lt;double&gt; &gt; keycpp::linsolve</definition>
+        <argsstring>(const matrix&lt; std::complex&lt; double &gt;&gt; &amp;A_in, const std::vector&lt; std::complex&lt; double &gt;&gt; &amp;b_in)</argsstring>
+        <name>linsolve</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt;&gt; &amp;</type>
+          <declname>A_in</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::complex&lt; double &gt;&gt; &amp;</type>
+          <declname>b_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="96"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a46f4a25648e5bad1cf0bd0e7fca7fae0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; keycpp::linsolve</definition>
+        <argsstring>(const matrix&lt; double &gt; &amp;A_in, const std::vector&lt; double &gt; &amp;b_in)</argsstring>
+        <name>linsolve</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt; &amp;</type>
+          <declname>A_in</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>b_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="98" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="309" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1adc96927cda2df7a6e8e2031941c43601" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt;</type>
+        <definition>matrix&lt; double &gt; keycpp::inv</definition>
+        <argsstring>(const matrix&lt; double &gt; &amp;A_in)</argsstring>
+        <name>inv</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt; &amp;</type>
+          <declname>A_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="99" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="390" bodyend="460"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a6b74369f5415c3ed45f63995149ad992" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt; &gt;</type>
+        <definition>matrix&lt;std::complex&lt;double&gt; &gt; keycpp::inv</definition>
+        <argsstring>(const matrix&lt; std::complex&lt; double &gt;&gt; &amp;A_in)</argsstring>
+        <name>inv</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt;&gt; &amp;</type>
+          <declname>A_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="100"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1af2da94e9ad9484d1b4cec8c0dca04046" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::complex&lt; double &gt;</type>
+        <definition>std::complex&lt;double&gt; keycpp::interp1</definition>
+        <argsstring>(double *x, std::complex&lt; double &gt; **y, double x_interp, int index, int N)</argsstring>
+        <name>interp1</name>
+        <param>
+          <type>double *</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; **</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x_interp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="102"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a5a75b80bd1b28390c6b9c14fc8cec713" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double keycpp::rand_limits</definition>
+        <argsstring>(double a, double b)</argsstring>
+        <name>rand_limits</name>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="103" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="8" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a55e8bada51586c0561e1b32ca1ab5f2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; keycpp::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const matrix&lt; T &gt; &amp;A)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="121" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="120" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a300d8f6e8992c7b33156492d884bd621" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; keycpp::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const std::vector&lt; T &gt; &amp;v1)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="135" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="134" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ad26d6a2ad64185a749c6f2e85aeaf62b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; std::complex&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::complex&lt;double&gt; &gt; keycpp::conj</definition>
+        <argsstring>(const std::vector&lt; T &gt; x)</argsstring>
+        <name>conj</name>
+        <param>
+          <type>const std::vector&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="145" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="144" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a5cbc9dd508d193697eb9dfbef01f1404" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt; &gt;</type>
+        <definition>matrix&lt;std::complex&lt;double&gt; &gt; keycpp::conj</definition>
+        <argsstring>(const matrix&lt; T &gt; x)</argsstring>
+        <name>conj</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="155" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="154" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a76cd22caf522d677271fb915fb3aec37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; keycpp::real</definition>
+        <argsstring>(std::vector&lt; T &gt; x)</argsstring>
+        <name>real</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="168" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="167" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a22cc33e0299a65158c81352603bcd35a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; keycpp::imag</definition>
+        <argsstring>(std::vector&lt; T &gt; x)</argsstring>
+        <name>imag</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="178" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="177" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a01edbbe2645ae65b6ec2c08b2d4352e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; keycpp::abs</definition>
+        <argsstring>(std::vector&lt; T &gt; x)</argsstring>
+        <name>abs</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="188" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="187" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a70d66686c6b209cc8eb64f84977544da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; keycpp::arg</definition>
+        <argsstring>(std::vector&lt; T &gt; x)</argsstring>
+        <name>arg</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="198" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="197" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a2d204e24f675e0576a882e3069939bee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double keycpp::sqrt</definition>
+        <argsstring>(const double &amp;a)</argsstring>
+        <name>sqrt</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="208" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="207" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a952e5296774667c3be4e792b5cd980da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::complex&lt; double &gt;</type>
+        <definition>std::complex&lt;double&gt; keycpp::csqrt</definition>
+        <argsstring>(const double &amp;a)</argsstring>
+        <name>csqrt</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="217" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="216" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a4da6882977b2262f8d6f080b0eaf60c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; decltype(std::declval&lt; T &gt;)*std::declval&lt; U &gt;))&gt;</type>
+        <definition>std::vector&lt;decltype(std::declval&lt;T&gt;)*std::declval&lt;U&gt;))&gt; keycpp::operator+</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;v1, const std::vector&lt; U &gt; &amp;v2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; U &gt; &amp;</type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="222" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="221" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a8d5dbf37b71d16d686dd0fdbad82f8fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; decltype(std::declval&lt; T &gt;)*std::declval&lt; U &gt;))&gt;</type>
+        <definition>matrix&lt;decltype(std::declval&lt;T&gt;)*std::declval&lt;U&gt;))&gt; keycpp::operator*</definition>
+        <argsstring>(const T &amp;a, const matrix&lt; U &gt; &amp;A)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="232" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="231" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ae187563f8f86e256bc1394edcba1b2b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; decltype(std::declval&lt; T &gt;)*std::declval&lt; U &gt;))&gt;</type>
+        <definition>matrix&lt;decltype(std::declval&lt;T&gt;)*std::declval&lt;U&gt;))&gt; keycpp::operator*</definition>
+        <argsstring>(const matrix&lt; U &gt; &amp;A, const T &amp;a)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="245" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="244" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a6dcf10b0db68d53d126803e8d6d591fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; decltype(std::declval&lt; T &gt;)*std::declval&lt; U &gt;))&gt;</type>
+        <definition>matrix&lt;decltype(std::declval&lt;T&gt;)*std::declval&lt;U&gt;))&gt; keycpp::operator*</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;v1, const matrix&lt; U &gt; &amp;A)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="258" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="257" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a4b523ff3dd5abac240788f6efb2e554e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; decltype(std::declval&lt; T &gt;)*std::declval&lt; U &gt;))&gt;</type>
+        <definition>std::vector&lt;decltype(std::declval&lt;T&gt;)*std::declval&lt;U&gt;))&gt; keycpp::operator*</definition>
+        <argsstring>(const T &amp;a, const std::vector&lt; U &gt; &amp;v1)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; U &gt; &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="290" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="289" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1aa2e9a06b12f7df18005a3daa3c051b2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; decltype(std::declval&lt; T &gt;)*std::declval&lt; U &gt;))&gt;</type>
+        <definition>std::vector&lt;decltype(std::declval&lt;T&gt;)*std::declval&lt;U&gt;))&gt; keycpp::operator*</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;v1, const U &amp;a)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>const U &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="300" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="299" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ac2665554c04ea23aad98e77d1618ca6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; keycpp::operator-</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;v1)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="310" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="309" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a390125160a7febd08d5c30629f4f698f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::operator-</definition>
+        <argsstring>(const matrix&lt; T &gt; &amp;A)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="320" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="319" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a3852c35cfcc8caa784465a26d04c68a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; decltype(std::declval&lt; T &gt;)*std::declval&lt; U &gt;))&gt;</type>
+        <definition>matrix&lt;decltype(std::declval&lt;T&gt;)*std::declval&lt;U&gt;))&gt; keycpp::operator/</definition>
+        <argsstring>(const matrix&lt; T &gt; &amp;A, const U &amp;a)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const U &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="333" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="332" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a394f23f09cf122a8e8c20a7afd40f58e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; decltype(std::declval&lt; T &gt;)*std::declval&lt; U &gt;))&gt;</type>
+        <definition>std::vector&lt;decltype(std::declval&lt;T&gt;)*std::declval&lt;U&gt;))&gt; keycpp::operator/</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;v1, const U &amp;a)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>const U &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="346" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="345" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1aa2d4f2ab79da4b10e9be3af2693904ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; keycpp::exp</definition>
+        <argsstring>(const std::vector&lt; T &gt; v1)</argsstring>
+        <name>exp</name>
+        <param>
+          <type>const std::vector&lt; T &gt;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="356" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="355" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a24ac535f72f9e72bf2d0fb93b2b0ee01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::exp</definition>
+        <argsstring>(const matrix&lt; T &gt; A)</argsstring>
+        <name>exp</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="366" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="365" bodyend="376"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a90a6f9aaec03f1f72bf4013316795c5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::eye</definition>
+        <argsstring>(const int N)</argsstring>
+        <name>eye</name>
+        <param>
+          <type>const int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="379" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="378" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a2dc5102775ed955f378432f84fe96987" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int keycpp::size</definition>
+        <argsstring>(const matrix&lt; T &gt; A, const int dim)</argsstring>
+        <name>size</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>dim</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of elements along dimension dim. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the number of elements along dimension dim. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>matrix for which you want to know the size. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension along which you want the number of elements. 1 = number of rows, 2 = number of columns </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An integer value of the number of elements along the desired dimension. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="398" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="397" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a028e501a865c86bdf616ea13e87645fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structkeycpp_1_1matrix__size__type" kindref="compound">matrix_size_type</ref></type>
+        <definition>matrix_size_type keycpp::size</definition>
+        <argsstring>(const matrix&lt; T &gt; A)</argsstring>
+        <name>size</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+<para>Returns the size of matrix A. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the size of matrix A in a <ref refid="structkeycpp_1_1matrix__size__type" kindref="compound">matrix_size_type</ref> variable.  auto msize = size(A); int num_rows = msize.rows; int num_cols = msize.cols; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>matrix for which you want to know the size. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="structkeycpp_1_1matrix__size__type" kindref="compound">matrix_size_type</ref> variable containing the number of rows and cols. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="410" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="409" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a86f1406f9fad5a439d8eff01aba8eac6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::zeros</definition>
+        <argsstring>(const int M, const int N)</argsstring>
+        <name>zeros</name>
+        <param>
+          <type>const int</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Returns a matrix of size M x N containing all zeros. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns a matrix of size M x N containing all zeros. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">M</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of rows. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of columns. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An M x N matrix containing zeros for each element. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="425" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="424" bodyend="428"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ace6f21832ab61f8f15e5b35e0a5cdb3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::ones</definition>
+        <argsstring>(const int M, const int N)</argsstring>
+        <name>ones</name>
+        <param>
+          <type>const int</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Returns a matrix of size M x N containing all ones. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns a matrix of size M x N containing all ones. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">M</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of rows. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of columns. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An M x N matrix containing ones for each element. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="438" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="437" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a88b11f2372831ebb28fcd2a9961c4eab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::diag</definition>
+        <argsstring>(const std::initializer_list&lt; T &gt; &amp;lst)</argsstring>
+        <name>diag</name>
+        <param>
+          <type>const std::initializer_list&lt; T &gt; &amp;</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="451" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="450" bodyend="460"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a40a637f210b03a3901cafbd6c1a7e83f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::repmat</definition>
+        <argsstring>(const matrix&lt; T &gt; A, int m, int n)</argsstring>
+        <name>repmat</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="463" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="462" bodyend="479"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a59fbea40dfc2d43cd338812f06c4f064" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::repmat</definition>
+        <argsstring>(const std::vector&lt; T &gt; v1, int m, int n)</argsstring>
+        <name>repmat</name>
+        <param>
+          <type>const std::vector&lt; T &gt;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="482" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="481" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a8272f1a2a2ecafa66bec7f1b3409d125" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; decltype(std::declval&lt; T &gt;)*std::declval&lt; U &gt;))&gt;</type>
+        <definition>matrix&lt;decltype(std::declval&lt;T&gt;)*std::declval&lt;U&gt;))&gt; keycpp::etimes</definition>
+        <argsstring>(const matrix&lt; T &gt; &amp;A, const matrix&lt; U &gt; &amp;B)</argsstring>
+        <name>etimes</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U &gt; &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="498" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="497" bodyend="508"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a2d684d6c9ad5529ad7cb5437e1828fe2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; decltype(std::declval&lt; T &gt;)*std::declval&lt; U &gt;))&gt;</type>
+        <definition>std::vector&lt;decltype(std::declval&lt;T&gt;)*std::declval&lt;U&gt;))&gt; keycpp::etimes</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;v1, const std::vector&lt; U &gt; &amp;v2)</argsstring>
+        <name>etimes</name>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; U &gt; &amp;</type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="511" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="510" bodyend="518"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1aaa691889ea888335ae1f23c562dde80a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; decltype(std::declval&lt; T &gt;)*std::declval&lt; U &gt;))&gt;</type>
+        <definition>matrix&lt;decltype(std::declval&lt;T&gt;)*std::declval&lt;U&gt;))&gt; keycpp::edivide</definition>
+        <argsstring>(const matrix&lt; T &gt; &amp;A, const matrix&lt; U &gt; &amp;B)</argsstring>
+        <name>edivide</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U &gt; &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="521" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="520" bodyend="531"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ae276dd1d44dcc05d14618a2a9c4b1b21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; decltype(std::declval&lt; T &gt;)*std::declval&lt; U &gt;))&gt;</type>
+        <definition>std::vector&lt;decltype(std::declval&lt;T&gt;)*std::declval&lt;U&gt;))&gt; keycpp::edivide</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;v1, const std::vector&lt; U &gt; &amp;v2)</argsstring>
+        <name>edivide</name>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; U &gt; &amp;</type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="534" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="533" bodyend="541"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a8f1cd159623e23abeedd26d34fc500d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int keycpp::sign</definition>
+        <argsstring>(T val)</argsstring>
+        <name>sign</name>
+        <param>
+          <type>T</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="544" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="543" bodyend="546"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1abebb8d8939a33f6c3cb00be9278114c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T keycpp::max</definition>
+        <argsstring>(std::vector&lt; T &gt; x)</argsstring>
+        <name>max</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="549" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="548" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a8ef49e492f67187d0909c7ae093fee48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T keycpp::min</definition>
+        <argsstring>(std::vector&lt; T &gt; x)</argsstring>
+        <name>min</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="564" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="563" bodyend="576"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a83c90b0df3a170c845b848593be4cb74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>double</type>
+        <definition>double keycpp::angle</definition>
+        <argsstring>(T x)</argsstring>
+        <name>angle</name>
+        <param>
+          <type>T</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="579" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="578" bodyend="581"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a13ee1c3dd9cbb21a325260188a7fa860" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; keycpp::angle</definition>
+        <argsstring>(std::vector&lt; T &gt; x)</argsstring>
+        <name>angle</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="584" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="583" bodyend="592"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a73269c9db9fe25412819858bd7048ae5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::complex&lt; double &gt;</type>
+        <definition>std::complex&lt;double&gt; keycpp::max</definition>
+        <argsstring>(std::vector&lt; std::complex&lt; double &gt; &gt; x)</argsstring>
+        <name>max</name>
+        <param>
+          <type>std::vector&lt; std::complex&lt; double &gt; &gt;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="595" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="594" bodyend="609"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ab7577228b38fa6a1911ac65fb80832f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::complex&lt; double &gt;</type>
+        <definition>std::complex&lt;double&gt; keycpp::min</definition>
+        <argsstring>(std::vector&lt; std::complex&lt; double &gt; &gt; x)</argsstring>
+        <name>min</name>
+        <param>
+          <type>std::vector&lt; std::complex&lt; double &gt; &gt;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="612" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="611" bodyend="626"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ad68697505d1a1a85f30a18b0e9b0eb2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::transpose</definition>
+        <argsstring>(matrix&lt; T &gt; A)</argsstring>
+        <name>transpose</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="629" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="628" bodyend="639"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1aa148d677899a0da5ab14edfc5057a97b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::transpose</definition>
+        <argsstring>(std::vector&lt; T &gt; v1)</argsstring>
+        <name>transpose</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="642" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="641" bodyend="649"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a4aedb589e76ced5d79d62c5f72029adb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; keycpp::sum</definition>
+        <argsstring>(matrix&lt; T &gt; A)</argsstring>
+        <name>sum</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="652" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="651" bodyend="663"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ad05b888638b5ea7103bdc6ba0882d47d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T keycpp::sum</definition>
+        <argsstring>(std::vector&lt; T &gt; v1)</argsstring>
+        <name>sum</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="666" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="665" bodyend="673"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a8a0e8201f775945a0a61d6d645a3456e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; keycpp::mat2vec</definition>
+        <argsstring>(matrix&lt; T &gt; A)</argsstring>
+        <name>mat2vec</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="676" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="675" bodyend="683"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a4d3ef9b10b3db438529bafc5e74fa0dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::vec2mat</definition>
+        <argsstring>(std::vector&lt; T &gt; v1)</argsstring>
+        <name>vec2mat</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="686" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="685" bodyend="693"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ab57eee495c93eb18ebf8c8ccf4d44e74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; keycpp::linspace</definition>
+        <argsstring>(const T x1, const T x2, const int N)</argsstring>
+        <name>linspace</name>
+        <param>
+          <type>const T</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>const T</type>
+          <declname>x2</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Produces a vector containing N values equally spaced between x1 and x2, inclusively. </para>        </briefdescription>
+        <detaileddescription>
+<para>Produces a vector containing N values equally spaced between x1 and x2, inclusively. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum value. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">x2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum value. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of values between x1 and x2. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector containing N equally spaced values between x1 and x2, inclusively. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="706" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="705" bodyend="724"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ac92462e3b25414144d4e45fc269d2f13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; keycpp::logspace</definition>
+        <argsstring>(const T x1, const T x2, int N)</argsstring>
+        <name>logspace</name>
+        <param>
+          <type>const T</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>const T</type>
+          <declname>x2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Produces a vector containing N values logarithmically spaced between 10^(x1) and 10^(x2), inclusively. </para>        </briefdescription>
+        <detaileddescription>
+<para>Produces a vector containing N values logarithmically spaced between 10^(x1) and 10^(x2), inclusively. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base 10 logarithm of the minimum value. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">x2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base 10 logarithm of the maximum value. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of values between 10^(x1) and 10^(x2). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector containing N logarithmically spaced values between 10^(x1) and 10^(x2), inclusively. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="739" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="738" bodyend="755"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a4e350b4b11ea4d9962b4daa13cc66e32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; keycpp::unwrap</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;v1, T tol=pi)</argsstring>
+        <name>unwrap</name>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>tol</declname>
+          <defval>pi</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="758" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="757" bodyend="775"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ad1acd03db6a49523cb5dbe751a80917a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T keycpp::mean</definition>
+        <argsstring>(const std::vector&lt; T &gt; &amp;v1)</argsstring>
+        <name>mean</name>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="778" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="777" bodyend="787"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a123211086c4953fe9346acc22b2a67f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T keycpp::interp1</definition>
+        <argsstring>(std::vector&lt; U &gt; x, std::vector&lt; T &gt; y, U x_interp, std::string method=&quot;linear&quot;, Extrap extrap=Extrap())</argsstring>
+        <name>interp1</name>
+        <param>
+          <type>std::vector&lt; U &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>U</type>
+          <declname>x_interp</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>method</declname>
+          <defval>&quot;linear&quot;</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1_extrap" kindref="compound">Extrap</ref></type>
+          <declname>extrap</declname>
+          <defval><ref refid="classkeycpp_1_1_extrap" kindref="compound">Extrap</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="790" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="789" bodyend="906"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a56633eb0878a0dbe6596fb0e74fdc6ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; keycpp::interp1</definition>
+        <argsstring>(std::vector&lt; U &gt; x, std::vector&lt; T &gt; y, std::vector&lt; U &gt; x_interp, std::string method=&quot;linear&quot;, Extrap extrap=Extrap())</argsstring>
+        <name>interp1</name>
+        <param>
+          <type>std::vector&lt; U &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; U &gt;</type>
+          <declname>x_interp</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>method</declname>
+          <defval>&quot;linear&quot;</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1_extrap" kindref="compound">Extrap</ref></type>
+          <declname>extrap</declname>
+          <defval><ref refid="classkeycpp_1_1_extrap" kindref="compound">Extrap</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="910" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="909" bodyend="946"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ad6dfc562f4ab516d21be63ab8a9c1b23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::interp1</definition>
+        <argsstring>(std::vector&lt; U &gt; x, matrix&lt; T &gt; y, std::vector&lt; U &gt; x_interp, std::string method=&quot;linear&quot;, Extrap extrap=Extrap())</argsstring>
+        <name>interp1</name>
+        <param>
+          <type>std::vector&lt; U &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; U &gt;</type>
+          <declname>x_interp</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>method</declname>
+          <defval>&quot;linear&quot;</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1_extrap" kindref="compound">Extrap</ref></type>
+          <declname>extrap</declname>
+          <defval><ref refid="classkeycpp_1_1_extrap" kindref="compound">Extrap</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="949" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="948" bodyend="966"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a3b44770c6a8c5ba4acb6fe6ead6cc811" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::interp1</definition>
+        <argsstring>(std::vector&lt; U &gt; x, std::vector&lt; std::vector&lt; T &gt; &gt; y, std::vector&lt; U &gt; x_interp, std::string method=&quot;linear&quot;, Extrap extrap=Extrap())</argsstring>
+        <name>interp1</name>
+        <param>
+          <type>std::vector&lt; U &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::vector&lt; T &gt; &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; U &gt;</type>
+          <declname>x_interp</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>method</declname>
+          <defval>&quot;linear&quot;</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1_extrap" kindref="compound">Extrap</ref></type>
+          <declname>extrap</declname>
+          <defval><ref refid="classkeycpp_1_1_extrap" kindref="compound">Extrap</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="970" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="969" bodyend="992"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ac5ab894467bbea180c9b283895d5d5d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::interp1</definition>
+        <argsstring>(std::vector&lt; U &gt; x, std::vector&lt; T &gt; y, matrix&lt; U &gt; x_interp, std::string method=&quot;linear&quot;, Extrap extrap=Extrap())</argsstring>
+        <name>interp1</name>
+        <param>
+          <type>std::vector&lt; U &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U &gt;</type>
+          <declname>x_interp</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>method</declname>
+          <defval>&quot;linear&quot;</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1_extrap" kindref="compound">Extrap</ref></type>
+          <declname>extrap</declname>
+          <defval><ref refid="classkeycpp_1_1_extrap" kindref="compound">Extrap</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="995" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="994" bodyend="1012"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a4c19f6ff8e0001eca5c63529bd58e664" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::interp1</definition>
+        <argsstring>(std::vector&lt; U &gt; x, std::vector&lt; T &gt; y, std::vector&lt; std::vector&lt; U &gt; &gt; x_interp, std::string method=&quot;linear&quot;, Extrap extrap=Extrap())</argsstring>
+        <name>interp1</name>
+        <param>
+          <type>std::vector&lt; U &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::vector&lt; U &gt; &gt;</type>
+          <declname>x_interp</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>method</declname>
+          <defval>&quot;linear&quot;</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1_extrap" kindref="compound">Extrap</ref></type>
+          <declname>extrap</declname>
+          <defval><ref refid="classkeycpp_1_1_extrap" kindref="compound">Extrap</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1015" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1014" bodyend="1032"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ad817c482d12509f0938849890bb4de4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T keycpp::trapz</definition>
+        <argsstring>(std::vector&lt; U &gt; eta, std::vector&lt; T &gt; integrand)</argsstring>
+        <name>trapz</name>
+        <param>
+          <type>std::vector&lt; U &gt;</type>
+          <declname>eta</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>integrand</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1035" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1034" bodyend="1052"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a379324b1d1cb219fdde96c9678aa5341" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::diffxy</definition>
+        <argsstring>(matrix&lt; U &gt; eta, matrix&lt; T &gt; u, int index=2)</argsstring>
+        <name>diffxy</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U &gt;</type>
+          <declname>eta</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1056" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1055" bodyend="1093"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a5b09f118fe12b83865ff08fe3d3633ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::diffxy</definition>
+        <argsstring>(std::vector&lt; U &gt; eta, matrix&lt; T &gt; u)</argsstring>
+        <name>diffxy</name>
+        <param>
+          <type>std::vector&lt; U &gt;</type>
+          <declname>eta</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1096" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1095" bodyend="1133"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a3bdbcb862d76b1b1fb5157788b7336ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; keycpp::diffxy</definition>
+        <argsstring>(std::vector&lt; U &gt; eta, std::vector&lt; T &gt; u)</argsstring>
+        <name>diffxy</name>
+        <param>
+          <type>std::vector&lt; U &gt;</type>
+          <declname>eta</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1136" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1135" bodyend="1155"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a6b17b3d224192fffc838834ff736d572" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; std::complex&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::complex&lt;double&gt; &gt; keycpp::fft</definition>
+        <argsstring>(std::vector&lt; T &gt; u, int N=-1)</argsstring>
+        <name>fft</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1158" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1157" bodyend="1193"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a880f7df231a78f912b3fb5d301c809f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::ode45</definition>
+        <argsstring>(F odeClass, std::vector&lt; U &gt; x_ode, std::vector&lt; T &gt; ICs, double abs_tol=1.0e-10, double rel_tol=1.0e-6)</argsstring>
+        <name>ode45</name>
+        <param>
+          <type>F</type>
+          <declname>odeClass</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; U &gt;</type>
+          <declname>x_ode</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>ICs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>abs_tol</declname>
+          <defval>1.0e-10</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>rel_tol</declname>
+          <defval>1.0e-6</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1197" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1196" bodyend="1222"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1afcd6ae07fc18f5374868fe314f00108c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void keycpp::set</definition>
+        <argsstring>(Figure &amp;h, std::string property, double val)</argsstring>
+        <name>set</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1_figure" kindref="compound">Figure</ref> &amp;</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>property</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1225" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1224" bodyend="1227"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a6862448bf6e09309e60a6ba7aa0caf9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structkeycpp_1_1_sort___matrix" kindref="compound">Sort_Matrix</ref>&lt; T &gt;</type>
+        <definition>Sort_Matrix&lt;T&gt; keycpp::sort</definition>
+        <argsstring>(matrix&lt; T &gt; A, int dim=2, std::string method=&quot;ascend&quot;)</argsstring>
+        <name>sort</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dim</declname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>method</declname>
+          <defval>&quot;ascend&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1237" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1236" bodyend="1338"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a1be4e97b99a996a01f428fd8ba048fb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structkeycpp_1_1_sort___vector" kindref="compound">Sort_Vector</ref>&lt; T &gt;</type>
+        <definition>Sort_Vector&lt;T&gt; keycpp::sort</definition>
+        <argsstring>(std::vector&lt; T &gt; v1, std::string method=&quot;ascend&quot;)</argsstring>
+        <name>sort</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>method</declname>
+          <defval>&quot;ascend&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1348" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1347" bodyend="1395"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a6c9e2412b8c1f306d09e7dc1214c4fb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>complex&lt; double &gt;</type>
+        <definition>complex&lt;double&gt; keycpp::interp1</definition>
+        <argsstring>(double *x, complex&lt; double &gt; **y, double x_interp, int index, int N)</argsstring>
+        <name>interp1</name>
+        <param>
+          <type>double *</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>complex&lt; double &gt; **</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x_interp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" line="14" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="13" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a190640edb8e634de02d302d94a29ee17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; complex&lt; double &gt; &gt;</type>
+        <definition>vector&lt;complex&lt;double&gt; &gt; keycpp::eig</definition>
+        <argsstring>(const matrix&lt; complex&lt; double &gt; &gt; A, const matrix&lt; complex&lt; double &gt; &gt; B, matrix&lt; complex&lt; double &gt; &gt; *vr_return, matrix&lt; complex&lt; double &gt; &gt; *vl_return)</argsstring>
+        <name>eig</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt; *</type>
+          <declname>vr_return</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt; *</type>
+          <declname>vl_return</declname>
+        </param>
+        <briefdescription>
+<para>Generalized complex-valued eigenvalue solver using LAPACK function call. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function returns the eigenvalues(lambda) of the complex-valued generalized eigenvalue problem: Ax_r = lambda*Bx_r or x_l^T*A = lambda*x_l^T*B. The eigenvalues are returned by default. To return the right or left eigenvectors, supply the function with a complex&lt;double&gt; matrix object in the 3rd or 4th parameters, respectively. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" line="45" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="44" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1acea0bb8f128ef0cdf55a79c50ceccb83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; complex&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;complex&lt;double&gt; &gt; keycpp::linsolve</definition>
+        <argsstring>(const matrix&lt; complex&lt; double &gt;&gt; &amp;A_in, const std::vector&lt; complex&lt; double &gt;&gt; &amp;b_in)</argsstring>
+        <name>linsolve</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt;&gt; &amp;</type>
+          <declname>A_in</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; complex&lt; double &gt;&gt; &amp;</type>
+          <declname>b_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" line="230" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="228" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ac9cabca49e9650ae8b5aadf5ee2f7f4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt;</type>
+        <definition>matrix&lt;complex&lt;double&gt; &gt; keycpp::inv</definition>
+        <argsstring>(const matrix&lt; complex&lt; double &gt;&gt; &amp;A_in)</argsstring>
+        <name>inv</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt;&gt; &amp;</type>
+          <declname>A_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" line="463" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="462" bodyend="533"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The keycpp namespace prevents KeyCpp functions and classes from interfering with other C++ libraries, for instance the std library. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="16"/>
+  </compounddef>
+</doxygen>

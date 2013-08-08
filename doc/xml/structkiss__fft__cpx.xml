@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+  <compounddef id="structkiss__fft__cpx" kind="struct" prot="public">
+    <compoundname>kiss_fft_cpx</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structkiss__fft__cpx_1a686b6187e3e885de316908319c71ea8f" prot="public" static="no" mutable="no">
+        <type>kiss_fft_scalar</type>
+        <definition>kiss_fft_scalar kiss_fft_cpx::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/kiss_fft.h" line="66" bodyfile="/media/Storage/Research/open_source/keycpp/include/kiss_fft.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structkiss__fft__cpx_1ac1e17add2ae6b815da29d7d67b03fa70" prot="public" static="no" mutable="no">
+        <type>kiss_fft_scalar</type>
+        <definition>kiss_fft_scalar kiss_fft_cpx::i</definition>
+        <argsstring></argsstring>
+        <name>i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/kiss_fft.h" line="67" bodyfile="/media/Storage/Research/open_source/keycpp/include/kiss_fft.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/media/Storage/Research/open_source/keycpp/include/kiss_fft.h" line="65" bodyfile="/media/Storage/Research/open_source/keycpp/include/kiss_fft.h" bodystart="65" bodyend="68"/>
+    <listofallmembers>
+      <member refid="structkiss__fft__cpx_1ac1e17add2ae6b815da29d7d67b03fa70" prot="public" virt="non-virtual"><scope>kiss_fft_cpx</scope><name>i</name></member>
+      <member refid="structkiss__fft__cpx_1a686b6187e3e885de316908319c71ea8f" prot="public" virt="non-virtual"><scope>kiss_fft_cpx</scope><name>r</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

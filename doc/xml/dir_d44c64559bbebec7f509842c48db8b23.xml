@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+  <compounddef id="dir_d44c64559bbebec7f509842c48db8b23" kind="dir">
+    <compoundname>include</compoundname>
+    <innerfile refid="__kiss__fft__guts_8h">_kiss_fft_guts.h</innerfile>
+    <innerfile refid="_figure_8h">Figure.h</innerfile>
+    <innerfile refid="gnuplot__i_8h">gnuplot_i.h</innerfile>
+    <innerfile refid="keycpp_8h">keycpp.h</innerfile>
+    <innerfile refid="kiss__fft_8h">kiss_fft.h</innerfile>
+    <innerfile refid="_matrix_8h">Matrix.h</innerfile>
+    <innerfile refid="_spline_8h">Spline.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/media/Storage/Research/open_source/keycpp/include/"/>
+  </compounddef>
+</doxygen>

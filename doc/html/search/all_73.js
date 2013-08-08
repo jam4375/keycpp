@@ -29,6 +29,9 @@ var searchData=
   ['set_5fzlogscale',['set_zlogscale',['../class_gnuplot.html#a1da3838163b0dbde8809b55c5b5c56b1',1,'Gnuplot']]],
   ['set_5fzrange',['set_zrange',['../class_gnuplot.html#a7273f6a48024117b4d234d0251106e78',1,'Gnuplot']]],
   ['showonscreen',['showonscreen',['../class_gnuplot.html#a356d2faaa79f08d13fec9718b776b28d',1,'Gnuplot']]],
+  ['size',['size',['../namespacekeycpp.html#a2dc5102775ed955f378432f84fe96987',1,'keycpp::size(const matrix&lt; T &gt; A, const int dim)'],['../namespacekeycpp.html#a028e501a865c86bdf616ea13e87645fa',1,'keycpp::size(const matrix&lt; T &gt; A)']]],
+  ['sort_5fmatrix',['Sort_Matrix',['../structkeycpp_1_1_sort___matrix.html',1,'keycpp']]],
+  ['sort_5fvector',['Sort_Vector',['../structkeycpp_1_1_sort___vector.html',1,'keycpp']]],
   ['spline',['Spline',['../classkeycpp_1_1_spline.html',1,'keycpp']]],
   ['splineexception',['SplineException',['../classkeycpp_1_1_spline_exception.html',1,'keycpp']]]
 ];

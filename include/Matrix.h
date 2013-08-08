@@ -3,24 +3,32 @@
 #ifndef MATRIX_H_
 #define MATRIX_H_
 
+#include <iostream>
 #include <stdexcept>
 #include <vector>
 
 namespace keycpp
 {
+
+	struct matrix_size_type
+	{
+		int rows;
+		int cols;
+	};
+
 	class MatrixException : public std::runtime_error
 	{
 	    public:
 		MatrixException(const std::string &msg) : std::runtime_error(msg){}
 	};
 
-	template <class T>
+	template<class T>
 	class matrix
 	{
 	public:
 		matrix();
 		matrix(int rows, int cols);
-		matrix(const std::vector<std::vector<T> >& mat);
+		matrix(const std::vector<std::vector<T>>& mat);
 		matrix(const std::initializer_list<std::initializer_list<T>>& lst);
 		T& operator()(int i, int j);
 		T operator()(int i, int j) const;
@@ -101,7 +109,7 @@ namespace keycpp
 		}
 	}
 
-	template <class T>
+	template<class T>
 	T& matrix<T>::operator()(int i, int j)
 	{
 		if(mData.empty())
@@ -115,7 +123,7 @@ namespace keycpp
 		return mData[i*mCols + j];
 	}
 
-	template <class T>
+	template<class T>
 	T matrix<T>::operator()(int i, int j) const
 	{
 		if(mData.empty())
@@ -129,7 +137,7 @@ namespace keycpp
 		return mData[i*mCols + j];
 	}
 
-	template <class T>
+	template<class T>
 	std::vector<T> matrix<T>::operator*(const std::vector<T> x) const
 	{
 		if(x.empty())
@@ -156,7 +164,7 @@ namespace keycpp
 		return b;
 	}
 
-	template <class T>
+	template<class T>
 	matrix<T> matrix<T>::operator*(const matrix<T> B) const
 	{
 		if(B.size(1) <= 0 || B.size(2) <= 0)
@@ -187,7 +195,7 @@ namespace keycpp
 	}
 
 
-	template <class T>
+	template<class T>
 	matrix<T> matrix<T>::operator+(const matrix<T> B) const
 	{
 		if(B.size(1) <= 0 || B.size(2) <= 0)
@@ -213,7 +221,7 @@ namespace keycpp
 		return C;
 	}
 
-	template <class T>
+	template<class T>
 	matrix<T> matrix<T>::operator-(const matrix<T> B) const
 	{
 		if(B.size(1) <= 0 || B.size(2) <= 0)
@@ -239,7 +247,7 @@ namespace keycpp
 		return C;
 	}
 
-	template <class T>
+	template<class T>
 	int matrix<T>::size(int n) const
 	{
 		if(n == 1)
@@ -256,7 +264,7 @@ namespace keycpp
 		}
 	}
 
-	template <class T>
+	template<class T>
 	int matrix<T>::setRow(std::vector<T> row, int n)
 	{
 		if(row.size() != mCols)
@@ -279,7 +287,7 @@ namespace keycpp
 		return 0;
 	}
 
-	template <class T>
+	template<class T>
 	int matrix<T>::setLastRow(std::vector<T> row)
 	{
 		if(row.size() != mCols)
@@ -298,7 +306,7 @@ namespace keycpp
 		return 0;
 	}
 
-	template <class T>
+	template<class T>
 	int matrix<T>::addLastRow(std::vector<T> row)
 	{
 		if(row.size() != mCols)
@@ -315,7 +323,7 @@ namespace keycpp
 		return 0;
 	}
 
-	template <class T>
+	template<class T>
 	int matrix<T>::setCol(std::vector<T> col, int n)
 	{
 		if(col.size() != mRows)
@@ -337,7 +345,7 @@ namespace keycpp
 		return 0;
 	}
 
-	template <class T>
+	template<class T>
 	std::vector<T> matrix<T>::getRow(int n)
 	{
 		if(n > mRows || n < 0)
@@ -358,7 +366,7 @@ namespace keycpp
 		return Row;
 	}
 
-	template <class T>
+	template<class T>
 	std::vector<T> matrix<T>::getLastRow()
 	{
 		if(mData.empty())
@@ -375,7 +383,7 @@ namespace keycpp
 		return Row;
 	}
 
-	template <class T>
+	template<class T>
 	std::vector<T> matrix<T>::getCol(int n)
 	{
 		if(n > mCols || n < 0)
@@ -396,7 +404,7 @@ namespace keycpp
 		return Col;
 	}
 
-	template <class T>
+	template<class T>
 	int matrix<T>::reserve(int N)
 	{
 		if(N < 0)

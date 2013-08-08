@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+  <compounddef id="structkeycpp_1_1_sort___matrix" kind="struct" prot="public">
+    <compoundname>keycpp::Sort_Matrix</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structkeycpp_1_1_sort___matrix_1acd2c90a02e9c57964fd924d75eece798" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::Sort_Matrix&lt; T &gt;::B</definition>
+        <argsstring></argsstring>
+        <name>B</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1232" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structkeycpp_1_1_sort___matrix_1a25b1c5bb53ac4992d5698c02f56223bb" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; int &gt;</type>
+        <definition>matrix&lt;int&gt; keycpp::Sort_Matrix&lt; T &gt;::index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1233" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1233" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="37">
+        <label>keycpp::matrix&lt; int &gt;</label>
+        <link refid="classkeycpp_1_1matrix"/>
+      </node>
+      <node id="36">
+        <label>keycpp::Sort_Matrix&lt; T &gt;</label>
+        <link refid="structkeycpp_1_1_sort___matrix"/>
+        <childnode refid="37" relation="usage">
+          <edgelabel>index</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1231" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1230" bodyend="1234"/>
+    <listofallmembers>
+      <member refid="structkeycpp_1_1_sort___matrix_1acd2c90a02e9c57964fd924d75eece798" prot="public" virt="non-virtual"><scope>keycpp::Sort_Matrix</scope><name>B</name></member>
+      <member refid="structkeycpp_1_1_sort___matrix_1a25b1c5bb53ac4992d5698c02f56223bb" prot="public" virt="non-virtual"><scope>keycpp::Sort_Matrix</scope><name>index</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

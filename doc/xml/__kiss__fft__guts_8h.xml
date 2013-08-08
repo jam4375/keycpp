@@ -1,0 +1,462 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+  <compounddef id="__kiss__fft__guts_8h" kind="file">
+    <compoundname>_kiss_fft_guts.h</compoundname>
+    <includes refid="kiss__fft_8h" local="yes">kiss_fft.h</includes>
+    <includes local="no">limits.h</includes>
+    <includedby refid="kiss__fft_8cpp" local="yes">kiss_fft.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6">
+        <label>limits.h</label>
+      </node>
+      <node id="5">
+        <label>string.h</label>
+      </node>
+      <node id="4">
+        <label>math.h</label>
+      </node>
+      <node id="1">
+        <label>kiss_fft.h</label>
+        <link refid="kiss__fft_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+      <node id="0">
+        <label>_kiss_fft_guts.h</label>
+        <link refid="_kiss_fft_guts.h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structkiss__fft__state" prot="public">kiss_fft_state</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1af176a125e008eb443996cf0f83cc135c" prot="public" static="no">
+        <name>MAXFACTORS</name>
+        <initializer>32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="25" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1a944e08f3916c56a9697bbfed458eaa94" prot="public" static="no">
+        <name>S_MUL</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>( (a)*(b) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="89" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1ab5092aa032092f1057feca5fbea40758" prot="public" static="no">
+        <name>C_MUL</name>
+        <param><defname>m</defname></param>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>do{ (m).r = (a).r*(b).r - (a).i*(b).i;\
+        (m).i = (a).r*(b).i + (a).i*(b).r; }while(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="92" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1a05e11bb1e8e815dd7bdd199060b7555a" prot="public" static="no">
+        <name>C_FIXDIV</name>
+        <param><defname>c</defname></param>
+        <param><defname>div</defname></param>
+        <initializer>/* NOOP */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="93" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1a958da96ff02cad6be35cafa3019804b5" prot="public" static="no">
+        <name>C_MULBYSCALAR</name>
+        <param><defname>c</defname></param>
+        <param><defname>s</defname></param>
+        <initializer>do{ (c).r *= (s);\
+        (c).i *= (s); }while(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="96" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1a664c056b2a7093f88391d7db3558aa24" prot="public" static="no">
+        <name>CHECK_OVERFLOW_OP</name>
+        <param><defname>a</defname></param>
+        <param><defname>op</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>/* noop */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="100" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1a1f70747639c855259a0965de768e030a" prot="public" static="no">
+        <name>C_ADD</name>
+        <param><defname>res</defname></param>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>do { \
+	    CHECK_OVERFLOW_OP((a).r,+,(b).r)\
+	    CHECK_OVERFLOW_OP((a).i,+,(b).i)\
+	    (res).r=(a).r+(b).r;  (res).i=(a).i+(b).i; \
+    }while(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="108" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1a8c00bd9702f25a8514402a3779b3bdda" prot="public" static="no">
+        <name>C_SUB</name>
+        <param><defname>res</defname></param>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <initializer>do { \
+	    CHECK_OVERFLOW_OP((a).r,-,(b).r)\
+	    CHECK_OVERFLOW_OP((a).i,-,(b).i)\
+	    (res).r=(a).r-(b).r;  (res).i=(a).i-(b).i; \
+    }while(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="114" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1a2042ee8c6fb9306eb20d62e6506446aa" prot="public" static="no">
+        <name>C_ADDTO</name>
+        <param><defname>res</defname></param>
+        <param><defname>a</defname></param>
+        <initializer>do { \
+	    CHECK_OVERFLOW_OP((res).r,+,(a).r)\
+	    CHECK_OVERFLOW_OP((res).i,+,(a).i)\
+	    (res).r += (a).r;  (res).i += (a).i;\
+    }while(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="120" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1aa3f448e1963492dfc145fc391cbedd27" prot="public" static="no">
+        <name>C_SUBFROM</name>
+        <param><defname>res</defname></param>
+        <param><defname>a</defname></param>
+        <initializer>do {\
+	    CHECK_OVERFLOW_OP((res).r,-,(a).r)\
+	    CHECK_OVERFLOW_OP((res).i,-,(a).i)\
+	    (res).r -= (a).r;  (res).i -= (a).i; \
+    }while(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="127" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1a2e780e8fe86d9c3e7b6a469f61aaf5d1" prot="public" static="no">
+        <name>KISS_FFT_COS</name>
+        <param><defname>phase</defname></param>
+        <initializer>(kiss_fft_scalar) cos(phase)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="139" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1a2d4fc93cde15512f1946f364d5271dd3" prot="public" static="no">
+        <name>KISS_FFT_SIN</name>
+        <param><defname>phase</defname></param>
+        <initializer>(kiss_fft_scalar) sin(phase)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="140" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1a0b812a30fdb0c530a90a18d1692fab6c" prot="public" static="no">
+        <name>HALF_OF</name>
+        <param><defname>x</defname></param>
+        <initializer>((x)*.5)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="141" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1ac7852abdf2dc5ed4538551be6d1dd20b" prot="public" static="no">
+        <name>kf_cexp</name>
+        <param><defname>x</defname></param>
+        <param><defname>phase</defname></param>
+        <initializer>do{ \
+		(x)-&gt;r = KISS_FFT_COS(phase);\
+		(x)-&gt;i = KISS_FFT_SIN(phase);\
+	}while(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="148" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1ac1abb41ecdedd05dda5d1ce83b67a704" prot="public" static="no">
+        <name>pcpx</name>
+        <param><defname>c</defname></param>
+        <initializer>fprintf(stderr,&quot;%g + %gi\n&quot;,(double)((c)-&gt;r),(double)((c)-&gt;i) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="153" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1abd992e9886fb74f97bf0b6e057fe08a5" prot="public" static="no">
+        <name>KISS_FFT_TMP_ALLOC</name>
+        <param><defname>nbytes</defname></param>
+        <initializer>KISS_FFT_MALLOC(nbytes)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="165" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__kiss__fft__guts_8h_1ab915c572fe96a51a3528b7419248b655" prot="public" static="no">
+        <name>KISS_FFT_TMP_FREE</name>
+        <param><defname>ptr</defname></param>
+        <initializer>KISS_FFT_FREE(ptr)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="166" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">Copyright<sp/>(c)<sp/>2003-2010,<sp/>Mark<sp/>Borgerding</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment">Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>*<sp/>Neither<sp/>the<sp/>author<sp/>nor<sp/>the<sp/>names<sp/>of<sp/>any<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived<sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"></highlight></codeline>
+<codeline lineno="12"><highlight class="comment">THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>kiss_fft.h</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/>defines<sp/>kiss_fft_scalar<sp/>as<sp/>either<sp/>short<sp/>or<sp/>a<sp/>float<sp/>type</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/>and<sp/>defines</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/>typedef<sp/>struct<sp/>{<sp/>kiss_fft_scalar<sp/>r;<sp/>kiss_fft_scalar<sp/>i;<sp/>}kiss_fft_cpx;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>KISS_FFT_GUTS_H</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>KISS_FFT_GUTS_H</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kiss_fft.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAXFACTORS<sp/>32</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>e.g.<sp/>an<sp/>fft<sp/>of<sp/>length<sp/>128<sp/>has<sp/>4<sp/>factors<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>as<sp/>far<sp/>as<sp/>kissfft<sp/>is<sp/>concerned</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>4*4*4*2</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="structkiss__fft__state" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structkiss__fft__state" kindref="compound">kiss_fft_state</ref>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nfft;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>inverse;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>factors[2*MAXFACTORS];</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structkiss__fft__cpx" kindref="compound">kiss_fft_cpx</ref><sp/>twiddles[1];</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/>Explanation<sp/>of<sp/>macros<sp/>dealing<sp/>with<sp/>complex<sp/>math:</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"></highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/>C_MUL(m,a,b)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>m<sp/>=<sp/>a*b</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/>C_FIXDIV(<sp/>c<sp/>,<sp/>div<sp/>)<sp/><sp/>:<sp/>if<sp/>a<sp/>fixed<sp/>point<sp/>impl.,<sp/>c<sp/>/=<sp/>div.<sp/>noop<sp/>otherwise</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/>C_SUB(<sp/>res,<sp/>a,b)<sp/><sp/><sp/><sp/><sp/>:<sp/>res<sp/>=<sp/>a<sp/>-<sp/>b</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/><sp/>C_SUBFROM(<sp/>res<sp/>,<sp/>a)<sp/><sp/>:<sp/>res<sp/>-=<sp/>a</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/>C_ADDTO(<sp/>res<sp/>,<sp/>a)<sp/><sp/><sp/><sp/>:<sp/>res<sp/>+=<sp/>a</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>FIXED_POINT</highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#if<sp/>(FIXED_POINT==32)</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/>define<sp/>FRACBITS<sp/>31</highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/>define<sp/>SAMPPROD<sp/>int64_t</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SAMP_MAX<sp/>2147483647</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/>define<sp/>FRACBITS<sp/>15</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/>define<sp/>SAMPPROD<sp/>int32_t<sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SAMP_MAX<sp/>32767</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMP_MIN<sp/>-SAMP_MAX</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(CHECK_OVERFLOW)</highlight></codeline>
+<codeline lineno="61"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>CHECK_OVERFLOW_OP(a,op,b)<sp/><sp/>\</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>(SAMPPROD)(a)<sp/>op<sp/>(SAMPPROD)(b)<sp/>&gt;<sp/>SAMP_MAX<sp/>||<sp/>(SAMPPROD)(a)<sp/>op<sp/>(SAMPPROD)(b)<sp/>&lt;<sp/>SAMP_MIN<sp/>)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,&quot;WARNING:overflow<sp/>@<sp/>&quot;<sp/>__FILE__<sp/>&quot;(%d):<sp/>(%d<sp/>&quot;<sp/>#op&quot;<sp/>%d)<sp/>=<sp/>%ld\n&quot;,__LINE__,(a),(b),(SAMPPROD)(a)<sp/>op<sp/>(SAMPPROD)(b)<sp/>);<sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>smul(a,b)<sp/>(<sp/>(SAMPPROD)(a)*(b)<sp/>)</highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>sround(<sp/>x<sp/>)<sp/><sp/>(kiss_fft_scalar)(<sp/>(<sp/>(x)<sp/>+<sp/>(1&lt;&lt;(FRACBITS-1))<sp/>)<sp/>&gt;&gt;<sp/>FRACBITS<sp/>)</highlight></codeline>
+<codeline lineno="69"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>S_MUL(a,b)<sp/>sround(<sp/>smul(a,b)<sp/>)</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>C_MUL(m,a,b)<sp/>\</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>do{<sp/>(m).r<sp/>=<sp/>sround(<sp/>smul((a).r,(b).r)<sp/>-<sp/>smul((a).i,(b).i)<sp/>);<sp/>\</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m).i<sp/>=<sp/>sround(<sp/>smul((a).r,(b).i)<sp/>+<sp/>smul((a).i,(b).r)<sp/>);<sp/>}while(0)</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>DIVSCALAR(x,k)<sp/>\</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(x)<sp/>=<sp/>sround(<sp/>smul(<sp/><sp/>x,<sp/>SAMP_MAX/k<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>C_FIXDIV(c,div)<sp/>\</highlight></codeline>
+<codeline lineno="80"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do<sp/>{<sp/><sp/><sp/><sp/>DIVSCALAR(<sp/>(c).r<sp/>,<sp/>div);<sp/><sp/>\</highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DIVSCALAR(<sp/>(c).i<sp/><sp/>,<sp/>div);<sp/>}while<sp/>(0)</highlight></codeline>
+<codeline lineno="82"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>C_MULBYSCALAR(<sp/>c,<sp/>s<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do{<sp/>(c).r<sp/>=<sp/><sp/>sround(<sp/>smul(<sp/>(c).r<sp/>,<sp/>s<sp/>)<sp/>)<sp/>;\</highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(c).i<sp/>=<sp/><sp/>sround(<sp/>smul(<sp/>(c).i<sp/>,<sp/>s<sp/>)<sp/>)<sp/>;<sp/>}while(0)</highlight></codeline>
+<codeline lineno="86"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/><sp/></highlight><highlight class="comment">/*<sp/>not<sp/>FIXED_POINT*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="88"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>S_MUL(a,b)<sp/>(<sp/>(a)*(b)<sp/>)</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>C_MUL(m,a,b)<sp/>\</highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do{<sp/>(m).r<sp/>=<sp/>(a).r*(b).r<sp/>-<sp/>(a).i*(b).i;\</highlight></codeline>
+<codeline lineno="92"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(m).i<sp/>=<sp/>(a).r*(b).i<sp/>+<sp/>(a).i*(b).r;<sp/>}while(0)</highlight></codeline>
+<codeline lineno="93"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>C_FIXDIV(c,div)<sp/></highlight><highlight class="comment">/*<sp/>NOOP<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="94"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>C_MULBYSCALAR(<sp/>c,<sp/>s<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="95"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do{<sp/>(c).r<sp/>*=<sp/>(s);\</highlight></codeline>
+<codeline lineno="96"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(c).i<sp/>*=<sp/>(s);<sp/>}while(0)</highlight></codeline>
+<codeline lineno="97"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="98"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CHECK_OVERFLOW_OP</highlight></codeline>
+<codeline lineno="100"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>CHECK_OVERFLOW_OP(a,op,b)<sp/></highlight><highlight class="comment">/*<sp/>noop<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="101"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="102"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>C_ADD(<sp/>res,<sp/>a,b)\</highlight></codeline>
+<codeline lineno="104"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="105"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CHECK_OVERFLOW_OP((a).r,+,(b).r)\</highlight></codeline>
+<codeline lineno="106"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CHECK_OVERFLOW_OP((a).i,+,(b).i)\</highlight></codeline>
+<codeline lineno="107"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(res).r=(a).r+(b).r;<sp/><sp/>(res).i=(a).i+(b).i;<sp/>\</highlight></codeline>
+<codeline lineno="108"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}while(0)</highlight></codeline>
+<codeline lineno="109"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/><sp/>C_SUB(<sp/>res,<sp/>a,b)\</highlight></codeline>
+<codeline lineno="110"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CHECK_OVERFLOW_OP((a).r,-,(b).r)\</highlight></codeline>
+<codeline lineno="112"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CHECK_OVERFLOW_OP((a).i,-,(b).i)\</highlight></codeline>
+<codeline lineno="113"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(res).r=(a).r-(b).r;<sp/><sp/>(res).i=(a).i-(b).i;<sp/>\</highlight></codeline>
+<codeline lineno="114"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}while(0)</highlight></codeline>
+<codeline lineno="115"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>C_ADDTO(<sp/>res<sp/>,<sp/>a)\</highlight></codeline>
+<codeline lineno="116"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="117"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CHECK_OVERFLOW_OP((res).r,+,(a).r)\</highlight></codeline>
+<codeline lineno="118"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CHECK_OVERFLOW_OP((res).i,+,(a).i)\</highlight></codeline>
+<codeline lineno="119"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(res).r<sp/>+=<sp/>(a).r;<sp/><sp/>(res).i<sp/>+=<sp/>(a).i;\</highlight></codeline>
+<codeline lineno="120"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}while(0)</highlight></codeline>
+<codeline lineno="121"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>C_SUBFROM(<sp/>res<sp/>,<sp/>a)\</highlight></codeline>
+<codeline lineno="123"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do<sp/>{\</highlight></codeline>
+<codeline lineno="124"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CHECK_OVERFLOW_OP((res).r,-,(a).r)\</highlight></codeline>
+<codeline lineno="125"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CHECK_OVERFLOW_OP((res).i,-,(a).i)\</highlight></codeline>
+<codeline lineno="126"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(res).r<sp/>-=<sp/>(a).r;<sp/><sp/>(res).i<sp/>-=<sp/>(a).i;<sp/>\</highlight></codeline>
+<codeline lineno="127"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}while(0)</highlight></codeline>
+<codeline lineno="128"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>FIXED_POINT</highlight></codeline>
+<codeline lineno="131"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>KISS_FFT_COS(phase)<sp/><sp/>floor(.5+SAMP_MAX<sp/>*<sp/>cos<sp/>(phase))</highlight></codeline>
+<codeline lineno="132"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>KISS_FFT_SIN(phase)<sp/><sp/>floor(.5+SAMP_MAX<sp/>*<sp/>sin<sp/>(phase))</highlight></codeline>
+<codeline lineno="133"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>HALF_OF(x)<sp/>((x)&gt;&gt;1)</highlight></codeline>
+<codeline lineno="134"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#elif<sp/>defined(USE_SIMD)</highlight></codeline>
+<codeline lineno="135"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>KISS_FFT_COS(phase)<sp/>_mm_set1_ps(<sp/>cos(phase)<sp/>)</highlight></codeline>
+<codeline lineno="136"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>KISS_FFT_SIN(phase)<sp/>_mm_set1_ps(<sp/>sin(phase)<sp/>)</highlight></codeline>
+<codeline lineno="137"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>HALF_OF(x)<sp/>((x)*_mm_set1_ps(.5))</highlight></codeline>
+<codeline lineno="138"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="139"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>KISS_FFT_COS(phase)<sp/>(kiss_fft_scalar)<sp/>cos(phase)</highlight></codeline>
+<codeline lineno="140"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>KISS_FFT_SIN(phase)<sp/>(kiss_fft_scalar)<sp/>sin(phase)</highlight></codeline>
+<codeline lineno="141"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>HALF_OF(x)<sp/>((x)*.5)</highlight></codeline>
+<codeline lineno="142"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="143"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>kf_cexp(x,phase)<sp/>\</highlight></codeline>
+<codeline lineno="145"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do{<sp/>\</highlight></codeline>
+<codeline lineno="146"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(x)-&gt;r<sp/>=<sp/>KISS_FFT_COS(phase);\</highlight></codeline>
+<codeline lineno="147"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(x)-&gt;i<sp/>=<sp/>KISS_FFT_SIN(phase);\</highlight></codeline>
+<codeline lineno="148"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}while(0)</highlight></codeline>
+<codeline lineno="149"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>a<sp/>debugging<sp/>function<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>pcpx(c)\</highlight></codeline>
+<codeline lineno="153"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>fprintf(stderr,&quot;%g<sp/>+<sp/>%gi\n&quot;,(double)((c)-&gt;r),(double)((c)-&gt;i)<sp/>)</highlight></codeline>
+<codeline lineno="154"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>KISS_FFT_USE_ALLOCA</highlight></codeline>
+<codeline lineno="157"><highlight class="preprocessor"></highlight><highlight class="comment">//<sp/>define<sp/>this<sp/>to<sp/>allow<sp/>use<sp/>of<sp/>alloca<sp/>instead<sp/>of<sp/>malloc<sp/>for<sp/>temporary<sp/>buffers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Temporary<sp/>buffers<sp/>are<sp/>used<sp/>in<sp/>two<sp/>case:<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="comment">//<sp/>1.<sp/>FFT<sp/>sizes<sp/>that<sp/>have<sp/>&quot;bad&quot;<sp/>factors.<sp/>i.e.<sp/>not<sp/>2,3<sp/>and<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="comment">//<sp/>2.<sp/>&quot;in-place&quot;<sp/>FFTs.<sp/><sp/>Notice<sp/>the<sp/>quotes,<sp/>since<sp/>kissfft<sp/>does<sp/>not<sp/>really<sp/>do<sp/>an<sp/>in-place<sp/>transform.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;alloca.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>KISS_FFT_TMP_ALLOC(nbytes)<sp/>alloca(nbytes)</highlight></codeline>
+<codeline lineno="163"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/><sp/>KISS_FFT_TMP_FREE(ptr)<sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="165"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/><sp/>KISS_FFT_TMP_ALLOC(nbytes)<sp/>KISS_FFT_MALLOC(nbytes)</highlight></codeline>
+<codeline lineno="166"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/><sp/>KISS_FFT_TMP_FREE(ptr)<sp/>KISS_FFT_FREE(ptr)</highlight></codeline>
+<codeline lineno="167"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="168"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+  <compounddef id="classkeycpp_1_1_key_cpp_exception" kind="class" prot="public">
+    <compoundname>keycpp::KeyCppException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">runtime_error</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkeycpp_1_1_key_cpp_exception_1af12dadc3f596f1e82cd65d55c2f64c65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>keycpp::KeyCppException::KeyCppException</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>KeyCppException</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="31" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="31" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="14">
+        <label>keycpp::KeyCppException</label>
+        <link refid="classkeycpp_1_1_key_cpp_exception"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>runtime_error</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="16">
+        <label>keycpp::KeyCppException</label>
+        <link refid="classkeycpp_1_1_key_cpp_exception"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>runtime_error</label>
+      </node>
+    </collaborationgraph>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="29" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="28" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classkeycpp_1_1_key_cpp_exception_1af12dadc3f596f1e82cd65d55c2f64c65" prot="public" virt="non-virtual"><scope>keycpp::KeyCppException</scope><name>KeyCppException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

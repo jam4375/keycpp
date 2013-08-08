@@ -1,10 +1,12 @@
+<!-- HTML header for doxygen 1.8.3.1-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link rel="icon" type="image/vnd.microsoft.icon" href="http://www.gstatic.com/codesite/ph/images/phosting.ico">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>KeyCpp -- A MATLAB-like library for C++: Main Page</title>
+<title>KeyCpp -- A MATLAB-like library for C++: KeyCpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -37,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -63,7 +66,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -74,15 +77,180 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">KeyCpp -- A MATLAB-like library for C++ Documentation</div>  </div>
+<div class="title">KeyCpp </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><h1>Download Source</h1>
+<p>Right now you must download the source by cloning the git repository from <a href="http://code.google.com/p/keycpp/source/checkout">code.google.com/p/keycpp/</a>. In the future as the library matures, there will be a compressed file to download and possibly a package for Debian/Ubuntu.</p>
+<h2>Dependencies</h2>
+<p>Currently this project makes use of the <a href="http://www.sourceforge.net/projects/kissfft/">Kiss FFT</a> and <a href="http://code.google.com/p/gnuplot-cpp/">gnuplot-cpp</a> open source projects as well as the <a href="http://www.netlib.org/lapack/">LAPACK</a> libraries, <a href="http://www.gnuplot.info/">Gnuplot</a> plotting program, and the <a href="http://www.boost.org/doc/libs/1_54_0/libs/numeric/odeint/doc/html/index.html">Boost odeint</a> library. The sources from <a href="http://www.sourceforge.net/projects/kissfft/">Kiss FFT</a> and <a href="http://code.google.com/p/gnuplot-cpp/">gnuplot-cpp</a> have been incorporated into this project.</p>
+<p>The <em>only</em> extra dependencies that you need on your system are the <a href="http://www.netlib.org/lapack/">LAPACK</a> libraries, <a href="http://www.gnuplot.info/">Gnuplot</a>, and the <a href="http://www.boost.org/doc/libs/1_54_0/libs/numeric/odeint/doc/html/index.html">Boost odeint</a> library.</p>
+<h3>Ubuntu (and various <a href="https://wiki.ubuntu.com/UbuntuFlavors">flavors</a>)</h3>
+<p>To acquire all the required dependencies you can execute the following commands:</p>
+<p><code>sudo apt-get install build-essential</code></p>
+<p><code>sudo apt-get install libboost-all-dev</code></p>
+<p><code>sudo apt-get install libblas3gf libblas-doc libblas-dev</code></p>
+<p><code>sudo apt-get install liblapack3gf liblapack-doc liblapack-dev</code></p>
+<h3>Other Operating Systems</h3>
+<p>Your mileage may vary.</p>
+<h2>Installation &amp; Usage</h2>
+<p><em>This library uses features only available in the <a href="https://en.wikipedia.org/wiki/C%2B%2B11">C++11 standard</a>. YOU MUST <a href="http://gcc.gnu.org/projects/cxx0x.html">COMPILE</a> WITH THIS STANDARD.</em></p>
+<p>To install KeyCpp onto your system first clone the git repository to a directory of your choice: <code>git clone <a href="https://code.google.com/p/keycpp/">https://code.google.com/p/keycpp/</a></code></p>
+<p>The following command will compile the KeyCpp library and provide links to the library and header files in Ubuntu's default location:</p>
+<p><code>./INSTALL</code></p>
+<p>To uninstall the KeyCpp library, use the following command:</p>
+<p><code>./UNINSTALL</code></p>
+<p>If everything was successful, you should be able to compile and run the example program:</p>
+<p><code>cd examples</code></p>
+<p><code>g++ -c -o obj/example.o example.cpp -std=c++11</code></p>
+<p><code>g++ -o example obj/example.o -std=c++11 -lkeycpp -llapack</code></p>
+<p><code>./example</code></p>
+<p>When you are writing your own programs be sure to link with the <code>libkeycpp.a</code> and <code>liblapack.a</code> libraries. With <code>g++</code> the form is the same as used above. <em>DO NOT FORGET TO COMPILE WITH THE C++11 STANDARD!</em></p>
+<h1>Example Code</h1>
+<p><b><code>example.cpp</b></code> </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;keycpp/keycpp.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>keycpp;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Define a class for our ordinary differential equation that we will use later:</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span><a class="code" href="class_ode_class.html">OdeClass</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> vector&lt;double&gt; &amp;y,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                        vector&lt;double&gt; &amp;dy,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">double</span> t)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            dy[0] = y[1]*y[2];</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            dy[1] = -y[0]*y[2];</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            dy[2] = -0.51*y[0]*y[1];</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// First, lets create some data: y1 = t^2 and y2 = t^3</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    vector&lt;double&gt; t = <a class="code" href="namespacekeycpp.html#ab57eee495c93eb18ebf8c8ccf4d44e74" title="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">linspace</a>(-2.0,2.0,100);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    vector&lt;double&gt; y1 = etimes(t,t);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    vector&lt;double&gt; y2 = etimes(t,etimes(t,t));</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Now, lets plot the data we just created:</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classkeycpp_1_1_figure.html">Figure</a> h1;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    h1.plot(t,y1,<span class="stringliteral">&quot;b-&quot;</span>,<span class="stringliteral">&quot;linewidth&quot;</span>,2);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    h1.hold_on();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    h1.plot(t,y2,<span class="stringliteral">&quot;r--&quot;</span>,<span class="stringliteral">&quot;linewidth&quot;</span>,2);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    h1.grid_on();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    h1.xlabel(<span class="stringliteral">&quot;t&quot;</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    h1.ylabel(<span class="stringliteral">&quot;y&quot;</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    h1.legend({<span class="stringliteral">&quot;y1 = t^2&quot;</span>,<span class="stringliteral">&quot;y2 = t^3&quot;</span>});</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">set</span>(h1,<span class="stringliteral">&quot;fontsize&quot;</span>,14);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// This is how to solve linear equations of the form Ax = b:</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classkeycpp_1_1matrix.html">matrix&lt;double&gt;</a> A = {{1.0, 2.0},</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        {1.0,-1.0}};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    vector&lt;double&gt; b = {1.1,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        2.1};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    vector&lt;double&gt; x = linsolve(A,b);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Print the result to the screen:</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    cout &lt;&lt; x;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Now lets do something a little more complicated, solve an</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// ordinary differential equation (ODE):</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// y(1)&#39; = y(2)*y(3);</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// y(2)&#39; = -y(1)*y(3);</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// y(3)&#39; = 0.51*y(1)*y(2);</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// With initial conditions at t = 0: y(1) = 0; y(2) = 1; y(3) = 1;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="class_ode_class.html">OdeClass</a> myOde;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    vector&lt;double&gt; t2 = <a class="code" href="namespacekeycpp.html#ab57eee495c93eb18ebf8c8ccf4d44e74" title="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">linspace</a>(0.0,12.0,100);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    vector&lt;double&gt; ICs = {0.0, 1.0, 1.0};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classkeycpp_1_1matrix.html">matrix&lt;double&gt;</a> y = ode45(myOde, t2, ICs);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Now that we have solved the ODE, lets plot the results:</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classkeycpp_1_1_figure.html">Figure</a> h2;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    h2.plot(t2,y.getCol(0),<span class="stringliteral">&quot;-&quot;</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    h2.hold_on();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    h2.plot(t2,y.getCol(1),<span class="stringliteral">&quot;-.&quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    h2.plot(t2,y.getCol(2),<span class="stringliteral">&quot;x&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    h2.xlabel(<span class="stringliteral">&quot;t&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    h2.ylabel(<span class="stringliteral">&quot;y&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">set</span>(h2,<span class="stringliteral">&quot;fontsize&quot;</span>,14);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    h2.title(<span class="stringliteral">&quot;ODE Solution&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+</div><!-- fragment --><p> <br/>
+ <b><code>Text</code> Output</b> </p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;1.76667</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;-0.333333</div>
+</div><!-- fragment --><p> <br/>
+ <b><code>Plot</code> Output</b> </p>
+<div class="image">
+<img src="plot1.png"  alt="First plot from the example program."/>
+</div>
+<p> <br/>
+ </p>
+<div class="image">
+<img src="plot2.png"  alt="Second plot from the example program."/>
+</div>
+<p> <br/>
+</p>
+<h1>MATLAB/Octave to KeyCpp Conversion Chart</h1>
+<p>Although the goal of this library is to offer a C++ interface similar in syntax to MATLAB/Octave, there are some minor differences. The goal of this document is to provide a conversion chart for some of the most commonly used features.</p>
+<p>Note: You can omit the <code>keycpp::</code> prefix from the following commands by placing <code>using namespace keycpp;</code> in the same scope. This shortcut should be used with care as collisions with other libraries are possible.</p>
+<table class="doxtable">
+<tr>
+<th><em>MATLAB/Octave</em> </th><th><em>KeyCpp</em> </th><th>Notes </th></tr>
+<tr>
+<td><code>A(1,1)</code> </td><td><code>A(0,0);</code> </td><td>Indexing starts at 0 in KeyCpp </td></tr>
+<tr>
+<td><code>A(N,N)</code> </td><td><code>A(N-1,N-1);</code> </td><td></td></tr>
+<tr>
+<td><code>size(A,1)</code> </td><td><code>keycpp::size(A,1);</code> </td><td></td></tr>
+<tr>
+<td><code>size(A,2)</code> </td><td><code>keycpp::size(A,2);</code> </td><td></td></tr>
+<tr>
+<td><code>A(:,k)</code> </td><td><code>A.getCol(k-1);</code> </td><td>C++ restricts the use of <code>:</code> </td></tr>
+<tr>
+<td><code>A(k,:)</code> </td><td><code>A.getRow(k-1);</code> </td><td></td></tr>
+<tr>
+<td><code>A.'</code> </td><td><code>keycpp::transpose(A);</code> </td><td>C++ does not allow overloading <code>.'</code> </td></tr>
+<tr>
+<td><code>A = zeros(m,n)</code> </td><td><code><a class="el" href="classkeycpp_1_1matrix.html">keycpp::matrix</a>&lt;double&gt; A = <a class="el" href="namespacekeycpp.html#a86f1406f9fad5a439d8eff01aba8eac6" title="Returns a matrix of size M x N containing all zeros.">keycpp::zeros</a>&lt;double&gt;(m,n);</code> </td><td>or more simply: <code><a class="el" href="classkeycpp_1_1matrix.html">keycpp::matrix</a>&lt;double&gt; A(m,n);</code> </td></tr>
+<tr>
+<td><code>A = ones(m,n)</code> </td><td><code><a class="el" href="classkeycpp_1_1matrix.html">keycpp::matrix</a>&lt;double&gt; A = <a class="el" href="namespacekeycpp.html#ace6f21832ab61f8f15e5b35e0a5cdb3e" title="Returns a matrix of size M x N containing all ones.">keycpp::ones</a>&lt;double&gt;(m,n);</code> </td><td></td></tr>
+<tr>
+<td><code>A.*B</code> </td><td><code>keycpp::etimes(A,B);</code> </td><td>C++ does not allow overloading <code>.*</code> or <code>./</code> </td></tr>
+<tr>
+<td><code>A./B</code> </td><td><code>keycpp::edivide(A,B);</code> </td><td></td></tr>
+<tr>
+<td><code>A\b</code> </td><td><code>keycpp::linsolve(A,b);</code> </td><td><code>b</code> is a vector </td></tr>
+<tr>
+<td><code>[V, D] = eig(A,B)</code> </td><td><code>std::vector&lt;std::complex&lt;double&gt;&gt; d = keycpp::eig(A,B,&amp;V);</code> </td><td>Non-Hermitian generalized eigenvalue/eigenvector solver uses LAPACK. </td></tr>
+<tr>
+<td><code>x = linspace(0,10,N_x)</code> </td><td><code>std::vector&lt;double&gt; x = <a class="el" href="namespacekeycpp.html#ab57eee495c93eb18ebf8c8ccf4d44e74" title="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">keycpp::linspace</a>(0.0,10.0,N_x);</code> </td><td></td></tr>
+<tr>
+<td><code>x = logspace(1,3,N_x)</code> </td><td><code>std::vector&lt;double&gt; x = <a class="el" href="namespacekeycpp.html#ac92462e3b25414144d4e45fc269d2f13" title="Produces a vector containing N values logarithmically spaced between 10^(x1) and 10^(x2), inclusively.">keycpp::logspace</a>(1.0,3.0,N_x);</code> </td><td><code>10 &lt;= x &lt;= 1000</code> </td></tr>
+<tr>
+<td><code>A = diag([a1, a2, a3])</code> </td><td><code><a class="el" href="classkeycpp_1_1matrix.html">keycpp::matrix</a>&lt;double&gt; A = keycpp::diag({a1, a2, a3});</code> </td><td><code>a1</code>, <code>a2</code>, and <code>a3</code> are scalar elements of <code>A</code> </td></tr>
+<tr>
+<td><code>A = [[a1, a2]; [a3, a4]]</code> </td><td><code><a class="el" href="classkeycpp_1_1matrix.html">keycpp::matrix</a>&lt;double&gt; A = {{a1, a2}, {a3, a4}};</code> </td><td></td></tr>
+</table>
+</div></div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 4 2013 16:59:46 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 8 2013 15:12:11 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try{
+var pageTracker = _gat._getTracker("UA-42949208-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 </body>
 </html>

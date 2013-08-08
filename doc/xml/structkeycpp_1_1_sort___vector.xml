@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+  <compounddef id="structkeycpp_1_1_sort___vector" kind="struct" prot="public">
+    <compoundname>keycpp::Sort_Vector</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structkeycpp_1_1_sort___vector_1aa43234b1dcb6f8f6e844e41047ea06c0" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; keycpp::Sort_Vector&lt; T &gt;::v</definition>
+        <argsstring></argsstring>
+        <name>v</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1343" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1343" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structkeycpp_1_1_sort___vector_1ac8c282f95bba2e355688421526cc139c" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; keycpp::Sort_Vector&lt; T &gt;::index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1344" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1344" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1342" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1341" bodyend="1345"/>
+    <listofallmembers>
+      <member refid="structkeycpp_1_1_sort___vector_1ac8c282f95bba2e355688421526cc139c" prot="public" virt="non-virtual"><scope>keycpp::Sort_Vector</scope><name>index</name></member>
+      <member refid="structkeycpp_1_1_sort___vector_1aa43234b1dcb6f8f6e844e41047ea06c0" prot="public" virt="non-virtual"><scope>keycpp::Sort_Vector</scope><name>v</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

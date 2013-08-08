@@ -1,0 +1,90 @@
+/**
+\mainpage KeyCpp
+
+# Download Source
+Right now you must download the source by cloning the git repository from <a href="http://code.google.com/p/keycpp/source/checkout">code.google.com/p/keycpp/</a>. In the future as the library matures, there will be a compressed file to download and possibly a package for Debian/Ubuntu.
+
+## Dependencies
+Currently this project makes use of the <a href="http://www.sourceforge.net/projects/kissfft/">Kiss FFT</a> and <a href="http://code.google.com/p/gnuplot-cpp/">gnuplot-cpp</a> open source projects as well as the <a href="http://www.netlib.org/lapack/">LAPACK</a> libraries, <a href="http://www.gnuplot.info/">Gnuplot</a> plotting program, and the <a href="http://www.boost.org/doc/libs/1_54_0/libs/numeric/odeint/doc/html/index.html">Boost odeint</a> library. The sources from <a href="http://www.sourceforge.net/projects/kissfft/">Kiss FFT</a> and <a href="http://code.google.com/p/gnuplot-cpp/">gnuplot-cpp</a> have been incorporated into this project.
+
+The _only_ extra dependencies that you need on your system are the <a href="http://www.netlib.org/lapack/">LAPACK</a> libraries, <a href="http://www.gnuplot.info/">Gnuplot</a>, and the <a href="http://www.boost.org/doc/libs/1_54_0/libs/numeric/odeint/doc/html/index.html">Boost odeint</a> library.
+
+### Ubuntu (and various <a href="https://wiki.ubuntu.com/UbuntuFlavors">flavors</a>)
+To acquire all the required dependencies you can execute the following commands:
+
+`sudo apt-get install build-essential`
+
+`sudo apt-get install libboost-all-dev`
+
+`sudo apt-get install libblas3gf libblas-doc libblas-dev`
+
+`sudo apt-get install liblapack3gf liblapack-doc liblapack-dev`
+
+### Other Operating Systems
+Your mileage may vary.
+
+## Installation & Usage
+_This library uses features only available in the <a href="https://en.wikipedia.org/wiki/C%2B%2B11">C++11 standard</a>. YOU MUST <a href="http://gcc.gnu.org/projects/cxx0x.html">COMPILE</a> WITH THIS STANDARD._
+
+To install KeyCpp onto your system first clone the git repository to a directory of your choice:
+`git clone https://code.google.com/p/keycpp/`
+
+The following command will compile the KeyCpp library and provide links to the library and header files in Ubuntu's default location:
+
+`./INSTALL`
+
+To uninstall the KeyCpp library, use the following command:
+
+`./UNINSTALL`
+
+If everything was successful, you should be able to compile and run the example program:
+
+`cd examples`
+
+`g++ -c -o obj/example.o example.cpp -std=c++11`
+
+`g++ -o example obj/example.o -std=c++11 -lkeycpp -llapack`
+
+`./example`
+
+When you are writing your own programs be sure to link with the `libkeycpp.a` and `liblapack.a` libraries. With `g++` the form is the same as used above. _DO NOT FORGET TO COMPILE WITH THE C++11 STANDARD!_
+
+# Example Code
+<b>\c example.cpp</b>
+\includelineno example.cpp
+\n
+<b>\c Text Output</b>
+\includelineno output.txt
+\n
+<b>\c Plot Output</b>
+![First plot from the example program.](plot1.png)
+\n
+![Second plot from the example program.](plot2.png)
+\n
+
+# MATLAB/Octave to KeyCpp Conversion Chart
+
+Although the goal of this library is to offer a C++ interface similar in syntax to MATLAB/Octave, there are some minor differences. The goal of this document is to provide a conversion chart for some of the most commonly used features.
+
+Note: You can omit the `keycpp::` prefix from the following commands by placing `using namespace keycpp;` in the same scope. This shortcut should be used with care as collisions with other libraries are possible.
+
+| _MATLAB/Octave_ | _KeyCpp_ | Notes |
+| -------- | -------- | ----- |
+| `A(1,1)` | `A(0,0);` | Indexing starts at 0 in KeyCpp |
+| `A(N,N)` | `A(N-1,N-1);` |  |
+| `size(A,1)` | `keycpp::size(A,1);` |  |
+| `size(A,2)` | `keycpp::size(A,2);` |  |
+| `A(:,k)` | `A.getCol(k-1);` | C++ restricts the use of `:` |
+| `A(k,:)` | `A.getRow(k-1);` |  |
+| `A.'` | `keycpp::transpose(A);` | C++ does not allow overloading `.'` |
+| `A = zeros(m,n)` | `keycpp::matrix<double> A = keycpp::zeros<double>(m,n);` | or more simply: `keycpp::matrix<double> A(m,n);` |
+| `A = ones(m,n)` | `keycpp::matrix<double> A = keycpp::ones<double>(m,n);` |  |
+| `A.*B` | `keycpp::etimes(A,B);` | C++ does not allow overloading `.*` or `./` |
+| `A./B` | `keycpp::edivide(A,B);` |  |
+| `A\b` | `keycpp::linsolve(A,b);` | `b` is a vector |
+| `[V, D] = eig(A,B)` | `std::vector<std::complex<double>> d = keycpp::eig(A,B,&V);` | Non-Hermitian generalized eigenvalue/eigenvector solver uses LAPACK. |
+| `x = linspace(0,10,N_x)` | `std::vector<double> x = keycpp::linspace(0.0,10.0,N_x);` |  |
+| `x = logspace(1,3,N_x)` | `std::vector<double> x = keycpp::logspace(1.0,3.0,N_x);` | `10 <= x <= 1000` |
+| `A = diag([a1, a2, a3])` | `keycpp::matrix<double> A = keycpp::diag({a1, a2, a3});` | `a1`, `a2`, and `a3` are scalar elements of `A` |
+| `A = [[a1, a2]; [a3, a4]]` | `keycpp::matrix<double> A = {{a1, a2}, {a3, a4}};` |  |
+*/
