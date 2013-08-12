@@ -541,5 +541,399 @@ namespace keycpp
         
 		return A_out;
 	}
+	
+	double norm(const matrix<double> A_in, std::string method)
+	{
+	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
+		{
+			throw KeyCppException("Error in norm()! Empty matrix supplied!");
+		}
+		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
+		if(method.compare("1") != 0 && method.compare("2") != 0 && method.compare("inf") != 0 && method.compare("fro") != 0)
+		{
+		    throw KeyCppException("Unknown norm type!");
+		}
+		if(method.compare("fro") == 0)
+		{
+		    method = "f";
+		}
+		else if(method.compare("inf") == 0)
+		{
+		    method = "i";
+		}
+		
+        double anorm;
+		if(method.compare("2") == 0)
+		{
+		    auto svd_out = svd(A_in);
+		    anorm = max(max(svd_out.S));
+		}
+		else
+		{
+	        int m = A_in.size(1);
+	        int n = A_in.size(2);
+
+            int info, lda;
+            int lwork = A_in.size(1)*A_in.size(2) + 64;
+            double *w1 = new double[lwork];
+            double *A = new double[A_in.size(1)*A_in.size(2)];
+            for(int ii = 0; ii < A_in.size(2); ii++)
+            {
+                for(int jj = 0; jj < A_in.size(1); jj++)
+                {
+                    A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+                }
+            }
+            lda = m;
+            anorm = dlange_(method.c_str(), &m, &n, A, &lda, w1);
+            
+            delete [] w1;
+            delete [] A;
+        }
+        
+        return anorm;
+	}
+	
+	/** \brief Computes the singular value decomposition of matrix A_in.
+	 */
+	SVD_type<double,double> svd(matrix<double> A_in, std::string method)
+	{
+	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
+		{
+			throw KeyCppException("Error in svd()! Empty matrix supplied!");
+		}
+		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
+		
+	    int m = A_in.size(1);
+	    int n = A_in.size(2);
+
+        int info, lda, ldu, ldvt;
+        double anorm;
+        
+        int col_u;
+        
+        SVD_type<double,double> out;
+        int lwork = A_in.size(1)*A_in.size(2) + 64;
+        double *work = new double[lwork];
+        double *A = new double[A_in.size(1)*A_in.size(2)];
+        double *U;
+        double *S;
+        double *VT;
+        int min_dim;
+        if(m > n)
+        {
+            min_dim = n;
+        }
+        else
+        {
+            min_dim = m;
+        }
+        S = new double[min_dim];
+        for(int ii = 0; ii < A_in.size(2); ii++)
+        {
+            for(int jj = 0; jj < A_in.size(1); jj++)
+            {
+                A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+            }
+        }
+        lda = m;
+        ldu = m;
+        string jobu, jobvt;
+        if(method.compare("0") == 0)
+        {
+            jobu = "S";
+            jobvt = "A";
+            U = new double[m*min_dim];
+            col_u = min_dim;
+            VT = new double[n*n];
+            ldvt = n;
+            if(m > n)
+            {
+                out.S = matrix<double>(n,n);
+            }
+            else
+            {
+                out.S = matrix<double>(m,n);
+            }
+        }
+        else if(method.compare("econ") == 0)
+        {
+            jobu = "S";
+            jobvt = "S";
+            U = new double[m*min_dim];
+            col_u = min_dim;
+            VT = new double[n*min_dim];
+            if(m > n)
+            {
+                ldvt = n;
+            }
+            else
+            {
+                ldvt = m;
+            }
+            if(m >= n)
+            {
+                out.S = matrix<double>(n,n);
+            }
+            else if(m < n)
+            {
+                out.S = matrix<double>(m,m);
+            }
+            else
+            {
+                out.S = matrix<double>(m,n);
+            }
+        }
+        else if(method.empty())
+        {
+            jobu = "A";
+            jobvt = "A";
+            U = new double[m*m];
+            col_u = m;
+            VT = new double[n*n];
+            ldvt = n;
+            out.S = matrix<double>(m,n);
+        }
+        else
+        {
+            throw KeyCppException("Unknown argument to svd()!");
+        }
+		
+		dgesvd_(jobu.c_str(), jobvt.c_str(), &m, &n, A, &lda, S, U, &ldu, VT, &ldvt, work, &lwork, &info);
+                 
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in SVD()!");
+        }
+        
+        out.U = matrix<double>(m,col_u);
+        out.V = matrix<double>(n,ldvt);
+        
+        for(int ii = 0; ii < min_dim; ii++)
+        {
+            out.S(ii,ii) = S[ii];
+        }
+        for(int ii = 0; ii < m; ii++)
+        {
+            for(int jj = 0; jj < col_u; jj++)
+            {
+                out.U(ii,jj) = U[jj*m + ii];
+            }
+        }
+        
+        for(int ii = 0; ii < n; ii++)
+        {
+            for(int jj = 0; jj < ldvt; jj++)
+            {
+                out.V(ii,jj) = VT[ii*ldvt + jj];
+            }
+        }
+                 
+        delete [] work;
+        delete [] A;
+        delete [] U;
+        delete [] S;
+        delete [] VT;
+        
+        return out;
+	}
+	
+	double norm(const matrix<complex<double>> A_in, std::string method)
+	{
+	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
+		{
+			throw KeyCppException("Error in norm()! Empty matrix supplied!");
+		}
+		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
+		if(method.compare("1") != 0 && method.compare("2") != 0 && method.compare("inf") != 0 && method.compare("fro") != 0)
+		{
+		    throw KeyCppException("Unknown norm type!");
+		}
+		if(method.compare("fro") == 0)
+		{
+		    method = "f";
+		}
+		else if(method.compare("inf") == 0)
+		{
+		    method = "i";
+		}
+		
+        double anorm;
+		if(method.compare("2") == 0)
+		{
+		    auto svd_out = svd(A_in);
+		    anorm = max(max(svd_out.S));
+		}
+		else
+		{
+	        int m = A_in.size(1);
+	        int n = A_in.size(2);
+
+            int info, lda;
+            int lwork = A_in.size(1)*A_in.size(2) + 64;
+            double *w1 = new double[lwork];
+            complex<double> *A = new complex<double>[A_in.size(1)*A_in.size(2)];
+            for(int ii = 0; ii < A_in.size(2); ii++)
+            {
+                for(int jj = 0; jj < A_in.size(1); jj++)
+                {
+                    A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+                }
+            }
+            lda = m;
+            anorm = zlange_(method.c_str(), &m, &n, A, &lda, w1);
+            
+            delete [] w1;
+            delete [] A;
+        }
+        
+        return anorm;
+	}
+	
+	/** \brief Computes the singular value decomposition of matrix A_in.
+	 */
+	SVD_type<complex<double>, double> svd(matrix<complex<double>> A_in, std::string method)
+	{
+	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
+		{
+			throw KeyCppException("Error in svd()! Empty matrix supplied!");
+		}
+		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
+		
+	    int m = A_in.size(1);
+	    int n = A_in.size(2);
+
+        int info, lda, ldu, ldvt;
+        double anorm;
+        
+        int col_u;
+        
+        SVD_type<std::complex<double>,double> out;
+        int lwork = A_in.size(1)*A_in.size(2) + 64;
+        double *rwork = new double[lwork];
+        complex<double> *work = new complex<double>[lwork];
+        complex<double> *A = new complex<double>[A_in.size(1)*A_in.size(2)];
+        complex<double> *U;
+        double *S;
+        complex<double> *VT;
+        int min_dim;
+        if(m > n)
+        {
+            min_dim = n;
+        }
+        else
+        {
+            min_dim = m;
+        }
+        S = new double[min_dim];
+        for(int ii = 0; ii < A_in.size(2); ii++)
+        {
+            for(int jj = 0; jj < A_in.size(1); jj++)
+            {
+                A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+            }
+        }
+        lda = m;
+        ldu = m;
+        string jobu, jobvt;
+        if(method.compare("0") == 0)
+        {
+            jobu = "S";
+            jobvt = "A";
+            U = new complex<double>[m*min_dim];
+            col_u = min_dim;
+            VT = new complex<double>[n*n];
+            ldvt = n;
+            if(m > n)
+            {
+                out.S = matrix<double>(n,n);
+            }
+            else
+            {
+                out.S = matrix<double>(m,n);
+            }
+        }
+        else if(method.compare("econ") == 0)
+        {
+            jobu = "S";
+            jobvt = "S";
+            U = new complex<double>[m*min_dim];
+            col_u = min_dim;
+            VT = new complex<double>[n*min_dim];
+            if(m > n)
+            {
+                ldvt = n;
+            }
+            else
+            {
+                ldvt = m;
+            }
+            if(m >= n)
+            {
+                out.S = matrix<double>(n,n);
+            }
+            else if(m < n)
+            {
+                out.S = matrix<double>(m,m);
+            }
+            else
+            {
+                out.S = matrix<double>(m,n);
+            }
+        }
+        else if(method.empty())
+        {
+            jobu = "A";
+            jobvt = "A";
+            U = new complex<double>[m*m];
+            col_u = m;
+            VT = new complex<double>[n*n];
+            ldvt = n;
+            out.S = matrix<double>(m,n);
+        }
+        else
+        {
+            throw KeyCppException("Unknown argument to svd()!");
+        }
+		
+		zgesvd_(jobu.c_str(), jobvt.c_str(), &m, &n, A, &lda, S, U, &ldu, VT, &ldvt, work, &lwork, rwork, &info);
+                 
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in SVD()!");
+        }
+        
+        out.U = matrix<complex<double>>(m,col_u);
+        out.V = matrix<complex<double>>(n,ldvt);
+        
+        for(int ii = 0; ii < min_dim; ii++)
+        {
+            out.S(ii,ii) = S[ii];
+        }
+        for(int ii = 0; ii < m; ii++)
+        {
+            for(int jj = 0; jj < col_u; jj++)
+            {
+                out.U(ii,jj) = U[jj*m + ii];
+            }
+        }
+        
+        for(int ii = 0; ii < n; ii++)
+        {
+            for(int jj = 0; jj < ldvt; jj++)
+            {
+                out.V(ii,jj) = VT[ii*ldvt + jj];
+            }
+        }
+                 
+        delete [] rwork;
+        delete [] work;
+        delete [] A;
+        delete [] U;
+        delete [] S;
+        delete [] VT;
+        
+        return out;
+	}
 }
 

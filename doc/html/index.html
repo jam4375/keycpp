@@ -176,9 +176,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    h2.ylabel(<span class="stringliteral">&quot;y&quot;</span>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">set</span>(h2,<span class="stringliteral">&quot;fontsize&quot;</span>,14);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    h2.title(<span class="stringliteral">&quot;ODE Solution&quot;</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classkeycpp_1_1matrix.html">matrix&lt;std::complex&lt;double&gt;</a>&gt; AA = {{2.0, 1.5, 0.2},{-1.1, 0.5, 0.54}};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    AA = <a class="code" href="namespacekeycpp.html#ad68697505d1a1a85f30a18b0e9b0eb2f" title="Returns the transpose of matrix A.">transpose</a>(AA);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">auto</span> svd_out = <a class="code" href="namespacekeycpp.html#a4b80bd145aab03a9e79a42d32ca573bd" title="Computes the singular value decomposition of matrix A_in.">svd</a>(AA,<span class="stringliteral">&quot;econ&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    cout &lt;&lt; AA &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    cout &lt;&lt; svd_out.U &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    cout &lt;&lt; svd_out.S &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    cout &lt;&lt; svd_out.V &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    cout &lt;&lt; endl &lt;&lt; norm(AA,<span class="stringliteral">&quot;Inf&quot;</span>) &lt;&lt; endl;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 </div><!-- fragment --><p> <br/>
  <b><code>Text</code> Output</b> </p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;1.76667</div>
@@ -242,7 +252,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 12 2013 12:43:04 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 12 2013 16:05:43 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

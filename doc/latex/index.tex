@@ -123,9 +123,19 @@ When you are writing your own programs be sure to link with the {\ttfamily libke
 65     h2.ylabel(\textcolor{stringliteral}{"y"});
 66     \textcolor{keyword}{set}(h2,\textcolor{stringliteral}{"fontsize"},14);
 67     h2.title(\textcolor{stringliteral}{"ODE Solution"});
-68 
-69     \textcolor{keywordflow}{return} 0;
-70 \}
+68     
+69     \hyperlink{classkeycpp_1_1matrix}{matrix<std::complex<double>}> AA = \{\{2.0, 1.5, 0.2\},\{-1.1, 0.5, 0.54\}\};
+70     AA = \hyperlink{namespacekeycpp_ad68697505d1a1a85f30a18b0e9b0eb2f}{transpose}(AA);
+71     \textcolor{keyword}{auto} svd\_out = \hyperlink{namespacekeycpp_a4b80bd145aab03a9e79a42d32ca573bd}{svd}(AA,\textcolor{stringliteral}{"econ"});
+72     cout << AA << endl << endl;
+73     cout << svd\_out.U << endl << endl;
+74     cout << svd\_out.S << endl << endl;
+75     cout << svd\_out.V << endl << endl;
+76     
+77     cout << endl << norm(AA,\textcolor{stringliteral}{"Inf"}) << endl;
+78 
+79     \textcolor{keywordflow}{return} 0;
+80 \}
 \end{DoxyCodeInclude}
  \par
  {\bfseries {\ttfamily Text} Output} 

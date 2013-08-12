@@ -107,6 +107,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkeycpp_1_1_sort___vector.html">Sort_Vector</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkeycpp_1_1_s_v_d__type.html">SVD_type</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkeycpp_1_1matrix__size__type.html">matrix_size_type</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeycpp_1_1_matrix_exception.html">MatrixException</a></td></tr>
@@ -170,6 +172,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a4190e125fe33133aafa586089ca6e174">zgetri_</a> (const int *n, std::complex&lt; double &gt; *A, const int *lda, const int *ipiv, std::complex&lt; double &gt; *work, const int *lwork, int *info)</td></tr>
 <tr class="memdesc:a4190e125fe33133aafa586089ca6e174"><td class="mdescLeft">&#160;</td><td class="mdescRight">This provides a C interface to LAPACK's complex matrix inverse function. <br/></td></tr>
 <tr class="separator:a4190e125fe33133aafa586089ca6e174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fe7a71afbb6c5dc049cdd7afff6c0af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8fe7a71afbb6c5dc049cdd7afff6c0af"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a8fe7a71afbb6c5dc049cdd7afff6c0af">dgesvd_</a> (const char *jobu, const char *jobvt, const int *m, const int *n, double *A, const int *lda, double *S, double *U, const int *ldu, double *VT, const int *ldvt, double *work, const int *lwork, int *info)</td></tr>
+<tr class="memdesc:a8fe7a71afbb6c5dc049cdd7afff6c0af"><td class="mdescLeft">&#160;</td><td class="mdescRight">This provides a C interface to LAPACK's double precision SVD function. <br/></td></tr>
+<tr class="separator:a8fe7a71afbb6c5dc049cdd7afff6c0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa5e2f74110f53bd288c15ce1f183f9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa5e2f74110f53bd288c15ce1f183f9b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#afa5e2f74110f53bd288c15ce1f183f9b">zgesvd_</a> (const char *jobu, const char *jobvt, const int *m, const int *n, std::complex&lt; double &gt; *A, const int *lda, double *S, std::complex&lt; double &gt; *U, const int *ldu, std::complex&lt; double &gt; *VT, const int *ldvt, std::complex&lt; double &gt; *work, const int *lwork, double *rwork, int *info)</td></tr>
+<tr class="memdesc:afa5e2f74110f53bd288c15ce1f183f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This provides a C interface to LAPACK's complex SVD function. <br/></td></tr>
+<tr class="separator:afa5e2f74110f53bd288c15ce1f183f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aca656320e1b26861469a979a96066f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6aca656320e1b26861469a979a96066f"></a>
 std::vector&lt; std::complex<br class="typebreak"/>
 &lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>eig</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt; &gt; A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt; &gt; B, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt; &gt; *vr_return=NULL, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt; &gt; *vl_return=NULL)</td></tr>
@@ -423,6 +433,10 @@ template&lt;class T &gt; </td></tr>
 <tr class="memitem:a73269c9db9fe25412819858bd7048ae5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a73269c9db9fe25412819858bd7048ae5"></a>
 std::complex&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>max</b> (std::vector&lt; std::complex&lt; double &gt; &gt; x)</td></tr>
 <tr class="separator:a73269c9db9fe25412819858bd7048ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed77b31791ec78800e98ace1cbc3693d"><td class="memTemplParams" colspan="2"><a class="anchor" id="aed77b31791ec78800e98ace1cbc3693d"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:aed77b31791ec78800e98ace1cbc3693d"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>max</b> (<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T &gt; A)</td></tr>
+<tr class="separator:aed77b31791ec78800e98ace1cbc3693d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7577228b38fa6a1911ac65fb80832f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7577228b38fa6a1911ac65fb80832f3"></a>
 std::complex&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>min</b> (std::vector&lt; std::complex&lt; double &gt; &gt; x)</td></tr>
 <tr class="separator:ab7577228b38fa6a1911ac65fb80832f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -538,6 +552,20 @@ template&lt;class T &gt; </td></tr>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:a1be4e97b99a996a01f428fd8ba048fb0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structkeycpp_1_1_sort___vector.html">Sort_Vector</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>sort</b> (std::vector&lt; T &gt; v1, std::string method=&quot;ascend&quot;)</td></tr>
 <tr class="separator:a1be4e97b99a996a01f428fd8ba048fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e5236252f6a33f3523fb805a2d1727c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e5236252f6a33f3523fb805a2d1727c"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>norm</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; double &gt; A_in, std::string method=&quot;2&quot;)</td></tr>
+<tr class="separator:a7e5236252f6a33f3523fb805a2d1727c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b80bd145aab03a9e79a42d32ca573bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b80bd145aab03a9e79a42d32ca573bd"></a>
+<a class="el" href="structkeycpp_1_1_s_v_d__type.html">SVD_type</a>&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a4b80bd145aab03a9e79a42d32ca573bd">svd</a> (<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; double &gt; A_in, std::string method)</td></tr>
+<tr class="memdesc:a4b80bd145aab03a9e79a42d32ca573bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the singular value decomposition of matrix A_in. <br/></td></tr>
+<tr class="separator:a4b80bd145aab03a9e79a42d32ca573bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a867ba604b4e72e41b123f890dd66d854"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a867ba604b4e72e41b123f890dd66d854"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>norm</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; A_in, std::string method=&quot;2&quot;)</td></tr>
+<tr class="separator:a867ba604b4e72e41b123f890dd66d854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6d15c3c38ff98e6d9afdd9db4b46c6c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6d15c3c38ff98e6d9afdd9db4b46c6c"></a>
+<a class="el" href="structkeycpp_1_1_s_v_d__type.html">SVD_type</a>&lt; std::complex&lt; double &gt;<br class="typebreak"/>
+, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>svd</b> (<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; A_in, std::string method=&quot;&quot;)</td></tr>
+<tr class="separator:aa6d15c3c38ff98e6d9afdd9db4b46c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a190640edb8e634de02d302d94a29ee17"><td class="memItemLeft" align="right" valign="top">vector&lt; complex&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a190640edb8e634de02d302d94a29ee17">eig</a> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; complex&lt; double &gt; &gt; A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; complex&lt; double &gt; &gt; B, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; complex&lt; double &gt; &gt; *vr_return, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; complex&lt; double &gt; &gt; *vl_return)</td></tr>
 <tr class="memdesc:a190640edb8e634de02d302d94a29ee17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generalized complex-valued eigenvalue solver using LAPACK function call.  <a href="#a190640edb8e634de02d302d94a29ee17">More...</a><br/></td></tr>
 <tr class="separator:a190640edb8e634de02d302d94a29ee17"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -547,6 +575,14 @@ std::vector&lt; complex&lt; double &gt; &gt;&#160;</td><td class="memItemRight" 
 <tr class="memitem:ac9cabca49e9650ae8b5aadf5ee2f7f4e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9cabca49e9650ae8b5aadf5ee2f7f4e"></a>
 <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; complex&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>inv</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; complex&lt; double &gt;&gt; &amp;A_in)</td></tr>
 <tr class="separator:ac9cabca49e9650ae8b5aadf5ee2f7f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a41d0919918b5cf62ef28dd68217d1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1a41d0919918b5cf62ef28dd68217d1"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>norm</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; complex&lt; double &gt;&gt; A_in, std::string method)</td></tr>
+<tr class="separator:af1a41d0919918b5cf62ef28dd68217d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a913fb7501259de640e7119a852adafc9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a913fb7501259de640e7119a852adafc9"></a>
+<a class="el" href="structkeycpp_1_1_s_v_d__type.html">SVD_type</a>&lt; complex&lt; double &gt;<br class="typebreak"/>
+, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a913fb7501259de640e7119a852adafc9">svd</a> (<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; complex&lt; double &gt;&gt; A_in, std::string method)</td></tr>
+<tr class="memdesc:a913fb7501259de640e7119a852adafc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the singular value decomposition of matrix A_in. <br/></td></tr>
+<tr class="separator:a913fb7501259de640e7119a852adafc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a0cf08572a2b7b23b6be5365053770fa5"></a>
@@ -1010,7 +1046,7 @@ template&lt;class T &gt; </div>
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 12 2013 12:43:03 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 12 2013 16:05:43 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

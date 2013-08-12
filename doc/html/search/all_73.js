@@ -34,5 +34,7 @@ var searchData=
   ['sort_5fmatrix',['Sort_Matrix',['../structkeycpp_1_1_sort___matrix.html',1,'keycpp']]],
   ['sort_5fvector',['Sort_Vector',['../structkeycpp_1_1_sort___vector.html',1,'keycpp']]],
   ['spline',['Spline',['../classkeycpp_1_1_spline.html',1,'keycpp']]],
-  ['splineexception',['SplineException',['../classkeycpp_1_1_spline_exception.html',1,'keycpp']]]
+  ['splineexception',['SplineException',['../classkeycpp_1_1_spline_exception.html',1,'keycpp']]],
+  ['svd',['svd',['../namespacekeycpp.html#a4b80bd145aab03a9e79a42d32ca573bd',1,'keycpp::svd(matrix&lt; double &gt; A_in, std::string method)'],['../namespacekeycpp.html#a913fb7501259de640e7119a852adafc9',1,'keycpp::svd(matrix&lt; complex&lt; double &gt;&gt; A_in, std::string method)']]],
+  ['svd_5ftype',['SVD_type',['../structkeycpp_1_1_s_v_d__type.html',1,'keycpp']]]
 ];

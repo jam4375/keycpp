@@ -77,9 +77,19 @@
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.ylabel(</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">(h2,</highlight><highlight class="stringliteral">&quot;fontsize&quot;</highlight><highlight class="normal">,14);</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.title(</highlight><highlight class="stringliteral">&quot;ODE<sp/>Solution&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix&lt;std::complex&lt;double&gt;</ref>&gt;<sp/>AA<sp/>=<sp/>{{2.0,<sp/>1.5,<sp/>0.2},{-1.1,<sp/>0.5,<sp/>0.54}};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>AA<sp/>=<sp/><ref refid="namespacekeycpp_1ad68697505d1a1a85f30a18b0e9b0eb2f" kindref="member" tooltip="Returns the transpose of matrix A.">transpose</ref>(AA);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>svd_out<sp/>=<sp/><ref refid="namespacekeycpp_1a4b80bd145aab03a9e79a42d32ca573bd" kindref="member" tooltip="Computes the singular value decomposition of matrix A_in.">svd</ref>(AA,</highlight><highlight class="stringliteral">&quot;econ&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>AA<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>svd_out.U<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>svd_out.S<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>svd_out.V<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>norm(AA,</highlight><highlight class="stringliteral">&quot;Inf&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
 </programlisting> <linebreak/>
  <bold><computeroutput>Text</computeroutput> Output</bold> <programlisting><codeline lineno="1"><highlight class="normal">1.76667</highlight></codeline>
 <codeline lineno="2"><highlight class="normal">-0.333333</highlight></codeline>

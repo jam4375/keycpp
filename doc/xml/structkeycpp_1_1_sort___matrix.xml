@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1494" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1494" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1514" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1514" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1_sort___matrix_1a25b1c5bb53ac4992d5698c02f56223bb" prot="public" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; int &gt;</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1495" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1495" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1515" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1515" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -52,7 +52,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1493" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1492" bodyend="1496"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1513" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1512" bodyend="1516"/>
     <listofallmembers>
       <member refid="structkeycpp_1_1_sort___matrix_1acd2c90a02e9c57964fd924d75eece798" prot="public" virt="non-virtual"><scope>keycpp::Sort_Matrix</scope><name>B</name></member>
       <member refid="structkeycpp_1_1_sort___matrix_1a25b1c5bb53ac4992d5698c02f56223bb" prot="public" virt="non-virtual"><scope>keycpp::Sort_Matrix</scope><name>index</name></member>

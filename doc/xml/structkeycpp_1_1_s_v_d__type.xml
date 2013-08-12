@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+  <compounddef id="structkeycpp_1_1_s_v_d__type" kind="struct" prot="public">
+    <compoundname>keycpp::SVD_type</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>X</declname>
+        <defname>X</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structkeycpp_1_1_s_v_d__type_1afcf98e82919e015758d99cee5adb65bf" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; X &gt;</type>
+        <definition>matrix&lt;X&gt; keycpp::SVD_type&lt; T, X &gt;::S</definition>
+        <argsstring></argsstring>
+        <name>S</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1682" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1682" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structkeycpp_1_1_s_v_d__type_1a31194fbf88ec1fb87f2681d0f518761d" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::SVD_type&lt; T, X &gt;::U</definition>
+        <argsstring></argsstring>
+        <name>U</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1683" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1683" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structkeycpp_1_1_s_v_d__type_1ad0a6e396e2548ab4762a5676ae88e4bd" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::SVD_type&lt; T, X &gt;::V</definition>
+        <argsstring></argsstring>
+        <name>V</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1684" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1684" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="47">
+        <label>keycpp::SVD_type&lt; T, X &gt;</label>
+        <link refid="structkeycpp_1_1_s_v_d__type"/>
+        <childnode refid="48" relation="usage">
+          <edgelabel>S</edgelabel>
+        </childnode>
+      </node>
+      <node id="48">
+        <label>keycpp::matrix&lt; X &gt;</label>
+        <link refid="classkeycpp_1_1matrix"/>
+      </node>
+    </collaborationgraph>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1681" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1680" bodyend="1685"/>
+    <listofallmembers>
+      <member refid="structkeycpp_1_1_s_v_d__type_1afcf98e82919e015758d99cee5adb65bf" prot="public" virt="non-virtual"><scope>keycpp::SVD_type</scope><name>S</name></member>
+      <member refid="structkeycpp_1_1_s_v_d__type_1a31194fbf88ec1fb87f2681d0f518761d" prot="public" virt="non-virtual"><scope>keycpp::SVD_type</scope><name>U</name></member>
+      <member refid="structkeycpp_1_1_s_v_d__type_1ad0a6e396e2548ab4762a5676ae88e4bd" prot="public" virt="non-virtual"><scope>keycpp::SVD_type</scope><name>V</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

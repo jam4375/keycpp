@@ -24,6 +24,8 @@ struct \hyperlink{structkeycpp_1_1observe}{keycpp\-::observe$<$ T, U $>$}
 struct \hyperlink{structkeycpp_1_1_sort___matrix}{keycpp\-::\-Sort\-\_\-\-Matrix$<$ T $>$}
 \item 
 struct \hyperlink{structkeycpp_1_1_sort___vector}{keycpp\-::\-Sort\-\_\-\-Vector$<$ T $>$}
+\item 
+struct \hyperlink{structkeycpp_1_1_s_v_d__type}{keycpp\-::\-S\-V\-D\-\_\-type$<$ T, X $>$}
 \end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
@@ -75,6 +77,12 @@ namespace \hyperlink{namespacekeycpp}{keycpp}
 \hypertarget{namespacekeycpp_a4190e125fe33133aafa586089ca6e174}{void \hyperlink{namespacekeycpp_a4190e125fe33133aafa586089ca6e174}{keycpp\-::zgetri\-\_\-} (const int $\ast$n, std\-::complex$<$ double $>$ $\ast$A, const int $\ast$lda, const int $\ast$ipiv, std\-::complex$<$ double $>$ $\ast$work, const int $\ast$lwork, int $\ast$info)}\label{namespacekeycpp_a4190e125fe33133aafa586089ca6e174}
 
 \begin{DoxyCompactList}\small\item\em This provides a C interface to L\-A\-P\-A\-C\-K's complex matrix inverse function. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a8fe7a71afbb6c5dc049cdd7afff6c0af}{void \hyperlink{namespacekeycpp_a8fe7a71afbb6c5dc049cdd7afff6c0af}{keycpp\-::dgesvd\-\_\-} (const char $\ast$jobu, const char $\ast$jobvt, const int $\ast$m, const int $\ast$n, double $\ast$A, const int $\ast$lda, double $\ast$S, double $\ast$U, const int $\ast$ldu, double $\ast$V\-T, const int $\ast$ldvt, double $\ast$work, const int $\ast$lwork, int $\ast$info)}\label{namespacekeycpp_a8fe7a71afbb6c5dc049cdd7afff6c0af}
+
+\begin{DoxyCompactList}\small\item\em This provides a C interface to L\-A\-P\-A\-C\-K's double precision S\-V\-D function. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_afa5e2f74110f53bd288c15ce1f183f9b}{void \hyperlink{namespacekeycpp_afa5e2f74110f53bd288c15ce1f183f9b}{keycpp\-::zgesvd\-\_\-} (const char $\ast$jobu, const char $\ast$jobvt, const int $\ast$m, const int $\ast$n, std\-::complex$<$ double $>$ $\ast$A, const int $\ast$lda, double $\ast$S, std\-::complex$<$ double $>$ $\ast$U, const int $\ast$ldu, std\-::complex$<$ double $>$ $\ast$V\-T, const int $\ast$ldvt, std\-::complex$<$ double $>$ $\ast$work, const int $\ast$lwork, double $\ast$rwork, int $\ast$info)}\label{namespacekeycpp_afa5e2f74110f53bd288c15ce1f183f9b}
+
+\begin{DoxyCompactList}\small\item\em This provides a C interface to L\-A\-P\-A\-C\-K's complex S\-V\-D function. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a6aca656320e1b26861469a979a96066f}{std\-::vector$<$ std\-::complex\\*
 $<$ double $>$ $>$ {\bfseries keycpp\-::eig} (const matrix$<$ std\-::complex$<$ double $>$ $>$ A, const matrix$<$ std\-::complex$<$ double $>$ $>$ B, matrix$<$ std\-::complex$<$ double $>$ $>$ $\ast$vr\-\_\-return=N\-U\-L\-L, matrix$<$ std\-::complex$<$ double $>$ $>$ $\ast$vl\-\_\-return=N\-U\-L\-L)}\label{namespacekeycpp_a6aca656320e1b26861469a979a96066f}
 
@@ -258,6 +266,9 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_a7a86bc7
 \hypertarget{namespacekeycpp_a73269c9db9fe25412819858bd7048ae5}{std\-::complex$<$ double $>$ {\bfseries keycpp\-::max} (std\-::vector$<$ std\-::complex$<$ double $>$ $>$ x)}\label{namespacekeycpp_a73269c9db9fe25412819858bd7048ae5}
 
 \item 
+\hypertarget{namespacekeycpp_aed77b31791ec78800e98ace1cbc3693d}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ {\bfseries keycpp\-::max} (matrix$<$ T $>$ A)}\label{namespacekeycpp_aed77b31791ec78800e98ace1cbc3693d}
+
+\item 
 \hypertarget{namespacekeycpp_ab7577228b38fa6a1911ac65fb80832f3}{std\-::complex$<$ double $>$ {\bfseries keycpp\-::min} (std\-::vector$<$ std\-::complex$<$ double $>$ $>$ x)}\label{namespacekeycpp_ab7577228b38fa6a1911ac65fb80832f3}
 
 \item 
@@ -339,5 +350,18 @@ $<$ double $>$ $>$ {\bfseries keycpp\-::fft} (std\-::vector$<$ T $>$ u, int N=-\
 
 \item 
 \hypertarget{namespacekeycpp_a1be4e97b99a996a01f428fd8ba048fb0}{{\footnotesize template$<$class T $>$ }\\Sort\-\_\-\-Vector$<$ T $>$ {\bfseries keycpp\-::sort} (std\-::vector$<$ T $>$ v1, std\-::string method=\char`\"{}ascend\char`\"{})}\label{namespacekeycpp_a1be4e97b99a996a01f428fd8ba048fb0}
+
+\item 
+\hypertarget{namespacekeycpp_a7e5236252f6a33f3523fb805a2d1727c}{double {\bfseries keycpp\-::norm} (const matrix$<$ double $>$ A\-\_\-in, std\-::string method=\char`\"{}2\char`\"{})}\label{namespacekeycpp_a7e5236252f6a33f3523fb805a2d1727c}
+
+\item 
+\hypertarget{namespacekeycpp_a4b80bd145aab03a9e79a42d32ca573bd}{S\-V\-D\-\_\-type$<$ double, double $>$ \hyperlink{namespacekeycpp_a4b80bd145aab03a9e79a42d32ca573bd}{keycpp\-::svd} (matrix$<$ double $>$ A\-\_\-in, std\-::string method)}\label{namespacekeycpp_a4b80bd145aab03a9e79a42d32ca573bd}
+
+\begin{DoxyCompactList}\small\item\em Computes the singular value decomposition of matrix A\-\_\-in. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a867ba604b4e72e41b123f890dd66d854}{double {\bfseries keycpp\-::norm} (const matrix$<$ std\-::complex$<$ double $>$$>$ A\-\_\-in, std\-::string method=\char`\"{}2\char`\"{})}\label{namespacekeycpp_a867ba604b4e72e41b123f890dd66d854}
+
+\item 
+\hypertarget{namespacekeycpp_aa6d15c3c38ff98e6d9afdd9db4b46c6c}{S\-V\-D\-\_\-type$<$ std\-::complex$<$ double $>$\\*
+, double $>$ {\bfseries keycpp\-::svd} (matrix$<$ std\-::complex$<$ double $>$$>$ A\-\_\-in, std\-::string method=\char`\"{}\char`\"{})}\label{namespacekeycpp_aa6d15c3c38ff98e6d9afdd9db4b46c6c}
 
 \end{DoxyCompactItemize}

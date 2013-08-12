@@ -85,6 +85,16 @@ namespace keycpp
     /** \brief This provides a C interface to LAPACK's complex matrix inverse function. */
     void zgetri_(const int* n, std::complex<double>* A, const int* lda, const int* ipiv,
                  std::complex<double>* work, const int* lwork, int* info);
+                 
+    /** \brief This provides a C interface to LAPACK's double precision SVD function. */
+    void dgesvd_(const char *jobu, const char *jobvt, const int* m, const int* n, double* A,
+                 const int* lda, double* S, double* U, const int* ldu, double* VT, const int* ldvt,
+                 double* work, const int* lwork, int* info); 
+                 
+    /** \brief This provides a C interface to LAPACK's complex SVD function. */
+    void zgesvd_(const char *jobu, const char *jobvt, const int* m, const int* n, std::complex<double>* A,
+                 const int* lda, double* S, std::complex<double>* U, const int* ldu, std::complex<double>* VT, const int* ldvt,
+                 std::complex<double>* work, const int* lwork, double *rwork, int* info);
 	}
 
 	std::vector<std::complex<double> > eig(const matrix<std::complex<double> > A,
@@ -837,6 +847,16 @@ namespace keycpp
 			}
 		}
 		return x[index];
+	}
+	
+	template<class T> std::vector<T> max(matrix<T> A)
+	{
+	    std::vector<T> v(A.size(2));
+	    for(int ii = 0; ii < v.size(); ii++)
+	    {
+	        v[ii] = max(A.getCol(ii));
+	    }
+	    return v;
 	}
 
 	inline std::complex<double> min(std::vector<std::complex<double> > x)
@@ -1655,6 +1675,19 @@ namespace keycpp
 
 		return sort_vector;
 	}
+	
+	template<class T,class X>
+	struct SVD_type
+	{
+		matrix<X> S;
+		matrix<T> U;
+		matrix<T> V;
+	};
+	
+	double norm(const matrix<double> A_in, std::string method = "2");
+	SVD_type<double,double> svd(matrix<double> A_in, std::string method = "");
+	double norm(const matrix<std::complex<double>> A_in, std::string method = "2");
+	SVD_type<std::complex<double>,double> svd(matrix<std::complex<double>> A_in, std::string method = "");
 }
 
 #endif
