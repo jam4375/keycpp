@@ -342,6 +342,7 @@
     <member refid="namespacekeycpp_1afcd6ae07fc18f5374868fe314f00108c" kind="function"><name>set</name></member>
     <member refid="namespacekeycpp_1a6862448bf6e09309e60a6ba7aa0caf9a" kind="function"><name>sort</name></member>
     <member refid="namespacekeycpp_1a1be4e97b99a996a01f428fd8ba048fb0" kind="function"><name>sort</name></member>
+    <member refid="namespacekeycpp_1aa01035a2b2a07cd56c5e36d5f289b2ee" kind="function"><name>norm</name></member>
     <member refid="namespacekeycpp_1a7e5236252f6a33f3523fb805a2d1727c" kind="function"><name>norm</name></member>
     <member refid="namespacekeycpp_1a4b80bd145aab03a9e79a42d32ca573bd" kind="function"><name>svd</name></member>
     <member refid="namespacekeycpp_1a867ba604b4e72e41b123f890dd66d854" kind="function"><name>norm</name></member>

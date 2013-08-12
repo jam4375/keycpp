@@ -1684,6 +1684,54 @@ namespace keycpp
 		matrix<T> V;
 	};
 	
+	template<class T>
+	double norm(const std::vector<T> v1, std::string method = "2")
+	{
+	    if(v1.empty())
+	    {
+	        throw KeyCppException("Cannot compute norm of empty vector!");
+	    }
+		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
+	    double anorm;
+	    if(!method.empty() && method.find_first_not_of("-+0123456789") == std::string::npos)
+	    {
+	        int p = atoi(method.c_str());
+	        for(int ii = 0; ii < v1.size(); ii++)
+	        {
+	            anorm += pow(abs(v1[ii]),p);
+	        }
+	        anorm = pow(anorm,1.0/p);
+	    }
+	    else if(method.compare("inf") == 0)
+	    {
+	        anorm = 0.0;
+	        for(int ii = 0; ii < v1.size(); ii++)
+	        {
+	            if(abs(v1[ii]) > anorm)
+	            {
+	                anorm = abs(v1[ii]);
+	            }
+	        }
+	    }
+	    else if(method.compare("-inf") == 0)
+	    {
+	        anorm = -1.0;
+	        for(int ii = 0; ii < v1.size(); ii++)
+	        {
+	            if(abs(v1[ii]) < anorm || anorm < 0.0)
+	            {
+	                anorm = abs(v1[ii]);
+	            }
+	        }
+	    }
+	    else
+	    {
+	        throw KeyCppException("Error in norm! Unknown norm type!");
+	    }
+	    
+	    return anorm;
+	}
+	
 	double norm(const matrix<double> A_in, std::string method = "2");
 	SVD_type<double,double> svd(matrix<double> A_in, std::string method = "");
 	double norm(const matrix<std::complex<double>> A_in, std::string method = "2");

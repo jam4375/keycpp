@@ -1644,18 +1644,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l01684"></a><span class="lineno"> 1684</span>&#160;                <a class="code" href="classkeycpp_1_1matrix.html">matrix&lt;T&gt;</a> V;</div>
 <div class="line"><a name="l01685"></a><span class="lineno"> 1685</span>&#160;        };</div>
 <div class="line"><a name="l01686"></a><span class="lineno"> 1686</span>&#160;        </div>
-<div class="line"><a name="l01687"></a><span class="lineno"> 1687</span>&#160;        <span class="keywordtype">double</span> norm(<span class="keyword">const</span> <a class="code" href="classkeycpp_1_1matrix.html">matrix&lt;double&gt;</a> A_in, std::string method = <span class="stringliteral">&quot;2&quot;</span>);</div>
-<div class="line"><a name="l01688"></a><span class="lineno"> 1688</span>&#160;        <a class="code" href="structkeycpp_1_1_s_v_d__type.html">SVD_type&lt;double,double&gt;</a> <a class="code" href="namespacekeycpp.html#a4b80bd145aab03a9e79a42d32ca573bd" title="Computes the singular value decomposition of matrix A_in.">svd</a>(<a class="code" href="classkeycpp_1_1matrix.html">matrix&lt;double&gt;</a> A_in, std::string method = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l01689"></a><span class="lineno"> 1689</span>&#160;        <span class="keywordtype">double</span> norm(<span class="keyword">const</span> <a class="code" href="classkeycpp_1_1matrix.html">matrix</a>&lt;std::complex&lt;double&gt;&gt; A_in, std::string method = <span class="stringliteral">&quot;2&quot;</span>);</div>
-<div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;        <a class="code" href="structkeycpp_1_1_s_v_d__type.html">SVD_type&lt;std::complex&lt;double&gt;</a>,<span class="keywordtype">double</span>&gt; <a class="code" href="namespacekeycpp.html#a4b80bd145aab03a9e79a42d32ca573bd" title="Computes the singular value decomposition of matrix A_in.">svd</a>(<a class="code" href="classkeycpp_1_1matrix.html">matrix</a>&lt;std::complex&lt;double&gt;&gt; A_in, std::string method = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l01691"></a><span class="lineno"> 1691</span>&#160;}</div>
-<div class="line"><a name="l01692"></a><span class="lineno"> 1692</span>&#160;</div>
-<div class="line"><a name="l01693"></a><span class="lineno"> 1693</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01687"></a><span class="lineno"> 1687</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l01688"></a><span class="lineno"> 1688</span>&#160;        <span class="keywordtype">double</span> norm(<span class="keyword">const</span> std::vector&lt;T&gt; v1, std::string method = <span class="stringliteral">&quot;2&quot;</span>)</div>
+<div class="line"><a name="l01689"></a><span class="lineno"> 1689</span>&#160;        {</div>
+<div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;            <span class="keywordflow">if</span>(v1.empty())</div>
+<div class="line"><a name="l01691"></a><span class="lineno"> 1691</span>&#160;            {</div>
+<div class="line"><a name="l01692"></a><span class="lineno"> 1692</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classkeycpp_1_1_key_cpp_exception.html">KeyCppException</a>(<span class="stringliteral">&quot;Cannot compute norm of empty vector!&quot;</span>);</div>
+<div class="line"><a name="l01693"></a><span class="lineno"> 1693</span>&#160;            }</div>
+<div class="line"><a name="l01694"></a><span class="lineno"> 1694</span>&#160;                std::transform(method.begin(), method.end(), method.begin(), ::tolower);</div>
+<div class="line"><a name="l01695"></a><span class="lineno"> 1695</span>&#160;            <span class="keywordtype">double</span> anorm;</div>
+<div class="line"><a name="l01696"></a><span class="lineno"> 1696</span>&#160;            <span class="keywordflow">if</span>(!method.empty() &amp;&amp; method.find_first_not_of(<span class="stringliteral">&quot;-+0123456789&quot;</span>) == std::string::npos)</div>
+<div class="line"><a name="l01697"></a><span class="lineno"> 1697</span>&#160;            {</div>
+<div class="line"><a name="l01698"></a><span class="lineno"> 1698</span>&#160;                <span class="keywordtype">int</span> p = atoi(method.c_str());</div>
+<div class="line"><a name="l01699"></a><span class="lineno"> 1699</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii = 0; ii &lt; v1.size(); ii++)</div>
+<div class="line"><a name="l01700"></a><span class="lineno"> 1700</span>&#160;                {</div>
+<div class="line"><a name="l01701"></a><span class="lineno"> 1701</span>&#160;                    anorm += pow(abs(v1[ii]),p);</div>
+<div class="line"><a name="l01702"></a><span class="lineno"> 1702</span>&#160;                }</div>
+<div class="line"><a name="l01703"></a><span class="lineno"> 1703</span>&#160;                anorm = pow(anorm,1.0/p);</div>
+<div class="line"><a name="l01704"></a><span class="lineno"> 1704</span>&#160;            }</div>
+<div class="line"><a name="l01705"></a><span class="lineno"> 1705</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(method.compare(<span class="stringliteral">&quot;inf&quot;</span>) == 0)</div>
+<div class="line"><a name="l01706"></a><span class="lineno"> 1706</span>&#160;            {</div>
+<div class="line"><a name="l01707"></a><span class="lineno"> 1707</span>&#160;                anorm = 0.0;</div>
+<div class="line"><a name="l01708"></a><span class="lineno"> 1708</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii = 0; ii &lt; v1.size(); ii++)</div>
+<div class="line"><a name="l01709"></a><span class="lineno"> 1709</span>&#160;                {</div>
+<div class="line"><a name="l01710"></a><span class="lineno"> 1710</span>&#160;                    <span class="keywordflow">if</span>(abs(v1[ii]) &gt; anorm)</div>
+<div class="line"><a name="l01711"></a><span class="lineno"> 1711</span>&#160;                    {</div>
+<div class="line"><a name="l01712"></a><span class="lineno"> 1712</span>&#160;                        anorm = abs(v1[ii]);</div>
+<div class="line"><a name="l01713"></a><span class="lineno"> 1713</span>&#160;                    }</div>
+<div class="line"><a name="l01714"></a><span class="lineno"> 1714</span>&#160;                }</div>
+<div class="line"><a name="l01715"></a><span class="lineno"> 1715</span>&#160;            }</div>
+<div class="line"><a name="l01716"></a><span class="lineno"> 1716</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(method.compare(<span class="stringliteral">&quot;-inf&quot;</span>) == 0)</div>
+<div class="line"><a name="l01717"></a><span class="lineno"> 1717</span>&#160;            {</div>
+<div class="line"><a name="l01718"></a><span class="lineno"> 1718</span>&#160;                anorm = -1.0;</div>
+<div class="line"><a name="l01719"></a><span class="lineno"> 1719</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii = 0; ii &lt; v1.size(); ii++)</div>
+<div class="line"><a name="l01720"></a><span class="lineno"> 1720</span>&#160;                {</div>
+<div class="line"><a name="l01721"></a><span class="lineno"> 1721</span>&#160;                    <span class="keywordflow">if</span>(abs(v1[ii]) &lt; anorm || anorm &lt; 0.0)</div>
+<div class="line"><a name="l01722"></a><span class="lineno"> 1722</span>&#160;                    {</div>
+<div class="line"><a name="l01723"></a><span class="lineno"> 1723</span>&#160;                        anorm = abs(v1[ii]);</div>
+<div class="line"><a name="l01724"></a><span class="lineno"> 1724</span>&#160;                    }</div>
+<div class="line"><a name="l01725"></a><span class="lineno"> 1725</span>&#160;                }</div>
+<div class="line"><a name="l01726"></a><span class="lineno"> 1726</span>&#160;            }</div>
+<div class="line"><a name="l01727"></a><span class="lineno"> 1727</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01728"></a><span class="lineno"> 1728</span>&#160;            {</div>
+<div class="line"><a name="l01729"></a><span class="lineno"> 1729</span>&#160;                <span class="keywordflow">throw</span> KeyCppException(<span class="stringliteral">&quot;Error in norm! Unknown norm type!&quot;</span>);</div>
+<div class="line"><a name="l01730"></a><span class="lineno"> 1730</span>&#160;            }</div>
+<div class="line"><a name="l01731"></a><span class="lineno"> 1731</span>&#160;            </div>
+<div class="line"><a name="l01732"></a><span class="lineno"> 1732</span>&#160;            <span class="keywordflow">return</span> anorm;</div>
+<div class="line"><a name="l01733"></a><span class="lineno"> 1733</span>&#160;        }</div>
+<div class="line"><a name="l01734"></a><span class="lineno"> 1734</span>&#160;        </div>
+<div class="line"><a name="l01735"></a><span class="lineno"> 1735</span>&#160;        <span class="keywordtype">double</span> norm(<span class="keyword">const</span> matrix&lt;double&gt; A_in, std::string method = <span class="stringliteral">&quot;2&quot;</span>);</div>
+<div class="line"><a name="l01736"></a><span class="lineno"> 1736</span>&#160;        SVD_type&lt;double,double&gt; <a class="code" href="namespacekeycpp.html#a4b80bd145aab03a9e79a42d32ca573bd" title="Computes the singular value decomposition of matrix A_in.">svd</a>(matrix&lt;double&gt; A_in, std::string method = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l01737"></a><span class="lineno"> 1737</span>&#160;        <span class="keywordtype">double</span> norm(<span class="keyword">const</span> matrix&lt;std::complex&lt;double&gt;&gt; A_in, std::string method = <span class="stringliteral">&quot;2&quot;</span>);</div>
+<div class="line"><a name="l01738"></a><span class="lineno"> 1738</span>&#160;        SVD_type&lt;std::complex&lt;double&gt;,<span class="keywordtype">double</span>&gt; <a class="code" href="namespacekeycpp.html#a4b80bd145aab03a9e79a42d32ca573bd" title="Computes the singular value decomposition of matrix A_in.">svd</a>(matrix&lt;std::complex&lt;double&gt;&gt; A_in, std::string method = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l01739"></a><span class="lineno"> 1739</span>&#160;}</div>
+<div class="line"><a name="l01740"></a><span class="lineno"> 1740</span>&#160;</div>
+<div class="line"><a name="l01741"></a><span class="lineno"> 1741</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 12 2013 16:05:43 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 12 2013 16:30:53 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

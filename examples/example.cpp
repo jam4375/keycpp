@@ -65,16 +65,6 @@ int main(int argc, char** argv)
     h2.ylabel("y");
     set(h2,"fontsize",14);
     h2.title("ODE Solution");
-    
-    matrix<std::complex<double>> AA = {{2.0, 1.5, 0.2},{-1.1, 0.5, 0.54}};
-    AA = transpose(AA);
-    auto svd_out = svd(AA,"econ");
-    cout << AA << endl << endl;
-    cout << svd_out.U << endl << endl;
-    cout << svd_out.S << endl << endl;
-    cout << svd_out.V << endl << endl;
-    
-    cout << endl << norm(AA,"Inf") << endl;
 
     return 0;
 }

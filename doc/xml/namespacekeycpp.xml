@@ -3067,6 +3067,33 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1630" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1629" bodyend="1677"/>
       </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1aa01035a2b2a07cd56c5e36d5f289b2ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>double</type>
+        <definition>double keycpp::norm</definition>
+        <argsstring>(const std::vector&lt; T &gt; v1, std::string method=&quot;2&quot;)</argsstring>
+        <name>norm</name>
+        <param>
+          <type>const std::vector&lt; T &gt;</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>method</declname>
+          <defval>&quot;2&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1689" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1688" bodyend="1733"/>
+      </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a7e5236252f6a33f3523fb805a2d1727c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
         <definition>double keycpp::norm</definition>
@@ -3087,7 +3114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1687" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="545" bodyend="595"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1735" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="545" bodyend="595"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a4b80bd145aab03a9e79a42d32ca573bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structkeycpp_1_1_s_v_d__type" kindref="compound">SVD_type</ref>&lt; double, double &gt;</type>
@@ -3109,7 +3136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1688" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="599" bodyend="739"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1736" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="599" bodyend="739"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a867ba604b4e72e41b123f890dd66d854" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -3131,7 +3158,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1689"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1737"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1aa6d15c3c38ff98e6d9afdd9db4b46c6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structkeycpp_1_1_s_v_d__type" kindref="compound">SVD_type</ref>&lt; std::complex&lt; double &gt;, double &gt;</type>
@@ -3153,7 +3180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1690"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1738"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a190640edb8e634de02d302d94a29ee17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; complex&lt; double &gt; &gt;</type>
