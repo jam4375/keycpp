@@ -12,6 +12,21 @@
 #include "gnuplot_i.h"
 #include "Matrix.h"
 
+
+/* TODO:
+add function to resize or set the size of the figure
+add semilogx, semilogy, loglog
+add subplot capability
+add plotyy (low priority)
+add contour, contourf, ezcontour, ezcontourf
+add ezplot
+add quiver
+add scatter
+add plot3
+add surface
+add scatter3
+*/
+
 namespace keycpp
 {
 	class FigureException : public std::runtime_error
@@ -49,6 +64,9 @@ namespace keycpp
 		template<class U, class T> void plot(std::vector<U> x, std::vector<T> y, std::string format, std::string property1, double val1);
 		template<class U, class T> void plot(std::vector<U> x, std::vector<T> y, std::string format, std::string property1, double val1, std::string property2, double val2);
 		template<class U, class T> void plot(std::vector<U> x, std::vector<T> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
+		template<class T> void plot(std::vector<T> y, std::string format, std::string property1, double val1);
+		template<class T> void plot(std::vector<T> y, std::string format, std::string property1, double val1, std::string property2, double val2);
+		template<class T> void plot(std::vector<T> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
 		void xlabel(std::string xlabel_text);
 		void ylabel(std::string ylabel_text);
 		void title(std::string title_text);
@@ -472,6 +490,36 @@ namespace keycpp
 		}
 		
 		return;
+	}
+	
+	template<class T> void Figure::plot(std::vector<T> y, std::string format, std::string property1, double val1)
+	{
+	    std::vector<T> x(y.size());
+	    for(int ii = 0; ii < y.size(); ii++)
+	    {
+	        x[ii] = ii;
+	    }
+	    plot(x,y,format,property1,val1);
+	}
+	
+	template<class T> void Figure::plot(std::vector<T> y, std::string format, std::string property1, double val1, std::string property2, double val2)
+	{
+	    std::vector<T> x(y.size());
+	    for(int ii = 0; ii < y.size(); ii++)
+	    {
+	        x[ii] = ii;
+	    }
+	    plot(x,y,format,property1,val1,property2,val2);
+	}
+	
+	template<class T> void Figure::plot(std::vector<T> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
+	{
+	    std::vector<T> x(y.size());
+	    for(int ii = 0; ii < y.size(); ii++)
+	    {
+	        x[ii] = ii;
+	    }
+	    plot(x,y,arguments,val,lw,ps,legend_entry);
 	}
 	
 	inline void Figure::xlabel(std::string xlabel_text)

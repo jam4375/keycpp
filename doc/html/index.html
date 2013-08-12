@@ -132,8 +132,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// First, lets create some data: y1 = t^2 and y2 = t^3</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    vector&lt;double&gt; t = <a class="code" href="namespacekeycpp.html#ab57eee495c93eb18ebf8c8ccf4d44e74" title="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">linspace</a>(-2.0,2.0,100);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    vector&lt;double&gt; y1 = etimes(t,t);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    vector&lt;double&gt; y2 = etimes(t,etimes(t,t));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    vector&lt;double&gt; y1 = <a class="code" href="namespacekeycpp.html#ac1ff99e34619478096c271b38df1f3d7" title="Performs array multiplication on matrices A and B.">times</a>(t,t);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    vector&lt;double&gt; y2 = <a class="code" href="namespacekeycpp.html#ac1ff99e34619478096c271b38df1f3d7" title="Performs array multiplication on matrices A and B.">times</a>(t,<a class="code" href="namespacekeycpp.html#ac1ff99e34619478096c271b38df1f3d7" title="Performs array multiplication on matrices A and B.">times</a>(t,t));</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Now, lets plot the data we just created:</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classkeycpp_1_1_figure.html">Figure</a> h1;</div>
@@ -216,13 +216,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td><code>A.'</code> </td><td><code>keycpp::transpose(A);</code> </td><td>C++ does not allow overloading <code>.'</code> </td></tr>
 <tr>
+<td><code>A'</code> </td><td><code>keycpp::ctranspose(A);</code> </td><td>C++ does not allow overloading <code>'</code> </td></tr>
+<tr>
 <td><code>A = zeros(m,n)</code> </td><td><code><a class="el" href="classkeycpp_1_1matrix.html">keycpp::matrix</a>&lt;double&gt; A = <a class="el" href="namespacekeycpp.html#a86f1406f9fad5a439d8eff01aba8eac6" title="Returns a matrix of size M x N containing all zeros.">keycpp::zeros</a>&lt;double&gt;(m,n);</code> </td><td>or more simply: <code><a class="el" href="classkeycpp_1_1matrix.html">keycpp::matrix</a>&lt;double&gt; A(m,n);</code> </td></tr>
 <tr>
 <td><code>A = ones(m,n)</code> </td><td><code><a class="el" href="classkeycpp_1_1matrix.html">keycpp::matrix</a>&lt;double&gt; A = <a class="el" href="namespacekeycpp.html#ace6f21832ab61f8f15e5b35e0a5cdb3e" title="Returns a matrix of size M x N containing all ones.">keycpp::ones</a>&lt;double&gt;(m,n);</code> </td><td></td></tr>
 <tr>
-<td><code>A.*B</code> </td><td><code>keycpp::etimes(A,B);</code> </td><td>C++ does not allow overloading <code>.*</code> or <code>./</code> </td></tr>
+<td><code>A.*B</code> </td><td><code>keycpp::times(A,B);</code> </td><td>C++ does not allow overloading <code>.*</code> or <code>./</code> </td></tr>
 <tr>
-<td><code>A./B</code> </td><td><code>keycpp::edivide(A,B);</code> </td><td></td></tr>
+<td><code>A./B</code> </td><td><code>keycpp::rdivide(A,B);</code> </td><td></td></tr>
 <tr>
 <td><code>A\b</code> </td><td><code>keycpp::linsolve(A,b);</code> </td><td><code>b</code> is a vector </td></tr>
 <tr>
@@ -240,7 +242,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 8 2013 16:41:05 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 12 2013 12:43:04 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

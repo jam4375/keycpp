@@ -79,8 +79,8 @@ When you are writing your own programs be sure to link with the {\ttfamily libke
 21 \{
 22     \textcolor{comment}{// First, lets create some data: y1 = t^2 and y2 = t^3}
 23     vector<double> t = \hyperlink{namespacekeycpp_ab57eee495c93eb18ebf8c8ccf4d44e74}{linspace}(-2.0,2.0,100);
-24     vector<double> y1 = etimes(t,t);
-25     vector<double> y2 = etimes(t,etimes(t,t));
+24     vector<double> y1 = \hyperlink{namespacekeycpp_ac1ff99e34619478096c271b38df1f3d7}{times}(t,t);
+25     vector<double> y2 = \hyperlink{namespacekeycpp_ac1ff99e34619478096c271b38df1f3d7}{times}(t,\hyperlink{namespacekeycpp_ac1ff99e34619478096c271b38df1f3d7}{times}(t,t));
 26 
 27     \textcolor{comment}{// Now, lets plot the data we just created:}
 28     \hyperlink{classkeycpp_1_1_figure}{Figure} h1;
@@ -154,10 +154,11 @@ Note\-: You can omit the {\ttfamily keycpp\-:\-:} prefix from the following comm
 {\ttfamily A(\-:,k)} &{\ttfamily A.\-get\-Col(k-\/1);} &C++ restricts the use of {\ttfamily \-:} \\\cline{1-3}
 {\ttfamily A(k,\-:)} &{\ttfamily A.\-get\-Row(k-\/1);} &\\\cline{1-3}
 {\ttfamily A.'} &{\ttfamily keycpp\-::transpose(\-A);} &C++ does not allow overloading {\ttfamily .'} \\\cline{1-3}
+{\ttfamily A'} &{\ttfamily keycpp\-::ctranspose(\-A);} &C++ does not allow overloading {\ttfamily '} \\\cline{1-3}
 {\ttfamily A = zeros(m,n)} &{\ttfamily \hyperlink{classkeycpp_1_1matrix}{keycpp\-::matrix}$<$double$>$ A = \hyperlink{namespacekeycpp_a86f1406f9fad5a439d8eff01aba8eac6}{keycpp\-::zeros}$<$double$>$(m,n);} &or more simply\-: {\ttfamily \hyperlink{classkeycpp_1_1matrix}{keycpp\-::matrix}$<$double$>$ A(m,n);} \\\cline{1-3}
 {\ttfamily A = ones(m,n)} &{\ttfamily \hyperlink{classkeycpp_1_1matrix}{keycpp\-::matrix}$<$double$>$ A = \hyperlink{namespacekeycpp_ace6f21832ab61f8f15e5b35e0a5cdb3e}{keycpp\-::ones}$<$double$>$(m,n);} &\\\cline{1-3}
-{\ttfamily A.$\ast$\-B} &{\ttfamily keycpp\-::etimes(\-A,\-B);} &C++ does not allow overloading {\ttfamily .$\ast$} or {\ttfamily ./} \\\cline{1-3}
-{\ttfamily A./\-B} &{\ttfamily keycpp\-::edivide(\-A,\-B);} &\\\cline{1-3}
+{\ttfamily A.$\ast$\-B} &{\ttfamily keycpp\-::times(\-A,\-B);} &C++ does not allow overloading {\ttfamily .$\ast$} or {\ttfamily ./} \\\cline{1-3}
+{\ttfamily A./\-B} &{\ttfamily keycpp\-::rdivide(\-A,\-B);} &\\\cline{1-3}
 {\ttfamily A\textbackslash{}b} &{\ttfamily keycpp\-::linsolve(\-A,b);} &{\ttfamily b} is a vector \\\cline{1-3}
 {\ttfamily \mbox{[}V, D\mbox{]} = eig(\-A,\-B)} &{\ttfamily std\-::vector$<$std\-::complex$<$double$>$$>$ d = keycpp\-::eig(\-A,\-B,\&\-V);} &Non-\/\-Hermitian generalized eigenvalue/eigenvector solver uses L\-A\-P\-A\-C\-K. \\\cline{1-3}
 {\ttfamily x = linspace(0,10,\-N\-\_\-x)} &{\ttfamily std\-::vector$<$double$>$ x = \hyperlink{namespacekeycpp_ab57eee495c93eb18ebf8c8ccf4d44e74}{keycpp\-::linspace}(0.\-0,10.\-0,N\-\_\-x);} &\\\cline{1-3}

@@ -18,6 +18,8 @@
 #include "Spline.h"
 #include "Figure.h"
 
+
+
 /** \brief The keycpp namespace prevents KeyCpp functions and classes from interfering with
  *         other C++ libraries, for instance the std library.
  */
@@ -99,8 +101,10 @@ namespace keycpp
     matrix<double> inv(const matrix<double>& A_in);
     matrix<std::complex<double>> inv(const matrix<std::complex<double>>& A_in);
 
-	std::complex<double> interp1(double *x, std::complex<double> **y, double x_interp, int index, int N);
-	double rand_limits(double a, double b);
+	double rand();
+	matrix<double> rand(int N);
+	matrix<double> rand(int M, int N);
+
 	
 	template<class T, class U> struct observe
 	{
@@ -140,6 +144,83 @@ namespace keycpp
         }
         return out;
     }
+
+    /** \brief Returns the product of all the elements of the vector x.
+     */
+	template<class T> std::vector<T> prod(const std::vector<T> x)
+	{
+	    if(x.empty())
+	    {
+	        return 1.0;
+	    }
+		T x_out;
+		x_out = x[0];
+		for(int ii = 1; ii < x.size(); ii++)
+		{
+			x_out *= x[ii];
+		}
+		return x_out;
+	}
+
+    /** \brief Returns a vector containing the product of all the elements in each
+     *         column of the matrix A.
+     */
+	template<class T> std::vector<T> prod(const matrix<T> A)
+	{
+	    if(A.size(1) <= 0 || A.size(2) <= 0)
+	    {
+	        std::vector<T> x(1);
+	        x[0] = 1.0;
+	        return x;
+	    }
+		std::vector<T> B = A.getRow(0);
+		for(int jj = 0; jj < A.size(2); jj++)
+		{
+		    for(int ii = 1; ii < A.size(1); ii++)
+		    {
+			    B[jj] *= A(ii,jj);
+			}
+		}
+		return B;
+	}
+	
+	/** \brief Returns a vector of differences between adjacent elements.
+     */
+	template<class T> std::vector<T> diff(const std::vector<T> v1)
+	{
+	    if(v1.empty())
+	    {
+	        throw KeyCppException("Cannot compute diff() on empty vector!");
+	    }
+		std::vector<T> v2(v1.size()-1);
+		for(int ii = 0; ii < v2.size(); ii++)
+		{
+		    v2[ii] = v1[ii+1] - v1[ii];
+		}
+		return v2;
+	}
+	
+	/** \brief Returns a matrix of row differences between adjacent rows.
+	 *
+	 *   TODO: Add recursive functionality and make sure it picks first non-singleton dimension.
+	 *         Also, accept dimension as argument. See MATLAB docs.
+     */
+	template<class T> matrix<T> diff(const matrix<T> A)
+	{
+	    if(A.size(1) <= 0 || A.size(2) <= 0)
+	    {
+	        throw KeyCppException("Cannot compute diff() on empty matrix!");
+	    }
+		matrix<T> B(A.size(1)-1,A.size(2));
+		for(int ii = 0; ii < B.size(1); ii++)
+		{
+		    for(int jj = 0; jj < B.size(2); jj++)
+		    {
+			    B(ii,jj) = A(ii+1,jj) - A(ii,jj);
+			}
+		}
+		return B;
+	}
 
 	template<class T> std::vector<std::complex<double> > conj(const std::vector<T> x)
 	{
@@ -202,15 +283,6 @@ namespace keycpp
 			y[ii] = arg(x[ii]);
 		}
 		return y;
-	}
-	
-	inline double sqrt(const double& a)
-	{
-	    if(a < 0)
-	    {
-	        throw KeyCppException("sqrt() was called with a negative value, use csqrt() instead!");
-	    }
-	    return std::sqrt(a);
 	}
 	
 	inline std::complex<double> csqrt(const double& a)
@@ -352,16 +424,74 @@ namespace keycpp
 		return v2;
 	}
 	
+	/** \brief Return a vector containing the sine of each element of v1.
+	 */
+	template<class T> std::vector<T> sin(const std::vector<T> v1)
+	{
+		std::vector<T> v2(v1.size());
+		for(int ii = 0; ii < v1.size(); ii++)
+		{
+			v2[ii] = std::sin(v1[ii]);
+		}
+		return v2;
+	}
+	
+	/** \brief Return a matrix containing the sine of each element of A.
+	 */
+	template<class T> matrix<T> sin(const matrix<T> A)
+	{
+		matrix<T> B(A.size(1),A.size(2));
+		for(int ii = 0; ii < A.size(1); ii++)
+		{
+			for(int jj = 0; jj < A.size(2); jj++)
+			{
+				B(ii,jj) = std::sin(A(ii,jj));
+			}
+		}
+		return B;
+	}
+	
+	/** \brief Return a vector containing the cosine of each element of v1.
+	 */
+	template<class T> std::vector<T> cos(const std::vector<T> v1)
+	{
+		std::vector<T> v2(v1.size());
+		for(int ii = 0; ii < v1.size(); ii++)
+		{
+			v2[ii] = std::cos(v1[ii]);
+		}
+		return v2;
+	}
+	
+	/** \brief Return a matrix containing the cosine of each element of A.
+	 */
+	template<class T> matrix<T> cos(const matrix<T> A)
+	{
+		matrix<T> B(A.size(1),A.size(2));
+		for(int ii = 0; ii < A.size(1); ii++)
+		{
+			for(int jj = 0; jj < A.size(2); jj++)
+			{
+				B(ii,jj) = std::cos(A(ii,jj));
+			}
+		}
+		return B;
+	}
+	
+	/** \brief Return a vector containing the exponential of each element of v1.
+	 */
 	template<class T> std::vector<T> exp(const std::vector<T> v1)
 	{
 		std::vector<T> v2(v1.size());
 		for(int ii = 0; ii < v1.size(); ii++)
 		{
-			v2[ii] = exp(v1[ii]);
+			v2[ii] = std::exp(v1[ii]);
 		}
 		return v2;
 	}
 	
+	/** \brief Return a matrix containing the exponential of each element of A.
+	 */
 	template<class T> matrix<T> exp(const matrix<T> A)
 	{
 		matrix<T> B(A.size(1),A.size(2));
@@ -369,7 +499,7 @@ namespace keycpp
 		{
 			for(int jj = 0; jj < A.size(2); jj++)
 			{
-				B(ii,jj) = exp(A(ii,jj));
+				B(ii,jj) = std::exp(A(ii,jj));
 			}
 		}
 		return B;
@@ -494,8 +624,21 @@ namespace keycpp
 		return B;
 	}
 	
-	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> etimes(const matrix<T>& A, const matrix<U>& B)
+	/** \brief Performs array multiplication on matrices A and B.
+	 *
+	 *  Each element of A is multiplied by each element of B. The matrix that is
+	 *  returned is the same size as A and B.
+	 */
+	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> times(const matrix<T>& A, const matrix<U>& B)
 	{
+	    if(A.size(1) <= 0 || A.size(2) <= 0 || B.size(1) <= 0 || B.size(2) <= 0)
+	    {
+	        throw KeyCppException("Cannot multiply an empty matrix!");
+	    }
+	    if(A.size(1) != B.size(1) || A.size(2) != B.size(2))
+	    {
+	        throw KeyCppException("Matrix dimensions must agree in times().");
+	    }
 		matrix<decltype(std::declval<T>()*std::declval<U>())> C(A.size(1),B.size(2));
 		for(int ii = 0; ii < A.size(1); ii++)
 		{
@@ -507,8 +650,21 @@ namespace keycpp
 		return C;
 	}
 	
-	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> etimes(const std::vector<T>& v1, const std::vector<U>& v2)
+	/** \brief Performs array multiplication on vectors v1 and v2.
+	 *
+	 *  Each element of v1 is multiplied by each element of v2. The vector that is
+	 *  returned is the same size as v1 and v2.
+	 */
+	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> times(const std::vector<T>& v1, const std::vector<U>& v2)
 	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot multiply an empty vector!");
+	    }
+	    if(v1.size() != v2.size())
+	    {
+	        throw KeyCppException("Vector dimensions must agree in times().");
+	    }
 		std::vector<decltype(std::declval<T>()*std::declval<U>())> v3(v1.size());
 		for(int ii = 0; ii < v1.size(); ii++)
 		{
@@ -517,8 +673,21 @@ namespace keycpp
 		return v3;
 	}
 	
-	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> edivide(const matrix<T>& A, const matrix<U>& B)
+	/** \brief Performs right array division on matrices A and B.
+	 *
+	 *  Each element of A is divided by each element of B. The matrix that is
+	 *  returned is the same size as A and B. Equivalent to A./B in MATLAB.
+	 */
+	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> rdivide(const matrix<T>& A, const matrix<U>& B)
 	{
+	    if(A.size(1) <= 0 || A.size(2) <= 0 || B.size(1) <= 0 || B.size(2) <= 0)
+	    {
+	        throw KeyCppException("Cannot rdivide an empty matrix!");
+	    }
+	    if(A.size(1) != B.size(1) || A.size(2) != B.size(2))
+	    {
+	        throw KeyCppException("Matrix dimensions must agree in rdivide().");
+	    }
 		matrix<decltype(std::declval<T>()*std::declval<U>())> C(A.size(1),B.size(2));
 		for(int ii = 0; ii < A.size(1); ii++)
 		{
@@ -530,8 +699,70 @@ namespace keycpp
 		return C;
 	}
 	
-	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> edivide(const std::vector<T>& v1, const std::vector<U>& v2)
+	/** \brief Performs right array division on vectors v1 and v2.
+	 *
+	 *  Each element of v1 is divided by each element of v2. The vector that is
+	 *  returned is the same size as v1 and v2. Equivalent to v1./v2 in MATLAB.
+	 */
+	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> rdivide(const std::vector<T>& v1, const std::vector<U>& v2)
 	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot divide an empty vector!");
+	    }
+	    if(v1.size() != v2.size())
+	    {
+	        throw KeyCppException("Vector dimensions must agree in rdivide().");
+	    }
+		std::vector<decltype(std::declval<T>()*std::declval<U>())> v3(v1.size());
+		for(int ii = 0; ii < v1.size(); ii++)
+		{
+			v3[ii] = v1[ii]/v2[ii];
+		}
+		return v3;
+	}
+	
+	/** \brief Performs left array division on matrices B and A.
+	 *
+	 *  Each element of A is divided by each element of B. The matrix that is
+	 *  returned is the same size as B and A. Equivalent to B.\A in MATLAB.
+	 */
+	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> ldivide(const matrix<T>& B, const matrix<U>& A)
+	{
+	    if(A.size(1) <= 0 || A.size(2) <= 0 || B.size(1) <= 0 || B.size(2) <= 0)
+	    {
+	        throw KeyCppException("Cannot divide an empty matrix!");
+	    }
+	    if(A.size(1) != B.size(1) || A.size(2) != B.size(2))
+	    {
+	        throw KeyCppException("Matrix dimensions must agree in ldivide().");
+	    }
+		matrix<decltype(std::declval<T>()*std::declval<U>())> C(A.size(1),B.size(2));
+		for(int ii = 0; ii < A.size(1); ii++)
+		{
+			for(int jj = 0; jj < A.size(2); jj++)
+			{
+				C(ii,jj) = A(ii,jj)/B(ii,jj);
+			}
+		}
+		return C;
+	}
+	
+	/** \brief Performs left array division on vectors v2 and v1.
+	 *
+	 *  Each element of v1 is divided by each element of v2. The vector that is
+	 *  returned is the same size as v2 and v1. Equivalent to v2.\v1 in MATLAB.
+	 */
+	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> ldivide(const std::vector<T>& v2, const std::vector<U>& v1)
+	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot divide an empty vector!");
+	    }
+	    if(v1.size() != v2.size())
+	    {
+	        throw KeyCppException("Vector dimensions must agree in ldivide().");
+	    }
 		std::vector<decltype(std::declval<T>()*std::declval<U>())> v3(v1.size());
 		for(int ii = 0; ii < v1.size(); ii++)
 		{
@@ -625,6 +856,8 @@ namespace keycpp
 		return x[index];
 	}
 
+	/** \brief Returns the transpose of matrix A.
+	 */
 	template<class T> matrix<T> transpose(matrix<T> A)
 	{
 		matrix<T> B(A.size(2),A.size(1));
@@ -638,12 +871,41 @@ namespace keycpp
 		return B;
 	}
 	
+	/** \brief Returns the transpose of vector v1.
+	 */
 	template<class T> matrix<T> transpose(std::vector<T> v1)
 	{
 		matrix<T> B(1,v1.size());
 		for(int ii = 0; ii < v1.size(); ii++)
 		{
 			B(0,ii) = v1[ii];
+		}
+		return B;
+	}
+
+	/** \brief Returns the complex-conjugate transpose of matrix A.
+	 */
+	template<class T> matrix<T> ctranspose(matrix<T> A)
+	{
+		matrix<T> B(A.size(2),A.size(1));
+		for(int ii = 0; ii < A.size(1); ii++)
+		{
+			for(int jj = 0; jj < A.size(2); jj++)
+			{
+				B(jj,ii) = conj(A(ii,jj));
+			}
+		}
+		return B;
+	}
+	
+	/** \brief Returns the complex-conjugate transpose of vector v1.
+	 */
+	template<class T> matrix<T> ctranspose(std::vector<T> v1)
+	{
+		matrix<T> B(1,v1.size());
+		for(int ii = 0; ii < v1.size(); ii++)
+		{
+			B(0,ii) = conj(v1[ii]);
 		}
 		return B;
 	}
@@ -1174,7 +1436,7 @@ namespace keycpp
 		for(int ii = 0; ii < N; ii++)
 		{
 			cx_in[ii].r = real((std::complex<double>)u[ii]);
-			cx_in[ii].i = real((std::complex<double>)u[ii]);
+			cx_in[ii].i = imag((std::complex<double>)u[ii]);
 		}
 
 		kiss_fft_cfg cfg = kiss_fft_alloc(N,false,0,0);
@@ -1182,7 +1444,7 @@ namespace keycpp
 
 		for(int ii = 0; ii < N; ii++)
 		{
-			u_hat[ii] = std::complex<T>((T)cx_out[ii].r,(T)cx_out[ii].i)*2.0/(T)N;
+			u_hat[ii] = std::complex<T>((T)cx_out[ii].r,(T)cx_out[ii].i);
 		}
 
 		free(cfg);

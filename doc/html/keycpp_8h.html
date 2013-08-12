@@ -206,12 +206,18 @@ matrix&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>key
 <tr class="memitem:a6b74369f5415c3ed45f63995149ad992"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b74369f5415c3ed45f63995149ad992"></a>
 matrix&lt; std::complex&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>keycpp::inv</b> (const matrix&lt; std::complex&lt; double &gt;&gt; &amp;A_in)</td></tr>
 <tr class="separator:a6b74369f5415c3ed45f63995149ad992"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2da94e9ad9484d1b4cec8c0dca04046"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af2da94e9ad9484d1b4cec8c0dca04046"></a>
-std::complex&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>keycpp::interp1</b> (double *x, std::complex&lt; double &gt; **y, double x_interp, int index, int N)</td></tr>
-<tr class="separator:af2da94e9ad9484d1b4cec8c0dca04046"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a75b80bd1b28390c6b9c14fc8cec713"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a75b80bd1b28390c6b9c14fc8cec713"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>keycpp::rand_limits</b> (double a, double b)</td></tr>
-<tr class="separator:a5a75b80bd1b28390c6b9c14fc8cec713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ef5c1f5951e8182a7c4ec9612f3f7e1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ef5c1f5951e8182a7c4ec9612f3f7e1"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a5ef5c1f5951e8182a7c4ec9612f3f7e1">keycpp::rand</a> ()</td></tr>
+<tr class="memdesc:a5ef5c1f5951e8182a7c4ec9612f3f7e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random double between 0 and 1.0. <br/></td></tr>
+<tr class="separator:a5ef5c1f5951e8182a7c4ec9612f3f7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53e0eb41dbd6cddc6ac15d92d68c7aee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a53e0eb41dbd6cddc6ac15d92d68c7aee"></a>
+matrix&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a53e0eb41dbd6cddc6ac15d92d68c7aee">keycpp::rand</a> (int N)</td></tr>
+<tr class="memdesc:a53e0eb41dbd6cddc6ac15d92d68c7aee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an N x N matrix of random doubles between 0 and 1.0. <br/></td></tr>
+<tr class="separator:a53e0eb41dbd6cddc6ac15d92d68c7aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc446e99edbcde1d69bfe2c74dc3c80"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adbc446e99edbcde1d69bfe2c74dc3c80"></a>
+matrix&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#adbc446e99edbcde1d69bfe2c74dc3c80">keycpp::rand</a> (int M, int N)</td></tr>
+<tr class="memdesc:adbc446e99edbcde1d69bfe2c74dc3c80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an M x N matrix of random doubles between 0 and 1.0. <br/></td></tr>
+<tr class="separator:adbc446e99edbcde1d69bfe2c74dc3c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55e8bada51586c0561e1b32ca1ab5f2a"><td class="memTemplParams" colspan="2"><a class="anchor" id="a55e8bada51586c0561e1b32ca1ab5f2a"></a>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:a55e8bada51586c0561e1b32ca1ab5f2a"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::operator&lt;&lt;</b> (std::ostream &amp;out, const matrix&lt; T &gt; &amp;A)</td></tr>
@@ -220,6 +226,25 @@ template&lt;class T &gt; </td></tr>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:a300d8f6e8992c7b33156492d884bd621"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::operator&lt;&lt;</b> (std::ostream &amp;out, const std::vector&lt; T &gt; &amp;v1)</td></tr>
 <tr class="separator:a300d8f6e8992c7b33156492d884bd621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18c262cc7b63b53f3d4c9fbeda591088"><td class="memTemplParams" colspan="2"><a class="anchor" id="a18c262cc7b63b53f3d4c9fbeda591088"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a18c262cc7b63b53f3d4c9fbeda591088"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a18c262cc7b63b53f3d4c9fbeda591088">keycpp::prod</a> (const std::vector&lt; T &gt; x)</td></tr>
+<tr class="memdesc:a18c262cc7b63b53f3d4c9fbeda591088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the product of all the elements of the vector x. <br/></td></tr>
+<tr class="separator:a18c262cc7b63b53f3d4c9fbeda591088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b348cee175715d20a1997b471c47d7a"><td class="memTemplParams" colspan="2"><a class="anchor" id="a0b348cee175715d20a1997b471c47d7a"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a0b348cee175715d20a1997b471c47d7a"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a0b348cee175715d20a1997b471c47d7a">keycpp::prod</a> (const matrix&lt; T &gt; A)</td></tr>
+<tr class="memdesc:a0b348cee175715d20a1997b471c47d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector containing the product of all the elements in each column of the matrix A. <br/></td></tr>
+<tr class="separator:a0b348cee175715d20a1997b471c47d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4d7bfe3e5ee5f1b805e9aa64c5ba1e9"><td class="memTemplParams" colspan="2"><a class="anchor" id="aa4d7bfe3e5ee5f1b805e9aa64c5ba1e9"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:aa4d7bfe3e5ee5f1b805e9aa64c5ba1e9"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#aa4d7bfe3e5ee5f1b805e9aa64c5ba1e9">keycpp::diff</a> (const std::vector&lt; T &gt; v1)</td></tr>
+<tr class="memdesc:aa4d7bfe3e5ee5f1b805e9aa64c5ba1e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector of differences between adjacent elements. <br/></td></tr>
+<tr class="separator:aa4d7bfe3e5ee5f1b805e9aa64c5ba1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf08572a2b7b23b6be5365053770fa5"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a0cf08572a2b7b23b6be5365053770fa5"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a0cf08572a2b7b23b6be5365053770fa5">keycpp::diff</a> (const matrix&lt; T &gt; A)</td></tr>
+<tr class="memdesc:a0cf08572a2b7b23b6be5365053770fa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a matrix of row differences between adjacent rows.  <a href="#a0cf08572a2b7b23b6be5365053770fa5">More...</a><br/></td></tr>
+<tr class="separator:a0cf08572a2b7b23b6be5365053770fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad26d6a2ad64185a749c6f2e85aeaf62b"><td class="memTemplParams" colspan="2"><a class="anchor" id="ad26d6a2ad64185a749c6f2e85aeaf62b"></a>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:ad26d6a2ad64185a749c6f2e85aeaf62b"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::complex<br class="typebreak"/>
@@ -245,9 +270,6 @@ template&lt;class T &gt; </td></tr>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:a70d66686c6b209cc8eb64f84977544da"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::arg</b> (std::vector&lt; T &gt; x)</td></tr>
 <tr class="separator:a70d66686c6b209cc8eb64f84977544da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d204e24f675e0576a882e3069939bee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d204e24f675e0576a882e3069939bee"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>keycpp::sqrt</b> (const double &amp;a)</td></tr>
-<tr class="separator:a2d204e24f675e0576a882e3069939bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a952e5296774667c3be4e792b5cd980da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a952e5296774667c3be4e792b5cd980da"></a>
 std::complex&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>keycpp::csqrt</b> (const double &amp;a)</td></tr>
 <tr class="separator:a952e5296774667c3be4e792b5cd980da"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -299,13 +321,35 @@ template&lt;class T , class U &gt; </td></tr>
 <tr class="memitem:a394f23f09cf122a8e8c20a7afd40f58e"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; decltype(std::declval<br class="typebreak"/>
 &lt; T &gt;)*std::declval&lt; U &gt;))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::operator/</b> (const std::vector&lt; T &gt; &amp;v1, const U &amp;a)</td></tr>
 <tr class="separator:a394f23f09cf122a8e8c20a7afd40f58e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ebc4ddf6e567714f63f0dbb8a984745"><td class="memTemplParams" colspan="2"><a class="anchor" id="a1ebc4ddf6e567714f63f0dbb8a984745"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a1ebc4ddf6e567714f63f0dbb8a984745"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a1ebc4ddf6e567714f63f0dbb8a984745">keycpp::sin</a> (const std::vector&lt; T &gt; v1)</td></tr>
+<tr class="memdesc:a1ebc4ddf6e567714f63f0dbb8a984745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a vector containing the sine of each element of v1. <br/></td></tr>
+<tr class="separator:a1ebc4ddf6e567714f63f0dbb8a984745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159a28c69282a740e381465a0e71bf23"><td class="memTemplParams" colspan="2"><a class="anchor" id="a159a28c69282a740e381465a0e71bf23"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a159a28c69282a740e381465a0e71bf23"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a159a28c69282a740e381465a0e71bf23">keycpp::sin</a> (const matrix&lt; T &gt; A)</td></tr>
+<tr class="memdesc:a159a28c69282a740e381465a0e71bf23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a matrix containing the sine of each element of A. <br/></td></tr>
+<tr class="separator:a159a28c69282a740e381465a0e71bf23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaf5c65950c36d6a10e2fc42cae7b041"><td class="memTemplParams" colspan="2"><a class="anchor" id="afaf5c65950c36d6a10e2fc42cae7b041"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:afaf5c65950c36d6a10e2fc42cae7b041"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#afaf5c65950c36d6a10e2fc42cae7b041">keycpp::cos</a> (const std::vector&lt; T &gt; v1)</td></tr>
+<tr class="memdesc:afaf5c65950c36d6a10e2fc42cae7b041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a vector containing the cosine of each element of v1. <br/></td></tr>
+<tr class="separator:afaf5c65950c36d6a10e2fc42cae7b041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d906ad1b0afbefd588c619cdb02530a"><td class="memTemplParams" colspan="2"><a class="anchor" id="a6d906ad1b0afbefd588c619cdb02530a"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a6d906ad1b0afbefd588c619cdb02530a"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a6d906ad1b0afbefd588c619cdb02530a">keycpp::cos</a> (const matrix&lt; T &gt; A)</td></tr>
+<tr class="memdesc:a6d906ad1b0afbefd588c619cdb02530a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a matrix containing the cosine of each element of A. <br/></td></tr>
+<tr class="separator:a6d906ad1b0afbefd588c619cdb02530a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2d4f2ab79da4b10e9be3af2693904ef"><td class="memTemplParams" colspan="2"><a class="anchor" id="aa2d4f2ab79da4b10e9be3af2693904ef"></a>
 template&lt;class T &gt; </td></tr>
-<tr class="memitem:aa2d4f2ab79da4b10e9be3af2693904ef"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::exp</b> (const std::vector&lt; T &gt; v1)</td></tr>
+<tr class="memitem:aa2d4f2ab79da4b10e9be3af2693904ef"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#aa2d4f2ab79da4b10e9be3af2693904ef">keycpp::exp</a> (const std::vector&lt; T &gt; v1)</td></tr>
+<tr class="memdesc:aa2d4f2ab79da4b10e9be3af2693904ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a vector containing the exponential of each element of v1. <br/></td></tr>
 <tr class="separator:aa2d4f2ab79da4b10e9be3af2693904ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24ac535f72f9e72bf2d0fb93b2b0ee01"><td class="memTemplParams" colspan="2"><a class="anchor" id="a24ac535f72f9e72bf2d0fb93b2b0ee01"></a>
 template&lt;class T &gt; </td></tr>
-<tr class="memitem:a24ac535f72f9e72bf2d0fb93b2b0ee01"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::exp</b> (const matrix&lt; T &gt; A)</td></tr>
+<tr class="memitem:a24ac535f72f9e72bf2d0fb93b2b0ee01"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a24ac535f72f9e72bf2d0fb93b2b0ee01">keycpp::exp</a> (const matrix&lt; T &gt; A)</td></tr>
+<tr class="memdesc:a24ac535f72f9e72bf2d0fb93b2b0ee01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a matrix containing the exponential of each element of A. <br/></td></tr>
 <tr class="separator:a24ac535f72f9e72bf2d0fb93b2b0ee01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90a6f9aaec03f1f72bf4013316795c5f"><td class="memTemplParams" colspan="2"><a class="anchor" id="a90a6f9aaec03f1f72bf4013316795c5f"></a>
 template&lt;class T &gt; </td></tr>
@@ -339,26 +383,36 @@ template&lt;class T &gt; </td></tr>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:a59fbea40dfc2d43cd338812f06c4f064"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::repmat</b> (const std::vector&lt; T &gt; v1, int m, int n)</td></tr>
 <tr class="separator:a59fbea40dfc2d43cd338812f06c4f064"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8272f1a2a2ecafa66bec7f1b3409d125"><td class="memTemplParams" colspan="2"><a class="anchor" id="a8272f1a2a2ecafa66bec7f1b3409d125"></a>
-template&lt;class T , class U &gt; </td></tr>
-<tr class="memitem:a8272f1a2a2ecafa66bec7f1b3409d125"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; decltype(std::declval<br class="typebreak"/>
-&lt; T &gt;)*std::declval&lt; U &gt;))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::etimes</b> (const matrix&lt; T &gt; &amp;A, const matrix&lt; U &gt; &amp;B)</td></tr>
-<tr class="separator:a8272f1a2a2ecafa66bec7f1b3409d125"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d684d6c9ad5529ad7cb5437e1828fe2"><td class="memTemplParams" colspan="2"><a class="anchor" id="a2d684d6c9ad5529ad7cb5437e1828fe2"></a>
-template&lt;class T , class U &gt; </td></tr>
-<tr class="memitem:a2d684d6c9ad5529ad7cb5437e1828fe2"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; decltype(std::declval<br class="typebreak"/>
-&lt; T &gt;)*std::declval&lt; U &gt;))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::etimes</b> (const std::vector&lt; T &gt; &amp;v1, const std::vector&lt; U &gt; &amp;v2)</td></tr>
-<tr class="separator:a2d684d6c9ad5529ad7cb5437e1828fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa691889ea888335ae1f23c562dde80a"><td class="memTemplParams" colspan="2"><a class="anchor" id="aaa691889ea888335ae1f23c562dde80a"></a>
-template&lt;class T , class U &gt; </td></tr>
-<tr class="memitem:aaa691889ea888335ae1f23c562dde80a"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; decltype(std::declval<br class="typebreak"/>
-&lt; T &gt;)*std::declval&lt; U &gt;))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::edivide</b> (const matrix&lt; T &gt; &amp;A, const matrix&lt; U &gt; &amp;B)</td></tr>
-<tr class="separator:aaa691889ea888335ae1f23c562dde80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae276dd1d44dcc05d14618a2a9c4b1b21"><td class="memTemplParams" colspan="2"><a class="anchor" id="ae276dd1d44dcc05d14618a2a9c4b1b21"></a>
-template&lt;class T , class U &gt; </td></tr>
-<tr class="memitem:ae276dd1d44dcc05d14618a2a9c4b1b21"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; decltype(std::declval<br class="typebreak"/>
-&lt; T &gt;)*std::declval&lt; U &gt;))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::edivide</b> (const std::vector&lt; T &gt; &amp;v1, const std::vector&lt; U &gt; &amp;v2)</td></tr>
-<tr class="separator:ae276dd1d44dcc05d14618a2a9c4b1b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1ff99e34619478096c271b38df1f3d7"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:ac1ff99e34619478096c271b38df1f3d7"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; decltype(std::declval<br class="typebreak"/>
+&lt; T &gt;)*std::declval&lt; U &gt;))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#ac1ff99e34619478096c271b38df1f3d7">keycpp::times</a> (const matrix&lt; T &gt; &amp;A, const matrix&lt; U &gt; &amp;B)</td></tr>
+<tr class="memdesc:ac1ff99e34619478096c271b38df1f3d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs array multiplication on matrices A and B.  <a href="#ac1ff99e34619478096c271b38df1f3d7">More...</a><br/></td></tr>
+<tr class="separator:ac1ff99e34619478096c271b38df1f3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d5fd4f9f7c52f16425105995655e9d"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a90d5fd4f9f7c52f16425105995655e9d"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; decltype(std::declval<br class="typebreak"/>
+&lt; T &gt;)*std::declval&lt; U &gt;))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a90d5fd4f9f7c52f16425105995655e9d">keycpp::times</a> (const std::vector&lt; T &gt; &amp;v1, const std::vector&lt; U &gt; &amp;v2)</td></tr>
+<tr class="memdesc:a90d5fd4f9f7c52f16425105995655e9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs array multiplication on vectors v1 and v2.  <a href="#a90d5fd4f9f7c52f16425105995655e9d">More...</a><br/></td></tr>
+<tr class="separator:a90d5fd4f9f7c52f16425105995655e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacd37d195541b2313b753b6e8839f916"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:aacd37d195541b2313b753b6e8839f916"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; decltype(std::declval<br class="typebreak"/>
+&lt; T &gt;)*std::declval&lt; U &gt;))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#aacd37d195541b2313b753b6e8839f916">keycpp::rdivide</a> (const matrix&lt; T &gt; &amp;A, const matrix&lt; U &gt; &amp;B)</td></tr>
+<tr class="memdesc:aacd37d195541b2313b753b6e8839f916"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs right array division on matrices A and B.  <a href="#aacd37d195541b2313b753b6e8839f916">More...</a><br/></td></tr>
+<tr class="separator:aacd37d195541b2313b753b6e8839f916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af234cd07a4e1d649629a6b83dbe113ff"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:af234cd07a4e1d649629a6b83dbe113ff"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; decltype(std::declval<br class="typebreak"/>
+&lt; T &gt;)*std::declval&lt; U &gt;))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#af234cd07a4e1d649629a6b83dbe113ff">keycpp::rdivide</a> (const std::vector&lt; T &gt; &amp;v1, const std::vector&lt; U &gt; &amp;v2)</td></tr>
+<tr class="memdesc:af234cd07a4e1d649629a6b83dbe113ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs right array division on vectors v1 and v2.  <a href="#af234cd07a4e1d649629a6b83dbe113ff">More...</a><br/></td></tr>
+<tr class="separator:af234cd07a4e1d649629a6b83dbe113ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac57d32902cba2c399475015235aeccec"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:ac57d32902cba2c399475015235aeccec"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; decltype(std::declval<br class="typebreak"/>
+&lt; T &gt;)*std::declval&lt; U &gt;))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#ac57d32902cba2c399475015235aeccec">keycpp::ldivide</a> (const matrix&lt; T &gt; &amp;B, const matrix&lt; U &gt; &amp;A)</td></tr>
+<tr class="memdesc:ac57d32902cba2c399475015235aeccec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs left array division on matrices B and A.  <a href="#ac57d32902cba2c399475015235aeccec">More...</a><br/></td></tr>
+<tr class="separator:ac57d32902cba2c399475015235aeccec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a86bc7e25833cdf9266c038a4edb0ea"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a7a86bc7e25833cdf9266c038a4edb0ea"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; decltype(std::declval<br class="typebreak"/>
+&lt; T &gt;)*std::declval&lt; U &gt;))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a7a86bc7e25833cdf9266c038a4edb0ea">keycpp::ldivide</a> (const std::vector&lt; T &gt; &amp;v2, const std::vector&lt; U &gt; &amp;v1)</td></tr>
+<tr class="memdesc:a7a86bc7e25833cdf9266c038a4edb0ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs left array division on vectors v2 and v1.  <a href="#a7a86bc7e25833cdf9266c038a4edb0ea">More...</a><br/></td></tr>
+<tr class="separator:a7a86bc7e25833cdf9266c038a4edb0ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f1cd159623e23abeedd26d34fc500d9"><td class="memTemplParams" colspan="2"><a class="anchor" id="a8f1cd159623e23abeedd26d34fc500d9"></a>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:a8f1cd159623e23abeedd26d34fc500d9"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::sign</b> (T val)</td></tr>
@@ -387,12 +441,24 @@ std::complex&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom">
 <tr class="separator:ab7577228b38fa6a1911ac65fb80832f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad68697505d1a1a85f30a18b0e9b0eb2f"><td class="memTemplParams" colspan="2"><a class="anchor" id="ad68697505d1a1a85f30a18b0e9b0eb2f"></a>
 template&lt;class T &gt; </td></tr>
-<tr class="memitem:ad68697505d1a1a85f30a18b0e9b0eb2f"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::transpose</b> (matrix&lt; T &gt; A)</td></tr>
+<tr class="memitem:ad68697505d1a1a85f30a18b0e9b0eb2f"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#ad68697505d1a1a85f30a18b0e9b0eb2f">keycpp::transpose</a> (matrix&lt; T &gt; A)</td></tr>
+<tr class="memdesc:ad68697505d1a1a85f30a18b0e9b0eb2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the transpose of matrix A. <br/></td></tr>
 <tr class="separator:ad68697505d1a1a85f30a18b0e9b0eb2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa148d677899a0da5ab14edfc5057a97b"><td class="memTemplParams" colspan="2"><a class="anchor" id="aa148d677899a0da5ab14edfc5057a97b"></a>
 template&lt;class T &gt; </td></tr>
-<tr class="memitem:aa148d677899a0da5ab14edfc5057a97b"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::transpose</b> (std::vector&lt; T &gt; v1)</td></tr>
+<tr class="memitem:aa148d677899a0da5ab14edfc5057a97b"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#aa148d677899a0da5ab14edfc5057a97b">keycpp::transpose</a> (std::vector&lt; T &gt; v1)</td></tr>
+<tr class="memdesc:aa148d677899a0da5ab14edfc5057a97b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the transpose of vector v1. <br/></td></tr>
 <tr class="separator:aa148d677899a0da5ab14edfc5057a97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88081df8038d0b630d6a3540aeca8b9a"><td class="memTemplParams" colspan="2"><a class="anchor" id="a88081df8038d0b630d6a3540aeca8b9a"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a88081df8038d0b630d6a3540aeca8b9a"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a88081df8038d0b630d6a3540aeca8b9a">keycpp::ctranspose</a> (matrix&lt; T &gt; A)</td></tr>
+<tr class="memdesc:a88081df8038d0b630d6a3540aeca8b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the complex-conjugate transpose of matrix A. <br/></td></tr>
+<tr class="separator:a88081df8038d0b630d6a3540aeca8b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a827218d19d98cf1357032a652a9bf4e5"><td class="memTemplParams" colspan="2"><a class="anchor" id="a827218d19d98cf1357032a652a9bf4e5"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a827218d19d98cf1357032a652a9bf4e5"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a827218d19d98cf1357032a652a9bf4e5">keycpp::ctranspose</a> (std::vector&lt; T &gt; v1)</td></tr>
+<tr class="memdesc:a827218d19d98cf1357032a652a9bf4e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the complex-conjugate transpose of vector v1. <br/></td></tr>
+<tr class="separator:a827218d19d98cf1357032a652a9bf4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aedb589e76ced5d79d62c5f72029adb"><td class="memTemplParams" colspan="2"><a class="anchor" id="a4aedb589e76ced5d79d62c5f72029adb"></a>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:a4aedb589e76ced5d79d62c5f72029adb"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::sum</b> (matrix&lt; T &gt; A)</td></tr>
@@ -490,7 +556,7 @@ template&lt;class T &gt; </td></tr>
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 8 2013 16:41:04 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 12 2013 12:43:03 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

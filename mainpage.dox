@@ -79,10 +79,11 @@ Note: You can omit the `keycpp::` prefix from the following commands by placing 
 | `A(:,k)` | `A.getCol(k-1);` | C++ restricts the use of `:` |
 | `A(k,:)` | `A.getRow(k-1);` |  |
 | `A.'` | `keycpp::transpose(A);` | C++ does not allow overloading `.'` |
+| `A'` | `keycpp::ctranspose(A);` | C++ does not allow overloading `'` |
 | `A = zeros(m,n)` | `keycpp::matrix<double> A = keycpp::zeros<double>(m,n);` | or more simply: `keycpp::matrix<double> A(m,n);` |
 | `A = ones(m,n)` | `keycpp::matrix<double> A = keycpp::ones<double>(m,n);` |  |
-| `A.*B` | `keycpp::etimes(A,B);` | C++ does not allow overloading `.*` or `./` |
-| `A./B` | `keycpp::edivide(A,B);` |  |
+| `A.*B` | `keycpp::times(A,B);` | C++ does not allow overloading `.*` or `./` |
+| `A./B` | `keycpp::rdivide(A,B);` |  |
 | `A\b` | `keycpp::linsolve(A,b);` | `b` is a vector |
 | `[V, D] = eig(A,B)` | `std::vector<std::complex<double>> d = keycpp::eig(A,B,&V);` | Non-Hermitian generalized eigenvalue/eigenvector solver uses LAPACK. |
 | `x = linspace(0,10,N_x)` | `std::vector<double> x = keycpp::linspace(0.0,10.0,N_x);` |  |

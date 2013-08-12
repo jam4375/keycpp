@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="20" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="20" bodyend="20"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="35" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="35" bodyend="35"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -48,7 +48,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="18" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="17" bodyend="21"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="33" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="32" bodyend="36"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1_figure_exception_1aacd7cab583d3eea1ddd185a8fd7b1133" prot="public" virt="non-virtual"><scope>keycpp::FigureException</scope><name>FigureException</name></member>
     </listofallmembers>

@@ -4,35 +4,45 @@
 using namespace std;
 
 namespace keycpp
-{
-	double rand_limits(double a, double b)
+{	
+    /** \brief Returns a random double between 0 and 1.0
+	 */
+	double rand()
 	{
-		return (a + (double)rand()/((double)RAND_MAX)*(b-a));
+		return ((double)rand()/((double)RAND_MAX));
 	}
-
-	complex<double> interp1(double *x, complex<double> **y, double x_interp, int index, int N)
+	
+	/** \brief Returns an N x N matrix of random doubles between 0 and 1.0
+	 */
+	matrix<double> rand(int N)
 	{
-		for(int ii = 0; ii < (N-1); ii++)
-		{
-			if(x_interp == x[ii])
-			{
-				return y[ii][index];
-			}
-			else if((x_interp > x[ii] && x_interp < x[ii+1]) || (x_interp < x[ii] && x_interp > x[ii+1]))
-			{
-				return (y[ii][index] + (x_interp - x[ii])*(y[ii+1][index] - y[ii][index])/(x[ii+1] - x[ii]));
-			}
-		}
-
-		if(x_interp == x[N-1])
-		{
-			return y[N-1][index];
-		}
-
-		cout << "ERROR! Could not interpolate!!\n";
-		return complex<double> (0,0);
+	    matrix<double> A(N,N);
+	    for(int ii = 0; ii < N; ii++)
+	    {
+	        for(int jj = 0; jj < N; jj++)
+	        {
+	            A(ii,jj) = ((double)rand()/((double)RAND_MAX));
+	        }
+        }
+	    
+		return A;
 	}
-
+	
+	/** \brief Returns an M x N matrix of random doubles between 0 and 1.0
+	 */
+	matrix<double> rand(int M, int N)
+	{
+	    matrix<double> A(M,N);
+	    for(int ii = 0; ii < N; ii++)
+	    {
+	        for(int jj = 0; jj < N; jj++)
+	        {
+	            A(ii,jj) = ((double)rand()/((double)RAND_MAX));
+	        }
+        }
+	    
+		return A;
+	}
 
 	/** \brief Generalized complex-valued eigenvalue solver using LAPACK function call. 
 	 *  
@@ -41,7 +51,7 @@ namespace keycpp
 	 *  are returned by default. To return the right or left eigenvectors, supply the
 	 *  function with a complex<double> matrix object in the 3rd or 4th parameters, respectively.
 	 */
-	vector<complex<double> > eig(const matrix<complex<double> > A, const matrix<complex<double> > B, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
+    vector<complex<double> > eig(const matrix<complex<double> > A, const matrix<complex<double> > B, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
 	{
 		int n, lda, ldb, ldvl, ldvr, lwork, info;
 		n = lda = ldb = A.size(1);

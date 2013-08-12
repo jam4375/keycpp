@@ -33,8 +33,8 @@
 <codeline lineno="21"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>First,<sp/>lets<sp/>create<sp/>some<sp/>data:<sp/>y1<sp/>=<sp/>t^2<sp/>and<sp/>y2<sp/>=<sp/>t^3</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>t<sp/>=<sp/><ref refid="namespacekeycpp_1ab57eee495c93eb18ebf8c8ccf4d44e74" kindref="member" tooltip="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">linspace</ref>(-2.0,2.0,100);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>y1<sp/>=<sp/>etimes(t,t);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>y2<sp/>=<sp/>etimes(t,etimes(t,t));</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>y1<sp/>=<sp/><ref refid="namespacekeycpp_1ac1ff99e34619478096c271b38df1f3d7" kindref="member" tooltip="Performs array multiplication on matrices A and B.">times</ref>(t,t);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>y2<sp/>=<sp/><ref refid="namespacekeycpp_1ac1ff99e34619478096c271b38df1f3d7" kindref="member" tooltip="Performs array multiplication on matrices A and B.">times</ref>(t,<ref refid="namespacekeycpp_1ac1ff99e34619478096c271b38df1f3d7" kindref="member" tooltip="Performs array multiplication on matrices A and B.">times</ref>(t,t));</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now,<sp/>lets<sp/>plot<sp/>the<sp/>data<sp/>we<sp/>just<sp/>created:</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1_figure" kindref="compound">Figure</ref><sp/>h1;</highlight></codeline>
@@ -89,7 +89,7 @@
  <image type="html" name="plot2.png"></image>
  <linebreak/>
 </para><para><heading level="1">MATLAB/Octave to KeyCpp Conversion Chart</heading>
-</para><para>Although the goal of this library is to offer a C++ interface similar in syntax to MATLAB/Octave, there are some minor differences. The goal of this document is to provide a conversion chart for some of the most commonly used features.</para><para>Note: You can omit the <computeroutput>keycpp::</computeroutput> prefix from the following commands by placing <computeroutput>using namespace keycpp;</computeroutput> in the same scope. This shortcut should be used with care as collisions with other libraries are possible.</para><para><table rows="18" cols="3"><row>
+</para><para>Although the goal of this library is to offer a C++ interface similar in syntax to MATLAB/Octave, there are some minor differences. The goal of this document is to provide a conversion chart for some of the most commonly used features.</para><para>Note: You can omit the <computeroutput>keycpp::</computeroutput> prefix from the following commands by placing <computeroutput>using namespace keycpp;</computeroutput> in the same scope. This shortcut should be used with care as collisions with other libraries are possible.</para><para><table rows="19" cols="3"><row>
 <entry thead="yes"><para><emphasis>MATLAB/Octave</emphasis> </para></entry><entry thead="yes"><para><emphasis>KeyCpp</emphasis> </para></entry><entry thead="yes"><para>Notes </para></entry></row>
 <row>
 <entry thead="no"><para><computeroutput>A(1,1)</computeroutput> </para></entry><entry thead="no"><para><computeroutput>A(0,0);</computeroutput> </para></entry><entry thead="no"><para>Indexing starts at 0 in KeyCpp </para></entry></row>
@@ -106,13 +106,15 @@
 <row>
 <entry thead="no"><para><computeroutput>A.&apos;</computeroutput> </para></entry><entry thead="no"><para><computeroutput>keycpp::transpose(A);</computeroutput> </para></entry><entry thead="no"><para>C++ does not allow overloading <computeroutput>.&apos;</computeroutput> </para></entry></row>
 <row>
+<entry thead="no"><para><computeroutput>A&apos;</computeroutput> </para></entry><entry thead="no"><para><computeroutput>keycpp::ctranspose(A);</computeroutput> </para></entry><entry thead="no"><para>C++ does not allow overloading <computeroutput>&apos;</computeroutput> </para></entry></row>
+<row>
 <entry thead="no"><para><computeroutput>A = zeros(m,n)</computeroutput> </para></entry><entry thead="no"><para><computeroutput><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix</ref>&lt;double&gt; A = <ref refid="namespacekeycpp_1a86f1406f9fad5a439d8eff01aba8eac6" kindref="member">keycpp::zeros</ref>&lt;double&gt;(m,n);</computeroutput> </para></entry><entry thead="no"><para>or more simply: <computeroutput><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix</ref>&lt;double&gt; A(m,n);</computeroutput> </para></entry></row>
 <row>
 <entry thead="no"><para><computeroutput>A = ones(m,n)</computeroutput> </para></entry><entry thead="no"><para><computeroutput><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix</ref>&lt;double&gt; A = <ref refid="namespacekeycpp_1ace6f21832ab61f8f15e5b35e0a5cdb3e" kindref="member">keycpp::ones</ref>&lt;double&gt;(m,n);</computeroutput> </para></entry><entry thead="no"><para></para></entry></row>
 <row>
-<entry thead="no"><para><computeroutput>A.*B</computeroutput> </para></entry><entry thead="no"><para><computeroutput>keycpp::etimes(A,B);</computeroutput> </para></entry><entry thead="no"><para>C++ does not allow overloading <computeroutput>.*</computeroutput> or <computeroutput>./</computeroutput> </para></entry></row>
+<entry thead="no"><para><computeroutput>A.*B</computeroutput> </para></entry><entry thead="no"><para><computeroutput>keycpp::times(A,B);</computeroutput> </para></entry><entry thead="no"><para>C++ does not allow overloading <computeroutput>.*</computeroutput> or <computeroutput>./</computeroutput> </para></entry></row>
 <row>
-<entry thead="no"><para><computeroutput>A./B</computeroutput> </para></entry><entry thead="no"><para><computeroutput>keycpp::edivide(A,B);</computeroutput> </para></entry><entry thead="no"><para></para></entry></row>
+<entry thead="no"><para><computeroutput>A./B</computeroutput> </para></entry><entry thead="no"><para><computeroutput>keycpp::rdivide(A,B);</computeroutput> </para></entry><entry thead="no"><para></para></entry></row>
 <row>
 <entry thead="no"><para><computeroutput>A\b</computeroutput> </para></entry><entry thead="no"><para><computeroutput>keycpp::linsolve(A,b);</computeroutput> </para></entry><entry thead="no"><para><computeroutput>b</computeroutput> is a vector </para></entry></row>
 <row>

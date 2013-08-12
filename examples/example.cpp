@@ -21,8 +21,8 @@ int main(int argc, char** argv)
 {
     // First, lets create some data: y1 = t^2 and y2 = t^3
     vector<double> t = linspace(-2.0,2.0,100);
-    vector<double> y1 = etimes(t,t);
-    vector<double> y2 = etimes(t,etimes(t,t));
+    vector<double> y1 = times(t,t);
+    vector<double> y2 = times(t,times(t,t));
 
     // Now, lets plot the data we just created:
     Figure h1;

@@ -29,5 +29,6 @@ var searchData=
   ['set_5fzlogscale',['set_zlogscale',['../class_gnuplot.html#a1da3838163b0dbde8809b55c5b5c56b1',1,'Gnuplot']]],
   ['set_5fzrange',['set_zrange',['../class_gnuplot.html#a7273f6a48024117b4d234d0251106e78',1,'Gnuplot']]],
   ['showonscreen',['showonscreen',['../class_gnuplot.html#a356d2faaa79f08d13fec9718b776b28d',1,'Gnuplot']]],
+  ['sin',['sin',['../namespacekeycpp.html#a1ebc4ddf6e567714f63f0dbb8a984745',1,'keycpp::sin(const std::vector&lt; T &gt; v1)'],['../namespacekeycpp.html#a159a28c69282a740e381465a0e71bf23',1,'keycpp::sin(const matrix&lt; T &gt; A)']]],
   ['size',['size',['../namespacekeycpp.html#a2dc5102775ed955f378432f84fe96987',1,'keycpp::size(const matrix&lt; T &gt; A, const int dim)'],['../namespacekeycpp.html#a028e501a865c86bdf616ea13e87645fa',1,'keycpp::size(const matrix&lt; T &gt; A)']]]
 ];
