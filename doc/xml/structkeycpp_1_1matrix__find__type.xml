@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+  <compounddef id="structkeycpp_1_1matrix__find__type" kind="struct" prot="public">
+    <compoundname>keycpp::matrix_find_type</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structkeycpp_1_1matrix__find__type_1a34ca318ae96bc18fe29ac2a42ab1b520" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; keycpp::matrix_find_type&lt; T &gt;::rows</definition>
+        <argsstring></argsstring>
+        <name>rows</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1902" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1902" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structkeycpp_1_1matrix__find__type_1a034a9a0159b07d68cdc688e36648667c" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; keycpp::matrix_find_type&lt; T &gt;::cols</definition>
+        <argsstring></argsstring>
+        <name>cols</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1903" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1903" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structkeycpp_1_1matrix__find__type_1a46d32e3990c9333dbbfc77adece4159b" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; keycpp::matrix_find_type&lt; T &gt;::v</definition>
+        <argsstring></argsstring>
+        <name>v</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1904" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1904" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1901" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1900" bodyend="1905"/>
+    <listofallmembers>
+      <member refid="structkeycpp_1_1matrix__find__type_1a034a9a0159b07d68cdc688e36648667c" prot="public" virt="non-virtual"><scope>keycpp::matrix_find_type</scope><name>cols</name></member>
+      <member refid="structkeycpp_1_1matrix__find__type_1a34ca318ae96bc18fe29ac2a42ab1b520" prot="public" virt="non-virtual"><scope>keycpp::matrix_find_type</scope><name>rows</name></member>
+      <member refid="structkeycpp_1_1matrix__find__type_1a46d32e3990c9333dbbfc77adece4159b" prot="public" virt="non-virtual"><scope>keycpp::matrix_find_type</scope><name>v</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

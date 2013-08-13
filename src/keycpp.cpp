@@ -274,7 +274,14 @@ namespace keycpp
         zgetrf_(&n, &n, A, &lda, iw, &info);
         if(info != 0)
         {
-            throw KeyCppException("Unknown error in linsolve()!");
+            if(info > 0)
+            {
+                cerr << "Warning: Matrix is singular. Results may be inaccurate.\n";
+            }
+            else
+            {
+                throw KeyCppException("Unknown error in linsolve()!");
+            }
         }
 
         /* Computes the reciprocal norm */
@@ -355,7 +362,14 @@ namespace keycpp
         dgetrf_(&n, &n, A, &lda, iw, &info);
         if(info != 0)
         {
-            throw KeyCppException("Unknown error in linsolve()!");
+            if(info > 0)
+            {
+                cerr << "Warning: Matrix is singular. Results may be inaccurate.\n";
+            }
+            else
+            {
+                throw KeyCppException("Unknown error in linsolve()!");
+            }
         }
 
         /* Computes the reciprocal norm */

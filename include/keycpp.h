@@ -13,6 +13,7 @@
 #include <boost/numeric/odeint.hpp>
 #include <utility>
 #include <algorithm>
+#include <limits>
 #include "Matrix.h"
 #include "kiss_fft.h"
 #include "Spline.h"
@@ -26,6 +27,9 @@
 namespace keycpp
 {
 	#define pi 3.1415926535897932384626433832795
+	#define eps std::numeric_limits<double>::epsilon()
+	#define Inf std::numeric_limits<double>::infinity()
+	#define NaN nan("")
 	
 	class KeyCppException : public std::runtime_error
 	{
@@ -157,7 +161,7 @@ namespace keycpp
 
     /** \brief Returns the product of all the elements of the vector x.
      */
-	template<class T> std::vector<T> prod(const std::vector<T> x)
+	template<class T> T prod(const std::vector<T> x)
 	{
 	    if(x.empty())
 	    {
@@ -306,6 +310,16 @@ namespace keycpp
 		for(int ii = 0; ii < result.size(); ii++)
 		{
 			result[ii] = v1[ii]+v2[ii];
+		}
+		return result;
+	}
+
+	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> operator-(const std::vector<T>& v1, const std::vector<U>& v2)
+	{
+		std::vector<decltype(std::declval<T>()*std::declval<U>())> result(v1.size());
+		for(int ii = 0; ii < result.size(); ii++)
+		{
+			result[ii] = v1[ii]-v2[ii];
 		}
 		return result;
 	}
@@ -567,6 +581,18 @@ namespace keycpp
 		return A;
 	}
 	
+    /**  \brief Returns a vector of length N containing all zeros.
+     *   @details
+     *    Returns a vector of length N containing all zeros.
+     *   @param[in] N Number of elements.
+     *   @return A vector of length N containing zeros for each element. 
+     */
+	template<class T> std::vector<T> zeros(const int N)
+	{
+		std::vector<T> v1(N);
+		return v1;
+	}
+	
     /**  \brief Returns a matrix of size M x N containing all ones.
      *   @details
      *    Returns a matrix of size M x N containing all ones.
@@ -587,6 +613,22 @@ namespace keycpp
 		return A;
 	}
 	
+    /**  \brief Returns a vector of length N containing all ones.
+     *   @details
+     *    Returns a vector of length N containing all ones.
+     *   @param[in] N Number of elements.
+     *   @return A vector of length N containing ones for each element. 
+     */
+	template<class T> std::vector<T> ones(const int N)
+	{
+		std::vector<T> v1(N);
+		for(int ii = 0; ii < N; ii++)
+		{
+		    v1[ii] = 1.0;
+		}
+		return v1;
+	}
+	
 	template<class T> matrix<T> diag(const std::initializer_list<T>& lst)
 	{
 		matrix<T> A(lst.size(),lst.size());
@@ -597,6 +639,29 @@ namespace keycpp
 			ii++;
 		}
 		return A;
+	}
+	
+	template<class T> std::vector<T> diag(const matrix<T> A)
+	{
+	    if(A.empty())
+	    {
+	        throw KeyCppException("Cannot compute diagonal of empty matrix!");
+	    }
+	    int min_dim;
+	    if(A.size(1) < A.size(2))
+	    {
+	        min_dim = A.size(1);
+	    }
+	    else
+	    {
+	        min_dim = A.size(2);
+	    }
+		std::vector<T> v1(min_dim);
+		for(int ii = 0; ii < min_dim; ii++)
+		{
+			v1[ii] = A(ii,ii);
+		}
+		return v1;
 	}
 	
 	template<class T> matrix<T> repmat(const matrix<T> A, int m, int n)
@@ -875,6 +940,17 @@ namespace keycpp
 		}
 		return x[index];
 	}
+	
+	
+	template<class T> std::vector<T> min(matrix<T> A)
+	{
+	    std::vector<T> v(A.size(2));
+	    for(int ii = 0; ii < v.size(); ii++)
+	    {
+	        v[ii] = min(A.getCol(ii));
+	    }
+	    return v;
+	}
 
 	/** \brief Returns the transpose of matrix A.
 	 */
@@ -930,23 +1006,23 @@ namespace keycpp
 		return B;
 	}
 	
+	/** \brief Computes the sum of each column of A.
+	 */
 	template<class T> std::vector<T> sum(matrix<T> A)
 	{
 		std::vector<T> v1(A.size(2));
 		for(int ii = 0; ii < v1.size(); ii++)
 		{
-			v1[ii] = T(0);
-			for(int jj = 0; jj < A.size(1); jj++)
-			{
-				v1[ii] += A(jj,ii);
-			}
+			v1[ii] = sum(A.getCol(ii));
 		}
 		return v1;
 	}
 	
+	/** \brief Computes the sum of vector v1.
+	 */
 	template<class T> T sum(std::vector<T> v1)
 	{
-		T a;
+		T a = 0.0;
 		for(int ii = 0; ii < v1.size(); ii++)
 		{
 			a += v1[ii];
@@ -954,8 +1030,14 @@ namespace keycpp
 		return a;
 	}
 	
+	/** \brief Converts matrix A to a column vector.
+	 */
 	template<class T> std::vector<T> mat2vec(matrix<T> A)
 	{
+	    if(A.empty())
+	    {
+	        throw KeyCppException("Cannot convert empty matrix to a vector!");
+	    }
 		std::vector<T> v1(A.size(1));
 		for(int ii = 0; ii < v1.size(); ii++)
 		{
@@ -964,8 +1046,14 @@ namespace keycpp
 		return v1;
 	}
 	
+	/** \brief Converts a column vector to a 1 x length(v1) matrix.
+	 */
 	template<class T> matrix<T> vec2mat(std::vector<T> v1)
 	{
+	    if(v1.empty())
+	    {
+	        throw KeyCppException("Cannot convert empty vector to a matrix!");
+	    }
 		matrix<T> A(v1.size(),1);
 		for(int ii = 0; ii < v1.size(); ii++)
 		{
@@ -1056,6 +1144,8 @@ namespace keycpp
 		return v2;
 	}
 	
+	/** \brief Computes the mean of vector v1.
+	 */
 	template<class T> T mean(const std::vector<T>& v1)
 	{
 		T m = T(0);
@@ -1676,6 +1766,284 @@ namespace keycpp
 		return sort_vector;
 	}
 	
+    /** \brief Displays on standard output any parameter passed to it provided 
+     *         the operator << is defined for its type.
+     */
+	template<class T>
+	void disp(T x)
+	{
+	    std::cout << x << std::endl;
+	    return;
+	}
+	
+	/** \brief Prints the prompt to the screen and then waits for user input.
+	 *         Currently the option must be supplied as "s" because C++ is a 
+	 *         statically typed language.
+	 */
+	inline std::string input(std::string prompt, std::string option)
+	{
+	    if(option.empty())
+	    {
+	        throw KeyCppException("Evaluating input expressions is currently unsupported. Use option \"s\" instead.");
+	    }
+		std::transform(option.begin(), option.end(), option.begin(), ::tolower);
+	    if(option.compare("s") != 0)
+	    {
+	        throw KeyCppException("Unknown option provided to input()!");
+	    }
+	    std::cout << prompt;
+	    std::string in;
+	    std::cin >> in;
+	    
+	    return in;
+	}
+	
+	/** \brief Converts a string to a double. Currently only works on single numbers.
+	 *         In the future this should be expanded to work on vectors and matrices. (see MATLAB docs)
+	 */
+	inline double str2num(std::string in)
+	{
+	    return atof(in.c_str());
+	}
+	
+	/** \brief Returns the number of elements in a vector.
+	 */
+	template<class T>
+	int length(std::vector<T> v1)
+	{
+	    return v1.size();
+	}
+	
+	/** \brief Returns the length of the largest dimension of A.
+	 */
+	template<class T>
+	int length(matrix<T> A)
+	{
+	    int m = A.size(1);
+	    int n = A.size(2);
+	    return ((m > n)?(m):(n));
+	}
+	
+	template<class T>
+	int numel(matrix<T> A)
+	{
+	    return (A.size(1)*A.size(2));
+	}
+	
+	/** \brief Finds and returns the indices of non-zero elements of v1.
+	 */
+	template<class T>
+	std::vector<int> find(std::vector<T> v1, int k = -1, std::string start = "")
+	{
+		std::transform(start.begin(), start.end(), start.begin(), ::tolower);
+	    std::vector<int> v2;
+	    if(v1.empty())
+	    {
+	        return v2;
+	    }
+	    if(k < 0 || k > v1.size() || start.empty() || (start.compare("first") != 0 &&
+	       start.compare("last") != 0))
+	    {
+	        v2.reserve(v1.size());
+	        for(int ii = 0; ii < v1.size(); ii++)
+	        {
+	            if(std::abs(v1[ii]) > eps)
+	            {
+	                v2.push_back(ii);
+	            }
+	        }
+	    }
+	    else if(start.compare("first") == 0 && k > 0 && k < v1.size())
+	    {
+	        v2.reserve(k);
+	        int count = 0;
+	        for(int ii = 0; ii < v1.size(); ii++)
+	        {
+	            if(std::abs(v1[ii]) > eps)
+	            {
+	                v2.push_back(ii);
+	                count++;
+	                if(count >= k)
+	                {
+	                    break;
+	                }
+	            }
+	        }
+	    }
+	    else if(start.compare("last") == 0 && k > 0 && k < v1.size())
+	    {
+	        v2.reserve(k);
+	        int count = 0;
+	        for(int ii = v1.size()-1; ii >= 0; ii--)
+	        {
+	            if(std::abs(v1[ii]) > eps)
+	            {
+	                v2.push_back(ii);
+	                count++;
+	                if(count >= k)
+	                {
+	                    break;
+	                }
+	            }
+	        }
+	    }
+	    else
+	    {
+	        throw KeyCppException("Unknown arguments in find()!");
+	    }
+	    
+	    return v2;
+	}
+	
+	
+	template<class T>
+	struct matrix_find_type
+	{
+		std::vector<int> rows;
+		std::vector<int> cols;
+		std::vector<T> v;
+	};
+	
+	/** \brief Finds and returns the row and column indices and values of non-zero elements of A.
+	 */
+	template<class T>
+	matrix_find_type<T> find(matrix<T> A)
+	{
+	    matrix_find_type<T> out;
+	    if(A.empty())
+	    {
+	        return out;
+	    }
+	  
+        out.rows.reserve(numel(A));
+        out.cols.reserve(numel(A));
+        out.v.reserve(numel(A));
+        for(int ii = 0; ii < A.size(1); ii++)
+        {
+            for(int jj = 0; jj < A.size(2); jj++)
+            {
+                if(std::abs(A(ii,jj)) > eps)
+                {
+                    out.rows.push_back(ii);
+                    out.cols.push_back(jj);
+                    out.v.push_back(A(ii,jj));
+                }
+            }
+        }
+	    
+	    return out;
+	}
+	
+	template<class T>
+	matrix<T> reshape(matrix<T> A, int m, int n)
+	{
+	    if(A.empty())
+	    {
+	        throw KeyCppException("Cannot reshape empty matrix!");
+	    }
+	    if(numel(A) != m*n)
+	    {
+	        throw KeyCppException("To reshape the number of elements must not change.");
+	    }
+	    
+	    matrix<T> B(m,n);
+	    int count = 0;
+	    int m0 = A.size(1);
+	    int n0 = A.size(2);
+	    for(int ii = 0; ii < m; ii++)
+	    {
+	        for(int jj = 0; jj < n; jj++)
+	        {
+	            B(ii,jj) = A(count % m0, count/m0);
+	            count++;
+	        }
+	    }
+	    return B;
+	}
+	
+	template<class T>
+	matrix<T> reshape(std::vector<T> v1, int m, int n)
+	{
+	    return reshape(vec2mat(v1),m,n);
+	}
+	
+	/** \brief Computes the dot product between vectors v1 and v2.
+	 */
+	template<class T, class U>
+	decltype(std::declval<T>()*std::declval<U>()) dot(std::vector<T> v1, std::vector<U> v2)
+	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot dot multiply an empty vector!");
+	    }
+	    if(v1.size() != v2.size())
+	    {
+	        throw KeyCppException("Vectors must be same size in dot()!");
+	    }
+	    decltype(std::declval<T>()*std::declval<U>()) result = 0.0;
+	    for(int ii = 0; ii < v1.size(); ii++)
+	    {
+	        result += v1[ii]*v2[ii];
+	    }
+	    return result;
+	}
+	
+	/** \brief Computes the dot product between the first non-singleton dimension of A and B.
+	 */
+	template<class T, class U>
+	std::vector<decltype(std::declval<T>()*std::declval<U>())> dot(matrix<T> A, matrix<U> B, int dim = -1)
+	{
+	    if(A.empty() || B.empty())
+	    {
+	        throw KeyCppException("Cannot dot multiply empty matrices!");
+	    }
+	    if(A.size(1) != B.size(1) && A.size(2) != B.size(2))
+	    {
+	        throw KeyCppException("Matrices must be same size in dot()!");
+	    }
+	    std::vector<decltype(std::declval<T>()*std::declval<U>())> result;
+	    if((A.size(1) > 1 || dim == 1) && dim != 2)
+	    {
+	        result = std::vector<decltype(std::declval<T>()*std::declval<U>())>(A.size(2));
+	        for(int ii = 0; ii < result.size(); ii++)
+	        {
+	            result[ii] = dot(A.getCol(ii),B.getCol(ii));
+	        }
+	    }
+	    else
+	    {
+	        result = std::vector<decltype(std::declval<T>()*std::declval<U>())>(A.size(1));
+	        for(int ii = 0; ii < result.size(); ii++)
+	        {
+	            result[ii] = dot(A.getRow(ii),B.getRow(ii));
+	        }
+	    }
+	    return result;
+	}
+	
+	/** \brief Computes the cross product between vectors v1 and v2. Both vectors
+	 *         must have exactly 3 elements.
+	 */
+	template<class T, class U>
+	std::vector<decltype(std::declval<T>()*std::declval<U>())> cross(std::vector<T> v1, std::vector<U> v2)
+	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot cross multiply an empty vector!");
+	    }
+	    if(v1.size() != 3 || v2.size() != 3)
+	    {
+	        throw KeyCppException("Vectors must be have length of 3 in cross()!");
+	    }
+	    std::vector<decltype(std::declval<T>()*std::declval<U>())> result(3);
+	    result[0] = v1[1]*v2[2] - v1[2]*v2[1];
+	    result[1] = v1[2]*v2[0] - v1[0]*v2[2];
+	    result[2] = v1[0]*v2[1] - v1[1]*v2[0];
+	    
+	    return result;
+	}
+	
+	
 	template<class T,class X>
 	struct SVD_type
 	{
@@ -1736,6 +2104,156 @@ namespace keycpp
 	SVD_type<double,double> svd(matrix<double> A_in, std::string method = "");
 	double norm(const matrix<std::complex<double>> A_in, std::string method = "2");
 	SVD_type<std::complex<double>,double> svd(matrix<std::complex<double>> A_in, std::string method = "");
+	
+	/** \brief Estimates the rank of a matrix by counting the singular values
+	 *         whose absolute value is greater than epsilon.
+	 */
+	template<class T>
+	int rank(matrix<T> A)
+	{
+	    auto output = svd(A);
+	    return length(find(diag(output.S)));
+	}
+	
+	/** \brief Computes the nullspace of matrix A.
+	 */
+	template<class T>
+	matrix<T> null(matrix<T> A)
+	{
+	    auto output = svd(A);
+	    std::vector<int> index;
+	    auto S = diag(output.S);
+	    index.reserve(S.size());
+	    int max_dim = (A.size(1) > A.size(2))?A.size(1):A.size(2);
+	    for(int ii = 0; ii < S.size(); ii++)
+	    {
+	        if(std::abs(S[ii]) < eps*max_dim)
+	        {
+	            index.push_back(ii);
+	        }
+	    }
+	    matrix<T> B(output.V.size(1),length(index));
+	    for(int ii = 0; ii < B.size(1); ii++)
+	    {
+	        for(int jj = 0; jj < B.size(2); jj++)
+	        {
+	            B(ii,jj) = output.V(ii,index[jj]);
+	        }
+	    }
+	    
+	    return B;
+	}
+	
+	/** \brief Returns true if any elements of A are nonzero.
+	 */
+	template<class T>
+	bool any(matrix<T> A)
+	{
+	    for(int ii = 0; ii < A.size(1); ii++)
+	    {
+	        for(int jj = 0; jj < A.size(2); jj++)
+	        {
+	            if(abs(A(ii,jj)) > eps)
+	            {
+	                return true;
+	            }
+	        }
+	    }
+	    return false;
+	}
+	
+	/** \brief Returns true if any elements of v1 are nonzero.
+	 */
+	template<class T>
+	bool any(std::vector<T> v1)
+	{
+	    for(int ii = 0; ii < v1.size(); ii++)
+	    {
+            if(abs(v1[ii]) > eps)
+            {
+                return true;
+            }
+	    }
+	    return false;
+	}
+	
+	/** \brief Returns true if all elements of A are nonzero.
+	 */
+	template<class T>
+	bool all(matrix<T> A)
+	{
+	    for(int ii = 0; ii < A.size(1); ii++)
+	    {
+	        for(int jj = 0; jj < A.size(2); jj++)
+	        {
+	            if(abs(A(ii,jj)) < eps)
+	            {
+	                return false;
+	            }
+	        }
+	    }
+	    return true;
+	}
+	
+	/** \brief Returns true if all elements of v1 are nonzero.
+	 */
+	template<class T>
+	bool all(std::vector<T> v1)
+	{
+	    for(int ii = 0; ii < v1.size(); ii++)
+	    {
+            if(abs(v1[ii]) < eps)
+            {
+                return false;
+            }
+	    }
+	    return true;
+	}
+	
+	/** \brief Returns matrix containing boolean values that are true if
+	 *         corresponding elements of A are finite.
+	 */
+	template<class T>
+	matrix<bool> finite(matrix<T> A)
+	{
+	    matrix<bool> out(A.size(1),A.size(2));
+	    for(int ii = 0; ii < A.size(1); ii++)
+	    {
+	        for(int jj = 0; jj < A.size(2); jj++)
+	        {
+                if(isfinite(A(ii,jj)))
+                {
+                    out(ii,jj) = true;
+                }
+                else
+                {
+                    out(ii,jj) = false;
+                }
+            }
+	    }
+	    return out;
+	}
+	
+	/** \brief Returns vector containing boolean values that are true if
+	 *         corresponding elements of v1 are finite.
+	 */
+	template<class T>
+	std::vector<bool> finite(std::vector<T> v1)
+	{
+	    std::vector<bool> out(v1.size());
+	    for(int ii = 0; ii < v1.size(); ii++)
+	    {
+            if(isfinite(v1[ii]))
+            {
+                out[ii] = true;
+            }
+            else
+            {
+                out[ii] = false;
+            }
+	    }
+	    return out;
+	}
 }
 
 #endif

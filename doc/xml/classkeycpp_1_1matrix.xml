@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="50" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="50" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="51" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1matrix_1a0b3616ad94ec868233ef48c0b57c2d52" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="51" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="51" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="52" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1matrix_1ae2144abe57757c5a29e73aaf4d3520aa" prot="private" static="no" mutable="no">
         <type>std::vector&lt; T &gt;</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="52" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="52" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="53" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="53" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="29" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="56" bodyend="58"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="29" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="57" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1accfc7cf9173d98b383c57af63f669b94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -83,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="30" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="61" bodyend="70"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="30" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="62" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1ad843813ecfec7c08b9259957406e94e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -138,7 +138,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="33" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="113" bodyend="124"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="33" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="114" bodyend="125"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1a951ea6752f4fb04e275a04be3539420a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
@@ -159,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="34" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="127" bodyend="138"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="34" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="128" bodyend="139"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1a78ad6107ab3b9546b20021274fe0ab47" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; T &gt;</type>
@@ -176,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="35" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="141" bodyend="165"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="35" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="142" bodyend="166"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1aa5a29b33cfa0d9568b90726fdef372f9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
@@ -193,7 +193,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="36" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="168" bodyend="195"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="36" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="169" bodyend="196"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1a30e23cbddecec8be4dd89d7c3d36e611" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
@@ -210,7 +210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="37" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="199" bodyend="222"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="37" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="200" bodyend="223"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1abb5d07fed06a0d51ea0203c91e1c52bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
@@ -227,7 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="38" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="225" bodyend="248"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="38" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="226" bodyend="249"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1a380afb3099fc7955b143602ddc17a28f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -244,7 +244,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="39" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="251" bodyend="265"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="39" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="252" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_1ad522f701e86eafc344d8904d4f0a8f19" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool keycpp::matrix&lt; T &gt;::empty</definition>
+        <argsstring>() const </argsstring>
+        <name>empty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="40" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="269" bodyend="279"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1a133bb88c69cddc6c1e2dcdbdbbe3ce4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -265,7 +278,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="40" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="268" bodyend="288"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="41" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="282" bodyend="302"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1ac1d7804d1af7f4376572a51fcdf112e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -282,7 +295,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="41" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="291" bodyend="307"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="42" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="305" bodyend="321"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1a00cf9c7b83e6b4e1e156b339b98297a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -299,7 +312,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="42" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="310" bodyend="324"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="43" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="324" bodyend="338"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1a8a88af29e0e193d495b7c0146397aeda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -320,7 +333,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="43" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="327" bodyend="346"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="44" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="341" bodyend="360"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1a0946b26c2ba7fb7d427f2f8b766f74d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; T &gt;</type>
@@ -337,7 +350,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="44" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="349" bodyend="367"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="45" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="363" bodyend="381"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1a940e406656b5c3ad3e8f1296e2d47fc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; T &gt;</type>
@@ -350,7 +363,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="45" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="370" bodyend="384"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="46" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="384" bodyend="398"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1a9ba947125ca3c1fd98b1cf8e50e289ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; T &gt;</type>
@@ -367,7 +380,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="46" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="387" bodyend="405"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="47" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="401" bodyend="419"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1matrix_1aedf9ec6e9bd1d3edc4152b8caf88b33f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -384,16 +397,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="47" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="408" bodyend="418"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="48" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="422" bodyend="432"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="27" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="26" bodyend="53"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="27" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="26" bodyend="54"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1matrix_1a00cf9c7b83e6b4e1e156b339b98297a5" prot="public" virt="non-virtual"><scope>keycpp::matrix</scope><name>addLastRow</name></member>
+      <member refid="classkeycpp_1_1matrix_1ad522f701e86eafc344d8904d4f0a8f19" prot="public" virt="non-virtual"><scope>keycpp::matrix</scope><name>empty</name></member>
       <member refid="classkeycpp_1_1matrix_1a9ba947125ca3c1fd98b1cf8e50e289ca" prot="public" virt="non-virtual"><scope>keycpp::matrix</scope><name>getCol</name></member>
       <member refid="classkeycpp_1_1matrix_1a940e406656b5c3ad3e8f1296e2d47fc5" prot="public" virt="non-virtual"><scope>keycpp::matrix</scope><name>getLastRow</name></member>
       <member refid="classkeycpp_1_1matrix_1a0946b26c2ba7fb7d427f2f8b766f74d5" prot="public" virt="non-virtual"><scope>keycpp::matrix</scope><name>getRow</name></member>

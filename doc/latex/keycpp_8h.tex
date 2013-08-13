@@ -10,6 +10,7 @@
 {\ttfamily \#include $<$boost/numeric/odeint.\-hpp$>$}\\*
 {\ttfamily \#include $<$utility$>$}\\*
 {\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$limits$>$}\\*
 {\ttfamily \#include \char`\"{}Matrix.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}kiss\-\_\-fft.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Spline.\-h\char`\"{}}\\*
@@ -25,6 +26,8 @@ struct \hyperlink{structkeycpp_1_1_sort___matrix}{keycpp\-::\-Sort\-\_\-\-Matrix
 \item 
 struct \hyperlink{structkeycpp_1_1_sort___vector}{keycpp\-::\-Sort\-\_\-\-Vector$<$ T $>$}
 \item 
+struct \hyperlink{structkeycpp_1_1matrix__find__type}{keycpp\-::matrix\-\_\-find\-\_\-type$<$ T $>$}
+\item 
 struct \hyperlink{structkeycpp_1_1_s_v_d__type}{keycpp\-::\-S\-V\-D\-\_\-type$<$ T, X $>$}
 \end{DoxyCompactItemize}
 \subsection*{Namespaces}
@@ -36,6 +39,15 @@ namespace \hyperlink{namespacekeycpp}{keycpp}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{keycpp_8h_a1daf785e3f68d293c7caa1c756d5cb74}{\#define {\bfseries pi}~3.\-1415926535897932384626433832795}\label{keycpp_8h_a1daf785e3f68d293c7caa1c756d5cb74}
+
+\item 
+\hypertarget{keycpp_8h_ab53328405fd9ba89990d9426d0e6389e}{\#define {\bfseries eps}~std\-::numeric\-\_\-limits$<$double$>$\-::epsilon()}\label{keycpp_8h_ab53328405fd9ba89990d9426d0e6389e}
+
+\item 
+\hypertarget{keycpp_8h_a311d23688bfa914e83491178976adab9}{\#define {\bfseries Inf}~std\-::numeric\-\_\-limits$<$double$>$\-::infinity()}\label{keycpp_8h_a311d23688bfa914e83491178976adab9}
+
+\item 
+\hypertarget{keycpp_8h_a953f667fb27fb68dd74a487d002b19b5}{\#define {\bfseries Na\-N}~nan(\char`\"{}\char`\"{})}\label{keycpp_8h_a953f667fb27fb68dd74a487d002b19b5}
 
 \end{DoxyCompactItemize}
 \subsection*{Functions}
@@ -121,7 +133,7 @@ $<$ double $>$ $>$ {\bfseries keycpp\-::linsolve} (const matrix$<$ std\-::comple
 \hypertarget{namespacekeycpp_a300d8f6e8992c7b33156492d884bd621}{{\footnotesize template$<$class T $>$ }\\std\-::ostream \& {\bfseries keycpp\-::operator$<$$<$} (std\-::ostream \&out, const std\-::vector$<$ T $>$ \&v1)}\label{namespacekeycpp_a300d8f6e8992c7b33156492d884bd621}
 
 \item 
-\hypertarget{namespacekeycpp_a18c262cc7b63b53f3d4c9fbeda591088}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_a18c262cc7b63b53f3d4c9fbeda591088}{keycpp\-::prod} (const std\-::vector$<$ T $>$ x)}\label{namespacekeycpp_a18c262cc7b63b53f3d4c9fbeda591088}
+\hypertarget{namespacekeycpp_aae8a5ac9572fd012881e19f850b0f47d}{{\footnotesize template$<$class T $>$ }\\T \hyperlink{namespacekeycpp_aae8a5ac9572fd012881e19f850b0f47d}{keycpp\-::prod} (const std\-::vector$<$ T $>$ x)}\label{namespacekeycpp_aae8a5ac9572fd012881e19f850b0f47d}
 
 \begin{DoxyCompactList}\small\item\em Returns the product of all the elements of the vector x. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a0b348cee175715d20a1997b471c47d7a}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_a0b348cee175715d20a1997b471c47d7a}{keycpp\-::prod} (const matrix$<$ T $>$ A)}\label{namespacekeycpp_a0b348cee175715d20a1997b471c47d7a}
@@ -156,6 +168,10 @@ $<$ double $>$ $>$ {\bfseries keycpp\-::conj} (const std\-::vector$<$ T $>$ x)}\
 \item 
 \hypertarget{namespacekeycpp_a4da6882977b2262f8d6f080b0eaf60c5}{{\footnotesize template$<$class T , class U $>$ }\\std\-::vector$<$ decltype(std\-::declval\\*
 $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries keycpp\-::operator+} (const std\-::vector$<$ T $>$ \&v1, const std\-::vector$<$ U $>$ \&v2)}\label{namespacekeycpp_a4da6882977b2262f8d6f080b0eaf60c5}
+
+\item 
+\hypertarget{namespacekeycpp_ab185edce957f4afd65cb641ec6307376}{{\footnotesize template$<$class T , class U $>$ }\\std\-::vector$<$ decltype(std\-::declval\\*
+$<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries keycpp\-::operator-\/} (const std\-::vector$<$ T $>$ \&v1, const std\-::vector$<$ U $>$ \&v2)}\label{namespacekeycpp_ab185edce957f4afd65cb641ec6307376}
 
 \item 
 \hypertarget{namespacekeycpp_a8d5dbf37b71d16d686dd0fdbad82f8fb}{{\footnotesize template$<$class T , class U $>$ }\\matrix$<$ decltype(std\-::declval\\*
@@ -219,9 +235,16 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries keycpp\-::operator/} (co
 \begin{DoxyCompactList}\small\item\em Returns the size of matrix A. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ \hyperlink{namespacekeycpp_a86f1406f9fad5a439d8eff01aba8eac6}{keycpp\-::zeros} (const int M, const int N)
 \begin{DoxyCompactList}\small\item\em Returns a matrix of size M x N containing all zeros. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_a17115c92ffe695fd6ecb002f5ded220a}{keycpp\-::zeros} (const int N)
+\begin{DoxyCompactList}\small\item\em Returns a vector of length N containing all zeros. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ \hyperlink{namespacekeycpp_ace6f21832ab61f8f15e5b35e0a5cdb3e}{keycpp\-::ones} (const int M, const int N)
 \begin{DoxyCompactList}\small\item\em Returns a matrix of size M x N containing all ones. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_a31175b3ba618b338b185cd02a27addfd}{keycpp\-::ones} (const int N)
+\begin{DoxyCompactList}\small\item\em Returns a vector of length N containing all ones. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a88b11f2372831ebb28fcd2a9961c4eab}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ {\bfseries keycpp\-::diag} (const std\-::initializer\-\_\-list$<$ T $>$ \&lst)}\label{namespacekeycpp_a88b11f2372831ebb28fcd2a9961c4eab}
+
+\item 
+\hypertarget{namespacekeycpp_a7f7a6d5d46074603720462b96b40d25f}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ {\bfseries keycpp\-::diag} (const matrix$<$ T $>$ A)}\label{namespacekeycpp_a7f7a6d5d46074603720462b96b40d25f}
 
 \item 
 \hypertarget{namespacekeycpp_a40a637f210b03a3901cafbd6c1a7e83f}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ {\bfseries keycpp\-::repmat} (const matrix$<$ T $>$ A, int m, int n)}\label{namespacekeycpp_a40a637f210b03a3901cafbd6c1a7e83f}
@@ -272,6 +295,9 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_a7a86bc7
 \hypertarget{namespacekeycpp_ab7577228b38fa6a1911ac65fb80832f3}{std\-::complex$<$ double $>$ {\bfseries keycpp\-::min} (std\-::vector$<$ std\-::complex$<$ double $>$ $>$ x)}\label{namespacekeycpp_ab7577228b38fa6a1911ac65fb80832f3}
 
 \item 
+\hypertarget{namespacekeycpp_a8d8183bfe936dc877f32f86a43daa1b4}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ {\bfseries keycpp\-::min} (matrix$<$ T $>$ A)}\label{namespacekeycpp_a8d8183bfe936dc877f32f86a43daa1b4}
+
+\item 
 \hypertarget{namespacekeycpp_ad68697505d1a1a85f30a18b0e9b0eb2f}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ \hyperlink{namespacekeycpp_ad68697505d1a1a85f30a18b0e9b0eb2f}{keycpp\-::transpose} (matrix$<$ T $>$ A)}\label{namespacekeycpp_ad68697505d1a1a85f30a18b0e9b0eb2f}
 
 \begin{DoxyCompactList}\small\item\em Returns the transpose of matrix A. \end{DoxyCompactList}\item 
@@ -284,18 +310,18 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_a7a86bc7
 \hypertarget{namespacekeycpp_a827218d19d98cf1357032a652a9bf4e5}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ \hyperlink{namespacekeycpp_a827218d19d98cf1357032a652a9bf4e5}{keycpp\-::ctranspose} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_a827218d19d98cf1357032a652a9bf4e5}
 
 \begin{DoxyCompactList}\small\item\em Returns the complex-\/conjugate transpose of vector v1. \end{DoxyCompactList}\item 
-\hypertarget{namespacekeycpp_a4aedb589e76ced5d79d62c5f72029adb}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ {\bfseries keycpp\-::sum} (matrix$<$ T $>$ A)}\label{namespacekeycpp_a4aedb589e76ced5d79d62c5f72029adb}
+\hypertarget{namespacekeycpp_a4aedb589e76ced5d79d62c5f72029adb}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_a4aedb589e76ced5d79d62c5f72029adb}{keycpp\-::sum} (matrix$<$ T $>$ A)}\label{namespacekeycpp_a4aedb589e76ced5d79d62c5f72029adb}
 
-\item 
-\hypertarget{namespacekeycpp_ad05b888638b5ea7103bdc6ba0882d47d}{{\footnotesize template$<$class T $>$ }\\T {\bfseries keycpp\-::sum} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_ad05b888638b5ea7103bdc6ba0882d47d}
+\begin{DoxyCompactList}\small\item\em Computes the sum of each column of A. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_ad05b888638b5ea7103bdc6ba0882d47d}{{\footnotesize template$<$class T $>$ }\\T \hyperlink{namespacekeycpp_ad05b888638b5ea7103bdc6ba0882d47d}{keycpp\-::sum} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_ad05b888638b5ea7103bdc6ba0882d47d}
 
-\item 
-\hypertarget{namespacekeycpp_a8a0e8201f775945a0a61d6d645a3456e}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ {\bfseries keycpp\-::mat2vec} (matrix$<$ T $>$ A)}\label{namespacekeycpp_a8a0e8201f775945a0a61d6d645a3456e}
+\begin{DoxyCompactList}\small\item\em Computes the sum of vector v1. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a8a0e8201f775945a0a61d6d645a3456e}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_a8a0e8201f775945a0a61d6d645a3456e}{keycpp\-::mat2vec} (matrix$<$ T $>$ A)}\label{namespacekeycpp_a8a0e8201f775945a0a61d6d645a3456e}
 
-\item 
-\hypertarget{namespacekeycpp_a4d3ef9b10b3db438529bafc5e74fa0dc}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ {\bfseries keycpp\-::vec2mat} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_a4d3ef9b10b3db438529bafc5e74fa0dc}
+\begin{DoxyCompactList}\small\item\em Converts matrix A to a column vector. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a4d3ef9b10b3db438529bafc5e74fa0dc}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ \hyperlink{namespacekeycpp_a4d3ef9b10b3db438529bafc5e74fa0dc}{keycpp\-::vec2mat} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_a4d3ef9b10b3db438529bafc5e74fa0dc}
 
-\item 
+\begin{DoxyCompactList}\small\item\em Converts a column vector to a 1 x length(v1) matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_ab57eee495c93eb18ebf8c8ccf4d44e74}{keycpp\-::linspace} (const T x1, const T x2, const int N)
 \begin{DoxyCompactList}\small\item\em Produces a vector containing N values equally spaced between x1 and x2, inclusively. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_ac92462e3b25414144d4e45fc269d2f13}{keycpp\-::logspace} (const T x1, const T x2, int N)
@@ -303,9 +329,9 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_a7a86bc7
 \hypertarget{namespacekeycpp_a4e350b4b11ea4d9962b4daa13cc66e32}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ {\bfseries keycpp\-::unwrap} (const std\-::vector$<$ T $>$ \&v1, T tol=pi)}\label{namespacekeycpp_a4e350b4b11ea4d9962b4daa13cc66e32}
 
 \item 
-\hypertarget{namespacekeycpp_ad1acd03db6a49523cb5dbe751a80917a}{{\footnotesize template$<$class T $>$ }\\T {\bfseries keycpp\-::mean} (const std\-::vector$<$ T $>$ \&v1)}\label{namespacekeycpp_ad1acd03db6a49523cb5dbe751a80917a}
+\hypertarget{namespacekeycpp_ad1acd03db6a49523cb5dbe751a80917a}{{\footnotesize template$<$class T $>$ }\\T \hyperlink{namespacekeycpp_ad1acd03db6a49523cb5dbe751a80917a}{keycpp\-::mean} (const std\-::vector$<$ T $>$ \&v1)}\label{namespacekeycpp_ad1acd03db6a49523cb5dbe751a80917a}
 
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the mean of vector v1. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a123211086c4953fe9346acc22b2a67f9}{{\footnotesize template$<$class T , class U $>$ }\\T {\bfseries keycpp\-::interp1} (std\-::vector$<$ U $>$ x, std\-::vector$<$ T $>$ y, U x\-\_\-interp, std\-::string method=\char`\"{}linear\char`\"{}, Extrap extrap=Extrap())}\label{namespacekeycpp_a123211086c4953fe9346acc22b2a67f9}
 
 \item 
@@ -352,6 +378,48 @@ $<$ double $>$ $>$ {\bfseries keycpp\-::fft} (std\-::vector$<$ T $>$ u, int N=-\
 \hypertarget{namespacekeycpp_a1be4e97b99a996a01f428fd8ba048fb0}{{\footnotesize template$<$class T $>$ }\\Sort\-\_\-\-Vector$<$ T $>$ {\bfseries keycpp\-::sort} (std\-::vector$<$ T $>$ v1, std\-::string method=\char`\"{}ascend\char`\"{})}\label{namespacekeycpp_a1be4e97b99a996a01f428fd8ba048fb0}
 
 \item 
+\hypertarget{namespacekeycpp_a6498ae080f530236ae3f7756f81ac78e}{{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacekeycpp_a6498ae080f530236ae3f7756f81ac78e}{keycpp\-::disp} (T x)}\label{namespacekeycpp_a6498ae080f530236ae3f7756f81ac78e}
+
+\begin{DoxyCompactList}\small\item\em Displays on standard output any parameter passed to it provided the operator $<$$<$ is defined for its type. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a2eb6a6f7647e6ff700b7992faecd986d}{std\-::string \hyperlink{namespacekeycpp_a2eb6a6f7647e6ff700b7992faecd986d}{keycpp\-::input} (std\-::string prompt, std\-::string option)}\label{namespacekeycpp_a2eb6a6f7647e6ff700b7992faecd986d}
+
+\begin{DoxyCompactList}\small\item\em Prints the prompt to the screen and then waits for user input. Currently the option must be supplied as \char`\"{}s\char`\"{} because C++ is a statically typed language. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_ac056ba33ff8585d5680daf09a45ff8e8}{double \hyperlink{namespacekeycpp_ac056ba33ff8585d5680daf09a45ff8e8}{keycpp\-::str2num} (std\-::string in)}\label{namespacekeycpp_ac056ba33ff8585d5680daf09a45ff8e8}
+
+\begin{DoxyCompactList}\small\item\em Converts a string to a double. Currently only works on single numbers. In the future this should be expanded to work on vectors and matrices. (see M\-A\-T\-L\-A\-B docs) \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a1e62ad4a7f9b872d69df78c09e3f7b59}{{\footnotesize template$<$class T $>$ }\\int \hyperlink{namespacekeycpp_a1e62ad4a7f9b872d69df78c09e3f7b59}{keycpp\-::length} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_a1e62ad4a7f9b872d69df78c09e3f7b59}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of elements in a vector. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_afaef726cb38faec462ac53cff08ab113}{{\footnotesize template$<$class T $>$ }\\int \hyperlink{namespacekeycpp_afaef726cb38faec462ac53cff08ab113}{keycpp\-::length} (matrix$<$ T $>$ A)}\label{namespacekeycpp_afaef726cb38faec462ac53cff08ab113}
+
+\begin{DoxyCompactList}\small\item\em Returns the length of the largest dimension of A. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a14d8a9ae8d6988eeff52fa777e75bd20}{{\footnotesize template$<$class T $>$ }\\int {\bfseries keycpp\-::numel} (matrix$<$ T $>$ A)}\label{namespacekeycpp_a14d8a9ae8d6988eeff52fa777e75bd20}
+
+\item 
+\hypertarget{namespacekeycpp_af93acd2c9e3e2e47bbf796143b994a18}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ int $>$ \hyperlink{namespacekeycpp_af93acd2c9e3e2e47bbf796143b994a18}{keycpp\-::find} (std\-::vector$<$ T $>$ v1, int k=-\/1, std\-::string start=\char`\"{}\char`\"{})}\label{namespacekeycpp_af93acd2c9e3e2e47bbf796143b994a18}
+
+\begin{DoxyCompactList}\small\item\em Finds and returns the indices of non-\/zero elements of v1. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a5c7bf08adf4c09275f9e16cd510b7357}{{\footnotesize template$<$class T $>$ }\\matrix\-\_\-find\-\_\-type$<$ T $>$ \hyperlink{namespacekeycpp_a5c7bf08adf4c09275f9e16cd510b7357}{keycpp\-::find} (matrix$<$ T $>$ A)}\label{namespacekeycpp_a5c7bf08adf4c09275f9e16cd510b7357}
+
+\begin{DoxyCompactList}\small\item\em Finds and returns the row and column indices and values of non-\/zero elements of A. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a9c4772f020269af1ae89c9cb0164d81c}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ {\bfseries keycpp\-::reshape} (matrix$<$ T $>$ A, int m, int n)}\label{namespacekeycpp_a9c4772f020269af1ae89c9cb0164d81c}
+
+\item 
+\hypertarget{namespacekeycpp_ab8f45bfa36c10a24c117fb96be879cce}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ {\bfseries keycpp\-::reshape} (std\-::vector$<$ T $>$ v1, int m, int n)}\label{namespacekeycpp_ab8f45bfa36c10a24c117fb96be879cce}
+
+\item 
+\hypertarget{namespacekeycpp_abcee2445c0961997ba6e9d16070b2f8b}{{\footnotesize template$<$class T , class U $>$ }\\decltype(std\-::declval$<$ T $>$\\*
+()$\ast$std\-::declval$<$ U $>$()) \hyperlink{namespacekeycpp_abcee2445c0961997ba6e9d16070b2f8b}{keycpp\-::dot} (std\-::vector$<$ T $>$ v1, std\-::vector$<$ U $>$ v2)}\label{namespacekeycpp_abcee2445c0961997ba6e9d16070b2f8b}
+
+\begin{DoxyCompactList}\small\item\em Computes the dot product between vectors v1 and v2. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a52f48322f62e9bf11da0acb06deadd63}{{\footnotesize template$<$class T , class U $>$ }\\std\-::vector$<$ decltype(std\-::declval\\*
+$<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_a52f48322f62e9bf11da0acb06deadd63}{keycpp\-::dot} (matrix$<$ T $>$ A, matrix$<$ U $>$ B, int dim=-\/1)}\label{namespacekeycpp_a52f48322f62e9bf11da0acb06deadd63}
+
+\begin{DoxyCompactList}\small\item\em Computes the dot product between the first non-\/singleton dimension of A and B. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a1013b624bcc27f0953dfb989bacfe446}{{\footnotesize template$<$class T , class U $>$ }\\std\-::vector$<$ decltype(std\-::declval\\*
+$<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_a1013b624bcc27f0953dfb989bacfe446}{keycpp\-::cross} (std\-::vector$<$ T $>$ v1, std\-::vector$<$ U $>$ v2)}\label{namespacekeycpp_a1013b624bcc27f0953dfb989bacfe446}
+
+\begin{DoxyCompactList}\small\item\em Computes the cross product between vectors v1 and v2. Both vectors must have exactly 3 elements. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_aa01035a2b2a07cd56c5e36d5f289b2ee}{{\footnotesize template$<$class T $>$ }\\double {\bfseries keycpp\-::norm} (const std\-::vector$<$ T $>$ v1, std\-::string method=\char`\"{}2\char`\"{})}\label{namespacekeycpp_aa01035a2b2a07cd56c5e36d5f289b2ee}
 
 \item 
@@ -367,4 +435,28 @@ $<$ double $>$ $>$ {\bfseries keycpp\-::fft} (std\-::vector$<$ T $>$ u, int N=-\
 \hypertarget{namespacekeycpp_aa6d15c3c38ff98e6d9afdd9db4b46c6c}{S\-V\-D\-\_\-type$<$ std\-::complex$<$ double $>$\\*
 , double $>$ {\bfseries keycpp\-::svd} (matrix$<$ std\-::complex$<$ double $>$$>$ A\-\_\-in, std\-::string method=\char`\"{}\char`\"{})}\label{namespacekeycpp_aa6d15c3c38ff98e6d9afdd9db4b46c6c}
 
-\end{DoxyCompactItemize}
+\item 
+\hypertarget{namespacekeycpp_a4a7bb7923c2ff72fdf6a54ee1b891c16}{{\footnotesize template$<$class T $>$ }\\int \hyperlink{namespacekeycpp_a4a7bb7923c2ff72fdf6a54ee1b891c16}{keycpp\-::rank} (matrix$<$ T $>$ A)}\label{namespacekeycpp_a4a7bb7923c2ff72fdf6a54ee1b891c16}
+
+\begin{DoxyCompactList}\small\item\em Estimates the rank of a matrix by counting the singular values whose absolute value is greater than epsilon. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a54f9ed89c437774e0f7391fd7d86e005}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ \hyperlink{namespacekeycpp_a54f9ed89c437774e0f7391fd7d86e005}{keycpp\-::null} (matrix$<$ T $>$ A)}\label{namespacekeycpp_a54f9ed89c437774e0f7391fd7d86e005}
+
+\begin{DoxyCompactList}\small\item\em Computes the nullspace of matrix A. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a1e0536b6efa09624ea3738bbb9975dea}{{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespacekeycpp_a1e0536b6efa09624ea3738bbb9975dea}{keycpp\-::any} (matrix$<$ T $>$ A)}\label{namespacekeycpp_a1e0536b6efa09624ea3738bbb9975dea}
+
+\begin{DoxyCompactList}\small\item\em Returns true if any elements of A are nonzero. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_adee9ea3e8989009abba313a2f7d44d46}{{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespacekeycpp_adee9ea3e8989009abba313a2f7d44d46}{keycpp\-::any} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_adee9ea3e8989009abba313a2f7d44d46}
+
+\begin{DoxyCompactList}\small\item\em Returns true if any elements of v1 are nonzero. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a6c576908958c419fc0cae34ce1a6a5c7}{{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespacekeycpp_a6c576908958c419fc0cae34ce1a6a5c7}{keycpp\-::all} (matrix$<$ T $>$ A)}\label{namespacekeycpp_a6c576908958c419fc0cae34ce1a6a5c7}
+
+\begin{DoxyCompactList}\small\item\em Returns true if all elements of A are nonzero. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_afa8ea92aa5e5e801a2e42f2eefabd659}{{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespacekeycpp_afa8ea92aa5e5e801a2e42f2eefabd659}{keycpp\-::all} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_afa8ea92aa5e5e801a2e42f2eefabd659}
+
+\begin{DoxyCompactList}\small\item\em Returns true if all elements of v1 are nonzero. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a092a180cc054e61d0dad651dd24ff990}{{\footnotesize template$<$class T $>$ }\\matrix$<$ bool $>$ \hyperlink{namespacekeycpp_a092a180cc054e61d0dad651dd24ff990}{keycpp\-::finite} (matrix$<$ T $>$ A)}\label{namespacekeycpp_a092a180cc054e61d0dad651dd24ff990}
+
+\begin{DoxyCompactList}\small\item\em Returns matrix containing boolean values that are true if corresponding elements of A are finite. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a6640e5ff779655aed8078c5de81af7ff}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ bool $>$ \hyperlink{namespacekeycpp_a6640e5ff779655aed8078c5de81af7ff}{keycpp\-::finite} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_a6640e5ff779655aed8078c5de81af7ff}
+
+\begin{DoxyCompactList}\small\item\em Returns vector containing boolean values that are true if corresponding elements of v1 are finite. \end{DoxyCompactList}\end{DoxyCompactItemize}

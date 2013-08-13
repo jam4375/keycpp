@@ -37,6 +37,7 @@ namespace keycpp
 		matrix<T> operator+(const matrix<T> B) const;
 		matrix<T> operator-(const matrix<T> B) const;
 		int size(int n) const;
+		bool empty() const;
 		int setRow(std::vector<T> row, int i);
 		int setLastRow(std::vector<T> row);
 		int addLastRow(std::vector<T> row);
@@ -261,6 +262,19 @@ namespace keycpp
 		else
 		{
 			throw MatrixException("Invalid dimension in size().");
+		}
+	}
+
+	template<class T>
+	bool matrix<T>::empty() const
+	{
+		if(mRows == 0 || mCols == 0)
+		{
+			return true;
+		}
+		else
+		{
+		    return false;
 		}
 	}
 

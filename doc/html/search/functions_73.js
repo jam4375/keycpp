@@ -31,5 +31,7 @@ var searchData=
   ['showonscreen',['showonscreen',['../class_gnuplot.html#a356d2faaa79f08d13fec9718b776b28d',1,'Gnuplot']]],
   ['sin',['sin',['../namespacekeycpp.html#a1ebc4ddf6e567714f63f0dbb8a984745',1,'keycpp::sin(const std::vector&lt; T &gt; v1)'],['../namespacekeycpp.html#a159a28c69282a740e381465a0e71bf23',1,'keycpp::sin(const matrix&lt; T &gt; A)']]],
   ['size',['size',['../namespacekeycpp.html#a2dc5102775ed955f378432f84fe96987',1,'keycpp::size(const matrix&lt; T &gt; A, const int dim)'],['../namespacekeycpp.html#a028e501a865c86bdf616ea13e87645fa',1,'keycpp::size(const matrix&lt; T &gt; A)']]],
+  ['str2num',['str2num',['../namespacekeycpp.html#ac056ba33ff8585d5680daf09a45ff8e8',1,'keycpp']]],
+  ['sum',['sum',['../namespacekeycpp.html#a4aedb589e76ced5d79d62c5f72029adb',1,'keycpp::sum(matrix&lt; T &gt; A)'],['../namespacekeycpp.html#ad05b888638b5ea7103bdc6ba0882d47d',1,'keycpp::sum(std::vector&lt; T &gt; v1)']]],
   ['svd',['svd',['../namespacekeycpp.html#a4b80bd145aab03a9e79a42d32ca573bd',1,'keycpp::svd(matrix&lt; double &gt; A_in, std::string method)'],['../namespacekeycpp.html#a913fb7501259de640e7119a852adafc9',1,'keycpp::svd(matrix&lt; complex&lt; double &gt;&gt; A_in, std::string method)']]]
 ];

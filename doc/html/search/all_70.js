@@ -20,5 +20,5 @@ var searchData=
   ['plotfile_5fxyxy',['plotfile_xyxy',['../class_gnuplot.html#a4410bb4c65aaf43b0ad5e510da15e20f',1,'Gnuplot']]],
   ['plotfile_5fxyy',['plotfile_xyy',['../class_gnuplot.html#a26cbba36864ad7f1f6683b11558e3b49',1,'Gnuplot']]],
   ['plotfile_5fxyz',['plotfile_xyz',['../class_gnuplot.html#a9dbde2a91eb816481657f3a22c9b0046',1,'Gnuplot']]],
-  ['prod',['prod',['../namespacekeycpp.html#a18c262cc7b63b53f3d4c9fbeda591088',1,'keycpp::prod(const std::vector&lt; T &gt; x)'],['../namespacekeycpp.html#a0b348cee175715d20a1997b471c47d7a',1,'keycpp::prod(const matrix&lt; T &gt; A)']]]
+  ['prod',['prod',['../namespacekeycpp.html#aae8a5ac9572fd012881e19f850b0f47d',1,'keycpp::prod(const std::vector&lt; T &gt; x)'],['../namespacekeycpp.html#a0b348cee175715d20a1997b471c47d7a',1,'keycpp::prod(const matrix&lt; T &gt; A)']]]
 ];

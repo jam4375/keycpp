@@ -22,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1682" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1682" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2050" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2050" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1_s_v_d__type_1a31194fbf88ec1fb87f2681d0f518761d" prot="public" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1683" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1683" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2051" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2051" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1_s_v_d__type_1ad0a6e396e2548ab4762a5676ae88e4bd" prot="public" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1684" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1684" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2052" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2052" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -56,19 +56,19 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="47">
+      <node id="49">
         <label>keycpp::SVD_type&lt; T, X &gt;</label>
         <link refid="structkeycpp_1_1_s_v_d__type"/>
-        <childnode refid="48" relation="usage">
+        <childnode refid="50" relation="usage">
           <edgelabel>S</edgelabel>
         </childnode>
       </node>
-      <node id="48">
+      <node id="50">
         <label>keycpp::matrix&lt; X &gt;</label>
         <link refid="classkeycpp_1_1matrix"/>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1681" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1680" bodyend="1685"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2049" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2048" bodyend="2053"/>
     <listofallmembers>
       <member refid="structkeycpp_1_1_s_v_d__type_1afcf98e82919e015758d99cee5adb65bf" prot="public" virt="non-virtual"><scope>keycpp::SVD_type</scope><name>S</name></member>
       <member refid="structkeycpp_1_1_s_v_d__type_1a31194fbf88ec1fb87f2681d0f518761d" prot="public" virt="non-virtual"><scope>keycpp::SVD_type</scope><name>U</name></member>
