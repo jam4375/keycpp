@@ -44,6 +44,16 @@ namespace keycpp
 		        std::complex<double> *beta, std::complex<double> *vl,
 		        const int *ldvl, std::complex<double> *vr, const int *ldvr,
 		        std::complex<double> *work, const int *lwork, double *rwork, int *info);
+		        
+	/** \brief This provides a C interface to LAPACK's double precision eigenvalue solver for a general matrix. */
+	void dgeev_(const char *jobvl, const char *jobvr, const int *n, double *A, const int *lda,
+	            double *wr, double *wi, double *vl, const int *ldvl, double *vr, const int *ldvr,
+	            double *work, const int *lwork, int *info);
+	            
+	/** \brief This provides a C interface to LAPACK's complex eigenvalue solver for a general matrix. */
+	void zgeev_(const char *jobvl, const char *, const int *n, std::complex<double> *A, const int *lda,
+	            std::complex<double> *w, std::complex<double> *VL, const int *ldvl, std::complex<double> *VR, const int *ldvr,
+	            std::complex<double> *work, const int *lwork, double *rwork, int *info);
 		    
     /** \brief This provides a C interface to LAPACK's double precision reciprocal condition number estimator. */
     void dgecon_(const char *norm, const int *n, double *a,
@@ -105,6 +115,14 @@ namespace keycpp
 	                                       const matrix<std::complex<double> > B,
 	                                       matrix<std::complex<double> > *vr_return = NULL,
 	                                       matrix<std::complex<double> > *vl_return = NULL);
+
+	std::vector<std::complex<double> > eig(const matrix<std::complex<double> > A,
+	                                       matrix<std::complex<double> > *vr_return = NULL,
+	                                       matrix<std::complex<double> > *vl_return = NULL);
+	                                       
+	std::vector<std::complex<double>> eig(const matrix<double> A,
+                                          matrix<std::complex<double>> *vr_return = NULL,
+                                          matrix<std::complex<double>> *vl_return = NULL);
 	
 	double rcond(const matrix<double> A);
 	double rcond(const matrix<std::complex<double>> A);
@@ -629,37 +647,107 @@ namespace keycpp
 		return v1;
 	}
 	
-	template<class T> matrix<T> diag(const std::initializer_list<T>& lst)
+	template<class T> matrix<T> diag(const std::initializer_list<T>& lst, int d = 0)
 	{
-		matrix<T> A(lst.size(),lst.size());
+		matrix<T> A(std::abs(d)+lst.size(),std::abs(d)+lst.size());
 		int ii = 0;
-		for(const auto& l : lst)
+		if(d != 0)
 		{
-			A(ii,ii) = l;
-			ii++;
+		    for(const auto& l : lst)
+		    {
+			    if(d < 0)
+	            {
+		            A(ii+std::abs(d),ii) = l;
+		        }
+		        else
+	            {
+		            A(ii,ii+std::abs(d)) = l;
+		        }
+			    ii++;
+		    }
+		}
+		else
+		{
+		    for(const auto& l : lst)
+		    {
+		        A(ii,ii) = l;
+			    ii++;
+		    }
 		}
 		return A;
 	}
 	
-	template<class T> std::vector<T> diag(const matrix<T> A)
+	template<class T> matrix<T> diag(const std::vector<T> v1, int d = 0)
+	{
+		matrix<T> A(std::abs(d)+v1.size(),std::abs(d)+v1.size());
+		if(d != 0)
+		{
+		    for(int ii = 0; ii < v1.size(); ii++)
+		    {
+		        if(d < 0)
+		        {
+			        A(ii+std::abs(d),ii) = v1[ii];
+			    }
+			    else
+		        {
+			        A(ii,ii+std::abs(d)) = v1[ii];
+			    }
+		    }
+		}
+		else
+		{
+		    for(int ii = 0; ii < v1.size(); ii++)
+		    {
+			    A(ii,ii) = v1[ii];
+		    }
+		}
+		return A;
+	}
+	
+	template<class T> std::vector<T> diag(const matrix<T> A, int d = 0)
 	{
 	    if(A.empty())
 	    {
 	        throw KeyCppException("Cannot compute diagonal of empty matrix!");
 	    }
 	    int min_dim;
-	    if(A.size(1) < A.size(2))
-	    {
-	        min_dim = A.size(1);
-	    }
-	    else
-	    {
-	        min_dim = A.size(2);
-	    }
-		std::vector<T> v1(min_dim);
-		for(int ii = 0; ii < min_dim; ii++)
+		std::vector<T> v1;
+		if(d == 0)
 		{
-			v1[ii] = A(ii,ii);
+	        if(A.size(1) < A.size(2))
+	        {
+	            min_dim = A.size(1);
+	        }
+	        else
+	        {
+	            min_dim = A.size(2);
+	        }
+		    v1 = std::vector<T>(min_dim);
+		    for(int ii = 0; ii < min_dim; ii++)
+		    {
+			    v1[ii] = A(ii,ii);
+		    }
+		}
+		else
+		{
+		    if(d > 0)
+		    {
+		        min_dim = A.size(2) - std::abs(d);
+		        v1 = std::vector<T>(min_dim);
+		        for(int ii = 0; ii < min_dim; ii++)
+		        {
+			        v1[ii] = A(ii,ii+std::abs(d));
+		        }
+		    }
+		    else
+		    {
+		        min_dim = A.size(1) - std::abs(d);
+		        v1 = std::vector<T>(min_dim);
+		        for(int ii = 0; ii < min_dim; ii++)
+		        {
+			        v1[ii] = A(ii+std::abs(d),ii);
+		        }
+		    }
 		}
 		return v1;
 	}
@@ -2254,6 +2342,62 @@ namespace keycpp
 	    }
 	    return out;
 	}
+	
+	/** \brief Rounds the real and imaginary parts of complex<double> a towards
+	 *         positive infinity seperately.
+	 */
+	inline std::complex<double> ceil(std::complex<double> a)
+	{
+	    std::complex<double> b;
+	    b = ceil(real(a)) + std::complex<double>(0.0,1.0)*ceil(imag(a));
+	    return b;
+	}
+	
+	/** \brief Rounds the elements of v1 towards positive infinity.
+	 */
+	template<class T>
+	std::vector<T> ceil(std::vector<T> v1)
+	{
+	    std::vector<T> v2(v1.size());
+	    for(int ii = 0; ii < v2.size(); ii++)
+	    {
+	        v2[ii] = ceil(v1[ii]);
+	    }
+	    return v2;
+	}
+	
+	/** \brief Rounds the elements of A towards positive infinity.
+	 */
+	template<class T>
+	matrix<T> ceil(matrix<T> A)
+	{
+	    matrix<T> B(A.size(1),A.size(2));
+	    for(int ii = 0; ii < B.size(1); ii++)
+	    {
+	        for(int jj = 0; jj < B.size(2); jj++)
+	        {
+	            B(ii,jj) = ceil(A(ii,jj));
+	        }
+	    }
+	    return B;
+	}
+	
+	/** \brief Computes all roots of polynomial p by solving for the eigenvalues
+	 *         of the companion matrix.
+	 */
+	template<class T>
+	std::vector<T> roots(std::vector<T> p)
+	{
+	    int n = p.size()-1;
+	    matrix<T> A = diag(ones<T>(n-1),-1);
+	    for(int ii = 0; ii < A.size(2); ii++)
+	    {
+            A(0,ii) = -p[ii+1]/p[0];
+        }
+        std::vector<T> v = eig(A);
+        return v;
+	}
+	 
 }
 
 #endif

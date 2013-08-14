@@ -247,6 +247,8 @@
   </compound>
   <compound refid="namespacekeycpp" kind="namespace"><name>keycpp</name>
     <member refid="namespacekeycpp_1ace2501951ab3db3a91c3520ae89750b1" kind="function"><name>zggev_</name></member>
+    <member refid="namespacekeycpp_1aebc5253e80ac15a9bfdc5449ae4f972a" kind="function"><name>dgeev_</name></member>
+    <member refid="namespacekeycpp_1a8c1cca2a162f40fc6c6218c35cadf9f2" kind="function"><name>zgeev_</name></member>
     <member refid="namespacekeycpp_1aca3be6524e195662cbb74a810305e721" kind="function"><name>dgecon_</name></member>
     <member refid="namespacekeycpp_1a75e334ffaf1864d7191e9e0b64189783" kind="function"><name>dgetrf_</name></member>
     <member refid="namespacekeycpp_1ab9c33788a2c083aa5738eda1fe62a261" kind="function"><name>dgetrs_</name></member>
@@ -261,6 +263,8 @@
     <member refid="namespacekeycpp_1a8fe7a71afbb6c5dc049cdd7afff6c0af" kind="function"><name>dgesvd_</name></member>
     <member refid="namespacekeycpp_1afa5e2f74110f53bd288c15ce1f183f9b" kind="function"><name>zgesvd_</name></member>
     <member refid="namespacekeycpp_1a6aca656320e1b26861469a979a96066f" kind="function"><name>eig</name></member>
+    <member refid="namespacekeycpp_1a8b42273cb371e35064445ce84e26d944" kind="function"><name>eig</name></member>
+    <member refid="namespacekeycpp_1a7e4c1a584c274bb164e0e207a13ec63e" kind="function"><name>eig</name></member>
     <member refid="namespacekeycpp_1a08b7545ff5c1295647680d08f2953875" kind="function"><name>rcond</name></member>
     <member refid="namespacekeycpp_1a5cc586899ece36154e39201f18e6db55" kind="function"><name>rcond</name></member>
     <member refid="namespacekeycpp_1a9f68b3d9143ad3582e59dd0a4b1998b8" kind="function"><name>linsolve</name></member>
@@ -307,8 +311,9 @@
     <member refid="namespacekeycpp_1a17115c92ffe695fd6ecb002f5ded220a" kind="function"><name>zeros</name></member>
     <member refid="namespacekeycpp_1ace6f21832ab61f8f15e5b35e0a5cdb3e" kind="function"><name>ones</name></member>
     <member refid="namespacekeycpp_1a31175b3ba618b338b185cd02a27addfd" kind="function"><name>ones</name></member>
-    <member refid="namespacekeycpp_1a88b11f2372831ebb28fcd2a9961c4eab" kind="function"><name>diag</name></member>
-    <member refid="namespacekeycpp_1a7f7a6d5d46074603720462b96b40d25f" kind="function"><name>diag</name></member>
+    <member refid="namespacekeycpp_1afa2a7959f650bb0b6d214c2a74eed846" kind="function"><name>diag</name></member>
+    <member refid="namespacekeycpp_1a9e321022a262bb25cbcdc4d3186001b0" kind="function"><name>diag</name></member>
+    <member refid="namespacekeycpp_1a7f3ca84f887fb11aee5b219c03429096" kind="function"><name>diag</name></member>
     <member refid="namespacekeycpp_1a40a637f210b03a3901cafbd6c1a7e83f" kind="function"><name>repmat</name></member>
     <member refid="namespacekeycpp_1a59fbea40dfc2d43cd338812f06c4f064" kind="function"><name>repmat</name></member>
     <member refid="namespacekeycpp_1ac1ff99e34619478096c271b38df1f3d7" kind="function"><name>times</name></member>
@@ -379,7 +384,13 @@
     <member refid="namespacekeycpp_1afa8ea92aa5e5e801a2e42f2eefabd659" kind="function"><name>all</name></member>
     <member refid="namespacekeycpp_1a092a180cc054e61d0dad651dd24ff990" kind="function"><name>finite</name></member>
     <member refid="namespacekeycpp_1a6640e5ff779655aed8078c5de81af7ff" kind="function"><name>finite</name></member>
+    <member refid="namespacekeycpp_1a48b81a22ef851cfac4d2f98eb6d182b5" kind="function"><name>ceil</name></member>
+    <member refid="namespacekeycpp_1aa10f7052b5450926e1aa055510270d3d" kind="function"><name>ceil</name></member>
+    <member refid="namespacekeycpp_1a26cc754af2bdfab23c93e91017b84594" kind="function"><name>ceil</name></member>
+    <member refid="namespacekeycpp_1afbf61ceccd7874c0d8b4ae62cd5bbc24" kind="function"><name>roots</name></member>
     <member refid="namespacekeycpp_1a190640edb8e634de02d302d94a29ee17" kind="function"><name>eig</name></member>
+    <member refid="namespacekeycpp_1aeccfac59e68c6dc37cd89626ece3bd70" kind="function"><name>eig</name></member>
+    <member refid="namespacekeycpp_1ae6d82c320841cd42905abfbba464a45d" kind="function"><name>eig</name></member>
     <member refid="namespacekeycpp_1acea0bb8f128ef0cdf55a79c50ceccb83" kind="function"><name>linsolve</name></member>
     <member refid="namespacekeycpp_1ac9cabca49e9650ae8b5aadf5ee2f7f4e" kind="function"><name>inv</name></member>
     <member refid="namespacekeycpp_1af1a41d0919918b5cf62ef28dd68217d1" kind="function"><name>norm</name></member>

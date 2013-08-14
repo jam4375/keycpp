@@ -65,6 +65,6 @@ int main(int argc, char** argv)
     h2.ylabel("y");
     set(h2,"fontsize",14);
     h2.title("ODE Solution");
-
+    
     return 0;
 }

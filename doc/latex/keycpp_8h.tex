@@ -56,6 +56,12 @@ namespace \hyperlink{namespacekeycpp}{keycpp}
 \hypertarget{namespacekeycpp_ace2501951ab3db3a91c3520ae89750b1}{void \hyperlink{namespacekeycpp_ace2501951ab3db3a91c3520ae89750b1}{keycpp\-::zggev\-\_\-} (const char $\ast$jobvl, const char $\ast$jobvr, const int $\ast$n, std\-::complex$<$ double $>$ $\ast$a, const int $\ast$lda, std\-::complex$<$ double $>$ $\ast$b, const int $\ast$ldb, std\-::complex$<$ double $>$ $\ast$alpha, std\-::complex$<$ double $>$ $\ast$beta, std\-::complex$<$ double $>$ $\ast$vl, const int $\ast$ldvl, std\-::complex$<$ double $>$ $\ast$vr, const int $\ast$ldvr, std\-::complex$<$ double $>$ $\ast$work, const int $\ast$lwork, double $\ast$rwork, int $\ast$info)}\label{namespacekeycpp_ace2501951ab3db3a91c3520ae89750b1}
 
 \begin{DoxyCompactList}\small\item\em This provides a C interface to L\-A\-P\-A\-C\-K's complex generalized eigenvalue solver. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_aebc5253e80ac15a9bfdc5449ae4f972a}{void \hyperlink{namespacekeycpp_aebc5253e80ac15a9bfdc5449ae4f972a}{keycpp\-::dgeev\-\_\-} (const char $\ast$jobvl, const char $\ast$jobvr, const int $\ast$n, double $\ast$A, const int $\ast$lda, double $\ast$wr, double $\ast$wi, double $\ast$vl, const int $\ast$ldvl, double $\ast$vr, const int $\ast$ldvr, double $\ast$work, const int $\ast$lwork, int $\ast$info)}\label{namespacekeycpp_aebc5253e80ac15a9bfdc5449ae4f972a}
+
+\begin{DoxyCompactList}\small\item\em This provides a C interface to L\-A\-P\-A\-C\-K's double precision eigenvalue solver for a general matrix. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a8c1cca2a162f40fc6c6218c35cadf9f2}{void \hyperlink{namespacekeycpp_a8c1cca2a162f40fc6c6218c35cadf9f2}{keycpp\-::zgeev\-\_\-} (const char $\ast$jobvl, const char $\ast$, const int $\ast$n, std\-::complex$<$ double $>$ $\ast$A, const int $\ast$lda, std\-::complex$<$ double $>$ $\ast$w, std\-::complex$<$ double $>$ $\ast$V\-L, const int $\ast$ldvl, std\-::complex$<$ double $>$ $\ast$V\-R, const int $\ast$ldvr, std\-::complex$<$ double $>$ $\ast$work, const int $\ast$lwork, double $\ast$rwork, int $\ast$info)}\label{namespacekeycpp_a8c1cca2a162f40fc6c6218c35cadf9f2}
+
+\begin{DoxyCompactList}\small\item\em This provides a C interface to L\-A\-P\-A\-C\-K's complex eigenvalue solver for a general matrix. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_aca3be6524e195662cbb74a810305e721}{void \hyperlink{namespacekeycpp_aca3be6524e195662cbb74a810305e721}{keycpp\-::dgecon\-\_\-} (const char $\ast$norm, const int $\ast$n, double $\ast$a, const int $\ast$lda, const double $\ast$anorm, double $\ast$rcond, double $\ast$work, int $\ast$iwork, int $\ast$info)}\label{namespacekeycpp_aca3be6524e195662cbb74a810305e721}
 
 \begin{DoxyCompactList}\small\item\em This provides a C interface to L\-A\-P\-A\-C\-K's double precision reciprocal condition number estimator. \end{DoxyCompactList}\item 
@@ -97,6 +103,14 @@ namespace \hyperlink{namespacekeycpp}{keycpp}
 \begin{DoxyCompactList}\small\item\em This provides a C interface to L\-A\-P\-A\-C\-K's complex S\-V\-D function. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a6aca656320e1b26861469a979a96066f}{std\-::vector$<$ std\-::complex\\*
 $<$ double $>$ $>$ {\bfseries keycpp\-::eig} (const matrix$<$ std\-::complex$<$ double $>$ $>$ A, const matrix$<$ std\-::complex$<$ double $>$ $>$ B, matrix$<$ std\-::complex$<$ double $>$ $>$ $\ast$vr\-\_\-return=N\-U\-L\-L, matrix$<$ std\-::complex$<$ double $>$ $>$ $\ast$vl\-\_\-return=N\-U\-L\-L)}\label{namespacekeycpp_a6aca656320e1b26861469a979a96066f}
+
+\item 
+\hypertarget{namespacekeycpp_a8b42273cb371e35064445ce84e26d944}{std\-::vector$<$ std\-::complex\\*
+$<$ double $>$ $>$ {\bfseries keycpp\-::eig} (const matrix$<$ std\-::complex$<$ double $>$ $>$ A, matrix$<$ std\-::complex$<$ double $>$ $>$ $\ast$vr\-\_\-return=N\-U\-L\-L, matrix$<$ std\-::complex$<$ double $>$ $>$ $\ast$vl\-\_\-return=N\-U\-L\-L)}\label{namespacekeycpp_a8b42273cb371e35064445ce84e26d944}
+
+\item 
+\hypertarget{namespacekeycpp_a7e4c1a584c274bb164e0e207a13ec63e}{std\-::vector$<$ std\-::complex\\*
+$<$ double $>$ $>$ {\bfseries keycpp\-::eig} (const matrix$<$ double $>$ A, matrix$<$ std\-::complex$<$ double $>$$>$ $\ast$vr\-\_\-return=N\-U\-L\-L, matrix$<$ std\-::complex$<$ double $>$$>$ $\ast$vl\-\_\-return=N\-U\-L\-L)}\label{namespacekeycpp_a7e4c1a584c274bb164e0e207a13ec63e}
 
 \item 
 \hypertarget{namespacekeycpp_a08b7545ff5c1295647680d08f2953875}{double {\bfseries keycpp\-::rcond} (const matrix$<$ double $>$ A)}\label{namespacekeycpp_a08b7545ff5c1295647680d08f2953875}
@@ -241,10 +255,13 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries keycpp\-::operator/} (co
 \begin{DoxyCompactList}\small\item\em Returns a matrix of size M x N containing all ones. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_a31175b3ba618b338b185cd02a27addfd}{keycpp\-::ones} (const int N)
 \begin{DoxyCompactList}\small\item\em Returns a vector of length N containing all ones. \end{DoxyCompactList}\item 
-\hypertarget{namespacekeycpp_a88b11f2372831ebb28fcd2a9961c4eab}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ {\bfseries keycpp\-::diag} (const std\-::initializer\-\_\-list$<$ T $>$ \&lst)}\label{namespacekeycpp_a88b11f2372831ebb28fcd2a9961c4eab}
+\hypertarget{namespacekeycpp_afa2a7959f650bb0b6d214c2a74eed846}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ {\bfseries keycpp\-::diag} (const std\-::initializer\-\_\-list$<$ T $>$ \&lst, int d=0)}\label{namespacekeycpp_afa2a7959f650bb0b6d214c2a74eed846}
 
 \item 
-\hypertarget{namespacekeycpp_a7f7a6d5d46074603720462b96b40d25f}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ {\bfseries keycpp\-::diag} (const matrix$<$ T $>$ A)}\label{namespacekeycpp_a7f7a6d5d46074603720462b96b40d25f}
+\hypertarget{namespacekeycpp_a9e321022a262bb25cbcdc4d3186001b0}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ {\bfseries keycpp\-::diag} (const std\-::vector$<$ T $>$ v1, int d=0)}\label{namespacekeycpp_a9e321022a262bb25cbcdc4d3186001b0}
+
+\item 
+\hypertarget{namespacekeycpp_a7f3ca84f887fb11aee5b219c03429096}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ {\bfseries keycpp\-::diag} (const matrix$<$ T $>$ A, int d=0)}\label{namespacekeycpp_a7f3ca84f887fb11aee5b219c03429096}
 
 \item 
 \hypertarget{namespacekeycpp_a40a637f210b03a3901cafbd6c1a7e83f}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ {\bfseries keycpp\-::repmat} (const matrix$<$ T $>$ A, int m, int n)}\label{namespacekeycpp_a40a637f210b03a3901cafbd6c1a7e83f}
@@ -459,4 +476,16 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_a1013b62
 \begin{DoxyCompactList}\small\item\em Returns matrix containing boolean values that are true if corresponding elements of A are finite. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a6640e5ff779655aed8078c5de81af7ff}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ bool $>$ \hyperlink{namespacekeycpp_a6640e5ff779655aed8078c5de81af7ff}{keycpp\-::finite} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_a6640e5ff779655aed8078c5de81af7ff}
 
-\begin{DoxyCompactList}\small\item\em Returns vector containing boolean values that are true if corresponding elements of v1 are finite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns vector containing boolean values that are true if corresponding elements of v1 are finite. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a48b81a22ef851cfac4d2f98eb6d182b5}{std\-::complex$<$ double $>$ \hyperlink{namespacekeycpp_a48b81a22ef851cfac4d2f98eb6d182b5}{keycpp\-::ceil} (std\-::complex$<$ double $>$ a)}\label{namespacekeycpp_a48b81a22ef851cfac4d2f98eb6d182b5}
+
+\begin{DoxyCompactList}\small\item\em Rounds the real and imaginary parts of complex$<$double$>$ a towards positive infinity seperately. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_aa10f7052b5450926e1aa055510270d3d}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_aa10f7052b5450926e1aa055510270d3d}{keycpp\-::ceil} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_aa10f7052b5450926e1aa055510270d3d}
+
+\begin{DoxyCompactList}\small\item\em Rounds the elements of v1 towards positive infinity. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a26cc754af2bdfab23c93e91017b84594}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ \hyperlink{namespacekeycpp_a26cc754af2bdfab23c93e91017b84594}{keycpp\-::ceil} (matrix$<$ T $>$ A)}\label{namespacekeycpp_a26cc754af2bdfab23c93e91017b84594}
+
+\begin{DoxyCompactList}\small\item\em Rounds the elements of A towards positive infinity. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_afbf61ceccd7874c0d8b4ae62cd5bbc24}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_afbf61ceccd7874c0d8b4ae62cd5bbc24}{keycpp\-::roots} (std\-::vector$<$ T $>$ p)}\label{namespacekeycpp_afbf61ceccd7874c0d8b4ae62cd5bbc24}
+
+\begin{DoxyCompactList}\small\item\em Computes all roots of polynomial p by solving for the eigenvalues of the companion matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}

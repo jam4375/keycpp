@@ -153,6 +153,14 @@ Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#ace2501951ab3db3a91c3520ae89750b1">keycpp::zggev_</a> (const char *jobvl, const char *jobvr, const int *n, std::complex&lt; double &gt; *a, const int *lda, std::complex&lt; double &gt; *b, const int *ldb, std::complex&lt; double &gt; *alpha, std::complex&lt; double &gt; *beta, std::complex&lt; double &gt; *vl, const int *ldvl, std::complex&lt; double &gt; *vr, const int *ldvr, std::complex&lt; double &gt; *work, const int *lwork, double *rwork, int *info)</td></tr>
 <tr class="memdesc:ace2501951ab3db3a91c3520ae89750b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This provides a C interface to LAPACK's complex generalized eigenvalue solver. <br/></td></tr>
 <tr class="separator:ace2501951ab3db3a91c3520ae89750b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc5253e80ac15a9bfdc5449ae4f972a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aebc5253e80ac15a9bfdc5449ae4f972a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#aebc5253e80ac15a9bfdc5449ae4f972a">keycpp::dgeev_</a> (const char *jobvl, const char *jobvr, const int *n, double *A, const int *lda, double *wr, double *wi, double *vl, const int *ldvl, double *vr, const int *ldvr, double *work, const int *lwork, int *info)</td></tr>
+<tr class="memdesc:aebc5253e80ac15a9bfdc5449ae4f972a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This provides a C interface to LAPACK's double precision eigenvalue solver for a general matrix. <br/></td></tr>
+<tr class="separator:aebc5253e80ac15a9bfdc5449ae4f972a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c1cca2a162f40fc6c6218c35cadf9f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c1cca2a162f40fc6c6218c35cadf9f2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a8c1cca2a162f40fc6c6218c35cadf9f2">keycpp::zgeev_</a> (const char *jobvl, const char *, const int *n, std::complex&lt; double &gt; *A, const int *lda, std::complex&lt; double &gt; *w, std::complex&lt; double &gt; *VL, const int *ldvl, std::complex&lt; double &gt; *VR, const int *ldvr, std::complex&lt; double &gt; *work, const int *lwork, double *rwork, int *info)</td></tr>
+<tr class="memdesc:a8c1cca2a162f40fc6c6218c35cadf9f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This provides a C interface to LAPACK's complex eigenvalue solver for a general matrix. <br/></td></tr>
+<tr class="separator:a8c1cca2a162f40fc6c6218c35cadf9f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca3be6524e195662cbb74a810305e721"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca3be6524e195662cbb74a810305e721"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#aca3be6524e195662cbb74a810305e721">keycpp::dgecon_</a> (const char *norm, const int *n, double *a, const int *lda, const double *anorm, double *rcond, double *work, int *iwork, int *info)</td></tr>
 <tr class="memdesc:aca3be6524e195662cbb74a810305e721"><td class="mdescLeft">&#160;</td><td class="mdescRight">This provides a C interface to LAPACK's double precision reciprocal condition number estimator. <br/></td></tr>
@@ -209,6 +217,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 std::vector&lt; std::complex<br class="typebreak"/>
 &lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>keycpp::eig</b> (const matrix&lt; std::complex&lt; double &gt; &gt; A, const matrix&lt; std::complex&lt; double &gt; &gt; B, matrix&lt; std::complex&lt; double &gt; &gt; *vr_return=NULL, matrix&lt; std::complex&lt; double &gt; &gt; *vl_return=NULL)</td></tr>
 <tr class="separator:a6aca656320e1b26861469a979a96066f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b42273cb371e35064445ce84e26d944"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b42273cb371e35064445ce84e26d944"></a>
+std::vector&lt; std::complex<br class="typebreak"/>
+&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>keycpp::eig</b> (const matrix&lt; std::complex&lt; double &gt; &gt; A, matrix&lt; std::complex&lt; double &gt; &gt; *vr_return=NULL, matrix&lt; std::complex&lt; double &gt; &gt; *vl_return=NULL)</td></tr>
+<tr class="separator:a8b42273cb371e35064445ce84e26d944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e4c1a584c274bb164e0e207a13ec63e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e4c1a584c274bb164e0e207a13ec63e"></a>
+std::vector&lt; std::complex<br class="typebreak"/>
+&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>keycpp::eig</b> (const matrix&lt; double &gt; A, matrix&lt; std::complex&lt; double &gt;&gt; *vr_return=NULL, matrix&lt; std::complex&lt; double &gt;&gt; *vl_return=NULL)</td></tr>
+<tr class="separator:a7e4c1a584c274bb164e0e207a13ec63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08b7545ff5c1295647680d08f2953875"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08b7545ff5c1295647680d08f2953875"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>keycpp::rcond</b> (const matrix&lt; double &gt; A)</td></tr>
 <tr class="separator:a08b7545ff5c1295647680d08f2953875"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -406,14 +422,18 @@ template&lt;class T &gt; </td></tr>
 <tr class="memitem:a31175b3ba618b338b185cd02a27addfd"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a31175b3ba618b338b185cd02a27addfd">keycpp::ones</a> (const int N)</td></tr>
 <tr class="memdesc:a31175b3ba618b338b185cd02a27addfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector of length N containing all ones.  <a href="#a31175b3ba618b338b185cd02a27addfd">More...</a><br/></td></tr>
 <tr class="separator:a31175b3ba618b338b185cd02a27addfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88b11f2372831ebb28fcd2a9961c4eab"><td class="memTemplParams" colspan="2"><a class="anchor" id="a88b11f2372831ebb28fcd2a9961c4eab"></a>
+<tr class="memitem:afa2a7959f650bb0b6d214c2a74eed846"><td class="memTemplParams" colspan="2"><a class="anchor" id="afa2a7959f650bb0b6d214c2a74eed846"></a>
 template&lt;class T &gt; </td></tr>
-<tr class="memitem:a88b11f2372831ebb28fcd2a9961c4eab"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::diag</b> (const std::initializer_list&lt; T &gt; &amp;lst)</td></tr>
-<tr class="separator:a88b11f2372831ebb28fcd2a9961c4eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f7a6d5d46074603720462b96b40d25f"><td class="memTemplParams" colspan="2"><a class="anchor" id="a7f7a6d5d46074603720462b96b40d25f"></a>
+<tr class="memitem:afa2a7959f650bb0b6d214c2a74eed846"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::diag</b> (const std::initializer_list&lt; T &gt; &amp;lst, int d=0)</td></tr>
+<tr class="separator:afa2a7959f650bb0b6d214c2a74eed846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e321022a262bb25cbcdc4d3186001b0"><td class="memTemplParams" colspan="2"><a class="anchor" id="a9e321022a262bb25cbcdc4d3186001b0"></a>
 template&lt;class T &gt; </td></tr>
-<tr class="memitem:a7f7a6d5d46074603720462b96b40d25f"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::diag</b> (const matrix&lt; T &gt; A)</td></tr>
-<tr class="separator:a7f7a6d5d46074603720462b96b40d25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e321022a262bb25cbcdc4d3186001b0"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::diag</b> (const std::vector&lt; T &gt; v1, int d=0)</td></tr>
+<tr class="separator:a9e321022a262bb25cbcdc4d3186001b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f3ca84f887fb11aee5b219c03429096"><td class="memTemplParams" colspan="2"><a class="anchor" id="a7f3ca84f887fb11aee5b219c03429096"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a7f3ca84f887fb11aee5b219c03429096"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::diag</b> (const matrix&lt; T &gt; A, int d=0)</td></tr>
+<tr class="separator:a7f3ca84f887fb11aee5b219c03429096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40a637f210b03a3901cafbd6c1a7e83f"><td class="memTemplParams" colspan="2"><a class="anchor" id="a40a637f210b03a3901cafbd6c1a7e83f"></a>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:a40a637f210b03a3901cafbd6c1a7e83f"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::repmat</b> (const matrix&lt; T &gt; A, int m, int n)</td></tr>
@@ -724,12 +744,31 @@ template&lt;class T &gt; </td></tr>
 <tr class="memitem:a6640e5ff779655aed8078c5de81af7ff"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a6640e5ff779655aed8078c5de81af7ff">keycpp::finite</a> (std::vector&lt; T &gt; v1)</td></tr>
 <tr class="memdesc:a6640e5ff779655aed8078c5de81af7ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns vector containing boolean values that are true if corresponding elements of v1 are finite. <br/></td></tr>
 <tr class="separator:a6640e5ff779655aed8078c5de81af7ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48b81a22ef851cfac4d2f98eb6d182b5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48b81a22ef851cfac4d2f98eb6d182b5"></a>
+std::complex&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a48b81a22ef851cfac4d2f98eb6d182b5">keycpp::ceil</a> (std::complex&lt; double &gt; a)</td></tr>
+<tr class="memdesc:a48b81a22ef851cfac4d2f98eb6d182b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rounds the real and imaginary parts of complex&lt;double&gt; a towards positive infinity seperately. <br/></td></tr>
+<tr class="separator:a48b81a22ef851cfac4d2f98eb6d182b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa10f7052b5450926e1aa055510270d3d"><td class="memTemplParams" colspan="2"><a class="anchor" id="aa10f7052b5450926e1aa055510270d3d"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:aa10f7052b5450926e1aa055510270d3d"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#aa10f7052b5450926e1aa055510270d3d">keycpp::ceil</a> (std::vector&lt; T &gt; v1)</td></tr>
+<tr class="memdesc:aa10f7052b5450926e1aa055510270d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rounds the elements of v1 towards positive infinity. <br/></td></tr>
+<tr class="separator:aa10f7052b5450926e1aa055510270d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26cc754af2bdfab23c93e91017b84594"><td class="memTemplParams" colspan="2"><a class="anchor" id="a26cc754af2bdfab23c93e91017b84594"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a26cc754af2bdfab23c93e91017b84594"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a26cc754af2bdfab23c93e91017b84594">keycpp::ceil</a> (matrix&lt; T &gt; A)</td></tr>
+<tr class="memdesc:a26cc754af2bdfab23c93e91017b84594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rounds the elements of A towards positive infinity. <br/></td></tr>
+<tr class="separator:a26cc754af2bdfab23c93e91017b84594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbf61ceccd7874c0d8b4ae62cd5bbc24"><td class="memTemplParams" colspan="2"><a class="anchor" id="afbf61ceccd7874c0d8b4ae62cd5bbc24"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:afbf61ceccd7874c0d8b4ae62cd5bbc24"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#afbf61ceccd7874c0d8b4ae62cd5bbc24">keycpp::roots</a> (std::vector&lt; T &gt; p)</td></tr>
+<tr class="memdesc:afbf61ceccd7874c0d8b4ae62cd5bbc24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes all roots of polynomial p by solving for the eigenvalues of the companion matrix. <br/></td></tr>
+<tr class="separator:afbf61ceccd7874c0d8b4ae62cd5bbc24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 13 2013 14:35:30 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 14 2013 12:56:07 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -139,6 +139,117 @@ namespace keycpp
 		return lambda;
 	}
 	
+	/** \brief Complex-valued eigenvalue solver using LAPACK function call. 
+	 *  
+	 *  This function returns the eigenvalues(lambda) of the complex-valued
+	 *  eigenvalue problem: Ax_r = lambda*x_r or x_l^T*A = lambda*x_l^T. The eigenvalues
+	 *  are returned by default. To return the right or left eigenvectors, supply the
+	 *  function with a complex<double> matrix object in the 2nd or 3rd parameters, respectively.
+	 */
+    vector<complex<double> > eig(const matrix<complex<double> > A, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
+	{
+		int n, lda, ldb, ldvl, ldvr, lwork, info;
+		n = lda = ldb = A.size(1);
+		lwork = 2*n;
+		char jobvl, jobvr;
+
+		if(vl_return == NULL)
+		{
+			jobvl = 'N';
+			ldvl = 1;
+		}
+		else
+		{
+			jobvl = 'V';
+			ldvl = n;
+		}
+
+		if(vr_return == NULL)
+		{
+			jobvr = 'N';
+			ldvr = 1;
+		}
+		else
+		{
+			jobvr = 'V';
+			ldvr = n;
+		}
+
+		complex<double> *a = new complex<double>[n*n];
+		complex<double> *vr = new complex<double>[n*n];
+		complex<double> *vl = new complex<double>[n*n];
+		complex<double> *w = new complex<double>[n];
+		complex<double> *work = new complex<double>[lwork];
+		double *rwork = new double[lwork];
+		for(int ii = 0; ii < n; ii++)
+		{
+			for(int jj = 0; jj < n; jj++)
+			{
+				a[ii*n + jj] = A(jj,ii);
+			}
+		}
+
+	    zgeev_(&jobvl, &jobvr, &n, a, &lda, w, vl, &ldvl, vr, &ldvr, work, &lwork, rwork, &info);
+
+		vector<complex<double> > lambda(n);
+		for(int ii = 0; ii < n; ii++)
+		{
+			lambda[ii] = w[ii];
+		}
+		if(jobvr == 'V')
+		{
+			(*vr_return) = matrix<complex<double> >(n,n);
+			for(int ii = 0; ii < n; ii++)
+			{
+				for(int jj = 0; jj < n; jj++)
+				{
+					(*vr_return)(jj,ii) = vr[ii*n + jj];
+				}
+			}
+		}
+		if(jobvl == 'V')
+		{
+			(*vl_return) = matrix<complex<double> >(n,n);
+			for(int ii = 0; ii < n; ii++)
+			{
+				for(int jj = 0; jj < n; jj++)
+				{
+					(*vl_return)(jj,ii) = vl[ii*n + jj];
+				}
+			}
+		}
+
+		delete [] a;
+		delete [] vr;
+		delete [] vl;
+		delete [] w;
+		delete [] work;
+		delete [] rwork;
+
+		return lambda;
+	}
+	
+	
+	/** \brief Double precision eigenvalue solver using LAPACK function call. 
+	 *  
+	 *  This function returns the eigenvalues(lambda) of the
+	 *  eigenvalue problem: Ax_r = lambda*x_r or x_l^T*A = lambda*x_l^T. The eigenvalues
+	 *  are returned by default. To return the right or left eigenvectors, supply the
+	 *  function with a complex<double> matrix object in the 2nd or 3rd parameters, respectively.
+	 */
+    vector<complex<double> > eig(const matrix<double> A, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
+	{
+	    matrix<complex<double>> B(A.size(1),A.size(2));
+	    for(int ii = 0; ii < B.size(1); ii++)
+	    {
+	        for(int jj = 0; jj < B.size(2); jj++)
+	        {
+	            B(ii,jj) = A(ii,jj);
+	        }
+	    }
+	    return eig(B, vr_return, vl_return);
+	}
+	
 	double rcond(const matrix<double> A)
 	{
 	    if(A.size(1) != A.size(2))

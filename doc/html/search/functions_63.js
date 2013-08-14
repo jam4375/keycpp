@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['ceil',['ceil',['../namespacekeycpp.html#a48b81a22ef851cfac4d2f98eb6d182b5',1,'keycpp::ceil(std::complex&lt; double &gt; a)'],['../namespacekeycpp.html#aa10f7052b5450926e1aa055510270d3d',1,'keycpp::ceil(std::vector&lt; T &gt; v1)'],['../namespacekeycpp.html#a26cc754af2bdfab23c93e91017b84594',1,'keycpp::ceil(matrix&lt; T &gt; A)']]],
   ['cmd',['cmd',['../class_gnuplot.html#a07607803ede8dd5416906df0a1924fc5',1,'Gnuplot']]],
   ['cos',['cos',['../namespacekeycpp.html#afaf5c65950c36d6a10e2fc42cae7b041',1,'keycpp::cos(const std::vector&lt; T &gt; v1)'],['../namespacekeycpp.html#a6d906ad1b0afbefd588c619cdb02530a',1,'keycpp::cos(const matrix&lt; T &gt; A)']]],
   ['cross',['cross',['../namespacekeycpp.html#a1013b624bcc27f0953dfb989bacfe446',1,'keycpp']]],
