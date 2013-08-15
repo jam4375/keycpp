@@ -11,32 +11,33 @@
   </compound>
   <compound refid="classkeycpp_1_1_figure" kind="class"><name>keycpp::Figure</name>
     <member refid="classkeycpp_1_1_figure_1a090770b4d236338185a0a4bf3cdab305" kind="variable"><name>g</name></member>
-    <member refid="classkeycpp_1_1_figure_1ae05133c257944a4bd4a9490b1d552525" kind="variable"><name>hold_on_bool</name></member>
-    <member refid="classkeycpp_1_1_figure_1aaace5b0f667a815264bc8cf0ec75be8d" kind="variable"><name>num_plots</name></member>
     <member refid="classkeycpp_1_1_figure_1a9471608532e10f8854ddf20b7598f2ce" kind="variable"><name>colors</name></member>
-    <member refid="classkeycpp_1_1_figure_1a7f15fc5d3bc35663456fa7570cc98d5a" kind="variable"><name>x_plot_data</name></member>
-    <member refid="classkeycpp_1_1_figure_1a5cc8661b9af4d812a8549ade36fb2fe5" kind="variable"><name>y_plot_data</name></member>
-    <member refid="classkeycpp_1_1_figure_1ad7d32df17ae8f2b8c8a9dcdccc3f8980" kind="variable"><name>plot_format</name></member>
-    <member refid="classkeycpp_1_1_figure_1a6490d4ef793bb684ac5fb2958f8afd25" kind="variable"><name>plot_linewidth</name></member>
-    <member refid="classkeycpp_1_1_figure_1a1df96a96de46fb39df408fd5b2945dcd" kind="variable"><name>plot_markersize</name></member>
-    <member refid="classkeycpp_1_1_figure_1ab4b5ceaa888113e26f827ed80a2a84cf" kind="variable"><name>plot_val</name></member>
-    <member refid="classkeycpp_1_1_figure_1a7afa9733f8f3397deae1fe2aacf05749" kind="variable"><name>legend_entries</name></member>
-    <member refid="classkeycpp_1_1_figure_1a5fc0c27cbac837a58923b6bf26b24263" kind="variable"><name>m_xlabel</name></member>
-    <member refid="classkeycpp_1_1_figure_1a5180ab6fd396908ced2ef054a28fdcc7" kind="variable"><name>m_ylabel</name></member>
-    <member refid="classkeycpp_1_1_figure_1abe82c0e146f95d04d6cfc20172c2f6f7" kind="variable"><name>m_title</name></member>
-    <member refid="classkeycpp_1_1_figure_1af6cbace86a07003876cbcae0e7b3f838" kind="variable"><name>ymin</name></member>
-    <member refid="classkeycpp_1_1_figure_1a2cfa1e7f3e505240fff025bf7b55ffb5" kind="variable"><name>ymax</name></member>
-    <member refid="classkeycpp_1_1_figure_1a61039b91b3449bc06b4128b58b4ae2cc" kind="variable"><name>xmin</name></member>
-    <member refid="classkeycpp_1_1_figure_1a1ff79a0f4f069b16392580a8e2a65a8a" kind="variable"><name>xmax</name></member>
-    <member refid="classkeycpp_1_1_figure_1a1e692a5040b5ba007fbf9ffaf5b1301f" kind="variable"><name>grid_on_bool</name></member>
+    <member refid="classkeycpp_1_1_figure_1ad0b2255b5ea3ae9e47eaab50c14b08a6" kind="variable"><name>p</name></member>
     <member refid="classkeycpp_1_1_figure_1aac35cd238a35d51822f4ba78c83f105b" kind="variable"><name>fontsize</name></member>
+    <member refid="classkeycpp_1_1_figure_1af7b1068f17391548038b9fdcfee37504" kind="variable"><name>multiplot</name></member>
+    <member refid="classkeycpp_1_1_figure_1acff322c7d1fff0d294e7e57ec7d63611" kind="variable"><name>current_plot</name></member>
+    <member refid="classkeycpp_1_1_figure_1aadf70a04a81caed7bc1ba30eac255c79" kind="variable"><name>multi_rows</name></member>
+    <member refid="classkeycpp_1_1_figure_1a4c366a20b79f8f2d99fa02588c82997b" kind="variable"><name>multi_cols</name></member>
+    <member refid="classkeycpp_1_1_figure_1a51e4a69cfb2f249e8880d21b7b452c45" kind="variable"><name>final_replot</name></member>
+    <member refid="classkeycpp_1_1_figure_1a0f68e631079ba87244bf6c311a37e43a" kind="variable"><name>m_width</name></member>
+    <member refid="classkeycpp_1_1_figure_1adf35f91a45d7727e50c052ce50530653" kind="variable"><name>m_height</name></member>
     <member refid="classkeycpp_1_1_figure_1a3224183e0cbd0a034f83946263a7c881" kind="function"><name>Figure</name></member>
+    <member refid="classkeycpp_1_1_figure_1a318799c9b423d48894395b1820c55c54" kind="function"><name>~Figure</name></member>
     <member refid="classkeycpp_1_1_figure_1a6d2444603362a7782232662410b364aa" kind="function"><name>plot</name></member>
     <member refid="classkeycpp_1_1_figure_1aa5761ef52842e596dca311c43920b7a0" kind="function"><name>plot</name></member>
     <member refid="classkeycpp_1_1_figure_1aa057f62607febd829d3e1a54801473f8" kind="function"><name>plot</name></member>
     <member refid="classkeycpp_1_1_figure_1a21fc5536de2cdaf6272525a28f9e4072" kind="function"><name>plot</name></member>
     <member refid="classkeycpp_1_1_figure_1a2c0f7d871472571200258a5c9b95474e" kind="function"><name>plot</name></member>
     <member refid="classkeycpp_1_1_figure_1a3646790552f73645bf926b1678fede40" kind="function"><name>plot</name></member>
+    <member refid="classkeycpp_1_1_figure_1aa92130b35ce5dd9bc52e1ed4bd85682c" kind="function"><name>semilogx</name></member>
+    <member refid="classkeycpp_1_1_figure_1a442655002324395b08e5511bbb02146a" kind="function"><name>semilogx</name></member>
+    <member refid="classkeycpp_1_1_figure_1a849fa48f8fb7d4ee9cb205a5310f2c23" kind="function"><name>semilogx</name></member>
+    <member refid="classkeycpp_1_1_figure_1a8fa3aba0daf6f74bbb7c1d0553156b44" kind="function"><name>semilogy</name></member>
+    <member refid="classkeycpp_1_1_figure_1a15fbce90514b55af60d3819c8da2561f" kind="function"><name>semilogy</name></member>
+    <member refid="classkeycpp_1_1_figure_1a52b6a651edb036721bfa6252eae0e70d" kind="function"><name>semilogy</name></member>
+    <member refid="classkeycpp_1_1_figure_1aed54e550273e8e6cd4b28b1177364a70" kind="function"><name>loglog</name></member>
+    <member refid="classkeycpp_1_1_figure_1af311b0c4a48a112abb571acc8cf9ad6a" kind="function"><name>loglog</name></member>
+    <member refid="classkeycpp_1_1_figure_1ae5dce11f219f879eaadc52c54bff35b4" kind="function"><name>loglog</name></member>
     <member refid="classkeycpp_1_1_figure_1addd610a718f021f3e6c7c94f9bc7f285" kind="function"><name>xlabel</name></member>
     <member refid="classkeycpp_1_1_figure_1aa965967db2165b001860f75fc22c9f28" kind="function"><name>ylabel</name></member>
     <member refid="classkeycpp_1_1_figure_1a922bd966ed40095f0ae7fa184f9d0ada" kind="function"><name>title</name></member>
@@ -44,6 +45,7 @@
     <member refid="classkeycpp_1_1_figure_1a3736e01bc278c2c2b47e4ff046fdda0e" kind="function"><name>grid_off</name></member>
     <member refid="classkeycpp_1_1_figure_1a65b80e5b67c7bbf225e3001a538a6dad" kind="function"><name>hold_on</name></member>
     <member refid="classkeycpp_1_1_figure_1ae5e5ac67e9450ea4fbf06fb3fcc6523a" kind="function"><name>hold_off</name></member>
+    <member refid="classkeycpp_1_1_figure_1a59b0acbd975579bf8330849f004637fc" kind="function"><name>subplot</name></member>
     <member refid="classkeycpp_1_1_figure_1a315140182f731518bc1f6f037a12c3a5" kind="function"><name>legend</name></member>
     <member refid="classkeycpp_1_1_figure_1aa01c44e6509c7075f4f547531c39741b" kind="function"><name>ylim</name></member>
     <member refid="classkeycpp_1_1_figure_1ae779c53eebbee42148324bd8adfd7d01" kind="function"><name>xlim</name></member>
@@ -51,6 +53,7 @@
     <member refid="classkeycpp_1_1_figure_1ab8d777d1b44e242b104350093ef09543" kind="function"><name>setFontsize</name></member>
     <member refid="classkeycpp_1_1_figure_1a6c1e59c4e8288e3880bde70db3723037" kind="function"><name>getFontsize</name></member>
     <member refid="classkeycpp_1_1_figure_1a7375fe8611759fda180d626f91eab510" kind="function"><name>set</name></member>
+    <member refid="classkeycpp_1_1_figure_1af82ed243d2b4f59f5e01566eb03cf9d3" kind="function"><name>set</name></member>
   </compound>
   <compound refid="classkeycpp_1_1_figure_exception" kind="class"><name>keycpp::FigureException</name>
     <member refid="classkeycpp_1_1_figure_exception_1aacd7cab583d3eea1ddd185a8fd7b1133" kind="function"><name>FigureException</name></member>
@@ -59,7 +62,6 @@
     <member refid="class_gnuplot_1a93e59138d3e192ffa2a4f0d7c310d61d" kind="variable"><name>gnucmd</name></member>
     <member refid="class_gnuplot_1a0155f4026915ed9b05b18c1e89ba9757" kind="variable"><name>valid</name></member>
     <member refid="class_gnuplot_1a871efce13e856022b3ba36caaa10ea33" kind="variable"><name>two_dim</name></member>
-    <member refid="class_gnuplot_1a5424901e114ba75640b8aa35bb23657d" kind="variable"><name>multiplot</name></member>
     <member refid="class_gnuplot_1acceb0a453297bb0ec7b26ec1dafbcec2" kind="variable"><name>nplots</name></member>
     <member refid="class_gnuplot_1a418930ab9ec992bcf1b9257e4c2bf6a9" kind="variable"><name>pstyle</name></member>
     <member refid="class_gnuplot_1a492b77047e8a79ef760e54ceb89de539" kind="variable"><name>smooth</name></member>
@@ -69,12 +71,12 @@
     <member refid="class_gnuplot_1a3c5949b04c54833eb685c30322c816e6" kind="variable"><name>m_sGNUPlotPath</name></member>
     <member refid="class_gnuplot_1ad763c98e6b2f51bef05f0b2da522fef4" kind="variable"><name>terminal_std</name></member>
     <member refid="class_gnuplot_1a08d1e4ec069ec1cb82bb96427d1e0d7f" kind="function"><name>init</name></member>
-    <member refid="class_gnuplot_1a8ced9e766e0677b938178dafe9264ff7" kind="function"><name>create_tmpfile</name></member>
     <member refid="class_gnuplot_1a3ceb471d375865fccd412105cb587dd1" kind="function"><name>file_available</name></member>
     <member refid="class_gnuplot_1a3a769e47861d74fa713070ecd857dd17" kind="function"><name>get_program_path</name></member>
     <member refid="class_gnuplot_1abc0f1d75cb78804a5b8efdfa4df582cd" kind="function"><name>file_exists</name></member>
-    <member refid="class_gnuplot_1a67cae885c26ced821e335d98986f1967" kind="function"><name>set_GNUPlotPath</name></member>
-    <member refid="class_gnuplot_1a21feba7a3916708b742c3dc25850ab2f" kind="function"><name>set_terminal_std</name></member>
+    <member refid="class_gnuplot_1a8ced9e766e0677b938178dafe9264ff7" kind="function"><name>create_tmpfile</name></member>
+    <member refid="class_gnuplot_1af51b1d33cffebc835a4b493cce1b0bce" kind="function"><name>get_style</name></member>
+    <member refid="class_gnuplot_1ae2cd259922eb5d9486a4c5082c16e028" kind="function"><name>get_terminal_std</name></member>
     <member refid="class_gnuplot_1a187eb517b362cf379492fe7f1621ee50" kind="function"><name>Gnuplot</name></member>
     <member refid="class_gnuplot_1a8ceac5808e42665c1dee305ae7ea9070" kind="function"><name>Gnuplot</name></member>
     <member refid="class_gnuplot_1a24327b6116c71acdc195eadf665c67cb" kind="function"><name>Gnuplot</name></member>
@@ -83,7 +85,7 @@
     <member refid="class_gnuplot_1a07607803ede8dd5416906df0a1924fc5" kind="function"><name>cmd</name></member>
     <member refid="class_gnuplot_1afb69631c7a498077e378a3cbb56f38c8" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="class_gnuplot_1a356d2faaa79f08d13fec9718b776b28d" kind="function"><name>showonscreen</name></member>
-    <member refid="class_gnuplot_1a1ccaa142290490429c6cd623543a914c" kind="function"><name>savetofigure</name></member>
+    <member refid="class_gnuplot_1a032072c7c01b508a7535a17fb08562b1" kind="function"><name>savetops</name></member>
     <member refid="class_gnuplot_1acfdcda292650775ebed4683e8e1515b5" kind="function"><name>set_style</name></member>
     <member refid="class_gnuplot_1aa18386919da2ec4c994f1f9c7195d384" kind="function"><name>set_smooth</name></member>
     <member refid="class_gnuplot_1ad9dfbccd66dece1dbe5803605c6ab08c" kind="function"><name>unset_smooth</name></member>
@@ -124,14 +126,6 @@
     <member refid="class_gnuplot_1a80f3b2baae2bceff78ad005d9c3ec3fb" kind="function"><name>plot_x</name></member>
     <member refid="class_gnuplot_1a10e1fc7344bd726faa2d70cd5ced5e5e" kind="function"><name>plotfile_xy</name></member>
     <member refid="class_gnuplot_1a0514a7391de6b42e79732ce746c310f7" kind="function"><name>plot_xy</name></member>
-    <member refid="class_gnuplot_1a26cbba36864ad7f1f6683b11558e3b49" kind="function"><name>plotfile_xyy</name></member>
-    <member refid="class_gnuplot_1ac0c275ff75d700fc8e9f55d15dea1ea3" kind="function"><name>plot_xyxy</name></member>
-    <member refid="class_gnuplot_1a4410bb4c65aaf43b0ad5e510da15e20f" kind="function"><name>plotfile_xyxy</name></member>
-    <member refid="class_gnuplot_1a9ac40f453f4951f5df8212612b2b5cfd" kind="function"><name>plot_xyy</name></member>
-    <member refid="class_gnuplot_1ac2dcfa52e5758e6472c1c161f52803af" kind="function"><name>plotfile_xxy</name></member>
-    <member refid="class_gnuplot_1a5be0d83b9fe1c9123ac4868746eda15d" kind="function"><name>plot_xxy</name></member>
-    <member refid="class_gnuplot_1a6446b66df4b42691a8cd4b9c2b04f250" kind="function"><name>plotfile_xxxxy</name></member>
-    <member refid="class_gnuplot_1aa4736bcf899c4b2454117f9377a707e3" kind="function"><name>plot_xxxxy</name></member>
     <member refid="class_gnuplot_1afe9d44ba12f617188111ab915010f3ab" kind="function"><name>plotfile_xy_err</name></member>
     <member refid="class_gnuplot_1a3c5d382eba33f92b26ba85f201bc7dea" kind="function"><name>plot_xy_err</name></member>
     <member refid="class_gnuplot_1a9dbde2a91eb816481657f3a22c9b0046" kind="function"><name>plotfile_xyz</name></member>
@@ -145,6 +139,8 @@
     <member refid="class_gnuplot_1a9aedfe8371083a1a3ac2b9493810049c" kind="function"><name>reset_all</name></member>
     <member refid="class_gnuplot_1a2e449552587b0055f40f4ee079d62a8d" kind="function"><name>remove_tmpfiles</name></member>
     <member refid="class_gnuplot_1a3135ffebb308b50c4f3178a62b23ab03" kind="function"><name>is_valid</name></member>
+    <member refid="class_gnuplot_1a67cae885c26ced821e335d98986f1967" kind="function"><name>set_GNUPlotPath</name></member>
+    <member refid="class_gnuplot_1a21feba7a3916708b742c3dc25850ab2f" kind="function"><name>set_terminal_std</name></member>
   </compound>
   <compound refid="class_gnuplot_exception" kind="class"><name>GnuplotException</name>
     <member refid="class_gnuplot_exception_1a8b324a9ef4d3f75079d41ecd61c62d44" kind="function"><name>GnuplotException</name></member>
@@ -207,6 +203,29 @@
   </compound>
   <compound refid="class_ode_class" kind="class"><name>OdeClass</name>
     <member refid="class_ode_class_1aa366699f76a0d9dd10934484a838fd74" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="classkeycpp_1_1_plots" kind="class"><name>keycpp::Plots</name>
+    <member refid="classkeycpp_1_1_plots_1afe961c1f35d88bc181bd426fc47ade00" kind="variable"><name>hold_on_bool</name></member>
+    <member refid="classkeycpp_1_1_plots_1aa37e3813d1a29d423700af686dc1bf09" kind="variable"><name>num_plots</name></member>
+    <member refid="classkeycpp_1_1_plots_1a9de0b584d162d6694ea4281cb9a4396d" kind="variable"><name>x_plot_data</name></member>
+    <member refid="classkeycpp_1_1_plots_1a3f3f95d6306139576d53734972995720" kind="variable"><name>y_plot_data</name></member>
+    <member refid="classkeycpp_1_1_plots_1a462b8a89f01d8beb747ec82a85530e3a" kind="variable"><name>plot_format</name></member>
+    <member refid="classkeycpp_1_1_plots_1a3d01b697171789f31c7e77764c905216" kind="variable"><name>plot_linewidth</name></member>
+    <member refid="classkeycpp_1_1_plots_1ad801040d683566ecf22c3c1ec72e6811" kind="variable"><name>plot_markersize</name></member>
+    <member refid="classkeycpp_1_1_plots_1a95cfb5daf2425e227f5148c7c6a04e80" kind="variable"><name>plot_val</name></member>
+    <member refid="classkeycpp_1_1_plots_1a25df6878ccfbbe680c5324e0fab789ac" kind="variable"><name>legend_entries</name></member>
+    <member refid="classkeycpp_1_1_plots_1a18a69c533594b4bc1c88fdb29267db1e" kind="variable"><name>m_xlabel</name></member>
+    <member refid="classkeycpp_1_1_plots_1ad2987af367059a0659e013708342451b" kind="variable"><name>m_ylabel</name></member>
+    <member refid="classkeycpp_1_1_plots_1a849d297c44ebca4f7c856c99cfcc2b5f" kind="variable"><name>m_title</name></member>
+    <member refid="classkeycpp_1_1_plots_1a54578198c41d34705e9fbe94a88ec6ae" kind="variable"><name>ymin</name></member>
+    <member refid="classkeycpp_1_1_plots_1ad411158572c6ee36b1f4abc9c9dfec77" kind="variable"><name>ymax</name></member>
+    <member refid="classkeycpp_1_1_plots_1a1d027ed119d5b4a8d7d9ccc72f9a0eb1" kind="variable"><name>xmin</name></member>
+    <member refid="classkeycpp_1_1_plots_1a4d7f34173d13de92014702ffba6fb1d4" kind="variable"><name>xmax</name></member>
+    <member refid="classkeycpp_1_1_plots_1abd0c4449bcd999429a3073e2885708d8" kind="variable"><name>grid_on_bool</name></member>
+    <member refid="classkeycpp_1_1_plots_1aa994c8e9f09633b26410ed27ea70a1a1" kind="variable"><name>logscale_x</name></member>
+    <member refid="classkeycpp_1_1_plots_1a605e7e4681e977f5d1d2ff95d72946cb" kind="variable"><name>logscale_y</name></member>
+    <member refid="classkeycpp_1_1_plots_1a0ed0add050a618468cbf2cffe2529bad" kind="variable"><name>cmdstr</name></member>
+    <member refid="classkeycpp_1_1_plots_1aa90698aa691c410c4a206bab375f4235" kind="function"><name>Plots</name></member>
   </compound>
   <compound refid="structkeycpp_1_1_sort___matrix" kind="struct"><name>keycpp::Sort_Matrix</name>
     <member refid="structkeycpp_1_1_sort___matrix_1acd2c90a02e9c57964fd924d75eece798" kind="variable"><name>B</name></member>
@@ -356,6 +375,7 @@
     <member refid="namespacekeycpp_1a6b17b3d224192fffc838834ff736d572" kind="function"><name>fft</name></member>
     <member refid="namespacekeycpp_1a880f7df231a78f912b3fb5d301c809f9" kind="function"><name>ode45</name></member>
     <member refid="namespacekeycpp_1afcd6ae07fc18f5374868fe314f00108c" kind="function"><name>set</name></member>
+    <member refid="namespacekeycpp_1a261a9d83dcc8786777d193575b7e1a1c" kind="function"><name>set</name></member>
     <member refid="namespacekeycpp_1a6862448bf6e09309e60a6ba7aa0caf9a" kind="function"><name>sort</name></member>
     <member refid="namespacekeycpp_1a1be4e97b99a996a01f428fd8ba048fb0" kind="function"><name>sort</name></member>
     <member refid="namespacekeycpp_1a6498ae080f530236ae3f7756f81ac78e" kind="function"><name>disp</name></member>

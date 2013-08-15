@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['savetofigure',['savetofigure',['../class_gnuplot.html#a1ccaa142290490429c6cd623543a914c',1,'Gnuplot']]],
+  ['savetops',['savetops',['../class_gnuplot.html#a032072c7c01b508a7535a17fb08562b1',1,'Gnuplot']]],
   ['set_5fcbrange',['set_cbrange',['../class_gnuplot.html#a2228f5ab4cce2da463fc90383076a598',1,'Gnuplot']]],
   ['set_5fcontour',['set_contour',['../class_gnuplot.html#af845efc728a90d7e10de764eff0b2423',1,'Gnuplot']]],
   ['set_5fgnuplotpath',['set_GNUPlotPath',['../class_gnuplot.html#a67cae885c26ced821e335d98986f1967',1,'Gnuplot']]],

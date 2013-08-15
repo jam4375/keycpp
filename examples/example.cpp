@@ -42,7 +42,7 @@ int main(int argc, char** argv)
                         2.1};
     vector<double> x = linsolve(A,b);
     // Print the result to the screen:
-    cout << x;
+    disp(x);
 
     // Now lets do something a little more complicated, solve an
     // ordinary differential equation (ODE):

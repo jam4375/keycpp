@@ -94,7 +94,7 @@
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2.1};</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>x<sp/>=<sp/>linsolve(A,b);</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Print<sp/>the<sp/>result<sp/>to<sp/>the<sp/>screen:</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>x;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacekeycpp_1a6498ae080f530236ae3f7756f81ac78e" kindref="member" tooltip="Displays on standard output any parameter passed to it provided the operator &amp;lt;&amp;lt; is defined for its ty...">disp</ref>(x);</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>lets<sp/>do<sp/>something<sp/>a<sp/>little<sp/>more<sp/>complicated,<sp/>solve<sp/>an</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ordinary<sp/>differential<sp/>equation<sp/>(ODE):</highlight><highlight class="normal"></highlight></codeline>

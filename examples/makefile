@@ -15,7 +15,7 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.cpp $(DEPS) ; $(CC) -c -o $@ $< $(CFLAGS)
 
-example: $(OBJ) ; rm -f /tmp/gnuplot* ; $(CC) -o $@ $^ $(CFLAGS) -L$(LDIR) $(LIBS)
+example: $(OBJ) ; $(CC) -o $@ $^ $(CFLAGS) -L$(LDIR) $(LIBS)
 
 .PHONY: clean
 

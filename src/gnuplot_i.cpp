@@ -1,3 +1,33 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///  \brief A C++ interface to gnuplot.
+///
+///
+///  The interface uses pipes and so won't run on a system that doesn't have
+///  POSIX pipe support Tested on Windows (MinGW and Visual C++) and Linux (GCC)
+///
+/// Version history:
+/// 0. C interface
+///    by N. Devillard (27/01/03)
+/// 1. C++ interface: direct translation from the C interface
+///    by Rajarshi Guha (07/03/03)
+/// 2. corrections for Win32 compatibility
+///    by V. Chyzhdzenka (20/05/03)
+/// 3. some member functions added, corrections for Win32 and Linux 
+///    compatibility 
+///    by M. Burgis (10/03/08)
+/// 4. Some minor modifications to allow use by KeyCpp
+///    by J. Monschke (08/15/2013)
+///
+/// Requirements:
+/// * gnuplot has to be installed (http://www.gnuplot.info/download.html)
+/// * for Windows: set Path-Variable for Gnuplot path 
+///         (e.g. C:/program files/gnuplot/bin)
+///         or set Gnuplot path with: 
+///         Gnuplot::set_GNUPlotPath(const std::string &path);
+///
+////////////////////////////////////////////////////////////////////////////////
+
 #include "gnuplot_i.h"
 
 //------------------------------------------------------------------------------
@@ -21,86 +51,6 @@ std::string Gnuplot::terminal_std = "x11";
 #elif defined(__APPLE__)
 std::string Gnuplot::terminal_std = "aqua";
 #endif
-
-//------------------------------------------------------------------------------
-//
-// constructor: set a style during construction
-//
-Gnuplot::Gnuplot(const std::string &style)
-			   :gnucmd(NULL) ,valid(false) ,two_dim(false) ,nplots(0), multiplot(false)
-
-{
-    init();
-    set_style(style);
-}
-  
-//------------------------------------------------------------------------------
-//
-// constructor: open a new session, plot a signal (x)
-//
-Gnuplot::Gnuplot(const std::vector<double> &x,
-                 const std::string &title,
-                 const std::string &style,
-                 const std::string &labelx,
-                 const std::string &labely)
-			   :gnucmd(NULL) ,valid(false) ,two_dim(false) ,nplots(0), multiplot(false)
-{
-    init();
-
-    set_style(style);
-    set_xlabel(labelx);
-    set_ylabel(labely);
-
-    plot_x(x,title);
-}
-
-
-//------------------------------------------------------------------------------
-//
-// constructor: open a new session, plot a signal (x,y)
-//
-Gnuplot::Gnuplot(const std::vector<double> &x,
-                 const std::vector<double> &y,
-                 const std::string &title,
-                 const std::string &style,
-                 const std::string &labelx,
-                 const std::string &labely)
-			   :gnucmd(NULL) ,valid(false) ,two_dim(false) ,nplots(0), multiplot(false)
-{
-    init();
-
-    set_style(style);
-    set_xlabel(labelx);
-    set_ylabel(labely);
-
-    plot_xy(x,y,title);
-}
-
-
-//------------------------------------------------------------------------------
-//
-// constructor: open a new session, plot a signal (x,y,z)
-//
-Gnuplot::Gnuplot(const std::vector<double> &x,
-                 const std::vector<double> &y,
-                 const std::vector<double> &z,
-                 const std::string &title,
-                 const std::string &style,
-                 const std::string &labelx,
-                 const std::string &labely,
-                 const std::string &labelz)
-			   :gnucmd(NULL) ,valid(false) ,two_dim(false) ,nplots(0), multiplot(false)
-{
-    init();
-
-    set_style(style);
-    set_xlabel(labelx);
-    set_ylabel(labely);
-    set_zlabel(labelz);
-
-    plot_xyz(x,y,z,title);
-}
-
 
 
 
@@ -151,23 +101,6 @@ void Gnuplot::set_terminal_std(const std::string &type)
     return;
 }
 
-
-//------------------------------------------------------------------------------
-//
-// Destructor: needed to delete temporary files
-//
-Gnuplot::~Gnuplot()
-{
-//  remove_tmpfiles();
-
-    // A stream opened by popen() should be closed by pclose()
-#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__TOS_WIN__)
-    if (_pclose(gnucmd) == -1)
-#elif defined(unix) || defined(__unix) || defined(__unix__) || defined(__APPLE__)
-    if (pclose(gnucmd) == -1)
-#endif
-        throw GnuplotException("Problem closing communication to gnuplot");
-}
 
 
 //------------------------------------------------------------------------------
@@ -289,15 +222,12 @@ Gnuplot& Gnuplot::showonscreen()
 //
 // saves a gnuplot session to a postscript file
 //
-Gnuplot& Gnuplot::savetofigure(const std::string filename, 
-        const std::string terminal)
+Gnuplot& Gnuplot::savetops(const std::string &filename)
 {
-    std::ostringstream cmdstr;
-    cmdstr << "set terminal " << terminal;
-    cmd(cmdstr.str() );
+    cmd("set terminal postscript color");
 
-    cmdstr.str("");     // Clear cmdstr
-    cmdstr << "set output \"" << filename << "\"";
+    std::ostringstream cmdstr;
+    cmdstr << "set output \"" << filename << ".ps\"";
     cmd(cmdstr.str());
 
     return *this;
@@ -572,14 +502,14 @@ Gnuplot& Gnuplot::plot_equation(const std::string &equation,
     else
         cmdstr << "plot ";
 
-    cmdstr << equation;
+    cmdstr << equation << " title \"";
 
     if (title == "")
-        cmdstr << " notitle";
+        cmdstr << "f(x) = " << equation;
     else
-        cmdstr << " title \"" << title << "\"";
+        cmdstr << title;
 
-    cmdstr << " with " << pstyle;
+    cmdstr << "\" with " << pstyle;
 
     //
     // Do the actual plot
@@ -687,7 +617,7 @@ Gnuplot& Gnuplot::plotfile_xy(const std::string &filename,
     //
     // command to be sent to gnuplot
     //
-    if (nplots > 0  &&  two_dim == true && !multiplot)
+    if (nplots > 0  &&  two_dim == true)
         cmdstr << "replot ";
     else
         cmdstr << "plot ";
@@ -698,265 +628,6 @@ Gnuplot& Gnuplot::plotfile_xy(const std::string &filename,
         cmdstr << " notitle ";
     else
         cmdstr << " title \"" << title << "\" ";
-
-    if(smooth == "")
-        cmdstr << "with " << pstyle;
-    else
-        cmdstr << "smooth " << smooth;
-
-    //
-    // Do the actual plot
-    //
-    cmd(cmdstr.str());
-
-    return *this;
-}
-
-//------------------------------------------------------------------------------
-//
-// Plots a 2d graph from a list of doubles (x y) saved in a file
-//
-Gnuplot& Gnuplot::plotfile_xyxy(const std::string &filename1,const std::string &filename2,
-                              const unsigned int column_x1,
-                              const unsigned int column_y1,
-                              const unsigned int column_x2,
-                              const unsigned int column_y2,
-                              const std::string &title1,
-                              const std::string &title2,const std::string &style1,const std::string &style2)
-{
-    //
-    // check if file exists
-    //
-    file_available(filename1);
-    file_available(filename2);
-
-
-    std::ostringstream cmdstr;
-    //
-    // command to be sent to gnuplot
-    //
-    if (nplots > 0  &&  two_dim == true && !multiplot)
-        cmdstr << "replot ";
-    else
-        cmdstr << "plot ";
-
-    cmdstr << "\"" << filename1 << "\" using " << column_x1 << ":" << column_y1;
-
-    if (title1 == "")
-        cmdstr << " notitle ";
-    else
-        cmdstr << " title \"" << title1 << "\" ";
-
-    if(style1 != "")
-        cmdstr << "with " << style1;
-
-    cmdstr << ", \"" << filename2 << "\" using " << column_x2 << ":" << column_y2;
-
-    if (title2 == "")
-        cmdstr << " notitle ";
-    else
-        cmdstr << " title \"" << title2 << "\" ";
-
-    if(style2 != "")
-        cmdstr << "with " << style2;
-
-    //
-    // Do the actual plot
-    //
-    cmd(cmdstr.str());
-
-    return *this;
-}
-
-//------------------------------------------------------------------------------
-//
-// Plots a 2d graph from a list of doubles (x y) saved in a file
-//
-Gnuplot& Gnuplot::plotfile_xyy(const std::string &filename,
-                              const unsigned int column_x,
-                              const unsigned int column_y1,
-                              const unsigned int column_y2,
-                              const std::string &title1,
-                              const std::string &title2)
-{
-    //
-    // check if file exists
-    //
-    file_available(filename);
-
-
-    std::ostringstream cmdstr;
-    //
-    // command to be sent to gnuplot
-    //
-    if (nplots > 0  &&  two_dim == true && !multiplot)
-        cmdstr << "replot ";
-    else
-        cmdstr << "plot ";
-
-    cmdstr << "\"" << filename << "\" using " << column_x << ":" << column_y1;
-
-    if (title1 == "")
-        cmdstr << " notitle ";
-    else
-        cmdstr << " title \"" << title1 << "\" ";
-
-    if(smooth == "")
-        cmdstr << "with " << pstyle;
-    else
-        cmdstr << "smooth " << smooth;
-
-    cmdstr << ", \"" << filename << "\" using " << column_x << ":" << column_y2;
-
-    if (title2 == "")
-        cmdstr << " notitle ";
-    else
-        cmdstr << " title \"" << title2 << "\" ";
-
-    if(smooth == "")
-        cmdstr << "with " << pstyle;
-    else
-        cmdstr << "smooth " << smooth;
-
-    //
-    // Do the actual plot
-    //
-    cmd(cmdstr.str());
-
-    return *this;
-}
-
-//------------------------------------------------------------------------------
-//
-// Plots a 2d graph from a list of doubles (x y) saved in a file
-//
-Gnuplot& Gnuplot::plotfile_xxy(const std::string &filename,
-                              const unsigned int column_x1,
-                              const unsigned int column_x2,
-                              const unsigned int column_y,
-                              const std::string &title1,
-                              const std::string &title2)
-{
-    //
-    // check if file exists
-    //
-    file_available(filename);
-
-
-    std::ostringstream cmdstr;
-    //
-    // command to be sent to gnuplot
-    //
-    if (nplots > 0  &&  two_dim == true && !multiplot)
-        cmdstr << "replot ";
-    else
-        cmdstr << "plot ";
-
-    cmdstr << "\"" << filename << "\" using " << column_x1 << ":" << column_y;
-
-    if (title1 == "")
-        cmdstr << " notitle ";
-    else
-        cmdstr << " title \"" << title1 << "\" ";
-
-    if(smooth == "")
-        cmdstr << "with " << pstyle;
-    else
-        cmdstr << "smooth " << smooth;
-
-    cmdstr << ", \"" << filename << "\" using " << column_x2 << ":" << column_y;
-
-    if (title2 == "")
-        cmdstr << " notitle ";
-    else
-        cmdstr << " title \"" << title2 << "\" ";
-
-    if(smooth == "")
-        cmdstr << "with " << pstyle;
-    else
-        cmdstr << "smooth " << smooth;
-
-    //
-    // Do the actual plot
-    //
-    cmd(cmdstr.str());
-
-    return *this;
-}
-
-
-//------------------------------------------------------------------------------
-//
-// Plots a 2d graph from a list of doubles (x y) saved in a file
-//
-Gnuplot& Gnuplot::plotfile_xxxxy(const std::string &filename,
-                              const unsigned int column_x1,
-                              const unsigned int column_x2,
-                              const unsigned int column_x3,
-                              const unsigned int column_x4,
-                              const unsigned int column_y,
-                              const std::string &title1,
-                              const std::string &title2,
-                              const std::string &title3,
-                              const std::string &title4)
-{
-    //
-    // check if file exists
-    //
-    file_available(filename);
-
-
-    std::ostringstream cmdstr;
-    //
-    // command to be sent to gnuplot
-    //
-    if (nplots > 0  &&  two_dim == true && !multiplot)
-        cmdstr << "replot ";
-    else
-        cmdstr << "plot ";
-
-    cmdstr << "\"" << filename << "\" using " << column_x1 << ":" << column_y;
-
-    if (title1 == "")
-        cmdstr << " notitle ";
-    else
-        cmdstr << " title \"" << title1 << "\" ";
-
-    if(smooth == "")
-        cmdstr << "with " << pstyle;
-    else
-        cmdstr << "smooth " << smooth;
-
-    cmdstr << ", \"" << filename << "\" using " << column_x2 << ":" << column_y;
-
-    if (title2 == "")
-        cmdstr << " notitle ";
-    else
-        cmdstr << " title \"" << title2 << "\" ";
-
-    if(smooth == "")
-        cmdstr << "with " << pstyle;
-    else
-        cmdstr << "smooth " << smooth;
-
-    cmdstr << ", \"" << filename << "\" using " << column_x3 << ":" << column_y;
-
-    if (title3 == "")
-        cmdstr << " notitle ";
-    else
-        cmdstr << " title \"" << title3 << "\" ";
-
-    if(smooth == "")
-        cmdstr << "with " << pstyle;
-    else
-        cmdstr << "smooth " << smooth;
-
-    cmdstr << ", \"" << filename << "\" using " << column_x4 << ":" << column_y;
-
-    if (title4 == "")
-        cmdstr << " notitle ";
-    else
-        cmdstr << " title \"" << title4 << "\" ";
 
     if(smooth == "")
         cmdstr << "with " << pstyle;
@@ -1074,9 +745,9 @@ Gnuplot& Gnuplot::plot_image(const unsigned char * ucPicBuf,
     // write the data to file
     //
     int iIndex = 0;
-    for(unsigned int iRow = 0; iRow < iHeight; iRow++)
+    for(int iRow = 0; iRow < iHeight; iRow++)
     {
-        for(unsigned int iColumn = 0; iColumn < iWidth; iColumn++)
+        for(int iColumn = 0; iColumn < iWidth; iColumn++)
         {
             tmp << iColumn << " " << iRow  << " " 
                 << static_cast<float>(ucPicBuf[iIndex++]) << std::endl;
@@ -1153,11 +824,6 @@ Gnuplot& Gnuplot::cmd(const std::string &cmdstr)
         nplots++;
     }
 
-    if( cmdstr.find("multiplot") != std::string::npos )
-    {
-        multiplot = true;
-    }
-
     return *this;
 }
 
@@ -1194,7 +860,7 @@ void Gnuplot::init()
     // open pipe
     //
     std::string tmp = Gnuplot::m_sGNUPlotPath + "/" + 
-        Gnuplot::m_sGNUPlotFileName + " -persist";
+        Gnuplot::m_sGNUPlotFileName;
 
     // FILE *popen(const char *command, const char *mode);
     // The popen() function shall execute the command specified by the string 
@@ -1221,7 +887,7 @@ void Gnuplot::init()
     smooth = "";
 
     //set terminal type
-    showonscreen();
+    //showonscreen();
 
     return;
 }
@@ -1353,7 +1019,6 @@ bool Gnuplot::file_available(const std::string &filename){
         throw GnuplotException( except.str() );
         return false;
     }
-    return false;
 }
 
 
@@ -1429,7 +1094,6 @@ std::string Gnuplot::create_tmpfile(std::ofstream &tmp)
 }
 
 void Gnuplot::remove_tmpfiles(){
-    sleep(1);
     if ((tmpfile_list).size() > 0)
     {
         for (unsigned int i = 0; i < tmpfile_list.size(); i++)

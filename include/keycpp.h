@@ -1686,6 +1686,11 @@ namespace keycpp
 		h.set(property,val);
 	}
 	
+	inline void set(Figure &h, std::string property, std::initializer_list<int> list)
+	{
+		h.set(property,list);
+	}
+	
 	template<class T>
 	struct Sort_Matrix
 	{

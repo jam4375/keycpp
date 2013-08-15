@@ -4,6 +4,14 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+std\-::string \hyperlink{class_gnuplot_a8ced9e766e0677b938178dafe9264ff7}{create\-\_\-tmpfile} (std\-::ofstream \&tmp)
+\begin{DoxyCompactList}\small\item\em creates tmpfile and returns its name \end{DoxyCompactList}\item 
+\hypertarget{class_gnuplot_af51b1d33cffebc835a4b493cce1b0bce}{std\-::string {\bfseries get\-\_\-style} ()}\label{class_gnuplot_af51b1d33cffebc835a4b493cce1b0bce}
+
+\item 
+\hypertarget{class_gnuplot_ae2cd259922eb5d9486a4c5082c16e028}{std\-::string {\bfseries get\-\_\-terminal\-\_\-std} ()}\label{class_gnuplot_ae2cd259922eb5d9486a4c5082c16e028}
+
+\item 
 \hypertarget{class_gnuplot_a187eb517b362cf379492fe7f1621ee50}{\hyperlink{class_gnuplot_a187eb517b362cf379492fe7f1621ee50}{Gnuplot} (const std\-::string \&style=\char`\"{}points\char`\"{})}\label{class_gnuplot_a187eb517b362cf379492fe7f1621ee50}
 
 \begin{DoxyCompactList}\small\item\em set a style during construction \end{DoxyCompactList}\item 
@@ -27,9 +35,9 @@
 \hypertarget{class_gnuplot_a356d2faaa79f08d13fec9718b776b28d}{\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_a356d2faaa79f08d13fec9718b776b28d}{showonscreen} ()}\label{class_gnuplot_a356d2faaa79f08d13fec9718b776b28d}
 
 \begin{DoxyCompactList}\small\item\em sets terminal type to terminal\-\_\-std \end{DoxyCompactList}\item 
-\hypertarget{class_gnuplot_a1ccaa142290490429c6cd623543a914c}{\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_a1ccaa142290490429c6cd623543a914c}{savetofigure} (const std\-::string filename, const std\-::string terminal=\char`\"{}ps\char`\"{})}\label{class_gnuplot_a1ccaa142290490429c6cd623543a914c}
+\hypertarget{class_gnuplot_a032072c7c01b508a7535a17fb08562b1}{\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_a032072c7c01b508a7535a17fb08562b1}{savetops} (const std\-::string \&filename=\char`\"{}gnuplot\-\_\-output\char`\"{})}\label{class_gnuplot_a032072c7c01b508a7535a17fb08562b1}
 
-\begin{DoxyCompactList}\small\item\em Saves a gnuplot to a file named filename. Defaults to saving pdf. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em saves a gnuplot session to a postscript file, filename without extension \end{DoxyCompactList}\item 
 \hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_acfdcda292650775ebed4683e8e1515b5}{set\-\_\-style} (const std\-::string \&stylestr=\char`\"{}points\char`\"{})
 \item 
 \hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_aa18386919da2ec4c994f1f9c7195d384}{set\-\_\-smooth} (const std\-::string \&stylestr=\char`\"{}csplines\char`\"{})
@@ -125,23 +133,6 @@
 \item 
 {\footnotesize template$<$typename X , typename Y $>$ }\\\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_a0514a7391de6b42e79732ce746c310f7}{plot\-\_\-xy} (const X \&x, const Y \&y, const std\-::string \&title=\char`\"{}\char`\"{})
 \begin{DoxyCompactList}\small\item\em from data \end{DoxyCompactList}\item 
-\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_a26cbba36864ad7f1f6683b11558e3b49}{plotfile\-\_\-xyy} (const std\-::string \&filename, const unsigned int column\-\_\-x=1, const unsigned int column\-\_\-y1=2, const unsigned int column\-\_\-y2=3, const std\-::string \&title1=\char`\"{}\char`\"{}, const std\-::string \&title2=\char`\"{}\char`\"{})
-\item 
-\hypertarget{class_gnuplot_ac0c275ff75d700fc8e9f55d15dea1ea3}{{\footnotesize template$<$typename X , typename Y $>$ }\\\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_ac0c275ff75d700fc8e9f55d15dea1ea3}{plot\-\_\-xyxy} (const X \&x1, const Y \&y1, const X \&x2, const Y \&y2, const std\-::string \&title1, const std\-::string \&title2, const std\-::string \&style1=\char`\"{}\char`\"{}, const std\-::string \&style2=\char`\"{}\char`\"{})}\label{class_gnuplot_ac0c275ff75d700fc8e9f55d15dea1ea3}
-
-\begin{DoxyCompactList}\small\item\em Plots a 2d graph from a list of doubles\-: x y. \end{DoxyCompactList}\item 
-\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_a4410bb4c65aaf43b0ad5e510da15e20f}{plotfile\-\_\-xyxy} (const std\-::string \&filename1, const std\-::string \&filename2, const unsigned int column\-\_\-x1=1, const unsigned int column\-\_\-y1=2, const unsigned int column\-\_\-x2=1, const unsigned int column\-\_\-y2=2, const std\-::string \&title1=\char`\"{}\char`\"{}, const std\-::string \&title2=\char`\"{}\char`\"{}, const std\-::string \&style1=\char`\"{}\char`\"{}, const std\-::string \&style2=\char`\"{}\char`\"{})
-\item 
-{\footnotesize template$<$typename X , typename Y $>$ }\\\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_a9ac40f453f4951f5df8212612b2b5cfd}{plot\-\_\-xyy} (const X \&x, const Y \&y1, const Y \&y2, const std\-::string \&title1=\char`\"{}\char`\"{}, const std\-::string \&title2=\char`\"{}\char`\"{})
-\begin{DoxyCompactList}\small\item\em from data \end{DoxyCompactList}\item 
-\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_ac2dcfa52e5758e6472c1c161f52803af}{plotfile\-\_\-xxy} (const std\-::string \&filename, const unsigned int column\-\_\-x1=1, const unsigned int column\-\_\-x2=2, const unsigned int column\-\_\-y=3, const std\-::string \&title1=\char`\"{}\char`\"{}, const std\-::string \&title2=\char`\"{}\char`\"{})
-\item 
-{\footnotesize template$<$typename X , typename Y $>$ }\\\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_a5be0d83b9fe1c9123ac4868746eda15d}{plot\-\_\-xxy} (const X \&x1, const X \&x2, const Y \&y, const std\-::string \&title1=\char`\"{}\char`\"{}, const std\-::string \&title2=\char`\"{}\char`\"{})
-\begin{DoxyCompactList}\small\item\em from data \end{DoxyCompactList}\item 
-\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_a6446b66df4b42691a8cd4b9c2b04f250}{plotfile\-\_\-xxxxy} (const std\-::string \&filename, const unsigned int column\-\_\-x1=1, const unsigned int column\-\_\-x2=2, const unsigned int column\-\_\-x3=3, const unsigned int column\-\_\-x4=4, const unsigned int column\-\_\-y=5, const std\-::string \&title1=\char`\"{}\char`\"{}, const std\-::string \&title2=\char`\"{}\char`\"{}, const std\-::string \&title3=\char`\"{}\char`\"{}, const std\-::string \&title4=\char`\"{}\char`\"{})
-\item 
-{\footnotesize template$<$typename X , typename Y $>$ }\\\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_aa4736bcf899c4b2454117f9377a707e3}{plot\-\_\-xxxxy} (const X \&x1, const X \&x2, const X \&x3, const X \&x4, const Y \&y, const std\-::string \&title1=\char`\"{}\char`\"{}, const std\-::string \&title2=\char`\"{}\char`\"{}, const std\-::string \&title3=\char`\"{}\char`\"{}, const std\-::string \&title4=\char`\"{}\char`\"{})
-\begin{DoxyCompactList}\small\item\em from data \end{DoxyCompactList}\item 
 \hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_afe9d44ba12f617188111ab915010f3ab}{plotfile\-\_\-xy\-\_\-err} (const std\-::string \&filename, const unsigned int column\-\_\-x=1, const unsigned int column\-\_\-y=2, const unsigned int column\-\_\-dy=3, const std\-::string \&title=\char`\"{}\char`\"{})
 \item 
 {\footnotesize template$<$typename X , typename Y , typename E $>$ }\\\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_a3c5d382eba33f92b26ba85f201bc7dea}{plot\-\_\-xy\-\_\-err} (const X \&x, const Y \&y, const E \&dy, const std\-::string \&title=\char`\"{}\char`\"{})
@@ -161,7 +152,7 @@
 \hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_aae22c0470a6fbbc1f5e84dec8d023381}{plot\-\_\-image} (const unsigned char $\ast$uc\-Pic\-Buf, const unsigned int i\-Width, const unsigned int i\-Height, const std\-::string \&title=\char`\"{}\char`\"{})
 \begin{DoxyCompactList}\small\item\em plot image \end{DoxyCompactList}\item 
 \hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_a34c1b3e877d246a841a29f857a29f502}{replot} (void)
-\begin{DoxyCompactList}\small\item\em replot repeats the last plot or splot command. this can be useful for viewing a plot with different set options, or when generating the same plot for several devices (showonscreen, \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em replot repeats the last plot or splot command. this can be useful for viewing a plot with different set options, or when generating the same plot for several devices (showonscreen, savetops) \end{DoxyCompactList}\item 
 \hypertarget{class_gnuplot_a6797761712d3c311e3685bcccba65dd4}{\hyperlink{class_gnuplot}{Gnuplot} \& \hyperlink{class_gnuplot_a6797761712d3c311e3685bcccba65dd4}{reset\-\_\-plot} ()}\label{class_gnuplot_a6797761712d3c311e3685bcccba65dd4}
 
 \begin{DoxyCompactList}\small\item\em resets a gnuplot session (next plot will erase previous ones) \end{DoxyCompactList}\item 
@@ -183,6 +174,21 @@ static void \hyperlink{class_gnuplot_a21feba7a3916708b742c3dc25850ab2f}{set\-\_\
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_gnuplot_a8ced9e766e0677b938178dafe9264ff7}{\index{Gnuplot@{Gnuplot}!create\-\_\-tmpfile@{create\-\_\-tmpfile}}
+\index{create\-\_\-tmpfile@{create\-\_\-tmpfile}!Gnuplot@{Gnuplot}}
+\subsubsection[{create\-\_\-tmpfile}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gnuplot\-::create\-\_\-tmpfile (
+\begin{DoxyParamCaption}
+\item[{std\-::ofstream \&}]{tmp}
+\end{DoxyParamCaption}
+)}}\label{class_gnuplot_a8ced9e766e0677b938178dafe9264ff7}
+
+\begin{DoxyParams}{Parameters}
+{\em tmp} & --$>$ points to the tempfile\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$<$-- the name of the tempfile 
+\end{DoxyReturn}
 \hypertarget{class_gnuplot_a3135ffebb308b50c4f3178a62b23ab03}{\index{Gnuplot@{Gnuplot}!is\-\_\-valid@{is\-\_\-valid}}
 \index{is\-\_\-valid@{is\-\_\-valid}!Gnuplot@{Gnuplot}}
 \subsubsection[{is\-\_\-valid}]{\setlength{\rightskip}{0pt plus 5cm}bool Gnuplot\-::is\-\_\-valid (
@@ -221,7 +227,7 @@ $<$-- a reference to the gnuplot object
 \item[{const std\-::string \&}]{title = {\ttfamily \char`\"{}\char`\"{}}}
 \end{DoxyParamCaption}
 )}}\label{class_gnuplot_a42dfb8c9d4636745c7be277ed818e849}
-plot an equation supplied as a std\-::string y=f(x), write only the function f(x) not y the independent variable has to be x binary operators\-: $\ast$$\ast$ exponentiation, $\ast$ multiply, / divide, + add, -\/ substract, \% modulo unary operators\-: -\/ minus, ! factorial elementary functions\-: rand(x), abs(x), sgn(x), ceil(x), floor(x), int(x), imag(x), real(x), arg(x), sqrt(x), exp(x), log(x), log10(x), sin(x), cos(x), tan(x), asin(x), acos(x), atan(x), atan2(y,x), sinh(x), cosh(x), tanh(x), asinh(x), acosh(x), atanh(x) special functions\-: erf(x), erfc(x), inverf(x), gamma(x), igamma(a,x), lgamma(x), ibeta(p,q,x), besj0(x), besj1(x), besy0(x), besy1(x), lambertw(x) statistical fuctions\-: norm(x), invnorm(x) \hypertarget{class_gnuplot_a79aed3a6927f7d1d3497cba441e8a943}{\index{Gnuplot@{Gnuplot}!plot\-\_\-equation3d@{plot\-\_\-equation3d}}
+plot an equation supplied as a std\-::string y=f(x), write only the function f(x) not y= the independent variable has to be x binary operators\-: $\ast$$\ast$ exponentiation, $\ast$ multiply, / divide, + add, -\/ substract, \% modulo unary operators\-: -\/ minus, ! factorial elementary functions\-: rand(x), abs(x), sgn(x), ceil(x), floor(x), int(x), imag(x), real(x), arg(x), sqrt(x), exp(x), log(x), log10(x), sin(x), cos(x), tan(x), asin(x), acos(x), atan(x), atan2(y,x), sinh(x), cosh(x), tanh(x), asinh(x), acosh(x), atanh(x) special functions\-: erf(x), erfc(x), inverf(x), gamma(x), igamma(a,x), lgamma(x), ibeta(p,q,x), besj0(x), besj1(x), besy0(x), besy1(x), lambertw(x) statistical fuctions\-: norm(x), invnorm(x) \hypertarget{class_gnuplot_a79aed3a6927f7d1d3497cba441e8a943}{\index{Gnuplot@{Gnuplot}!plot\-\_\-equation3d@{plot\-\_\-equation3d}}
 \index{plot\-\_\-equation3d@{plot\-\_\-equation3d}!Gnuplot@{Gnuplot}}
 \subsubsection[{plot\-\_\-equation3d}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gnuplot} \& Gnuplot\-::plot\-\_\-equation3d (
 \begin{DoxyParamCaption}
@@ -229,7 +235,7 @@ plot an equation supplied as a std\-::string y=f(x), write only the function f(x
 \item[{const std\-::string \&}]{title = {\ttfamily \char`\"{}\char`\"{}}}
 \end{DoxyParamCaption}
 )}}\label{class_gnuplot_a79aed3a6927f7d1d3497cba441e8a943}
-plot an equation supplied as a std\-::string z=f(x,y), write only the function f(x,y) not z the independent variables have to be x and y \hypertarget{class_gnuplot_aae22c0470a6fbbc1f5e84dec8d023381}{\index{Gnuplot@{Gnuplot}!plot\-\_\-image@{plot\-\_\-image}}
+plot an equation supplied as a std\-::string z=f(x,y), write only the function f(x,y) not z= the independent variables have to be x and y \hypertarget{class_gnuplot_aae22c0470a6fbbc1f5e84dec8d023381}{\index{Gnuplot@{Gnuplot}!plot\-\_\-image@{plot\-\_\-image}}
 \index{plot\-\_\-image@{plot\-\_\-image}!Gnuplot@{Gnuplot}}
 \subsubsection[{plot\-\_\-image}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gnuplot} \& Gnuplot\-::plot\-\_\-image (
 \begin{DoxyParamCaption}
@@ -250,33 +256,7 @@ plot an equation supplied as a std\-::string z=f(x,y), write only the function f
 \item[{const std\-::string \&}]{title = {\ttfamily \char`\"{}\char`\"{}}}
 \end{DoxyParamCaption}
 )}}\label{class_gnuplot_a80f3b2baae2bceff78ad005d9c3ec3fb}
-Plots a 2d graph from a list of doubles\-: x. \hypertarget{class_gnuplot_aa4736bcf899c4b2454117f9377a707e3}{\index{Gnuplot@{Gnuplot}!plot\-\_\-xxxxy@{plot\-\_\-xxxxy}}
-\index{plot\-\_\-xxxxy@{plot\-\_\-xxxxy}!Gnuplot@{Gnuplot}}
-\subsubsection[{plot\-\_\-xxxxy}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename X , typename Y $>$ {\bf Gnuplot} \& Gnuplot\-::plot\-\_\-xxxxy (
-\begin{DoxyParamCaption}
-\item[{const X \&}]{x1, }
-\item[{const X \&}]{x2, }
-\item[{const X \&}]{x3, }
-\item[{const X \&}]{x4, }
-\item[{const Y \&}]{y, }
-\item[{const std\-::string \&}]{title1 = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\-::string \&}]{title2 = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\-::string \&}]{title3 = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\-::string \&}]{title4 = {\ttfamily \char`\"{}\char`\"{}}}
-\end{DoxyParamCaption}
-)}}\label{class_gnuplot_aa4736bcf899c4b2454117f9377a707e3}
-Plots a 2d graph from a list of doubles\-: x y. \hypertarget{class_gnuplot_a5be0d83b9fe1c9123ac4868746eda15d}{\index{Gnuplot@{Gnuplot}!plot\-\_\-xxy@{plot\-\_\-xxy}}
-\index{plot\-\_\-xxy@{plot\-\_\-xxy}!Gnuplot@{Gnuplot}}
-\subsubsection[{plot\-\_\-xxy}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename X , typename Y $>$ {\bf Gnuplot} \& Gnuplot\-::plot\-\_\-xxy (
-\begin{DoxyParamCaption}
-\item[{const X \&}]{x1, }
-\item[{const X \&}]{x2, }
-\item[{const Y \&}]{y, }
-\item[{const std\-::string \&}]{title1 = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\-::string \&}]{title2 = {\ttfamily \char`\"{}\char`\"{}}}
-\end{DoxyParamCaption}
-)}}\label{class_gnuplot_a5be0d83b9fe1c9123ac4868746eda15d}
-Plots a 2d graph from a list of doubles\-: x y. \hypertarget{class_gnuplot_a0514a7391de6b42e79732ce746c310f7}{\index{Gnuplot@{Gnuplot}!plot\-\_\-xy@{plot\-\_\-xy}}
+Plots a 2d graph from a list of doubles\-: x. \hypertarget{class_gnuplot_a0514a7391de6b42e79732ce746c310f7}{\index{Gnuplot@{Gnuplot}!plot\-\_\-xy@{plot\-\_\-xy}}
 \index{plot\-\_\-xy@{plot\-\_\-xy}!Gnuplot@{Gnuplot}}
 \subsubsection[{plot\-\_\-xy}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename X , typename Y $>$ {\bf Gnuplot} \& Gnuplot\-::plot\-\_\-xy (
 \begin{DoxyParamCaption}
@@ -299,18 +279,7 @@ Plots a 2d graph from a list of doubles\-: x y. \hypertarget{class_gnuplot_a3c5d
 
 
 
-plot x,y pairs with dy errorbars \hypertarget{class_gnuplot_a9ac40f453f4951f5df8212612b2b5cfd}{\index{Gnuplot@{Gnuplot}!plot\-\_\-xyy@{plot\-\_\-xyy}}
-\index{plot\-\_\-xyy@{plot\-\_\-xyy}!Gnuplot@{Gnuplot}}
-\subsubsection[{plot\-\_\-xyy}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename X , typename Y $>$ {\bf Gnuplot} \& Gnuplot\-::plot\-\_\-xyy (
-\begin{DoxyParamCaption}
-\item[{const X \&}]{x, }
-\item[{const Y \&}]{y1, }
-\item[{const Y \&}]{y2, }
-\item[{const std\-::string \&}]{title1 = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\-::string \&}]{title2 = {\ttfamily \char`\"{}\char`\"{}}}
-\end{DoxyParamCaption}
-)}}\label{class_gnuplot_a9ac40f453f4951f5df8212612b2b5cfd}
-Plots a 2d graph from a list of doubles\-: x y. \hypertarget{class_gnuplot_a4fc34218cdfdd27a65b92eea1f1f9e84}{\index{Gnuplot@{Gnuplot}!plotfile\-\_\-x@{plotfile\-\_\-x}}
+plot x,y pairs with dy errorbars \hypertarget{class_gnuplot_a4fc34218cdfdd27a65b92eea1f1f9e84}{\index{Gnuplot@{Gnuplot}!plotfile\-\_\-x@{plotfile\-\_\-x}}
 \index{plotfile\-\_\-x@{plotfile\-\_\-x}!Gnuplot@{Gnuplot}}
 \subsubsection[{plotfile\-\_\-x}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gnuplot} \& Gnuplot\-::plotfile\-\_\-x (
 \begin{DoxyParamCaption}
@@ -319,35 +288,7 @@ Plots a 2d graph from a list of doubles\-: x y. \hypertarget{class_gnuplot_a4fc3
 \item[{const std\-::string \&}]{title = {\ttfamily \char`\"{}\char`\"{}}}
 \end{DoxyParamCaption}
 )}}\label{class_gnuplot_a4fc34218cdfdd27a65b92eea1f1f9e84}
-plot a single std\-::vector\-: x from file \hypertarget{class_gnuplot_a6446b66df4b42691a8cd4b9c2b04f250}{\index{Gnuplot@{Gnuplot}!plotfile\-\_\-xxxxy@{plotfile\-\_\-xxxxy}}
-\index{plotfile\-\_\-xxxxy@{plotfile\-\_\-xxxxy}!Gnuplot@{Gnuplot}}
-\subsubsection[{plotfile\-\_\-xxxxy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gnuplot} \& Gnuplot\-::plotfile\-\_\-xxxxy (
-\begin{DoxyParamCaption}
-\item[{const std\-::string \&}]{filename, }
-\item[{const unsigned int}]{column\-\_\-x1 = {\ttfamily 1}, }
-\item[{const unsigned int}]{column\-\_\-x2 = {\ttfamily 2}, }
-\item[{const unsigned int}]{column\-\_\-x3 = {\ttfamily 3}, }
-\item[{const unsigned int}]{column\-\_\-x4 = {\ttfamily 4}, }
-\item[{const unsigned int}]{column\-\_\-y = {\ttfamily 5}, }
-\item[{const std\-::string \&}]{title1 = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\-::string \&}]{title2 = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\-::string \&}]{title3 = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\-::string \&}]{title4 = {\ttfamily \char`\"{}\char`\"{}}}
-\end{DoxyParamCaption}
-)}}\label{class_gnuplot_a6446b66df4b42691a8cd4b9c2b04f250}
-plot x,y pairs\-: x1 x2 x3 x4 y from file \hypertarget{class_gnuplot_ac2dcfa52e5758e6472c1c161f52803af}{\index{Gnuplot@{Gnuplot}!plotfile\-\_\-xxy@{plotfile\-\_\-xxy}}
-\index{plotfile\-\_\-xxy@{plotfile\-\_\-xxy}!Gnuplot@{Gnuplot}}
-\subsubsection[{plotfile\-\_\-xxy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gnuplot} \& Gnuplot\-::plotfile\-\_\-xxy (
-\begin{DoxyParamCaption}
-\item[{const std\-::string \&}]{filename, }
-\item[{const unsigned int}]{column\-\_\-x1 = {\ttfamily 1}, }
-\item[{const unsigned int}]{column\-\_\-x2 = {\ttfamily 2}, }
-\item[{const unsigned int}]{column\-\_\-y = {\ttfamily 3}, }
-\item[{const std\-::string \&}]{title1 = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\-::string \&}]{title2 = {\ttfamily \char`\"{}\char`\"{}}}
-\end{DoxyParamCaption}
-)}}\label{class_gnuplot_ac2dcfa52e5758e6472c1c161f52803af}
-plot x,y pairs\-: x1 x2 y from file \hypertarget{class_gnuplot_a10e1fc7344bd726faa2d70cd5ced5e5e}{\index{Gnuplot@{Gnuplot}!plotfile\-\_\-xy@{plotfile\-\_\-xy}}
+plot a single std\-::vector\-: x from file \hypertarget{class_gnuplot_a10e1fc7344bd726faa2d70cd5ced5e5e}{\index{Gnuplot@{Gnuplot}!plotfile\-\_\-xy@{plotfile\-\_\-xy}}
 \index{plotfile\-\_\-xy@{plotfile\-\_\-xy}!Gnuplot@{Gnuplot}}
 \subsubsection[{plotfile\-\_\-xy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gnuplot} \& Gnuplot\-::plotfile\-\_\-xy (
 \begin{DoxyParamCaption}
@@ -368,35 +309,7 @@ plot x,y pairs\-: x y from file \hypertarget{class_gnuplot_afe9d44ba12f617188111
 \item[{const std\-::string \&}]{title = {\ttfamily \char`\"{}\char`\"{}}}
 \end{DoxyParamCaption}
 )}}\label{class_gnuplot_afe9d44ba12f617188111ab915010f3ab}
-plot x,y pairs with dy errorbars\-: x y dy from file \hypertarget{class_gnuplot_a4410bb4c65aaf43b0ad5e510da15e20f}{\index{Gnuplot@{Gnuplot}!plotfile\-\_\-xyxy@{plotfile\-\_\-xyxy}}
-\index{plotfile\-\_\-xyxy@{plotfile\-\_\-xyxy}!Gnuplot@{Gnuplot}}
-\subsubsection[{plotfile\-\_\-xyxy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gnuplot} \& Gnuplot\-::plotfile\-\_\-xyxy (
-\begin{DoxyParamCaption}
-\item[{const std\-::string \&}]{filename1, }
-\item[{const std\-::string \&}]{filename2, }
-\item[{const unsigned int}]{column\-\_\-x1 = {\ttfamily 1}, }
-\item[{const unsigned int}]{column\-\_\-y1 = {\ttfamily 2}, }
-\item[{const unsigned int}]{column\-\_\-x2 = {\ttfamily 1}, }
-\item[{const unsigned int}]{column\-\_\-y2 = {\ttfamily 2}, }
-\item[{const std\-::string \&}]{title1 = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\-::string \&}]{title2 = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\-::string \&}]{style1 = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\-::string \&}]{style2 = {\ttfamily \char`\"{}\char`\"{}}}
-\end{DoxyParamCaption}
-)}}\label{class_gnuplot_a4410bb4c65aaf43b0ad5e510da15e20f}
-plot x,y pairs\-: x y from file \hypertarget{class_gnuplot_a26cbba36864ad7f1f6683b11558e3b49}{\index{Gnuplot@{Gnuplot}!plotfile\-\_\-xyy@{plotfile\-\_\-xyy}}
-\index{plotfile\-\_\-xyy@{plotfile\-\_\-xyy}!Gnuplot@{Gnuplot}}
-\subsubsection[{plotfile\-\_\-xyy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gnuplot} \& Gnuplot\-::plotfile\-\_\-xyy (
-\begin{DoxyParamCaption}
-\item[{const std\-::string \&}]{filename, }
-\item[{const unsigned int}]{column\-\_\-x = {\ttfamily 1}, }
-\item[{const unsigned int}]{column\-\_\-y1 = {\ttfamily 2}, }
-\item[{const unsigned int}]{column\-\_\-y2 = {\ttfamily 3}, }
-\item[{const std\-::string \&}]{title1 = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\-::string \&}]{title2 = {\ttfamily \char`\"{}\char`\"{}}}
-\end{DoxyParamCaption}
-)}}\label{class_gnuplot_a26cbba36864ad7f1f6683b11558e3b49}
-plot x,y pairs\-: x y1 y2 from file \hypertarget{class_gnuplot_a9dbde2a91eb816481657f3a22c9b0046}{\index{Gnuplot@{Gnuplot}!plotfile\-\_\-xyz@{plotfile\-\_\-xyz}}
+plot x,y pairs with dy errorbars\-: x y dy from file \hypertarget{class_gnuplot_a9dbde2a91eb816481657f3a22c9b0046}{\index{Gnuplot@{Gnuplot}!plotfile\-\_\-xyz@{plotfile\-\_\-xyz}}
 \index{plotfile\-\_\-xyz@{plotfile\-\_\-xyz}!Gnuplot@{Gnuplot}}
 \subsubsection[{plotfile\-\_\-xyz}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gnuplot} \& Gnuplot\-::plotfile\-\_\-xyz (
 \begin{DoxyParamCaption}

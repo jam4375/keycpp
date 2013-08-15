@@ -16,6 +16,8 @@
 /// 3. some member functions added, corrections for Win32 and Linux 
 ///    compatibility 
 ///    by M. Burgis (10/03/08)
+/// 4. Some minor modifications to allow use by KeyCpp
+///    by J. Monschke (08/15/2013)
 ///
 /// Requirements:
 /// * gnuplot has to be installed (http://www.gnuplot.info/download.html)
@@ -77,7 +79,6 @@ class Gnuplot
         bool                     valid;  
 	///\brief true = 2d, false = 3d      
         bool                     two_dim;  
-        bool                     multiplot;  
 	///\brief number of plots in session   
         int                      nplots;  
   	///\brief functions and data are displayed in a defined styles   
@@ -108,14 +109,6 @@ class Gnuplot
 	/// \return <-- void
 	// ---------------------------------------------------
         void           init(); 
-	// ---------------------------------------------------
-	///\brief creates tmpfile and returns its name   
-	/// 
-	/// \param tmp --> points to the tempfile
-	/// 
-	/// \return <-- the name of the tempfile
-	// ---------------------------------------------------                          
-        std::string    create_tmpfile(std::ofstream &tmp);  
 
     //----------------------------------------------------------------------------------
 	///\brief gnuplot path found?
@@ -147,6 +140,18 @@ class Gnuplot
     static bool    file_exists(const std::string &filename, int mode=0); 
 
     public:
+
+	    // ---------------------------------------------------
+	    ///\brief creates tmpfile and returns its name   
+	    /// 
+	    /// \param tmp --> points to the tempfile
+	    /// 
+	    /// \return <-- the name of the tempfile
+	    // ---------------------------------------------------                          
+        std::string create_tmpfile(std::ofstream &tmp); 
+        
+        std::string get_style() {return pstyle;};
+        std::string get_terminal_std() {return terminal_std;};
 
 		// ----------------------------------------------------------------------------
         /// \brief optional function: set Gnuplot path manual
@@ -210,14 +215,14 @@ class Gnuplot
 
     /// send a command to gnuplot
         Gnuplot& cmd(const std::string &cmdstr);
-	// -------------------------------------------------------------------------
+	// ---------------------------------------------------------------------------------
 	///\brief Sends a command to an active gnuplot session, identical to cmd()
 	/// send a command to gnuplot using the <<  operator
 	///
 	/// \param cmdstr --> the command string
 	/// 
 	/// \return <-- a reference to the gnuplot object	
-	// -------------------------------------------------------------------------
+	// ---------------------------------------------------------------------------------
     inline Gnuplot& operator<<(const std::string &cmdstr){
         cmd(cmdstr);
         return(*this);
@@ -225,17 +230,17 @@ class Gnuplot
 
 
 
-    //--------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------
     // show on screen or write to file
 
     /// sets terminal type to terminal_std
     Gnuplot& showonscreen(); // window output is set by default (win/x11/aqua)
 
-    /// Saves a gnuplot to a file named filename.  Defaults to saving pdf
-    Gnuplot& savetofigure(const std::string filename, 
-            const std::string terminal="ps");
+    /// saves a gnuplot session to a postscript file, filename without extension
+    Gnuplot& savetops(const std::string &filename = "gnuplot_output");
 
-    //--------------------------------------------------------------------------
+
+    //----------------------------------------------------------------------------------
     // set and unset
 
     /// set line style (some of these styles require additional information):
@@ -467,7 +472,7 @@ class Gnuplot
     Gnuplot& set_cbrange(const double iFrom, const double iTo);
 
 
-    //--------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------
     // plot
 
     /// plot a single std::vector: x
@@ -489,62 +494,6 @@ class Gnuplot
     ///   from data
     template<typename X, typename Y>
     Gnuplot& plot_xy(const X& x, const Y& y, const std::string &title = "");
-
-    /// plot x,y pairs: x y1 y2
-    ///   from file
-    Gnuplot& plotfile_xyy(const std::string &filename,
-                         const unsigned int column_x = 1,
-                         const unsigned int column_y1 = 2,
-                         const unsigned int column_y2 = 3,
-                         const std::string &title1 = "",
-                         const std::string &title2 = "");
-
-    template<typename X, typename Y>
-    Gnuplot& plot_xyxy(const X& x1, const Y& y1,const X& x2, const Y& y2, const std::string &title1, const std::string &title2,const std::string &style1 = "",const std::string &style2 = "");
-
-    /// plot x,y pairs: x y
-    ///   from file
-    Gnuplot& plotfile_xyxy(const std::string &filename1,const std::string &filename2,
-                         const unsigned int column_x1 = 1,
-                         const unsigned int column_y1 = 2,
-                         const unsigned int column_x2 = 1,
-                         const unsigned int column_y2 = 2,
-                         const std::string &title1 = "",
-                         const std::string &title2 = "",
-                         const std::string &style1 = "",
-                         const std::string &style2 = "");
-
-    ///   from data
-    template<typename X, typename Y>
-    Gnuplot& plot_xyy(const X& x, const Y& y1, const Y& y2, const std::string &title1 = "", const std::string &title2 = "");
-
-    /// plot x,y pairs: x1 x2 y
-    ///   from file
-    Gnuplot& plotfile_xxy(const std::string &filename,
-                         const unsigned int column_x1 = 1,
-                         const unsigned int column_x2 = 2,
-                         const unsigned int column_y = 3,
-                         const std::string &title1 = "",
-                         const std::string &title2 = "");
-    ///   from data
-    template<typename X, typename Y>
-    Gnuplot& plot_xxy(const X& x1, const X& x2, const Y& y, const std::string &title1 = "", const std::string &title2 = "");
-
-    /// plot x,y pairs: x1 x2 x3 x4 y
-    ///   from file
-    Gnuplot& plotfile_xxxxy(const std::string &filename,
-                         const unsigned int column_x1 = 1,
-                         const unsigned int column_x2 = 2,
-                         const unsigned int column_x3 = 3,
-                         const unsigned int column_x4 = 4,
-                         const unsigned int column_y = 5,
-                         const std::string &title1 = "",
-                         const std::string &title2 = "",
-                         const std::string &title3 = "",
-                         const std::string &title4 = "");
-    ///   from data
-    template<typename X, typename Y>
-    Gnuplot& plot_xxxxy(const X& x1, const X& x2, const X& x3, const X& x4, const Y& y, const std::string &title1 = "", const std::string &title2 = "", const std::string &title3 = "", const std::string &title4 = "");
 
 
     /// plot x,y pairs with dy errorbars: x y dy
@@ -582,24 +531,21 @@ class Gnuplot
                         const std::string &title = "");
 
 
-    /// plot an equation supplied as a std::string y=f(x), write only the 
-    /// function f(x) not y the independent variable has to be x
-    /// binary operators: ** exponentiation, * multiply, / divide, + add, - 
-    ///     substract, % modulo
+    /// plot an equation supplied as a std::string y=f(x), write only the function f(x) not y=
+    /// the independent variable has to be x
+    /// binary operators: ** exponentiation, * multiply, / divide, + add, - substract, % modulo
     /// unary operators: - minus, ! factorial
-    /// elementary functions: rand(x), abs(x), sgn(x), ceil(x), floor(x), 
-    ///   int(x), imag(x), real(x), arg(x), sqrt(x), exp(x), log(x), log10(x), 
-    ///   sin(x), cos(x), tan(x), asin(x), acos(x), atan(x), atan2(y,x), 
+    /// elementary functions: rand(x), abs(x), sgn(x), ceil(x), floor(x), int(x), imag(x), real(x), arg(x),
+    ///   sqrt(x), exp(x), log(x), log10(x), sin(x), cos(x), tan(x), asin(x), acos(x), atan(x), atan2(y,x),
     ///   sinh(x), cosh(x), tanh(x), asinh(x), acosh(x), atanh(x)
-    /// special functions: erf(x), erfc(x), inverf(x), gamma(x), igamma(a,x), 
-    ///   lgamma(x), ibeta(p,q,x), besj0(x), besj1(x), besy0(x), besy1(x), 
-    ///   lambertw(x)
+    /// special functions: erf(x), erfc(x), inverf(x), gamma(x), igamma(a,x), lgamma(x), ibeta(p,q,x),
+    ///   besj0(x), besj1(x), besy0(x), besy1(x), lambertw(x)
     /// statistical fuctions: norm(x), invnorm(x)
     Gnuplot& plot_equation(const std::string &equation,
                            const std::string &title = "");
 
-    /// plot an equation supplied as a std::string z=f(x,y), write only the 
-    /// function f(x,y) not z the independent variables have to be x and y
+    /// plot an equation supplied as a std::string z=f(x,y), write only the function f(x,y) not z=
+    /// the independent variables have to be x and y
     Gnuplot& plot_equation3d(const std::string &equation,
                              const std::string &title = "");
 
@@ -611,16 +557,15 @@ class Gnuplot
                         const std::string &title = "");
 
 
-    //--------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------
     ///\brief replot repeats the last plot or splot command.
     ///  this can be useful for viewing a plot with different set options,
-    ///  or when generating the same plot for several devices (showonscreen, 
-    //   savetofigure)
+    ///  or when generating the same plot for several devices (showonscreen, savetops)
     /// 
     /// \param ---
     ///
     /// \return ---
-    //--------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------
     inline Gnuplot& replot(void){if (nplots > 0) cmd("replot");return *this;};
 
     /// resets a gnuplot session (next plot will erase previous ones)
@@ -643,6 +588,86 @@ class Gnuplot
     inline bool is_valid(){return(valid);};
 
 };
+
+
+//------------------------------------------------------------------------------
+//
+// constructor: set a style during construction
+//
+inline Gnuplot::Gnuplot(const std::string &style)
+			   :gnucmd(NULL) ,valid(false) ,two_dim(false) ,nplots(0)
+
+{
+    init();
+    set_style(style);
+}
+  
+//------------------------------------------------------------------------------
+//
+// constructor: open a new session, plot a signal (x)
+//
+inline Gnuplot::Gnuplot(const std::vector<double> &x,
+                 const std::string &title,
+                 const std::string &style,
+                 const std::string &labelx,
+                 const std::string &labely)
+			   :gnucmd(NULL) ,valid(false) ,two_dim(false) ,nplots(0)
+{
+    init();
+
+    set_style(style);
+    set_xlabel(labelx);
+    set_ylabel(labely);
+
+    plot_x(x,title);
+}
+
+
+//------------------------------------------------------------------------------
+//
+// constructor: open a new session, plot a signal (x,y)
+//
+inline Gnuplot::Gnuplot(const std::vector<double> &x,
+                 const std::vector<double> &y,
+                 const std::string &title,
+                 const std::string &style,
+                 const std::string &labelx,
+                 const std::string &labely)
+			   :gnucmd(NULL) ,valid(false) ,two_dim(false) ,nplots(0)
+{
+    init();
+
+    set_style(style);
+    set_xlabel(labelx);
+    set_ylabel(labely);
+
+    plot_xy(x,y,title);
+}
+
+
+//------------------------------------------------------------------------------
+//
+// constructor: open a new session, plot a signal (x,y,z)
+//
+inline Gnuplot::Gnuplot(const std::vector<double> &x,
+                 const std::vector<double> &y,
+                 const std::vector<double> &z,
+                 const std::string &title,
+                 const std::string &style,
+                 const std::string &labelx,
+                 const std::string &labely,
+                 const std::string &labelz)
+			   :gnucmd(NULL) ,valid(false) ,two_dim(false) ,nplots(0)
+{
+    init();
+
+    set_style(style);
+    set_xlabel(labelx);
+    set_ylabel(labely);
+    set_zlabel(labelz);
+
+    plot_xyz(x,y,z,title);
+}
 
 
 //------------------------------------------------------------------------------
@@ -715,211 +740,6 @@ Gnuplot& Gnuplot::plot_xy(const X& x, const Y& y, const std::string &title)
 
 
     plotfile_xy(name, 1, 2, title);
-
-    return *this;
-}
-
-//------------------------------------------------------------------------------
-//
-/// Plots a 2d graph from a list of doubles: x y
-//
-template<typename X, typename Y>
-Gnuplot& Gnuplot::plot_xyxy(const X& x1, const Y& y1,const X& x2, const Y& y2, const std::string &title1, const std::string &title2,const std::string &style1,const std::string &style2)
-{
-    if (x1.size() == 0 || y1.size() == 0 || x2.size() == 0 || y2.size() == 0)
-    {
-        throw GnuplotException("std::vectors too small");
-        return *this;
-    }
-
-    if (x1.size() != y1.size())
-    {
-        throw GnuplotException("Length of the std::vectors differs");
-        return *this;
-    }
-    if (x2.size() != y2.size())
-    {
-        throw GnuplotException("Length of the std::vectors differs");
-        return *this;
-    }
-
-
-    std::ofstream tmp1;
-    std::string name1 = create_tmpfile(tmp1);
-    if (name1 == "")
-        return *this;
-
-    //
-    // write the data to file
-    //
-    for (unsigned int i = 0; i < x1.size(); i++)
-        tmp1 << x1[i] << " " << y1[i] << std::endl;
-
-    tmp1.flush();
-    tmp1.close();
-
-    std::ofstream tmp2;
-    std::string name2 = create_tmpfile(tmp2);
-    if (name2 == "")
-        return *this;
-
-    //
-    // write the data to file
-    //
-    for (unsigned int i = 0; i < x2.size(); i++)
-        tmp2 << x2[i] << " " << y2[i] << std::endl;
-
-    tmp2.flush();
-    tmp2.close();
-
-
-    plotfile_xyxy(name1,name2, 1, 2,1,2, title1,title2,style1,style2);
-
-    return *this;
-}
-
-//------------------------------------------------------------------------------
-//
-/// Plots a 2d graph from a list of doubles: x y
-//
-template<typename X, typename Y>
-Gnuplot& Gnuplot::plot_xyy(const X& x, const Y& y1, const Y& y2, const std::string &title1, const std::string &title2)
-{
-    if (x.size() == 0 || y1.size() == 0 || y2.size() == 0)
-    {
-        throw GnuplotException("std::vectors too small");
-        return *this;
-    }
-
-    if (x.size() != y1.size())
-    {
-        throw GnuplotException("Length of the std::vectors differs");
-        return *this;
-    }
-    if (x.size() != y2.size())
-    {
-        throw GnuplotException("Length of the std::vectors differs");
-        return *this;
-    }
-
-
-    std::ofstream tmp;
-    std::string name = create_tmpfile(tmp);
-    if (name == "")
-        return *this;
-
-    //
-    // write the data to file
-    //
-    for (unsigned int i = 0; i < x.size(); i++)
-        tmp << x[i] << " " << y1[i] << " " << y2[i] << std::endl;
-
-    tmp.flush();
-    tmp.close();
-
-
-    plotfile_xyy(name, 1, 2, 3, title1,title2);
-
-    return *this;
-}
-
-//------------------------------------------------------------------------------
-//
-/// Plots a 2d graph from a list of doubles: x y
-//
-template<typename X, typename Y>
-Gnuplot& Gnuplot::plot_xxy(const X& x1, const X& x2, const Y& y, const std::string &title1, const std::string &title2)
-{
-    if (y.size() == 0 || x1.size() == 0 || x2.size() == 0)
-    {
-        throw GnuplotException("std::vectors too small");
-        return *this;
-    }
-
-    if (y.size() != x1.size())
-    {
-        throw GnuplotException("Length of the std::vectors differs");
-        return *this;
-    }
-    if (y.size() != x2.size())
-    {
-        throw GnuplotException("Length of the std::vectors differs");
-        return *this;
-    }
-
-
-    std::ofstream tmp;
-    std::string name = create_tmpfile(tmp);
-    if (name == "")
-        return *this;
-
-    //
-    // write the data to file
-    //
-    for (unsigned int i = 0; i < y.size(); i++)
-        tmp << x1[i] << " " << x2[i] << " " << y[i] << std::endl;
-
-    tmp.flush();
-    tmp.close();
-
-
-    plotfile_xxy(name, 1, 2, 3, title1,title2);
-
-    return *this;
-}
-
-
-//------------------------------------------------------------------------------
-//
-/// Plots a 2d graph from a list of doubles: x y
-//
-template<typename X, typename Y>
-Gnuplot& Gnuplot::plot_xxxxy(const X& x1, const X& x2, const X& x3, const X& x4, const Y& y, const std::string &title1, const std::string &title2, const std::string &title3, const std::string &title4)
-{
-    if (y.size() == 0 || x1.size() == 0 || x2.size() == 0 || x3.size() == 0 || x4.size() == 0)
-    {
-        throw GnuplotException("std::vectors too small");
-        return *this;
-    }
-
-    if (y.size() != x1.size())
-    {
-        throw GnuplotException("Length of the std::vectors differs");
-        return *this;
-    }
-    if (y.size() != x2.size())
-    {
-        throw GnuplotException("Length of the std::vectors differs");
-        return *this;
-    }
-    if (y.size() != x3.size())
-    {
-        throw GnuplotException("Length of the std::vectors differs");
-        return *this;
-    }
-    if (y.size() != x4.size())
-    {
-        throw GnuplotException("Length of the std::vectors differs");
-        return *this;
-    }
-
-
-    std::ofstream tmp;
-    std::string name = create_tmpfile(tmp);
-    if (name == "")
-        return *this;
-
-    //
-    // write the data to file
-    //
-    for (unsigned int i = 0; i < y.size(); i++)
-        tmp << x1[i] << " " << x2[i] << " " << x3[i] << " " << x4[i] << " " << y[i] << std::endl;
-
-    tmp.flush();
-    tmp.close();
-
-
-    plotfile_xxxxy(name, 1, 2, 3, 4, 5, title1,title2,title3,title4);
 
     return *this;
 }
@@ -1013,6 +833,7 @@ Gnuplot& Gnuplot::plot_xyz(const X &x,
 }
 
 
+
 //------------------------------------------------------------------------------
 //
 // A string tokenizer taken from http://www.sunsite.ualberta.ca/Documentation/
@@ -1051,6 +872,26 @@ void stringtok (Container &container,
     }
 
     return;
+}
+
+
+//------------------------------------------------------------------------------
+//
+// Destructor: needed to delete temporary files
+//
+inline Gnuplot::~Gnuplot()
+{
+//  remove_tmpfiles();
+
+    // A stream opened by popen() should be closed by pclose()
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__TOS_WIN__)
+    if (_pclose(gnucmd) == -1)
+#elif defined(unix) || defined(__unix) || defined(__unix__) || defined(__APPLE__)
+    if (pclose(gnucmd) == -1)
+#endif
+        throw GnuplotException("Problem closing communication to gnuplot");
+        
+    remove_tmpfiles();
 }
 
 #endif
