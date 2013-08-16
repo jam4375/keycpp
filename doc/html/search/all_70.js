@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['pinv',['pinv',['../namespacekeycpp.html#a5bb5afeca1d51f6349d1fa1d64a2f4d3',1,'keycpp']]],
   ['plot_5fequation',['plot_equation',['../class_gnuplot.html#a42dfb8c9d4636745c7be277ed818e849',1,'Gnuplot']]],
   ['plot_5fequation3d',['plot_equation3d',['../class_gnuplot.html#a79aed3a6927f7d1d3497cba441e8a943',1,'Gnuplot']]],
   ['plot_5fimage',['plot_image',['../class_gnuplot.html#aae22c0470a6fbbc1f5e84dec8d023381',1,'Gnuplot']]],

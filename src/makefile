@@ -15,8 +15,8 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.cpp $(DEPS) ; $(CC) -c -o $@ $< $(CFLAGS)
 
-libkeycpp: $(OBJ) ; ar crf ../lib/libkeycpp.a $^
+libkeycpp: $(OBJ) ; ar -x /usr/lib/lapack/liblapack.a; ar -x /usr/lib/libblas.a; ar -x /usr/lib/gcc/x86_64-linux-gnu/4.7/libgfortran.a; ar crf ../lib/libkeycpp.a $^ *.o; rm *.o
 
 .PHONY: clean
 
-clean: ; rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ ../lib/libkeycpp.a core $(INCDIR)/*~
+clean: ; rm -f *.o $(ODIR)/*.o *~ core $(INCDIR)/*~ ../lib/libkeycpp.a core $(INCDIR)/*~

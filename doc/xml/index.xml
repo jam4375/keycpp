@@ -264,6 +264,11 @@
     <member refid="structkeycpp_1_1_s_v_d__type_1a31194fbf88ec1fb87f2681d0f518761d" kind="variable"><name>U</name></member>
     <member refid="structkeycpp_1_1_s_v_d__type_1ad0a6e396e2548ab4762a5676ae88e4bd" kind="variable"><name>V</name></member>
   </compound>
+  <compound refid="structkeycpp_1_1tictoc__type" kind="struct"><name>keycpp::tictoc_type</name>
+    <member refid="structkeycpp_1_1tictoc__type_1ad6878570bb9710bf65574d2296ebd287" kind="variable"><name>start</name></member>
+    <member refid="structkeycpp_1_1tictoc__type_1a4d57057ccd64987a00d47be2eeda40a5" kind="variable"><name>stop</name></member>
+    <member refid="structkeycpp_1_1tictoc__type_1aceaa45496add0b4c6714ac69e98c2580" kind="variable"><name>elapsed</name></member>
+  </compound>
   <compound refid="namespacekeycpp" kind="namespace"><name>keycpp</name>
     <member refid="namespacekeycpp_1ace2501951ab3db3a91c3520ae89750b1" kind="function"><name>zggev_</name></member>
     <member refid="namespacekeycpp_1aebc5253e80ac15a9bfdc5449ae4f972a" kind="function"><name>dgeev_</name></member>
@@ -353,9 +358,10 @@
     <member refid="namespacekeycpp_1ad68697505d1a1a85f30a18b0e9b0eb2f" kind="function"><name>transpose</name></member>
     <member refid="namespacekeycpp_1aa148d677899a0da5ab14edfc5057a97b" kind="function"><name>transpose</name></member>
     <member refid="namespacekeycpp_1a88081df8038d0b630d6a3540aeca8b9a" kind="function"><name>ctranspose</name></member>
+    <member refid="namespacekeycpp_1a6f5c30b22d7f6eb02fb9b7ebfb6d50ff" kind="function"><name>ctranspose&lt; double &gt;</name></member>
     <member refid="namespacekeycpp_1a827218d19d98cf1357032a652a9bf4e5" kind="function"><name>ctranspose</name></member>
-    <member refid="namespacekeycpp_1a4aedb589e76ced5d79d62c5f72029adb" kind="function"><name>sum</name></member>
     <member refid="namespacekeycpp_1ad05b888638b5ea7103bdc6ba0882d47d" kind="function"><name>sum</name></member>
+    <member refid="namespacekeycpp_1a4aedb589e76ced5d79d62c5f72029adb" kind="function"><name>sum</name></member>
     <member refid="namespacekeycpp_1a8a0e8201f775945a0a61d6d645a3456e" kind="function"><name>mat2vec</name></member>
     <member refid="namespacekeycpp_1a4d3ef9b10b3db438529bafc5e74fa0dc" kind="function"><name>vec2mat</name></member>
     <member refid="namespacekeycpp_1ab57eee495c93eb18ebf8c8ccf4d44e74" kind="function"><name>linspace</name></member>
@@ -398,16 +404,35 @@
     <member refid="namespacekeycpp_1aa6d15c3c38ff98e6d9afdd9db4b46c6c" kind="function"><name>svd</name></member>
     <member refid="namespacekeycpp_1a4a7bb7923c2ff72fdf6a54ee1b891c16" kind="function"><name>rank</name></member>
     <member refid="namespacekeycpp_1a54f9ed89c437774e0f7391fd7d86e005" kind="function"><name>null</name></member>
+    <member refid="namespacekeycpp_1a1dfbed1464b07ba22748542ce66de1cb" kind="function"><name>any</name></member>
     <member refid="namespacekeycpp_1a1e0536b6efa09624ea3738bbb9975dea" kind="function"><name>any</name></member>
     <member refid="namespacekeycpp_1adee9ea3e8989009abba313a2f7d44d46" kind="function"><name>any</name></member>
+    <member refid="namespacekeycpp_1ab07f0a090e6135757d3483270b799454" kind="function"><name>all</name></member>
     <member refid="namespacekeycpp_1a6c576908958c419fc0cae34ce1a6a5c7" kind="function"><name>all</name></member>
     <member refid="namespacekeycpp_1afa8ea92aa5e5e801a2e42f2eefabd659" kind="function"><name>all</name></member>
+    <member refid="namespacekeycpp_1a672bb23cdf28919a10b079dd88daf9cb" kind="function"><name>finite</name></member>
     <member refid="namespacekeycpp_1a092a180cc054e61d0dad651dd24ff990" kind="function"><name>finite</name></member>
     <member refid="namespacekeycpp_1a6640e5ff779655aed8078c5de81af7ff" kind="function"><name>finite</name></member>
+    <member refid="namespacekeycpp_1aad386cc17ed36e85bfabfdda0839cf37" kind="function"><name>isinf</name></member>
+    <member refid="namespacekeycpp_1a5509d3411ee687acf00877d8ea778679" kind="function"><name>isinf</name></member>
+    <member refid="namespacekeycpp_1a9eda7f3fa78584067175d39938bb6357" kind="function"><name>isinf</name></member>
+    <member refid="namespacekeycpp_1ac349e60ff1e46b3d3767d0dc7637fc1e" kind="function"><name>isnan</name></member>
+    <member refid="namespacekeycpp_1ab0029f014e47906bcd76adf477fb7101" kind="function"><name>isnan</name></member>
+    <member refid="namespacekeycpp_1a813517958b7e5d86ba3b56c4f9ad0d19" kind="function"><name>isnan</name></member>
+    <member refid="namespacekeycpp_1ad7106f0902ce8169152f5cc485cfc6cd" kind="function"><name>isempty</name></member>
+    <member refid="namespacekeycpp_1a2850064955d23acf9c30c3d845ddf175" kind="function"><name>isempty</name></member>
+    <member refid="namespacekeycpp_1aa9254f7e1962dc694a08e9727a3a5a41" kind="function"><name>isreal</name></member>
+    <member refid="namespacekeycpp_1a8c7c18cc2902b575919c8fb8cee94020" kind="function"><name>isreal</name></member>
+    <member refid="namespacekeycpp_1a5945708a5829731b4049dc72c8f63678" kind="function"><name>isreal</name></member>
     <member refid="namespacekeycpp_1a48b81a22ef851cfac4d2f98eb6d182b5" kind="function"><name>ceil</name></member>
     <member refid="namespacekeycpp_1aa10f7052b5450926e1aa055510270d3d" kind="function"><name>ceil</name></member>
     <member refid="namespacekeycpp_1a26cc754af2bdfab23c93e91017b84594" kind="function"><name>ceil</name></member>
     <member refid="namespacekeycpp_1afbf61ceccd7874c0d8b4ae62cd5bbc24" kind="function"><name>roots</name></member>
+    <member refid="namespacekeycpp_1a6069a9eec0edfa1d401230013d98765e" kind="function"><name>tic</name></member>
+    <member refid="namespacekeycpp_1afe03fbbb5126729fb4b9367097acb1d1" kind="function"><name>toc</name></member>
+    <member refid="namespacekeycpp_1a7000bb4c8f066438ada598f0f810ba6c" kind="function"><name>sprintf</name></member>
+    <member refid="namespacekeycpp_1aff2feefaeb946dd453d74ff51c66fe67" kind="function"><name>clock</name></member>
+    <member refid="namespacekeycpp_1a5bb5afeca1d51f6349d1fa1d64a2f4d3" kind="function"><name>pinv</name></member>
     <member refid="namespacekeycpp_1a190640edb8e634de02d302d94a29ee17" kind="function"><name>eig</name></member>
     <member refid="namespacekeycpp_1aeccfac59e68c6dc37cd89626ece3bd70" kind="function"><name>eig</name></member>
     <member refid="namespacekeycpp_1ae6d82c320841cd42905abfbba464a45d" kind="function"><name>eig</name></member>

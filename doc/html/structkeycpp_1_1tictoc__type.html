@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>KeyCpp -- A MATLAB-like library for C++: GnuplotException Class Reference</title>
+<title>KeyCpp -- A MATLAB-like library for C++: keycpp::tictoc_type Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,51 +81,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacekeycpp.html">keycpp</a></li><li class="navelem"><a class="el" href="structkeycpp_1_1tictoc__type.html">tictoc_type</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_gnuplot_exception-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="structkeycpp_1_1tictoc__type-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">GnuplotException Class Reference</div>  </div>
+<div class="title">keycpp::tictoc_type Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A C++ interface to gnuplot.  
- <a href="class_gnuplot_exception.html#details">More...</a></p>
+<p>Data type for using the <a class="el" href="namespacekeycpp.html#a6069a9eec0edfa1d401230013d98765e" title="Start the timer.">tic()</a> and toc(tictoc_type Timer) commands.  
+</p>
 
-<p><code>#include &lt;<a class="el" href="gnuplot__i_8h_source.html">gnuplot_i.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for GnuplotException:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_gnuplot_exception.png" usemap="#GnuplotException_map" alt=""/>
-  <map id="GnuplotException_map" name="GnuplotException_map">
-</map>
- </div></div>
+<p><code>#include &lt;<a class="el" href="keycpp_8h_source.html">keycpp.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a8b324a9ef4d3f75079d41ecd61c62d44"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b324a9ef4d3f75079d41ecd61c62d44"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GnuplotException</b> (const std::string &amp;msg)</td></tr>
-<tr class="separator:a8b324a9ef4d3f75079d41ecd61c62d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ad6878570bb9710bf65574d2296ebd287"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6878570bb9710bf65574d2296ebd287"></a>
+timeval&#160;</td><td class="memItemRight" valign="bottom"><b>start</b></td></tr>
+<tr class="separator:ad6878570bb9710bf65574d2296ebd287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d57057ccd64987a00d47be2eeda40a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d57057ccd64987a00d47be2eeda40a5"></a>
+timeval&#160;</td><td class="memItemRight" valign="bottom"><b>stop</b></td></tr>
+<tr class="separator:a4d57057ccd64987a00d47be2eeda40a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceaa45496add0b4c6714ac69e98c2580"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aceaa45496add0b4c6714ac69e98c2580"></a>
+timeval&#160;</td><td class="memItemRight" valign="bottom"><b>elapsed</b></td></tr>
+<tr class="separator:aceaa45496add0b4c6714ac69e98c2580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The interface uses pipes and so won't run on a system that doesn't have POSIX pipe support Tested on Windows (MinGW and Visual C++) and Linux (GCC)</p>
-<p>Version history: 0. C interface by N. Devillard (27/01/03)</p>
-<ol type="1">
-<li>C++ interface: direct translation from the C interface by Rajarshi Guha (07/03/03)</li>
-<li>corrections for Win32 compatibility by V. Chyzhdzenka (20/05/03)</li>
-<li>some member functions added, corrections for Win32 and Linux compatibility by M. Burgis (10/03/08)</li>
-<li>Some minor modifications to allow use by KeyCpp by J. Monschke (08/15/2013)</li>
-</ol>
-<p>Requirements:</p>
-<ul>
-<li>gnuplot has to be installed (<a href="http://www.gnuplot.info/download.html">http://www.gnuplot.info/download.html</a>)</li>
-<li>for Windows: set Path-Variable for <a class="el" href="class_gnuplot.html">Gnuplot</a> path (e.g. C:/program files/gnuplot/bin) or set <a class="el" href="class_gnuplot.html">Gnuplot</a> path with: <a class="el" href="class_gnuplot.html#a67cae885c26ced821e335d98986f1967" title="optional function: set Gnuplot path manual attention: for windows: path with slash &#39;/&#39; not backslash ...">Gnuplot::set_GNUPlotPath(const std::string &amp;path)</a>; </li>
-</ul>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="gnuplot__i_8h_source.html">gnuplot_i.h</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="keycpp_8h_source.html">keycpp.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.3.1-->

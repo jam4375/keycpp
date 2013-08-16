@@ -5,7 +5,7 @@ CFLAGS=-I$(IDIR) -std=c++11 -O3
 ODIR=obj
 LDIR =../lib
 
-LIBS=-lm -lkeycpp -llapack
+LIBS=-lm -lkeycpp
 
 _DEPS = keycpp.h Matrix.h kiss_fft.h gnuplot_i.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS)) ../lib/libkeycpp.a

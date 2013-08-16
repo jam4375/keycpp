@@ -9,7 +9,7 @@ namespace keycpp
 	 */
 	double rand()
 	{
-		return ((double)rand()/((double)RAND_MAX));
+		return ((double)std::rand()/((double)RAND_MAX));
 	}
 	
 	/** \brief Returns an N x N matrix of random doubles between 0 and 1.0
@@ -21,7 +21,7 @@ namespace keycpp
 	    {
 	        for(int jj = 0; jj < N; jj++)
 	        {
-	            A(ii,jj) = ((double)rand()/((double)RAND_MAX));
+	            A(ii,jj) = ((double)std::rand()/((double)RAND_MAX));
 	        }
         }
 	    
@@ -33,11 +33,11 @@ namespace keycpp
 	matrix<double> rand(int M, int N)
 	{
 	    matrix<double> A(M,N);
-	    for(int ii = 0; ii < N; ii++)
+	    for(int ii = 0; ii < M; ii++)
 	    {
 	        for(int jj = 0; jj < N; jj++)
 	        {
-	            A(ii,jj) = ((double)rand()/((double)RAND_MAX));
+	            A(ii,jj) = ((double)std::rand()/((double)RAND_MAX));
 	        }
         }
 	    

@@ -14,9 +14,6 @@
 
 
 /* TODO:
-add function to resize or set the size of the figure
-add semilogx, semilogy, loglog
-add subplot capability
 add plotyy (low priority)
 add contour, contourf, ezcontour, ezcontourf
 add ezplot
@@ -25,6 +22,8 @@ add scatter
 add plot3
 add surface
 add scatter3
+set tick marks
+print plot to jpg, png, pdf, or eps
 */
 
 namespace keycpp

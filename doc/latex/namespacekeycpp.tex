@@ -27,6 +27,8 @@ struct \hyperlink{structkeycpp_1_1matrix__find__type}{matrix\-\_\-find\-\_\-type
 \item 
 struct \hyperlink{structkeycpp_1_1_s_v_d__type}{S\-V\-D\-\_\-type}
 \item 
+struct \hyperlink{structkeycpp_1_1tictoc__type}{tictoc\-\_\-type}
+\begin{DoxyCompactList}\small\item\em Data type for using the \hyperlink{namespacekeycpp_a6069a9eec0edfa1d401230013d98765e}{tic()} and toc(tictoc\-\_\-type Timer) commands. \end{DoxyCompactList}\item 
 struct \hyperlink{structkeycpp_1_1matrix__size__type}{matrix\-\_\-size\-\_\-type}
 \item 
 class \hyperlink{classkeycpp_1_1_matrix_exception}{Matrix\-Exception}
@@ -313,15 +315,18 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_a7a86bc7
 \hypertarget{namespacekeycpp_a88081df8038d0b630d6a3540aeca8b9a}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ \hyperlink{namespacekeycpp_a88081df8038d0b630d6a3540aeca8b9a}{ctranspose} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ A)}\label{namespacekeycpp_a88081df8038d0b630d6a3540aeca8b9a}
 
 \begin{DoxyCompactList}\small\item\em Returns the complex-\/conjugate transpose of matrix A. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a6f5c30b22d7f6eb02fb9b7ebfb6d50ff}{{\footnotesize template$<$$>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \hyperlink{namespacekeycpp_a6f5c30b22d7f6eb02fb9b7ebfb6d50ff}{ctranspose$<$ double $>$} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ A)}\label{namespacekeycpp_a6f5c30b22d7f6eb02fb9b7ebfb6d50ff}
+
+\begin{DoxyCompactList}\small\item\em Returns the complex-\/conjugate transpose of matrix A. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a827218d19d98cf1357032a652a9bf4e5}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ \hyperlink{namespacekeycpp_a827218d19d98cf1357032a652a9bf4e5}{ctranspose} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_a827218d19d98cf1357032a652a9bf4e5}
 
 \begin{DoxyCompactList}\small\item\em Returns the complex-\/conjugate transpose of vector v1. \end{DoxyCompactList}\item 
-\hypertarget{namespacekeycpp_a4aedb589e76ced5d79d62c5f72029adb}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_a4aedb589e76ced5d79d62c5f72029adb}{sum} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ A)}\label{namespacekeycpp_a4aedb589e76ced5d79d62c5f72029adb}
-
-\begin{DoxyCompactList}\small\item\em Computes the sum of each column of A. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_ad05b888638b5ea7103bdc6ba0882d47d}{{\footnotesize template$<$class T $>$ }\\T \hyperlink{namespacekeycpp_ad05b888638b5ea7103bdc6ba0882d47d}{sum} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_ad05b888638b5ea7103bdc6ba0882d47d}
 
 \begin{DoxyCompactList}\small\item\em Computes the sum of vector v1. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a4aedb589e76ced5d79d62c5f72029adb}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_a4aedb589e76ced5d79d62c5f72029adb}{sum} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ A)}\label{namespacekeycpp_a4aedb589e76ced5d79d62c5f72029adb}
+
+\begin{DoxyCompactList}\small\item\em Computes the sum of each column of A. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a8a0e8201f775945a0a61d6d645a3456e}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_a8a0e8201f775945a0a61d6d645a3456e}{mat2vec} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ A)}\label{namespacekeycpp_a8a0e8201f775945a0a61d6d645a3456e}
 
 \begin{DoxyCompactList}\small\item\em Converts matrix A to a column vector. \end{DoxyCompactList}\item 
@@ -451,24 +456,66 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_a1013b62
 \hypertarget{namespacekeycpp_a54f9ed89c437774e0f7391fd7d86e005}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ \hyperlink{namespacekeycpp_a54f9ed89c437774e0f7391fd7d86e005}{null} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ A)}\label{namespacekeycpp_a54f9ed89c437774e0f7391fd7d86e005}
 
 \begin{DoxyCompactList}\small\item\em Computes the nullspace of matrix A. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a1dfbed1464b07ba22748542ce66de1cb}{{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespacekeycpp_a1dfbed1464b07ba22748542ce66de1cb}{any} (T a)}\label{namespacekeycpp_a1dfbed1464b07ba22748542ce66de1cb}
+
+\begin{DoxyCompactList}\small\item\em Returns true if a is nonzero. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a1e0536b6efa09624ea3738bbb9975dea}{{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespacekeycpp_a1e0536b6efa09624ea3738bbb9975dea}{any} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ A)}\label{namespacekeycpp_a1e0536b6efa09624ea3738bbb9975dea}
 
 \begin{DoxyCompactList}\small\item\em Returns true if any elements of A are nonzero. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_adee9ea3e8989009abba313a2f7d44d46}{{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespacekeycpp_adee9ea3e8989009abba313a2f7d44d46}{any} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_adee9ea3e8989009abba313a2f7d44d46}
 
 \begin{DoxyCompactList}\small\item\em Returns true if any elements of v1 are nonzero. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_ab07f0a090e6135757d3483270b799454}{{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespacekeycpp_ab07f0a090e6135757d3483270b799454}{all} (T a)}\label{namespacekeycpp_ab07f0a090e6135757d3483270b799454}
+
+\begin{DoxyCompactList}\small\item\em Returns true if a is nonzero. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a6c576908958c419fc0cae34ce1a6a5c7}{{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespacekeycpp_a6c576908958c419fc0cae34ce1a6a5c7}{all} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ A)}\label{namespacekeycpp_a6c576908958c419fc0cae34ce1a6a5c7}
 
 \begin{DoxyCompactList}\small\item\em Returns true if all elements of A are nonzero. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_afa8ea92aa5e5e801a2e42f2eefabd659}{{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespacekeycpp_afa8ea92aa5e5e801a2e42f2eefabd659}{all} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_afa8ea92aa5e5e801a2e42f2eefabd659}
 
 \begin{DoxyCompactList}\small\item\em Returns true if all elements of v1 are nonzero. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a672bb23cdf28919a10b079dd88daf9cb}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ bool $>$ \hyperlink{namespacekeycpp_a672bb23cdf28919a10b079dd88daf9cb}{finite} (T a)}\label{namespacekeycpp_a672bb23cdf28919a10b079dd88daf9cb}
+
+\begin{DoxyCompactList}\small\item\em Returns boolean value that is true if a is finite. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a092a180cc054e61d0dad651dd24ff990}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ bool $>$ \hyperlink{namespacekeycpp_a092a180cc054e61d0dad651dd24ff990}{finite} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ A)}\label{namespacekeycpp_a092a180cc054e61d0dad651dd24ff990}
 
 \begin{DoxyCompactList}\small\item\em Returns matrix containing boolean values that are true if corresponding elements of A are finite. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a6640e5ff779655aed8078c5de81af7ff}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ bool $>$ \hyperlink{namespacekeycpp_a6640e5ff779655aed8078c5de81af7ff}{finite} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_a6640e5ff779655aed8078c5de81af7ff}
 
 \begin{DoxyCompactList}\small\item\em Returns vector containing boolean values that are true if corresponding elements of v1 are finite. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_aad386cc17ed36e85bfabfdda0839cf37}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ bool $>$ \hyperlink{namespacekeycpp_aad386cc17ed36e85bfabfdda0839cf37}{isinf} (T a)}\label{namespacekeycpp_aad386cc17ed36e85bfabfdda0839cf37}
+
+\begin{DoxyCompactList}\small\item\em Returns boolean value that is true if a is infinite. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a5509d3411ee687acf00877d8ea778679}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ bool $>$ \hyperlink{namespacekeycpp_a5509d3411ee687acf00877d8ea778679}{isinf} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ A)}\label{namespacekeycpp_a5509d3411ee687acf00877d8ea778679}
+
+\begin{DoxyCompactList}\small\item\em Returns matrix containing boolean values that are true if corresponding elements of A are infinite. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a9eda7f3fa78584067175d39938bb6357}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ bool $>$ \hyperlink{namespacekeycpp_a9eda7f3fa78584067175d39938bb6357}{isinf} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_a9eda7f3fa78584067175d39938bb6357}
+
+\begin{DoxyCompactList}\small\item\em Returns vector containing boolean values that are true if corresponding elements of v1 are infinite. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_ac349e60ff1e46b3d3767d0dc7637fc1e}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ bool $>$ \hyperlink{namespacekeycpp_ac349e60ff1e46b3d3767d0dc7637fc1e}{isnan} (T a)}\label{namespacekeycpp_ac349e60ff1e46b3d3767d0dc7637fc1e}
+
+\begin{DoxyCompactList}\small\item\em Returns boolean value that is true if a is Na\-N. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_ab0029f014e47906bcd76adf477fb7101}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ bool $>$ \hyperlink{namespacekeycpp_ab0029f014e47906bcd76adf477fb7101}{isnan} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ A)}\label{namespacekeycpp_ab0029f014e47906bcd76adf477fb7101}
+
+\begin{DoxyCompactList}\small\item\em Returns matrix containing boolean values that are true if corresponding elements of A are Na\-N. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a813517958b7e5d86ba3b56c4f9ad0d19}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ bool $>$ \hyperlink{namespacekeycpp_a813517958b7e5d86ba3b56c4f9ad0d19}{isnan} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_a813517958b7e5d86ba3b56c4f9ad0d19}
+
+\begin{DoxyCompactList}\small\item\em Returns vector containing boolean values that are true if corresponding elements of v1 are Na\-N. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_ad7106f0902ce8169152f5cc485cfc6cd}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ bool $>$ \hyperlink{namespacekeycpp_ad7106f0902ce8169152f5cc485cfc6cd}{isempty} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ A)}\label{namespacekeycpp_ad7106f0902ce8169152f5cc485cfc6cd}
+
+\begin{DoxyCompactList}\small\item\em Returns true if matrix is empty. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a2850064955d23acf9c30c3d845ddf175}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ bool $>$ \hyperlink{namespacekeycpp_a2850064955d23acf9c30c3d845ddf175}{isempty} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_a2850064955d23acf9c30c3d845ddf175}
+
+\begin{DoxyCompactList}\small\item\em Returns true if vector is empty. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_aa9254f7e1962dc694a08e9727a3a5a41}{{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespacekeycpp_aa9254f7e1962dc694a08e9727a3a5a41}{isreal} (T a)}\label{namespacekeycpp_aa9254f7e1962dc694a08e9727a3a5a41}
+
+\begin{DoxyCompactList}\small\item\em Returns true if a is real. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a8c7c18cc2902b575919c8fb8cee94020}{{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespacekeycpp_a8c7c18cc2902b575919c8fb8cee94020}{isreal} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ A)}\label{namespacekeycpp_a8c7c18cc2902b575919c8fb8cee94020}
+
+\begin{DoxyCompactList}\small\item\em Returns true if all elements of A are real. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a5945708a5829731b4049dc72c8f63678}{{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespacekeycpp_a5945708a5829731b4049dc72c8f63678}{isreal} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_a5945708a5829731b4049dc72c8f63678}
+
+\begin{DoxyCompactList}\small\item\em Returns true if all elements of v1 are real. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a48b81a22ef851cfac4d2f98eb6d182b5}{std\-::complex$<$ double $>$ \hyperlink{namespacekeycpp_a48b81a22ef851cfac4d2f98eb6d182b5}{ceil} (std\-::complex$<$ double $>$ a)}\label{namespacekeycpp_a48b81a22ef851cfac4d2f98eb6d182b5}
 
 \begin{DoxyCompactList}\small\item\em Rounds the real and imaginary parts of complex$<$double$>$ a towards positive infinity seperately. \end{DoxyCompactList}\item 
@@ -481,6 +528,21 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_a1013b62
 \hypertarget{namespacekeycpp_afbf61ceccd7874c0d8b4ae62cd5bbc24}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_afbf61ceccd7874c0d8b4ae62cd5bbc24}{roots} (std\-::vector$<$ T $>$ p)}\label{namespacekeycpp_afbf61ceccd7874c0d8b4ae62cd5bbc24}
 
 \begin{DoxyCompactList}\small\item\em Computes all roots of polynomial p by solving for the eigenvalues of the companion matrix. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a6069a9eec0edfa1d401230013d98765e}{\hyperlink{structkeycpp_1_1tictoc__type}{tictoc\-\_\-type} \hyperlink{namespacekeycpp_a6069a9eec0edfa1d401230013d98765e}{tic} ()}\label{namespacekeycpp_a6069a9eec0edfa1d401230013d98765e}
+
+\begin{DoxyCompactList}\small\item\em Start the timer. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_afe03fbbb5126729fb4b9367097acb1d1}{double \hyperlink{namespacekeycpp_afe03fbbb5126729fb4b9367097acb1d1}{toc} (\hyperlink{structkeycpp_1_1tictoc__type}{tictoc\-\_\-type} \&Timer)}\label{namespacekeycpp_afe03fbbb5126729fb4b9367097acb1d1}
+
+\begin{DoxyCompactList}\small\item\em Stop the timer. The number of elapsed seconds is returned. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a7000bb4c8f066438ada598f0f810ba6c}{std\-::string \hyperlink{namespacekeycpp_a7000bb4c8f066438ada598f0f810ba6c}{sprintf} (const std\-::string fmt,...)}\label{namespacekeycpp_a7000bb4c8f066438ada598f0f810ba6c}
+
+\begin{DoxyCompactList}\small\item\em Overload of the C++ function \hyperlink{namespacekeycpp_a7000bb4c8f066438ada598f0f810ba6c}{sprintf()}. This overload provides a more M\-A\-T\-L\-A\-B-\/like interface. Specifically, the output is returned instead of passed by reference. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_aff2feefaeb946dd453d74ff51c66fe67}{std\-::vector$<$ int $>$ \hyperlink{namespacekeycpp_aff2feefaeb946dd453d74ff51c66fe67}{clock} ()}\label{namespacekeycpp_aff2feefaeb946dd453d74ff51c66fe67}
+
+\begin{DoxyCompactList}\small\item\em Returns a vector of integers containing the current\-: year, month, day, hour, minute, and second. This is based on the system clock. The number of hours is based on the 24-\/hour clock. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a5bb5afeca1d51f6349d1fa1d64a2f4d3}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ \hyperlink{namespacekeycpp_a5bb5afeca1d51f6349d1fa1d64a2f4d3}{pinv} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ A)}\label{namespacekeycpp_a5bb5afeca1d51f6349d1fa1d64a2f4d3}
+
+\begin{DoxyCompactList}\small\item\em Returns the Moore-\/\-Penrose Pseudoinverse of matrix A. Currently only the S\-V\-D method is implemented. This restricts matrix A to be only square matrices. This is currently slower than inv(), use with care. \end{DoxyCompactList}\item 
 vector$<$ complex$<$ double $>$ $>$ \hyperlink{namespacekeycpp_a190640edb8e634de02d302d94a29ee17}{eig} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ A, const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ B, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ $\ast$vr\-\_\-return, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ $\ast$vl\-\_\-return)
 \begin{DoxyCompactList}\small\item\em Generalized complex-\/valued eigenvalue solver using L\-A\-P\-A\-C\-K function call. \end{DoxyCompactList}\item 
 vector$<$ complex$<$ double $>$ $>$ \hyperlink{namespacekeycpp_aeccfac59e68c6dc37cd89626ece3bd70}{eig} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ A, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ $\ast$vr\-\_\-return, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ $\ast$vl\-\_\-return)

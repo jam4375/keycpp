@@ -14,6 +14,9 @@
 #include <utility>
 #include <algorithm>
 #include <limits>
+#include <ctime>
+#include <sys/time.h>
+#include <stdarg.h>
 #include "Matrix.h"
 #include "kiss_fft.h"
 #include "Spline.h"
@@ -1081,6 +1084,13 @@ namespace keycpp
 		}
 		return B;
 	}
+
+	/** \brief Returns the complex-conjugate transpose of matrix A.
+	 */
+	template<> inline matrix<double> ctranspose<double>(matrix<double> A)
+	{
+		return transpose(A);
+	}
 	
 	/** \brief Returns the complex-conjugate transpose of vector v1.
 	 */
@@ -1094,18 +1104,6 @@ namespace keycpp
 		return B;
 	}
 	
-	/** \brief Computes the sum of each column of A.
-	 */
-	template<class T> std::vector<T> sum(matrix<T> A)
-	{
-		std::vector<T> v1(A.size(2));
-		for(int ii = 0; ii < v1.size(); ii++)
-		{
-			v1[ii] = sum(A.getCol(ii));
-		}
-		return v1;
-	}
-	
 	/** \brief Computes the sum of vector v1.
 	 */
 	template<class T> T sum(std::vector<T> v1)
@@ -1116,6 +1114,18 @@ namespace keycpp
 			a += v1[ii];
 		}
 		return a;
+	}
+	
+	/** \brief Computes the sum of each column of A.
+	 */
+	template<class T> std::vector<T> sum(matrix<T> A)
+	{
+		std::vector<T> v1(A.size(2));
+		for(int ii = 0; ii < v1.size(); ii++)
+		{
+			v1[ii] = sum(A.getCol(ii));
+		}
+		return v1;
 	}
 	
 	/** \brief Converts matrix A to a column vector.
@@ -2237,6 +2247,18 @@ namespace keycpp
 	    return B;
 	}
 	
+	/** \brief Returns true if a is nonzero.
+	 */
+	template<class T>
+	bool any(T a)
+	{
+        if(std::abs(a) < eps)
+        {
+            return false;
+        }
+	    return true;
+	}
+	
 	/** \brief Returns true if any elements of A are nonzero.
 	 */
 	template<class T>
@@ -2246,7 +2268,7 @@ namespace keycpp
 	    {
 	        for(int jj = 0; jj < A.size(2); jj++)
 	        {
-	            if(abs(A(ii,jj)) > eps)
+	            if(std::abs(A(ii,jj)) > eps)
 	            {
 	                return true;
 	            }
@@ -2262,12 +2284,24 @@ namespace keycpp
 	{
 	    for(int ii = 0; ii < v1.size(); ii++)
 	    {
-            if(abs(v1[ii]) > eps)
+            if(std::abs(v1[ii]) > eps)
             {
                 return true;
             }
 	    }
 	    return false;
+	}
+	
+	/** \brief Returns true if a is nonzero.
+	 */
+	template<class T>
+	bool all(T a)
+	{
+        if(std::abs(a) < eps)
+        {
+            return false;
+        }
+	    return true;
 	}
 	
 	/** \brief Returns true if all elements of A are nonzero.
@@ -2279,7 +2313,7 @@ namespace keycpp
 	    {
 	        for(int jj = 0; jj < A.size(2); jj++)
 	        {
-	            if(abs(A(ii,jj)) < eps)
+	            if(std::abs(A(ii,jj)) < eps)
 	            {
 	                return false;
 	            }
@@ -2295,12 +2329,30 @@ namespace keycpp
 	{
 	    for(int ii = 0; ii < v1.size(); ii++)
 	    {
-            if(abs(v1[ii]) < eps)
+            if(std::abs(v1[ii]) < eps)
             {
                 return false;
             }
 	    }
 	    return true;
+	}
+	
+	/** \brief Returns boolean value that is true if
+	 *         a is finite.
+	 */
+	template<class T>
+	std::vector<bool> finite(T a)
+	{
+	    bool out;
+        if(isfinite(a))
+        {
+            out = true;
+        }
+        else
+        {
+            out = false;
+        }
+	    return out;
 	}
 	
 	/** \brief Returns matrix containing boolean values that are true if
@@ -2314,14 +2366,7 @@ namespace keycpp
 	    {
 	        for(int jj = 0; jj < A.size(2); jj++)
 	        {
-                if(isfinite(A(ii,jj)))
-                {
-                    out(ii,jj) = true;
-                }
-                else
-                {
-                    out(ii,jj) = false;
-                }
+	            out(ii,jj) = finite(A(ii,jj));
             }
 	    }
 	    return out;
@@ -2336,16 +2381,168 @@ namespace keycpp
 	    std::vector<bool> out(v1.size());
 	    for(int ii = 0; ii < v1.size(); ii++)
 	    {
-            if(isfinite(v1[ii]))
-            {
-                out[ii] = true;
-            }
-            else
-            {
-                out[ii] = false;
+            out[ii] = finite(v1[ii]);
+	    }
+	    return out;
+	}
+	
+	/** \brief Returns boolean value that is true if
+	 *         a is infinite.
+	 */
+	template<class T>
+	std::vector<bool> isinf(T a)
+	{
+	    bool out;
+        if(isfinite(a))
+        {
+            out = false;
+        }
+        else
+        {
+            out = true;
+        }
+	    return out;
+	}
+	
+	/** \brief Returns matrix containing boolean values that are true if
+	 *         corresponding elements of A are infinite.
+	 */
+	template<class T>
+	matrix<bool> isinf(matrix<T> A)
+	{
+	    matrix<bool> out(A.size(1),A.size(2));
+	    for(int ii = 0; ii < A.size(1); ii++)
+	    {
+	        for(int jj = 0; jj < A.size(2); jj++)
+	        {
+	            out(ii,jj) = isinf(A(ii,jj));
             }
 	    }
 	    return out;
+	}
+	
+	/** \brief Returns vector containing boolean values that are true if
+	 *         corresponding elements of v1 are infinite.
+	 */
+	template<class T>
+	std::vector<bool> isinf(std::vector<T> v1)
+	{
+	    std::vector<bool> out(v1.size());
+	    for(int ii = 0; ii < v1.size(); ii++)
+	    {
+	        out[ii] = isinf(v1[ii]);
+	    }
+	    return out;
+	}
+	
+	/** \brief Returns boolean value that is true if
+	 *         a is NaN.
+	 */
+	template<class T>
+	std::vector<bool> isnan(T a)
+	{
+	    bool out;
+        if(a != a)
+        {
+            out = true;
+        }
+        else
+        {
+            out = false;
+        }
+	    return out;
+	}
+	
+	/** \brief Returns matrix containing boolean values that are true if
+	 *         corresponding elements of A are NaN.
+	 */
+	template<class T>
+	matrix<bool> isnan(matrix<T> A)
+	{
+	    matrix<bool> out(A.size(1),A.size(2));
+	    for(int ii = 0; ii < A.size(1); ii++)
+	    {
+	        for(int jj = 0; jj < A.size(2); jj++)
+	        {
+	            out(ii,jj) = isnan(A(ii,jj));
+            }
+	    }
+	    return out;
+	}
+	
+	/** \brief Returns vector containing boolean values that are true if
+	 *         corresponding elements of v1 are NaN.
+	 */
+	template<class T>
+	std::vector<bool> isnan(std::vector<T> v1)
+	{
+	    std::vector<bool> out(v1.size());
+	    for(int ii = 0; ii < v1.size(); ii++)
+	    {
+	        out[ii] = isnan(v1[ii]);
+	    }
+	    return out;
+	}
+	
+	/** \brief Returns true if matrix is empty.
+	 */
+	template<class T>
+	matrix<bool> isempty(matrix<T> A)
+	{
+	    return A.empty();
+	}
+	
+	/** \brief Returns true if vector is empty.
+	 */
+	template<class T>
+	std::vector<bool> isempty(std::vector<T> v1)
+	{
+	    return v1.empty();
+	}
+	
+	/** \brief Returns true if a is real.
+	 */
+	template<class T>
+	bool isreal(T a)
+	{
+        if(abs(imag(a)) < eps)
+        {
+            return true;
+        }
+	    return false;
+	}
+	
+	/** \brief Returns true if all elements of A are real.
+	 */
+	template<class T>
+	bool isreal(matrix<T> A)
+	{
+	    for(int ii = 0; ii < A.size(1); ii++)
+	    {
+	        for(int jj = 0; jj < A.size(2); jj++)
+	        {
+	            if(abs(imag(A(ii,jj))) > eps)
+	            {
+	                return false;
+	            }
+	        }
+	    }
+	    return true;
+	}
+	
+	/** \brief Returns true if all elements of v1 are real.
+	 */
+	template<class T>
+	bool isreal(std::vector<T> v1)
+	{
+	    for(int ii = 0; ii < v1.size(); ii++)
+	    {
+            if(abs(imag(v1[ii])) > eps)
+            {
+                return false;
+            }
+	    }
+	    return true;
 	}
 	
 	/** \brief Rounds the real and imaginary parts of complex<double> a towards
@@ -2402,7 +2599,109 @@ namespace keycpp
         std::vector<T> v = eig(A);
         return v;
 	}
-	 
+	
+	/** \brief Data type for using the tic() and toc(tictoc_type Timer) commands.
+	 */
+	struct tictoc_type
+	{
+	    timeval start, stop, elapsed;
+	};
+	
+	/** \brief Start the timer.
+	 */
+	inline tictoc_type tic()
+	{
+	    tictoc_type Timer;
+	    gettimeofday(&Timer.start,NULL);
+	    return Timer;
+	}
+	
+	/** \brief Stop the timer. The number of elapsed seconds is returned.
+	 */
+	inline double toc(tictoc_type &Timer)
+	{
+	    gettimeofday(&Timer.stop,NULL);
+	    timersub(&Timer.stop,&Timer.start,&Timer.elapsed);
+	    return Timer.elapsed.tv_sec + 1e-6*Timer.elapsed.tv_usec;
+	}
+	
+	/** \brief Overload of the C++ function sprintf(). This overload provides a more MATLAB-like
+	 *         interface. Specifically, the output is returned instead of passed by reference.
+	 */
+	inline std::string sprintf(const std::string fmt, ...)
+	{
+        int size = 100;
+        std::string str;
+        va_list ap;
+        while(1)
+        {
+            str.resize(size);
+            va_start(ap, fmt);
+            int n = vsnprintf((char *)str.c_str(), size, fmt.c_str(), ap);
+            va_end(ap);
+            if(n > -1 && n < size)
+            {
+                str.resize(n);
+                return str;
+            }
+            if (n > -1)
+            {
+                size = n + 1;
+            }
+            else
+            {
+                size *= 2;
+            }
+        }
+        return str;
+    }
+    
+    /** \brief Returns a vector of integers containing the current: year, month, day,
+     *         hour, minute, and second. This is based on the system clock. The number of hours
+     *         is based on the 24-hour clock.
+     */
+    inline std::vector<int> clock()
+    {
+        time_t t = time(0);
+        struct tm * now = localtime(&t);
+        std::vector<int> dt(6);
+        dt[0] = (now->tm_year + 1900); // year
+        dt[1] = (now->tm_mon + 1); // month
+        dt[2] = (now->tm_mday); // day
+        dt[3] = (now->tm_hour); // hour
+        dt[4] = (now->tm_min); // minute
+        dt[5] = (now->tm_sec); // seconds
+        
+        return dt;
+    }
+    
+    /** \brief Returns the Moore-Penrose Pseudoinverse of matrix A. Currently only the SVD method is implemented.
+     *         This restricts matrix A to be only square matrices. This is currently slower than inv(), use with care.
+     */
+    template<class T>
+    matrix<T> pinv(matrix<T> A)
+    {
+        if(A.empty())
+        {
+            throw KeyCppException("Cannot compute pseudoinverse of empty matrix!");
+        }
+        if(A.size(1) != A.size(2))
+        {
+            throw KeyCppException("A must be a square matrix when computing pseudoinverse using SVD.");
+        }
+        auto svd_out = svd(A);
+        
+        std::vector<T> s_inv = diag(svd_out.S);
+        for(int ii = 0; ii < s_inv.size(); ii++)
+        {
+            if(any(s_inv[ii]))
+            {
+                s_inv[ii] = 1.0/s_inv[ii];
+            }
+        }
+        matrix<T> Ap = svd_out.V*diag(s_inv)*ctranspose(svd_out.U);
+        return Ap;
+    }
 }
 
 #endif

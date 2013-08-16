@@ -35,8 +35,9 @@ var searchData=
   ['sort_5fvector',['Sort_Vector',['../structkeycpp_1_1_sort___vector.html',1,'keycpp']]],
   ['spline',['Spline',['../classkeycpp_1_1_spline.html',1,'keycpp']]],
   ['splineexception',['SplineException',['../classkeycpp_1_1_spline_exception.html',1,'keycpp']]],
+  ['sprintf',['sprintf',['../namespacekeycpp.html#a7000bb4c8f066438ada598f0f810ba6c',1,'keycpp']]],
   ['str2num',['str2num',['../namespacekeycpp.html#ac056ba33ff8585d5680daf09a45ff8e8',1,'keycpp']]],
-  ['sum',['sum',['../namespacekeycpp.html#a4aedb589e76ced5d79d62c5f72029adb',1,'keycpp::sum(matrix&lt; T &gt; A)'],['../namespacekeycpp.html#ad05b888638b5ea7103bdc6ba0882d47d',1,'keycpp::sum(std::vector&lt; T &gt; v1)']]],
+  ['sum',['sum',['../namespacekeycpp.html#ad05b888638b5ea7103bdc6ba0882d47d',1,'keycpp::sum(std::vector&lt; T &gt; v1)'],['../namespacekeycpp.html#a4aedb589e76ced5d79d62c5f72029adb',1,'keycpp::sum(matrix&lt; T &gt; A)']]],
   ['svd',['svd',['../namespacekeycpp.html#a4b80bd145aab03a9e79a42d32ca573bd',1,'keycpp::svd(matrix&lt; double &gt; A_in, std::string method)'],['../namespacekeycpp.html#a913fb7501259de640e7119a852adafc9',1,'keycpp::svd(matrix&lt; complex&lt; double &gt;&gt; A_in, std::string method)']]],
   ['svd_5ftype',['SVD_type',['../structkeycpp_1_1_s_v_d__type.html',1,'keycpp']]]
 ];
