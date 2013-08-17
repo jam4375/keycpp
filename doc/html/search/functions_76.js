@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vec2mat',['vec2mat',['../namespacekeycpp.html#a4d3ef9b10b3db438529bafc5e74fa0dc',1,'keycpp']]]
+  ['vec2mat',['vec2mat',['../namespacekeycpp.html#a4876140bc1dc01b4488c1bb2bba08940',1,'keycpp']]]
 ];

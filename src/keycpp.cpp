@@ -14,7 +14,7 @@ namespace keycpp
 	
 	/** \brief Returns an N x N matrix of random doubles between 0 and 1.0
 	 */
-	matrix<double> rand(int N)
+	matrix<double> rand(const int &N)
 	{
 	    matrix<double> A(N,N);
 	    for(int ii = 0; ii < N; ii++)
@@ -30,7 +30,7 @@ namespace keycpp
 	
 	/** \brief Returns an M x N matrix of random doubles between 0 and 1.0
 	 */
-	matrix<double> rand(int M, int N)
+	matrix<double> rand(const int &M, const int &N)
 	{
 	    matrix<double> A(M,N);
 	    for(int ii = 0; ii < M; ii++)
@@ -51,7 +51,7 @@ namespace keycpp
 	 *  are returned by default. To return the right or left eigenvectors, supply the
 	 *  function with a complex<double> matrix object in the 3rd or 4th parameters, respectively.
 	 */
-    vector<complex<double> > eig(const matrix<complex<double> > A, const matrix<complex<double> > B, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
+    vector<complex<double> > eig(const matrix<complex<double> > &A, const matrix<complex<double> > &B, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
 	{
 		int n, lda, ldb, ldvl, ldvr, lwork, info;
 		n = lda = ldb = A.size(1);
@@ -146,7 +146,7 @@ namespace keycpp
 	 *  are returned by default. To return the right or left eigenvectors, supply the
 	 *  function with a complex<double> matrix object in the 2nd or 3rd parameters, respectively.
 	 */
-    vector<complex<double> > eig(const matrix<complex<double> > A, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
+    vector<complex<double> > eig(const matrix<complex<double> > &A, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
 	{
 		int n, lda, ldb, ldvl, ldvr, lwork, info;
 		n = lda = ldb = A.size(1);
@@ -237,7 +237,7 @@ namespace keycpp
 	 *  are returned by default. To return the right or left eigenvectors, supply the
 	 *  function with a complex<double> matrix object in the 2nd or 3rd parameters, respectively.
 	 */
-    vector<complex<double> > eig(const matrix<double> A, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
+    vector<complex<double> > eig(const matrix<double> &A, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
 	{
 	    matrix<complex<double>> B(A.size(1),A.size(2));
 	    for(int ii = 0; ii < B.size(1); ii++)
@@ -250,7 +250,7 @@ namespace keycpp
 	    return eig(B, vr_return, vl_return);
 	}
 	
-	double rcond(const matrix<double> A)
+	double rcond(const matrix<double> &A)
 	{
 	    if(A.size(1) != A.size(2))
 	    {
@@ -297,7 +297,7 @@ namespace keycpp
         return rcond;
 	}
 	
-	double rcond(const matrix<std::complex<double>> A)
+	double rcond(const matrix<std::complex<double>> &A)
 	{
 	    if(A.size(1) != A.size(2))
 	    {
@@ -667,7 +667,7 @@ namespace keycpp
 		return A_out;
 	}
 	
-	double norm(const matrix<double> A_in, std::string method)
+	double norm(const matrix<double> &A_in, std::string method)
 	{
 	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
 		{
@@ -721,7 +721,7 @@ namespace keycpp
 	
 	/** \brief Computes the singular value decomposition of matrix A_in.
 	 */
-	SVD_type<double,double> svd(matrix<double> A_in, std::string method)
+	SVD_type<double,double> svd(const matrix<double> &A_in, std::string method)
 	{
 	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
 		{
@@ -863,7 +863,7 @@ namespace keycpp
         return out;
 	}
 	
-	double norm(const matrix<complex<double>> A_in, std::string method)
+	double norm(const matrix<complex<double>> &A_in, std::string method)
 	{
 	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
 		{
@@ -917,7 +917,7 @@ namespace keycpp
 	
 	/** \brief Computes the singular value decomposition of matrix A_in.
 	 */
-	SVD_type<complex<double>, double> svd(matrix<complex<double>> A_in, std::string method)
+	SVD_type<complex<double>, double> svd(const matrix<complex<double>> &A_in, std::string method)
 	{
 	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
 		{

@@ -27,25 +27,25 @@ namespace keycpp
 	{
 	public:
 		matrix();
-		matrix(int rows, int cols);
+		matrix(const int &rows, const int &cols);
 		matrix(const std::vector<std::vector<T>>& mat);
 		matrix(const std::initializer_list<std::initializer_list<T>>& lst);
-		T& operator()(int i, int j);
-		T operator()(int i, int j) const;
-		std::vector<T> operator*(const std::vector<T> x) const;
-		matrix<T> operator*(const matrix<T> B) const;
-		matrix<T> operator+(const matrix<T> B) const;
-		matrix<T> operator-(const matrix<T> B) const;
-		int size(int n) const;
+		T& operator()(const int &i, const int &j);
+		T operator()(const int &i, const int &j) const;
+		std::vector<T> operator*(const std::vector<T> &x) const;
+		matrix<T> operator*(const matrix<T> &B) const;
+		matrix<T> operator+(const matrix<T> &B) const;
+		matrix<T> operator-(const matrix<T> &B) const;
+		int size(const int &n) const;
 		bool empty() const;
-		int setRow(std::vector<T> row, int i);
-		int setLastRow(std::vector<T> row);
-		int addLastRow(std::vector<T> row);
-		int setCol(std::vector<T> col, int j);
-		std::vector<T> getRow(int i);
-		std::vector<T> getLastRow();
-		std::vector<T> getCol(int j);
-		int reserve(int N);
+		int setRow(const std::vector<T> &row, const int &i);
+		int setLastRow(const std::vector<T> &row);
+		int addLastRow(const std::vector<T> &row);
+		int setCol(const std::vector<T> &col, const int &j);
+		std::vector<T> getRow(const int &i) const;
+		std::vector<T> getLastRow() const;
+		std::vector<T> getCol(const int &j) const;
+		int reserve(const int &N);
 
 	private:
 		int mRows;
@@ -59,7 +59,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	matrix<T>::matrix(int rows, int cols)
+	matrix<T>::matrix(const int &rows, const int &cols)
 	: mRows(rows),
 	  mCols(cols),
 	  mData(rows * cols)
@@ -111,7 +111,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	T& matrix<T>::operator()(int i, int j)
+	T& matrix<T>::operator()(const int &i, const int &j)
 	{
 		if(mData.empty())
 		{
@@ -125,7 +125,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	T matrix<T>::operator()(int i, int j) const
+	T matrix<T>::operator()(const int &i, const int &j) const
 	{
 		if(mData.empty())
 		{
@@ -139,7 +139,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	std::vector<T> matrix<T>::operator*(const std::vector<T> x) const
+	std::vector<T> matrix<T>::operator*(const std::vector<T> &x) const
 	{
 		if(x.empty())
 		{
@@ -166,7 +166,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	matrix<T> matrix<T>::operator*(const matrix<T> B) const
+	matrix<T> matrix<T>::operator*(const matrix<T> &B) const
 	{
 		if(B.size(1) <= 0 || B.size(2) <= 0)
 		{
@@ -197,7 +197,7 @@ namespace keycpp
 
 
 	template<class T>
-	matrix<T> matrix<T>::operator+(const matrix<T> B) const
+	matrix<T> matrix<T>::operator+(const matrix<T> &B) const
 	{
 		if(B.size(1) <= 0 || B.size(2) <= 0)
 		{
@@ -223,7 +223,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	matrix<T> matrix<T>::operator-(const matrix<T> B) const
+	matrix<T> matrix<T>::operator-(const matrix<T> &B) const
 	{
 		if(B.size(1) <= 0 || B.size(2) <= 0)
 		{
@@ -249,7 +249,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	int matrix<T>::size(int n) const
+	int matrix<T>::size(const int &n) const
 	{
 		if(n == 1)
 		{
@@ -279,7 +279,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	int matrix<T>::setRow(std::vector<T> row, int n)
+	int matrix<T>::setRow(const std::vector<T> &row, const int &n)
 	{
 		if(row.size() != mCols)
 		{
@@ -302,7 +302,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	int matrix<T>::setLastRow(std::vector<T> row)
+	int matrix<T>::setLastRow(const std::vector<T> &row)
 	{
 		if(row.size() != mCols)
 		{
@@ -321,7 +321,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	int matrix<T>::addLastRow(std::vector<T> row)
+	int matrix<T>::addLastRow(const std::vector<T> &row)
 	{
 		if(row.size() != mCols)
 		{
@@ -338,7 +338,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	int matrix<T>::setCol(std::vector<T> col, int n)
+	int matrix<T>::setCol(const std::vector<T> &col, const int &n)
 	{
 		if(col.size() != mRows)
 		{
@@ -360,7 +360,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	std::vector<T> matrix<T>::getRow(int n)
+	std::vector<T> matrix<T>::getRow(const int &n) const
 	{
 		if(n > mRows || n < 0)
 		{
@@ -381,7 +381,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	std::vector<T> matrix<T>::getLastRow()
+	std::vector<T> matrix<T>::getLastRow() const
 	{
 		if(mData.empty())
 		{
@@ -398,7 +398,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	std::vector<T> matrix<T>::getCol(int n)
+	std::vector<T> matrix<T>::getCol(const int &n) const
 	{
 		if(n > mCols || n < 0)
 		{
@@ -419,7 +419,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	int matrix<T>::reserve(int N)
+	int matrix<T>::reserve(const int &N)
 	{
 		if(N < 0)
 		{

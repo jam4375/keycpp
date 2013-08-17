@@ -2,6 +2,6 @@ var searchData=
 [
   ['figure',['Figure',['../classkeycpp_1_1_figure.html',1,'keycpp']]],
   ['figureexception',['FigureException',['../classkeycpp_1_1_figure_exception.html',1,'keycpp']]],
-  ['find',['find',['../namespacekeycpp.html#af93acd2c9e3e2e47bbf796143b994a18',1,'keycpp::find(std::vector&lt; T &gt; v1, int k=-1, std::string start=&quot;&quot;)'],['../namespacekeycpp.html#a5c7bf08adf4c09275f9e16cd510b7357',1,'keycpp::find(matrix&lt; T &gt; A)']]],
-  ['finite',['finite',['../namespacekeycpp.html#a672bb23cdf28919a10b079dd88daf9cb',1,'keycpp::finite(T a)'],['../namespacekeycpp.html#a092a180cc054e61d0dad651dd24ff990',1,'keycpp::finite(matrix&lt; T &gt; A)'],['../namespacekeycpp.html#a6640e5ff779655aed8078c5de81af7ff',1,'keycpp::finite(std::vector&lt; T &gt; v1)']]]
+  ['find',['find',['../namespacekeycpp.html#ae34a4afffae90a5579e08be7d2177b2c',1,'keycpp::find(const std::vector&lt; T &gt; &amp;v1, const int &amp;k=-1, std::string start=&quot;&quot;)'],['../namespacekeycpp.html#a97f0fc27cf8489f3f556fb1a0c975115',1,'keycpp::find(const matrix&lt; T &gt; &amp;A)']]],
+  ['finite',['finite',['../namespacekeycpp.html#a03069647e77ae29e5437553b98274634',1,'keycpp::finite(const T &amp;a)'],['../namespacekeycpp.html#a8879482fc9af1a809453e1719948263b',1,'keycpp::finite(const matrix&lt; T &gt; &amp;A)'],['../namespacekeycpp.html#af4add0d0b269850e5f5fc1362d023666',1,'keycpp::finite(const std::vector&lt; T &gt; &amp;v1)']]]
 ];

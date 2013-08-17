@@ -114,21 +114,21 @@ namespace keycpp
                  std::complex<double>* work, const int* lwork, double *rwork, int* info);
 	}
 
-	std::vector<std::complex<double> > eig(const matrix<std::complex<double> > A,
-	                                       const matrix<std::complex<double> > B,
+	std::vector<std::complex<double> > eig(const matrix<std::complex<double> > &A,
+	                                       const matrix<std::complex<double> > &B,
 	                                       matrix<std::complex<double> > *vr_return = NULL,
 	                                       matrix<std::complex<double> > *vl_return = NULL);
 
-	std::vector<std::complex<double> > eig(const matrix<std::complex<double> > A,
+	std::vector<std::complex<double> > eig(const matrix<std::complex<double> > &A,
 	                                       matrix<std::complex<double> > *vr_return = NULL,
 	                                       matrix<std::complex<double> > *vl_return = NULL);
 	                                       
-	std::vector<std::complex<double>> eig(const matrix<double> A,
+	std::vector<std::complex<double>> eig(const matrix<double> &A,
                                           matrix<std::complex<double>> *vr_return = NULL,
                                           matrix<std::complex<double>> *vl_return = NULL);
 	
-	double rcond(const matrix<double> A);
-	double rcond(const matrix<std::complex<double>> A);
+	double rcond(const matrix<double> &A);
+	double rcond(const matrix<std::complex<double>> &A);
 	std::vector<std::complex<double>> linsolve(const matrix<std::complex<double>>& A_in,
                                                const std::vector<std::complex<double>>& b_in);
 	std::vector<double> linsolve(const matrix<double>& A_in,
@@ -137,9 +137,109 @@ namespace keycpp
     matrix<std::complex<double>> inv(const matrix<std::complex<double>>& A_in);
 
 	double rand();
-	matrix<double> rand(int N);
-	matrix<double> rand(int M, int N);
-
+	matrix<double> rand(const int &N);
+	matrix<double> rand(const int &M, const int &N);
+	
+	template<class T>
+	matrix<T> eop(const matrix<T> &A, T (*f)(const T&))
+	{
+	    matrix<T> B(A.size(1), A.size(2));
+	    for(int ii = 0; ii < A.size(1); ii++)
+	    {
+	        for(int jj = 0; jj < A.size(2); jj++)
+	        {
+	            B(ii,jj) = (*f)(A(ii,jj));
+	        }
+	    }
+	    return B;
+	}
+	
+	template<class T>
+	std::vector<T> eop(const std::vector<T> &v1, T (*f)(const T&))
+	{
+	    std::vector<T> v2(v1.size());
+	    for(int ii = 0; ii < v1.size(); ii++)
+	    {
+	        v2[ii] = (*f)(v1[ii]);
+	    }
+	    return v2;
+	}
+	
+	template<class T>
+	matrix<T> eop(const matrix<T> &A, T (*f)(T))
+	{
+	    matrix<T> B(A.size(1), A.size(2));
+	    for(int ii = 0; ii < A.size(1); ii++)
+	    {
+	        for(int jj = 0; jj < A.size(2); jj++)
+	        {
+	            B(ii,jj) = (*f)(A(ii,jj));
+	        }
+	    }
+	    return B;
+	}
+	
+	template<class T>
+	std::vector<T> eop(const std::vector<T> &v1, T (*f)(T))
+	{
+	    std::vector<T> v2(v1.size());
+	    for(int ii = 0; ii < v1.size(); ii++)
+	    {
+	        v2[ii] = (*f)(v1[ii]);
+	    }
+	    return v2;
+	}
+	
+	template<class T>
+	matrix<T> eop(const matrix<std::complex<T>> &A, T (*f)(const std::complex<T>&))
+	{
+	    matrix<T> B(A.size(1), A.size(2));
+	    for(int ii = 0; ii < A.size(1); ii++)
+	    {
+	        for(int jj = 0; jj < A.size(2); jj++)
+	        {
+	            B(ii,jj) = (*f)(A(ii,jj));
+	        }
+	    }
+	    return B;
+	}
+	
+	template<class T>
+	std::vector<T> eop(const std::vector<std::complex<T>> &v1, T (*f)(const std::complex<T>&))
+	{
+	    std::vector<T> v2(v1.size());
+	    for(int ii = 0; ii < v1.size(); ii++)
+	    {
+	        v2[ii] = (*f)(v1[ii]);
+	    }
+	    return v2;
+	}
+	
+	template<class T>
+	matrix<T> eop(const matrix<std::complex<T>> &A, T (*f)(std::complex<T>))
+	{
+	    matrix<T> B(A.size(1), A.size(2));
+	    for(int ii = 0; ii < A.size(1); ii++)
+	    {
+	        for(int jj = 0; jj < A.size(2); jj++)
+	        {
+	            B(ii,jj) = (*f)(A(ii,jj));
+	        }
+	    }
+	    return B;
+	}
+	
+	template<class T>
+	std::vector<T> eop(const std::vector<std::complex<T>> &v1, T (*f)(std::complex<T>))
+	{
+	    std::vector<T> v2(v1.size());
+	    for(int ii = 0; ii < v1.size(); ii++)
+	    {
+	        v2[ii] = (*f)(v1[ii]);
+	    }
+	    return v2;
+	}
+	
 	
 	template<class T, class U> struct observe
 	{
@@ -182,7 +282,7 @@ namespace keycpp
 
     /** \brief Returns the product of all the elements of the vector x.
      */
-	template<class T> T prod(const std::vector<T> x)
+	template<class T> T prod(const std::vector<T> &x)
 	{
 	    if(x.empty())
 	    {
@@ -200,7 +300,7 @@ namespace keycpp
     /** \brief Returns a vector containing the product of all the elements in each
      *         column of the matrix A.
      */
-	template<class T> std::vector<T> prod(const matrix<T> A)
+	template<class T> std::vector<T> prod(const matrix<T> &A)
 	{
 	    if(A.size(1) <= 0 || A.size(2) <= 0)
 	    {
@@ -221,7 +321,7 @@ namespace keycpp
 	
 	/** \brief Returns a vector of differences between adjacent elements.
      */
-	template<class T> std::vector<T> diff(const std::vector<T> v1)
+	template<class T> std::vector<T> diff(const std::vector<T> &v1)
 	{
 	    if(v1.empty())
 	    {
@@ -240,7 +340,7 @@ namespace keycpp
 	 *   TODO: Add recursive functionality and make sure it picks first non-singleton dimension.
 	 *         Also, accept dimension as argument. See MATLAB docs.
      */
-	template<class T> matrix<T> diff(const matrix<T> A)
+	template<class T> matrix<T> diff(const matrix<T> &A)
 	{
 	    if(A.size(1) <= 0 || A.size(2) <= 0)
 	    {
@@ -257,67 +357,54 @@ namespace keycpp
 		return B;
 	}
 
-	template<class T> std::vector<std::complex<double> > conj(const std::vector<T> x)
+	template<class T> std::vector<std::complex<T>> conj(const std::vector<std::complex<T>> &v1)
 	{
-		std::vector<T> x_out(x.size());
-		for(int ii = 0; ii < x.size(); ii++)
-		{
-			x_out[ii] = conj(x[ii]);
-		}
-		return x_out;
+		return eop(v1,static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::conj));
 	}
 
-	template<class T> matrix<std::complex<double> > conj(const matrix<T> x)
+	template<class T> matrix<std::complex<T>> conj(const matrix<std::complex<T>> &A)
 	{
-		matrix<T> x_out(x.size(1),x.size(2));
-		for(int ii = 0; ii < x.size(1); ii++)
-		{
-			for(int jj = 0; jj < x.size(2); jj++)
-			{
-				x_out(ii,jj) = conj(x(ii,jj));
-			}
-		}
-		return x_out;
+		return eop(A,static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::conj));
 	}
 
-	template<class T> std::vector<double> real(std::vector<T> x)
+	template<class T> std::vector<T> real(const std::vector<std::complex<T>> &v1)
 	{
-		std::vector<double> y(x.size());
-		for(int ii = 0; ii < x.size(); ii++)
-		{
-			y[ii] = real(x[ii]);
-		}
-		return y;
+		return eop(v1,static_cast<T (*)(const std::complex<T> &)>(&std::real));
 	}
 
-	template<class T> std::vector<double> imag(std::vector<T> x)
+	template<class T> matrix<T> real(const matrix<std::complex<T>> &A)
 	{
-		std::vector<double> y(x.size());
-		for(int ii = 0; ii < x.size(); ii++)
-		{
-			y[ii] = imag(x[ii]);
-		}
-		return y;
+		return eop(A,static_cast<T (*)(const std::complex<T> &)>(&std::real));
 	}
 
-	template<class T> std::vector<double> abs(std::vector<T> x)
+	template<class T> std::vector<T> imag(const std::vector<std::complex<T>> &v1)
 	{
-		std::vector<double> y(x.size());
-		for(int ii = 0; ii < x.size(); ii++)
-		{
-			y[ii] = abs(x[ii]);
-		}
-		return y;
+		return eop(v1,static_cast<T (*)(const std::complex<T> &)>(&std::imag));
 	}
 
-	template<class T> std::vector<double> arg(std::vector<T> x)
+	template<class T> matrix<T> imag(const matrix<std::complex<T>> &A)
 	{
-		std::vector<double> y(x.size());
-		for(int ii = 0; ii < x.size(); ii++)
-		{
-			y[ii] = arg(x[ii]);
-		}
-		return y;
+		return eop(A,static_cast<T (*)(const std::complex<T> &)>(&std::imag));
+	}
+
+	template<class T> std::vector<T> abs(const std::vector<T> &v1)
+	{
+		return eop(v1,static_cast<T (*)(T)>(&std::abs));
+	}
+
+	template<class T> std::vector<T> abs(const std::vector<std::complex<T>> &v1)
+	{
+		return eop(v1,static_cast<T (*)(const std::complex<T> &)>(&std::abs));
+	}
+
+	template<class T> matrix<T> abs(const matrix<T> &A)
+	{
+		return eop(A,static_cast<T (*)(T)>(&std::abs));
+	}
+
+	template<class T> matrix<T> abs(const matrix<std::complex<T>> &A)
+	{
+		return eop(A,static_cast<T (*)(const std::complex<T> &)>(&std::abs));
 	}
 	
 	inline std::complex<double> csqrt(const double& a)
@@ -469,88 +556,165 @@ namespace keycpp
 		return v2;
 	}
 	
-	/** \brief Return a vector containing the sine of each element of v1.
-	 */
-	template<class T> std::vector<T> sin(const std::vector<T> v1)
+	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator/(const U& a, const matrix<T>& A)
 	{
-		std::vector<T> v2(v1.size());
-		for(int ii = 0; ii < v1.size(); ii++)
+		matrix<decltype(std::declval<T>()*std::declval<U>())> B(A.size(1),A.size(2));
+		for(int ii = 0; ii < B.size(1); ii++)
 		{
-			v2[ii] = std::sin(v1[ii]);
+			for(int jj = 0; jj < B.size(2); jj++)
+			{
+				B(ii,jj) = a/A(ii,jj);
+			}
+		}
+		return B;
+	}
+	
+	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> operator/(const U& a, const std::vector<T>& v1)
+	{
+		std::vector<decltype(std::declval<T>()*std::declval<U>())> v2(v1.size());
+		for(int ii = 0; ii < v2.size(); ii++)
+		{
+			v2[ii] = a/v1[ii];
 		}
 		return v2;
 	}
 	
-	/** \brief Return a matrix containing the sine of each element of A.
+	/** \brief Return a vector containing the sine of each element of v1.
 	 */
-	template<class T> matrix<T> sin(const matrix<T> A)
+	template<class T>
+    std::vector<std::complex<T>> sin(const std::vector<std::complex<T>> & v1)
+    {
+        return eop(v1, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::sin<T>));
+    }
+	
+	/** \brief Return a vector containing the sine of each element of v1.
+	 */
+	template<class T> std::vector<T> sin(const std::vector<T> &v1)
 	{
-		matrix<T> B(A.size(1),A.size(2));
-		for(int ii = 0; ii < A.size(1); ii++)
-		{
-			for(int jj = 0; jj < A.size(2); jj++)
-			{
-				B(ii,jj) = std::sin(A(ii,jj));
-			}
-		}
-		return B;
+		return eop(v1,static_cast<T (*)(T)>(&std::sin));
+	}
+	
+	/** \brief Return a vector containing the sine of each element of A.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> sin(const matrix<std::complex<T>> &A)
+    {
+        return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::sin<T>));
+    }
+	
+	/** \brief Return a vector containing the sine of each element of A.
+	 */
+	template<class T> std::vector<T> sin(const matrix<T> &A)
+	{
+		return eop(A,static_cast<T (*)(T)>(&std::sin));
 	}
 	
 	/** \brief Return a vector containing the cosine of each element of v1.
 	 */
-	template<class T> std::vector<T> cos(const std::vector<T> v1)
+	template<class T>
+    std::vector<std::complex<T>> cos(const std::vector<std::complex<T>> & v1)
+    {
+        return eop(v1, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::cos<T>));
+    }
+	
+	/** \brief Return a vector containing the cosine of each element of v1.
+	 */
+	template<class T> std::vector<T> cos(const std::vector<T> &v1)
 	{
-		std::vector<T> v2(v1.size());
-		for(int ii = 0; ii < v1.size(); ii++)
-		{
-			v2[ii] = std::cos(v1[ii]);
-		}
-		return v2;
+		return eop(v1,static_cast<T (*)(T)>(&std::cos));
 	}
 	
-	/** \brief Return a matrix containing the cosine of each element of A.
+	/** \brief Return a vector containing the cosine of each element of A.
 	 */
-	template<class T> matrix<T> cos(const matrix<T> A)
+	template<class T>
+    std::vector<std::complex<T>> cos(const matrix<std::complex<T>> &A)
+    {
+        return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::cos<T>));
+    }
+	
+	/** \brief Return a vector containing the cos of each element of A.
+	 */
+	template<class T> std::vector<T> cos(const matrix<T> &A)
 	{
-		matrix<T> B(A.size(1),A.size(2));
-		for(int ii = 0; ii < A.size(1); ii++)
-		{
-			for(int jj = 0; jj < A.size(2); jj++)
-			{
-				B(ii,jj) = std::cos(A(ii,jj));
-			}
-		}
-		return B;
+		return eop(A,static_cast<T (*)(T)>(&std::cos));
+	}
+	
+	/** \brief Return a vector containing the tangent of each element of v1.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> tan(const std::vector<std::complex<T>> & v1)
+    {
+        return eop(v1, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::tan<T>));
+    }
+	
+	/** \brief Return a vector containing the tangent of each element of v1.
+	 */
+	template<class T> std::vector<T> tan(const std::vector<T> &v1)
+	{
+		return eop(v1,static_cast<T (*)(T)>(&std::tan));
+	}
+	
+	/** \brief Return a vector containing the tangent of each element of A.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> tan(const matrix<std::complex<T>> &A)
+    {
+        return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::tan<T>));
+    }
+	
+	/** \brief Return a vector containing the tangent of each element of A.
+	 */
+	template<class T> std::vector<T> tan(const matrix<T> &A)
+	{
+		return eop(A,static_cast<T (*)(T)>(&std::tan));
+	}
+	
+	/** \brief Return a vector containing the hyperbolic cosine of each element of v1.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> cosh(const std::vector<std::complex<T>> & v1)
+    {
+        return eop(v1, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::cosh<T>));
+    }
+	
+	/** \brief Return a vector containing the hyperbolic cosine of each element of v1.
+	 */
+	template<class T> std::vector<T> cosh(const std::vector<T> &v1)
+	{
+		return eop(v1,static_cast<T (*)(T)>(&std::cosh));
 	}
 	
 	/** \brief Return a vector containing the exponential of each element of v1.
 	 */
-	template<class T> std::vector<T> exp(const std::vector<T> v1)
+	template<class T>
+    std::vector<std::complex<T>> exp(const std::vector<std::complex<T>> & v1)
+    {
+        return eop(v1, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::exp<T>));
+    }
+	
+	/** \brief Return a vector containing the exponential of each element of v1.
+	 */
+	template<class T> std::vector<T> exp(const std::vector<T> &v1)
 	{
-		std::vector<T> v2(v1.size());
-		for(int ii = 0; ii < v1.size(); ii++)
-		{
-			v2[ii] = std::exp(v1[ii]);
-		}
-		return v2;
+		return eop(v1,static_cast<T (*)(T)>(&std::exp));
 	}
 	
-	/** \brief Return a matrix containing the exponential of each element of A.
+	/** \brief Return a vector containing the exponential of each element of A.
 	 */
-	template<class T> matrix<T> exp(const matrix<T> A)
+	template<class T>
+    std::vector<std::complex<T>> exp(const matrix<std::complex<T>> &A)
+    {
+        return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::exp<T>));
+    }
+	
+	/** \brief Return a vector containing the exponential of each element of A.
+	 */
+	template<class T> std::vector<T> exp(const matrix<T> &A)
 	{
-		matrix<T> B(A.size(1),A.size(2));
-		for(int ii = 0; ii < A.size(1); ii++)
-		{
-			for(int jj = 0; jj < A.size(2); jj++)
-			{
-				B(ii,jj) = std::exp(A(ii,jj));
-			}
-		}
-		return B;
+		return eop(A,static_cast<T (*)(T)>(&std::exp));
 	}
-
-	template<class T> matrix<T> eye(const int N)
+	
+	template<class T> matrix<T> eye(const int &N)
 	{
 		matrix<T> A(N,N);
 		for(int ii = 0; ii < N; ii++)
@@ -569,7 +733,7 @@ namespace keycpp
      *              1 = number of rows, 2 = number of columns
      *   @return An integer value of the number of elements along the desired dimension. 
      */
-	template<class T> int size(const matrix<T> A, const int dim)
+	template<class T> int size(const matrix<T> &A, const int &dim)
 	{
 		return A.size(dim);
 	}
@@ -581,7 +745,7 @@ namespace keycpp
      *   @param[in] A matrix for which you want to know the size.
      *   @return A matrix_size_type variable containing the number of rows and cols.
      */
-	template<class T> matrix_size_type size(const matrix<T> A)
+	template<class T> matrix_size_type size(const matrix<T> &A)
 	{
 	    matrix_size_type msize;
 	    msize.rows = A.size(1);
@@ -596,7 +760,7 @@ namespace keycpp
      *   @param[in] N Number of columns.
      *   @return An M x N matrix containing zeros for each element. 
      */
-	template<class T> matrix<T> zeros(const int M, const int N)
+	template<class T> matrix<T> zeros(const int &M, const int &N)
 	{
 		matrix<T> A(M,N);
 		return A;
@@ -608,7 +772,7 @@ namespace keycpp
      *   @param[in] N Number of elements.
      *   @return A vector of length N containing zeros for each element. 
      */
-	template<class T> std::vector<T> zeros(const int N)
+	template<class T> std::vector<T> zeros(const int &N)
 	{
 		std::vector<T> v1(N);
 		return v1;
@@ -621,7 +785,7 @@ namespace keycpp
      *   @param[in] N Number of columns.
      *   @return An M x N matrix containing ones for each element. 
      */
-	template<class T> matrix<T> ones(const int M, const int N)
+	template<class T> matrix<T> ones(const int &M, const int &N)
 	{
 		matrix<T> A(M,N);
 		for(int ii = 0; ii < M; ii++)
@@ -640,7 +804,7 @@ namespace keycpp
      *   @param[in] N Number of elements.
      *   @return A vector of length N containing ones for each element. 
      */
-	template<class T> std::vector<T> ones(const int N)
+	template<class T> std::vector<T> ones(const int &N)
 	{
 		std::vector<T> v1(N);
 		for(int ii = 0; ii < N; ii++)
@@ -650,7 +814,7 @@ namespace keycpp
 		return v1;
 	}
 	
-	template<class T> matrix<T> diag(const std::initializer_list<T>& lst, int d = 0)
+	template<class T> matrix<T> diag(const std::initializer_list<T>& lst, const int &d = 0)
 	{
 		matrix<T> A(std::abs(d)+lst.size(),std::abs(d)+lst.size());
 		int ii = 0;
@@ -680,7 +844,7 @@ namespace keycpp
 		return A;
 	}
 	
-	template<class T> matrix<T> diag(const std::vector<T> v1, int d = 0)
+	template<class T> matrix<T> diag(const std::vector<T> &v1, const int &d = 0)
 	{
 		matrix<T> A(std::abs(d)+v1.size(),std::abs(d)+v1.size());
 		if(d != 0)
@@ -707,7 +871,7 @@ namespace keycpp
 		return A;
 	}
 	
-	template<class T> std::vector<T> diag(const matrix<T> A, int d = 0)
+	template<class T> std::vector<T> diag(const matrix<T> &A, const int &d = 0)
 	{
 	    if(A.empty())
 	    {
@@ -755,7 +919,7 @@ namespace keycpp
 		return v1;
 	}
 	
-	template<class T> matrix<T> repmat(const matrix<T> A, int m, int n)
+	template<class T> matrix<T> repmat(const matrix<T> &A, const int &m, const int &n)
 	{
 		matrix<T> B(m*A.size(1), n*A.size(2));
 		for(int ii = 0; ii < m; ii++)
@@ -774,7 +938,7 @@ namespace keycpp
 		return B;
 	}
 	
-	template<class T> matrix<T> repmat(const std::vector<T> v1, int m, int n)
+	template<class T> matrix<T> repmat(const std::vector<T> v1, const int &m, const int &n)
 	{
 		matrix<T> B(m*v1.size(), n);
 		for(int ii = 0; ii < m; ii++)
@@ -937,12 +1101,12 @@ namespace keycpp
 		return v3;
 	}
 
-	template<class T> int sign(T val)
+	template<class T> int sign(const T &val)
 	{
 	    return (T(0) < val) - (val < T(0));
 	}
 
-	template<class T> T max(std::vector<T> x)
+	template<class T> T max(const std::vector<T> &x)
 	{
 		double a = nan("");
 		int index = 0;
@@ -957,7 +1121,7 @@ namespace keycpp
 		return x[index];
 	}
 
-	template<class T> T min(std::vector<T> x)
+	template<class T> T min(const std::vector<T> &x)
 	{
 		double a = nan("");
 		int index = 0;
@@ -972,23 +1136,24 @@ namespace keycpp
 		return x[index];
 	}
 	
-	template<class T> double angle(T x)
+	template<class T> T angle(const std::complex<T> &x)
 	{
 		return arg(x);
 	}
 	
-	template<class T> std::vector<double> angle(std::vector<T> x)
-	{
-		std::vector<double> y(x.size());
-		for(int ii = 0; ii < y.size(); ii++)
-		{
-			y[ii] = angle(x[ii]);
-		}
-		
-		return y;
-	}
+	template<class T>
+    std::vector<T> angle(const std::vector<std::complex<T>> &v1)
+    {
+        return eop(v1, static_cast<T (*)(const std::complex<T> &)>(&std::arg<T>));
+    }
+	
+	template<class T>
+    std::vector<T> angle(const matrix<std::complex<T>> &A)
+    {
+        return eop(A, static_cast<T (*)(const std::complex<T> &)>(&std::arg<T>));
+    }
 
-	inline std::complex<double> max(std::vector<std::complex<double> > x)
+	inline std::complex<double> max(const std::vector<std::complex<double> > &x)
 	{
 		double a = nan("");
 		double b = nan("");
@@ -1005,7 +1170,7 @@ namespace keycpp
 		return x[index];
 	}
 	
-	template<class T> std::vector<T> max(matrix<T> A)
+	template<class T> std::vector<T> max(const matrix<T> &A)
 	{
 	    std::vector<T> v(A.size(2));
 	    for(int ii = 0; ii < v.size(); ii++)
@@ -1015,7 +1180,7 @@ namespace keycpp
 	    return v;
 	}
 
-	inline std::complex<double> min(std::vector<std::complex<double> > x)
+	inline std::complex<double> min(const std::vector<std::complex<double> > &x)
 	{
 		double a = nan("");
 		double b = nan("");
@@ -1033,7 +1198,7 @@ namespace keycpp
 	}
 	
 	
-	template<class T> std::vector<T> min(matrix<T> A)
+	template<class T> std::vector<T> min(const matrix<T> &A)
 	{
 	    std::vector<T> v(A.size(2));
 	    for(int ii = 0; ii < v.size(); ii++)
@@ -1045,7 +1210,7 @@ namespace keycpp
 
 	/** \brief Returns the transpose of matrix A.
 	 */
-	template<class T> matrix<T> transpose(matrix<T> A)
+	template<class T> matrix<T> transpose(const matrix<T> &A)
 	{
 		matrix<T> B(A.size(2),A.size(1));
 		for(int ii = 0; ii < A.size(1); ii++)
@@ -1060,7 +1225,7 @@ namespace keycpp
 	
 	/** \brief Returns the transpose of vector v1.
 	 */
-	template<class T> matrix<T> transpose(std::vector<T> v1)
+	template<class T> matrix<T> transpose(const std::vector<T> &v1)
 	{
 		matrix<T> B(1,v1.size());
 		for(int ii = 0; ii < v1.size(); ii++)
@@ -1072,7 +1237,7 @@ namespace keycpp
 
 	/** \brief Returns the complex-conjugate transpose of matrix A.
 	 */
-	template<class T> matrix<T> ctranspose(matrix<T> A)
+	template<class T> matrix<T> ctranspose(const matrix<T> &A)
 	{
 		matrix<T> B(A.size(2),A.size(1));
 		for(int ii = 0; ii < A.size(1); ii++)
@@ -1087,14 +1252,14 @@ namespace keycpp
 
 	/** \brief Returns the complex-conjugate transpose of matrix A.
 	 */
-	template<> inline matrix<double> ctranspose<double>(matrix<double> A)
+	template<> inline matrix<double> ctranspose<double>(const matrix<double> &A)
 	{
 		return transpose(A);
 	}
 	
 	/** \brief Returns the complex-conjugate transpose of vector v1.
 	 */
-	template<class T> matrix<T> ctranspose(std::vector<T> v1)
+	template<class T> matrix<T> ctranspose(const std::vector<T> &v1)
 	{
 		matrix<T> B(1,v1.size());
 		for(int ii = 0; ii < v1.size(); ii++)
@@ -1106,7 +1271,7 @@ namespace keycpp
 	
 	/** \brief Computes the sum of vector v1.
 	 */
-	template<class T> T sum(std::vector<T> v1)
+	template<class T> T sum(const std::vector<T> &v1)
 	{
 		T a = 0.0;
 		for(int ii = 0; ii < v1.size(); ii++)
@@ -1118,7 +1283,7 @@ namespace keycpp
 	
 	/** \brief Computes the sum of each column of A.
 	 */
-	template<class T> std::vector<T> sum(matrix<T> A)
+	template<class T> std::vector<T> sum(const matrix<T> &A)
 	{
 		std::vector<T> v1(A.size(2));
 		for(int ii = 0; ii < v1.size(); ii++)
@@ -1130,7 +1295,7 @@ namespace keycpp
 	
 	/** \brief Converts matrix A to a column vector.
 	 */
-	template<class T> std::vector<T> mat2vec(matrix<T> A)
+	template<class T> std::vector<T> mat2vec(const matrix<T> &A)
 	{
 	    if(A.empty())
 	    {
@@ -1146,7 +1311,7 @@ namespace keycpp
 	
 	/** \brief Converts a column vector to a 1 x length(v1) matrix.
 	 */
-	template<class T> matrix<T> vec2mat(std::vector<T> v1)
+	template<class T> matrix<T> vec2mat(const std::vector<T> &v1)
 	{
 	    if(v1.empty())
 	    {
@@ -1170,7 +1335,7 @@ namespace keycpp
      *   @param[in] N The number of values between x1 and x2. 
      *   @return A vector containing N equally spaced values between x1 and x2, inclusively. 
      */
-	template<class T> std::vector<T> linspace(const T x1, const T x2, const int N)
+	template<class T> std::vector<T> linspace(const T &x1, const T &x2, const int &N)
 	{
 		std::vector<T> x(N);
 		if(N == 1)
@@ -1203,7 +1368,7 @@ namespace keycpp
      *   @return A vector containing N logarithmically spaced values between
      *          10^(x1) and 10^(x2), inclusively. 
      */
-	template<class T> std::vector<T> logspace(const T x1, const T x2, int N)
+	template<class T> std::vector<T> logspace(const T &x1, const T &x2, const int &N)
 	{
 		std::vector<T> x(N);
 		if(N == 1)
@@ -1222,7 +1387,7 @@ namespace keycpp
 		return x;
 	}
 	
-	template<class T> std::vector<T> unwrap(const std::vector<T>& v1, T tol = pi)
+	template<class T> std::vector<T> unwrap(const std::vector<T>& v1, const T &tol = pi)
 	{
 		std::vector<T> v2(v1.size());
 		v2[0] = v1[0];
@@ -1256,7 +1421,7 @@ namespace keycpp
 		return m/tot;
 	}
 	
-	template<class T, class U> T interp1(std::vector<U> x, std::vector<T> y, U x_interp, std::string method = "linear", Extrap extrap = Extrap())
+	template<class T, class U> T interp1(const std::vector<U> &x, const std::vector<T> &y, const U &x_interp, std::string method = "linear", Extrap extrap = Extrap())
 	{
 		if(x.empty() || y.empty())
 		{
@@ -1376,7 +1541,7 @@ namespace keycpp
 	}
 
 
-	template<class T, class U> std::vector<T> interp1(std::vector<U> x, std::vector<T> y, std::vector<U> x_interp, std::string method = "linear", Extrap extrap = Extrap())
+	template<class T, class U> std::vector<T> interp1(const std::vector<U> &x, const std::vector<T> &y, const std::vector<U> &x_interp, std::string method = "linear", Extrap extrap = Extrap())
 	{
 		if(x.empty() || y.empty() || x_interp.empty())
 		{
@@ -1415,7 +1580,7 @@ namespace keycpp
 		return y2;
 	}
 
-	template<class T, class U> matrix<T> interp1(std::vector<U> x, matrix<T> y, std::vector<U> x_interp, std::string method = "linear", Extrap extrap = Extrap())
+	template<class T, class U> matrix<T> interp1(const std::vector<U> &x, const matrix<T> &y, const std::vector<U> &x_interp, std::string method = "linear", Extrap extrap = Extrap())
 	{
 		if(x.empty() || y.size(1) <= 0 || y.size(2) <= 0 || x_interp.empty())
 		{
@@ -1436,7 +1601,7 @@ namespace keycpp
 	}
 
 
-	template<class T, class U> matrix<T> interp1(std::vector<U> x, std::vector<std::vector<T> > y, std::vector<U> x_interp, std::string method = "linear", Extrap extrap = Extrap())
+	template<class T, class U> matrix<T> interp1(const std::vector<U> &x, const std::vector<std::vector<T> > &y, const std::vector<U> &x_interp, std::string method = "linear", Extrap extrap = Extrap())
 	{
 		if(x.empty() || y.empty() || y[0].empty() || x_interp.empty())
 		{
@@ -1461,7 +1626,7 @@ namespace keycpp
 		return y2;
 	}
 	
-	template<class T, class U> matrix<T> interp1(std::vector<U> x, std::vector<T> y, matrix<U> x_interp, std::string method = "linear", Extrap extrap = Extrap())
+	template<class T, class U> matrix<T> interp1(const std::vector<U> &x, const std::vector<T> &y, const matrix<U> &x_interp, std::string method = "linear", Extrap extrap = Extrap())
 	{
 		if(x.empty() || y.empty() || x_interp.size(1) <= 0 || x_interp.size(2) <= 0)
 		{
@@ -1481,7 +1646,7 @@ namespace keycpp
 		return y2;
 	}	
 	
-	template<class T, class U> matrix<T> interp1(std::vector<U> x, std::vector<T> y, std::vector<std::vector<U> > x_interp, std::string method = "linear", Extrap extrap = Extrap())
+	template<class T, class U> matrix<T> interp1(const std::vector<U> &x, const std::vector<T> &y, const std::vector<std::vector<U> > &x_interp, std::string method = "linear", Extrap extrap = Extrap())
 	{
 		if(x.empty() || y.empty() || x_interp.empty() || x_interp[0].empty())
 		{
@@ -1501,7 +1666,7 @@ namespace keycpp
 		return y2;
 	}
 
-	template<class U, class T> T trapz(std::vector<U> eta, std::vector<T> integrand)
+	template<class U, class T> T trapz(const std::vector<U> &eta, const std::vector<T> &integrand)
 	{
 		if(eta.empty() || integrand.empty())
 		{
@@ -1522,7 +1687,7 @@ namespace keycpp
 	}
 
 
-	template<class T, class U> matrix<T> diffxy(matrix<U> eta, matrix<T> u, int index = 2)
+	template<class T, class U> matrix<T> diffxy(const matrix<U> &eta, const matrix<T> &u, const int &index = 2)
 	{
 		if(eta.size(1) <= 0 || eta.size(2) <= 0 || u.size(1) <= 0 || u.size(2) <= 0)
 		{
@@ -1562,7 +1727,7 @@ namespace keycpp
 		return du;
 	}
 
-	template<class T, class U> matrix<T> diffxy(std::vector<U> eta, matrix<T> u)
+	template<class T, class U> matrix<T> diffxy(const std::vector<U> &eta, const matrix<T> &u)
 	{
 		if(eta.empty() || u.size(1) <= 0 || u.size(2) <= 0)
 		{
@@ -1602,7 +1767,7 @@ namespace keycpp
 		return du;
 	}
 
-	template<class T, class U> std::vector<T> diffxy(std::vector<U> eta, std::vector<T> u)
+	template<class T, class U> std::vector<T> diffxy(const std::vector<U> &eta, const std::vector<T> &u)
 	{
 		if(eta.empty() || u.empty())
 		{
@@ -1624,7 +1789,7 @@ namespace keycpp
 		return du;
 	}
 
-	template<class T> std::vector<std::complex<double> > fft(std::vector<T> u, int N = -1)
+	template<class T> std::vector<std::complex<double> > fft(const std::vector<T> &u, int N = -1)
 	{
 		if(u.empty())
 		{
@@ -1708,7 +1873,7 @@ namespace keycpp
 		matrix<int> index;
 	};
 	
-	template<class T> Sort_Matrix<T> sort(matrix<T> A, int dim = 2, std::string method = "ascend")
+	template<class T> Sort_Matrix<T> sort(const matrix<T> &A, const int &dim = 2, std::string method = "ascend")
 	{
 		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
 		if(method.compare("ascend") != 0 && method.compare("descend") != 0)
@@ -1819,7 +1984,7 @@ namespace keycpp
 		std::vector<int> index;
 	};
 	
-	template<class T> Sort_Vector<T> sort(std::vector<T> v1, std::string method = "ascend")
+	template<class T> Sort_Vector<T> sort(const std::vector<T> &v1, std::string method = "ascend")
 	{
 		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
 		if(method.compare("ascend") != 0 && method.compare("descend") != 0)
@@ -1873,7 +2038,7 @@ namespace keycpp
      *         the operator << is defined for its type.
      */
 	template<class T>
-	void disp(T x)
+	void disp(const T &x)
 	{
 	    std::cout << x << std::endl;
 	    return;
@@ -1883,7 +2048,7 @@ namespace keycpp
 	 *         Currently the option must be supplied as "s" because C++ is a 
 	 *         statically typed language.
 	 */
-	inline std::string input(std::string prompt, std::string option)
+	inline std::string input(const std::string &prompt, std::string option)
 	{
 	    if(option.empty())
 	    {
@@ -1904,7 +2069,7 @@ namespace keycpp
 	/** \brief Converts a string to a double. Currently only works on single numbers.
 	 *         In the future this should be expanded to work on vectors and matrices. (see MATLAB docs)
 	 */
-	inline double str2num(std::string in)
+	inline double str2num(const std::string &in)
 	{
 	    return atof(in.c_str());
 	}
@@ -1912,7 +2077,7 @@ namespace keycpp
 	/** \brief Returns the number of elements in a vector.
 	 */
 	template<class T>
-	int length(std::vector<T> v1)
+	int length(const std::vector<T> &v1)
 	{
 	    return v1.size();
 	}
@@ -1920,7 +2085,7 @@ namespace keycpp
 	/** \brief Returns the length of the largest dimension of A.
 	 */
 	template<class T>
-	int length(matrix<T> A)
+	int length(const matrix<T> &A)
 	{
 	    int m = A.size(1);
 	    int n = A.size(2);
@@ -1928,7 +2093,7 @@ namespace keycpp
 	}
 	
 	template<class T>
-	int numel(matrix<T> A)
+	int numel(const matrix<T> &A)
 	{
 	    return (A.size(1)*A.size(2));
 	}
@@ -1936,7 +2101,7 @@ namespace keycpp
 	/** \brief Finds and returns the indices of non-zero elements of v1.
 	 */
 	template<class T>
-	std::vector<int> find(std::vector<T> v1, int k = -1, std::string start = "")
+	std::vector<int> find(const std::vector<T> &v1, const int &k = -1, std::string start = "")
 	{
 		std::transform(start.begin(), start.end(), start.begin(), ::tolower);
 	    std::vector<int> v2;
@@ -2010,7 +2175,7 @@ namespace keycpp
 	/** \brief Finds and returns the row and column indices and values of non-zero elements of A.
 	 */
 	template<class T>
-	matrix_find_type<T> find(matrix<T> A)
+	matrix_find_type<T> find(const matrix<T> &A)
 	{
 	    matrix_find_type<T> out;
 	    if(A.empty())
@@ -2038,7 +2203,7 @@ namespace keycpp
 	}
 	
 	template<class T>
-	matrix<T> reshape(matrix<T> A, int m, int n)
+	matrix<T> reshape(const matrix<T> &A, const int &m, const int &n)
 	{
 	    if(A.empty())
 	    {
@@ -2065,7 +2230,7 @@ namespace keycpp
 	}
 	
 	template<class T>
-	matrix<T> reshape(std::vector<T> v1, int m, int n)
+	matrix<T> reshape(const std::vector<T> &v1, const int &m, const int &n)
 	{
 	    return reshape(vec2mat(v1),m,n);
 	}
@@ -2073,7 +2238,7 @@ namespace keycpp
 	/** \brief Computes the dot product between vectors v1 and v2.
 	 */
 	template<class T, class U>
-	decltype(std::declval<T>()*std::declval<U>()) dot(std::vector<T> v1, std::vector<U> v2)
+	decltype(std::declval<T>()*std::declval<U>()) dot(const std::vector<T> &v1, const std::vector<U> &v2)
 	{
 	    if(v1.empty() || v2.empty())
 	    {
@@ -2094,7 +2259,7 @@ namespace keycpp
 	/** \brief Computes the dot product between the first non-singleton dimension of A and B.
 	 */
 	template<class T, class U>
-	std::vector<decltype(std::declval<T>()*std::declval<U>())> dot(matrix<T> A, matrix<U> B, int dim = -1)
+	std::vector<decltype(std::declval<T>()*std::declval<U>())> dot(const matrix<T> &A, const matrix<U> &B, const int &dim = -1)
 	{
 	    if(A.empty() || B.empty())
 	    {
@@ -2128,7 +2293,7 @@ namespace keycpp
 	 *         must have exactly 3 elements.
 	 */
 	template<class T, class U>
-	std::vector<decltype(std::declval<T>()*std::declval<U>())> cross(std::vector<T> v1, std::vector<U> v2)
+	std::vector<decltype(std::declval<T>()*std::declval<U>())> cross(const std::vector<T> &v1, const std::vector<U> &v2)
 	{
 	    if(v1.empty() || v2.empty())
 	    {
@@ -2156,7 +2321,7 @@ namespace keycpp
 	};
 	
 	template<class T>
-	double norm(const std::vector<T> v1, std::string method = "2")
+	double norm(const std::vector<T> &v1, std::string method = "2")
 	{
 	    if(v1.empty())
 	    {
@@ -2203,16 +2368,16 @@ namespace keycpp
 	    return anorm;
 	}
 	
-	double norm(const matrix<double> A_in, std::string method = "2");
-	SVD_type<double,double> svd(matrix<double> A_in, std::string method = "");
-	double norm(const matrix<std::complex<double>> A_in, std::string method = "2");
-	SVD_type<std::complex<double>,double> svd(matrix<std::complex<double>> A_in, std::string method = "");
+	double norm(const matrix<double> &A_in, std::string method = "2");
+	SVD_type<double,double> svd(const matrix<double> &A_in, std::string method = "");
+	double norm(const matrix<std::complex<double>> &A_in, std::string method = "2");
+	SVD_type<std::complex<double>,double> svd(const matrix<std::complex<double>> &A_in, std::string method = "");
 	
 	/** \brief Estimates the rank of a matrix by counting the singular values
 	 *         whose absolute value is greater than epsilon.
 	 */
 	template<class T>
-	int rank(matrix<T> A)
+	int rank(const matrix<T> &A)
 	{
 	    auto output = svd(A);
 	    return length(find(diag(output.S)));
@@ -2221,7 +2386,7 @@ namespace keycpp
 	/** \brief Computes the nullspace of matrix A.
 	 */
 	template<class T>
-	matrix<T> null(matrix<T> A)
+	matrix<T> null(const matrix<T> &A)
 	{
 	    auto output = svd(A);
 	    std::vector<int> index;
@@ -2250,7 +2415,7 @@ namespace keycpp
 	/** \brief Returns true if a is nonzero.
 	 */
 	template<class T>
-	bool any(T a)
+	bool any(const T &a)
 	{
         if(std::abs(a) < eps)
         {
@@ -2262,7 +2427,7 @@ namespace keycpp
 	/** \brief Returns true if any elements of A are nonzero.
 	 */
 	template<class T>
-	bool any(matrix<T> A)
+	bool any(const matrix<T> &A)
 	{
 	    for(int ii = 0; ii < A.size(1); ii++)
 	    {
@@ -2280,7 +2445,7 @@ namespace keycpp
 	/** \brief Returns true if any elements of v1 are nonzero.
 	 */
 	template<class T>
-	bool any(std::vector<T> v1)
+	bool any(const std::vector<T> &v1)
 	{
 	    for(int ii = 0; ii < v1.size(); ii++)
 	    {
@@ -2295,7 +2460,7 @@ namespace keycpp
 	/** \brief Returns true if a is nonzero.
 	 */
 	template<class T>
-	bool all(T a)
+	bool all(const T &a)
 	{
         if(std::abs(a) < eps)
         {
@@ -2307,7 +2472,7 @@ namespace keycpp
 	/** \brief Returns true if all elements of A are nonzero.
 	 */
 	template<class T>
-	bool all(matrix<T> A)
+	bool all(const matrix<T> &A)
 	{
 	    for(int ii = 0; ii < A.size(1); ii++)
 	    {
@@ -2325,7 +2490,7 @@ namespace keycpp
 	/** \brief Returns true if all elements of v1 are nonzero.
 	 */
 	template<class T>
-	bool all(std::vector<T> v1)
+	bool all(const std::vector<T> &v1)
 	{
 	    for(int ii = 0; ii < v1.size(); ii++)
 	    {
@@ -2341,7 +2506,7 @@ namespace keycpp
 	 *         a is finite.
 	 */
 	template<class T>
-	std::vector<bool> finite(T a)
+	std::vector<bool> finite(const T &a)
 	{
 	    bool out;
         if(isfinite(a))
@@ -2359,7 +2524,7 @@ namespace keycpp
 	 *         corresponding elements of A are finite.
 	 */
 	template<class T>
-	matrix<bool> finite(matrix<T> A)
+	matrix<bool> finite(const matrix<T> &A)
 	{
 	    matrix<bool> out(A.size(1),A.size(2));
 	    for(int ii = 0; ii < A.size(1); ii++)
@@ -2376,7 +2541,7 @@ namespace keycpp
 	 *         corresponding elements of v1 are finite.
 	 */
 	template<class T>
-	std::vector<bool> finite(std::vector<T> v1)
+	std::vector<bool> finite(const std::vector<T> &v1)
 	{
 	    std::vector<bool> out(v1.size());
 	    for(int ii = 0; ii < v1.size(); ii++)
@@ -2390,7 +2555,7 @@ namespace keycpp
 	 *         a is infinite.
 	 */
 	template<class T>
-	std::vector<bool> isinf(T a)
+	std::vector<bool> isinf(const T &a)
 	{
 	    bool out;
         if(isfinite(a))
@@ -2408,7 +2573,7 @@ namespace keycpp
 	 *         corresponding elements of A are infinite.
 	 */
 	template<class T>
-	matrix<bool> isinf(matrix<T> A)
+	matrix<bool> isinf(const matrix<T> &A)
 	{
 	    matrix<bool> out(A.size(1),A.size(2));
 	    for(int ii = 0; ii < A.size(1); ii++)
@@ -2425,7 +2590,7 @@ namespace keycpp
 	 *         corresponding elements of v1 are infinite.
 	 */
 	template<class T>
-	std::vector<bool> isinf(std::vector<T> v1)
+	std::vector<bool> isinf(const std::vector<T> &v1)
 	{
 	    std::vector<bool> out(v1.size());
 	    for(int ii = 0; ii < v1.size(); ii++)
@@ -2439,7 +2604,7 @@ namespace keycpp
 	 *         a is NaN.
 	 */
 	template<class T>
-	std::vector<bool> isnan(T a)
+	std::vector<bool> isnan(const T &a)
 	{
 	    bool out;
         if(a != a)
@@ -2457,7 +2622,7 @@ namespace keycpp
 	 *         corresponding elements of A are NaN.
 	 */
 	template<class T>
-	matrix<bool> isnan(matrix<T> A)
+	matrix<bool> isnan(const matrix<T> &A)
 	{
 	    matrix<bool> out(A.size(1),A.size(2));
 	    for(int ii = 0; ii < A.size(1); ii++)
@@ -2474,7 +2639,7 @@ namespace keycpp
 	 *         corresponding elements of v1 are NaN.
 	 */
 	template<class T>
-	std::vector<bool> isnan(std::vector<T> v1)
+	std::vector<bool> isnan(const std::vector<T> &v1)
 	{
 	    std::vector<bool> out(v1.size());
 	    for(int ii = 0; ii < v1.size(); ii++)
@@ -2487,7 +2652,7 @@ namespace keycpp
 	/** \brief Returns true if matrix is empty.
 	 */
 	template<class T>
-	matrix<bool> isempty(matrix<T> A)
+	matrix<bool> isempty(const matrix<T> &A)
 	{
 	    return A.empty();
 	}
@@ -2495,7 +2660,7 @@ namespace keycpp
 	/** \brief Returns true if vector is empty.
 	 */
 	template<class T>
-	std::vector<bool> isempty(std::vector<T> v1)
+	std::vector<bool> isempty(const std::vector<T> &v1)
 	{
 	    return v1.empty();
 	}
@@ -2503,7 +2668,7 @@ namespace keycpp
 	/** \brief Returns true if a is real.
 	 */
 	template<class T>
-	bool isreal(T a)
+	bool isreal(const T &a)
 	{
         if(abs(imag(a)) < eps)
         {
@@ -2515,7 +2680,7 @@ namespace keycpp
 	/** \brief Returns true if all elements of A are real.
 	 */
 	template<class T>
-	bool isreal(matrix<T> A)
+	bool isreal(const matrix<T> &A)
 	{
 	    for(int ii = 0; ii < A.size(1); ii++)
 	    {
@@ -2533,7 +2698,7 @@ namespace keycpp
 	/** \brief Returns true if all elements of v1 are real.
 	 */
 	template<class T>
-	bool isreal(std::vector<T> v1)
+	bool isreal(const std::vector<T> &v1)
 	{
 	    for(int ii = 0; ii < v1.size(); ii++)
 	    {
@@ -2548,7 +2713,7 @@ namespace keycpp
 	/** \brief Rounds the real and imaginary parts of complex<double> a towards
 	 *         positive infinity seperately.
 	 */
-	inline std::complex<double> ceil(std::complex<double> a)
+	inline std::complex<double> ceil(const std::complex<double> &a)
 	{
 	    std::complex<double> b;
 	    b = ceil(real(a)) + std::complex<double>(0.0,1.0)*ceil(imag(a));
@@ -2558,7 +2723,7 @@ namespace keycpp
 	/** \brief Rounds the elements of v1 towards positive infinity.
 	 */
 	template<class T>
-	std::vector<T> ceil(std::vector<T> v1)
+	std::vector<T> ceil(const std::vector<T> &v1)
 	{
 	    std::vector<T> v2(v1.size());
 	    for(int ii = 0; ii < v2.size(); ii++)
@@ -2571,7 +2736,7 @@ namespace keycpp
 	/** \brief Rounds the elements of A towards positive infinity.
 	 */
 	template<class T>
-	matrix<T> ceil(matrix<T> A)
+	matrix<T> ceil(const matrix<T> &A)
 	{
 	    matrix<T> B(A.size(1),A.size(2));
 	    for(int ii = 0; ii < B.size(1); ii++)
@@ -2588,7 +2753,7 @@ namespace keycpp
 	 *         of the companion matrix.
 	 */
 	template<class T>
-	std::vector<T> roots(std::vector<T> p)
+	std::vector<T> roots(const std::vector<T> &p)
 	{
 	    int n = p.size()-1;
 	    matrix<T> A = diag(ones<T>(n-1),-1);
@@ -2628,7 +2793,7 @@ namespace keycpp
 	/** \brief Overload of the C++ function sprintf(). This overload provides a more MATLAB-like
 	 *         interface. Specifically, the output is returned instead of passed by reference.
 	 */
-	inline std::string sprintf(const std::string fmt, ...)
+	inline std::string sprintf(const std::string &fmt, ...)
 	{
         int size = 100;
         std::string str;
@@ -2679,7 +2844,7 @@ namespace keycpp
      *         This restricts matrix A to be only square matrices. This is currently slower than inv(), use with care.
      */
     template<class T>
-    matrix<T> pinv(matrix<T> A)
+    matrix<T> pinv(const matrix<T> &A)
     {
         if(A.empty())
         {

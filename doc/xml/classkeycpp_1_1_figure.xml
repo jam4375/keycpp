@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="74" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="74" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="79" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="79" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_figure_1a9471608532e10f8854ddf20b7598f2ce" prot="private" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt;</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="75" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="75" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="80" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="80" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_figure_1ad0b2255b5ea3ae9e47eaab50c14b08a6" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="classkeycpp_1_1_plots" kindref="compound">Plots</ref> &gt;</type>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="76" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="76" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="81" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="81" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_figure_1aac35cd238a35d51822f4ba78c83f105b" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="77" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="77" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="82" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="82" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_figure_1af7b1068f17391548038b9fdcfee37504" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="78" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="78" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="83" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="83" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_figure_1acff322c7d1fff0d294e7e57ec7d63611" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="79" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="79" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="84" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_figure_1aadf70a04a81caed7bc1ba30eac255c79" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -96,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="80" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="80" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="85" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_figure_1a4c366a20b79f8f2d99fa02588c82997b" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -110,7 +110,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="81" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="81" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="86" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_figure_1a51e4a69cfb2f249e8880d21b7b452c45" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -124,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="82" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="82" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="87" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="87" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_figure_1a0f68e631079ba87244bf6c311a37e43a" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -138,7 +138,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="83" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="83" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="88" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="88" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_figure_1adf35f91a45d7727e50c052ce50530653" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -152,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="84" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="84" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="89" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -167,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="87" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="122" bodyend="150"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="92" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="139" bodyend="167"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a318799c9b423d48894395b1820c55c54" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -180,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="88" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="152" bodyend="156"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="93" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="169" bodyend="173"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a6d2444603362a7782232662410b364aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -221,7 +221,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="89" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="158" bodyend="192"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="94" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="175" bodyend="209"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1aa5761ef52842e596dca311c43920b7a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -270,7 +270,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="90" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="194" bodyend="264"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="95" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="211" bodyend="281"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1aa057f62607febd829d3e1a54801473f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -324,7 +324,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="91" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="266" bodyend="626"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="96" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="283" bodyend="643"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a21fc5536de2cdaf6272525a28f9e4072" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -358,7 +358,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="92" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="628" bodyend="636"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="97" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="645" bodyend="653"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a2c0f7d871472571200258a5c9b95474e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -400,7 +400,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="93" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="638" bodyend="646"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="98" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="655" bodyend="663"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a3646790552f73645bf926b1678fede40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -447,7 +447,535 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="94" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="648" bodyend="656"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="99" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="665" bodyend="673"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a88e55b3a2c1b05c7c7fe2e6785e11f58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void keycpp::Figure::plot</definition>
+        <argsstring>(matrix&lt; T &gt; y, std::string format, std::string property1, double val1)</argsstring>
+        <name>plot</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>property1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="100" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="690" bodyend="697"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a2e6daf7811c3d34fabb83bc8368e1e7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void keycpp::Figure::plot</definition>
+        <argsstring>(matrix&lt; T &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
+        <name>plot</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>property1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val1</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>property2</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="101" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="699" bodyend="706"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a39dd5e2d5e6acb6db99ac75476ea777a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void keycpp::Figure::plot</definition>
+        <argsstring>(matrix&lt; T &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
+        <name>plot</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>arguments</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lw</declname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ps</declname>
+          <defval>1.5</defval>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>legend_entry</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="102" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="708" bodyend="715"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a35987b305f55c3b8c612fbaec2223060" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void keycpp::Figure::plot</definition>
+        <argsstring>(matrix&lt; T &gt; x, matrix&lt; T &gt; y, std::string format, std::string property1, double val1)</argsstring>
+        <name>plot</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>property1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="103" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="717" bodyend="728"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a9000f7c76f21a37d4c70bee3103fe623" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void keycpp::Figure::plot</definition>
+        <argsstring>(matrix&lt; T &gt; x, matrix&lt; T &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
+        <name>plot</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>property1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val1</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>property2</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="104" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="730" bodyend="741"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a79f823ad4b62e20a85c9f1270e65fb01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void keycpp::Figure::plot</definition>
+        <argsstring>(matrix&lt; T &gt; x, matrix&lt; T &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
+        <name>plot</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>arguments</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lw</declname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ps</declname>
+          <defval>1.5</defval>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>legend_entry</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="105" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="743" bodyend="754"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a35b49db4a5665eaf2561f3f4c1f384a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void keycpp::Figure::plot</definition>
+        <argsstring>(matrix&lt; T &gt; x, std::vector&lt; T &gt; y, std::string format, std::string property1, double val1)</argsstring>
+        <name>plot</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>property1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="106" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="825" bodyend="846"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1ae388faef03ea59e0bf96c1793db909a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void keycpp::Figure::plot</definition>
+        <argsstring>(matrix&lt; T &gt; x, std::vector&lt; T &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
+        <name>plot</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>property1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val1</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>property2</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="107" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="848" bodyend="869"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1ad3f084b29b2b32cb07632eaba766c77e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void keycpp::Figure::plot</definition>
+        <argsstring>(matrix&lt; T &gt; x, std::vector&lt; T &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
+        <name>plot</name>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>arguments</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lw</declname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ps</declname>
+          <defval>1.5</defval>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>legend_entry</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="108" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="871" bodyend="892"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1aaf028e14b5cf294215cfa78fe1aeae3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void keycpp::Figure::plot</definition>
+        <argsstring>(std::vector&lt; T &gt; x, matrix&lt; T &gt; y, std::string format, std::string property1, double val1)</argsstring>
+        <name>plot</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>property1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="109" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="756" bodyend="777"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a85a510dd4a5acebaa8cd2351f3d5f208" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void keycpp::Figure::plot</definition>
+        <argsstring>(std::vector&lt; T &gt; x, matrix&lt; T &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
+        <name>plot</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>property1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val1</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>property2</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="110" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="779" bodyend="800"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a61695cfaa39e175e95d6f8dca2184cbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void keycpp::Figure::plot</definition>
+        <argsstring>(std::vector&lt; T &gt; x, matrix&lt; T &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
+        <name>plot</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>arguments</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lw</declname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ps</declname>
+          <defval>1.5</defval>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>legend_entry</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="111" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="802" bodyend="823"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1aa92130b35ce5dd9bc52e1ed4bd85682c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -488,7 +1016,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="95" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="658" bodyend="662"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="112" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="894" bodyend="898"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a442655002324395b08e5511bbb02146a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -537,7 +1065,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="96" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="664" bodyend="668"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="113" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="900" bodyend="904"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a849fa48f8fb7d4ee9cb205a5310f2c23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -591,7 +1119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="97" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="670" bodyend="674"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="114" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="906" bodyend="910"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a8fa3aba0daf6f74bbb7c1d0553156b44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -632,7 +1160,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="98" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="676" bodyend="680"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="115" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="912" bodyend="916"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a15fbce90514b55af60d3819c8da2561f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -681,7 +1209,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="99" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="682" bodyend="686"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="116" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="918" bodyend="922"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a52b6a651edb036721bfa6252eae0e70d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -735,7 +1263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="100" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="688" bodyend="692"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="117" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="924" bodyend="928"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1aed54e550273e8e6cd4b28b1177364a70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -776,7 +1304,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="101" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="694" bodyend="699"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="118" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="930" bodyend="935"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1af311b0c4a48a112abb571acc8cf9ad6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -825,7 +1353,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="102" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="701" bodyend="706"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="119" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="937" bodyend="942"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1ae5dce11f219f879eaadc52c54bff35b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -879,7 +1407,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="103" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="708" bodyend="713"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="120" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="944" bodyend="949"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1addd610a718f021f3e6c7c94f9bc7f285" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -896,7 +1424,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="104" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="715" bodyend="719"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="121" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="951" bodyend="955"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1aa965967db2165b001860f75fc22c9f28" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -913,7 +1441,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="105" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="721" bodyend="725"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="122" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="957" bodyend="961"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a922bd966ed40095f0ae7fa184f9d0ada" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -930,7 +1458,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="106" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="727" bodyend="731"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="123" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="963" bodyend="967"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a3c036559f8ad56b099ac0b44c652225d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -943,7 +1471,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="107" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="733" bodyend="737"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="124" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="969" bodyend="973"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a3736e01bc278c2c2b47e4ff046fdda0e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -956,7 +1484,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="108" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="739" bodyend="743"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="125" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="975" bodyend="979"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a65b80e5b67c7bbf225e3001a538a6dad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -969,7 +1497,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="109" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="745" bodyend="749"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="126" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="981" bodyend="985"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1ae5e5ac67e9450ea4fbf06fb3fcc6523a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -982,7 +1510,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="110" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="751" bodyend="755"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="127" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="987" bodyend="991"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a59b0acbd975579bf8330849f004637fc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1007,7 +1535,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="111" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="898" bodyend="916"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="128" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="1134" bodyend="1152"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a315140182f731518bc1f6f037a12c3a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1024,7 +1552,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="112" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="757" bodyend="774"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="129" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="993" bodyend="1010"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1aa01c44e6509c7075f4f547531c39741b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1041,7 +1569,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="113" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="848" bodyend="871"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="130" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="1084" bodyend="1107"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1ae779c53eebbee42148324bd8adfd7d01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1058,7 +1586,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="114" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="873" bodyend="896"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="131" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="1109" bodyend="1132"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a47cae082612e5436a6b0bc3d7f27e9d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1071,7 +1599,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="115" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="777" bodyend="802"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="132" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="1013" bodyend="1038"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1ab8d777d1b44e242b104350093ef09543" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1088,7 +1616,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="116" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="116" bodyend="116"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="133" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="133" bodyend="133"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a6c1e59c4e8288e3880bde70db3723037" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -1101,7 +1629,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="117" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="117" bodyend="117"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="134" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="134" bodyend="134"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1a7375fe8611759fda180d626f91eab510" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1122,7 +1650,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="118" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="804" bodyend="815"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="135" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="1040" bodyend="1051"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_figure_1af82ed243d2b4f59f5e01566eb03cf9d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1143,14 +1671,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="119" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="817" bodyend="846"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="136" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="1053" bodyend="1082"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="72" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="71" bodyend="120"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="77" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="76" bodyend="137"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1_figure_1a9471608532e10f8854ddf20b7598f2ce" prot="private" virt="non-virtual"><scope>keycpp::Figure</scope><name>colors</name></member>
       <member refid="classkeycpp_1_1_figure_1acff322c7d1fff0d294e7e57ec7d63611" prot="private" virt="non-virtual"><scope>keycpp::Figure</scope><name>current_plot</name></member>
@@ -1179,6 +1707,18 @@
       <member refid="classkeycpp_1_1_figure_1a21fc5536de2cdaf6272525a28f9e4072" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
       <member refid="classkeycpp_1_1_figure_1a2c0f7d871472571200258a5c9b95474e" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
       <member refid="classkeycpp_1_1_figure_1a3646790552f73645bf926b1678fede40" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a88e55b3a2c1b05c7c7fe2e6785e11f58" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a2e6daf7811c3d34fabb83bc8368e1e7c" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a39dd5e2d5e6acb6db99ac75476ea777a" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a35987b305f55c3b8c612fbaec2223060" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a9000f7c76f21a37d4c70bee3103fe623" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a79f823ad4b62e20a85c9f1270e65fb01" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a35b49db4a5665eaf2561f3f4c1f384a5" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1ae388faef03ea59e0bf96c1793db909a4" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1ad3f084b29b2b32cb07632eaba766c77e" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1aaf028e14b5cf294215cfa78fe1aeae3e" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a85a510dd4a5acebaa8cd2351f3d5f208" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a61695cfaa39e175e95d6f8dca2184cbf" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
       <member refid="classkeycpp_1_1_figure_1a47cae082612e5436a6b0bc3d7f27e9d9" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>replot_all</name></member>
       <member refid="classkeycpp_1_1_figure_1aa92130b35ce5dd9bc52e1ed4bd85682c" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogx</name></member>
       <member refid="classkeycpp_1_1_figure_1a442655002324395b08e5511bbb02146a" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogx</name></member>

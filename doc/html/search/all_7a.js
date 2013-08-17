@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['zeros',['zeros',['../namespacekeycpp.html#a86f1406f9fad5a439d8eff01aba8eac6',1,'keycpp::zeros(const int M, const int N)'],['../namespacekeycpp.html#a17115c92ffe695fd6ecb002f5ded220a',1,'keycpp::zeros(const int N)']]],
+  ['zeros',['zeros',['../namespacekeycpp.html#a5699c522088657287bf0ac01173b716c',1,'keycpp::zeros(const int &amp;M, const int &amp;N)'],['../namespacekeycpp.html#a9a0f013931cb9989320b014d151cc527',1,'keycpp::zeros(const int &amp;N)']]],
   ['zgecon_5f',['zgecon_',['../namespacekeycpp.html#a444e3cdc7e7929414370b6b50ea1218c',1,'keycpp']]],
   ['zgeev_5f',['zgeev_',['../namespacekeycpp.html#a8c1cca2a162f40fc6c6218c35cadf9f2',1,'keycpp']]],
   ['zgesvd_5f',['zgesvd_',['../namespacekeycpp.html#afa5e2f74110f53bd288c15ce1f183f9b',1,'keycpp']]],

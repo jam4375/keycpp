@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pinv',['pinv',['../namespacekeycpp.html#a5bb5afeca1d51f6349d1fa1d64a2f4d3',1,'keycpp']]],
+  ['pinv',['pinv',['../namespacekeycpp.html#ac20bd2ef4fb18cbcdb0f462a89447bd7',1,'keycpp']]],
   ['plot_5fequation',['plot_equation',['../class_gnuplot.html#a42dfb8c9d4636745c7be277ed818e849',1,'Gnuplot']]],
   ['plot_5fequation3d',['plot_equation3d',['../class_gnuplot.html#a79aed3a6927f7d1d3497cba441e8a943',1,'Gnuplot']]],
   ['plot_5fimage',['plot_image',['../class_gnuplot.html#aae22c0470a6fbbc1f5e84dec8d023381',1,'Gnuplot']]],
@@ -13,5 +13,5 @@ var searchData=
   ['plotfile_5fxy',['plotfile_xy',['../class_gnuplot.html#a10e1fc7344bd726faa2d70cd5ced5e5e',1,'Gnuplot']]],
   ['plotfile_5fxy_5ferr',['plotfile_xy_err',['../class_gnuplot.html#afe9d44ba12f617188111ab915010f3ab',1,'Gnuplot']]],
   ['plotfile_5fxyz',['plotfile_xyz',['../class_gnuplot.html#a9dbde2a91eb816481657f3a22c9b0046',1,'Gnuplot']]],
-  ['prod',['prod',['../namespacekeycpp.html#aae8a5ac9572fd012881e19f850b0f47d',1,'keycpp::prod(const std::vector&lt; T &gt; x)'],['../namespacekeycpp.html#a0b348cee175715d20a1997b471c47d7a',1,'keycpp::prod(const matrix&lt; T &gt; A)']]]
+  ['prod',['prod',['../namespacekeycpp.html#a5823fd4b932039262a1eddb2f4f47299',1,'keycpp::prod(const std::vector&lt; T &gt; &amp;x)'],['../namespacekeycpp.html#a9ff26fd7007c28ea88b3ad7cdf90546c',1,'keycpp::prod(const matrix&lt; T &gt; &amp;A)']]]
 ];

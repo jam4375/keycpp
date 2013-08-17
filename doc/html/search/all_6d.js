@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['mat2vec',['mat2vec',['../namespacekeycpp.html#a8a0e8201f775945a0a61d6d645a3456e',1,'keycpp']]],
+  ['mat2vec',['mat2vec',['../namespacekeycpp.html#a966268670bc3e3b4f7107b8278e9b399',1,'keycpp']]],
   ['matrix',['matrix',['../classkeycpp_1_1matrix.html',1,'keycpp']]],
   ['matrix_3c_20double_20_3e',['matrix&lt; double &gt;',['../classkeycpp_1_1matrix.html',1,'keycpp']]],
   ['matrix_3c_20int_20_3e',['matrix&lt; int &gt;',['../classkeycpp_1_1matrix.html',1,'keycpp']]],
