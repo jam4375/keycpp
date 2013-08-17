@@ -714,6 +714,36 @@ namespace keycpp
 		return eop(A,static_cast<T (*)(T)>(&std::exp));
 	}
 	
+	/** \brief Return a vector containing the natural logarithm of each element of v1.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> log(const std::vector<std::complex<T>> & v1)
+    {
+        return eop(v1, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::log<T>));
+    }
+	
+	/** \brief Return a vector containing the natural logarithm of each element of v1.
+	 */
+	template<class T> std::vector<T> log(const std::vector<T> &v1)
+	{
+		return eop(v1,static_cast<T (*)(T)>(&std::log));
+	}
+	
+	/** \brief Return a vector containing the natural logarithm of each element of A.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> log(const matrix<std::complex<T>> &A)
+    {
+        return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::log<T>));
+    }
+	
+	/** \brief Return a vector containing the natural logarithm of each element of A.
+	 */
+	template<class T> std::vector<T> log(const matrix<T> &A)
+	{
+		return eop(A,static_cast<T (*)(T)>(&std::log));
+	}
+	
 	template<class T> matrix<T> eye(const int &N)
 	{
 		matrix<T> A(N,N);
