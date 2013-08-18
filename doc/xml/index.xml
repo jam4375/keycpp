@@ -339,6 +339,14 @@
     <member refid="namespacekeycpp_1ae0edec63f48a81c576da0c0ffc768af9" kind="function"><name>abs</name></member>
     <member refid="namespacekeycpp_1a952e5296774667c3be4e792b5cd980da" kind="function"><name>csqrt</name></member>
     <member refid="namespacekeycpp_1a4da6882977b2262f8d6f080b0eaf60c5" kind="function"><name>operator+</name></member>
+    <member refid="namespacekeycpp_1a1c1cd804c6f704b7a9124a9d9a82c325" kind="function"><name>operator+</name></member>
+    <member refid="namespacekeycpp_1ad4df2f7feaefed6813ecfe11e37087ab" kind="function"><name>operator+</name></member>
+    <member refid="namespacekeycpp_1adff86e062c6497110b7505b0ef715c2c" kind="function"><name>operator+</name></member>
+    <member refid="namespacekeycpp_1a4b4a64905c9d681c174b2dfcfba272c4" kind="function"><name>operator+</name></member>
+    <member refid="namespacekeycpp_1af66a177fcb4f0ec1f260fdb39069fc29" kind="function"><name>operator-</name></member>
+    <member refid="namespacekeycpp_1a9a99d5b9548a160a11ed713b85038871" kind="function"><name>operator-</name></member>
+    <member refid="namespacekeycpp_1a71a8f2ebc458f06e29b17ecc28ed000d" kind="function"><name>operator-</name></member>
+    <member refid="namespacekeycpp_1a4bc853f9410d964ef9f163ce53ea4828" kind="function"><name>operator-</name></member>
     <member refid="namespacekeycpp_1ab185edce957f4afd65cb641ec6307376" kind="function"><name>operator-</name></member>
     <member refid="namespacekeycpp_1a8d5dbf37b71d16d686dd0fdbad82f8fb" kind="function"><name>operator*</name></member>
     <member refid="namespacekeycpp_1ae187563f8f86e256bc1394edcba1b2b1" kind="function"><name>operator*</name></member>
@@ -347,6 +355,8 @@
     <member refid="namespacekeycpp_1aa2e9a06b12f7df18005a3daa3c051b2c" kind="function"><name>operator*</name></member>
     <member refid="namespacekeycpp_1ac2665554c04ea23aad98e77d1618ca6b" kind="function"><name>operator-</name></member>
     <member refid="namespacekeycpp_1a390125160a7febd08d5c30629f4f698f" kind="function"><name>operator-</name></member>
+    <member refid="namespacekeycpp_1a7825f94b7be431bab5e5c99f8d7a1b54" kind="function"><name>operator+</name></member>
+    <member refid="namespacekeycpp_1a5b10f703c72875b9f5e2ecc5c7696f9c" kind="function"><name>operator+</name></member>
     <member refid="namespacekeycpp_1a3852c35cfcc8caa784465a26d04c68a1" kind="function"><name>operator/</name></member>
     <member refid="namespacekeycpp_1a394f23f09cf122a8e8c20a7afd40f58e" kind="function"><name>operator/</name></member>
     <member refid="namespacekeycpp_1aafc0089bdf204385c1e627755c5070b0" kind="function"><name>operator/</name></member>
@@ -369,6 +379,22 @@
     <member refid="namespacekeycpp_1a66a68550626786b480e7c8d02aaf9039" kind="function"><name>exp</name></member>
     <member refid="namespacekeycpp_1a6a8bd2143a6d613b560f71d0b99b346f" kind="function"><name>exp</name></member>
     <member refid="namespacekeycpp_1a6cc8180fd2f17512f0f75957615da294" kind="function"><name>exp</name></member>
+    <member refid="namespacekeycpp_1a95843ef0a09d799d8b62eb7b91e9c02f" kind="function"><name>log</name></member>
+    <member refid="namespacekeycpp_1a8239f43008337eeab762bc1c7414e735" kind="function"><name>log</name></member>
+    <member refid="namespacekeycpp_1aba78d97ea38234b858fffc97b05e6925" kind="function"><name>log</name></member>
+    <member refid="namespacekeycpp_1ab1c65fb4ee4ceaf869361f4fb6fef3dd" kind="function"><name>log</name></member>
+    <member refid="namespacekeycpp_1afb93c1aed2037f957fa113994d7239ee" kind="function"><name>log10</name></member>
+    <member refid="namespacekeycpp_1a3042ac961c7bffb3c315f41f175c5760" kind="function"><name>log10</name></member>
+    <member refid="namespacekeycpp_1a3ea3b5f6f548e122d29e4571e15307fd" kind="function"><name>log10</name></member>
+    <member refid="namespacekeycpp_1a1b6529b56bdc13937f058879d0f5881d" kind="function"><name>log10</name></member>
+    <member refid="namespacekeycpp_1a24d916a516c57aad0e383ce29a50b963" kind="function"><name>sqrt</name></member>
+    <member refid="namespacekeycpp_1a8677ad8b7dc8485540330a632cb82994" kind="function"><name>sqrt</name></member>
+    <member refid="namespacekeycpp_1a2955a17019e584c29d9cce73ea572adc" kind="function"><name>sqrt</name></member>
+    <member refid="namespacekeycpp_1ab542118d6ab4772a4f100df097f7d55d" kind="function"><name>sqrt</name></member>
+    <member refid="namespacekeycpp_1a9e9303ca44f49ec926854e6ad9506050" kind="function"><name>csqrt</name></member>
+    <member refid="namespacekeycpp_1a1e6c724d2e4067f9ae5fd3098da74bf6" kind="function"><name>csqrt</name></member>
+    <member refid="namespacekeycpp_1a4ce9f002c4f3db2000a5c8d3a38f3ca5" kind="function"><name>csqrt</name></member>
+    <member refid="namespacekeycpp_1abe9f54061aba34fe730de8c35d68f9fe" kind="function"><name>csqrt</name></member>
     <member refid="namespacekeycpp_1a8ae33fb19a521ab1ec1f22e7c39ca076" kind="function"><name>eye</name></member>
     <member refid="namespacekeycpp_1a2824156817719ffe96a842dd0ef27ae5" kind="function"><name>size</name></member>
     <member refid="namespacekeycpp_1ae713df143a5e71da166f450e01a536e2" kind="function"><name>size</name></member>
@@ -388,13 +414,13 @@
     <member refid="namespacekeycpp_1ac57d32902cba2c399475015235aeccec" kind="function"><name>ldivide</name></member>
     <member refid="namespacekeycpp_1a7a86bc7e25833cdf9266c038a4edb0ea" kind="function"><name>ldivide</name></member>
     <member refid="namespacekeycpp_1a87f2917e6a7c8e20d010aea0d8480668" kind="function"><name>sign</name></member>
-    <member refid="namespacekeycpp_1a646c5e616337a8174bd39ce729e53612" kind="function"><name>max</name></member>
-    <member refid="namespacekeycpp_1a28171fa81d0f537dd058e63164410b43" kind="function"><name>min</name></member>
     <member refid="namespacekeycpp_1aaa2e17334911e8a447a5ef6c0cc54c3f" kind="function"><name>angle</name></member>
     <member refid="namespacekeycpp_1a9aed8b7c5c058bda28186010d2f3833f" kind="function"><name>angle</name></member>
     <member refid="namespacekeycpp_1af0c9c769d613f7526406ecf3b3351d89" kind="function"><name>angle</name></member>
+    <member refid="namespacekeycpp_1a646c5e616337a8174bd39ce729e53612" kind="function"><name>max</name></member>
     <member refid="namespacekeycpp_1a35292f7ead7b19a2fc098f50f0147ce6" kind="function"><name>max</name></member>
     <member refid="namespacekeycpp_1af7ff5485352bd4412d18050843809d42" kind="function"><name>max</name></member>
+    <member refid="namespacekeycpp_1a28171fa81d0f537dd058e63164410b43" kind="function"><name>min</name></member>
     <member refid="namespacekeycpp_1aa0241416e190842fd0c352a6c94c57c3" kind="function"><name>min</name></member>
     <member refid="namespacekeycpp_1a33adfcd8368c2f96891ca3e27fd8affe" kind="function"><name>min</name></member>
     <member refid="namespacekeycpp_1a7fd5ce0385e9cc7bed5b44ed8475e8aa" kind="function"><name>transpose</name></member>

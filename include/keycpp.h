@@ -414,6 +414,14 @@ namespace keycpp
 
 	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> operator+(const std::vector<T>& v1, const std::vector<U>& v2)
 	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot add empty vector!");
+	    }
+	    if(v1.size() != v2.size())
+	    {
+	        throw KeyCppException("Cannot add vectors of different sizes!");
+	    }
 		std::vector<decltype(std::declval<T>()*std::declval<U>())> result(v1.size());
 		for(int ii = 0; ii < result.size(); ii++)
 		{
@@ -422,8 +430,110 @@ namespace keycpp
 		return result;
 	}
 
+	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> operator+(const std::vector<T>& v1, const U& a)
+	{
+		std::vector<decltype(std::declval<T>()*std::declval<U>())> result(v1.size());
+		for(int ii = 0; ii < result.size(); ii++)
+		{
+			result[ii] = v1[ii]+a;
+		}
+		return result;
+	}
+
+	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> operator+(const U& a, const std::vector<T>& v2)
+	{
+		std::vector<decltype(std::declval<T>()*std::declval<U>())> result(v2.size());
+		for(int ii = 0; ii < result.size(); ii++)
+		{
+			result[ii] = v2[ii]+a;
+		}
+		return result;
+	}
+
+	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator+(const matrix<T>& A, const U& a)
+	{
+		matrix<decltype(std::declval<T>()*std::declval<U>())> result(A.size(1),A.size(2));
+		for(int ii = 0; ii < result.size(1); ii++)
+		{
+		    for(int jj = 0; jj < result.size(2); jj++)
+		    {
+			    result(ii,jj) = A(ii,jj)+a;
+			}
+		}
+		return result;
+	}
+
+	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator+(const U& a, const matrix<T>& A)
+	{
+		matrix<decltype(std::declval<T>()*std::declval<U>())> result(A.size(1),A.size(2));
+		for(int ii = 0; ii < result.size(1); ii++)
+		{
+		    for(int jj = 0; jj < result.size(2); jj++)
+		    {
+			    result(ii,jj) = A(ii,jj)+a;
+			}
+		}
+		return result;
+	}
+	
+	
+
+	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> operator-(const std::vector<T>& v1, const U& a)
+	{
+		std::vector<decltype(std::declval<T>()*std::declval<U>())> result(v1.size());
+		for(int ii = 0; ii < result.size(); ii++)
+		{
+			result[ii] = v1[ii]-a;
+		}
+		return result;
+	}
+
+	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> operator-(const U& a, const std::vector<T>& v2)
+	{
+		std::vector<decltype(std::declval<T>()*std::declval<U>())> result(v2.size());
+		for(int ii = 0; ii < result.size(); ii++)
+		{
+			result[ii] = a - v2[ii];
+		}
+		return result;
+	}
+
+	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator-(const matrix<T>& A, const U& a)
+	{
+		matrix<decltype(std::declval<T>()*std::declval<U>())> result(A.size(1),A.size(2));
+		for(int ii = 0; ii < result.size(1); ii++)
+		{
+		    for(int jj = 0; jj < result.size(2); jj++)
+		    {
+			    result(ii,jj) = A(ii,jj)-a;
+			}
+		}
+		return result;
+	}
+
+	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator-(const U& a, const matrix<T>& A)
+	{
+		matrix<decltype(std::declval<T>()*std::declval<U>())> result(A.size(1),A.size(2));
+		for(int ii = 0; ii < result.size(1); ii++)
+		{
+		    for(int jj = 0; jj < result.size(2); jj++)
+		    {
+			    result(ii,jj) = a-A(ii,jj);
+			}
+		}
+		return result;
+	}
+
 	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> operator-(const std::vector<T>& v1, const std::vector<U>& v2)
 	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot subtract empty vector!");
+	    }
+	    if(v1.size() != v2.size())
+	    {
+	        throw KeyCppException("Cannot subtract vectors of different sizes!");
+	    }
 		std::vector<decltype(std::declval<T>()*std::declval<U>())> result(v1.size());
 		for(int ii = 0; ii < result.size(); ii++)
 		{
@@ -528,6 +638,29 @@ namespace keycpp
 			for(int jj = 0; jj < B.size(2); jj++)
 			{
 				B(ii,jj) = -A(ii,jj);
+			}
+		}
+		return B;
+	}
+	
+	template<class T> std::vector<T> operator+(const std::vector<T>& v1)
+	{
+		std::vector<T> v2(v1.size());
+		for(int ii = 0; ii < v2.size(); ii++)
+		{
+			v2[ii] = v1[ii];
+		}
+		return v2;
+	}
+	
+	template<class T> matrix<T> operator+(const matrix<T>& A)
+	{
+		matrix<T> B(A.size(1),A.size(2));
+		for(int ii = 0; ii < B.size(1); ii++)
+		{
+			for(int jj = 0; jj < B.size(2); jj++)
+			{
+				B(ii,jj) = A(ii,jj);
 			}
 		}
 		return B;
@@ -742,6 +875,96 @@ namespace keycpp
 	template<class T> std::vector<T> log(const matrix<T> &A)
 	{
 		return eop(A,static_cast<T (*)(T)>(&std::log));
+	}
+	
+	/** \brief Return a vector containing the base 10 logarithm of each element of v1.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> log10(const std::vector<std::complex<T>> & v1)
+    {
+        return eop(v1, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::log10<T>));
+    }
+	
+	/** \brief Return a vector containing the base 10 logarithm of each element of v1.
+	 */
+	template<class T> std::vector<T> log10(const std::vector<T> &v1)
+	{
+		return eop(v1,static_cast<T (*)(T)>(&std::log10));
+	}
+	
+	/** \brief Return a vector containing the base 10 logarithm of each element of A.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> log10(const matrix<std::complex<T>> &A)
+    {
+        return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::log10<T>));
+    }
+	
+	/** \brief Return a vector containing the base 10 logarithm of each element of A.
+	 */
+	template<class T> std::vector<T> log10(const matrix<T> &A)
+	{
+		return eop(A,static_cast<T (*)(T)>(&std::log10));
+	}
+	
+	/** \brief Return a vector containing the sqrt of each element of v1.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> sqrt(const std::vector<std::complex<T>> & v1)
+    {
+        return eop(v1, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::sqrt<T>));
+    }
+	
+	/** \brief Return a vector containing the sqrt of each element of v1.
+	 */
+	template<class T> std::vector<T> sqrt(const std::vector<T> &v1)
+	{
+		return eop(v1,static_cast<T (*)(T)>(&std::sqrt));
+	}
+	
+	/** \brief Return a vector containing the sqrt of each element of A.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> sqrt(const matrix<std::complex<T>> &A)
+    {
+        return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::sqrt<T>));
+    }
+	
+	/** \brief Return a vector containing the sqrt of each element of A.
+	 */
+	template<class T> std::vector<T> sqrt(const matrix<T> &A)
+	{
+		return eop(A,static_cast<T (*)(T)>(&std::sqrt));
+	}
+	
+	/** \brief Return a vector containing the csqrt of each element of v1.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> csqrt(const std::vector<std::complex<T>> & v1)
+    {
+        return eop(v1, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&csqrt<T>));
+    }
+	
+	/** \brief Return a vector containing the csqrt of each element of v1.
+	 */
+	template<class T> std::vector<T> csqrt(const std::vector<T> &v1)
+	{
+		return eop(v1,static_cast<T (*)(T)>(&csqrt));
+	}
+	
+	/** \brief Return a vector containing the csqrt of each element of A.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> csqrt(const matrix<std::complex<T>> &A)
+    {
+        return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&csqrt<T>));
+    }
+	
+	/** \brief Return a vector containing the csqrt of each element of A.
+	 */
+	template<class T> std::vector<T> csqrt(const matrix<T> &A)
+	{
+		return eop(A,static_cast<T (*)(T)>(&csqrt));
 	}
 	
 	template<class T> matrix<T> eye(const int &N)
@@ -1135,36 +1358,6 @@ namespace keycpp
 	{
 	    return (T(0) < val) - (val < T(0));
 	}
-
-	template<class T> T max(const std::vector<T> &x)
-	{
-		double a = nan("");
-		int index = 0;
-		for(int ii = 0; ii < x.size(); ii++)
-		{
-			if(x[ii] == x[ii] && (x[ii] > a || a != a))
-			{
-				a = x[ii];
-				index = ii;
-			}
-		}
-		return x[index];
-	}
-
-	template<class T> T min(const std::vector<T> &x)
-	{
-		double a = nan("");
-		int index = 0;
-		for(int ii = 0; ii < x.size(); ii++)
-		{
-			if(x[ii] == x[ii] && (x[ii] < a || a != a))
-			{
-				a = x[ii];
-				index = ii;
-			}
-		}
-		return x[index];
-	}
 	
 	template<class T> T angle(const std::complex<T> &x)
 	{
@@ -1182,6 +1375,21 @@ namespace keycpp
     {
         return eop(A, static_cast<T (*)(const std::complex<T> &)>(&std::arg<T>));
     }
+
+	template<class T> T max(const std::vector<T> &x)
+	{
+		double a = nan("");
+		int index = 0;
+		for(int ii = 0; ii < x.size(); ii++)
+		{
+			if(x[ii] == x[ii] && (x[ii] > a || a != a))
+			{
+				a = x[ii];
+				index = ii;
+			}
+		}
+		return x[index];
+	}
 
 	inline std::complex<double> max(const std::vector<std::complex<double> > &x)
 	{
@@ -1208,6 +1416,21 @@ namespace keycpp
 	        v[ii] = max(A.getCol(ii));
 	    }
 	    return v;
+	}
+
+	template<class T> T min(const std::vector<T> &x)
+	{
+		double a = nan("");
+		int index = 0;
+		for(int ii = 0; ii < x.size(); ii++)
+		{
+			if(x[ii] == x[ii] && (x[ii] < a || a != a))
+			{
+				a = x[ii];
+				index = ii;
+			}
+		}
+		return x[index];
 	}
 
 	inline std::complex<double> min(const std::vector<std::complex<double> > &x)

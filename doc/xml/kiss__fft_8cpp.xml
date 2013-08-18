@@ -688,7 +688,7 @@
 <codeline lineno="310"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p=4;</highlight></codeline>
 <codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>floor_sqrt;</highlight></codeline>
-<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>floor_sqrt<sp/>=<sp/>floor(<sp/>sqrt((</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)n)<sp/>);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>floor_sqrt<sp/>=<sp/>floor(<sp/><ref refid="namespacekeycpp_1a24d916a516c57aad0e383ce29a50b963" kindref="member" tooltip="Return a vector containing the sqrt of each element of v1.">sqrt</ref>((</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)n)<sp/>);</highlight></codeline>
 <codeline lineno="314"><highlight class="normal"></highlight></codeline>
 <codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*factor<sp/>out<sp/>powers<sp/>of<sp/>4,<sp/>powers<sp/>of<sp/>2,<sp/>then<sp/>any<sp/>remaining<sp/>primes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>

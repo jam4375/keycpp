@@ -7,6 +7,7 @@ var searchData=
   ['cosh',['cosh',['../namespacekeycpp.html#ae8ce29f6b9a95792764fcffc175ffc2a',1,'keycpp::cosh(const std::vector&lt; std::complex&lt; T &gt;&gt; &amp;v1)'],['../namespacekeycpp.html#a227b4df07d8fb2beb7f8b63408345caf',1,'keycpp::cosh(const std::vector&lt; T &gt; &amp;v1)']]],
   ['create_5ftmpfile',['create_tmpfile',['../class_gnuplot.html#a8ced9e766e0677b938178dafe9264ff7',1,'Gnuplot']]],
   ['cross',['cross',['../namespacekeycpp.html#a73fa9874e6923dd54c95d52a22a99d00',1,'keycpp']]],
+  ['csqrt',['csqrt',['../namespacekeycpp.html#a9e9303ca44f49ec926854e6ad9506050',1,'keycpp::csqrt(const std::vector&lt; std::complex&lt; T &gt;&gt; &amp;v1)'],['../namespacekeycpp.html#a1e6c724d2e4067f9ae5fd3098da74bf6',1,'keycpp::csqrt(const std::vector&lt; T &gt; &amp;v1)'],['../namespacekeycpp.html#a4ce9f002c4f3db2000a5c8d3a38f3ca5',1,'keycpp::csqrt(const matrix&lt; std::complex&lt; T &gt;&gt; &amp;A)'],['../namespacekeycpp.html#abe9f54061aba34fe730de8c35d68f9fe',1,'keycpp::csqrt(const matrix&lt; T &gt; &amp;A)']]],
   ['ctranspose',['ctranspose',['../namespacekeycpp.html#a14503c0419f365433d88fa081d473210',1,'keycpp::ctranspose(const matrix&lt; T &gt; &amp;A)'],['../namespacekeycpp.html#ad276b8edd0f4f62b430620047245d18d',1,'keycpp::ctranspose(const std::vector&lt; T &gt; &amp;v1)']]],
   ['ctranspose_3c_20double_20_3e',['ctranspose&lt; double &gt;',['../namespacekeycpp.html#a9fc1e2c9bf6ee79ee28a6f25b7b55b23',1,'keycpp']]]
 ];
