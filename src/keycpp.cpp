@@ -450,7 +450,7 @@ namespace keycpp
 		int m = A_in.size(2);
 		int nrhs = 1;
 
-        int info, lda;
+        int info = 0, lda;
         double anorm, rcond;
         
         int *iw = new int[A_in.size(1)];

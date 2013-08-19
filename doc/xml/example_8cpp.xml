@@ -95,29 +95,29 @@
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>x<sp/>=<sp/>linsolve(A,b);</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Print<sp/>the<sp/>result<sp/>to<sp/>the<sp/>screen:</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacekeycpp_1a6a8a286886d48471685b18b7782f1e4a" kindref="member" tooltip="Displays on standard output any parameter passed to it provided the operator &amp;lt;&amp;lt; is defined for its ty...">disp</ref>(x);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/><sp/>//<sp/>Now<sp/>lets<sp/>do<sp/>something<sp/>a<sp/>little<sp/>more<sp/>complicated,<sp/>solve<sp/>an</highlight></codeline>
-<codeline lineno="48"><highlight class="comment"><sp/><sp/><sp/><sp/>//<sp/>ordinary<sp/>differential<sp/>equation<sp/>(ODE):</highlight></codeline>
-<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/>//<sp/>y(1)&apos;<sp/>=<sp/>y(2)*y(3);</highlight></codeline>
-<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/>//<sp/>y(2)&apos;<sp/>=<sp/>-y(1)*y(3);</highlight></codeline>
-<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/>//<sp/>y(3)&apos;<sp/>=<sp/>0.51*y(1)*y(2);</highlight></codeline>
-<codeline lineno="52"><highlight class="comment"><sp/><sp/><sp/><sp/>//<sp/>With<sp/>initial<sp/>conditions<sp/>at<sp/>t<sp/>=<sp/>0:<sp/>y(1)<sp/>=<sp/>0;<sp/>y(2)<sp/>=<sp/>1;<sp/>y(3)<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/>OdeClass<sp/>myOde;</highlight></codeline>
-<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>t2<sp/>=<sp/>linspace(0.0,12.0,100);</highlight></codeline>
-<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>ICs<sp/>=<sp/>{0.0,<sp/>1.0,<sp/>1.0};</highlight></codeline>
-<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/>matrix&lt;double&gt;<sp/>y<sp/>=<sp/>ode45(myOde,<sp/>t2,<sp/>ICs);</highlight></codeline>
-<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/>//<sp/>Now<sp/>that<sp/>we<sp/>have<sp/>solved<sp/>the<sp/>ODE,<sp/>lets<sp/>plot<sp/>the<sp/>results:</highlight></codeline>
-<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/>Figure<sp/>h2;</highlight></codeline>
-<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/>h2.plot(t2,y.getCol(0),&quot;-&quot;);</highlight></codeline>
-<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/><sp/>h2.hold_on();</highlight></codeline>
-<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/><sp/>h2.plot(t2,y.getCol(1),&quot;-.&quot;);</highlight></codeline>
-<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/><sp/>h2.plot(t2,y.getCol(2),&quot;x&quot;);</highlight></codeline>
-<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/>h2.xlabel(&quot;t&quot;);</highlight></codeline>
-<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/><sp/>h2.ylabel(&quot;y&quot;);</highlight></codeline>
-<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/>set(h2,&quot;fontsize&quot;,14);</highlight></codeline>
-<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/>h2.title(&quot;ODE<sp/>Solution&quot;);</highlight></codeline>
-<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>lets<sp/>do<sp/>something<sp/>a<sp/>little<sp/>more<sp/>complicated,<sp/>solve<sp/>an</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ordinary<sp/>differential<sp/>equation<sp/>(ODE):</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>y(1)&apos;<sp/>=<sp/>y(2)*y(3);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>y(2)&apos;<sp/>=<sp/>-y(1)*y(3);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>y(3)&apos;<sp/>=<sp/>0.51*y(1)*y(2);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>With<sp/>initial<sp/>conditions<sp/>at<sp/>t<sp/>=<sp/>0:<sp/>y(1)<sp/>=<sp/>0;<sp/>y(2)<sp/>=<sp/>1;<sp/>y(3)<sp/>=<sp/>1;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_ode_class" kindref="compound">OdeClass</ref><sp/>myOde;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>t2<sp/>=<sp/><ref refid="namespacekeycpp_1a4e8769de1f22713d3564350d53125b26" kindref="member" tooltip="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">linspace</ref>(0.0,12.0,100);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;double&gt;<sp/>ICs<sp/>=<sp/>{0.0,<sp/>1.0,<sp/>1.0};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix&lt;double&gt;</ref><sp/>y<sp/>=<sp/>ode45(myOde,<sp/>t2,<sp/>ICs);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>that<sp/>we<sp/>have<sp/>solved<sp/>the<sp/>ODE,<sp/>lets<sp/>plot<sp/>the<sp/>results:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1_figure" kindref="compound">Figure</ref><sp/>h2;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.plot(t2,y.getCol(0),</highlight><highlight class="stringliteral">&quot;-&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.hold_on();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.plot(t2,y.getCol(1),</highlight><highlight class="stringliteral">&quot;-.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.plot(t2,y.getCol(2),</highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.xlabel(</highlight><highlight class="stringliteral">&quot;t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.ylabel(</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">(h2,</highlight><highlight class="stringliteral">&quot;fontsize&quot;</highlight><highlight class="normal">,14);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.title(</highlight><highlight class="stringliteral">&quot;ODE<sp/>Solution&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
 <codeline lineno="70"><highlight class="normal">}</highlight></codeline>
     </programlisting>

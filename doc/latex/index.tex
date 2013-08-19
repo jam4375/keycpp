@@ -10,6 +10,8 @@ The {\itshape only} extra dependencies that you need on your system are the \hre
 
 \subsubsection*{Ubuntu (and various \href{https://wiki.ubuntu.com/UbuntuFlavors}{\tt flavors})}
 
+{\itshape N\-O\-T\-E\-: For permformance reasons, use of Open\-B\-L\-A\-S/\-L\-A\-P\-A\-C\-K is preferred over the default versions. Also, for Intel C\-P\-U's, Intel's M\-K\-L library provides the best performance.}
+
 To acquire all the required dependencies you can execute the following commands\-:
 
 {\ttfamily sudo apt-\/get install build-\/essential}
@@ -18,9 +20,9 @@ Until Ubuntu 13.\-10 comes out in October 2013, you need to install \href{http:/
 
 {\ttfamily sudo apt-\/get install libboost-\/all-\/dev}
 
-{\ttfamily sudo apt-\/get install libblas3gf libblas-\/doc libblas-\/dev}
+{\ttfamily sudo apt-\/get install libopenblas-\/dev}
 
-{\ttfamily sudo apt-\/get install liblapack3gf liblapack-\/doc liblapack-\/dev}
+{\ttfamily sudo apt-\/get install liblapack-\/dev}
 
 \subsubsection*{Other Operating Systems}
 
@@ -50,7 +52,13 @@ If everything was successful, you should be able to compile and run the example 
 
 {\ttfamily ./example}
 
-When you are writing your own programs be sure to link with the {\ttfamily libkeycpp.\-a} and {\ttfamily liblapack.\-a} libraries. With {\ttfamily g++} the form is the same as used above. {\itshape D\-O N\-O\-T F\-O\-R\-G\-E\-T T\-O C\-O\-M\-P\-I\-L\-E W\-I\-T\-H T\-H\-E C++11 S\-T\-A\-N\-D\-A\-R\-D!}
+If you are using Intel's M\-K\-L libraries, use this command instead of the one above\-: (where {\ttfamily /opt/intel/mkl/lib/intel64} is the path of your M\-K\-L library {\ttfamily libmkl\-\_\-rt.\-so})
+
+{\ttfamily g++ -\/o example obj/example.\-o -\/std=c++11 -\/lkeycpp -\/\-L/opt/intel/mkl/lib/intel64 -\/lmkl\-\_\-rt}
+
+Alternatively, you could just type {\ttfamily make lib=lapack} or {\ttfamily make lib=mkl} inside the {\ttfamily examples} directory. Then type {\ttfamily ./example} to run the example code.
+
+When you are writing your own programs be sure to link with the {\ttfamily libkeycpp.\-a} and {\ttfamily liblapack.\-a} libraries (or {\ttfamily libmkl\-\_\-rt.\-so} if you are using Intel M\-K\-L). With {\ttfamily g++} the form is the same as used above. {\itshape D\-O N\-O\-T F\-O\-R\-G\-E\-T T\-O C\-O\-M\-P\-I\-L\-E W\-I\-T\-H T\-H\-E C++11 S\-T\-A\-N\-D\-A\-R\-D!}
 
 \section*{Example Code}
 
@@ -101,29 +109,29 @@ When you are writing your own programs be sure to link with the {\ttfamily libke
 43     vector<double> x = linsolve(A,b);
 44     \textcolor{comment}{// Print the result to the screen:}
 45     \hyperlink{namespacekeycpp_a6a8a286886d48471685b18b7782f1e4a}{disp}(x);
-46 \textcolor{comment}{/*}
-47 \textcolor{comment}{    // Now lets do something a little more complicated, solve an}
-48 \textcolor{comment}{    // ordinary differential equation (ODE):}
-49 \textcolor{comment}{    // y(1)' = y(2)*y(3);}
-50 \textcolor{comment}{    // y(2)' = -y(1)*y(3);}
-51 \textcolor{comment}{    // y(3)' = 0.51*y(1)*y(2);}
-52 \textcolor{comment}{    // With initial conditions at t = 0: y(1) = 0; y(2) = 1; y(3) = 1;}
-53 \textcolor{comment}{    OdeClass myOde;}
-54 \textcolor{comment}{    vector<double> t2 = linspace(0.0,12.0,100);}
-55 \textcolor{comment}{    vector<double> ICs = \{0.0, 1.0, 1.0\};}
-56 \textcolor{comment}{    matrix<double> y = ode45(myOde, t2, ICs);}
-57 \textcolor{comment}{    }
-58 \textcolor{comment}{    // Now that we have solved the ODE, lets plot the results:}
-59 \textcolor{comment}{    Figure h2;}
-60 \textcolor{comment}{    h2.plot(t2,y.getCol(0),"-");}
-61 \textcolor{comment}{    h2.hold\_on();}
-62 \textcolor{comment}{    h2.plot(t2,y.getCol(1),"-.");}
-63 \textcolor{comment}{    h2.plot(t2,y.getCol(2),"x");}
-64 \textcolor{comment}{    h2.xlabel("t");}
-65 \textcolor{comment}{    h2.ylabel("y");}
-66 \textcolor{comment}{    set(h2,"fontsize",14);}
-67 \textcolor{comment}{    h2.title("ODE Solution");}
-68 \textcolor{comment}{    */}
+46 
+47     \textcolor{comment}{// Now lets do something a little more complicated, solve an}
+48     \textcolor{comment}{// ordinary differential equation (ODE):}
+49     \textcolor{comment}{// y(1)' = y(2)*y(3);}
+50     \textcolor{comment}{// y(2)' = -y(1)*y(3);}
+51     \textcolor{comment}{// y(3)' = 0.51*y(1)*y(2);}
+52     \textcolor{comment}{// With initial conditions at t = 0: y(1) = 0; y(2) = 1; y(3) = 1;}
+53     \hyperlink{class_ode_class}{OdeClass} myOde;
+54     vector<double> t2 = \hyperlink{namespacekeycpp_a4e8769de1f22713d3564350d53125b26}{linspace}(0.0,12.0,100);
+55     vector<double> ICs = \{0.0, 1.0, 1.0\};
+56     \hyperlink{classkeycpp_1_1matrix}{matrix<double>} y = ode45(myOde, t2, ICs);
+57     
+58     \textcolor{comment}{// Now that we have solved the ODE, lets plot the results:}
+59     \hyperlink{classkeycpp_1_1_figure}{Figure} h2;
+60     h2.plot(t2,y.getCol(0),\textcolor{stringliteral}{"-"});
+61     h2.hold\_on();
+62     h2.plot(t2,y.getCol(1),\textcolor{stringliteral}{"-."});
+63     h2.plot(t2,y.getCol(2),\textcolor{stringliteral}{"x"});
+64     h2.xlabel(\textcolor{stringliteral}{"t"});
+65     h2.ylabel(\textcolor{stringliteral}{"y"});
+66     \textcolor{keyword}{set}(h2,\textcolor{stringliteral}{"fontsize"},14);
+67     h2.title(\textcolor{stringliteral}{"ODE Solution"});
+68     
 69     \textcolor{keywordflow}{return} 0;
 70 \}
 \end{DoxyCodeInclude}

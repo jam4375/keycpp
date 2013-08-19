@@ -10,6 +10,8 @@ Currently this project makes use of the <a href="http://www.sourceforge.net/proj
 The _only_ extra dependencies that you need on your system are the <a href="http://www.netlib.org/lapack/">LAPACK</a> libraries, <a href="http://www.gnuplot.info/">Gnuplot</a>, and the <a href="http://www.boost.org/doc/libs/1_54_0/libs/numeric/odeint/doc/html/index.html">Boost odeint</a> library.
 
 ### Ubuntu (and various <a href="https://wiki.ubuntu.com/UbuntuFlavors">flavors</a>)
+_NOTE: For permformance reasons, use of OpenBLAS/LAPACK is preferred over the default versions. Also, for Intel CPU's, Intel's MKL library provides the best performance._
+
 To acquire all the required dependencies you can execute the following commands:
 
 `sudo apt-get install build-essential`
@@ -18,9 +20,9 @@ Until Ubuntu 13.10 comes out in October 2013, you need to install <a href="http:
 
 `sudo apt-get install libboost-all-dev`
 
-`sudo apt-get install libblas3gf libblas-doc libblas-dev`
+`sudo apt-get install libopenblas-dev`
 
-`sudo apt-get install liblapack3gf liblapack-doc liblapack-dev`
+`sudo apt-get install liblapack-dev`
 
 ### Other Operating Systems
 Your mileage may vary.
@@ -49,7 +51,13 @@ If everything was successful, you should be able to compile and run the example 
 
 `./example`
 
-When you are writing your own programs be sure to link with the `libkeycpp.a` and `liblapack.a` libraries. With `g++` the form is the same as used above. _DO NOT FORGET TO COMPILE WITH THE C++11 STANDARD!_
+If you are using Intel's MKL libraries, use this command instead of the one above: (where `/opt/intel/mkl/lib/intel64` is the path of your MKL library `libmkl_rt.so`)
+
+`g++ -o example obj/example.o -std=c++11 -lkeycpp -L/opt/intel/mkl/lib/intel64 -lmkl_rt`
+
+Alternatively, you could just type `make lib=lapack` or `make lib=mkl` inside the `examples` directory. Then type `./example` to run the example code.
+
+When you are writing your own programs be sure to link with the `libkeycpp.a` and `liblapack.a` libraries (or `libmkl_rt.so` if you are using Intel MKL). With `g++` the form is the same as used above. _DO NOT FORGET TO COMPILE WITH THE C++11 STANDARD!_
 
 # Example Code
 <b>\c example.cpp</b>

@@ -5,8 +5,6 @@ CFLAGS=-I$(IDIR) -std=c++11 -O3
 ODIR=obj
 LDIR =
 
-LIBS=-lm -llapack
-
 _DEPS = Figure.h Spline.h keycpp.h Matrix.h kiss_fft.h gnuplot_i.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
@@ -15,8 +13,8 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.cpp $(DEPS) ; $(CC) -c -o $@ $< $(CFLAGS)
 
-libkeycpp: $(OBJ) ; ar -x /usr/lib/lapack/liblapack.a; ar -x /usr/lib/libblas.a; ar -x /usr/lib/gcc/x86_64-linux-gnu/4.7/libgfortran.a; ar crf ../lib/libkeycpp.a $^ *.o; rm *.o
+libkeycpp: $(OBJ) ; ar crf ../lib/libkeycpp.a $^
 
 .PHONY: clean
 
-clean: ; rm -f *.o $(ODIR)/*.o *~ core $(INCDIR)/*~ ../lib/libkeycpp.a core $(INCDIR)/*~
+clean: ; rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ ../lib/libkeycpp.a core $(INCDIR)/*~

@@ -86,12 +86,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Currently this project makes use of the <a href="http://www.sourceforge.net/projects/kissfft/">Kiss FFT</a> and <a href="http://code.google.com/p/gnuplot-cpp/">gnuplot-cpp</a> open source projects as well as the <a href="http://www.netlib.org/lapack/">LAPACK</a> libraries, <a href="http://www.gnuplot.info/">Gnuplot</a> plotting program, and the <a href="http://www.boost.org/doc/libs/1_54_0/libs/numeric/odeint/doc/html/index.html">Boost odeint</a> library. The sources from <a href="http://www.sourceforge.net/projects/kissfft/">Kiss FFT</a> and <a href="http://code.google.com/p/gnuplot-cpp/">gnuplot-cpp</a> have been incorporated into this project.</p>
 <p>The <em>only</em> extra dependencies that you need on your system are the <a href="http://www.netlib.org/lapack/">LAPACK</a> libraries, <a href="http://www.gnuplot.info/">Gnuplot</a>, and the <a href="http://www.boost.org/doc/libs/1_54_0/libs/numeric/odeint/doc/html/index.html">Boost odeint</a> library.</p>
 <h3>Ubuntu (and various <a href="https://wiki.ubuntu.com/UbuntuFlavors">flavors</a>)</h3>
+<p><em>NOTE: For permformance reasons, use of OpenBLAS/LAPACK is preferred over the default versions. Also, for Intel CPU's, Intel's MKL library provides the best performance.</em></p>
 <p>To acquire all the required dependencies you can execute the following commands:</p>
 <p><code>sudo apt-get install build-essential</code></p>
 <p>Until Ubuntu 13.10 comes out in October 2013, you need to install <a href="http://headmyshoulder.github.io/odeint-v2/">odeint</a> from their website. The way I did it was to install Boost (see below) and then copy the odeint header and source files into the appropriate Boost folders. This is because odeint first appears in Boost 1.53 and the newest version in the repository for Ubuntu 13.04 is 1.49.</p>
 <p><code>sudo apt-get install libboost-all-dev</code></p>
-<p><code>sudo apt-get install libblas3gf libblas-doc libblas-dev</code></p>
-<p><code>sudo apt-get install liblapack3gf liblapack-doc liblapack-dev</code></p>
+<p><code>sudo apt-get install libopenblas-dev</code></p>
+<p><code>sudo apt-get install liblapack-dev</code></p>
 <h3>Other Operating Systems</h3>
 <p>Your mileage may vary.</p>
 <h2>Installation &amp; Usage</h2>
@@ -106,7 +107,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><code>g++ -c -o obj/example.o example.cpp -std=c++11</code></p>
 <p><code>g++ -o example obj/example.o -std=c++11 -lkeycpp -llapack</code></p>
 <p><code>./example</code></p>
-<p>When you are writing your own programs be sure to link with the <code>libkeycpp.a</code> and <code>liblapack.a</code> libraries. With <code>g++</code> the form is the same as used above. <em>DO NOT FORGET TO COMPILE WITH THE C++11 STANDARD!</em></p>
+<p>If you are using Intel's MKL libraries, use this command instead of the one above: (where <code>/opt/intel/mkl/lib/intel64</code> is the path of your MKL library <code>libmkl_rt.so</code>)</p>
+<p><code>g++ -o example obj/example.o -std=c++11 -lkeycpp -L/opt/intel/mkl/lib/intel64 -lmkl_rt</code></p>
+<p>Alternatively, you could just type <code>make lib=lapack</code> or <code>make lib=mkl</code> inside the <code>examples</code> directory. Then type <code>./example</code> to run the example code.</p>
+<p>When you are writing your own programs be sure to link with the <code>libkeycpp.a</code> and <code>liblapack.a</code> libraries (or <code>libmkl_rt.so</code> if you are using Intel MKL). With <code>g++</code> the form is the same as used above. <em>DO NOT FORGET TO COMPILE WITH THE C++11 STANDARD!</em></p>
 <h1>Example Code</h1>
 <p><b><code>example.cpp</b></code> </p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -154,29 +158,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    vector&lt;double&gt; x = linsolve(A,b);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Print the result to the screen:</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="namespacekeycpp.html#a6a8a286886d48471685b18b7782f1e4a" title="Displays on standard output any parameter passed to it provided the operator &lt;&lt; is defined for its ty...">disp</a>(x);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">    // Now lets do something a little more complicated, solve an</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">    // ordinary differential equation (ODE):</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">    // y(1)&#39; = y(2)*y(3);</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    // y(2)&#39; = -y(1)*y(3);</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">    // y(3)&#39; = 0.51*y(1)*y(2);</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">    // With initial conditions at t = 0: y(1) = 0; y(2) = 1; y(3) = 1;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">    OdeClass myOde;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">    vector&lt;double&gt; t2 = linspace(0.0,12.0,100);</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">    vector&lt;double&gt; ICs = {0.0, 1.0, 1.0};</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">    matrix&lt;double&gt; y = ode45(myOde, t2, ICs);</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">    </span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">    // Now that we have solved the ODE, lets plot the results:</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">    Figure h2;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">    h2.plot(t2,y.getCol(0),&quot;-&quot;);</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">    h2.hold_on();</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">    h2.plot(t2,y.getCol(1),&quot;-.&quot;);</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">    h2.plot(t2,y.getCol(2),&quot;x&quot;);</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">    h2.xlabel(&quot;t&quot;);</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">    h2.ylabel(&quot;y&quot;);</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">    set(h2,&quot;fontsize&quot;,14);</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">    h2.title(&quot;ODE Solution&quot;);</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Now lets do something a little more complicated, solve an</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// ordinary differential equation (ODE):</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// y(1)&#39; = y(2)*y(3);</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// y(2)&#39; = -y(1)*y(3);</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// y(3)&#39; = 0.51*y(1)*y(2);</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// With initial conditions at t = 0: y(1) = 0; y(2) = 1; y(3) = 1;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="class_ode_class.html">OdeClass</a> myOde;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    vector&lt;double&gt; t2 = <a class="code" href="namespacekeycpp.html#a4e8769de1f22713d3564350d53125b26" title="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">linspace</a>(0.0,12.0,100);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    vector&lt;double&gt; ICs = {0.0, 1.0, 1.0};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classkeycpp_1_1matrix.html">matrix&lt;double&gt;</a> y = ode45(myOde, t2, ICs);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Now that we have solved the ODE, lets plot the results:</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classkeycpp_1_1_figure.html">Figure</a> h2;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    h2.plot(t2,y.getCol(0),<span class="stringliteral">&quot;-&quot;</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    h2.hold_on();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    h2.plot(t2,y.getCol(1),<span class="stringliteral">&quot;-.&quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    h2.plot(t2,y.getCol(2),<span class="stringliteral">&quot;x&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    h2.xlabel(<span class="stringliteral">&quot;t&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    h2.ylabel(<span class="stringliteral">&quot;y&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">set</span>(h2,<span class="stringliteral">&quot;fontsize&quot;</span>,14);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    h2.title(<span class="stringliteral">&quot;ODE Solution&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 </div><!-- fragment --><p> <br/>
@@ -242,7 +246,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 17 2013 21:16:46 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 19 2013 13:35:06 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

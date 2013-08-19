@@ -373,8 +373,14 @@
     <member refid="namespacekeycpp_1ae4fe8a3edd9841d208cc044f79d48ae2" kind="function"><name>tan</name></member>
     <member refid="namespacekeycpp_1a6a91266a8d14f0ae2de1d3e098d05e41" kind="function"><name>tan</name></member>
     <member refid="namespacekeycpp_1aa8cf9e0ed2f49b902c93be19ea6ef147" kind="function"><name>tan</name></member>
-    <member refid="namespacekeycpp_1ae8ce29f6b9a95792764fcffc175ffc2a" kind="function"><name>cosh</name></member>
-    <member refid="namespacekeycpp_1a227b4df07d8fb2beb7f8b63408345caf" kind="function"><name>cosh</name></member>
+    <member refid="namespacekeycpp_1a08fac66d81dbcfce4d57bd08b3810dbf" kind="function"><name>acos</name></member>
+    <member refid="namespacekeycpp_1a01c85865832f197d01d4f332121bc018" kind="function"><name>acos</name></member>
+    <member refid="namespacekeycpp_1a88bedf42ff19672e0ddff3c5547d28d2" kind="function"><name>acos</name></member>
+    <member refid="namespacekeycpp_1acf579fcfa75e569f491946af9e09ba34" kind="function"><name>acos</name></member>
+    <member refid="namespacekeycpp_1ac038300a49474532929f16d892349ab6" kind="function"><name>asin</name></member>
+    <member refid="namespacekeycpp_1aba2b31e627ef6a9d04239fa435d81e9e" kind="function"><name>asin</name></member>
+    <member refid="namespacekeycpp_1ad1781a15fc7aa5de38db6e4eb92c9e22" kind="function"><name>asin</name></member>
+    <member refid="namespacekeycpp_1a8bb201db3ca1ccd6eca8fd7395f17539" kind="function"><name>asin</name></member>
     <member refid="namespacekeycpp_1a50caa1bee883d40591442882e777a67b" kind="function"><name>exp</name></member>
     <member refid="namespacekeycpp_1a66a68550626786b480e7c8d02aaf9039" kind="function"><name>exp</name></member>
     <member refid="namespacekeycpp_1a6a8bd2143a6d613b560f71d0b99b346f" kind="function"><name>exp</name></member>

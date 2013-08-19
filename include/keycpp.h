@@ -802,19 +802,64 @@ namespace keycpp
 		return eop(A,static_cast<T (*)(T)>(&std::tan));
 	}
 	
-	/** \brief Return a vector containing the hyperbolic cosine of each element of v1.
+	/** \brief Return a vector containing the arc cosine of each element of v1.
 	 */
 	template<class T>
-    std::vector<std::complex<T>> cosh(const std::vector<std::complex<T>> & v1)
+    std::vector<std::complex<T>> acos(const std::vector<std::complex<T>> & v1)
     {
-        return eop(v1, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::cosh<T>));
+        return eop(v1, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::acos<T>));
     }
 	
-	/** \brief Return a vector containing the hyperbolic cosine of each element of v1.
+	/** \brief Return a vector containing the arc cosine of each element of v1.
 	 */
-	template<class T> std::vector<T> cosh(const std::vector<T> &v1)
+	template<class T> std::vector<T> acos(const std::vector<T> &v1)
 	{
-		return eop(v1,static_cast<T (*)(T)>(&std::cosh));
+		return eop(v1,static_cast<T (*)(T)>(&std::acos));
+	}
+	
+	/** \brief Return a vector containing the arc cosine of each element of A.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> acos(const matrix<std::complex<T>> &A)
+    {
+        return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::acos<T>));
+    }
+	
+	/** \brief Return a vector containing the arc cosine of each element of A.
+	 */
+	template<class T> std::vector<T> acos(const matrix<T> &A)
+	{
+		return eop(A,static_cast<T (*)(T)>(&std::acos));
+	}
+	
+	/** \brief Return a vector containing the arc sine of each element of v1.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> asin(const std::vector<std::complex<T>> & v1)
+    {
+        return eop(v1, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::asin<T>));
+    }
+	
+	/** \brief Return a vector containing the arc sine of each element of v1.
+	 */
+	template<class T> std::vector<T> asin(const std::vector<T> &v1)
+	{
+		return eop(v1,static_cast<T (*)(T)>(&std::asin));
+	}
+	
+	/** \brief Return a vector containing the arc sine of each element of A.
+	 */
+	template<class T>
+    std::vector<std::complex<T>> asin(const matrix<std::complex<T>> &A)
+    {
+        return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::asin<T>));
+    }
+	
+	/** \brief Return a vector containing the arc sine of each element of A.
+	 */
+	template<class T> std::vector<T> asin(const matrix<T> &A)
+	{
+		return eop(A,static_cast<T (*)(T)>(&std::asin));
 	}
 	
 	/** \brief Return a vector containing the exponential of each element of v1.

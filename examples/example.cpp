@@ -43,7 +43,7 @@ int main(int argc, char** argv)
     vector<double> x = linsolve(A,b);
     // Print the result to the screen:
     disp(x);
-/*
+
     // Now lets do something a little more complicated, solve an
     // ordinary differential equation (ODE):
     // y(1)' = y(2)*y(3);
@@ -65,6 +65,6 @@ int main(int argc, char** argv)
     h2.ylabel("y");
     set(h2,"fontsize",14);
     h2.title("ODE Solution");
-    */
+    
     return 0;
 }
