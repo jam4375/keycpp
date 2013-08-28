@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="15" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="15" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="35" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1matrix__size__type_1af70a3801655b92879104528107a332fb" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -27,14 +27,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="16" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="16" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="36" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="14" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="13" bodyend="17"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="34" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="33" bodyend="37"/>
     <listofallmembers>
       <member refid="structkeycpp_1_1matrix__size__type_1af70a3801655b92879104528107a332fb" prot="public" virt="non-virtual"><scope>keycpp::matrix_size_type</scope><name>cols</name></member>
       <member refid="structkeycpp_1_1matrix__size__type_1a85ef26f83d5f0233a675fbfce78928e2" prot="public" virt="non-virtual"><scope>keycpp::matrix_size_type</scope><name>rows</name></member>

@@ -22,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="246" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="246" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="252" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="252" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1observe_1aecc1e14f64f33f35c50aee35cc86dac5" prot="public" static="no" mutable="no">
         <type>std::vector&lt; U &gt; &amp;</type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="247" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="247" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="253" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="253" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="249" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="249" bodyend="249"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="255" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="255" bodyend="255"/>
       </memberdef>
       <memberdef kind="function" id="structkeycpp_1_1observe_1a0063ab6fcada5756c6dca31ac7c17af9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -79,14 +79,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="252" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="251" bodyend="255"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="258" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="257" bodyend="261"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="245" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="244" bodyend="256"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="251" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="250" bodyend="262"/>
     <listofallmembers>
       <member refid="structkeycpp_1_1observe_1a88747e0078d06440401d309aba55954e" prot="public" virt="non-virtual"><scope>keycpp::observe</scope><name>observe</name></member>
       <member refid="structkeycpp_1_1observe_1a0063ab6fcada5756c6dca31ac7c17af9" prot="public" virt="non-virtual"><scope>keycpp::observe</scope><name>operator()</name></member>

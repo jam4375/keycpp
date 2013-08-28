@@ -483,7 +483,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="211" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="882" bodyend="895"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="211" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="882" bodyend="893"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1a07607803ede8dd5416906df0a1924fc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>

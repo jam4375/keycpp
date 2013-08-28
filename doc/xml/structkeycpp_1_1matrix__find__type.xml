@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2468" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2468" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2480" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2480" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1matrix__find__type_1a034a9a0159b07d68cdc688e36648667c" prot="public" static="no" mutable="no">
         <type>std::vector&lt; int &gt;</type>
@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2469" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2469" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2481" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2481" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1matrix__find__type_1a46d32e3990c9333dbbfc77adece4159b" prot="public" static="no" mutable="no">
         <type>std::vector&lt; T &gt;</type>
@@ -47,14 +47,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2470" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2470" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2482" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2482" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2467" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2466" bodyend="2471"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2479" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2478" bodyend="2483"/>
     <listofallmembers>
       <member refid="structkeycpp_1_1matrix__find__type_1a034a9a0159b07d68cdc688e36648667c" prot="public" virt="non-virtual"><scope>keycpp::matrix_find_type</scope><name>cols</name></member>
       <member refid="structkeycpp_1_1matrix__find__type_1a34ca318ae96bc18fe29ac2a42ab1b520" prot="public" virt="non-virtual"><scope>keycpp::matrix_find_type</scope><name>rows</name></member>

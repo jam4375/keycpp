@@ -6,9 +6,9 @@ ODIR=obj
 LDIR =../lib
 
 ifeq ($(lib),mkl)
-        LIBS=-lm -lkeycpp -L/opt/intel/mkl/lib/intel64 -lmkl_rt
+        LIBS=-lm -lkeycpp -L/$(MKLROOT)/lib/intel64 -lmkl_rt
 else
-        LIBS=-lm -lkeycpp -llapack
+        LIBS=-lm -lkeycpp -lblas -llapack
 endif
 
 _DEPS = keycpp.h Matrix.h kiss_fft.h gnuplot_i.h

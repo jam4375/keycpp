@@ -58,6 +58,12 @@ namespace \hyperlink{namespacekeycpp}{keycpp}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hypertarget{namespacekeycpp_a55e50932cc54f92bdd7e38c6438f4f1f}{double \hyperlink{namespacekeycpp_a55e50932cc54f92bdd7e38c6438f4f1f}{keycpp\-::ddot\-\_\-} (const int $\ast$N, const double $\ast$a, const int $\ast$inca, const double $\ast$b, const int $\ast$incb)}\label{namespacekeycpp_a55e50932cc54f92bdd7e38c6438f4f1f}
+
+\begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's double dot product function. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a59f3446b6ac4336a0a139ed5464ec36d}{double \hyperlink{namespacekeycpp_a59f3446b6ac4336a0a139ed5464ec36d}{keycpp\-::zdot\-\_\-} (const int $\ast$N, const std\-::complex$<$ double $>$ $\ast$a, const int $\ast$inca, const std\-::complex$<$ double $>$ $\ast$b, const int $\ast$incb)}\label{namespacekeycpp_a59f3446b6ac4336a0a139ed5464ec36d}
+
+\begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's complex double dot product function. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_ace2501951ab3db3a91c3520ae89750b1}{void \hyperlink{namespacekeycpp_ace2501951ab3db3a91c3520ae89750b1}{keycpp\-::zggev\-\_\-} (const char $\ast$jobvl, const char $\ast$jobvr, const int $\ast$n, std\-::complex$<$ double $>$ $\ast$a, const int $\ast$lda, std\-::complex$<$ double $>$ $\ast$b, const int $\ast$ldb, std\-::complex$<$ double $>$ $\ast$alpha, std\-::complex$<$ double $>$ $\ast$beta, std\-::complex$<$ double $>$ $\ast$vl, const int $\ast$ldvl, std\-::complex$<$ double $>$ $\ast$vr, const int $\ast$ldvr, std\-::complex$<$ double $>$ $\ast$work, const int $\ast$lwork, double $\ast$rwork, int $\ast$info)}\label{namespacekeycpp_ace2501951ab3db3a91c3520ae89750b1}
 
 \begin{DoxyCompactList}\small\item\em This provides a C interface to L\-A\-P\-A\-C\-K's complex generalized eigenvalue solver. \end{DoxyCompactList}\item 
@@ -218,6 +224,9 @@ $<$ double $>$ $>$ {\bfseries keycpp\-::linsolve} (const matrix$<$ std\-::comple
 
 \item 
 \hypertarget{namespacekeycpp_a952e5296774667c3be4e792b5cd980da}{std\-::complex$<$ double $>$ {\bfseries keycpp\-::csqrt} (const double \&a)}\label{namespacekeycpp_a952e5296774667c3be4e792b5cd980da}
+
+\item 
+\hypertarget{namespacekeycpp_a8faa7912f1f198c5185cb6a36cfd2fb2}{std\-::complex$<$ double $>$ {\bfseries keycpp\-::csqrt} (const std\-::complex$<$ double $>$ \&a)}\label{namespacekeycpp_a8faa7912f1f198c5185cb6a36cfd2fb2}
 
 \item 
 \hypertarget{namespacekeycpp_a4da6882977b2262f8d6f080b0eaf60c5}{{\footnotesize template$<$class T , class U $>$ }\\std\-::vector$<$ decltype(std\-::declval\\*
@@ -626,6 +635,12 @@ $<$ double $>$ $>$ {\bfseries keycpp\-::fft} (const std\-::vector$<$ T $>$ \&u, 
 ()$\ast$std\-::declval$<$ U $>$()) \hyperlink{namespacekeycpp_af2f586b97047513a6d2fa346d2302af0}{keycpp\-::dot} (const std\-::vector$<$ T $>$ \&v1, const std\-::vector$<$ U $>$ \&v2)}\label{namespacekeycpp_af2f586b97047513a6d2fa346d2302af0}
 
 \begin{DoxyCompactList}\small\item\em Computes the dot product between vectors v1 and v2. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_ad14584bb6e102379fb176e7a864c9cf8}{{\footnotesize template$<$$>$ }\\double \hyperlink{namespacekeycpp_ad14584bb6e102379fb176e7a864c9cf8}{keycpp\-::dot} (const std\-::vector$<$ double $>$ \&v1, const std\-::vector$<$ double $>$ \&v2)}\label{namespacekeycpp_ad14584bb6e102379fb176e7a864c9cf8}
+
+\begin{DoxyCompactList}\small\item\em Computes the dot product between vectors v1 and v2. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_af4148cd818cee05304763a197bf56e3c}{{\footnotesize template$<$$>$ }\\std\-::complex$<$ double $>$ \hyperlink{namespacekeycpp_af4148cd818cee05304763a197bf56e3c}{keycpp\-::dot} (const std\-::vector$<$ std\-::complex$<$ double $>$$>$ \&v1, const std\-::vector$<$ std\-::complex$<$ double $>$$>$ \&v2)}\label{namespacekeycpp_af4148cd818cee05304763a197bf56e3c}
+
+\begin{DoxyCompactList}\small\item\em Computes the dot product between vectors v1 and v2. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_ac3f44dfd7e58788078a8cba3696d3a39}{{\footnotesize template$<$class T , class U $>$ }\\std\-::vector$<$ decltype(std\-::declval\\*
 $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_ac3f44dfd7e58788078a8cba3696d3a39}{keycpp\-::dot} (const matrix$<$ T $>$ \&A, const matrix$<$ U $>$ \&B, const int \&dim=-\/1)}\label{namespacekeycpp_ac3f44dfd7e58788078a8cba3696d3a39}
 
@@ -725,6 +740,10 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_a73fa987
 \hypertarget{namespacekeycpp_a4bba31744fef3693901a075fda07857c}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ \hyperlink{namespacekeycpp_a4bba31744fef3693901a075fda07857c}{keycpp\-::ceil} (const matrix$<$ T $>$ \&A)}\label{namespacekeycpp_a4bba31744fef3693901a075fda07857c}
 
 \begin{DoxyCompactList}\small\item\em Rounds the elements of A towards positive infinity. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a136df5d07e95d472b1a38d3fd71b3a3f}{{\footnotesize template$<$class T , class U $>$ }\\decltype(std\-::declval$<$ T $>$\\*
+()$\ast$std\-::declval$<$ U $>$()) {\bfseries keycpp\-::polyval} (const std\-::vector$<$ T $>$ \&p, const U \&x)}\label{namespacekeycpp_a136df5d07e95d472b1a38d3fd71b3a3f}
+
+\item 
 \hypertarget{namespacekeycpp_a7752b443d306871030c8867467fe6cc9}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ \hyperlink{namespacekeycpp_a7752b443d306871030c8867467fe6cc9}{keycpp\-::roots} (const std\-::vector$<$ T $>$ \&p)}\label{namespacekeycpp_a7752b443d306871030c8867467fe6cc9}
 
 \begin{DoxyCompactList}\small\item\em Computes all roots of polynomial p by solving for the eigenvalues of the companion matrix. \end{DoxyCompactList}\item 

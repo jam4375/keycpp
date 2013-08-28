@@ -40,7 +40,13 @@ namespace keycpp
 			KeyCppException(const std::string &msg) : std::runtime_error(msg){}
 	};
 	
-	extern "C"{
+	extern "C"{	
+	/** \brief This provides a C interface to BLAS's double dot product function. */
+	double ddot_(const int *N, const double *a, const int *inca, const double *b, const int *incb);
+	
+	/** \brief This provides a C interface to BLAS's complex double dot product function. */
+	double zdot_(const int *N, const std::complex<double> *a, const int *inca, const std::complex<double> *b, const int *incb);
+	
 	/** \brief This provides a C interface to LAPACK's complex generalized eigenvalue solver. */
 	void zggev_(const char *jobvl, const char *jobvr, const int *n, std::complex<double> *a,
 		        const int *lda, std::complex<double> *b, const int *ldb, std::complex<double> *alpha,
@@ -410,6 +416,11 @@ namespace keycpp
 	inline std::complex<double> csqrt(const double& a)
 	{
 	    return std::sqrt((std::complex<double>)a);
+	}
+	
+	inline std::complex<double> csqrt(const std::complex<double>& a)
+	{
+	    return std::sqrt(a);
 	}
 
 	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> operator+(const std::vector<T>& v1, const std::vector<U>& v2)
@@ -2151,6 +2162,7 @@ namespace keycpp
 			size_t steps = integrate_adaptive(make_controlled<runge_kutta_cash_karp54<std::vector<T> > >(abs_tol, rel_tol), odeClass, ICs, x0, xf, delta_x0, observe<std::vector<T>,U>(y_temp,x_temp));
 		}
 		matrix<T> y = interp1(x_temp, y_temp, x_ode);
+		
 		return y;
 	}
 	
@@ -2301,28 +2313,28 @@ namespace keycpp
 		{
 			index[ii] = ii;
 		}
+		std::vector<T> v2(v1.size());
+		for(int ii = 0; ii < v2.size(); ii++)
+		{
+			v2[ii] = v1[ii];
+		}
 		swapped = true;
 		while(swapped)
 		{     
 			swapped = false;
 			for(int ii = 1; ii < v1.size(); ii++)
 			{
-				if(((v1[ii-1]) > (v1[ii]) && method.compare("ascend") == 0) || ((v1[ii-1]) < (v1[ii]) && method.compare("descend") == 0))
+				if(((v2[ii-1]) > (v2[ii]) && method.compare("ascend") == 0) || ((v2[ii-1]) < (v2[ii]) && method.compare("descend") == 0))
 				{
-					temp = v1[ii-1];
-					v1[ii-1] = v1[ii];
-					v1[ii] = temp;
+					temp = v2[ii-1];
+					v2[ii-1] = v2[ii];
+					v2[ii] = temp;
 					temp_i = index[ii-1];
 					index[ii-1] = index[ii];
 					index[ii] = temp_i;
 					swapped = true;
 				}
 			}
-		}
-		std::vector<T> v2(v1.size());
-		for(int ii = 0; ii < v2.size(); ii++)
-		{
-			v2[ii] = v1[index[ii]];
 		}
 		
 		Sort_Vector<T> sort_vector;
@@ -2552,6 +2564,40 @@ namespace keycpp
 	        result += v1[ii]*v2[ii];
 	    }
 	    return result;
+	}
+	
+	/** \brief Computes the dot product between vectors v1 and v2.
+	 */
+	template<>
+	inline double dot(const std::vector<double> &v1, const std::vector<double> &v2)
+	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot dot multiply an empty vector!");
+	    }
+	    if(v1.size() != v2.size())
+	    {
+	        throw KeyCppException("Vectors must be same size in dot()!");
+	    }
+	    int inca = 1, incb = 1, N = v1.size();
+	    return ddot_(&N, &v1[0], &inca, &v2[0], &incb);
+	}
+	
+	/** \brief Computes the dot product between vectors v1 and v2.
+	 */
+	template<>
+	inline std::complex<double> dot(const std::vector<std::complex<double>> &v1, const std::vector<std::complex<double>> &v2)
+	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot dot multiply an empty vector!");
+	    }
+	    if(v1.size() != v2.size())
+	    {
+	        throw KeyCppException("Vectors must be same size in dot()!");
+	    }
+	    int inca = 1, incb = 1, N = v1.size();
+	    return zdot_(&N, &v1[0], &inca, &v2[0], &incb);
 	}
 	
 	/** \brief Computes the dot product between the first non-singleton dimension of A and B.
@@ -3045,6 +3091,19 @@ namespace keycpp
 	        }
 	    }
 	    return B;
+	}
+	
+	template<class T, class U>
+	decltype(std::declval<T>()*std::declval<U>()) polyval(const std::vector<T> &p, const U &x)
+	{
+	    decltype(std::declval<T>()*std::declval<U>()) val = 0.0;
+	    
+        for(int ii = 0; ii < p.size()-1; ii++)
+        {
+            val += p[ii]*pow(x,p.size()-ii-1);
+        }
+	    val += p[p.size()-1];
+	    return val;
 	}
 	
 	/** \brief Computes all roots of polynomial p by solving for the eigenvalues

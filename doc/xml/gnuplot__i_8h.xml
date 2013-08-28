@@ -778,20 +778,18 @@
 <codeline lineno="881"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="882" refid="class_gnuplot_1a78a68f621caa87d1f34324fcd093c7bd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="class_gnuplot_1a78a68f621caa87d1f34324fcd093c7bd" kindref="member" tooltip="destructor: needed to delete temporary files">Gnuplot::~Gnuplot</ref>()</highlight></codeline>
 <codeline lineno="883"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="884"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>remove_tmpfiles();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="885"><highlight class="normal"></highlight></codeline>
-<codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>A<sp/>stream<sp/>opened<sp/>by<sp/>popen()<sp/>should<sp/>be<sp/>closed<sp/>by<sp/>pclose()</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="887"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(WIN32)<sp/>||<sp/>defined(_WIN32)<sp/>||<sp/>defined(__WIN32__)<sp/>||<sp/>defined(__TOS_WIN__)</highlight></codeline>
-<codeline lineno="888"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_pclose(gnucmd)<sp/>==<sp/>-1)</highlight></codeline>
-<codeline lineno="889"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(unix)<sp/>||<sp/>defined(__unix)<sp/>||<sp/>defined(__unix__)<sp/>||<sp/>defined(__APPLE__)</highlight></codeline>
-<codeline lineno="890"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pclose(gnucmd)<sp/>==<sp/>-1)</highlight></codeline>
-<codeline lineno="891"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
-<codeline lineno="892"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_gnuplot_exception" kindref="compound" tooltip="A C++ interface to gnuplot.">GnuplotException</ref>(</highlight><highlight class="stringliteral">&quot;Problem<sp/>closing<sp/>communication<sp/>to<sp/>gnuplot&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="893"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="894"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gnuplot_1a2e449552587b0055f40f4ee079d62a8d" kindref="member" tooltip="deletes temporary files">remove_tmpfiles</ref>();</highlight></codeline>
-<codeline lineno="895"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="896"><highlight class="normal"></highlight></codeline>
-<codeline lineno="897"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>A<sp/>stream<sp/>opened<sp/>by<sp/>popen()<sp/>should<sp/>be<sp/>closed<sp/>by<sp/>pclose()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="885"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(WIN32)<sp/>||<sp/>defined(_WIN32)<sp/>||<sp/>defined(__WIN32__)<sp/>||<sp/>defined(__TOS_WIN__)</highlight></codeline>
+<codeline lineno="886"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_pclose(gnucmd)<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="887"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(unix)<sp/>||<sp/>defined(__unix)<sp/>||<sp/>defined(__unix__)<sp/>||<sp/>defined(__APPLE__)</highlight></codeline>
+<codeline lineno="888"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pclose(gnucmd)<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="889"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="890"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_gnuplot_exception" kindref="compound" tooltip="A C++ interface to gnuplot.">GnuplotException</ref>(</highlight><highlight class="stringliteral">&quot;Problem<sp/>closing<sp/>communication<sp/>to<sp/>gnuplot&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="891"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="892"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//remove_tmpfiles();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="893"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="894"><highlight class="normal"></highlight></codeline>
+<codeline lineno="895"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h"/>
   </compounddef>

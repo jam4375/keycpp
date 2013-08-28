@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="22" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="22" bodyend="22"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="42" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="42" bodyend="42"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -48,7 +48,7 @@
         <label>std::runtime_error</label>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="20" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="19" bodyend="23"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="40" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="39" bodyend="43"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1_matrix_exception_1ae558e1658f52404739cbb6fe784f196d" prot="public" virt="non-virtual"><scope>keycpp::MatrixException</scope><name>MatrixException</name></member>
     </listofallmembers>

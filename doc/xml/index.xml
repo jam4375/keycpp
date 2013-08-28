@@ -183,6 +183,7 @@
     <member refid="classkeycpp_1_1matrix_1a8a60e529610d6ad6ae5f34b8cd5199bd" kind="function"><name>operator*</name></member>
     <member refid="classkeycpp_1_1matrix_1add1f4ca03e1cce57574c905ab7ca89fe" kind="function"><name>operator*</name></member>
     <member refid="classkeycpp_1_1matrix_1a8c0520cf5064379afa5128cf7f660832" kind="function"><name>operator+</name></member>
+    <member refid="classkeycpp_1_1matrix_1a78655e73267b48e16909a68291f4c074" kind="function"><name>operator+=</name></member>
     <member refid="classkeycpp_1_1matrix_1a1c6cb00f8859e6486a7054f11b1c7e6a" kind="function"><name>operator-</name></member>
     <member refid="classkeycpp_1_1matrix_1a32a13ebb69fb5f06dd8923d942d865b4" kind="function"><name>size</name></member>
     <member refid="classkeycpp_1_1matrix_1ad522f701e86eafc344d8904d4f0a8f19" kind="function"><name>empty</name></member>
@@ -194,6 +195,10 @@
     <member refid="classkeycpp_1_1matrix_1a20002e97217bcc6382e60694bf898e1f" kind="function"><name>getLastRow</name></member>
     <member refid="classkeycpp_1_1matrix_1a9c16ead5c2a61eb35c33328caa235b2f" kind="function"><name>getCol</name></member>
     <member refid="classkeycpp_1_1matrix_1a719eb1cb62d0cd9168abe2235235f278" kind="function"><name>reserve</name></member>
+    <member refid="classkeycpp_1_1matrix_1a53aaf4f54bdbebf5664b67a440f73040" kind="function"><name>operator*</name></member>
+    <member refid="classkeycpp_1_1matrix_1a8a9131597beafc39a3d94b59af930756" kind="function"><name>operator*</name></member>
+    <member refid="classkeycpp_1_1matrix_1a0e9fdbebdf1d95dd225a2bd1310cba30" kind="function"><name>operator*</name></member>
+    <member refid="classkeycpp_1_1matrix_1a0cbaef09170a16f74ed5acefa0f8ad3a" kind="function"><name>operator*</name></member>
   </compound>
   <compound refid="structkeycpp_1_1matrix__find__type" kind="struct"><name>keycpp::matrix_find_type</name>
     <member refid="structkeycpp_1_1matrix__find__type_1a34ca318ae96bc18fe29ac2a42ab1b520" kind="variable"><name>rows</name></member>
@@ -289,6 +294,8 @@
     <member refid="namespacekeycpp_1a27940c7f9c645f75b8feb3991f23b545" kind="function"><name>Figure::plot&lt; std::complex&lt; double &gt; &gt;</name></member>
     <member refid="namespacekeycpp_1ad033c29d2245437a52140ff3c46fa1d8" kind="function"><name>Figure::plot&lt; std::complex&lt; double &gt; &gt;</name></member>
     <member refid="namespacekeycpp_1acfb9f560ec3a131190f23bf18c12b2f8" kind="function"><name>Figure::plot&lt; std::complex&lt; double &gt; &gt;</name></member>
+    <member refid="namespacekeycpp_1a55e50932cc54f92bdd7e38c6438f4f1f" kind="function"><name>ddot_</name></member>
+    <member refid="namespacekeycpp_1a59f3446b6ac4336a0a139ed5464ec36d" kind="function"><name>zdot_</name></member>
     <member refid="namespacekeycpp_1ace2501951ab3db3a91c3520ae89750b1" kind="function"><name>zggev_</name></member>
     <member refid="namespacekeycpp_1aebc5253e80ac15a9bfdc5449ae4f972a" kind="function"><name>dgeev_</name></member>
     <member refid="namespacekeycpp_1a8c1cca2a162f40fc6c6218c35cadf9f2" kind="function"><name>zgeev_</name></member>
@@ -338,6 +345,7 @@
     <member refid="namespacekeycpp_1a1f83b48bfedf753904dfea9dde554a4c" kind="function"><name>abs</name></member>
     <member refid="namespacekeycpp_1ae0edec63f48a81c576da0c0ffc768af9" kind="function"><name>abs</name></member>
     <member refid="namespacekeycpp_1a952e5296774667c3be4e792b5cd980da" kind="function"><name>csqrt</name></member>
+    <member refid="namespacekeycpp_1a8faa7912f1f198c5185cb6a36cfd2fb2" kind="function"><name>csqrt</name></member>
     <member refid="namespacekeycpp_1a4da6882977b2262f8d6f080b0eaf60c5" kind="function"><name>operator+</name></member>
     <member refid="namespacekeycpp_1a1c1cd804c6f704b7a9124a9d9a82c325" kind="function"><name>operator+</name></member>
     <member refid="namespacekeycpp_1ad4df2f7feaefed6813ecfe11e37087ab" kind="function"><name>operator+</name></member>
@@ -469,6 +477,8 @@
     <member refid="namespacekeycpp_1a5ef6aab5ede3802c66f27415107594ed" kind="function"><name>reshape</name></member>
     <member refid="namespacekeycpp_1a5a32dc59a247e09814a4b8ce9ea1db57" kind="function"><name>reshape</name></member>
     <member refid="namespacekeycpp_1af2f586b97047513a6d2fa346d2302af0" kind="function"><name>dot</name></member>
+    <member refid="namespacekeycpp_1ad14584bb6e102379fb176e7a864c9cf8" kind="function"><name>dot</name></member>
+    <member refid="namespacekeycpp_1af4148cd818cee05304763a197bf56e3c" kind="function"><name>dot</name></member>
     <member refid="namespacekeycpp_1ac3f44dfd7e58788078a8cba3696d3a39" kind="function"><name>dot</name></member>
     <member refid="namespacekeycpp_1a73fa9874e6923dd54c95d52a22a99d00" kind="function"><name>cross</name></member>
     <member refid="namespacekeycpp_1a85adf7a8804f7d7d3c378d86427b4210" kind="function"><name>norm</name></member>
@@ -501,12 +511,17 @@
     <member refid="namespacekeycpp_1a005c1190f7087fb1d2545c38c080fd1a" kind="function"><name>ceil</name></member>
     <member refid="namespacekeycpp_1adb46ebfbb914f186bcb1859f39dfae91" kind="function"><name>ceil</name></member>
     <member refid="namespacekeycpp_1a4bba31744fef3693901a075fda07857c" kind="function"><name>ceil</name></member>
+    <member refid="namespacekeycpp_1a136df5d07e95d472b1a38d3fd71b3a3f" kind="function"><name>polyval</name></member>
     <member refid="namespacekeycpp_1a7752b443d306871030c8867467fe6cc9" kind="function"><name>roots</name></member>
     <member refid="namespacekeycpp_1a6069a9eec0edfa1d401230013d98765e" kind="function"><name>tic</name></member>
     <member refid="namespacekeycpp_1afe03fbbb5126729fb4b9367097acb1d1" kind="function"><name>toc</name></member>
     <member refid="namespacekeycpp_1a9d70a761d33bbc2bdec6b4e0eb43d517" kind="function"><name>sprintf</name></member>
     <member refid="namespacekeycpp_1aff2feefaeb946dd453d74ff51c66fe67" kind="function"><name>clock</name></member>
     <member refid="namespacekeycpp_1ac20bd2ef4fb18cbcdb0f462a89447bd7" kind="function"><name>pinv</name></member>
+    <member refid="namespacekeycpp_1a669f27dea4ade365285366b754619e85" kind="function"><name>dgemm_</name></member>
+    <member refid="namespacekeycpp_1aecf8a49db6ea8eaa6e8b57ed8c72bf31" kind="function"><name>zgemm_</name></member>
+    <member refid="namespacekeycpp_1aa3868c380827829ba77e27c0b8bde18c" kind="function"><name>dgemv_</name></member>
+    <member refid="namespacekeycpp_1a4a8822af16237063b1669dfe9588c4ea" kind="function"><name>zgemv_</name></member>
     <member refid="namespacekeycpp_1a524691df2a648a59b3be9f2b2362bbe8" kind="function"><name>eig</name></member>
     <member refid="namespacekeycpp_1ab2aef1f33c78911d0ebcd77f9c9841fe" kind="function"><name>eig</name></member>
     <member refid="namespacekeycpp_1a7cc3fb9ca244e5caac42cf94013ddf94" kind="function"><name>eig</name></member>

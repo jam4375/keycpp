@@ -881,8 +881,6 @@ void stringtok (Container &container,
 //
 inline Gnuplot::~Gnuplot()
 {
-//  remove_tmpfiles();
-
     // A stream opened by popen() should be closed by pclose()
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__TOS_WIN__)
     if (_pclose(gnucmd) == -1)
@@ -891,7 +889,7 @@ inline Gnuplot::~Gnuplot()
 #endif
         throw GnuplotException("Problem closing communication to gnuplot");
         
-    remove_tmpfiles();
+    //remove_tmpfiles();
 }
 
 #endif

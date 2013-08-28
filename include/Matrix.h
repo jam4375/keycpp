@@ -9,6 +9,26 @@
 
 namespace keycpp
 {
+    extern "C"{
+	/** \brief This provides a C interface to BLAS's double matrix-matrix multiplication function. */
+	void dgemm_(const char *TRANSA, const char *TRANSB, const int *M, const int *N,
+	            const int *K, double *ALPHA, double *A, const int *LDA, double *B,
+	            const int *LDB, double *BETA, double *C, const int *LDC);
+	            
+	/** \brief This provides a C interface to BLAS's complex double matrix-matrix multiplication function. */
+	void zgemm_(const char *TRANSA, const char *TRANSB, const int *M, const int *N,
+	            const int *K, std::complex<double> *ALPHA, std::complex<double> *A, const int *LDA, std::complex<double> *B,
+	            const int *LDB, std::complex<double> *BETA, std::complex<double> *C, const int *LDC);
+	            
+	/** \brief This provides a C interface to BLAS's double matrix-vector multiplication function. */
+	void dgemv_(const char * TRANS, const int *M, const int *N, const double *ALPHA, const double *A, const int *LDA, double *X,
+	            const int *INCX, const double *BETA, double *Y, const int *INCY);
+	            
+	/** \brief This provides a C interface to BLAS's complex double matrix-vector multiplication function. */
+	void zgemv_(const char * TRANS, const int *M, const int *N, const std::complex<double> *ALPHA,
+	            const std::complex<double> *A, const int *LDA, std::complex<double> *X,
+	            const int *INCX, const std::complex<double> *BETA, std::complex<double> *Y, const int *INCY);
+	}
 
 	struct matrix_size_type
 	{
@@ -35,6 +55,7 @@ namespace keycpp
 		std::vector<T> operator*(const std::vector<T> &x) const;
 		matrix<T> operator*(const matrix<T> &B) const;
 		matrix<T> operator+(const matrix<T> &B) const;
+		matrix<T>& operator+=(const matrix<T> &B);
 		matrix<T> operator-(const matrix<T> &B) const;
 		int size(const int &n) const;
 		bool empty() const;
@@ -164,6 +185,112 @@ namespace keycpp
 		}
 		return b;
 	}
+	
+	template<>
+	inline std::vector<double> matrix<double>::operator*(const std::vector<double> &x) const
+	{
+		if(x.empty())
+		{
+			throw MatrixException("Vector `x` cannot be empty in matrix-vector multiplication!");
+		}
+		if(x.size() != mCols)
+		{
+			throw MatrixException("Matrix and vector dimensions are not compatible in matrix-vector multiplication!");
+		}
+		if(mData.empty())
+		{
+			throw MatrixException("Cannot perform operation on empty matrix!");
+		}
+		std::vector<double> b(mRows);
+		int m = mRows;
+		int n = mCols;
+		double *A = new double[m*n];
+		double *X = new double[n];
+		for(int ii = 0; ii < n; ii++)
+		{
+			for(int jj = 0; jj < m; jj++)
+			{
+				A[ii*m + jj] = mData[jj*mCols + ii];
+			}
+		}
+		for(int ii = 0; ii < n; ii++)
+		{
+			X[ii] = x[ii];
+		}
+        char TRANS = 'N';
+        double ALPHA = 1.0;
+        int LDA = m;
+        int INCX = 1;
+        double BETA = 0.0;
+        double *y = new double[m];
+        int INCY = 1;
+
+        dgemv_(&TRANS, &m, &n, &ALPHA, A, &LDA, X,&INCX, &BETA, y, &INCY);
+        
+        for(int ii = 0; ii < m; ii++)
+        {
+            b[ii] = y[ii];
+        }
+        
+        delete [] A;
+        delete [] X;
+        delete [] y;
+        
+        return b;
+    }
+	
+	template<>
+	inline std::vector<std::complex<double>> matrix<std::complex<double>>::operator*(const std::vector<std::complex<double>> &x) const
+	{
+		if(x.empty())
+		{
+			throw MatrixException("Vector `x` cannot be empty in matrix-vector multiplication!");
+		}
+		if(x.size() != mCols)
+		{
+			throw MatrixException("Matrix and vector dimensions are not compatible in matrix-vector multiplication!");
+		}
+		if(mData.empty())
+		{
+			throw MatrixException("Cannot perform operation on empty matrix!");
+		}
+		std::vector<std::complex<double>> b(mRows);
+		int m = mRows;
+		int n = mCols;
+		std::complex<double> *A = new std::complex<double>[m*n];
+		std::complex<double> *X = new std::complex<double>[n];
+		for(int ii = 0; ii < n; ii++)
+		{
+			for(int jj = 0; jj < m; jj++)
+			{
+				A[ii*m + jj] = mData[jj*mCols + ii];
+			}
+		}
+		for(int ii = 0; ii < n; ii++)
+		{
+			X[ii] = x[ii];
+		}
+        char TRANS = 'N';
+        std::complex<double> ALPHA = 1.0;
+        int LDA = m;
+        int INCX = 1;
+        std::complex<double> BETA = 0.0;
+        std::complex<double> *y = new std::complex<double>[m];
+        int INCY = 1;
+
+        zgemv_(&TRANS, &m, &n, &ALPHA, A, &LDA, X,&INCX, &BETA, y, &INCY);
+        
+        for(int ii = 0; ii < m; ii++)
+        {
+            b[ii] = y[ii];
+        }
+        
+        delete [] A;
+        delete [] X;
+        delete [] y;
+        
+        return b;
+    }
 
 	template<class T>
 	matrix<T> matrix<T>::operator*(const matrix<T> &B) const
@@ -194,7 +321,126 @@ namespace keycpp
 		}
 		return C;
 	}
+	
+	template<>
+	inline matrix<double> matrix<double>::operator*(const matrix<double> &B) const
+	{
+		if(B.size(1) <= 0 || B.size(2) <= 0)
+		{
+			throw MatrixException("Cannot perform operation on empty matrix!");
+		}
+		if(mData.empty())
+		{
+			throw MatrixException("Cannot perform operation on empty matrix!");
+		}
+		if(mCols != B.size(1))
+		{
+			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix multiplication!");
+		}
+		matrix<double> C(mRows,B.size(2));
+		int m = mRows;
+		int k = mCols;
+		int n = B.size(2);
+		double *a = new double[m*k];
+		double *b = new double[k*n];
+		for(int ii = 0; ii < k; ii++)
+		{
+			for(int jj = 0; jj < m; jj++)
+			{
+				a[ii*m + jj] = mData[jj*mCols + ii];
+			}
+		}
+		for(int ii = 0; ii < n; ii++)
+		{
+			for(int jj = 0; jj < k; jj++)
+			{
+				b[ii*k + jj] = B(jj,ii);
+			}
+		}
+        char TRANS = 'N';
+        double ALPHA = 1.0;
+        int LDA = m;
+        int LDB = k;
+        double BETA = 0.0;
+        double *c = new double[n*m];
+        int LDC = m;
 
+        dgemm_(&TRANS, &TRANS, &m, &n, &k, &ALPHA, a, &LDA, b, &LDB, &BETA, c, &LDC);
+        
+        for(int ii = 0; ii < n; ii++)
+        {
+            for(int jj = 0; jj < m; jj++)
+            {
+                C(jj,ii) = c[ii*m + jj];
+            }
+        }
+        
+        delete [] a;
+        delete [] b;
+        delete [] c;
+        
+        return C;
+    }
+	
+	template<>
+	inline matrix<std::complex<double>> matrix<std::complex<double>>::operator*(const matrix<std::complex<double>> &B) const
+	{
+		if(B.size(1) <= 0 || B.size(2) <= 0)
+		{
+			throw MatrixException("Cannot perform operation on empty matrix!");
+		}
+		if(mData.empty())
+		{
+			throw MatrixException("Cannot perform operation on empty matrix!");
+		}
+		if(mCols != B.size(1))
+		{
+			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix multiplication!");
+		}
+		matrix<std::complex<double>> C(mRows,B.size(2));
+		int n = mRows;
+		int k = mCols;
+		int m = B.size(2);
+		std::complex<double> *a = new std::complex<double>[n*k];
+		std::complex<double> *b = new std::complex<double>[k*m];
+		for(int ii = 0; ii < k; ii++)
+		{
+			for(int jj = 0; jj < n; jj++)
+			{
+				a[ii*n + jj] = mData[jj*mCols + ii];
+			}
+		}
+		for(int ii = 0; ii < m; ii++)
+		{
+			for(int jj = 0; jj < k; jj++)
+			{
+				b[ii*k + jj] = B(jj,ii);
+			}
+		}
+        char TRANS = 'N';
+        std::complex<double> ALPHA = 1.0;
+        int LDA = n;
+        int LDB = k;
+        std::complex<double> BETA = 0.0;
+        std::complex<double> *c = new std::complex<double>[n*m];
+        int LDC = n;
+
+        zgemm_(&TRANS, &TRANS, &m, &n, &k, &ALPHA, a, &LDA, b, &LDB, &BETA, c, &LDC);
+        
+        for(int ii = 0; ii < m; ii++)
+        {
+            for(int jj = 0; jj < n; jj++)
+            {
+                C(jj,ii) = c[ii*n + jj];
+            }
+        }
+        
+        delete [] a;
+        delete [] b;
+        delete [] c;
+        
+        return C;
+    }
 
 	template<class T>
 	matrix<T> matrix<T>::operator+(const matrix<T> &B) const
@@ -220,6 +466,31 @@ namespace keycpp
 			}
 		}
 		return C;
+	}
+	
+	template<class T>
+	matrix<T>& matrix<T>::operator+=(const matrix<T> &B)
+	{
+		if(B.size(1) <= 0 || B.size(2) <= 0)
+		{
+			throw MatrixException("Cannot perform operation on empty matrix!");
+		}
+		if(mData.empty())
+		{
+			throw MatrixException("Cannot perform operation on empty matrix!");
+		}
+		if(mRows != B.size(1) || mCols != B.size(2))
+		{
+			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix addition!");
+		}
+		for(int ii = 0; ii < mRows; ii++)
+		{
+			for(int jj = 0; jj < mCols; jj++)
+			{
+				mData[ii * mCols + jj] += B(ii,jj);
+			}
+		}
+		return *this;
 	}
 
 	template<class T>
