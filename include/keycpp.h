@@ -45,7 +45,7 @@ namespace keycpp
 	double ddot_(const int *N, const double *a, const int *inca, const double *b, const int *incb);
 	
 	/** \brief This provides a C interface to BLAS's complex double dot product function. */
-	double zdot_(const int *N, const std::complex<double> *a, const int *inca, const std::complex<double> *b, const int *incb);
+	void zdotu_(std::complex<double> *result, const int *N, const std::complex<double> *a, const int *inca, const std::complex<double> *b, const int *incb);
 	
 	/** \brief This provides a C interface to LAPACK's complex generalized eigenvalue solver. */
 	void zggev_(const char *jobvl, const char *jobvr, const int *n, std::complex<double> *a,
@@ -2597,7 +2597,9 @@ namespace keycpp
 	        throw KeyCppException("Vectors must be same size in dot()!");
 	    }
 	    int inca = 1, incb = 1, N = v1.size();
-	    return zdot_(&N, &v1[0], &inca, &v2[0], &incb);
+	    std::complex<double> result;
+	    zdotu_(&result, &N, &v1[0], &inca, &v2[0], &incb);
+	    return result;
 	}
 	
 	/** \brief Computes the dot product between the first non-singleton dimension of A and B.
@@ -2678,7 +2680,7 @@ namespace keycpp
 	        int p = atoi(method.c_str());
 	        for(int ii = 0; ii < v1.size(); ii++)
 	        {
-	            anorm += pow(abs(v1[ii]),p);
+	            anorm += pow(std::abs(v1[ii]),p);
 	        }
 	        anorm = pow(anorm,1.0/p);
 	    }
@@ -2687,9 +2689,9 @@ namespace keycpp
 	        anorm = 0.0;
 	        for(int ii = 0; ii < v1.size(); ii++)
 	        {
-	            if(abs(v1[ii]) > anorm)
+	            if(std::abs(v1[ii]) > anorm)
 	            {
-	                anorm = abs(v1[ii]);
+	                anorm = std::abs(v1[ii]);
 	            }
 	        }
 	    }
@@ -2698,9 +2700,9 @@ namespace keycpp
 	        anorm = -1.0;
 	        for(int ii = 0; ii < v1.size(); ii++)
 	        {
-	            if(abs(v1[ii]) < anorm || anorm < 0.0)
+	            if(std::abs(v1[ii]) < anorm || anorm < 0.0)
 	            {
-	                anorm = abs(v1[ii]);
+	                anorm = std::abs(v1[ii]);
 	            }
 	        }
 	    }

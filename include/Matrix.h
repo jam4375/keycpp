@@ -12,21 +12,21 @@ namespace keycpp
     extern "C"{
 	/** \brief This provides a C interface to BLAS's double matrix-matrix multiplication function. */
 	void dgemm_(const char *TRANSA, const char *TRANSB, const int *M, const int *N,
-	            const int *K, double *ALPHA, double *A, const int *LDA, double *B,
+	            const int *K, double *ALPHA, const double *A, const int *LDA, const double *B,
 	            const int *LDB, double *BETA, double *C, const int *LDC);
 	            
 	/** \brief This provides a C interface to BLAS's complex double matrix-matrix multiplication function. */
 	void zgemm_(const char *TRANSA, const char *TRANSB, const int *M, const int *N,
-	            const int *K, std::complex<double> *ALPHA, std::complex<double> *A, const int *LDA, std::complex<double> *B,
+	            const int *K, std::complex<double> *ALPHA, const std::complex<double> *A, const int *LDA, const std::complex<double> *B,
 	            const int *LDB, std::complex<double> *BETA, std::complex<double> *C, const int *LDC);
 	            
 	/** \brief This provides a C interface to BLAS's double matrix-vector multiplication function. */
-	void dgemv_(const char * TRANS, const int *M, const int *N, const double *ALPHA, const double *A, const int *LDA, double *X,
+	void dgemv_(const char * TRANS, const int *M, const int *N, const double *ALPHA, const double *A, const int *LDA, const double *X,
 	            const int *INCX, const double *BETA, double *Y, const int *INCY);
 	            
 	/** \brief This provides a C interface to BLAS's complex double matrix-vector multiplication function. */
 	void zgemv_(const char * TRANS, const int *M, const int *N, const std::complex<double> *ALPHA,
-	            const std::complex<double> *A, const int *LDA, std::complex<double> *X,
+	            const std::complex<double> *A, const int *LDA, const std::complex<double> *X,
 	            const int *INCX, const std::complex<double> *BETA, std::complex<double> *Y, const int *INCY);
 	}
 
@@ -67,11 +67,11 @@ namespace keycpp
 		std::vector<T> getLastRow() const;
 		std::vector<T> getCol(const int &j) const;
 		int reserve(const int &N);
+		std::vector<T> mData;
 
 	private:
 		int mRows;
 		int mCols;
-		std::vector<T> mData;
 	};
 
 	template<class T>
@@ -106,7 +106,7 @@ namespace keycpp
 		{
 			for(int jj = 0; jj < mCols; jj++)
 			{
-				mData[ii*mCols + jj] = mat[ii][jj];
+				mData[jj*mRows + ii] = mat[ii][jj];
 			}
 		}
 	}
@@ -123,7 +123,7 @@ namespace keycpp
 		{
 			for(const auto& v : l)
 			{
-				mData[ii*mCols + jj] = v;
+				mData[jj*mRows + ii] = v;
 				jj++;
 			}
 			jj = 0;
@@ -142,7 +142,7 @@ namespace keycpp
 		{
 			throw MatrixException("Tried to access invalid matrix member!");
 		}
-		return mData[i*mCols + j];
+		return mData[j*mRows + i];
 	}
 
 	template<class T>
@@ -156,7 +156,7 @@ namespace keycpp
 		{
 			throw MatrixException("Tried to access invalid matrix member!");
 		}
-		return mData[i*mCols + j];
+		return mData[j*mRows + i];
 	}
 
 	template<class T>
@@ -180,7 +180,7 @@ namespace keycpp
 			b[ii] = 0.0;
 			for(int jj = 0; jj < mCols; jj++)
 			{
-				b[ii] += mData[ii * mCols + jj]*x[jj];
+				b[ii] += mData[jj*mRows + ii]*x[jj];
 			}
 		}
 		return b;
@@ -204,19 +204,6 @@ namespace keycpp
 		std::vector<double> b(mRows);
 		int m = mRows;
 		int n = mCols;
-		double *A = new double[m*n];
-		double *X = new double[n];
-		for(int ii = 0; ii < n; ii++)
-		{
-			for(int jj = 0; jj < m; jj++)
-			{
-				A[ii*m + jj] = mData[jj*mCols + ii];
-			}
-		}
-		for(int ii = 0; ii < n; ii++)
-		{
-			X[ii] = x[ii];
-		}
         char TRANS = 'N';
         double ALPHA = 1.0;
         int LDA = m;
@@ -225,16 +212,7 @@ namespace keycpp
         double *y = new double[m];
         int INCY = 1;
 
-        dgemv_(&TRANS, &m, &n, &ALPHA, A, &LDA, X,&INCX, &BETA, y, &INCY);
-        
-        for(int ii = 0; ii < m; ii++)
-        {
-            b[ii] = y[ii];
-        }
-        
-        delete [] A;
-        delete [] X;
-        delete [] y;
+        dgemv_(&TRANS, &m, &n, &ALPHA, &mData[0], &LDA, &x[0],&INCX, &BETA, &b[0], &INCY);
         
         return b;
     }
@@ -257,19 +235,6 @@ namespace keycpp
 		std::vector<std::complex<double>> b(mRows);
 		int m = mRows;
 		int n = mCols;
-		std::complex<double> *A = new std::complex<double>[m*n];
-		std::complex<double> *X = new std::complex<double>[n];
-		for(int ii = 0; ii < n; ii++)
-		{
-			for(int jj = 0; jj < m; jj++)
-			{
-				A[ii*m + jj] = mData[jj*mCols + ii];
-			}
-		}
-		for(int ii = 0; ii < n; ii++)
-		{
-			X[ii] = x[ii];
-		}
         char TRANS = 'N';
         std::complex<double> ALPHA = 1.0;
         int LDA = m;
@@ -278,16 +243,7 @@ namespace keycpp
         std::complex<double> *y = new std::complex<double>[m];
         int INCY = 1;
 
-        zgemv_(&TRANS, &m, &n, &ALPHA, A, &LDA, X,&INCX, &BETA, y, &INCY);
-        
-        for(int ii = 0; ii < m; ii++)
-        {
-            b[ii] = y[ii];
-        }
-        
-        delete [] A;
-        delete [] X;
-        delete [] y;
+        zgemv_(&TRANS, &m, &n, &ALPHA, &mData[0], &LDA, &x[0],&INCX, &BETA, &b[0], &INCY);
         
         return b;
     }
@@ -315,7 +271,7 @@ namespace keycpp
 				C(ii,kk) = 0.0;
 				for(int jj = 0; jj < mCols; jj++)
 				{
-					C(ii,kk) += mData[ii * mCols + jj]*B(jj,kk);
+					C(ii,kk) += mData[jj*mRows + ii]*B(jj,kk);
 				}
 			}
 		}
@@ -341,43 +297,14 @@ namespace keycpp
 		int m = mRows;
 		int k = mCols;
 		int n = B.size(2);
-		double *a = new double[m*k];
-		double *b = new double[k*n];
-		for(int ii = 0; ii < k; ii++)
-		{
-			for(int jj = 0; jj < m; jj++)
-			{
-				a[ii*m + jj] = mData[jj*mCols + ii];
-			}
-		}
-		for(int ii = 0; ii < n; ii++)
-		{
-			for(int jj = 0; jj < k; jj++)
-			{
-				b[ii*k + jj] = B(jj,ii);
-			}
-		}
         char TRANS = 'N';
         double ALPHA = 1.0;
         int LDA = m;
         int LDB = k;
         double BETA = 0.0;
-        double *c = new double[n*m];
         int LDC = m;
 
-        dgemm_(&TRANS, &TRANS, &m, &n, &k, &ALPHA, a, &LDA, b, &LDB, &BETA, c, &LDC);
-        
-        for(int ii = 0; ii < n; ii++)
-        {
-            for(int jj = 0; jj < m; jj++)
-            {
-                C(jj,ii) = c[ii*m + jj];
-            }
-        }
-        
-        delete [] a;
-        delete [] b;
-        delete [] c;
+        dgemm_(&TRANS, &TRANS, &m, &n, &k, &ALPHA, &mData[0], &LDA, &B.mData[0], &LDB, &BETA, &C.mData[0], &LDC);
         
         return C;
     }
@@ -401,43 +328,14 @@ namespace keycpp
 		int n = mRows;
 		int k = mCols;
 		int m = B.size(2);
-		std::complex<double> *a = new std::complex<double>[n*k];
-		std::complex<double> *b = new std::complex<double>[k*m];
-		for(int ii = 0; ii < k; ii++)
-		{
-			for(int jj = 0; jj < n; jj++)
-			{
-				a[ii*n + jj] = mData[jj*mCols + ii];
-			}
-		}
-		for(int ii = 0; ii < m; ii++)
-		{
-			for(int jj = 0; jj < k; jj++)
-			{
-				b[ii*k + jj] = B(jj,ii);
-			}
-		}
         char TRANS = 'N';
         std::complex<double> ALPHA = 1.0;
         int LDA = n;
         int LDB = k;
         std::complex<double> BETA = 0.0;
-        std::complex<double> *c = new std::complex<double>[n*m];
         int LDC = n;
 
-        zgemm_(&TRANS, &TRANS, &m, &n, &k, &ALPHA, a, &LDA, b, &LDB, &BETA, c, &LDC);
-        
-        for(int ii = 0; ii < m; ii++)
-        {
-            for(int jj = 0; jj < n; jj++)
-            {
-                C(jj,ii) = c[ii*n + jj];
-            }
-        }
-        
-        delete [] a;
-        delete [] b;
-        delete [] c;
+        zgemm_(&TRANS, &TRANS, &m, &n, &k, &ALPHA, &mData[0], &LDA, &B.mData[0], &LDB, &BETA, &C.mData[0], &LDC);
         
         return C;
     }
@@ -462,7 +360,7 @@ namespace keycpp
 		{
 			for(int jj = 0; jj < mCols; jj++)
 			{
-				C(ii,jj) = mData[ii * mCols + jj] + B(ii,jj);
+				C(ii,jj) = mData[jj*mRows + ii] + B(ii,jj);
 			}
 		}
 		return C;
@@ -487,7 +385,7 @@ namespace keycpp
 		{
 			for(int jj = 0; jj < mCols; jj++)
 			{
-				mData[ii * mCols + jj] += B(ii,jj);
+				mData[jj*mRows + ii] += B(ii,jj);
 			}
 		}
 		return *this;
@@ -513,7 +411,7 @@ namespace keycpp
 		{
 			for(int jj = 0; jj < mCols; jj++)
 			{
-				C(ii,jj) = mData[ii * mCols + jj] - B(ii,jj);
+				C(ii,jj) = mData[jj*mRows + ii] - B(ii,jj);
 			}
 		}
 		return C;
@@ -567,7 +465,7 @@ namespace keycpp
 
 		for(int jj = 0; jj < mCols; jj++)
 		{
-			mData[n * mCols + jj] = row[jj];
+			mData[jj*mRows + n] = row[jj];
 		}
 		return 0;
 	}
@@ -586,7 +484,7 @@ namespace keycpp
 
 		for(int jj = 0; jj < mCols; jj++)
 		{
-			mData[(mRows-1) * mCols + jj] = row[jj];
+			mData[jj*mRows + (mRows-1)] = row[jj];
 		}
 		return 0;
 	}
@@ -603,7 +501,7 @@ namespace keycpp
 		mData.resize(mRows*mCols);
 		for(int jj = 0; jj < mCols; jj++)
 		{
-			mData[(mRows-1) * mCols + jj] = row[jj];
+			mData[jj*mCols + (mRows-1)] = row[jj];
 		}
 		return 0;
 	}
@@ -625,7 +523,7 @@ namespace keycpp
 		}
 		for(int ii = 0; ii < mRows; ii++)
 		{
-			mData[ii * mCols + n] = col[ii];
+			mData[n*mRows + ii] = col[ii];
 		}
 		return 0;
 	}
@@ -645,7 +543,7 @@ namespace keycpp
 
 		for(int jj = 0; jj < mCols; jj++)
 		{
-			Row[jj] = mData[n * mCols + jj];
+			Row[jj] = mData[jj*mRows + n];
 		}
 
 		return Row;
@@ -662,7 +560,7 @@ namespace keycpp
 
 		for(int jj = 0; jj < mCols; jj++)
 		{
-			Row[jj] = mData[(mRows-1) * mCols + jj];
+			Row[jj] = mData[jj*mRows + (mRows-1)];
 		}
 
 		return Row;
@@ -683,7 +581,7 @@ namespace keycpp
 
 		for(int ii = 0; ii < mRows; ii++)
 		{
-			Col[ii] = mData[ii * mCols + n];
+			Col[ii] = mData[n*mRows + ii];
 		}
 
 		return Col;

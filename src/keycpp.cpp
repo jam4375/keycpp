@@ -701,19 +701,10 @@ namespace keycpp
             int info, lda;
             int lwork = A_in.size(1)*A_in.size(2) + 64;
             double *w1 = new double[lwork];
-            double *A = new double[A_in.size(1)*A_in.size(2)];
-            for(int ii = 0; ii < A_in.size(2); ii++)
-            {
-                for(int jj = 0; jj < A_in.size(1); jj++)
-                {
-                    A[ii*A_in.size(1) + jj] = A_in(jj,ii);
-                }
-            }
             lda = m;
-            anorm = dlange_(method.c_str(), &m, &n, A, &lda, w1);
+            anorm = dlange_(method.c_str(), &m, &n, &A_in.mData[0], &lda, w1);
             
             delete [] w1;
-            delete [] A;
         }
         
         return anorm;
@@ -828,7 +819,7 @@ namespace keycpp
                  
         if(info != 0)
         {
-            throw KeyCppException("Unknown error in SVD()!");
+            throw KeyCppException("Unknown error in svd()!");
         }
         
         out.U = matrix<double>(m,col_u);
@@ -897,19 +888,10 @@ namespace keycpp
             int info, lda;
             int lwork = A_in.size(1)*A_in.size(2) + 64;
             double *w1 = new double[lwork];
-            complex<double> *A = new complex<double>[A_in.size(1)*A_in.size(2)];
-            for(int ii = 0; ii < A_in.size(2); ii++)
-            {
-                for(int jj = 0; jj < A_in.size(1); jj++)
-                {
-                    A[ii*A_in.size(1) + jj] = A_in(jj,ii);
-                }
-            }
             lda = m;
-            anorm = zlange_(method.c_str(), &m, &n, A, &lda, w1);
+            anorm = zlange_(method.c_str(), &m, &n, &A_in.mData[0], &lda, w1);
             
             delete [] w1;
-            delete [] A;
         }
         
         return anorm;

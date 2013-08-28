@@ -171,9 +171,9 @@
     <member refid="structkiss__fft__state_1aa7d1cab86ec03a8ecddfe0d91ef0bd20" kind="variable"><name>twiddles</name></member>
   </compound>
   <compound refid="classkeycpp_1_1matrix" kind="class"><name>keycpp::matrix</name>
+    <member refid="classkeycpp_1_1matrix_1ae2144abe57757c5a29e73aaf4d3520aa" kind="variable"><name>mData</name></member>
     <member refid="classkeycpp_1_1matrix_1a9915bff3d1054d011d0277e2f69d4cb9" kind="variable"><name>mRows</name></member>
     <member refid="classkeycpp_1_1matrix_1a0b3616ad94ec868233ef48c0b57c2d52" kind="variable"><name>mCols</name></member>
-    <member refid="classkeycpp_1_1matrix_1ae2144abe57757c5a29e73aaf4d3520aa" kind="variable"><name>mData</name></member>
     <member refid="classkeycpp_1_1matrix_1a67ccf4f864b38b69dfd8bdb507be243c" kind="function"><name>matrix</name></member>
     <member refid="classkeycpp_1_1matrix_1a7846ea93147dca75e5a8fbea7219c35d" kind="function"><name>matrix</name></member>
     <member refid="classkeycpp_1_1matrix_1ad843813ecfec7c08b9259957406e94e2" kind="function"><name>matrix</name></member>
@@ -295,7 +295,7 @@
     <member refid="namespacekeycpp_1ad033c29d2245437a52140ff3c46fa1d8" kind="function"><name>Figure::plot&lt; std::complex&lt; double &gt; &gt;</name></member>
     <member refid="namespacekeycpp_1acfb9f560ec3a131190f23bf18c12b2f8" kind="function"><name>Figure::plot&lt; std::complex&lt; double &gt; &gt;</name></member>
     <member refid="namespacekeycpp_1a55e50932cc54f92bdd7e38c6438f4f1f" kind="function"><name>ddot_</name></member>
-    <member refid="namespacekeycpp_1a59f3446b6ac4336a0a139ed5464ec36d" kind="function"><name>zdot_</name></member>
+    <member refid="namespacekeycpp_1a2ce99b4fe4a13b9c70ada81761eb0ca2" kind="function"><name>zdotu_</name></member>
     <member refid="namespacekeycpp_1ace2501951ab3db3a91c3520ae89750b1" kind="function"><name>zggev_</name></member>
     <member refid="namespacekeycpp_1aebc5253e80ac15a9bfdc5449ae4f972a" kind="function"><name>dgeev_</name></member>
     <member refid="namespacekeycpp_1a8c1cca2a162f40fc6c6218c35cadf9f2" kind="function"><name>zgeev_</name></member>
@@ -518,10 +518,10 @@
     <member refid="namespacekeycpp_1a9d70a761d33bbc2bdec6b4e0eb43d517" kind="function"><name>sprintf</name></member>
     <member refid="namespacekeycpp_1aff2feefaeb946dd453d74ff51c66fe67" kind="function"><name>clock</name></member>
     <member refid="namespacekeycpp_1ac20bd2ef4fb18cbcdb0f462a89447bd7" kind="function"><name>pinv</name></member>
-    <member refid="namespacekeycpp_1a669f27dea4ade365285366b754619e85" kind="function"><name>dgemm_</name></member>
-    <member refid="namespacekeycpp_1aecf8a49db6ea8eaa6e8b57ed8c72bf31" kind="function"><name>zgemm_</name></member>
-    <member refid="namespacekeycpp_1aa3868c380827829ba77e27c0b8bde18c" kind="function"><name>dgemv_</name></member>
-    <member refid="namespacekeycpp_1a4a8822af16237063b1669dfe9588c4ea" kind="function"><name>zgemv_</name></member>
+    <member refid="namespacekeycpp_1a16b58f47ed977cafdc96227468f5f10a" kind="function"><name>dgemm_</name></member>
+    <member refid="namespacekeycpp_1a29fb4e46ee1b9cce0fd8bc79a2490c72" kind="function"><name>zgemm_</name></member>
+    <member refid="namespacekeycpp_1af0676a4a89dbb63f09fc627c05e12699" kind="function"><name>dgemv_</name></member>
+    <member refid="namespacekeycpp_1aea174778653491b5fd21dd2960c0f7cb" kind="function"><name>zgemv_</name></member>
     <member refid="namespacekeycpp_1a524691df2a648a59b3be9f2b2362bbe8" kind="function"><name>eig</name></member>
     <member refid="namespacekeycpp_1ab2aef1f33c78911d0ebcd77f9c9841fe" kind="function"><name>eig</name></member>
     <member refid="namespacekeycpp_1a7cc3fb9ca244e5caac42cf94013ddf94" kind="function"><name>eig</name></member>

@@ -66,5 +66,7 @@ int main(int argc, char** argv)
     set(h2,"fontsize",14);
     h2.title("ODE Solution");
     
+    disp(A*A);
+    
     return 0;
 }
