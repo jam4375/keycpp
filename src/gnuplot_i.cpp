@@ -823,6 +823,9 @@ Gnuplot& Gnuplot::cmd(const std::string &cmdstr)
         two_dim = true;
         nplots++;
     }
+    
+    // Uncomment to see what commands are being sent to Gnuplot:
+    //std::cout << cmdstr << std::endl;
 
     return *this;
 }

@@ -52,6 +52,8 @@ namespace keycpp
 		std::vector<double> plot_markersize;
 		std::vector<double> plot_val;
 		std::vector<std::string> legend_entries;
+		std::string legend_location = "ins vert right top";
+		std::string legend_box = " box";
 		std::string m_xlabel;
 		std::string m_ylabel;
 		std::string m_title;
@@ -80,13 +82,16 @@ namespace keycpp
 		matrix<double> colors;
 		std::vector<Plots> p;
 		int fontsize = 10;
+		std::string fontname = "Helvetica";
 		bool multiplot = false;
 		int current_plot = 0;
 		int multi_rows = -1;
 		int multi_cols = -1;
 		bool final_replot = false;
-		int m_width = 500;
-		int m_height = 375;
+		int m_width = 560;
+		int m_height = 420;
+		std::string term;
+		std::string filename;
 	
 	public:
 		Figure();
@@ -126,13 +131,14 @@ namespace keycpp
 		void hold_on();
 		void hold_off();
 		void subplot(int mrows, int mcols, int index);
-		void legend(std::initializer_list<std::string> lst);
+		void legend(std::initializer_list<std::string> lst, std::string property1 = "", std::string val1 = "", std::string property2 = "", std::string val2 = "");
 		void ylim(std::initializer_list<double> lst);
 		void xlim(std::initializer_list<double> lst);
 		void replot_all();
 		void setFontsize(int p_fontsize) {fontsize = p_fontsize;};
 		int getFontsize() {return fontsize;};
 		void set(std::string property, double val);
+		void print(std::string pterm, std::string pfilename) {term = pterm; filename = pfilename;};
 		void set(std::string property, std::initializer_list<int> list);
 	};
 	
@@ -343,7 +349,7 @@ namespace keycpp
 				else if(arguments.find(".") != std::string::npos && pt < 0)
 				{
 					arguments.erase(arguments.find("."),1);
-					pt = 3;
+					pt = 7;
 				}
 				else if(arguments.find("x") != std::string::npos && pt < 0)
 				{
@@ -444,12 +450,44 @@ namespace keycpp
 			    if(current_plot == 0 && p[current_plot].num_plots == 1)
 			    {
 			        std::stringstream term_stream;
-			        term_stream << "wxt size ";
-			        term_stream << m_width << "," << m_height << " enhanced font 'Verdana,";
-			        term_stream << fontsize;
-			        term_stream << "' persist";
-			        g.set_terminal_std(term_stream.str());
-			        g.showonscreen();
+			        if(term.empty())
+			        {
+			            term_stream << "wxt size ";
+			            term_stream << m_width << "," << m_height << " enhanced font '" << fontname << ",";
+			            term_stream << fontsize;
+			            term_stream << "' persist";
+			        }
+			        else if(term.compare("-dpdf") == 0)
+			        {
+			            term_stream << "pdf size ";
+			            term_stream << m_width/100 << "," << m_height/100 << " enhanced font '" << fontname << ",";
+			            term_stream << fontsize*1.5;
+			            term_stream << "'";
+			        }
+			        else if(term.compare("-deps") == 0)
+			        {
+			            term_stream << "postscript color size ";
+			            term_stream << m_width/100 << "," << m_height/100 << " enhanced font '" << fontname << ",";
+			            term_stream << fontsize*1.5;
+			            term_stream << "'";
+			        }
+			        else
+			        {
+			            throw FigureException("Unrecognized output type in print!");
+			        }
+			        
+			        if(!filename.empty())
+			        {
+			            g.cmd("set terminal " + term_stream.str());
+			            std::stringstream ss_temp;
+			            ss_temp << "set output '" << filename << "'";
+			            g.cmd(ss_temp.str());
+			        }
+			        else
+			        {
+			            g.set_terminal_std(term_stream.str());
+			            g.showonscreen();
+			        }
 			        if(multiplot)
 			        {
 			            std::stringstream multi_stream;
@@ -525,7 +563,7 @@ namespace keycpp
 			    }
 			    else if(pt > 0)
 			    {
-				    stream2 << "points pt " << pt << " ps " << ps << " lc rgb '";
+				    stream2 << "points pt " << pt << " ps " << ps << " lw " << lw << " lc rgb '";
 				    if(color_str.empty())
 				    {
 					    stream2 << "#";
@@ -545,7 +583,11 @@ namespace keycpp
 			    }
 			    g.set_style(stream2.str());
 			
-			
+			    
+			    if(!p[current_plot].legend_location.empty() && current_plot == 0)
+			    {
+			        g.set_legend(p[current_plot].legend_location + p[current_plot].legend_box);
+			    }
 			    if(!p[current_plot].m_xlabel.empty())
 			    {
 			        g.set_xlabel(p[current_plot].m_xlabel);
@@ -570,57 +612,53 @@ namespace keycpp
 			    {
 			        g.set_ylogscale();
 			    }
-			
-			    if(multiplot)
-			    {
-                    std::ofstream tmp;
-                    std::string name = g.create_tmpfile(tmp);
-                    if(name == "")
-                    {
-                        throw FigureException("Error creating temporary file!");
-                    }
 
-                    for(int ii = 0; ii < x.size(); ii++)
-                    {
-                        tmp << x[ii] << " " << y[ii] << std::endl;
-                    }
-                    tmp.flush();
-                    tmp.close();
-                    
-                    if(p[current_plot].num_plots > 1)
-                    {
-                        p[current_plot].cmdstr << ", ";
-                    }
-                    else
-                    {
-                        p[current_plot].cmdstr << "plot ";
-                    }
+                std::ofstream tmp;
+                std::string name = g.create_tmpfile(tmp);
+                if(name == "")
+                {
+                    throw FigureException("Error creating temporary file!");
+                }
 
-                    p[current_plot].cmdstr << "\"" << name << "\" using 1:2";
+                for(int ii = 0; ii < x.size(); ii++)
+                {
+                    tmp << x[ii] << " " << y[ii] << std::endl;
+                }
+                tmp.flush();
+                tmp.close();
 
-                    if(legend_entry.empty())
-                    {
-                        p[current_plot].cmdstr << " notitle ";
-                    }
-                    else
-                    {
-                        p[current_plot].cmdstr << " title \"" << legend_entry << "\" ";
-                    }
-                    p[current_plot].cmdstr << "with " << g.get_style();
-			    }
-			    else
-			    {
-			        g.plot_xy(x,y,legend_entry);
-			    }
-			
-			
-		        if(multiplot && current_plot == p.size()-1 && p[current_plot].num_plots == p[current_plot].x_plot_data.size())
+                if(p[current_plot].num_plots > 1)
+                {
+                    p[current_plot].cmdstr << ", ";
+                }
+                else
+                {
+                    p[current_plot].cmdstr << "plot ";
+                }
+
+                p[current_plot].cmdstr << "\"" << name << "\" using 1:2";
+
+                if(legend_entry.empty())
+                {
+                    p[current_plot].cmdstr << " notitle ";
+                }
+                else
+                {
+                    p[current_plot].cmdstr << " title \"" << legend_entry << "\" ";
+                }
+                p[current_plot].cmdstr << "with " << g.get_style();
+
+			    
+		        if(current_plot == p.size()-1 && p[current_plot].num_plots == p[current_plot].x_plot_data.size())
 		        {
-	                if(p[current_plot].cmdstr.str().length() != 0)
-	                {
+                    if(p[current_plot].cmdstr.str().length() != 0)
+                    {
                         g.cmd(p[current_plot].cmdstr.str());
-	                }
-		            g.cmd("unset multiplot");
+                    }
+                    if(multiplot)
+                    {
+		                g.cmd("unset multiplot");
+		            }
 		        }
 		    }
 		    catch(GnuplotException ge)
@@ -990,7 +1028,7 @@ namespace keycpp
 		return;
 	}
 	
-	inline void Figure::legend(const std::initializer_list<std::string> lst)
+	inline void Figure::legend(const std::initializer_list<std::string> lst, std::string property1, std::string val1, std::string property2, std::string val2)
 	{
 		if(lst.size() <= 0)
 		{
@@ -1006,6 +1044,165 @@ namespace keycpp
 		{
 			p[current_plot].legend_entries[ii] = l;
 			ii++;
+		}
+		
+		if(!property1.empty() && !val1.empty())
+		{
+		    std::transform(property1.begin(), property1.end(), property1.begin(), ::tolower);
+		    std::transform(val1.begin(), val1.end(), val1.begin(), ::tolower);
+		    if(property1.compare("box") == 0)
+		    {
+		        if(val1.compare("off") == 0)
+		        {
+		            p[current_plot].legend_box = "";
+		        }
+		    }
+		    if(property1.compare("location") == 0)
+		    {
+		        if(val1.compare("northwest") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert left top";
+		        }
+		        if(val1.compare("northeast") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert right top";
+		        }
+		        if(val1.compare("southwest") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert left bot";
+		        }
+		        if(val1.compare("southeast") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert right bot";
+		        }
+		        if(val1.compare("north") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert top";
+		        }
+		        if(val1.compare("south") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert bot";
+		        }
+		        if(val1.compare("east") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert right";
+		        }
+		        if(val1.compare("west") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert left";
+		        }
+		        if(val1.compare("northwestoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert left top";
+		        }
+		        if(val1.compare("northeastoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert right top";
+		        }
+		        if(val1.compare("southwestoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert left bot";
+		        }
+		        if(val1.compare("southeastoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert right bot";
+		        }
+		        if(val1.compare("northoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert top";
+		        }
+		        if(val1.compare("southoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert bot";
+		        }
+		        if(val1.compare("eastoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert right";
+		        }
+		        if(val1.compare("westoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert left";
+		        }
+		    }
+		}
+		if(!property2.empty() && !val2.empty())
+		{
+		    std::transform(property2.begin(), property2.end(), property2.begin(), ::tolower);
+		    std::transform(val2.begin(), val2.end(), val2.begin(), ::tolower);
+		    if(property2.compare("box") == 0)
+		    {
+		        if(val2.compare("off") == 0)
+		        {
+		            p[current_plot].legend_box = "";
+		        }
+		    }
+		    if(property2.compare("location") == 0)
+		    {
+		        if(val2.compare("northwest") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert left top";
+		        }
+		        if(val2.compare("northeast") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert right top";
+		        }
+		        if(val2.compare("southwest") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert left bot";
+		        }
+		        if(val2.compare("southeast") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert right bot";
+		        }
+		        if(val2.compare("north") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert top";
+		        }
+		        if(val2.compare("south") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert bot";
+		        }
+		        if(val2.compare("east") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert right";
+		        }
+		        if(val2.compare("west") == 0)
+		        {
+		            p[current_plot].legend_location = "ins vert left";
+		        }
+		        if(val2.compare("northwestoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert left top";
+		        }
+		        if(val2.compare("northeastoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert right top";
+		        }
+		        if(val2.compare("southwestoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert left bot";
+		        }
+		        if(val2.compare("southeastoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert right bot";
+		        }
+		        if(val2.compare("northoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert top";
+		        }
+		        if(val2.compare("southoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert bot";
+		        }
+		        if(val2.compare("eastoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert right";
+		        }
+		        if(val2.compare("westoutside") == 0)
+		        {
+		            p[current_plot].legend_location = "out vert left";
+		        }
+		    }
 		}
 	}
 	
@@ -1043,6 +1240,10 @@ namespace keycpp
 		if(property.compare("fontsize") == 0)
 		{
 			fontsize = (int)round(val);
+		}
+		else if(property.compare("fontname") == 0)
+		{
+			fontname = val;
 		}
 		else
 		{

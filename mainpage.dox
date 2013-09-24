@@ -47,17 +47,17 @@ If everything was successful, you should be able to compile and run the example 
 
 `g++ -c -o obj/example.o example.cpp -std=c++11`
 
-`g++ -o example obj/example.o -std=c++11 -lkeycpp -llapack`
+`g++ -o example obj/example.o -std=c++11 -lkeycpp -lblas -llapack`
 
 `./example`
 
-If you are using Intel's MKL libraries, use this command instead of the one above: (where `/opt/intel/mkl/lib/intel64` is the path of your MKL library `libmkl_rt.so`)
+If you are using Intel's MKL libraries, use this command instead of the one above: (where `/$(MKLROOT)/lib/intel64` is the path of your MKL library `libmkl_rt.so`)
 
-`g++ -o example obj/example.o -std=c++11 -lkeycpp -L/opt/intel/mkl/lib/intel64 -lmkl_rt`
+`g++ -o example obj/example.o -std=c++11 -lkeycpp -L/\$(MKLROOT)/lib/intel64 -lmkl_rt`
 
 Alternatively, you could just type `make lib=lapack` or `make lib=mkl` inside the `examples` directory. Then type `./example` to run the example code.
 
-When you are writing your own programs be sure to link with the `libkeycpp.a` and `liblapack.a` libraries (or `libmkl_rt.so` if you are using Intel MKL). With `g++` the form is the same as used above. _DO NOT FORGET TO COMPILE WITH THE C++11 STANDARD!_
+When you are writing your own programs be sure to link with the `libkeycpp.a`, `libblas.a`, and `liblapack.a` libraries (or `libmkl_rt.so` if you are using Intel MKL). With `g++` the form is the same as used above. _DO NOT FORGET TO COMPILE WITH THE C++11 STANDARD!_
 
 # Example Code
 <b>\c example.cpp</b>

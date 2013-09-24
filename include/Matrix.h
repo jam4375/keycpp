@@ -41,6 +41,37 @@ namespace keycpp
 	    public:
 		MatrixException(const std::string &msg) : std::runtime_error(msg){}
 	};
+	
+	template<class T>
+	class vector_ref
+	{
+	public:
+	    vector_ref(T *pData, int pN, int pinc) {Data = pData; N = pN; inc = pinc;};
+	    T *Data;
+	    int N;
+	    int inc;
+		vector_ref<T>& operator=(const std::vector<T> &v1)
+		{
+		    if(v1.size() != N)
+		    {
+		        throw MatrixException("Vectors must be of same length for assignment with vector_ref!");
+		    }
+		    for(int ii = 0; ii < N; ii++)
+		    {
+		        Data[ii*inc] = v1[ii];
+		    }
+		    return *this;
+		};
+		operator std::vector<T>()
+		{
+		    std::vector<T> v1(N);
+		    for(int ii = 0; ii < N; ii++)
+		    {
+		        v1[ii] = Data[ii*inc];
+		    }
+		    return v1;
+		};
+	};
 
 	template<class T>
 	class matrix
@@ -59,13 +90,13 @@ namespace keycpp
 		matrix<T> operator-(const matrix<T> &B) const;
 		int size(const int &n) const;
 		bool empty() const;
-		int setRow(const std::vector<T> &row, const int &i);
+		vector_ref<T> row(const int &i);
 		int setLastRow(const std::vector<T> &row);
 		int addLastRow(const std::vector<T> &row);
-		int setCol(const std::vector<T> &col, const int &j);
 		std::vector<T> getRow(const int &i) const;
 		std::vector<T> getLastRow() const;
 		std::vector<T> getCol(const int &j) const;
+		vector_ref<T> col(const int &j);
 		int reserve(const int &N);
 		std::vector<T> mData;
 
@@ -75,7 +106,7 @@ namespace keycpp
 	};
 
 	template<class T>
-	matrix<T>::matrix()
+	matrix<T>::matrix() : mRows(0), mCols(0)
 	{
 	}
 
@@ -446,14 +477,10 @@ namespace keycpp
 		    return false;
 		}
 	}
-
+	
 	template<class T>
-	int matrix<T>::setRow(const std::vector<T> &row, const int &n)
+	vector_ref<T> matrix<T>::row(const int &n)
 	{
-		if(row.size() != mCols)
-		{
-			throw MatrixException("Vector dimension is incompatible with matrix dimension in setRow().");
-		}
 		if(n > mRows || n < 0)
 		{
 			throw MatrixException("Invalid row index in setRow().");
@@ -462,12 +489,9 @@ namespace keycpp
 		{
 			throw MatrixException("Cannot use method setRow() on empty matrix!");
 		}
-
-		for(int jj = 0; jj < mCols; jj++)
-		{
-			mData[jj*mRows + n] = row[jj];
-		}
-		return 0;
+		
+		vector_ref<T> Row(&mData[n],mCols,mRows);
+		return Row;
 	}
 
 	template<class T>
@@ -498,21 +522,25 @@ namespace keycpp
 		}
 
 		mRows++;
+		std::vector<T> temp = mData;
 		mData.resize(mRows*mCols);
 		for(int jj = 0; jj < mCols; jj++)
 		{
-			mData[jj*mCols + (mRows-1)] = row[jj];
+		    for(int ii = 0; ii < (mRows-1); ii++)
+		    {
+		        mData[jj*mRows + ii] = temp[jj*(mRows-1) + ii];
+		    }
+		}
+		for(int jj = 0; jj < mCols; jj++)
+		{
+			mData[jj*mRows + (mRows-1)] = row[jj];
 		}
 		return 0;
 	}
 
 	template<class T>
-	int matrix<T>::setCol(const std::vector<T> &col, const int &n)
+	vector_ref<T> matrix<T>::col(const int &n)
 	{
-		if(col.size() != mRows)
-		{
-			throw MatrixException("Vector dimension is incompatible with matrix dimension in setCol().");
-		}
 		if(n > mCols || n < 0)
 		{
 			throw MatrixException("Invalid column index in setCol().");
@@ -521,11 +549,9 @@ namespace keycpp
 		{
 			throw MatrixException("Cannot use method setCol() on empty matrix!");
 		}
-		for(int ii = 0; ii < mRows; ii++)
-		{
-			mData[n*mRows + ii] = col[ii];
-		}
-		return 0;
+		
+		vector_ref<T> Col(&mData[n*mRows],mRows,1);
+		return Col;
 	}
 
 	template<class T>
@@ -586,7 +612,7 @@ namespace keycpp
 
 		return Col;
 	}
-
+	
 	template<class T>
 	int matrix<T>::reserve(const int &N)
 	{

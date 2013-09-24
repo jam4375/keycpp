@@ -47,6 +47,18 @@ namespace keycpp
 	/** \brief This provides a C interface to BLAS's complex double dot product function. */
 	void zdotu_(std::complex<double> *result, const int *N, const std::complex<double> *a, const int *inca, const std::complex<double> *b, const int *incb);
 	
+	/** \brief This provides a C interface to BLAS's double vector addition function. */
+	void daxpy_(const int *N, const double *alpha, const double *x, const int *incx, double *y, const int *incy);
+	
+	/** \brief This provides a C interface to BLAS's complex double vector addition function. */
+	void zaxpy_(const int *N, const std::complex<double> *alpha, const std::complex<double> *x, const int *incx, std::complex<double> *y, const int *incy);
+	
+	/** \brief This provides a C interface to BLAS's double scalar-vector multiplication function. */
+	void dscal_(const int *N, const double *alpha, double *x, const int *incx);
+	
+	/** \brief This provides a C interface to BLAS's complex double scalar-vector multiplication function. */
+	void zscal_(const int *N, const std::complex<double> *alpha, std::complex<double> *x, const int *incx);
+	
 	/** \brief This provides a C interface to LAPACK's complex generalized eigenvalue solver. */
 	void zggev_(const char *jobvl, const char *jobvr, const int *n, std::complex<double> *a,
 		        const int *lda, std::complex<double> *b, const int *ldb, std::complex<double> *alpha,
@@ -440,6 +452,42 @@ namespace keycpp
 		}
 		return result;
 	}
+	
+	template<>
+	inline std::vector<double> operator+(const std::vector<double>& v1, const std::vector<double>& v2)
+	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot add empty vector!");
+	    }
+	    if(v1.size() != v2.size())
+	    {
+	        throw KeyCppException("Cannot add vectors of different sizes!");
+	    }
+	    int N = v1.size(), incx = 1, incy = 1;
+	    double alpha = 1.0;
+		std::vector<double> result(v2);
+	    daxpy_(&N, &alpha, &v1[0], &incx, &result[0], &incy);
+		return result;
+	}
+	
+	template<>
+	inline std::vector<std::complex<double>> operator+(const std::vector<std::complex<double>>& v1, const std::vector<std::complex<double>>& v2)
+	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot add empty vector!");
+	    }
+	    if(v1.size() != v2.size())
+	    {
+	        throw KeyCppException("Cannot add vectors of different sizes!");
+	    }
+	    int N = v1.size(), incx = 1, incy = 1;
+	    std::complex<double> alpha = 1.0;
+		std::vector<std::complex<double>> result(v2);
+	    zaxpy_(&N, &alpha, &v1[0], &incx, &result[0], &incy);
+		return result;
+	}
 
 	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> operator+(const std::vector<T>& v1, const U& a)
 	{
@@ -552,6 +600,42 @@ namespace keycpp
 		}
 		return result;
 	}
+	
+	template<>
+	inline std::vector<double> operator-(const std::vector<double>& v1, const std::vector<double>& v2)
+	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot subtract empty vector!");
+	    }
+	    if(v1.size() != v2.size())
+	    {
+	        throw KeyCppException("Cannot subtract vectors of different sizes!");
+	    }
+	    int N = v1.size(), incx = 1, incy = 1;
+	    double alpha = -1.0;
+		std::vector<double> result(v1);
+	    daxpy_(&N, &alpha, &v2[0], &incx, &result[0], &incy);
+		return result;
+	}
+	
+	template<>
+	inline std::vector<std::complex<double>> operator-(const std::vector<std::complex<double>>& v1, const std::vector<std::complex<double>>& v2)
+	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot subtract empty vector!");
+	    }
+	    if(v1.size() != v2.size())
+	    {
+	        throw KeyCppException("Cannot subtract vectors of different sizes!");
+	    }
+	    int N = v1.size(), incx = 1, incy = 1;
+	    std::complex<double> alpha = -1.0;
+		std::vector<std::complex<double>> result(v1);
+	    zaxpy_(&N, &alpha, &v2[0], &incx, &result[0], &incy);
+		return result;
+	}
 
 	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator*(const T& a, const matrix<U>& A)
 	{
@@ -620,6 +704,24 @@ namespace keycpp
 		}
 		return v2;
 	}
+
+	template<>
+	inline std::vector<double> operator*(const double& a, const std::vector<double>& v1)
+	{
+		std::vector<double> v2(v1);
+		int N = v1.size(), incx = 1;
+		dscal_(&N, &a, &v2[0], &incx);
+		return v2;
+	}
+
+	template<>
+	inline std::vector<std::complex<double>> operator*(const std::complex<double>& a, const std::vector<std::complex<double>>& v1)
+	{
+		std::vector<std::complex<double>> v2(v1);
+		int N = v1.size(), incx = 1;
+		zscal_(&N, &a, &v2[0], &incx);
+		return v2;
+	}
 	
 	template<class T, class U> std::vector<decltype(std::declval<T>()*std::declval<U>())> operator*(const std::vector<T>& v1, const U& a)
 	{
@@ -630,6 +732,24 @@ namespace keycpp
 		}
 		return v2;
 	}
+
+	template<>
+	inline std::vector<double> operator*(const std::vector<double>& v1, const double& a)
+	{
+		std::vector<double> v2(v1);
+		int N = v1.size(), incx = 1;
+		dscal_(&N, &a, &v2[0], &incx);
+		return v2;
+	}
+
+	template<>
+	inline std::vector<std::complex<double>> operator*(const std::vector<std::complex<double>>& v1, const std::complex<double>& a)
+	{
+		std::vector<std::complex<double>> v2(v1);
+		int N = v1.size(), incx = 1;
+		zscal_(&N, &a, &v2[0], &incx);
+		return v2;
+	}
 	
 	template<class T> std::vector<T> operator-(const std::vector<T>& v1)
 	{
@@ -638,6 +758,26 @@ namespace keycpp
 		{
 			v2[ii] = -v1[ii];
 		}
+		return v2;
+	}
+	
+	template<>
+	inline std::vector<double> operator-(const std::vector<double>& v1)
+	{
+		std::vector<double> v2(v1);
+		double a = -1.0;
+		int N = v1.size(), incx = 1;
+		dscal_(&N, &a, &v2[0], &incx);
+		return v2;
+	}
+	
+	template<>
+	inline std::vector<std::complex<double>> operator-(const std::vector<std::complex<double>>& v1)
+	{
+		std::vector<std::complex<double>> v2(v1);
+		std::complex<double> a = -1.0;
+		int N = v1.size(), incx = 1;
+		zscal_(&N, &a, &v2[0], &incx);
 		return v2;
 	}
 	
@@ -656,11 +796,7 @@ namespace keycpp
 	
 	template<class T> std::vector<T> operator+(const std::vector<T>& v1)
 	{
-		std::vector<T> v2(v1.size());
-		for(int ii = 0; ii < v2.size(); ii++)
-		{
-			v2[ii] = v1[ii];
-		}
+		std::vector<T> v2(v1);
 		return v2;
 	}
 	
@@ -697,6 +833,26 @@ namespace keycpp
 		{
 			v2[ii] = v1[ii]/a;
 		}
+		return v2;
+	}
+	
+	template<>
+	inline std::vector<double> operator/(const std::vector<double>& v1, const double& a)
+	{
+		std::vector<double> v2(v1);
+		double aa = 1.0/a;
+		int N = v1.size(), incx = 1;
+		dscal_(&N, &aa, &v2[0], &incx);
+		return v2;
+	}
+	
+	template<>
+	inline std::vector<std::complex<double>> operator/(const std::vector<std::complex<double>>& v1, const std::complex<double>& a)
+	{
+		std::vector<std::complex<double>> v2(v1);
+		std::complex<double> aa = 1.0/a;
+		int N = v1.size(), incx = 1;
+		zscal_(&N, &aa, &v2[0], &incx);
 		return v2;
 	}
 	
@@ -1903,7 +2059,7 @@ namespace keycpp
 
 		for(int kk = 0; kk < y.size(2); kk++)
 		{
-			y2.setCol(interp1(x,y.getCol(kk),x_interp,method, extrap),kk);
+			y2.col(kk) = interp1(x,y.getCol(kk),x_interp,method, extrap);
 		}
 
 		return y2;
@@ -1929,7 +2085,7 @@ namespace keycpp
 			{
 				y_temp[ii] = y[ii][kk];
 			}
-			y2.setCol(interp1(x,y_temp,x_interp,method, extrap),kk);
+			y2.col(kk) = interp1(x,y_temp,x_interp,method, extrap);
 		}
 
 		return y2;
@@ -1949,7 +2105,7 @@ namespace keycpp
 
 		for(int kk = 0; kk < x_interp.size(2); kk++)
 		{
-			y2.setCol(interp1(x,y,x_interp.getCol(kk),method, extrap),kk);
+			y2.col(kk) = interp1(x,y,x_interp.getCol(kk),method, extrap);
 		}
 
 		return y2;
@@ -1969,7 +2125,7 @@ namespace keycpp
 
 		for(int kk = 0; kk < x_interp.size(); kk++)
 		{
-			y2.setRow(interp1(x,y,x_interp[kk],method, extrap),kk);
+			y2.row(kk) = interp1(x,y,x_interp[kk],method, extrap);
 		}
 
 		return y2;
@@ -1993,6 +2149,41 @@ namespace keycpp
 			sum += (eta[ii+1] - eta[ii])*(integrand[ii+1] + integrand[ii]);
 		}
 		return 0.5*sum;
+	}
+
+	template<class U, class T> std::vector<T> trapz(const std::vector<U> &eta, const matrix<T> &integrand)
+	{
+		if(eta.empty() || integrand.empty())
+		{
+			throw KeyCppException("Error in trapz()! Empty vector/matrix supplied!");
+		}
+		if(eta.size() != integrand.size(1) && integrand.size(1) > 1)
+		{
+			throw KeyCppException("Error in trapz()! Vector and matrix sizes are not compatible!");
+		}
+		if(eta.size() != integrand.size(2) && integrand.size(1) <= 1)
+		{
+			throw KeyCppException("Error in trapz()! Vector and matrix sizes are not compatible!");
+		}
+		
+		int N;
+		std::vector<T> z;
+		if(eta.size() == integrand.size(1))
+		{
+		    N = integrand.size(2);
+		    z = std::vector<T>(N);
+		    for(int ii = 0; ii < N; ii++)
+		    {
+			    z[ii] = trapz(eta,integrand.getCol(ii));
+		    }
+		}
+		else
+		{
+		    N = 1;
+		    z = std::vector<T>(N);
+			z[0] = trapz(eta,integrand.getRow(0));
+		}
+		return z;
 	}
 
 
@@ -2174,6 +2365,11 @@ namespace keycpp
 	inline void set(Figure &h, std::string property, std::initializer_list<int> list)
 	{
 		h.set(property,list);
+	}
+	
+	inline void print(Figure &h, std::string pterm, std::string pfilename)
+	{
+		h.print(pterm,pfilename);
 	}
 	
 	template<class T>
@@ -3225,6 +3421,121 @@ namespace keycpp
         }
         matrix<T> Ap = svd_out.V*diag(s_inv)*ctranspose(svd_out.U);
         return Ap;
+    }
+    
+    inline std::string removeWhiteSpace(std::string in)
+    {
+        bool stop = false;
+        while(in.length() > 0 && !stop)
+        {
+            if(isspace(in.at(0)))
+            {
+                in = in.substr(1, in.length() - 1);
+            }
+            else if(isspace(in.at(in.length() - 1)))
+            {
+                in = in.substr(0, in.length() - 1);
+            }
+            else
+            {
+                stop = true;
+            }
+        }
+        return in;
+    }
+    
+    /** \brief Returns a matrix containing the data read from a text file. Values must be white space separated. */
+    inline matrix<double> importdata(std::string filename)
+    {
+        std::ifstream in(filename.c_str());
+        
+        if(!in.is_open())
+        {
+            throw KeyCppException("ERROR!! Could not open file in importdata!");
+        }
+        
+        matrix<double> A;
+        std::vector<double> b;
+        b.reserve(100);
+        A.reserve(1000);
+        
+        std::stringstream ss;
+	    std::string dummy = "";
+	    double temp;
+	
+        while(std::getline(in, dummy))
+        {
+	        ss.str("");
+	        ss.clear();
+	        ss << dummy;
+	        std::getline(ss,dummy,'/');
+	        ss.str("");
+	        ss.clear();
+	        dummy = removeWhiteSpace(dummy);
+            if(!dummy.empty())
+            {
+                std::vector<double> b;
+                b.reserve(100);
+	            ss << dummy;
+	            while(ss >> temp)
+	            {
+                    b.push_back(temp);
+                }
+                if(A.empty())
+                {
+                    A = matrix<double>(1,b.size());
+                    A.row(0) = b;
+                }
+                else
+                {
+                    A.addLastRow(b);
+                }
+            }
+        }
+        in.close();
+        return A;
+    }
+    
+    /** \brief Returns the standard deviation of inputed vector. */
+    template<class T>
+    T stdev(std::vector<T> v1)
+    {
+        T v_bar = mean(v1);
+        T temp = 0.0;
+        for(int ii = 0; ii < v1.size(); ii++)
+        {
+            temp += pow((v1[ii] - v_bar),2.0);
+        }
+        temp = std::sqrt(temp/(v1.size()-1.0));
+        
+        return temp;
+    }
+    
+    /** \brief Returns the standard deviation of inputed vector. */
+    inline double stdev(std::vector<std::complex<double>> v1)
+    {
+        std::complex<double> v_bar = mean(v1);
+        double temp = 0.0;
+        for(int ii = 0; ii < v1.size(); ii++)
+        {
+            temp += std::abs((v1[ii] - v_bar)*conj(v1[ii] - v_bar));
+        }
+        temp = std::sqrt(temp/(v1.size()-1.0));
+        
+        return temp;
+    }
+    
+    /** \brief Returns the variance (square of standard deviation) for inputed vector. */
+    template<class T>
+    T var(std::vector<T> v1)
+    {
+        return pow(stdev(v1),2.0);
+    }
+    
+    /** \brief Returns the variance (square of standard deviation) for inputed vector. */
+    inline double var(std::vector<std::complex<double>> v1)
+    {
+        return pow(stdev(v1),2.0);
     }
 }
 

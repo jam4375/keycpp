@@ -21,6 +21,8 @@
     <member refid="classkeycpp_1_1_figure_1a51e4a69cfb2f249e8880d21b7b452c45" kind="variable"><name>final_replot</name></member>
     <member refid="classkeycpp_1_1_figure_1a0f68e631079ba87244bf6c311a37e43a" kind="variable"><name>m_width</name></member>
     <member refid="classkeycpp_1_1_figure_1adf35f91a45d7727e50c052ce50530653" kind="variable"><name>m_height</name></member>
+    <member refid="classkeycpp_1_1_figure_1ae8a318c5edf3025eaa7154d1839f489d" kind="variable"><name>term</name></member>
+    <member refid="classkeycpp_1_1_figure_1acd006fa122b634b92ff43427080dfd70" kind="variable"><name>filename</name></member>
     <member refid="classkeycpp_1_1_figure_1a3224183e0cbd0a034f83946263a7c881" kind="function"><name>Figure</name></member>
     <member refid="classkeycpp_1_1_figure_1a318799c9b423d48894395b1820c55c54" kind="function"><name>~Figure</name></member>
     <member refid="classkeycpp_1_1_figure_1a6d2444603362a7782232662410b364aa" kind="function"><name>plot</name></member>
@@ -65,6 +67,7 @@
     <member refid="classkeycpp_1_1_figure_1ab8d777d1b44e242b104350093ef09543" kind="function"><name>setFontsize</name></member>
     <member refid="classkeycpp_1_1_figure_1a6c1e59c4e8288e3880bde70db3723037" kind="function"><name>getFontsize</name></member>
     <member refid="classkeycpp_1_1_figure_1a7375fe8611759fda180d626f91eab510" kind="function"><name>set</name></member>
+    <member refid="classkeycpp_1_1_figure_1ac6d1881c6dc996eb508adf2126905d38" kind="function"><name>print</name></member>
     <member refid="classkeycpp_1_1_figure_1af82ed243d2b4f59f5e01566eb03cf9d3" kind="function"><name>set</name></member>
   </compound>
   <compound refid="classkeycpp_1_1_figure_exception" kind="class"><name>keycpp::FigureException</name>
@@ -187,13 +190,13 @@
     <member refid="classkeycpp_1_1matrix_1a1c6cb00f8859e6486a7054f11b1c7e6a" kind="function"><name>operator-</name></member>
     <member refid="classkeycpp_1_1matrix_1a32a13ebb69fb5f06dd8923d942d865b4" kind="function"><name>size</name></member>
     <member refid="classkeycpp_1_1matrix_1ad522f701e86eafc344d8904d4f0a8f19" kind="function"><name>empty</name></member>
-    <member refid="classkeycpp_1_1matrix_1a4b28c8f7b6e3d32aab1416faa9316e11" kind="function"><name>setRow</name></member>
+    <member refid="classkeycpp_1_1matrix_1ab4711ffa4b634c69215f857561f1ed98" kind="function"><name>row</name></member>
     <member refid="classkeycpp_1_1matrix_1ac7675f496771e688a1c059b58ac975cb" kind="function"><name>setLastRow</name></member>
     <member refid="classkeycpp_1_1matrix_1aa6903fc828a5b42f7c1d9485832601aa" kind="function"><name>addLastRow</name></member>
-    <member refid="classkeycpp_1_1matrix_1adf4d81176c098ead33c56d84421b14f5" kind="function"><name>setCol</name></member>
     <member refid="classkeycpp_1_1matrix_1a14cad5ff7a9b3079754fc83b677208ed" kind="function"><name>getRow</name></member>
     <member refid="classkeycpp_1_1matrix_1a20002e97217bcc6382e60694bf898e1f" kind="function"><name>getLastRow</name></member>
     <member refid="classkeycpp_1_1matrix_1a9c16ead5c2a61eb35c33328caa235b2f" kind="function"><name>getCol</name></member>
+    <member refid="classkeycpp_1_1matrix_1a09871aa61080cf8ff67ff792822797ac" kind="function"><name>col</name></member>
     <member refid="classkeycpp_1_1matrix_1a719eb1cb62d0cd9168abe2235235f278" kind="function"><name>reserve</name></member>
     <member refid="classkeycpp_1_1matrix_1a53aaf4f54bdbebf5664b67a440f73040" kind="function"><name>operator*</name></member>
     <member refid="classkeycpp_1_1matrix_1a8a9131597beafc39a3d94b59af930756" kind="function"><name>operator*</name></member>
@@ -286,6 +289,14 @@
     <member refid="structkeycpp_1_1tictoc__type_1a4d57057ccd64987a00d47be2eeda40a5" kind="variable"><name>stop</name></member>
     <member refid="structkeycpp_1_1tictoc__type_1aceaa45496add0b4c6714ac69e98c2580" kind="variable"><name>elapsed</name></member>
   </compound>
+  <compound refid="classkeycpp_1_1vector__ref" kind="class"><name>keycpp::vector_ref</name>
+    <member refid="classkeycpp_1_1vector__ref_1a8c95ac48e6938ce6ce7d836e48d485f3" kind="variable"><name>Data</name></member>
+    <member refid="classkeycpp_1_1vector__ref_1a4ad4fbc82897a48a94e39cdc30327f3f" kind="variable"><name>N</name></member>
+    <member refid="classkeycpp_1_1vector__ref_1a5953ee17f3a63f9c80ae330d9168aade" kind="variable"><name>inc</name></member>
+    <member refid="classkeycpp_1_1vector__ref_1ad14717954b6f937c98004312c5197af2" kind="function"><name>vector_ref</name></member>
+    <member refid="classkeycpp_1_1vector__ref_1a2bf36c35b4d369b1ebc5179112faf037" kind="function"><name>operator=</name></member>
+    <member refid="classkeycpp_1_1vector__ref_1a86f3ed899a141149a179a5825654160a" kind="function"><name>operator std::vector&lt; T &gt;</name></member>
+  </compound>
   <compound refid="namespacekeycpp" kind="namespace"><name>keycpp</name>
     <member refid="namespacekeycpp_1aa6ed5914a3c4b05e1e137fc9735e3ed5" kind="function"><name>real</name></member>
     <member refid="namespacekeycpp_1a61efb014b42cd8b02a81b4520c41ab2c" kind="function"><name>real</name></member>
@@ -296,6 +307,10 @@
     <member refid="namespacekeycpp_1acfb9f560ec3a131190f23bf18c12b2f8" kind="function"><name>Figure::plot&lt; std::complex&lt; double &gt; &gt;</name></member>
     <member refid="namespacekeycpp_1a55e50932cc54f92bdd7e38c6438f4f1f" kind="function"><name>ddot_</name></member>
     <member refid="namespacekeycpp_1a2ce99b4fe4a13b9c70ada81761eb0ca2" kind="function"><name>zdotu_</name></member>
+    <member refid="namespacekeycpp_1ae99c5b242a21ba683701ccb6ab6534b1" kind="function"><name>daxpy_</name></member>
+    <member refid="namespacekeycpp_1a6460fa334239dde761d8f737b9438fed" kind="function"><name>zaxpy_</name></member>
+    <member refid="namespacekeycpp_1a7d249dd978770119c1b91d88009fefbd" kind="function"><name>dscal_</name></member>
+    <member refid="namespacekeycpp_1ad9dd69d0d355e4805a832813199f1dff" kind="function"><name>zscal_</name></member>
     <member refid="namespacekeycpp_1ace2501951ab3db3a91c3520ae89750b1" kind="function"><name>zggev_</name></member>
     <member refid="namespacekeycpp_1aebc5253e80ac15a9bfdc5449ae4f972a" kind="function"><name>dgeev_</name></member>
     <member refid="namespacekeycpp_1a8c1cca2a162f40fc6c6218c35cadf9f2" kind="function"><name>zgeev_</name></member>
@@ -347,6 +362,8 @@
     <member refid="namespacekeycpp_1a952e5296774667c3be4e792b5cd980da" kind="function"><name>csqrt</name></member>
     <member refid="namespacekeycpp_1a8faa7912f1f198c5185cb6a36cfd2fb2" kind="function"><name>csqrt</name></member>
     <member refid="namespacekeycpp_1a4da6882977b2262f8d6f080b0eaf60c5" kind="function"><name>operator+</name></member>
+    <member refid="namespacekeycpp_1aa299ed6dd4f0a895be84e9e0076ba96e" kind="function"><name>operator+</name></member>
+    <member refid="namespacekeycpp_1a98ef889b03caf6eef0e989b2dcd2e5f6" kind="function"><name>operator+</name></member>
     <member refid="namespacekeycpp_1a1c1cd804c6f704b7a9124a9d9a82c325" kind="function"><name>operator+</name></member>
     <member refid="namespacekeycpp_1ad4df2f7feaefed6813ecfe11e37087ab" kind="function"><name>operator+</name></member>
     <member refid="namespacekeycpp_1adff86e062c6497110b7505b0ef715c2c" kind="function"><name>operator+</name></member>
@@ -356,17 +373,27 @@
     <member refid="namespacekeycpp_1a71a8f2ebc458f06e29b17ecc28ed000d" kind="function"><name>operator-</name></member>
     <member refid="namespacekeycpp_1a4bc853f9410d964ef9f163ce53ea4828" kind="function"><name>operator-</name></member>
     <member refid="namespacekeycpp_1ab185edce957f4afd65cb641ec6307376" kind="function"><name>operator-</name></member>
+    <member refid="namespacekeycpp_1aacbc330eb0eaccf5df2b35f425a15564" kind="function"><name>operator-</name></member>
+    <member refid="namespacekeycpp_1acadf89ed5e860edb0e17cc606c233a9a" kind="function"><name>operator-</name></member>
     <member refid="namespacekeycpp_1a8d5dbf37b71d16d686dd0fdbad82f8fb" kind="function"><name>operator*</name></member>
     <member refid="namespacekeycpp_1ae187563f8f86e256bc1394edcba1b2b1" kind="function"><name>operator*</name></member>
     <member refid="namespacekeycpp_1a6dcf10b0db68d53d126803e8d6d591fb" kind="function"><name>operator*</name></member>
     <member refid="namespacekeycpp_1a4b523ff3dd5abac240788f6efb2e554e" kind="function"><name>operator*</name></member>
+    <member refid="namespacekeycpp_1a7597ecfbaa85ebc27a72c6fb1af00b60" kind="function"><name>operator*</name></member>
+    <member refid="namespacekeycpp_1a18334ab0064b1d634182170898bf975c" kind="function"><name>operator*</name></member>
     <member refid="namespacekeycpp_1aa2e9a06b12f7df18005a3daa3c051b2c" kind="function"><name>operator*</name></member>
+    <member refid="namespacekeycpp_1a2dec8480e0274e4e6a2659f8a8f3e942" kind="function"><name>operator*</name></member>
+    <member refid="namespacekeycpp_1a30b05b16a4e69d253281e8568c101e16" kind="function"><name>operator*</name></member>
     <member refid="namespacekeycpp_1ac2665554c04ea23aad98e77d1618ca6b" kind="function"><name>operator-</name></member>
+    <member refid="namespacekeycpp_1adad4206f801320c785980b9ed743e2da" kind="function"><name>operator-</name></member>
+    <member refid="namespacekeycpp_1a2184c8432cf367ca33a284adec8ac68c" kind="function"><name>operator-</name></member>
     <member refid="namespacekeycpp_1a390125160a7febd08d5c30629f4f698f" kind="function"><name>operator-</name></member>
     <member refid="namespacekeycpp_1a7825f94b7be431bab5e5c99f8d7a1b54" kind="function"><name>operator+</name></member>
     <member refid="namespacekeycpp_1a5b10f703c72875b9f5e2ecc5c7696f9c" kind="function"><name>operator+</name></member>
     <member refid="namespacekeycpp_1a3852c35cfcc8caa784465a26d04c68a1" kind="function"><name>operator/</name></member>
     <member refid="namespacekeycpp_1a394f23f09cf122a8e8c20a7afd40f58e" kind="function"><name>operator/</name></member>
+    <member refid="namespacekeycpp_1aec485bbc5951a7ea82206c5f401412aa" kind="function"><name>operator/</name></member>
+    <member refid="namespacekeycpp_1aa6089577ac7b51e05fb96725fbada7ba" kind="function"><name>operator/</name></member>
     <member refid="namespacekeycpp_1aafc0089bdf204385c1e627755c5070b0" kind="function"><name>operator/</name></member>
     <member refid="namespacekeycpp_1a4d18510a87d417d5c38f24ded26a8cee" kind="function"><name>operator/</name></member>
     <member refid="namespacekeycpp_1a60d3f3c9d269e14b23609d754684cdcf" kind="function"><name>sin</name></member>
@@ -464,6 +491,7 @@
     <member refid="namespacekeycpp_1a880f7df231a78f912b3fb5d301c809f9" kind="function"><name>ode45</name></member>
     <member refid="namespacekeycpp_1afcd6ae07fc18f5374868fe314f00108c" kind="function"><name>set</name></member>
     <member refid="namespacekeycpp_1a261a9d83dcc8786777d193575b7e1a1c" kind="function"><name>set</name></member>
+    <member refid="namespacekeycpp_1af9dec3da4533a1db21a6c6c4fe8e740a" kind="function"><name>print</name></member>
     <member refid="namespacekeycpp_1aa2641f24e5cec5eddddbd6de2159055f" kind="function"><name>sort</name></member>
     <member refid="namespacekeycpp_1adba3dbd0ed8ce919ffcd445bcf273673" kind="function"><name>sort</name></member>
     <member refid="namespacekeycpp_1a6a8a286886d48471685b18b7782f1e4a" kind="function"><name>disp</name></member>

@@ -48,17 +48,17 @@ If everything was successful, you should be able to compile and run the example 
 
 {\ttfamily g++ -\/c -\/o obj/example.\-o example.\-cpp -\/std=c++11}
 
-{\ttfamily g++ -\/o example obj/example.\-o -\/std=c++11 -\/lkeycpp -\/llapack}
+{\ttfamily g++ -\/o example obj/example.\-o -\/std=c++11 -\/lkeycpp -\/lblas -\/llapack}
 
 {\ttfamily ./example}
 
-If you are using Intel's M\-K\-L libraries, use this command instead of the one above\-: (where {\ttfamily /opt/intel/mkl/lib/intel64} is the path of your M\-K\-L library {\ttfamily libmkl\-\_\-rt.\-so})
+If you are using Intel's M\-K\-L libraries, use this command instead of the one above\-: (where {\ttfamily //opt/intel/composer\-\_\-xe\-\_\-2013.4.\-183/mkl/lib/intel64} is the path of your M\-K\-L library {\ttfamily libmkl\-\_\-rt.\-so})
 
-{\ttfamily g++ -\/o example obj/example.\-o -\/std=c++11 -\/lkeycpp -\/\-L/opt/intel/mkl/lib/intel64 -\/lmkl\-\_\-rt}
+{\ttfamily g++ -\/o example obj/example.\-o -\/std=c++11 -\/lkeycpp -\/\-L/\textbackslash{}/opt/intel/composer\-\_\-xe\-\_\-2013.4.\-183/mkl/lib/intel64 -\/lmkl\-\_\-rt}
 
 Alternatively, you could just type {\ttfamily make lib=lapack} or {\ttfamily make lib=mkl} inside the {\ttfamily examples} directory. Then type {\ttfamily ./example} to run the example code.
 
-When you are writing your own programs be sure to link with the {\ttfamily libkeycpp.\-a} and {\ttfamily liblapack.\-a} libraries (or {\ttfamily libmkl\-\_\-rt.\-so} if you are using Intel M\-K\-L). With {\ttfamily g++} the form is the same as used above. {\itshape D\-O N\-O\-T F\-O\-R\-G\-E\-T T\-O C\-O\-M\-P\-I\-L\-E W\-I\-T\-H T\-H\-E C++11 S\-T\-A\-N\-D\-A\-R\-D!}
+When you are writing your own programs be sure to link with the {\ttfamily libkeycpp.\-a}, {\ttfamily libblas.\-a}, and {\ttfamily liblapack.\-a} libraries (or {\ttfamily libmkl\-\_\-rt.\-so} if you are using Intel M\-K\-L). With {\ttfamily g++} the form is the same as used above. {\itshape D\-O N\-O\-T F\-O\-R\-G\-E\-T T\-O C\-O\-M\-P\-I\-L\-E W\-I\-T\-H T\-H\-E C++11 S\-T\-A\-N\-D\-A\-R\-D!}
 
 \section*{Example Code}
 
@@ -132,10 +132,8 @@ When you are writing your own programs be sure to link with the {\ttfamily libke
 66     \textcolor{keyword}{set}(h2,\textcolor{stringliteral}{"fontsize"},14);
 67     h2.title(\textcolor{stringliteral}{"ODE Solution"});
 68     
-69     \hyperlink{namespacekeycpp_a6a8a286886d48471685b18b7782f1e4a}{disp}(A*A);
-70     
-71     \textcolor{keywordflow}{return} 0;
-72 \}
+69     \textcolor{keywordflow}{return} 0;
+70 \}
 \end{DoxyCodeInclude}
  \par
  {\bfseries {\ttfamily Text} Output} 

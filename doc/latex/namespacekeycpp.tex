@@ -33,6 +33,8 @@ struct \hyperlink{structkeycpp_1_1matrix__size__type}{matrix\-\_\-size\-\_\-type
 \item 
 class \hyperlink{classkeycpp_1_1_matrix_exception}{Matrix\-Exception}
 \item 
+class \hyperlink{classkeycpp_1_1vector__ref}{vector\-\_\-ref}
+\item 
 class \hyperlink{classkeycpp_1_1matrix}{matrix}
 \item 
 class \hyperlink{classkeycpp_1_1_spline_exception}{Spline\-Exception}
@@ -71,6 +73,18 @@ class \hyperlink{classkeycpp_1_1_spline}{Spline}
 \hypertarget{namespacekeycpp_a2ce99b4fe4a13b9c70ada81761eb0ca2}{void \hyperlink{namespacekeycpp_a2ce99b4fe4a13b9c70ada81761eb0ca2}{zdotu\-\_\-} (std\-::complex$<$ double $>$ $\ast$result, const int $\ast$N, const std\-::complex$<$ double $>$ $\ast$a, const int $\ast$inca, const std\-::complex$<$ double $>$ $\ast$b, const int $\ast$incb)}\label{namespacekeycpp_a2ce99b4fe4a13b9c70ada81761eb0ca2}
 
 \begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's complex double dot product function. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_ae99c5b242a21ba683701ccb6ab6534b1}{void \hyperlink{namespacekeycpp_ae99c5b242a21ba683701ccb6ab6534b1}{daxpy\-\_\-} (const int $\ast$N, const double $\ast$alpha, const double $\ast$x, const int $\ast$incx, double $\ast$y, const int $\ast$incy)}\label{namespacekeycpp_ae99c5b242a21ba683701ccb6ab6534b1}
+
+\begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's double vector addition function. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a6460fa334239dde761d8f737b9438fed}{void \hyperlink{namespacekeycpp_a6460fa334239dde761d8f737b9438fed}{zaxpy\-\_\-} (const int $\ast$N, const std\-::complex$<$ double $>$ $\ast$alpha, const std\-::complex$<$ double $>$ $\ast$x, const int $\ast$incx, std\-::complex$<$ double $>$ $\ast$y, const int $\ast$incy)}\label{namespacekeycpp_a6460fa334239dde761d8f737b9438fed}
+
+\begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's complex double vector addition function. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a7d249dd978770119c1b91d88009fefbd}{void \hyperlink{namespacekeycpp_a7d249dd978770119c1b91d88009fefbd}{dscal\-\_\-} (const int $\ast$N, const double $\ast$alpha, double $\ast$x, const int $\ast$incx)}\label{namespacekeycpp_a7d249dd978770119c1b91d88009fefbd}
+
+\begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's double scalar-\/vector multiplication function. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_ad9dd69d0d355e4805a832813199f1dff}{void \hyperlink{namespacekeycpp_ad9dd69d0d355e4805a832813199f1dff}{zscal\-\_\-} (const int $\ast$N, const std\-::complex$<$ double $>$ $\ast$alpha, std\-::complex$<$ double $>$ $\ast$x, const int $\ast$incx)}\label{namespacekeycpp_ad9dd69d0d355e4805a832813199f1dff}
+
+\begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's complex double scalar-\/vector multiplication function. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_ace2501951ab3db3a91c3520ae89750b1}{void \hyperlink{namespacekeycpp_ace2501951ab3db3a91c3520ae89750b1}{zggev\-\_\-} (const char $\ast$jobvl, const char $\ast$jobvr, const int $\ast$n, std\-::complex$<$ double $>$ $\ast$a, const int $\ast$lda, std\-::complex$<$ double $>$ $\ast$b, const int $\ast$ldb, std\-::complex$<$ double $>$ $\ast$alpha, std\-::complex$<$ double $>$ $\ast$beta, std\-::complex$<$ double $>$ $\ast$vl, const int $\ast$ldvl, std\-::complex$<$ double $>$ $\ast$vr, const int $\ast$ldvr, std\-::complex$<$ double $>$ $\ast$work, const int $\ast$lwork, double $\ast$rwork, int $\ast$info)}\label{namespacekeycpp_ace2501951ab3db3a91c3520ae89750b1}
 
 \begin{DoxyCompactList}\small\item\em This provides a C interface to L\-A\-P\-A\-C\-K's complex generalized eigenvalue solver. \end{DoxyCompactList}\item 
@@ -228,6 +242,13 @@ $<$ double $>$ $>$ {\bfseries linsolve} (const \hyperlink{classkeycpp_1_1matrix}
 $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries operator+} (const std\-::vector$<$ T $>$ \&v1, const std\-::vector$<$ U $>$ \&v2)}\label{namespacekeycpp_a4da6882977b2262f8d6f080b0eaf60c5}
 
 \item 
+\hypertarget{namespacekeycpp_aa299ed6dd4f0a895be84e9e0076ba96e}{{\footnotesize template$<$$>$ }\\std\-::vector$<$ double $>$ {\bfseries operator+} (const std\-::vector$<$ double $>$ \&v1, const std\-::vector$<$ double $>$ \&v2)}\label{namespacekeycpp_aa299ed6dd4f0a895be84e9e0076ba96e}
+
+\item 
+\hypertarget{namespacekeycpp_a98ef889b03caf6eef0e989b2dcd2e5f6}{{\footnotesize template$<$$>$ }\\std\-::vector$<$ std\-::complex\\*
+$<$ double $>$ $>$ {\bfseries operator+} (const std\-::vector$<$ std\-::complex$<$ double $>$$>$ \&v1, const std\-::vector$<$ std\-::complex$<$ double $>$$>$ \&v2)}\label{namespacekeycpp_a98ef889b03caf6eef0e989b2dcd2e5f6}
+
+\item 
 \hypertarget{namespacekeycpp_a1c1cd804c6f704b7a9124a9d9a82c325}{{\footnotesize template$<$class T , class U $>$ }\\std\-::vector$<$ decltype(std\-::declval\\*
 $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries operator+} (const std\-::vector$<$ T $>$ \&v1, const U \&a)}\label{namespacekeycpp_a1c1cd804c6f704b7a9124a9d9a82c325}
 
@@ -264,6 +285,13 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries operator-\/} (const U \&
 $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries operator-\/} (const std\-::vector$<$ T $>$ \&v1, const std\-::vector$<$ U $>$ \&v2)}\label{namespacekeycpp_ab185edce957f4afd65cb641ec6307376}
 
 \item 
+\hypertarget{namespacekeycpp_aacbc330eb0eaccf5df2b35f425a15564}{{\footnotesize template$<$$>$ }\\std\-::vector$<$ double $>$ {\bfseries operator-\/} (const std\-::vector$<$ double $>$ \&v1, const std\-::vector$<$ double $>$ \&v2)}\label{namespacekeycpp_aacbc330eb0eaccf5df2b35f425a15564}
+
+\item 
+\hypertarget{namespacekeycpp_acadf89ed5e860edb0e17cc606c233a9a}{{\footnotesize template$<$$>$ }\\std\-::vector$<$ std\-::complex\\*
+$<$ double $>$ $>$ {\bfseries operator-\/} (const std\-::vector$<$ std\-::complex$<$ double $>$$>$ \&v1, const std\-::vector$<$ std\-::complex$<$ double $>$$>$ \&v2)}\label{namespacekeycpp_acadf89ed5e860edb0e17cc606c233a9a}
+
+\item 
 \hypertarget{namespacekeycpp_a8d5dbf37b71d16d686dd0fdbad82f8fb}{{\footnotesize template$<$class T , class U $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ decltype(std\-::declval\\*
 $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries operator$\ast$} (const T \&a, const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ U $>$ \&A)}\label{namespacekeycpp_a8d5dbf37b71d16d686dd0fdbad82f8fb}
 
@@ -280,11 +308,32 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries operator$\ast$} (const s
 $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries operator$\ast$} (const T \&a, const std\-::vector$<$ U $>$ \&v1)}\label{namespacekeycpp_a4b523ff3dd5abac240788f6efb2e554e}
 
 \item 
+\hypertarget{namespacekeycpp_a7597ecfbaa85ebc27a72c6fb1af00b60}{{\footnotesize template$<$$>$ }\\std\-::vector$<$ double $>$ {\bfseries operator$\ast$} (const double \&a, const std\-::vector$<$ double $>$ \&v1)}\label{namespacekeycpp_a7597ecfbaa85ebc27a72c6fb1af00b60}
+
+\item 
+\hypertarget{namespacekeycpp_a18334ab0064b1d634182170898bf975c}{{\footnotesize template$<$$>$ }\\std\-::vector$<$ std\-::complex\\*
+$<$ double $>$ $>$ {\bfseries operator$\ast$} (const std\-::complex$<$ double $>$ \&a, const std\-::vector$<$ std\-::complex$<$ double $>$$>$ \&v1)}\label{namespacekeycpp_a18334ab0064b1d634182170898bf975c}
+
+\item 
 \hypertarget{namespacekeycpp_aa2e9a06b12f7df18005a3daa3c051b2c}{{\footnotesize template$<$class T , class U $>$ }\\std\-::vector$<$ decltype(std\-::declval\\*
 $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries operator$\ast$} (const std\-::vector$<$ T $>$ \&v1, const U \&a)}\label{namespacekeycpp_aa2e9a06b12f7df18005a3daa3c051b2c}
 
 \item 
+\hypertarget{namespacekeycpp_a2dec8480e0274e4e6a2659f8a8f3e942}{{\footnotesize template$<$$>$ }\\std\-::vector$<$ double $>$ {\bfseries operator$\ast$} (const std\-::vector$<$ double $>$ \&v1, const double \&a)}\label{namespacekeycpp_a2dec8480e0274e4e6a2659f8a8f3e942}
+
+\item 
+\hypertarget{namespacekeycpp_a30b05b16a4e69d253281e8568c101e16}{{\footnotesize template$<$$>$ }\\std\-::vector$<$ std\-::complex\\*
+$<$ double $>$ $>$ {\bfseries operator$\ast$} (const std\-::vector$<$ std\-::complex$<$ double $>$$>$ \&v1, const std\-::complex$<$ double $>$ \&a)}\label{namespacekeycpp_a30b05b16a4e69d253281e8568c101e16}
+
+\item 
 \hypertarget{namespacekeycpp_ac2665554c04ea23aad98e77d1618ca6b}{{\footnotesize template$<$class T $>$ }\\std\-::vector$<$ T $>$ {\bfseries operator-\/} (const std\-::vector$<$ T $>$ \&v1)}\label{namespacekeycpp_ac2665554c04ea23aad98e77d1618ca6b}
+
+\item 
+\hypertarget{namespacekeycpp_adad4206f801320c785980b9ed743e2da}{{\footnotesize template$<$$>$ }\\std\-::vector$<$ double $>$ {\bfseries operator-\/} (const std\-::vector$<$ double $>$ \&v1)}\label{namespacekeycpp_adad4206f801320c785980b9ed743e2da}
+
+\item 
+\hypertarget{namespacekeycpp_a2184c8432cf367ca33a284adec8ac68c}{{\footnotesize template$<$$>$ }\\std\-::vector$<$ std\-::complex\\*
+$<$ double $>$ $>$ {\bfseries operator-\/} (const std\-::vector$<$ std\-::complex$<$ double $>$$>$ \&v1)}\label{namespacekeycpp_a2184c8432cf367ca33a284adec8ac68c}
 
 \item 
 \hypertarget{namespacekeycpp_a390125160a7febd08d5c30629f4f698f}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ {\bfseries operator-\/} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ \&A)}\label{namespacekeycpp_a390125160a7febd08d5c30629f4f698f}
@@ -302,6 +351,13 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries operator/} (const \hyper
 \item 
 \hypertarget{namespacekeycpp_a394f23f09cf122a8e8c20a7afd40f58e}{{\footnotesize template$<$class T , class U $>$ }\\std\-::vector$<$ decltype(std\-::declval\\*
 $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries operator/} (const std\-::vector$<$ T $>$ \&v1, const U \&a)}\label{namespacekeycpp_a394f23f09cf122a8e8c20a7afd40f58e}
+
+\item 
+\hypertarget{namespacekeycpp_aec485bbc5951a7ea82206c5f401412aa}{{\footnotesize template$<$$>$ }\\std\-::vector$<$ double $>$ {\bfseries operator/} (const std\-::vector$<$ double $>$ \&v1, const double \&a)}\label{namespacekeycpp_aec485bbc5951a7ea82206c5f401412aa}
+
+\item 
+\hypertarget{namespacekeycpp_aa6089577ac7b51e05fb96725fbada7ba}{{\footnotesize template$<$$>$ }\\std\-::vector$<$ std\-::complex\\*
+$<$ double $>$ $>$ {\bfseries operator/} (const std\-::vector$<$ std\-::complex$<$ double $>$$>$ \&v1, const std\-::complex$<$ double $>$ \&a)}\label{namespacekeycpp_aa6089577ac7b51e05fb96725fbada7ba}
 
 \item 
 \hypertarget{namespacekeycpp_aafc0089bdf204385c1e627755c5070b0}{{\footnotesize template$<$class T , class U $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ decltype(std\-::declval\\*
@@ -588,6 +644,9 @@ $<$ double $>$ $>$ {\bfseries fft} (const std\-::vector$<$ T $>$ \&u, int N=-\/1
 
 \item 
 \hypertarget{namespacekeycpp_a261a9d83dcc8786777d193575b7e1a1c}{void {\bfseries set} (\hyperlink{classkeycpp_1_1_figure}{Figure} \&h, std\-::string property, std\-::initializer\-\_\-list$<$ int $>$ list)}\label{namespacekeycpp_a261a9d83dcc8786777d193575b7e1a1c}
+
+\item 
+\hypertarget{namespacekeycpp_af9dec3da4533a1db21a6c6c4fe8e740a}{void {\bfseries print} (\hyperlink{classkeycpp_1_1_figure}{Figure} \&h, std\-::string pterm, std\-::string pfilename)}\label{namespacekeycpp_af9dec3da4533a1db21a6c6c4fe8e740a}
 
 \item 
 \hypertarget{namespacekeycpp_aa2641f24e5cec5eddddbd6de2159055f}{{\footnotesize template$<$class T $>$ }\\\hyperlink{structkeycpp_1_1_sort___matrix}{Sort\-\_\-\-Matrix}$<$ T $>$ {\bfseries sort} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ \&A, const int \&dim=2, std\-::string method=\char`\"{}ascend\char`\"{})}\label{namespacekeycpp_aa2641f24e5cec5eddddbd6de2159055f}
