@@ -175,7 +175,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="111" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="836" bodyend="893"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="111" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="839" bodyend="896"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1a3ceb471d375865fccd412105cb587dd1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -208,7 +208,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="130" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="1007" bodyend="1022"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="130" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="1010" bodyend="1025"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -232,7 +232,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="120" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="900" bodyend="965"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="120" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="903" bodyend="968"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1abc0f1d75cb78804a5b8efdfa4df582cd" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -270,7 +270,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="140" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="973" bodyend="1005"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="140" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="976" bodyend="1008"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -298,7 +298,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="151" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="1030" bodyend="1094"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="151" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="1033" bodyend="1097"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1af51b1d33cffebc835a4b493cce1b0bce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
@@ -500,7 +500,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="217" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="789" bodyend="828"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="217" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="789" bodyend="831"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1afb69631c7a498077e378a3cbb56f38c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
@@ -1723,7 +1723,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="578" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="1096" bodyend="1104"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="578" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="1099" bodyend="1107"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1a3135ffebb308b50c4f3178a62b23ab03" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>

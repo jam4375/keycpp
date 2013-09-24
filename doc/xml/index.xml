@@ -14,6 +14,7 @@
     <member refid="classkeycpp_1_1_figure_1a9471608532e10f8854ddf20b7598f2ce" kind="variable"><name>colors</name></member>
     <member refid="classkeycpp_1_1_figure_1ad0b2255b5ea3ae9e47eaab50c14b08a6" kind="variable"><name>p</name></member>
     <member refid="classkeycpp_1_1_figure_1aac35cd238a35d51822f4ba78c83f105b" kind="variable"><name>fontsize</name></member>
+    <member refid="classkeycpp_1_1_figure_1a2e137931dead3711f34c945e47f26342" kind="variable"><name>fontname</name></member>
     <member refid="classkeycpp_1_1_figure_1af7b1068f17391548038b9fdcfee37504" kind="variable"><name>multiplot</name></member>
     <member refid="classkeycpp_1_1_figure_1acff322c7d1fff0d294e7e57ec7d63611" kind="variable"><name>current_plot</name></member>
     <member refid="classkeycpp_1_1_figure_1aadf70a04a81caed7bc1ba30eac255c79" kind="variable"><name>multi_rows</name></member>
@@ -60,7 +61,7 @@
     <member refid="classkeycpp_1_1_figure_1a65b80e5b67c7bbf225e3001a538a6dad" kind="function"><name>hold_on</name></member>
     <member refid="classkeycpp_1_1_figure_1ae5e5ac67e9450ea4fbf06fb3fcc6523a" kind="function"><name>hold_off</name></member>
     <member refid="classkeycpp_1_1_figure_1a59b0acbd975579bf8330849f004637fc" kind="function"><name>subplot</name></member>
-    <member refid="classkeycpp_1_1_figure_1a315140182f731518bc1f6f037a12c3a5" kind="function"><name>legend</name></member>
+    <member refid="classkeycpp_1_1_figure_1a2b5a0aae355a33024d2f6c51a8754786" kind="function"><name>legend</name></member>
     <member refid="classkeycpp_1_1_figure_1aa01c44e6509c7075f4f547531c39741b" kind="function"><name>ylim</name></member>
     <member refid="classkeycpp_1_1_figure_1ae779c53eebbee42148324bd8adfd7d01" kind="function"><name>xlim</name></member>
     <member refid="classkeycpp_1_1_figure_1a47cae082612e5436a6b0bc3d7f27e9d9" kind="function"><name>replot_all</name></member>
@@ -234,6 +235,8 @@
     <member refid="classkeycpp_1_1_plots_1ad801040d683566ecf22c3c1ec72e6811" kind="variable"><name>plot_markersize</name></member>
     <member refid="classkeycpp_1_1_plots_1a95cfb5daf2425e227f5148c7c6a04e80" kind="variable"><name>plot_val</name></member>
     <member refid="classkeycpp_1_1_plots_1a25df6878ccfbbe680c5324e0fab789ac" kind="variable"><name>legend_entries</name></member>
+    <member refid="classkeycpp_1_1_plots_1add620558a2e9a243a95ffdfe7489897b" kind="variable"><name>legend_location</name></member>
+    <member refid="classkeycpp_1_1_plots_1ab3c932242df0fa03798ecfd2dba3ebaa" kind="variable"><name>legend_box</name></member>
     <member refid="classkeycpp_1_1_plots_1a18a69c533594b4bc1c88fdb29267db1e" kind="variable"><name>m_xlabel</name></member>
     <member refid="classkeycpp_1_1_plots_1ad2987af367059a0659e013708342451b" kind="variable"><name>m_ylabel</name></member>
     <member refid="classkeycpp_1_1_plots_1a849d297c44ebca4f7c856c99cfcc2b5f" kind="variable"><name>m_title</name></member>
@@ -484,6 +487,7 @@
     <member refid="namespacekeycpp_1a0c7738d1b0ccad83715f29398829bd78" kind="function"><name>interp1</name></member>
     <member refid="namespacekeycpp_1a5505a093e19a1f347d347b4a27ca7799" kind="function"><name>interp1</name></member>
     <member refid="namespacekeycpp_1af1e3b00481455a363456bcdc8ab407fb" kind="function"><name>trapz</name></member>
+    <member refid="namespacekeycpp_1a3172e450b1174671f2fddc9e3d71a764" kind="function"><name>trapz</name></member>
     <member refid="namespacekeycpp_1a7124131346b73357a9e7d8e7c4ae9cc9" kind="function"><name>diffxy</name></member>
     <member refid="namespacekeycpp_1af805809516d8ef219573c6f3e4cbd077" kind="function"><name>diffxy</name></member>
     <member refid="namespacekeycpp_1a2e73976d2cf44b145d261f52c4bcdf5f" kind="function"><name>diffxy</name></member>
@@ -546,6 +550,12 @@
     <member refid="namespacekeycpp_1a9d70a761d33bbc2bdec6b4e0eb43d517" kind="function"><name>sprintf</name></member>
     <member refid="namespacekeycpp_1aff2feefaeb946dd453d74ff51c66fe67" kind="function"><name>clock</name></member>
     <member refid="namespacekeycpp_1ac20bd2ef4fb18cbcdb0f462a89447bd7" kind="function"><name>pinv</name></member>
+    <member refid="namespacekeycpp_1ad70d9156c4b6a75e5b7a4c799f900162" kind="function"><name>removeWhiteSpace</name></member>
+    <member refid="namespacekeycpp_1ac5c0a8bc58229a412ec2068979b6b84e" kind="function"><name>importdata</name></member>
+    <member refid="namespacekeycpp_1aaadf411a742cc75864477e1f1bc82ce8" kind="function"><name>stdev</name></member>
+    <member refid="namespacekeycpp_1a6b9edabfd1ccca244f0ea077ab3ba363" kind="function"><name>stdev</name></member>
+    <member refid="namespacekeycpp_1a68e5d69d730e978061d7aeda2b49441c" kind="function"><name>var</name></member>
+    <member refid="namespacekeycpp_1a391aed253df5e18fbc7f8502cbbe9293" kind="function"><name>var</name></member>
     <member refid="namespacekeycpp_1a16b58f47ed977cafdc96227468f5f10a" kind="function"><name>dgemm_</name></member>
     <member refid="namespacekeycpp_1a29fb4e46ee1b9cce0fd8bc79a2490c72" kind="function"><name>zgemm_</name></member>
     <member refid="namespacekeycpp_1af0676a4a89dbb63f09fc627c05e12699" kind="function"><name>dgemv_</name></member>

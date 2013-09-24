@@ -786,7 +786,7 @@
 <codeline lineno="889"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
 <codeline lineno="890"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_gnuplot_exception" kindref="compound" tooltip="A C++ interface to gnuplot.">GnuplotException</ref>(</highlight><highlight class="stringliteral">&quot;Problem<sp/>closing<sp/>communication<sp/>to<sp/>gnuplot&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="891"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="892"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//remove_tmpfiles();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="892"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gnuplot_1a2e449552587b0055f40f4ee079d62a8d" kindref="member" tooltip="deletes temporary files">remove_tmpfiles</ref>();</highlight></codeline>
 <codeline lineno="893"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="894"><highlight class="normal"></highlight></codeline>
 <codeline lineno="895"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>

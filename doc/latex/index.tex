@@ -1,6 +1,6 @@
 \section*{Download Source}
 
-Right now you must download the source by cloning the git repository from \href{http://code.google.com/p/keycpp/source/checkout}{\tt code.\-google.\-com/p/keycpp/}. In the future as the library matures, there will be a compressed file to download and possibly a package for Debian/\-Ubuntu.
+Download the complete source and documentation\-: \href{keycpp-0.1.tar.gz}{\tt keycpp-\/0.\-1.\-tar.\-gz}. Alternatively, you can download the source by cloning the git repository from \href{http://code.google.com/p/keycpp/source/checkout}{\tt code.\-google.\-com/p/keycpp/}. After downloading the source, make sure you have the dependencies and follow the installation instructions below.
 
 \subsection*{Dependencies}
 
@@ -32,7 +32,11 @@ Your mileage may vary.
 
 {\itshape This library uses features only available in the \href{https://en.wikipedia.org/wiki/C%2B%2B11}{\tt C++11 standard}. Y\-O\-U M\-U\-S\-T \href{http://gcc.gnu.org/projects/cxx0x.html}{\tt C\-O\-M\-P\-I\-L\-E} W\-I\-T\-H T\-H\-I\-S S\-T\-A\-N\-D\-A\-R\-D.}
 
-To install Key\-Cpp onto your system first clone the git repository to a directory of your choice\-: {\ttfamily git clone \href{https://code.google.com/p/keycpp/}{\tt https\-://code.\-google.\-com/p/keycpp/}}
+To install Key\-Cpp onto your system first download the source \href{keycpp-0.1.tar.gz}{\tt here} and extract to the directory of your choice\-:
+
+{\ttfamily tar -\/zxvf keycpp-\/0.\-1.\-tar.\-gz}
+
+{\ttfamily cd ./keycpp}
 
 The following command will compile the Key\-Cpp library and provide links to the library and header files in Ubuntu's default location\-:
 
@@ -52,9 +56,9 @@ If everything was successful, you should be able to compile and run the example 
 
 {\ttfamily ./example}
 
-If you are using Intel's M\-K\-L libraries, use this command instead of the one above\-: (where {\ttfamily //opt/intel/composer\-\_\-xe\-\_\-2013.4.\-183/mkl/lib/intel64} is the path of your M\-K\-L library {\ttfamily libmkl\-\_\-rt.\-so})
+If you are using Intel's M\-K\-L libraries, use this command instead of the one above\-:
 
-{\ttfamily g++ -\/o example obj/example.\-o -\/std=c++11 -\/lkeycpp -\/\-L/\textbackslash{}/opt/intel/composer\-\_\-xe\-\_\-2013.4.\-183/mkl/lib/intel64 -\/lmkl\-\_\-rt}
+{\ttfamily g++ -\/o example obj/example.\-o -\/std=c++11 -\/lkeycpp -\/\-L/\$(M\-K\-L\-R\-O\-O\-T)/lib/intel64 -\/lmkl\-\_\-rt}
 
 Alternatively, you could just type {\ttfamily make lib=lapack} or {\ttfamily make lib=mkl} inside the {\ttfamily examples} directory. Then type {\ttfamily ./example} to run the example code.
 

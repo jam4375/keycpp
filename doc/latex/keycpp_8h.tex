@@ -627,6 +627,9 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_a7a86bc7
 \hypertarget{namespacekeycpp_af1e3b00481455a363456bcdc8ab407fb}{{\footnotesize template$<$class U , class T $>$ }\\T {\bfseries keycpp\-::trapz} (const std\-::vector$<$ U $>$ \&eta, const std\-::vector$<$ T $>$ \&integrand)}\label{namespacekeycpp_af1e3b00481455a363456bcdc8ab407fb}
 
 \item 
+\hypertarget{namespacekeycpp_a3172e450b1174671f2fddc9e3d71a764}{{\footnotesize template$<$class U , class T $>$ }\\std\-::vector$<$ T $>$ {\bfseries keycpp\-::trapz} (const std\-::vector$<$ U $>$ \&eta, const matrix$<$ T $>$ \&integrand)}\label{namespacekeycpp_a3172e450b1174671f2fddc9e3d71a764}
+
+\item 
 \hypertarget{namespacekeycpp_a7124131346b73357a9e7d8e7c4ae9cc9}{{\footnotesize template$<$class T , class U $>$ }\\matrix$<$ T $>$ {\bfseries keycpp\-::diffxy} (const matrix$<$ U $>$ \&eta, const matrix$<$ T $>$ \&u, const int \&index=2)}\label{namespacekeycpp_a7124131346b73357a9e7d8e7c4ae9cc9}
 
 \item 
@@ -818,4 +821,22 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_a73fa987
 \begin{DoxyCompactList}\small\item\em Returns a vector of integers containing the current\-: year, month, day, hour, minute, and second. This is based on the system clock. The number of hours is based on the 24-\/hour clock. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_ac20bd2ef4fb18cbcdb0f462a89447bd7}{{\footnotesize template$<$class T $>$ }\\matrix$<$ T $>$ \hyperlink{namespacekeycpp_ac20bd2ef4fb18cbcdb0f462a89447bd7}{keycpp\-::pinv} (const matrix$<$ T $>$ \&A)}\label{namespacekeycpp_ac20bd2ef4fb18cbcdb0f462a89447bd7}
 
-\begin{DoxyCompactList}\small\item\em Returns the Moore-\/\-Penrose Pseudoinverse of matrix A. Currently only the S\-V\-D method is implemented. This restricts matrix A to be only square matrices. This is currently slower than inv(), use with care. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the Moore-\/\-Penrose Pseudoinverse of matrix A. Currently only the S\-V\-D method is implemented. This restricts matrix A to be only square matrices. This is currently slower than inv(), use with care. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_ad70d9156c4b6a75e5b7a4c799f900162}{std\-::string {\bfseries keycpp\-::remove\-White\-Space} (std\-::string in)}\label{namespacekeycpp_ad70d9156c4b6a75e5b7a4c799f900162}
+
+\item 
+\hypertarget{namespacekeycpp_ac5c0a8bc58229a412ec2068979b6b84e}{matrix$<$ double $>$ \hyperlink{namespacekeycpp_ac5c0a8bc58229a412ec2068979b6b84e}{keycpp\-::importdata} (std\-::string filename)}\label{namespacekeycpp_ac5c0a8bc58229a412ec2068979b6b84e}
+
+\begin{DoxyCompactList}\small\item\em Returns a matrix containing the data read from a text file. Values must be white space separated. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_aaadf411a742cc75864477e1f1bc82ce8}{{\footnotesize template$<$class T $>$ }\\T \hyperlink{namespacekeycpp_aaadf411a742cc75864477e1f1bc82ce8}{keycpp\-::stdev} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_aaadf411a742cc75864477e1f1bc82ce8}
+
+\begin{DoxyCompactList}\small\item\em Returns the standard deviation of inputed vector. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a6b9edabfd1ccca244f0ea077ab3ba363}{double \hyperlink{namespacekeycpp_a6b9edabfd1ccca244f0ea077ab3ba363}{keycpp\-::stdev} (std\-::vector$<$ std\-::complex$<$ double $>$$>$ v1)}\label{namespacekeycpp_a6b9edabfd1ccca244f0ea077ab3ba363}
+
+\begin{DoxyCompactList}\small\item\em Returns the standard deviation of inputed vector. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a68e5d69d730e978061d7aeda2b49441c}{{\footnotesize template$<$class T $>$ }\\T \hyperlink{namespacekeycpp_a68e5d69d730e978061d7aeda2b49441c}{keycpp\-::var} (std\-::vector$<$ T $>$ v1)}\label{namespacekeycpp_a68e5d69d730e978061d7aeda2b49441c}
+
+\begin{DoxyCompactList}\small\item\em Returns the variance (square of standard deviation) for inputed vector. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a391aed253df5e18fbc7f8502cbbe9293}{double \hyperlink{namespacekeycpp_a391aed253df5e18fbc7f8502cbbe9293}{keycpp\-::var} (std\-::vector$<$ std\-::complex$<$ double $>$$>$ v1)}\label{namespacekeycpp_a391aed253df5e18fbc7f8502cbbe9293}
+
+\begin{DoxyCompactList}\small\item\em Returns the variance (square of standard deviation) for inputed vector. \end{DoxyCompactList}\end{DoxyCompactItemize}

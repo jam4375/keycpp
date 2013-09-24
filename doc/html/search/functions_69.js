@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['importdata',['importdata',['../namespacekeycpp.html#ac5c0a8bc58229a412ec2068979b6b84e',1,'keycpp']]],
   ['input',['input',['../namespacekeycpp.html#aba69db64fe38ad271de1939d3f1a5520',1,'keycpp']]],
   ['is_5fvalid',['is_valid',['../class_gnuplot.html#a3135ffebb308b50c4f3178a62b23ab03',1,'Gnuplot']]],
   ['isempty',['isempty',['../namespacekeycpp.html#acc2de8926c54a2048a0d8965e7d70995',1,'keycpp::isempty(const matrix&lt; T &gt; &amp;A)'],['../namespacekeycpp.html#a0bffe72cf3a118ccaaa6f195c4859550',1,'keycpp::isempty(const std::vector&lt; T &gt; &amp;v1)']]],

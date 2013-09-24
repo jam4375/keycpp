@@ -962,6 +962,10 @@ template&lt;class T , class U &gt; </td></tr>
 template&lt;class U , class T &gt; </td></tr>
 <tr class="memitem:af1e3b00481455a363456bcdc8ab407fb"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::trapz</b> (const std::vector&lt; U &gt; &amp;eta, const std::vector&lt; T &gt; &amp;integrand)</td></tr>
 <tr class="separator:af1e3b00481455a363456bcdc8ab407fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3172e450b1174671f2fddc9e3d71a764"><td class="memTemplParams" colspan="2"><a class="anchor" id="a3172e450b1174671f2fddc9e3d71a764"></a>
+template&lt;class U , class T &gt; </td></tr>
+<tr class="memitem:a3172e450b1174671f2fddc9e3d71a764"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::trapz</b> (const std::vector&lt; U &gt; &amp;eta, const matrix&lt; T &gt; &amp;integrand)</td></tr>
+<tr class="separator:a3172e450b1174671f2fddc9e3d71a764"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7124131346b73357a9e7d8e7c4ae9cc9"><td class="memTemplParams" colspan="2"><a class="anchor" id="a7124131346b73357a9e7d8e7c4ae9cc9"></a>
 template&lt;class T , class U &gt; </td></tr>
 <tr class="memitem:a7124131346b73357a9e7d8e7c4ae9cc9"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>keycpp::diffxy</b> (const matrix&lt; U &gt; &amp;eta, const matrix&lt; T &gt; &amp;u, const int &amp;index=2)</td></tr>
@@ -1246,12 +1250,37 @@ template&lt;class T &gt; </td></tr>
 <tr class="memitem:ac20bd2ef4fb18cbcdb0f462a89447bd7"><td class="memTemplItemLeft" align="right" valign="top">matrix&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#ac20bd2ef4fb18cbcdb0f462a89447bd7">keycpp::pinv</a> (const matrix&lt; T &gt; &amp;A)</td></tr>
 <tr class="memdesc:ac20bd2ef4fb18cbcdb0f462a89447bd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Moore-Penrose Pseudoinverse of matrix A. Currently only the SVD method is implemented. This restricts matrix A to be only square matrices. This is currently slower than inv(), use with care. <br/></td></tr>
 <tr class="separator:ac20bd2ef4fb18cbcdb0f462a89447bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad70d9156c4b6a75e5b7a4c799f900162"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad70d9156c4b6a75e5b7a4c799f900162"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>keycpp::removeWhiteSpace</b> (std::string in)</td></tr>
+<tr class="separator:ad70d9156c4b6a75e5b7a4c799f900162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5c0a8bc58229a412ec2068979b6b84e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5c0a8bc58229a412ec2068979b6b84e"></a>
+matrix&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#ac5c0a8bc58229a412ec2068979b6b84e">keycpp::importdata</a> (std::string filename)</td></tr>
+<tr class="memdesc:ac5c0a8bc58229a412ec2068979b6b84e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a matrix containing the data read from a text file. Values must be white space separated. <br/></td></tr>
+<tr class="separator:ac5c0a8bc58229a412ec2068979b6b84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaadf411a742cc75864477e1f1bc82ce8"><td class="memTemplParams" colspan="2"><a class="anchor" id="aaadf411a742cc75864477e1f1bc82ce8"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:aaadf411a742cc75864477e1f1bc82ce8"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#aaadf411a742cc75864477e1f1bc82ce8">keycpp::stdev</a> (std::vector&lt; T &gt; v1)</td></tr>
+<tr class="memdesc:aaadf411a742cc75864477e1f1bc82ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the standard deviation of inputed vector. <br/></td></tr>
+<tr class="separator:aaadf411a742cc75864477e1f1bc82ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b9edabfd1ccca244f0ea077ab3ba363"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b9edabfd1ccca244f0ea077ab3ba363"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a6b9edabfd1ccca244f0ea077ab3ba363">keycpp::stdev</a> (std::vector&lt; std::complex&lt; double &gt;&gt; v1)</td></tr>
+<tr class="memdesc:a6b9edabfd1ccca244f0ea077ab3ba363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the standard deviation of inputed vector. <br/></td></tr>
+<tr class="separator:a6b9edabfd1ccca244f0ea077ab3ba363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68e5d69d730e978061d7aeda2b49441c"><td class="memTemplParams" colspan="2"><a class="anchor" id="a68e5d69d730e978061d7aeda2b49441c"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a68e5d69d730e978061d7aeda2b49441c"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a68e5d69d730e978061d7aeda2b49441c">keycpp::var</a> (std::vector&lt; T &gt; v1)</td></tr>
+<tr class="memdesc:a68e5d69d730e978061d7aeda2b49441c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the variance (square of standard deviation) for inputed vector. <br/></td></tr>
+<tr class="separator:a68e5d69d730e978061d7aeda2b49441c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a391aed253df5e18fbc7f8502cbbe9293"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a391aed253df5e18fbc7f8502cbbe9293"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a391aed253df5e18fbc7f8502cbbe9293">keycpp::var</a> (std::vector&lt; std::complex&lt; double &gt;&gt; v1)</td></tr>
+<tr class="memdesc:a391aed253df5e18fbc7f8502cbbe9293"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the variance (square of standard deviation) for inputed vector. <br/></td></tr>
+<tr class="separator:a391aed253df5e18fbc7f8502cbbe9293"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 3 2013 13:18:26 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 24 2013 12:16:57 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

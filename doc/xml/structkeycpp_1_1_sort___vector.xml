@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2454" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2454" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2489" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2489" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1_sort___vector_1ac8c282f95bba2e355688421526cc139c" prot="public" static="no" mutable="no">
         <type>std::vector&lt; int &gt;</type>
@@ -32,14 +32,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2455" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2455" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2490" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2490" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2453" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2452" bodyend="2456"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2488" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2487" bodyend="2491"/>
     <listofallmembers>
       <member refid="structkeycpp_1_1_sort___vector_1ac8c282f95bba2e355688421526cc139c" prot="public" virt="non-virtual"><scope>keycpp::Sort_Vector</scope><name>index</name></member>
       <member refid="structkeycpp_1_1_sort___vector_1aa43234b1dcb6f8f6e844e41047ea06c0" prot="public" virt="non-virtual"><scope>keycpp::Sort_Vector</scope><name>v</name></member>

@@ -137,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="712" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="711" bodyend="714"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="714" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="713" bodyend="716"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1ad033c29d2245437a52140ff3c46fa1d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -176,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="717" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="716" bodyend="719"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="719" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="718" bodyend="721"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1acfb9f560ec3a131190f23bf18c12b2f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -215,7 +215,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="722" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="721" bodyend="724"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="724" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="723" bodyend="726"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a55e50932cc54f92bdd7e38c6438f4f1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -5200,6 +5200,35 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2135" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2134" bodyend="2152"/>
       </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a3172e450b1174671f2fddc9e3d71a764" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; keycpp::trapz</definition>
+        <argsstring>(const std::vector&lt; U &gt; &amp;eta, const matrix&lt; T &gt; &amp;integrand)</argsstring>
+        <name>trapz</name>
+        <param>
+          <type>const std::vector&lt; U &gt; &amp;</type>
+          <declname>eta</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt; &amp;</type>
+          <declname>integrand</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2155" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2154" bodyend="2187"/>
+      </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a7124131346b73357a9e7d8e7c4ae9cc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -5232,7 +5261,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2156" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2155" bodyend="2193"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2191" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2190" bodyend="2228"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1af805809516d8ef219573c6f3e4cbd077" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5261,7 +5290,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2196" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2195" bodyend="2233"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2231" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2230" bodyend="2268"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a2e73976d2cf44b145d261f52c4bcdf5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5290,7 +5319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2236" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2235" bodyend="2255"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2271" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2270" bodyend="2290"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1adec9b07955f64a93dc76db37eea6656d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5317,7 +5346,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2258" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2257" bodyend="2293"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2293" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2292" bodyend="2328"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a880f7df231a78f912b3fb5d301c809f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5363,7 +5392,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2297" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2296" bodyend="2323"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2332" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2331" bodyend="2358"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1afcd6ae07fc18f5374868fe314f00108c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -5388,7 +5417,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2326" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2325" bodyend="2328"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2361" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2360" bodyend="2363"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a261a9d83dcc8786777d193575b7e1a1c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -5413,7 +5442,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2331" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2330" bodyend="2333"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2366" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2365" bodyend="2368"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1af9dec3da4533a1db21a6c6c4fe8e740a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -5438,7 +5467,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2336" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2335" bodyend="2338"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2371" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2370" bodyend="2373"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1aa2641f24e5cec5eddddbd6de2159055f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5470,7 +5499,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2348" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2347" bodyend="2449"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2383" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2382" bodyend="2484"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1adba3dbd0ed8ce919ffcd445bcf273673" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5497,7 +5526,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2459" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2458" bodyend="2506"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2494" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2493" bodyend="2541"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a6a8a286886d48471685b18b7782f1e4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5519,7 +5548,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2513" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2512" bodyend="2516"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2548" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2547" bodyend="2551"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1aba69db64fe38ad271de1939d3f1a5520" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
@@ -5540,7 +5569,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2523" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2522" bodyend="2538"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2558" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2557" bodyend="2573"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a4bca7924aad17a920f2f5f0606e6d9a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
@@ -5557,7 +5586,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2544" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2543" bodyend="2546"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2579" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2578" bodyend="2581"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a1c5fcab6592307cffe0e9aa035122a2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5579,7 +5608,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2552" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2551" bodyend="2554"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2587" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2586" bodyend="2589"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a856e64b0828ca7b61e301e8a803cfa91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5601,7 +5630,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2560" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2559" bodyend="2564"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2595" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2594" bodyend="2599"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1abd52330177821fc7cbf3f1c29e49f476" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5623,7 +5652,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2568" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2567" bodyend="2570"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2603" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2602" bodyend="2605"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1ae34a4afffae90a5579e08be7d2177b2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5655,7 +5684,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2576" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2575" bodyend="2635"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2611" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2610" bodyend="2670"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a97f0fc27cf8489f3f556fb1a0c975115" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5677,7 +5706,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2650" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2649" bodyend="2674"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2685" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2684" bodyend="2709"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a5ef6aab5ede3802c66f27415107594ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5707,7 +5736,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2678" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2677" bodyend="2701"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2713" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2712" bodyend="2736"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a5a32dc59a247e09814a4b8ce9ea1db57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5737,7 +5766,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2705" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2704" bodyend="2707"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2740" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2739" bodyend="2742"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1af2f586b97047513a6d2fa346d2302af0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5766,7 +5795,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2713" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2712" bodyend="2728"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2748" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2747" bodyend="2763"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1ad14584bb6e102379fb176e7a864c9cf8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -5789,7 +5818,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2734" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2733" bodyend="2745"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2769" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2768" bodyend="2780"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1af4148cd818cee05304763a197bf56e3c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -5812,7 +5841,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2751" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2750" bodyend="2764"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2786" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2785" bodyend="2799"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1ac3f44dfd7e58788078a8cba3696d3a39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5846,7 +5875,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2770" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2769" bodyend="2797"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2805" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2804" bodyend="2832"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a73fa9874e6923dd54c95d52a22a99d00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5875,7 +5904,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2804" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2803" bodyend="2819"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2839" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2838" bodyend="2854"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a85adf7a8804f7d7d3c378d86427b4210" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5902,7 +5931,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2832" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2831" bodyend="2876"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2867" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2866" bodyend="2911"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1aeb34bdd249af3ce92341cdda62f95f65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -5924,7 +5953,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2878" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="670" bodyend="711"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2913" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="670" bodyend="711"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a838fc93d66e1ab63d68d04781086d81a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structkeycpp_1_1_s_v_d__type" kindref="compound">SVD_type</ref>&lt; double, double &gt;</type>
@@ -5946,7 +5975,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2879" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="715" bodyend="855"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2914" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="715" bodyend="855"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1ad211ab5ae14ac9710265c662f70f20ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -5968,7 +5997,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2880"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2915"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1ab96149e6d3b76c5363601903c4fb72bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structkeycpp_1_1_s_v_d__type" kindref="compound">SVD_type</ref>&lt; std::complex&lt; double &gt;, double &gt;</type>
@@ -5990,7 +6019,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2881"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2916"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1aeb9efbc77cc58fa22403ea7ae5f4555c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6012,7 +6041,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2888" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2887" bodyend="2891"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2923" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2922" bodyend="2926"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a8f497e2da901adba0e1257be943595a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6034,7 +6063,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2897" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2896" bodyend="2920"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2932" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2931" bodyend="2955"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a70b89ab3e8f66f86c47c3bde004d4487" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6056,7 +6085,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2926" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2925" bodyend="2932"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2961" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2960" bodyend="2967"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1ade6d308fd22d34ad4860e5fcd22ccb39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6078,7 +6107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2938" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2937" bodyend="2950"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2973" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2972" bodyend="2985"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a01b100190bc21b024340b7bddd4467dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6100,7 +6129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2956" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2955" bodyend="2965"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2991" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2990" bodyend="3000"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1aab77d82d9cc7d1fcca87967048f09e0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6122,7 +6151,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2971" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2970" bodyend="2977"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3006" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3005" bodyend="3012"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a0ebd51ca90981278382a922c04ee7a75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6144,7 +6173,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2983" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2982" bodyend="2995"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3018" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3017" bodyend="3030"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1adcb91abe9a1d64046037bced47b7b466" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6166,7 +6195,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3001" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3000" bodyend="3010"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3036" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3035" bodyend="3045"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a03069647e77ae29e5437553b98274634" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6188,7 +6217,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3017" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3016" bodyend="3028"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3052" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3051" bodyend="3063"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a8879482fc9af1a809453e1719948263b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6210,7 +6239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3035" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3034" bodyend="3045"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3070" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3069" bodyend="3080"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1af4add0d0b269850e5f5fc1362d023666" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6232,7 +6261,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3052" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3051" bodyend="3059"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3087" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3086" bodyend="3094"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1adca45e7f46618cf193b6b7bb59465a9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6254,7 +6283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3066" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3065" bodyend="3077"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3101" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3100" bodyend="3112"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1abf12e8a9c04720e074328bb1d34dce04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6276,7 +6305,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3084" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3083" bodyend="3094"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3119" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3118" bodyend="3129"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a34d8480a27e0e6d14d687054a221c0a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6298,7 +6327,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3101" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3100" bodyend="3108"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3136" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3135" bodyend="3143"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a6b5311cd26b6819f68c158d08c39d501" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6320,7 +6349,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3115" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3114" bodyend="3126"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3150" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3149" bodyend="3161"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1ad3b16064066dc041be364e6fbefa173a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6342,7 +6371,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3133" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3132" bodyend="3143"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3168" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3167" bodyend="3178"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a00160cff29da446de425d98ffafe8cb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6364,7 +6393,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3150" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3149" bodyend="3157"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3185" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3184" bodyend="3192"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1acc2de8926c54a2048a0d8965e7d70995" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6386,7 +6415,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3163" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3162" bodyend="3165"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3198" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3197" bodyend="3200"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a0bffe72cf3a118ccaaa6f195c4859550" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6408,7 +6437,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3171" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3170" bodyend="3173"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3206" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3205" bodyend="3208"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a81a8c955cdbeb60181f6bf7d6553ac53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6430,7 +6459,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3179" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3178" bodyend="3185"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3214" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3213" bodyend="3220"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a62d7118882bac24ab403ffb5f8ee7034" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6452,7 +6481,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3191" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3190" bodyend="3203"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3226" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3225" bodyend="3238"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1ad811cd86faad44bdf322b55d332fee29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6474,7 +6503,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3209" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3208" bodyend="3218"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3244" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3243" bodyend="3253"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a005c1190f7087fb1d2545c38c080fd1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::complex&lt; double &gt;</type>
@@ -6491,7 +6520,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3224" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3223" bodyend="3228"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3259" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3258" bodyend="3263"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1adb46ebfbb914f186bcb1859f39dfae91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6513,7 +6542,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3234" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3233" bodyend="3241"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3269" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3268" bodyend="3276"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a4bba31744fef3693901a075fda07857c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6535,7 +6564,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3247" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3246" bodyend="3257"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3282" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3281" bodyend="3292"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a136df5d07e95d472b1a38d3fd71b3a3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6564,7 +6593,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3261" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3260" bodyend="3270"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3296" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3295" bodyend="3305"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a7752b443d306871030c8867467fe6cc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6586,7 +6615,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3277" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3276" bodyend="3286"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3312" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3311" bodyend="3321"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a6069a9eec0edfa1d401230013d98765e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structkeycpp_1_1tictoc__type" kindref="compound">tictoc_type</ref></type>
@@ -6599,7 +6628,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3298" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3297" bodyend="3302"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3333" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3332" bodyend="3337"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1afe03fbbb5126729fb4b9367097acb1d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
@@ -6616,7 +6645,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3307" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3306" bodyend="3311"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3342" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3341" bodyend="3346"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a9d70a761d33bbc2bdec6b4e0eb43d517" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
@@ -6636,7 +6665,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3317" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3316" bodyend="3342"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3352" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3351" bodyend="3377"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1aff2feefaeb946dd453d74ff51c66fe67" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::vector&lt; int &gt;</type>
@@ -6649,7 +6678,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3349" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3348" bodyend="3361"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3384" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3383" bodyend="3396"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1ac20bd2ef4fb18cbcdb0f462a89447bd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6671,7 +6700,119 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3368" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3367" bodyend="3389"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3403" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3402" bodyend="3424"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ad70d9156c4b6a75e5b7a4c799f900162" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string keycpp::removeWhiteSpace</definition>
+        <argsstring>(std::string in)</argsstring>
+        <name>removeWhiteSpace</name>
+        <param>
+          <type>std::string</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3427" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3426" bodyend="3445"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ac5c0a8bc58229a412ec2068979b6b84e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt;</type>
+        <definition>matrix&lt;double&gt; keycpp::importdata</definition>
+        <argsstring>(std::string filename)</argsstring>
+        <name>importdata</name>
+        <param>
+          <type>std::string</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Returns a matrix containing the data read from a text file. Values must be white space separated. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3449" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3448" bodyend="3497"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1aaadf411a742cc75864477e1f1bc82ce8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T keycpp::stdev</definition>
+        <argsstring>(std::vector&lt; T &gt; v1)</argsstring>
+        <name>stdev</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+<para>Returns the standard deviation of inputed vector. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3502" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3501" bodyend="3512"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a6b9edabfd1ccca244f0ea077ab3ba363" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double keycpp::stdev</definition>
+        <argsstring>(std::vector&lt; std::complex&lt; double &gt;&gt; v1)</argsstring>
+        <name>stdev</name>
+        <param>
+          <type>std::vector&lt; std::complex&lt; double &gt;&gt;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+<para>Returns the standard deviation of inputed vector. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3516" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3515" bodyend="3526"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a68e5d69d730e978061d7aeda2b49441c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T keycpp::var</definition>
+        <argsstring>(std::vector&lt; T &gt; v1)</argsstring>
+        <name>var</name>
+        <param>
+          <type>std::vector&lt; T &gt;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+<para>Returns the variance (square of standard deviation) for inputed vector. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3531" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3530" bodyend="3533"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a391aed253df5e18fbc7f8502cbbe9293" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double keycpp::var</definition>
+        <argsstring>(std::vector&lt; std::complex&lt; double &gt;&gt; v1)</argsstring>
+        <name>var</name>
+        <param>
+          <type>std::vector&lt; std::complex&lt; double &gt;&gt;</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+<para>Returns the variance (square of standard deviation) for inputed vector. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3537" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3536" bodyend="3539"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a16b58f47ed977cafdc96227468f5f10a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

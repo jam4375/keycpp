@@ -2,7 +2,7 @@
 \mainpage KeyCpp
 
 # Download Source
-Right now you must download the source by cloning the git repository from <a href="http://code.google.com/p/keycpp/source/checkout">code.google.com/p/keycpp/</a>. In the future as the library matures, there will be a compressed file to download and possibly a package for Debian/Ubuntu.
+Download the complete source and documentation: <a onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);" href="keycpp-0.1.tar.gz" target="_blank">keycpp-0.1.tar.gz</a>. Alternatively, you can download the source by cloning the git repository from <a href="http://code.google.com/p/keycpp/source/checkout">code.google.com/p/keycpp/</a>. After downloading the source, make sure you have the dependencies and follow the installation instructions below.
 
 ## Dependencies
 Currently this project makes use of the <a href="http://www.sourceforge.net/projects/kissfft/">Kiss FFT</a> and <a href="http://code.google.com/p/gnuplot-cpp/">gnuplot-cpp</a> open source projects as well as the <a href="http://www.netlib.org/lapack/">LAPACK</a> libraries, <a href="http://www.gnuplot.info/">Gnuplot</a> plotting program, and the <a href="http://www.boost.org/doc/libs/1_54_0/libs/numeric/odeint/doc/html/index.html">Boost odeint</a> library. The sources from <a href="http://www.sourceforge.net/projects/kissfft/">Kiss FFT</a> and <a href="http://code.google.com/p/gnuplot-cpp/">gnuplot-cpp</a> have been incorporated into this project.
@@ -30,8 +30,11 @@ Your mileage may vary.
 ## Installation & Usage
 _This library uses features only available in the <a href="https://en.wikipedia.org/wiki/C%2B%2B11">C++11 standard</a>. YOU MUST <a href="http://gcc.gnu.org/projects/cxx0x.html">COMPILE</a> WITH THIS STANDARD._
 
-To install KeyCpp onto your system first clone the git repository to a directory of your choice:
-`git clone https://code.google.com/p/keycpp/`
+To install KeyCpp onto your system first download the source <a onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);" href="keycpp-0.1.tar.gz" target="_blank">here</a> and extract to the directory of your choice:
+
+`tar -zxvf keycpp-0.1.tar.gz`
+
+`cd ./keycpp`
 
 The following command will compile the KeyCpp library and provide links to the library and header files in Ubuntu's default location:
 
@@ -51,9 +54,9 @@ If everything was successful, you should be able to compile and run the example 
 
 `./example`
 
-If you are using Intel's MKL libraries, use this command instead of the one above: (where `/$(MKLROOT)/lib/intel64` is the path of your MKL library `libmkl_rt.so`)
+If you are using Intel's MKL libraries, use this command instead of the one above:
 
-`g++ -o example obj/example.o -std=c++11 -lkeycpp -L/\$(MKLROOT)/lib/intel64 -lmkl_rt`
+<code>g++ -o example obj/example.o -std=c++11 -lkeycpp -L/\$(MKLROOT)/lib/intel64 -lmkl_rt</code>
 
 Alternatively, you could just type `make lib=lapack` or `make lib=mkl` inside the `examples` directory. Then type `./example` to run the example code.
 
