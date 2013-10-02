@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <ctime>
 #include "keycpp.h"
+#include "vector_k.h"
 using namespace std;
 
 namespace keycpp
@@ -51,7 +52,7 @@ namespace keycpp
 	 *  are returned by default. To return the right or left eigenvectors, supply the
 	 *  function with a complex<double> matrix object in the 3rd or 4th parameters, respectively.
 	 */
-    vector<complex<double> > eig(const matrix<complex<double> > &A, const matrix<complex<double> > &B, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
+    vector_k<complex<double> > eig(const matrix<complex<double> > &A, const matrix<complex<double> > &B, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
 	{
 		int n, lda, ldb, ldvl, ldvr, lwork, info;
 		n = lda = ldb = A.size(1);
@@ -99,7 +100,7 @@ namespace keycpp
 
 		zggev_(&jobvl, &jobvr, &n, a, &lda, b, &ldb, alpha, beta, vl, &ldvl, vr, &ldvr, work, &lwork, rwork, &info);
 
-		vector<complex<double> > lambda(n);
+		vector_k<complex<double> > lambda(n);
 		for(int ii = 0; ii < n; ii++)
 		{
 			lambda[ii] = alpha[ii]/beta[ii];
@@ -146,7 +147,7 @@ namespace keycpp
 	 *  are returned by default. To return the right or left eigenvectors, supply the
 	 *  function with a complex<double> matrix object in the 2nd or 3rd parameters, respectively.
 	 */
-    vector<complex<double> > eig(const matrix<complex<double> > &A, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
+    vector_k<complex<double> > eig(const matrix<complex<double> > &A, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
 	{
 		int n, lda, ldb, ldvl, ldvr, lwork, info;
 		n = lda = ldb = A.size(1);
@@ -191,7 +192,7 @@ namespace keycpp
 
 	    zgeev_(&jobvl, &jobvr, &n, a, &lda, w, vl, &ldvl, vr, &ldvr, work, &lwork, rwork, &info);
 
-		vector<complex<double> > lambda(n);
+		vector_k<complex<double> > lambda(n);
 		for(int ii = 0; ii < n; ii++)
 		{
 			lambda[ii] = w[ii];
@@ -237,7 +238,7 @@ namespace keycpp
 	 *  are returned by default. To return the right or left eigenvectors, supply the
 	 *  function with a complex<double> matrix object in the 2nd or 3rd parameters, respectively.
 	 */
-    vector<complex<double> > eig(const matrix<double> &A, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
+    vector_k<complex<double> > eig(const matrix<double> &A, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
 	{
 	    matrix<complex<double>> B(A.size(1),A.size(2));
 	    for(int ii = 0; ii < B.size(1); ii++)
@@ -346,8 +347,8 @@ namespace keycpp
         return rcond;
 	}
 	
-	std::vector<complex<double>> linsolve(const matrix<complex<double>>& A_in,
-	                                      const std::vector<complex<double>>& b_in)
+	vector_k<complex<double>> linsolve(const matrix<complex<double>>& A_in,
+	                                      const vector_k<complex<double>>& b_in)
 	{
 		if(b_in.empty() || A_in.size(1) <= 0 || A_in.size(2) <= 0)
 		{
@@ -418,7 +419,7 @@ namespace keycpp
             throw KeyCppException("Unknown error in linsolve()!");
         }
         
-        vector<complex<double>> x_out(n);
+        vector_k<complex<double>> x_out(n);
         for(int ii = 0; ii < n; ii++)
         {
             x_out[ii] = b[ii];
@@ -434,8 +435,8 @@ namespace keycpp
 	}
 	
 	
-	std::vector<double> linsolve(const matrix<double>& A_in,
-	                                      const std::vector<double>& b_in)
+	vector_k<double> linsolve(const matrix<double>& A_in,
+	                                      const vector_k<double>& b_in)
 	{
 		if(b_in.empty() || A_in.size(1) <= 0 || A_in.size(2) <= 0)
 		{
@@ -507,7 +508,7 @@ namespace keycpp
             throw KeyCppException("Unknown error in linsolve()!");
         }
         
-        vector<double> x_out(n);
+        vector_k<double> x_out(n);
         for(int ii = 0; ii < n; ii++)
         {
             x_out[ii] = b[ii];

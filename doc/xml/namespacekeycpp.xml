@@ -6814,6 +6814,32 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3537" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3536" bodyend="3539"/>
       </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a6fe26246d9b85e3a1261e7dc3da3967b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt;T&gt; keycpp::linsolve2</definition>
+        <argsstring>(const matrix&lt; T &gt; &amp;A_in, const std::vector&lt; T &gt; &amp;b_in)</argsstring>
+        <name>linsolve2</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt; &amp;</type>
+          <declname>A_in</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>b_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3543" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3542" bodyend="3597"/>
+      </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a16b58f47ed977cafdc96227468f5f10a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void keycpp::dgemm_</definition>

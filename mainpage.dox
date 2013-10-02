@@ -1,8 +1,34 @@
 /**
 \mainpage KeyCpp
 
-# Download Source
-Download the complete source and documentation: <a onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);" href="keycpp-0.1.tar.gz" target="_blank">keycpp-0.1.tar.gz</a>. Alternatively, you can download the source by cloning the git repository from <a href="http://code.google.com/p/keycpp/source/checkout">code.google.com/p/keycpp/</a>. After downloading the source, make sure you have the dependencies and follow the installation instructions below.
+# Ubuntu Users
+If using Ubuntu 13.04 or greater, you can install the KeyCpp library and all dependencies using the following commands:
+
+`sudo apt-add-repository ppa:jam4375/keycpp`
+
+`sudo apt-get update`
+
+`sudo apt-get install keycpp`
+
+# <a name="usage"></a>Usage
+_This library uses features only available in the <a href="https://en.wikipedia.org/wiki/C%2B%2B11">C++11 standard</a>. YOU MUST <a href="http://gcc.gnu.org/projects/cxx0x.html">COMPILE</a> WITH THIS STANDARD._
+
+Download the example code: <a onclick="_gaq.push(['_trackEvent','Example','cpp',this.href]);" href="examples/example.cpp" target="_blank">example.cpp</a>. In the directory that you saved the file, execute the following commands to compile and run the example:
+
+`g++ example.cpp -lkeycpp -lblas -llapack -std=c++11`
+
+`./example`
+
+If everything is setup correctly, there should be no errors and the output should be the same as shown [below](#output).
+
+
+# <a name="alt_install"></a>Alternate Installation Instructions
+## Download Source
+Download the complete source and documentation: <a onclick="_gaq.push(['_trackEvent','Download','tar.gz',this.href]);" href="releases/keycpp-0.1.tar.gz" target="_blank">keycpp-0.1.tar.gz</a>.
+
+If you want the most up-to-date version you can download the source by cloning the git repository from <a href="http://code.google.com/p/keycpp/source/checkout">code.google.com/p/keycpp/</a>. It should be noted that the version on code.google.com may not be as stable as the compressed source file above.
+
+After downloading the source, make sure you have the dependencies and follow the installation instructions below.
 
 ## Dependencies
 Currently this project makes use of the <a href="http://www.sourceforge.net/projects/kissfft/">Kiss FFT</a> and <a href="http://code.google.com/p/gnuplot-cpp/">gnuplot-cpp</a> open source projects as well as the <a href="http://www.netlib.org/lapack/">LAPACK</a> libraries, <a href="http://www.gnuplot.info/">Gnuplot</a> plotting program, and the <a href="http://www.boost.org/doc/libs/1_54_0/libs/numeric/odeint/doc/html/index.html">Boost odeint</a> library. The sources from <a href="http://www.sourceforge.net/projects/kissfft/">Kiss FFT</a> and <a href="http://code.google.com/p/gnuplot-cpp/">gnuplot-cpp</a> have been incorporated into this project.
@@ -10,27 +36,22 @@ Currently this project makes use of the <a href="http://www.sourceforge.net/proj
 The _only_ extra dependencies that you need on your system are the <a href="http://www.netlib.org/lapack/">LAPACK</a> libraries, <a href="http://www.gnuplot.info/">Gnuplot</a>, and the <a href="http://www.boost.org/doc/libs/1_54_0/libs/numeric/odeint/doc/html/index.html">Boost odeint</a> library.
 
 ### Ubuntu (and various <a href="https://wiki.ubuntu.com/UbuntuFlavors">flavors</a>)
-_NOTE: For permformance reasons, use of OpenBLAS/LAPACK is preferred over the default versions. Also, for Intel CPU's, Intel's MKL library provides the best performance._
+_NOTE: For permformance reasons, use of OpenBLAS/LAPACK is preferred over the default versions._
 
 To acquire all the required dependencies you can execute the following commands:
 
 `sudo apt-get install build-essential`
 
-Until Ubuntu 13.10 comes out in October 2013, you need to install <a href="http://headmyshoulder.github.io/odeint-v2/">odeint</a> from their website. The way I did it was to install Boost (see below) and then copy the odeint header and source files into the appropriate Boost folders. This is because odeint first appears in Boost 1.53 and the newest version in the repository for Ubuntu 13.04 is 1.49.
-
-`sudo apt-get install libboost-all-dev`
+`sudo apt-get install libboost-dev`
 
 `sudo apt-get install libopenblas-dev`
 
 `sudo apt-get install liblapack-dev`
 
-### Other Operating Systems
-Your mileage may vary.
+If using Ubuntu 13.04 or prior, you must download the source for <a href="http://www.odeint.com">odeint</a> and copy the directory `./boost/numeric/odeint` and file `./boost/numeric/odeint.hpp` to `/usr/include/boost/numeric/`.
 
-## Installation & Usage
-_This library uses features only available in the <a href="https://en.wikipedia.org/wiki/C%2B%2B11">C++11 standard</a>. YOU MUST <a href="http://gcc.gnu.org/projects/cxx0x.html">COMPILE</a> WITH THIS STANDARD._
-
-To install KeyCpp onto your system first download the source <a onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);" href="keycpp-0.1.tar.gz" target="_blank">here</a> and extract to the directory of your choice:
+## Installation
+To install KeyCpp onto your system first download the source <a onclick="_gaq.push(['_trackEvent','Download','tar.gz',this.href]);" href="releases/keycpp-0.1.tar.gz" target="_blank">here</a> and extract to the directory of your choice:
 
 `tar -zxvf keycpp-0.1.tar.gz`
 
@@ -44,28 +65,26 @@ To uninstall the KeyCpp library, use the following command:
 
 `sudo ./UNINSTALL`
 
-If everything was successful, you should be able to compile and run the example program:
+### Other Operating Systems
+This library has not been tested on operating systems other than Ubuntu yet. You should be able to get this library working on other linux distributions or OS X with slight modifications to the procedures above. Windows users may have a harder time getting this library to compile. For all operating systems, first make sure that you have all of the dependencies.
 
-`cd examples`
+# Intel MKL
+For Intel processors, the <a href="http://software.intel.com/en-us/intel-mkl">Intel MKL</a> libraries provide the best performance. 
+If you choose to use Intel's MKL libraries, the necessary compiler flags are:
 
-`g++ -c -o obj/example.o example.cpp -std=c++11`
+<code>g++ example.cpp -lkeycpp -L/\$(MKLROOT)/lib/intel64 -lmkl_rt -std=c++11</code>
 
-`g++ -o example obj/example.o -std=c++11 -lkeycpp -lblas -llapack`
+or using the Intel C++ compiler:
 
-`./example`
+<code>icc example.cpp -lkeycpp -L/\$(MKLROOT)/lib/intel64 -lmkl_rt -std=c++11</code>
 
-If you are using Intel's MKL libraries, use this command instead of the one above:
+If writing parallel applications, especially using OpenMP, it is highly recommended to use the Inter C++ compiler. Using `g++`, OpenMP, and Intel MKL together sometimes produces undefined behavior.
 
-<code>g++ -o example obj/example.o -std=c++11 -lkeycpp -L/\$(MKLROOT)/lib/intel64 -lmkl_rt</code>
-
-Alternatively, you could just type `make lib=lapack` or `make lib=mkl` inside the `examples` directory. Then type `./example` to run the example code.
-
-When you are writing your own programs be sure to link with the `libkeycpp.a`, `libblas.a`, and `liblapack.a` libraries (or `libmkl_rt.so` if you are using Intel MKL). With `g++` the form is the same as used above. _DO NOT FORGET TO COMPILE WITH THE C++11 STANDARD!_
-
-# Example Code
+# <a name="example"></a>Example Code
 <b>\c example.cpp</b>
 \includelineno example.cpp
 \n
+<a name="output"></a>
 <b>\c Text Output</b>
 \includelineno output.txt
 \n

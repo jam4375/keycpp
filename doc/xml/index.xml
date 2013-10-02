@@ -556,6 +556,7 @@
     <member refid="namespacekeycpp_1a6b9edabfd1ccca244f0ea077ab3ba363" kind="function"><name>stdev</name></member>
     <member refid="namespacekeycpp_1a68e5d69d730e978061d7aeda2b49441c" kind="function"><name>var</name></member>
     <member refid="namespacekeycpp_1a391aed253df5e18fbc7f8502cbbe9293" kind="function"><name>var</name></member>
+    <member refid="namespacekeycpp_1a6fe26246d9b85e3a1261e7dc3da3967b" kind="function"><name>linsolve2</name></member>
     <member refid="namespacekeycpp_1a16b58f47ed977cafdc96227468f5f10a" kind="function"><name>dgemm_</name></member>
     <member refid="namespacekeycpp_1a29fb4e46ee1b9cce0fd8bc79a2490c72" kind="function"><name>zgemm_</name></member>
     <member refid="namespacekeycpp_1af0676a4a89dbb63f09fc627c05e12699" kind="function"><name>dgemv_</name></member>

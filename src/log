@@ -1,0 +1,27 @@
+g++ -c -o obj/gnuplot_i.o gnuplot_i.cpp -I../include -std=c++11 -O3
+g++ -c -o obj/kiss_fft.o kiss_fft.cpp -I../include -std=c++11 -O3
+g++ -c -o obj/keycpp.o keycpp.cpp -I../include -std=c++11 -O3
+In file included from keycpp.cpp:3:0:
+../include/keycpp.h:2339:24: error: ‘is_resizeable’ is not a template
+../include/keycpp.h:2341:29: error: ‘true_type’ in namespace ‘keycpp::boost’ does not name a type
+../include/keycpp.h:2342:47: error: ‘type’ has not been declared
+../include/keycpp.h: In function ‘keycpp::matrix<T> keycpp::ode45(F, keycpp::vector_k<T>, keycpp::vector_k<T>, double, double)’:
+../include/keycpp.h:2374:38: error: ‘make_controlled’ was not declared in this scope
+../include/keycpp.h:2374:38: note: suggested alternatives:
+In file included from /usr/include/boost/numeric/odeint/stepper/generation.hpp:21:0,
+                 from /usr/include/boost/numeric/odeint.hpp:72,
+                 from ../include/keycpp.h:13,
+                 from keycpp.cpp:3:
+/usr/include/boost/numeric/odeint/stepper/generation/make_controlled.hpp:62:54: note:   ‘boost::numeric::odeint::make_controlled’
+/usr/include/boost/numeric/odeint/stepper/generation/make_controlled.hpp:54:12: note:   ‘boost::numeric::odeint::result_of::make_controlled’
+In file included from keycpp.cpp:3:0:
+../include/keycpp.h:2374:54: error: ‘runge_kutta_cash_karp54’ was not declared in this scope
+../include/keycpp.h:2374:54: note: suggested alternative:
+In file included from /usr/include/boost/numeric/odeint.hpp:30:0,
+                 from ../include/keycpp.h:13,
+                 from keycpp.cpp:3:
+/usr/include/boost/numeric/odeint/stepper/runge_kutta_cash_karp54.hpp:154:7: note:   ‘boost::numeric::odeint::runge_kutta_cash_karp54’
+In file included from keycpp.cpp:3:0:
+../include/keycpp.h:2374:90: error: expected primary-expression before ‘>’ token
+../include/keycpp.h:2374:92: error: expected primary-expression before ‘>’ token
+make: *** [obj/keycpp.o] Error 1

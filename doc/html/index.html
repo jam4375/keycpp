@@ -16,6 +16,16 @@
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-42949208-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -80,40 +90,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">KeyCpp </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>Download Source</h1>
-<p>Download the complete source and documentation: <a href="keycpp-0.1.tar.gz" onclick="_gaq.push([&apos;_trackEvent&apos;,&apos;Download&apos;,&apos;PDF&apos;,this.href]);" target="_blank">keycpp-0.1.tar.gz</a>. Alternatively, you can download the source by cloning the git repository from <a href="http://code.google.com/p/keycpp/source/checkout">code.google.com/p/keycpp/</a>. After downloading the source, make sure you have the dependencies and follow the installation instructions below.</p>
+<div class="textblock"><h1>Ubuntu Users</h1>
+<p>If using Ubuntu 13.04 or greater, you can install the KeyCpp library and all dependencies using the following commands:</p>
+<p><code>sudo apt-add-repository ppa:jam4375/keycpp</code></p>
+<p><code>sudo apt-get update</code></p>
+<p><code>sudo apt-get install keycpp</code></p>
+<h1><a class="anchor" id="usage"></a>Usage</h1>
+<p><em>This library uses features only available in the <a href="https://en.wikipedia.org/wiki/C%2B%2B11">C++11 standard</a>. YOU MUST <a href="http://gcc.gnu.org/projects/cxx0x.html">COMPILE</a> WITH THIS STANDARD.</em></p>
+<p>Download the example code: <a href="examples/example.cpp" onclick="_gaq.push([&apos;_trackEvent&apos;,&apos;Example&apos;,&apos;cpp&apos;,this.href]);" target="_blank">example.cpp</a>. In the directory that you saved the file, execute the following commands to compile and run the example:</p>
+<p><code>g++ example.cpp -lkeycpp -lblas -llapack -std=c++11</code></p>
+<p><code>./example</code></p>
+<p>If everything is setup correctly, there should be no errors and the output should be the same as shown <a href="#output">below</a>.</p>
+<h1><a class="anchor" id="alt_install"></a>Alternate Installation Instructions</h1>
+<h2>Download Source</h2>
+<p>Download the complete source and documentation: <a href="releases/keycpp-0.1.tar.gz" onclick="_gaq.push([&apos;_trackEvent&apos;,&apos;Download&apos;,&apos;tar.gz&apos;,this.href]);" target="_blank">keycpp-0.1.tar.gz</a>.</p>
+<p>If you want the most up-to-date version you can download the source by cloning the git repository from <a href="http://code.google.com/p/keycpp/source/checkout">code.google.com/p/keycpp/</a>. It should be noted that the version on code.google.com may not be as stable as the compressed source file above.</p>
+<p>After downloading the source, make sure you have the dependencies and follow the installation instructions below.</p>
 <h2>Dependencies</h2>
 <p>Currently this project makes use of the <a href="http://www.sourceforge.net/projects/kissfft/">Kiss FFT</a> and <a href="http://code.google.com/p/gnuplot-cpp/">gnuplot-cpp</a> open source projects as well as the <a href="http://www.netlib.org/lapack/">LAPACK</a> libraries, <a href="http://www.gnuplot.info/">Gnuplot</a> plotting program, and the <a href="http://www.boost.org/doc/libs/1_54_0/libs/numeric/odeint/doc/html/index.html">Boost odeint</a> library. The sources from <a href="http://www.sourceforge.net/projects/kissfft/">Kiss FFT</a> and <a href="http://code.google.com/p/gnuplot-cpp/">gnuplot-cpp</a> have been incorporated into this project.</p>
 <p>The <em>only</em> extra dependencies that you need on your system are the <a href="http://www.netlib.org/lapack/">LAPACK</a> libraries, <a href="http://www.gnuplot.info/">Gnuplot</a>, and the <a href="http://www.boost.org/doc/libs/1_54_0/libs/numeric/odeint/doc/html/index.html">Boost odeint</a> library.</p>
 <h3>Ubuntu (and various <a href="https://wiki.ubuntu.com/UbuntuFlavors">flavors</a>)</h3>
-<p><em>NOTE: For permformance reasons, use of OpenBLAS/LAPACK is preferred over the default versions. Also, for Intel CPU's, Intel's MKL library provides the best performance.</em></p>
+<p><em>NOTE: For permformance reasons, use of OpenBLAS/LAPACK is preferred over the default versions.</em></p>
 <p>To acquire all the required dependencies you can execute the following commands:</p>
 <p><code>sudo apt-get install build-essential</code></p>
-<p>Until Ubuntu 13.10 comes out in October 2013, you need to install <a href="http://headmyshoulder.github.io/odeint-v2/">odeint</a> from their website. The way I did it was to install Boost (see below) and then copy the odeint header and source files into the appropriate Boost folders. This is because odeint first appears in Boost 1.53 and the newest version in the repository for Ubuntu 13.04 is 1.49.</p>
-<p><code>sudo apt-get install libboost-all-dev</code></p>
+<p><code>sudo apt-get install libboost-dev</code></p>
 <p><code>sudo apt-get install libopenblas-dev</code></p>
 <p><code>sudo apt-get install liblapack-dev</code></p>
-<h3>Other Operating Systems</h3>
-<p>Your mileage may vary.</p>
-<h2>Installation &amp; Usage</h2>
-<p><em>This library uses features only available in the <a href="https://en.wikipedia.org/wiki/C%2B%2B11">C++11 standard</a>. YOU MUST <a href="http://gcc.gnu.org/projects/cxx0x.html">COMPILE</a> WITH THIS STANDARD.</em></p>
-<p>To install KeyCpp onto your system first download the source <a href="keycpp-0.1.tar.gz" onclick="_gaq.push([&apos;_trackEvent&apos;,&apos;Download&apos;,&apos;PDF&apos;,this.href]);" target="_blank">here</a> and extract to the directory of your choice:</p>
+<p>If using Ubuntu 13.04 or prior, you must download the source for <a href="http://www.odeint.com">odeint</a> and copy the directory <code>./boost/numeric/odeint</code> and file <code>./boost/numeric/odeint.hpp</code> to <code>/usr/include/boost/numeric/</code>.</p>
+<h2>Installation</h2>
+<p>To install KeyCpp onto your system first download the source <a href="releases/keycpp-0.1.tar.gz" onclick="_gaq.push([&apos;_trackEvent&apos;,&apos;Download&apos;,&apos;tar.gz&apos;,this.href]);" target="_blank">here</a> and extract to the directory of your choice:</p>
 <p><code>tar -zxvf keycpp-0.1.tar.gz</code></p>
 <p><code>cd ./keycpp</code></p>
 <p>The following command will compile the KeyCpp library and provide links to the library and header files in Ubuntu's default location:</p>
 <p><code>sudo ./INSTALL</code></p>
 <p>To uninstall the KeyCpp library, use the following command:</p>
 <p><code>sudo ./UNINSTALL</code></p>
-<p>If everything was successful, you should be able to compile and run the example program:</p>
-<p><code>cd examples</code></p>
-<p><code>g++ -c -o obj/example.o example.cpp -std=c++11</code></p>
-<p><code>g++ -o example obj/example.o -std=c++11 -lkeycpp -lblas -llapack</code></p>
-<p><code>./example</code></p>
-<p>If you are using Intel's MKL libraries, use this command instead of the one above:</p>
-<p><code>g++ -o example obj/example.o -std=c++11 -lkeycpp -L/$(MKLROOT)/lib/intel64 -lmkl_rt</code></p>
-<p>Alternatively, you could just type <code>make lib=lapack</code> or <code>make lib=mkl</code> inside the <code>examples</code> directory. Then type <code>./example</code> to run the example code.</p>
-<p>When you are writing your own programs be sure to link with the <code>libkeycpp.a</code>, <code>libblas.a</code>, and <code>liblapack.a</code> libraries (or <code>libmkl_rt.so</code> if you are using Intel MKL). With <code>g++</code> the form is the same as used above. <em>DO NOT FORGET TO COMPILE WITH THE C++11 STANDARD!</em></p>
-<h1>Example Code</h1>
+<h3>Other Operating Systems</h3>
+<p>This library has not been tested on operating systems other than Ubuntu yet. You should be able to get this library working on other linux distributions or OS X with slight modifications to the procedures above. Windows users may have a harder time getting this library to compile. For all operating systems, first make sure that you have all of the dependencies.</p>
+<h1>Intel MKL</h1>
+<p>For Intel processors, the <a href="http://software.intel.com/en-us/intel-mkl">Intel MKL</a> libraries provide the best performance. If you choose to use Intel's MKL libraries, the necessary compiler flags are:</p>
+<p><code>g++ example.cpp -lkeycpp -L/$(MKLROOT)/lib/intel64 -lmkl_rt -std=c++11</code></p>
+<p>or using the Intel C++ compiler:</p>
+<p><code>icc example.cpp -lkeycpp -L/$(MKLROOT)/lib/intel64 -lmkl_rt -std=c++11</code></p>
+<p>If writing parallel applications, especially using OpenMP, it is highly recommended to use the Inter C++ compiler. Using <code>g++</code>, OpenMP, and Intel MKL together sometimes produces undefined behavior.</p>
+<h1><a class="anchor" id="example"></a>Example Code</h1>
 <p><b><code>example.cpp</b></code> </p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;keycpp/keycpp.h&gt;</span></div>
@@ -186,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 </div><!-- fragment --><p> <br/>
- <b><code>Text</code> Output</b> </p>
+ <a class="anchor" id="output"></a> <b><code>Text</code> Output</b> </p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;1.76667</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;-0.333333</div>
 </div><!-- fragment --><p> <br/>
@@ -248,18 +268,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 24 2013 12:16:58 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 27 2013 13:57:28 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try{
-var pageTracker = _gat._getTracker("UA-42949208-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
 </body>
 </html>

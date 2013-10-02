@@ -7,6 +7,7 @@
 #include <cmath>
 #include <vector>
 #include <complex>
+#include "vector_k.h"
 
 namespace keycpp
 {
@@ -32,18 +33,18 @@ namespace keycpp
 	class Spline
 	{
 	private:
-		std::vector<U> x;
-		std::vector<T> y;
+		vector_k<U> x;
+		vector_k<T> y;
 
-		std::vector<T> s;
-		std::vector<T> h;
-		std::vector<T> f;
+		vector_k<T> s;
+		vector_k<T> h;
+		vector_k<T> f;
 
-		std::vector<std::vector<T> > tri; // tridiagonal array
-		std::vector<T> a;
-		std::vector<T> b;
-		std::vector<T> c;
-		std::vector<T> d;
+		vector_k<vector_k<T> > tri; // tridiagonal array
+		vector_k<T> a;
+		vector_k<T> b;
+		vector_k<T> c;
+		vector_k<T> d;
 
 		int n;
 	
@@ -54,7 +55,7 @@ namespace keycpp
 		Extrap extrap;
 	
 	public:
-		Spline(int N, std::vector<U> X, std::vector<T> Y, Extrap extrap_in);
+		Spline(int N, vector_k<U> X, vector_k<T> Y, Extrap extrap_in);
 		virtual ~Spline();
 	
 		int compute_spline() {find_spline(); return tridiagonal();};
@@ -62,20 +63,20 @@ namespace keycpp
 	};
 
 
-	template<class U, class T> Spline<U,T>::Spline(int N, std::vector<U> X, std::vector<T> Y, Extrap extrap_in) : n(N), x(X), y(Y), extrap(extrap_in)
+	template<class U, class T> Spline<U,T>::Spline(int N, vector_k<U> X, vector_k<T> Y, Extrap extrap_in) : n(N), x(X), y(Y), extrap(extrap_in)
 	{
 		if(N != X.size() || N != Y.size())
 		{
 			std::cout << "ERROR!! Problem with size of inputed vectors to Spline!\n";
 		}
 
-		s = std::vector<T>(n);
-		h = std::vector<T>(n-1);
-		f = std::vector<T>(n-1);
-		a = std::vector<T>(n-1);
-		b = std::vector<T>(n-1);
-		c = std::vector<T>(n-1);
-		d = std::vector<T>(n-1);
+		s = vector_k<T>(n);
+		h = vector_k<T>(n-1);
+		f = vector_k<T>(n-1);
+		a = vector_k<T>(n-1);
+		b = vector_k<T>(n-1);
+		c = vector_k<T>(n-1);
+		d = vector_k<T>(n-1);
 	}
 
 	/** \brief Spline destructor, nothing needs to be done. */
@@ -103,10 +104,10 @@ namespace keycpp
 		}
 
 		//allocate memory for tridiagonal matrix
-		tri = std::vector<std::vector<T> >(n-2);
+		tri = vector_k<vector_k<T> >(n-2);
 		for(int i = 0; i < n-2; i++)
 		{
-			tri[i] = std::vector<T>(4);
+			tri[i] = vector_k<T>(4);
 		}
 
 		// add the right side
@@ -179,7 +180,7 @@ namespace keycpp
 		bool swapped = true;
 		U temp;
 		int temp_i;
-		std::vector<int> index(x.size());
+		vector_k<int> index(x.size());
 		for(int ii = 0; ii < x.size(); ii++)
 		{
 			index[ii] = ii;
@@ -201,7 +202,7 @@ namespace keycpp
 				}
 			}
 		}
-		std::vector<T> y_temp(y.size());
+		vector_k<T> y_temp(y.size());
 		for(int ii = 0; ii < y.size(); ii++)
 		{
 			y_temp[ii] = y[index[ii]];

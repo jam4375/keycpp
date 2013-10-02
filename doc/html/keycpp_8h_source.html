@@ -16,6 +16,16 @@
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-42949208-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -3283,25 +3293,74 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l03537"></a><span class="lineno"> 3537</span>&#160;    {</div>
 <div class="line"><a name="l03538"></a><span class="lineno"> 3538</span>&#160;        <span class="keywordflow">return</span> pow(<a class="code" href="namespacekeycpp.html#aaadf411a742cc75864477e1f1bc82ce8" title="Returns the standard deviation of inputed vector.">stdev</a>(v1),2.0);</div>
 <div class="line"><a name="l03539"></a><span class="lineno"> 3539</span>&#160;    }</div>
-<div class="line"><a name="l03540"></a><span class="lineno"> 3540</span>&#160;}</div>
-<div class="line"><a name="l03541"></a><span class="lineno"> 3541</span>&#160;</div>
-<div class="line"><a name="l03542"></a><span class="lineno"> 3542</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l03540"></a><span class="lineno"> 3540</span>&#160;    </div>
+<div class="line"><a name="l03541"></a><span class="lineno"> 3541</span>&#160;    </div>
+<div class="line"><a name="l03542"></a><span class="lineno"> 3542</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; std::vector&lt;T&gt; linsolve2(<span class="keyword">const</span> matrix&lt;T&gt;&amp; A_in, <span class="keyword">const</span> std::vector&lt;T&gt;&amp; b_in)</div>
+<div class="line"><a name="l03543"></a><span class="lineno"> 3543</span>&#160;        {</div>
+<div class="line"><a name="l03544"></a><span class="lineno"> 3544</span>&#160;                <span class="keywordflow">if</span>(b_in.empty() | A_in.size(1) &lt;= 0 || A_in.size(2) &lt;= 0)</div>
+<div class="line"><a name="l03545"></a><span class="lineno"> 3545</span>&#160;                {</div>
+<div class="line"><a name="l03546"></a><span class="lineno"> 3546</span>&#160;                        <span class="keywordflow">throw</span> KeyCppException(<span class="stringliteral">&quot;Error in linsolve()! Empty matrix or vector supplied!&quot;</span>);</div>
+<div class="line"><a name="l03547"></a><span class="lineno"> 3547</span>&#160;                }</div>
+<div class="line"><a name="l03548"></a><span class="lineno"> 3548</span>&#160;                <span class="keywordflow">if</span>(A_in.size(2) != b_in.size())</div>
+<div class="line"><a name="l03549"></a><span class="lineno"> 3549</span>&#160;                {</div>
+<div class="line"><a name="l03550"></a><span class="lineno"> 3550</span>&#160;                        <span class="keywordflow">throw</span> KeyCppException(<span class="stringliteral">&quot;Error in linsolve()! Matrix and vector sizes are not compatible!&quot;</span>);</div>
+<div class="line"><a name="l03551"></a><span class="lineno"> 3551</span>&#160;                }</div>
+<div class="line"><a name="l03552"></a><span class="lineno"> 3552</span>&#160;                <span class="keywordtype">int</span> N = b_in.size();</div>
+<div class="line"><a name="l03553"></a><span class="lineno"> 3553</span>&#160;                matrix&lt;T&gt; A = A_in;</div>
+<div class="line"><a name="l03554"></a><span class="lineno"> 3554</span>&#160;                std::vector&lt;T&gt; b = b_in;</div>
+<div class="line"><a name="l03555"></a><span class="lineno"> 3555</span>&#160;                std::vector&lt;T&gt; x_out(N);</div>
+<div class="line"><a name="l03556"></a><span class="lineno"> 3556</span>&#160;</div>
+<div class="line"><a name="l03557"></a><span class="lineno"> 3557</span>&#160;                T ratio, temp;</div>
+<div class="line"><a name="l03558"></a><span class="lineno"> 3558</span>&#160;</div>
+<div class="line"><a name="l03559"></a><span class="lineno"> 3559</span>&#160;                <span class="comment">// Gaussian elimination</span></div>
+<div class="line"><a name="l03560"></a><span class="lineno"> 3560</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii = 0; ii &lt; (N-1); ii++)</div>
+<div class="line"><a name="l03561"></a><span class="lineno"> 3561</span>&#160;                {</div>
+<div class="line"><a name="l03562"></a><span class="lineno"> 3562</span>&#160;                        <span class="keywordflow">if</span>(std::abs(A(ii,ii)) == 0.0)</div>
+<div class="line"><a name="l03563"></a><span class="lineno"> 3563</span>&#160;                        {</div>
+<div class="line"><a name="l03564"></a><span class="lineno"> 3564</span>&#160;                                <span class="keywordflow">throw</span> KeyCppException(<span class="stringliteral">&quot;ERROR! Divide by zero in linsolve!!&quot;</span>);</div>
+<div class="line"><a name="l03565"></a><span class="lineno"> 3565</span>&#160;                        }</div>
+<div class="line"><a name="l03566"></a><span class="lineno"> 3566</span>&#160;                        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj = (ii+1); jj &lt; N; jj++)</div>
+<div class="line"><a name="l03567"></a><span class="lineno"> 3567</span>&#160;                        {</div>
+<div class="line"><a name="l03568"></a><span class="lineno"> 3568</span>&#160;                                ratio = A(jj,ii)/A(ii,ii);</div>
+<div class="line"><a name="l03569"></a><span class="lineno"> 3569</span>&#160;                                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> count=ii; count&lt;N; count++)</div>
+<div class="line"><a name="l03570"></a><span class="lineno"> 3570</span>&#160;                                {</div>
+<div class="line"><a name="l03571"></a><span class="lineno"> 3571</span>&#160;                                        A(jj,count) -= (ratio*A(ii,count));</div>
+<div class="line"><a name="l03572"></a><span class="lineno"> 3572</span>&#160;                                }</div>
+<div class="line"><a name="l03573"></a><span class="lineno"> 3573</span>&#160;                                b[jj] -= (ratio*b[ii]);</div>
+<div class="line"><a name="l03574"></a><span class="lineno"> 3574</span>&#160;                        }</div>
+<div class="line"><a name="l03575"></a><span class="lineno"> 3575</span>&#160;                }</div>
+<div class="line"><a name="l03576"></a><span class="lineno"> 3576</span>&#160;</div>
+<div class="line"><a name="l03577"></a><span class="lineno"> 3577</span>&#160;                <span class="comment">// Back substitution</span></div>
+<div class="line"><a name="l03578"></a><span class="lineno"> 3578</span>&#160;                <span class="keywordflow">if</span>(std::abs(A(N-1,N-1)) == 0.0)</div>
+<div class="line"><a name="l03579"></a><span class="lineno"> 3579</span>&#160;                {</div>
+<div class="line"><a name="l03580"></a><span class="lineno"> 3580</span>&#160;                        <span class="keywordflow">throw</span> KeyCppException(<span class="stringliteral">&quot;ERROR! Divide by zero in linsolve!!&quot;</span>);</div>
+<div class="line"><a name="l03581"></a><span class="lineno"> 3581</span>&#160;                }</div>
+<div class="line"><a name="l03582"></a><span class="lineno"> 3582</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l03583"></a><span class="lineno"> 3583</span>&#160;                {</div>
+<div class="line"><a name="l03584"></a><span class="lineno"> 3584</span>&#160;                        x_out[N-1] = b[N-1]/A(N-1,N-1);</div>
+<div class="line"><a name="l03585"></a><span class="lineno"> 3585</span>&#160;                }</div>
+<div class="line"><a name="l03586"></a><span class="lineno"> 3586</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii = (N-2); ii &gt;= 0; ii--)</div>
+<div class="line"><a name="l03587"></a><span class="lineno"> 3587</span>&#160;                {</div>
+<div class="line"><a name="l03588"></a><span class="lineno"> 3588</span>&#160;                        temp = b[ii];</div>
+<div class="line"><a name="l03589"></a><span class="lineno"> 3589</span>&#160;                        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj=(ii+1); jj&lt;N; jj++)</div>
+<div class="line"><a name="l03590"></a><span class="lineno"> 3590</span>&#160;                        {</div>
+<div class="line"><a name="l03591"></a><span class="lineno"> 3591</span>&#160;                                temp -= (A(ii,jj)*x_out[jj]);</div>
+<div class="line"><a name="l03592"></a><span class="lineno"> 3592</span>&#160;                        }</div>
+<div class="line"><a name="l03593"></a><span class="lineno"> 3593</span>&#160;                        x_out[ii] = temp/A(ii,ii);</div>
+<div class="line"><a name="l03594"></a><span class="lineno"> 3594</span>&#160;                }</div>
+<div class="line"><a name="l03595"></a><span class="lineno"> 3595</span>&#160;</div>
+<div class="line"><a name="l03596"></a><span class="lineno"> 3596</span>&#160;                <span class="keywordflow">return</span> x_out;</div>
+<div class="line"><a name="l03597"></a><span class="lineno"> 3597</span>&#160;        }</div>
+<div class="line"><a name="l03598"></a><span class="lineno"> 3598</span>&#160;}</div>
+<div class="line"><a name="l03599"></a><span class="lineno"> 3599</span>&#160;</div>
+<div class="line"><a name="l03600"></a><span class="lineno"> 3600</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 24 2013 12:16:57 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 27 2013 13:57:27 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try{
-var pageTracker = _gat._getTracker("UA-42949208-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
 </body>
 </html>

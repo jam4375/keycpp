@@ -889,7 +889,7 @@ inline Gnuplot::~Gnuplot()
 #endif
         throw GnuplotException("Problem closing communication to gnuplot");
         
-    remove_tmpfiles();
+    //remove_tmpfiles();
 }
 
 #endif

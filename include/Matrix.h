@@ -6,6 +6,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <vector>
+#include "vector_k.h"
 
 namespace keycpp
 {
@@ -43,62 +44,31 @@ namespace keycpp
 	};
 	
 	template<class T>
-	class vector_ref
-	{
-	public:
-	    vector_ref(T *pData, int pN, int pinc) {Data = pData; N = pN; inc = pinc;};
-	    T *Data;
-	    int N;
-	    int inc;
-		vector_ref<T>& operator=(const std::vector<T> &v1)
-		{
-		    if(v1.size() != N)
-		    {
-		        throw MatrixException("Vectors must be of same length for assignment with vector_ref!");
-		    }
-		    for(int ii = 0; ii < N; ii++)
-		    {
-		        Data[ii*inc] = v1[ii];
-		    }
-		    return *this;
-		};
-		operator std::vector<T>()
-		{
-		    std::vector<T> v1(N);
-		    for(int ii = 0; ii < N; ii++)
-		    {
-		        v1[ii] = Data[ii*inc];
-		    }
-		    return v1;
-		};
-	};
-
-	template<class T>
 	class matrix
 	{
 	public:
 		matrix();
 		matrix(const int &rows, const int &cols);
-		matrix(const std::vector<std::vector<T>>& mat);
+		matrix(const vector_k<vector_k<T>>& mat);
 		matrix(const std::initializer_list<std::initializer_list<T>>& lst);
 		T& operator()(const int &i, const int &j);
 		T operator()(const int &i, const int &j) const;
-		std::vector<T> operator*(const std::vector<T> &x) const;
+		vector_k<T> operator*(const vector_k<T> &x) const;
 		matrix<T> operator*(const matrix<T> &B) const;
 		matrix<T> operator+(const matrix<T> &B) const;
 		matrix<T>& operator+=(const matrix<T> &B);
 		matrix<T> operator-(const matrix<T> &B) const;
 		int size(const int &n) const;
 		bool empty() const;
-		vector_ref<T> row(const int &i);
-		int setLastRow(const std::vector<T> &row);
-		int addLastRow(const std::vector<T> &row);
-		std::vector<T> getRow(const int &i) const;
-		std::vector<T> getLastRow() const;
-		std::vector<T> getCol(const int &j) const;
-		vector_ref<T> col(const int &j);
+		vector_k<T> row(const int &i);
+		int setLastRow(const vector_k<T> &row);
+		int addLastRow(const vector_k<T> &row);
+		vector_k<T> getRow(const int &i) const;
+		vector_k<T> getLastRow() const;
+		vector_k<T> getCol(const int &j) const;
+		vector_k<T> col(const int &j);
 		int reserve(const int &N);
-		std::vector<T> mData;
+		vector_k<T> mData;
 
 	private:
 		int mRows;
@@ -123,7 +93,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	matrix<T>::matrix(const std::vector<std::vector<T> >& mat) : mRows(mat.size()), mCols(mat[0].size()), mData(mRows * mCols)
+	matrix<T>::matrix(const vector_k<vector_k<T> >& mat) : mRows(mat.size()), mCols(mat[0].size()), mData(mat[0].size()*mat.size())
 	{
 		if(mat.empty())
 		{
@@ -133,6 +103,7 @@ namespace keycpp
 		{
 			throw MatrixException("Cannot assign empty vector of vectors to a matrix object!");
 		}
+		
 		for(int ii = 0; ii < mRows; ii++)
 		{
 			for(int jj = 0; jj < mCols; jj++)
@@ -191,7 +162,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	std::vector<T> matrix<T>::operator*(const std::vector<T> &x) const
+	vector_k<T> matrix<T>::operator*(const vector_k<T> &x) const
 	{
 		if(x.empty())
 		{
@@ -205,7 +176,7 @@ namespace keycpp
 		{
 			throw MatrixException("Cannot perform operation on empty matrix!");
 		}
-		std::vector<T> b(mRows);
+		vector_k<T> b(mRows);
 		for(int ii = 0; ii < mRows; ii++)
 		{
 			b[ii] = 0.0;
@@ -218,7 +189,7 @@ namespace keycpp
 	}
 	
 	template<>
-	inline std::vector<double> matrix<double>::operator*(const std::vector<double> &x) const
+	inline vector_k<double> matrix<double>::operator*(const vector_k<double> &x) const
 	{
 		if(x.empty())
 		{
@@ -232,7 +203,7 @@ namespace keycpp
 		{
 			throw MatrixException("Cannot perform operation on empty matrix!");
 		}
-		std::vector<double> b(mRows);
+		vector_k<double> b(mRows);
 		int m = mRows;
 		int n = mCols;
         char TRANS = 'N';
@@ -240,7 +211,6 @@ namespace keycpp
         int LDA = m;
         int INCX = 1;
         double BETA = 0.0;
-        double *y = new double[m];
         int INCY = 1;
 
         dgemv_(&TRANS, &m, &n, &ALPHA, &mData[0], &LDA, &x[0],&INCX, &BETA, &b[0], &INCY);
@@ -249,7 +219,7 @@ namespace keycpp
     }
 	
 	template<>
-	inline std::vector<std::complex<double>> matrix<std::complex<double>>::operator*(const std::vector<std::complex<double>> &x) const
+	inline vector_k<std::complex<double>> matrix<std::complex<double>>::operator*(const vector_k<std::complex<double>> &x) const
 	{
 		if(x.empty())
 		{
@@ -263,7 +233,7 @@ namespace keycpp
 		{
 			throw MatrixException("Cannot perform operation on empty matrix!");
 		}
-		std::vector<std::complex<double>> b(mRows);
+		vector_k<std::complex<double>> b(mRows);
 		int m = mRows;
 		int n = mCols;
         char TRANS = 'N';
@@ -479,23 +449,23 @@ namespace keycpp
 	}
 	
 	template<class T>
-	vector_ref<T> matrix<T>::row(const int &n)
+	vector_k<T> matrix<T>::row(const int &n)
 	{
 		if(n > mRows || n < 0)
 		{
-			throw MatrixException("Invalid row index in setRow().");
+			throw MatrixException("Invalid row index in row().");
 		}
 		if(mData.empty())
 		{
-			throw MatrixException("Cannot use method setRow() on empty matrix!");
+			throw MatrixException("Cannot use method row() on empty matrix!");
 		}
 		
-		vector_ref<T> Row(&mData[n],mCols,mRows);
+		vector_k<T> Row(&mData[n],mCols,mRows);
 		return Row;
 	}
 
 	template<class T>
-	int matrix<T>::setLastRow(const std::vector<T> &row)
+	int matrix<T>::setLastRow(const vector_k<T> &row)
 	{
 		if(row.size() != mCols)
 		{
@@ -514,7 +484,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	int matrix<T>::addLastRow(const std::vector<T> &row)
+	int matrix<T>::addLastRow(const vector_k<T> &row)
 	{
 		if(row.size() != mCols)
 		{
@@ -522,7 +492,7 @@ namespace keycpp
 		}
 
 		mRows++;
-		std::vector<T> temp = mData;
+		vector_k<T> temp = mData;
 		mData.resize(mRows*mCols);
 		for(int jj = 0; jj < mCols; jj++)
 		{
@@ -539,23 +509,23 @@ namespace keycpp
 	}
 
 	template<class T>
-	vector_ref<T> matrix<T>::col(const int &n)
+	vector_k<T> matrix<T>::col(const int &n)
 	{
 		if(n > mCols || n < 0)
 		{
-			throw MatrixException("Invalid column index in setCol().");
+			throw MatrixException("Invalid column index in col().");
 		}
 		if(mData.empty())
 		{
-			throw MatrixException("Cannot use method setCol() on empty matrix!");
+			throw MatrixException("Cannot use method col() on empty matrix!");
 		}
 		
-		vector_ref<T> Col(&mData[n*mRows],mRows,1);
+		vector_k<T> Col(&mData[n*mRows],mRows,1);
 		return Col;
 	}
 
 	template<class T>
-	std::vector<T> matrix<T>::getRow(const int &n) const
+	vector_k<T> matrix<T>::getRow(const int &n) const
 	{
 		if(n > mRows || n < 0)
 		{
@@ -565,7 +535,7 @@ namespace keycpp
 		{
 			throw MatrixException("Cannot use method getRow() on empty matrix!");
 		}
-		std::vector<T> Row(mCols);
+		vector_k<T> Row(mCols);
 
 		for(int jj = 0; jj < mCols; jj++)
 		{
@@ -576,13 +546,13 @@ namespace keycpp
 	}
 
 	template<class T>
-	std::vector<T> matrix<T>::getLastRow() const
+	vector_k<T> matrix<T>::getLastRow() const
 	{
 		if(mData.empty())
 		{
 			throw MatrixException("Cannot use method getLastRow() on empty matrix!");
 		}
-		std::vector<T> Row(mCols);
+		vector_k<T> Row(mCols);
 
 		for(int jj = 0; jj < mCols; jj++)
 		{
@@ -593,7 +563,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	std::vector<T> matrix<T>::getCol(const int &n) const
+	vector_k<T> matrix<T>::getCol(const int &n) const
 	{
 		if(n > mCols || n < 0)
 		{
@@ -603,7 +573,7 @@ namespace keycpp
 		{
 			throw MatrixException("Cannot use method getCol() on empty matrix!");
 		}
-		std::vector<T> Col(mRows);
+		vector_k<T> Col(mRows);
 
 		for(int ii = 0; ii < mRows; ii++)
 		{

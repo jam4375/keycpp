@@ -1,6 +1,36 @@
-\section*{Download Source}
+\section*{Ubuntu Users}
 
-Download the complete source and documentation\-: \href{keycpp-0.1.tar.gz}{\tt keycpp-\/0.\-1.\-tar.\-gz}. Alternatively, you can download the source by cloning the git repository from \href{http://code.google.com/p/keycpp/source/checkout}{\tt code.\-google.\-com/p/keycpp/}. After downloading the source, make sure you have the dependencies and follow the installation instructions below.
+If using Ubuntu 13.\-04 or greater, you can install the Key\-Cpp library and all dependencies using the following commands\-:
+
+{\ttfamily sudo apt-\/add-\/repository ppa\-:jam4375/keycpp}
+
+{\ttfamily sudo apt-\/get update}
+
+{\ttfamily sudo apt-\/get install keycpp}
+
+\section*{\label{_usage}%
+Usage}
+
+{\itshape This library uses features only available in the \href{https://en.wikipedia.org/wiki/C%2B%2B11}{\tt C++11 standard}. Y\-O\-U M\-U\-S\-T \href{http://gcc.gnu.org/projects/cxx0x.html}{\tt C\-O\-M\-P\-I\-L\-E} W\-I\-T\-H T\-H\-I\-S S\-T\-A\-N\-D\-A\-R\-D.}
+
+Download the example code\-: \href{examples/example.cpp}{\tt example.\-cpp}. In the directory that you saved the file, execute the following commands to compile and run the example\-:
+
+{\ttfamily g++ example.\-cpp -\/lkeycpp -\/lblas -\/llapack -\/std=c++11}
+
+{\ttfamily ./example}
+
+If everything is setup correctly, there should be no errors and the output should be the same as shown \href{#output}{\tt below}.
+
+\section*{\label{_alt_install}%
+Alternate Installation Instructions}
+
+\subsection*{Download Source}
+
+Download the complete source and documentation\-: \href{releases/keycpp-0.1.tar.gz}{\tt keycpp-\/0.\-1.\-tar.\-gz}.
+
+If you want the most up-\/to-\/date version you can download the source by cloning the git repository from \href{http://code.google.com/p/keycpp/source/checkout}{\tt code.\-google.\-com/p/keycpp/}. It should be noted that the version on code.\-google.\-com may not be as stable as the compressed source file above.
+
+After downloading the source, make sure you have the dependencies and follow the installation instructions below.
 
 \subsection*{Dependencies}
 
@@ -10,29 +40,23 @@ The {\itshape only} extra dependencies that you need on your system are the \hre
 
 \subsubsection*{Ubuntu (and various \href{https://wiki.ubuntu.com/UbuntuFlavors}{\tt flavors})}
 
-{\itshape N\-O\-T\-E\-: For permformance reasons, use of Open\-B\-L\-A\-S/\-L\-A\-P\-A\-C\-K is preferred over the default versions. Also, for Intel C\-P\-U's, Intel's M\-K\-L library provides the best performance.}
+{\itshape N\-O\-T\-E\-: For permformance reasons, use of Open\-B\-L\-A\-S/\-L\-A\-P\-A\-C\-K is preferred over the default versions.}
 
 To acquire all the required dependencies you can execute the following commands\-:
 
 {\ttfamily sudo apt-\/get install build-\/essential}
 
-Until Ubuntu 13.\-10 comes out in October 2013, you need to install \href{http://headmyshoulder.github.io/odeint-v2/}{\tt odeint} from their website. The way I did it was to install Boost (see below) and then copy the odeint header and source files into the appropriate Boost folders. This is because odeint first appears in Boost 1.\-53 and the newest version in the repository for Ubuntu 13.\-04 is 1.\-49.
-
-{\ttfamily sudo apt-\/get install libboost-\/all-\/dev}
+{\ttfamily sudo apt-\/get install libboost-\/dev}
 
 {\ttfamily sudo apt-\/get install libopenblas-\/dev}
 
 {\ttfamily sudo apt-\/get install liblapack-\/dev}
 
-\subsubsection*{Other Operating Systems}
+If using Ubuntu 13.\-04 or prior, you must download the source for \href{http://www.odeint.com}{\tt odeint} and copy the directory {\ttfamily ./boost/numeric/odeint} and file {\ttfamily ./boost/numeric/odeint.hpp} to {\ttfamily /usr/include/boost/numeric/}.
 
-Your mileage may vary.
+\subsection*{Installation}
 
-\subsection*{Installation \& Usage}
-
-{\itshape This library uses features only available in the \href{https://en.wikipedia.org/wiki/C%2B%2B11}{\tt C++11 standard}. Y\-O\-U M\-U\-S\-T \href{http://gcc.gnu.org/projects/cxx0x.html}{\tt C\-O\-M\-P\-I\-L\-E} W\-I\-T\-H T\-H\-I\-S S\-T\-A\-N\-D\-A\-R\-D.}
-
-To install Key\-Cpp onto your system first download the source \href{keycpp-0.1.tar.gz}{\tt here} and extract to the directory of your choice\-:
+To install Key\-Cpp onto your system first download the source \href{releases/keycpp-0.1.tar.gz}{\tt here} and extract to the directory of your choice\-:
 
 {\ttfamily tar -\/zxvf keycpp-\/0.\-1.\-tar.\-gz}
 
@@ -46,25 +70,24 @@ To uninstall the Key\-Cpp library, use the following command\-:
 
 {\ttfamily sudo ./\-U\-N\-I\-N\-S\-T\-A\-L\-L}
 
-If everything was successful, you should be able to compile and run the example program\-:
+\subsubsection*{Other Operating Systems}
 
-{\ttfamily cd examples}
+This library has not been tested on operating systems other than Ubuntu yet. You should be able to get this library working on other linux distributions or O\-S X with slight modifications to the procedures above. Windows users may have a harder time getting this library to compile. For all operating systems, first make sure that you have all of the dependencies.
 
-{\ttfamily g++ -\/c -\/o obj/example.\-o example.\-cpp -\/std=c++11}
+\section*{Intel M\-K\-L}
 
-{\ttfamily g++ -\/o example obj/example.\-o -\/std=c++11 -\/lkeycpp -\/lblas -\/llapack}
+For Intel processors, the \href{http://software.intel.com/en-us/intel-mkl}{\tt Intel M\-K\-L} libraries provide the best performance. If you choose to use Intel's M\-K\-L libraries, the necessary compiler flags are\-:
 
-{\ttfamily ./example}
+{\ttfamily g++ example.\-cpp -\/lkeycpp -\/\-L/\$(M\-K\-L\-R\-O\-O\-T)/lib/intel64 -\/lmkl\-\_\-rt -\/std=c++11}
 
-If you are using Intel's M\-K\-L libraries, use this command instead of the one above\-:
+or using the Intel C++ compiler\-:
 
-{\ttfamily g++ -\/o example obj/example.\-o -\/std=c++11 -\/lkeycpp -\/\-L/\$(M\-K\-L\-R\-O\-O\-T)/lib/intel64 -\/lmkl\-\_\-rt}
+{\ttfamily icc example.\-cpp -\/lkeycpp -\/\-L/\$(M\-K\-L\-R\-O\-O\-T)/lib/intel64 -\/lmkl\-\_\-rt -\/std=c++11}
 
-Alternatively, you could just type {\ttfamily make lib=lapack} or {\ttfamily make lib=mkl} inside the {\ttfamily examples} directory. Then type {\ttfamily ./example} to run the example code.
+If writing parallel applications, especially using Open\-M\-P, it is highly recommended to use the Inter C++ compiler. Using {\ttfamily g++}, Open\-M\-P, and Intel M\-K\-L together sometimes produces undefined behavior.
 
-When you are writing your own programs be sure to link with the {\ttfamily libkeycpp.\-a}, {\ttfamily libblas.\-a}, and {\ttfamily liblapack.\-a} libraries (or {\ttfamily libmkl\-\_\-rt.\-so} if you are using Intel M\-K\-L). With {\ttfamily g++} the form is the same as used above. {\itshape D\-O N\-O\-T F\-O\-R\-G\-E\-T T\-O C\-O\-M\-P\-I\-L\-E W\-I\-T\-H T\-H\-E C++11 S\-T\-A\-N\-D\-A\-R\-D!}
-
-\section*{Example Code}
+\section*{\label{_example}%
+Example Code}
 
 {\bfseries {\ttfamily example.\-cpp}} 
 \begin{DoxyCodeInclude}
@@ -140,6 +163,7 @@ When you are writing your own programs be sure to link with the {\ttfamily libke
 70 \}
 \end{DoxyCodeInclude}
  \par
+ \label{_output}%
  {\bfseries {\ttfamily Text} Output} 
 \begin{DoxyCodeInclude}
 1 1.76667
