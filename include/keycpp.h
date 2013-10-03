@@ -3408,7 +3408,9 @@ namespace keycpp
             va_end(ap);
             if(n > -1 && n < size)
             {
-                size = n;
+                std::string str(s);
+                str.resize(n);
+                return str;
             }
             if (n > -1)
             {

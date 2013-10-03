@@ -3,7 +3,7 @@
 
 BOOST_AUTO_TEST_SUITE(KeyCpp_Unit_Testing)
 
-BOOST_AUTO_TEST_CASE(keycpp_test)
+BOOST_AUTO_TEST_CASE(fft_test)
 {
     // Test fft
     size_t L = 1000;
