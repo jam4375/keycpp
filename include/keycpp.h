@@ -177,7 +177,7 @@ namespace keycpp
 	vector_k<T> eop(const vector_k<T> &v1, T (*f)(const T&))
 	{
 	    vector_k<T> v2(v1.size());
-	    for(int ii = 0; ii < v1.size(); ii++)
+	    for(size_t ii = 0; ii < v1.size(); ii++)
 	    {
 	        v2[ii] = (*f)(v1[ii]);
 	    }
@@ -188,9 +188,9 @@ namespace keycpp
 	matrix<T> eop(const matrix<T> &A, T (*f)(T))
 	{
 	    matrix<T> B(A.size(1), A.size(2));
-	    for(int ii = 0; ii < A.size(1); ii++)
+	    for(size_t ii = 0; ii < A.size(1); ii++)
 	    {
-	        for(int jj = 0; jj < A.size(2); jj++)
+	        for(size_t jj = 0; jj < A.size(2); jj++)
 	        {
 	            B(ii,jj) = (*f)(A(ii,jj));
 	        }
@@ -202,7 +202,7 @@ namespace keycpp
 	vector_k<T> eop(const vector_k<T> &v1, T (*f)(T))
 	{
 	    vector_k<T> v2(v1.size());
-	    for(int ii = 0; ii < v1.size(); ii++)
+	    for(size_t ii = 0; ii < v1.size(); ii++)
 	    {
 	        v2[ii] = (*f)(v1[ii]);
 	    }
@@ -213,9 +213,9 @@ namespace keycpp
 	matrix<T> eop(const matrix<std::complex<T>> &A, T (*f)(const std::complex<T>&))
 	{
 	    matrix<T> B(A.size(1), A.size(2));
-	    for(int ii = 0; ii < A.size(1); ii++)
+	    for(size_t ii = 0; ii < A.size(1); ii++)
 	    {
-	        for(int jj = 0; jj < A.size(2); jj++)
+	        for(size_t jj = 0; jj < A.size(2); jj++)
 	        {
 	            B(ii,jj) = (*f)(A(ii,jj));
 	        }
@@ -227,7 +227,7 @@ namespace keycpp
 	vector_k<T> eop(const vector_k<std::complex<T>> &v1, T (*f)(const std::complex<T>&))
 	{
 	    vector_k<T> v2(v1.size());
-	    for(int ii = 0; ii < v1.size(); ii++)
+	    for(size_t ii = 0; ii < v1.size(); ii++)
 	    {
 	        v2[ii] = (*f)(v1[ii]);
 	    }
@@ -238,9 +238,9 @@ namespace keycpp
 	matrix<T> eop(const matrix<std::complex<T>> &A, T (*f)(std::complex<T>))
 	{
 	    matrix<T> B(A.size(1), A.size(2));
-	    for(int ii = 0; ii < A.size(1); ii++)
+	    for(size_t ii = 0; ii < A.size(1); ii++)
 	    {
-	        for(int jj = 0; jj < A.size(2); jj++)
+	        for(size_t jj = 0; jj < A.size(2); jj++)
 	        {
 	            B(ii,jj) = (*f)(A(ii,jj));
 	        }
@@ -252,7 +252,7 @@ namespace keycpp
 	vector_k<T> eop(const vector_k<std::complex<T>> &v1, T (*f)(std::complex<T>))
 	{
 	    vector_k<T> v2(v1.size());
-	    for(int ii = 0; ii < v1.size(); ii++)
+	    for(size_t ii = 0; ii < v1.size(); ii++)
 	    {
 	        v2[ii] = (*f)(v1[ii]);
 	    }
@@ -277,9 +277,9 @@ namespace keycpp
 	template<class T>
 	std::ostream& operator<<(std::ostream &out, const matrix<T> &A)
 	{
-        for(int ii = 0; ii < A.size(1); ii++)
+        for(size_t ii = 0; ii < A.size(1); ii++)
         {
-            for(int jj = 0; jj < A.size(2); jj++)
+            for(size_t jj = 0; jj < A.size(2); jj++)
             {
                 out << A(ii,jj) << " ";
             }
@@ -291,7 +291,7 @@ namespace keycpp
 	template<class T>
 	std::ostream& operator<<(std::ostream &out, const vector_k<T> &v1)
 	{
-        for(int ii = 0; ii < v1.size(); ii++)
+        for(size_t ii = 0; ii < v1.size(); ii++)
         {
             out << v1[ii];
             out << std::endl;
@@ -309,7 +309,7 @@ namespace keycpp
 	    }
 		T x_out;
 		x_out = x[0];
-		for(int ii = 1; ii < x.size(); ii++)
+		for(size_t ii = 1; ii < x.size(); ii++)
 		{
 			x_out *= x[ii];
 		}
@@ -328,9 +328,9 @@ namespace keycpp
 	        return x;
 	    }
 		vector_k<T> B = A.getRow(0);
-		for(int jj = 0; jj < A.size(2); jj++)
+		for(size_t jj = 0; jj < A.size(2); jj++)
 		{
-		    for(int ii = 1; ii < A.size(1); ii++)
+		    for(size_t ii = 1; ii < A.size(1); ii++)
 		    {
 			    B[jj] *= A(ii,jj);
 			}
@@ -347,7 +347,7 @@ namespace keycpp
 	        throw KeyCppException("Cannot compute diff() on empty vector!");
 	    }
 		vector_k<T> v2(v1.size()-1);
-		for(int ii = 0; ii < v2.size(); ii++)
+		for(size_t ii = 0; ii < v2.size(); ii++)
 		{
 		    v2[ii] = v1[ii+1] - v1[ii];
 		}
@@ -366,9 +366,9 @@ namespace keycpp
 	        throw KeyCppException("Cannot compute diff() on empty matrix!");
 	    }
 		matrix<T> B(A.size(1)-1,A.size(2));
-		for(int ii = 0; ii < B.size(1); ii++)
+		for(size_t ii = 0; ii < B.size(1); ii++)
 		{
-		    for(int jj = 0; jj < B.size(2); jj++)
+		    for(size_t jj = 0; jj < B.size(2); jj++)
 		    {
 			    B(ii,jj) = A(ii+1,jj) - A(ii,jj);
 			}
@@ -465,7 +465,7 @@ namespace keycpp
 	    {
 	        throw KeyCppException("Cannot add vectors of different sizes!");
 	    }
-	    int N = v1.size(), incx = 1, incy = 1;
+	    int N = (int)v1.size(), incx = 1, incy = 1;
 	    double alpha = 1.0;
 		vector_k<double> result(v2);
 	    daxpy_(&N, &alpha, &v1[0], &incx, &result[0], &incy);
@@ -483,7 +483,7 @@ namespace keycpp
 	    {
 	        throw KeyCppException("Cannot add vectors of different sizes!");
 	    }
-	    int N = v1.size(), incx = 1, incy = 1;
+	    int N = (int)v1.size(), incx = 1, incy = 1;
 	    std::complex<double> alpha = 1.0;
 		vector_k<std::complex<double>> result(v2);
 	    zaxpy_(&N, &alpha, &v1[0], &incx, &result[0], &incy);
@@ -493,7 +493,7 @@ namespace keycpp
 	template<class T, class U> vector_k<decltype(std::declval<T>()*std::declval<U>())> operator+(const vector_k<T>& v1, const U& a)
 	{
 		vector_k<decltype(std::declval<T>()*std::declval<U>())> result(v1.size());
-		for(int ii = 0; ii < result.size(); ii++)
+		for(size_t ii = 0; ii < result.size(); ii++)
 		{
 			result[ii] = v1[ii]+a;
 		}
@@ -503,7 +503,7 @@ namespace keycpp
 	template<class T, class U> vector_k<decltype(std::declval<T>()*std::declval<U>())> operator+(const U& a, const vector_k<T>& v2)
 	{
 		vector_k<decltype(std::declval<T>()*std::declval<U>())> result(v2.size());
-		for(int ii = 0; ii < result.size(); ii++)
+		for(size_t ii = 0; ii < result.size(); ii++)
 		{
 			result[ii] = v2[ii]+a;
 		}
@@ -513,9 +513,9 @@ namespace keycpp
 	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator+(const matrix<T>& A, const U& a)
 	{
 		matrix<decltype(std::declval<T>()*std::declval<U>())> result(A.size(1),A.size(2));
-		for(int ii = 0; ii < result.size(1); ii++)
+		for(size_t ii = 0; ii < result.size(1); ii++)
 		{
-		    for(int jj = 0; jj < result.size(2); jj++)
+		    for(size_t jj = 0; jj < result.size(2); jj++)
 		    {
 			    result(ii,jj) = A(ii,jj)+a;
 			}
@@ -526,9 +526,9 @@ namespace keycpp
 	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator+(const U& a, const matrix<T>& A)
 	{
 		matrix<decltype(std::declval<T>()*std::declval<U>())> result(A.size(1),A.size(2));
-		for(int ii = 0; ii < result.size(1); ii++)
+		for(size_t ii = 0; ii < result.size(1); ii++)
 		{
-		    for(int jj = 0; jj < result.size(2); jj++)
+		    for(size_t jj = 0; jj < result.size(2); jj++)
 		    {
 			    result(ii,jj) = A(ii,jj)+a;
 			}
@@ -541,7 +541,7 @@ namespace keycpp
 	template<class T, class U> vector_k<decltype(std::declval<T>()*std::declval<U>())> operator-(const vector_k<T>& v1, const U& a)
 	{
 		vector_k<decltype(std::declval<T>()*std::declval<U>())> result(v1.size());
-		for(int ii = 0; ii < result.size(); ii++)
+		for(size_t ii = 0; ii < result.size(); ii++)
 		{
 			result[ii] = v1[ii]-a;
 		}
@@ -551,7 +551,7 @@ namespace keycpp
 	template<class T, class U> vector_k<decltype(std::declval<T>()*std::declval<U>())> operator-(const U& a, const vector_k<T>& v2)
 	{
 		vector_k<decltype(std::declval<T>()*std::declval<U>())> result(v2.size());
-		for(int ii = 0; ii < result.size(); ii++)
+		for(size_t ii = 0; ii < result.size(); ii++)
 		{
 			result[ii] = a - v2[ii];
 		}
@@ -561,9 +561,9 @@ namespace keycpp
 	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator-(const matrix<T>& A, const U& a)
 	{
 		matrix<decltype(std::declval<T>()*std::declval<U>())> result(A.size(1),A.size(2));
-		for(int ii = 0; ii < result.size(1); ii++)
+		for(size_t ii = 0; ii < result.size(1); ii++)
 		{
-		    for(int jj = 0; jj < result.size(2); jj++)
+		    for(size_t jj = 0; jj < result.size(2); jj++)
 		    {
 			    result(ii,jj) = A(ii,jj)-a;
 			}
@@ -574,9 +574,9 @@ namespace keycpp
 	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator-(const U& a, const matrix<T>& A)
 	{
 		matrix<decltype(std::declval<T>()*std::declval<U>())> result(A.size(1),A.size(2));
-		for(int ii = 0; ii < result.size(1); ii++)
+		for(size_t ii = 0; ii < result.size(1); ii++)
 		{
-		    for(int jj = 0; jj < result.size(2); jj++)
+		    for(size_t jj = 0; jj < result.size(2); jj++)
 		    {
 			    result(ii,jj) = a-A(ii,jj);
 			}
@@ -595,7 +595,7 @@ namespace keycpp
 	        throw KeyCppException("Cannot subtract vectors of different sizes!");
 	    }
 		vector_k<decltype(std::declval<T>()*std::declval<U>())> result(v1.size());
-		for(int ii = 0; ii < result.size(); ii++)
+		for(size_t ii = 0; ii < result.size(); ii++)
 		{
 			result[ii] = v1[ii]-v2[ii];
 		}
@@ -613,7 +613,7 @@ namespace keycpp
 	    {
 	        throw KeyCppException("Cannot subtract vectors of different sizes!");
 	    }
-	    int N = v1.size(), incx = 1, incy = 1;
+	    int N = (int)v1.size(), incx = 1, incy = 1;
 	    double alpha = -1.0;
 		vector_k<double> result(v1);
 	    daxpy_(&N, &alpha, &v2[0], &incx, &result[0], &incy);
@@ -631,7 +631,7 @@ namespace keycpp
 	    {
 	        throw KeyCppException("Cannot subtract vectors of different sizes!");
 	    }
-	    int N = v1.size(), incx = 1, incy = 1;
+	    int N = (int)v1.size(), incx = 1, incy = 1;
 	    std::complex<double> alpha = -1.0;
 		vector_k<std::complex<double>> result(v1);
 	    zaxpy_(&N, &alpha, &v2[0], &incx, &result[0], &incy);
@@ -641,9 +641,9 @@ namespace keycpp
 	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator*(const T& a, const matrix<U>& A)
 	{
 		matrix<decltype(std::declval<T>()*std::declval<U>())> B(A.size(1),A.size(2));
-		for(int ii = 0; ii < B.size(1); ii++)
+		for(size_t ii = 0; ii < B.size(1); ii++)
 		{
-			for(int jj = 0; jj < B.size(2); jj++)
+			for(size_t jj = 0; jj < B.size(2); jj++)
 			{
 				B(ii,jj) = a*A(ii,jj);
 			}
@@ -654,9 +654,9 @@ namespace keycpp
 	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator*(const matrix<U>& A, const T& a)
 	{
 		matrix<decltype(std::declval<T>()*std::declval<U>())> B(A.size(1),A.size(2));
-		for(int ii = 0; ii < B.size(1); ii++)
+		for(size_t ii = 0; ii < B.size(1); ii++)
 		{
-			for(int jj = 0; jj < B.size(2); jj++)
+			for(size_t jj = 0; jj < B.size(2); jj++)
 			{
 				B(ii,jj) = a*A(ii,jj);
 			}
@@ -669,9 +669,9 @@ namespace keycpp
 		if(A.size(1) == 1)
 		{
 			matrix<decltype(std::declval<T>()*std::declval<U>())> B(v1.size(),A.size(2));
-			for(int ii = 0; ii < B.size(1); ii++)
+			for(size_t ii = 0; ii < B.size(1); ii++)
 			{
-				for(int jj = 0; jj < B.size(2); jj++)
+				for(size_t jj = 0; jj < B.size(2); jj++)
 				{
 					B(ii,jj) = v1[ii]*A(0,jj);
 				}
@@ -681,9 +681,9 @@ namespace keycpp
 		else if(A.size(1) == v1.size())
 		{
 			matrix<decltype(std::declval<T>()*std::declval<U>())> B(1,A.size(2));
-			for(int ii = 0; ii < A.size(2); ii++)
+			for(size_t ii = 0; ii < A.size(2); ii++)
 			{
-				for(int jj = 0; jj < A.size(1); jj++)
+				for(size_t jj = 0; jj < A.size(1); jj++)
 				{
 					B(0,ii) = v1[jj]*A(jj,ii);
 				}
@@ -699,7 +699,7 @@ namespace keycpp
 	template<class T, class U> vector_k<decltype(std::declval<T>()*std::declval<U>())> operator*(const T& a, const vector_k<U>& v1)
 	{
 		vector_k<decltype(std::declval<T>()*std::declval<U>())> v2(v1.size());
-		for(int ii = 0; ii < v2.size(); ii++)
+		for(size_t ii = 0; ii < v2.size(); ii++)
 		{
 			v2[ii] = a*v1[ii];
 		}
@@ -710,7 +710,7 @@ namespace keycpp
 	inline vector_k<double> operator*(const double& a, const vector_k<double>& v1)
 	{
 		vector_k<double> v2(v1);
-		int N = v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = 1;
 		dscal_(&N, &a, &v2[0], &incx);
 		return v2;
 	}
@@ -719,7 +719,7 @@ namespace keycpp
 	inline vector_k<std::complex<double>> operator*(const std::complex<double>& a, const vector_k<std::complex<double>>& v1)
 	{
 		vector_k<std::complex<double>> v2(v1);
-		int N = v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = 1;
 		zscal_(&N, &a, &v2[0], &incx);
 		return v2;
 	}
@@ -727,7 +727,7 @@ namespace keycpp
 	template<class T, class U> vector_k<decltype(std::declval<T>()*std::declval<U>())> operator*(const vector_k<T>& v1, const U& a)
 	{
 		vector_k<decltype(std::declval<T>()*std::declval<U>())> v2(v1.size());
-		for(int ii = 0; ii < v2.size(); ii++)
+		for(size_t ii = 0; ii < v2.size(); ii++)
 		{
 			v2[ii] = a*v1[ii];
 		}
@@ -738,7 +738,7 @@ namespace keycpp
 	inline vector_k<double> operator*(const vector_k<double>& v1, const double& a)
 	{
 		vector_k<double> v2(v1);
-		int N = v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = 1;
 		dscal_(&N, &a, &v2[0], &incx);
 		return v2;
 	}
@@ -747,7 +747,7 @@ namespace keycpp
 	inline vector_k<std::complex<double>> operator*(const vector_k<std::complex<double>>& v1, const std::complex<double>& a)
 	{
 		vector_k<std::complex<double>> v2(v1);
-		int N = v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = 1;
 		zscal_(&N, &a, &v2[0], &incx);
 		return v2;
 	}
@@ -755,7 +755,7 @@ namespace keycpp
 	template<class T> vector_k<T> operator-(const vector_k<T>& v1)
 	{
 		vector_k<T> v2(v1.size());
-		for(int ii = 0; ii < v2.size(); ii++)
+		for(size_t ii = 0; ii < v2.size(); ii++)
 		{
 			v2[ii] = -v1[ii];
 		}
@@ -767,7 +767,7 @@ namespace keycpp
 	{
 		vector_k<double> v2(v1);
 		double a = -1.0;
-		int N = v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = 1;
 		dscal_(&N, &a, &v2[0], &incx);
 		return v2;
 	}
@@ -777,7 +777,7 @@ namespace keycpp
 	{
 		vector_k<std::complex<double>> v2(v1);
 		std::complex<double> a = -1.0;
-		int N = v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = 1;
 		zscal_(&N, &a, &v2[0], &incx);
 		return v2;
 	}
@@ -785,9 +785,9 @@ namespace keycpp
 	template<class T> matrix<T> operator-(const matrix<T>& A)
 	{
 		matrix<T> B(A.size(1),A.size(2));
-		for(int ii = 0; ii < B.size(1); ii++)
+		for(size_t ii = 0; ii < B.size(1); ii++)
 		{
-			for(int jj = 0; jj < B.size(2); jj++)
+			for(size_t jj = 0; jj < B.size(2); jj++)
 			{
 				B(ii,jj) = -A(ii,jj);
 			}
@@ -804,9 +804,9 @@ namespace keycpp
 	template<class T> matrix<T> operator+(const matrix<T>& A)
 	{
 		matrix<T> B(A.size(1),A.size(2));
-		for(int ii = 0; ii < B.size(1); ii++)
+		for(size_t ii = 0; ii < B.size(1); ii++)
 		{
-			for(int jj = 0; jj < B.size(2); jj++)
+			for(size_t jj = 0; jj < B.size(2); jj++)
 			{
 				B(ii,jj) = A(ii,jj);
 			}
@@ -817,9 +817,9 @@ namespace keycpp
 	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator/(const matrix<T>& A, const U& a)
 	{
 		matrix<decltype(std::declval<T>()*std::declval<U>())> B(A.size(1),A.size(2));
-		for(int ii = 0; ii < B.size(1); ii++)
+		for(size_t ii = 0; ii < B.size(1); ii++)
 		{
-			for(int jj = 0; jj < B.size(2); jj++)
+			for(size_t jj = 0; jj < B.size(2); jj++)
 			{
 				B(ii,jj) = A(ii,jj)/a;
 			}
@@ -830,7 +830,7 @@ namespace keycpp
 	template<class T, class U> vector_k<decltype(std::declval<T>()*std::declval<U>())> operator/(const vector_k<T>& v1, const U& a)
 	{
 		vector_k<decltype(std::declval<T>()*std::declval<U>())> v2(v1.size());
-		for(int ii = 0; ii < v2.size(); ii++)
+		for(size_t ii = 0; ii < v2.size(); ii++)
 		{
 			v2[ii] = v1[ii]/a;
 		}
@@ -842,7 +842,7 @@ namespace keycpp
 	{
 		vector_k<double> v2(v1);
 		double aa = 1.0/a;
-		int N = v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = 1;
 		dscal_(&N, &aa, &v2[0], &incx);
 		return v2;
 	}
@@ -852,7 +852,7 @@ namespace keycpp
 	{
 		vector_k<std::complex<double>> v2(v1);
 		std::complex<double> aa = 1.0/a;
-		int N = v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = 1;
 		zscal_(&N, &aa, &v2[0], &incx);
 		return v2;
 	}
@@ -860,9 +860,9 @@ namespace keycpp
 	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator/(const U& a, const matrix<T>& A)
 	{
 		matrix<decltype(std::declval<T>()*std::declval<U>())> B(A.size(1),A.size(2));
-		for(int ii = 0; ii < B.size(1); ii++)
+		for(size_t ii = 0; ii < B.size(1); ii++)
 		{
-			for(int jj = 0; jj < B.size(2); jj++)
+			for(size_t jj = 0; jj < B.size(2); jj++)
 			{
 				B(ii,jj) = a/A(ii,jj);
 			}
@@ -873,7 +873,7 @@ namespace keycpp
 	template<class T, class U> vector_k<decltype(std::declval<T>()*std::declval<U>())> operator/(const U& a, const vector_k<T>& v1)
 	{
 		vector_k<decltype(std::declval<T>()*std::declval<U>())> v2(v1.size());
-		for(int ii = 0; ii < v2.size(); ii++)
+		for(size_t ii = 0; ii < v2.size(); ii++)
 		{
 			v2[ii] = a/v1[ii];
 		}
@@ -1592,10 +1592,10 @@ namespace keycpp
 	template<class T> T max(const vector_k<T> &x)
 	{
 		double a = nan("");
-		int index = 0;
-		for(int ii = 0; ii < x.size(); ii++)
+		size_t index = 0;
+		for(size_t ii = 0; ii < x.size(); ii++)
 		{
-			if(x[ii] == x[ii] && (x[ii] > a || a != a))
+			if(!std::isnan(x[ii]) && (x[ii] > a || std::isnan(a)))
 			{
 				a = x[ii];
 				index = ii;
@@ -1608,10 +1608,10 @@ namespace keycpp
 	{
 		double a = nan("");
 		double b = nan("");
-		int index = 0;
-		for(int ii = 0; ii < x.size(); ii++)
+		size_t index = 0;
+		for(size_t ii = 0; ii < x.size(); ii++)
 		{
-			if(x[ii] == x[ii] && ((abs(x[ii]) > a && angle(x[ii]) > b) || ( a != a || b != b)))
+			if(!std::isnan(real(x[ii])) && !std::isnan(imag(x[ii])) && ((abs(x[ii]) > a && angle(x[ii]) > b) || (std::isnan(a) || std::isnan(b))))
 			{
 				a = abs(x[ii]);
 				b = angle(x[ii]);
@@ -1624,7 +1624,7 @@ namespace keycpp
 	template<class T> vector_k<T> max(const matrix<T> &A)
 	{
 	    vector_k<T> v(A.size(2));
-	    for(int ii = 0; ii < v.size(); ii++)
+	    for(size_t ii = 0; ii < v.size(); ii++)
 	    {
 	        v[ii] = max(A.getCol(ii));
 	    }
@@ -1637,7 +1637,7 @@ namespace keycpp
 		int index = 0;
 		for(int ii = 0; ii < x.size(); ii++)
 		{
-			if(x[ii] == x[ii] && (x[ii] < a || a != a))
+			if(!std::isnan(x[ii]) && (x[ii] < a || std::isnan(a)))
 			{
 				a = x[ii];
 				index = ii;
@@ -1650,10 +1650,10 @@ namespace keycpp
 	{
 		double a = nan("");
 		double b = nan("");
-		int index = 0;
-		for(int ii = 0; ii < x.size(); ii++)
+		size_t index = 0;
+		for(size_t ii = 0; ii < x.size(); ii++)
 		{
-			if(x[ii] == x[ii] && ((abs(x[ii]) < a && angle(x[ii]) < b) || ( a != a || b != b)))
+			if(!std::isnan(real(x[ii])) && !std::isnan(imag(x[ii])) && ((abs(x[ii]) < a && angle(x[ii]) < b) || (std::isnan(a) || std::isnan(b))))
 			{
 				a = abs(x[ii]);
 				b = angle(x[ii]);
@@ -1667,7 +1667,7 @@ namespace keycpp
 	template<class T> vector_k<T> min(const matrix<T> &A)
 	{
 	    vector_k<T> v(A.size(2));
-	    for(int ii = 0; ii < v.size(); ii++)
+	    for(size_t ii = 0; ii < v.size(); ii++)
 	    {
 	        v[ii] = min(A.getCol(ii));
 	    }
@@ -1679,9 +1679,9 @@ namespace keycpp
 	template<class T> matrix<T> transpose(const matrix<T> &A)
 	{
 		matrix<T> B(A.size(2),A.size(1));
-		for(int ii = 0; ii < A.size(1); ii++)
+		for(size_t ii = 0; ii < A.size(1); ii++)
 		{
-			for(int jj = 0; jj < A.size(2); jj++)
+			for(size_t jj = 0; jj < A.size(2); jj++)
 			{
 				B(jj,ii) = A(ii,jj);
 			}
@@ -1694,7 +1694,7 @@ namespace keycpp
 	template<class T> matrix<T> transpose(const vector_k<T> &v1)
 	{
 		matrix<T> B(1,v1.size());
-		for(int ii = 0; ii < v1.size(); ii++)
+		for(size_t ii = 0; ii < v1.size(); ii++)
 		{
 			B(0,ii) = v1[ii];
 		}
@@ -1706,9 +1706,9 @@ namespace keycpp
 	template<class T> matrix<T> ctranspose(const matrix<T> &A)
 	{
 		matrix<T> B(A.size(2),A.size(1));
-		for(int ii = 0; ii < A.size(1); ii++)
+		for(size_t ii = 0; ii < A.size(1); ii++)
 		{
-			for(int jj = 0; jj < A.size(2); jj++)
+			for(size_t jj = 0; jj < A.size(2); jj++)
 			{
 				B(jj,ii) = conj(A(ii,jj));
 			}
@@ -1728,7 +1728,7 @@ namespace keycpp
 	template<class T> matrix<T> ctranspose(const vector_k<T> &v1)
 	{
 		matrix<T> B(1,v1.size());
-		for(int ii = 0; ii < v1.size(); ii++)
+		for(size_t ii = 0; ii < v1.size(); ii++)
 		{
 			B(0,ii) = conj(v1[ii]);
 		}
@@ -1740,7 +1740,7 @@ namespace keycpp
 	template<class T> T sum(const vector_k<T> &v1)
 	{
 		T a = 0.0;
-		for(int ii = 0; ii < v1.size(); ii++)
+		for(size_t ii = 0; ii < v1.size(); ii++)
 		{
 			a += v1[ii];
 		}
@@ -1752,7 +1752,7 @@ namespace keycpp
 	template<class T> vector_k<T> sum(const matrix<T> &A)
 	{
 		vector_k<T> v1(A.size(2));
-		for(int ii = 0; ii < v1.size(); ii++)
+		for(size_t ii = 0; ii < v1.size(); ii++)
 		{
 			v1[ii] = sum(A.getCol(ii));
 		}
@@ -1768,7 +1768,7 @@ namespace keycpp
 	        throw KeyCppException("Cannot convert empty matrix to a vector!");
 	    }
 		vector_k<T> v1(A.size(1));
-		for(int ii = 0; ii < v1.size(); ii++)
+		for(size_t ii = 0; ii < v1.size(); ii++)
 		{
 			v1[ii] = A(ii,0);
 		}
@@ -1784,7 +1784,7 @@ namespace keycpp
 	        throw KeyCppException("Cannot convert empty vector to a matrix!");
 	    }
 		matrix<T> A(v1.size(),1);
-		for(int ii = 0; ii < v1.size(); ii++)
+		for(size_t ii = 0; ii < v1.size(); ii++)
 		{
 			A(ii,0) = v1[ii];
 		}
@@ -1801,7 +1801,7 @@ namespace keycpp
      *   @param[in] N The number of values between x1 and x2. 
      *   @return A vector containing N equally spaced values between x1 and x2, inclusively. 
      */
-	template<class T> vector_k<T> linspace(const T &x1, const T &x2, const int &N)
+	template<class T> vector_k<T> linspace(const T &x1, const T &x2, const size_t &N)
 	{
 		vector_k<T> x(N);
 		if(N == 1)
@@ -1812,7 +1812,7 @@ namespace keycpp
 
 		T delta_x = (x2-x1)/(N-1);
 
-		for(int ii = 0; ii < N; ii++)
+		for(size_t ii = 0; ii < N; ii++)
 		{
 			x[ii] = x1 + ii*delta_x;
 		}
@@ -1845,7 +1845,7 @@ namespace keycpp
 
 		T delta_x = (x2-x1)/(N-1);
 
-		for(int ii = 0; ii < N; ii++)
+		for(size_t ii = 0; ii < N; ii++)
 		{
 			x[ii] = pow(10.0,(x1 + delta_x*ii));
 		}
@@ -1858,7 +1858,7 @@ namespace keycpp
 		vector_k<T> v2(v1.size());
 		v2[0] = v1[0];
 		int correction = 0;
-		for(int ii = 1; ii < v1.size(); ii++)
+		for(size_t ii = 1; ii < v1.size(); ii++)
 		{
 			if((v1[ii] - v1[ii-1]) > tol)
 			{
@@ -1879,7 +1879,7 @@ namespace keycpp
 	{
 		T m = T(0);
 		double tot = 0.0;
-		for(int ii = 0; ii < v1.size(); ii++)
+		for(size_t ii = 0; ii < v1.size(); ii++)
 		{
 			m += v1[ii];
 			tot += 1.0;
@@ -1898,7 +1898,7 @@ namespace keycpp
 			throw KeyCppException("Error in interp1! Variables `x` and `y` have incompatible sizes!");
 		}
 		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
-		int N = x.size();
+		size_t N = x.size();
 		T y2;
 		if(method.compare("spline") == 0)
 		{
@@ -1908,7 +1908,7 @@ namespace keycpp
 		}
 		else if(method.compare("linear") == 0)
 		{
-			for(int ii = 0; ii < (N-1); ii++)
+			for(size_t ii = 0; ii < (N-1); ii++)
 			{
 				if(x_interp == x[ii])
 				{
@@ -1958,7 +1958,7 @@ namespace keycpp
 		{
 			U min_val = 1e15;
 			int index = -1;
-			for(int ii = 0; ii < N; ii++)
+			for(size_t ii = 0; ii < N; ii++)
 			{
 				if(std::abs(x[ii] - x_interp) < std::abs(min_val))
 				{
@@ -2018,22 +2018,22 @@ namespace keycpp
 			throw KeyCppException("Error in interp1! Variables `x` and `y` have incompatible sizes!");
 		}
 		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
-		int N = x.size();
-		int N_int = x_interp.size();
+		size_t N = x.size();
+		size_t N_int = x_interp.size();
 		vector_k<T> y2(N_int);
 
 		if(method.compare("spline") == 0)
 		{	
 			Spline<U,T> spline(N,x,y,extrap);
 			spline.compute_spline();
-			for(int ii = 0; ii < N_int; ii++)
+			for(size_t ii = 0; ii < N_int; ii++)
 			{
 				y2[ii] = spline.J(x_interp[ii]);
 			}
 		}
 		else if(method.compare("linear") == 0 || method.compare("nearest") == 0)
 		{
-			for(int ii = 0; ii < N_int; ii++)
+			for(size_t ii = 0; ii < N_int; ii++)
 			{
 				y2[ii] = interp1(x, y, x_interp[ii],method,extrap);
 			}
@@ -2058,7 +2058,7 @@ namespace keycpp
 		}
 		matrix<T> y2(x_interp.size(),y.size(2));
 
-		for(int kk = 0; kk < y.size(2); kk++)
+		for(size_t kk = 0; kk < y.size(2); kk++)
 		{
 			y2.col(kk) = interp1(x,y.getCol(kk),x_interp,method, extrap);
 		}
@@ -2079,10 +2079,10 @@ namespace keycpp
 		}
 		
 		matrix<T> y2(x_interp.size(),y[0].size());
-		for(int kk = 0; kk < y[0].size(); kk++)
+		for(size_t kk = 0; kk < y[0].size(); kk++)
 		{
 			vector_k<T> y_temp(x.size());
-			for(int ii = 0; ii < x.size(); ii++)
+			for(size_t ii = 0; ii < x.size(); ii++)
 			{
 				y_temp[ii] = y[ii][kk];
 			}
@@ -2104,7 +2104,7 @@ namespace keycpp
 		}
 		matrix<T> y2(x_interp.size(1),x_interp.size(2));
 
-		for(int kk = 0; kk < x_interp.size(2); kk++)
+		for(size_t kk = 0; kk < x_interp.size(2); kk++)
 		{
 			y2.col(kk) = interp1(x,y,x_interp.getCol(kk),method, extrap);
 		}
@@ -2124,7 +2124,7 @@ namespace keycpp
 		}
 		matrix<T> y2(x_interp.size(),x_interp[0].size());
 
-		for(int kk = 0; kk < x_interp.size(); kk++)
+		for(size_t kk = 0; kk < x_interp.size(); kk++)
 		{
 			y2.row(kk) = interp1(x,y,x_interp[kk],method, extrap);
 		}
@@ -2142,10 +2142,10 @@ namespace keycpp
 		{
 			throw KeyCppException("Error in trapz()! Vector sizes are not compatible!");
 		}
-		int N = eta.size();
+		size_t N = eta.size();
 		T sum = 0.0;
 
-		for(int ii = 0; ii < N-1; ii++)
+		for(size_t ii = 0; ii < N-1; ii++)
 		{
 			sum += (eta[ii+1] - eta[ii])*(integrand[ii+1] + integrand[ii]);
 		}
@@ -2167,13 +2167,13 @@ namespace keycpp
 			throw KeyCppException("Error in trapz()! Vector and matrix sizes are not compatible!");
 		}
 		
-		int N;
+		size_t N;
 		vector_k<T> z;
 		if(eta.size() == integrand.size(1))
 		{
 		    N = integrand.size(2);
 		    z = vector_k<T>(N);
-		    for(int ii = 0; ii < N; ii++)
+		    for(size_t ii = 0; ii < N; ii++)
 		    {
 			    z[ii] = trapz(eta,integrand.getCol(ii));
 		    }
@@ -2198,15 +2198,15 @@ namespace keycpp
 		{
 			throw KeyCppException("Error in diffxy()! Matrix sizes are not compatible!");
 		}
-		int N = u.size(1);
-		int P = u.size(2);
+		size_t N = u.size(1);
+		size_t P = u.size(2);
 
 		matrix<T> du(N,P);
 		if(index == 1)
 		{
-			for(int p = 0; p < P; p++)
+			for(size_t p = 0; p < P; p++)
 			{
-				for(int n = 0; n < N-1; n++)
+				for(size_t n = 0; n < N-1; n++)
 				{
 					du(n,p) = (u(n+1,p) - u(n,p))/(eta(n+1,p) - eta(n,p));
 				}
@@ -2215,9 +2215,9 @@ namespace keycpp
 		}
 		else
 		{
-			for(int n = 0; n < N; n++)
+			for(size_t n = 0; n < N; n++)
 			{
-				for(int p = 0; p < P-1; p++)
+				for(size_t p = 0; p < P-1; p++)
 				{
 					du(n,p) = (u(n,p+1) - u(n,p))/(eta(n,p+1) - eta(n,p));
 				}
@@ -2238,15 +2238,15 @@ namespace keycpp
 		{
 			throw KeyCppException("Error in diffxy()! Vector and matrix sizes are not compatible!");
 		}
-		int N = u.size(1);
-		int P = u.size(2);
+		size_t N = u.size(1);
+		size_t P = u.size(2);
 
 		matrix<T> du(N,P);
 		if(N == eta.size())
 		{
-			for(int p = 0; p < P; p++)
+			for(size_t p = 0; p < P; p++)
 			{
-				for(int ii = 0; ii < N-1; ii++)
+				for(size_t ii = 0; ii < N-1; ii++)
 				{
 					du(ii,p) = (u(ii+1,p) - u(ii,p))/(eta[ii+1] - eta[ii]);
 				}
@@ -2255,9 +2255,9 @@ namespace keycpp
 		}
 		else
 		{
-			for(int ii = 0; ii < N; ii++)
+			for(size_t ii = 0; ii < N; ii++)
 			{
-				for(int p = 0; p < P-1; p++)
+				for(size_t p = 0; p < P-1; p++)
 				{
 					du(ii,p) = (u(ii,p+1) - u(ii,p))/(eta[p+1] - eta[p]);
 				}
@@ -2278,10 +2278,10 @@ namespace keycpp
 		{
 			throw KeyCppException("Error in diffxy()! Vector sizes are not compatible!");
 		}
-		int N = u.size();
+		size_t N = u.size();
 
 		vector_k<T> du(N);
-		for(int ii = 0; ii < N-1; ii++)
+		for(size_t ii = 0; ii < N-1; ii++)
 		{
 			du[ii] = (u[ii+1] - u[ii])/(eta[ii+1] - eta[ii]);
 		}
@@ -2378,7 +2378,7 @@ namespace keycpp
 
 		{
 			using namespace boost::numeric::odeint;
-			size_t steps = integrate_adaptive(make_controlled<runge_kutta_cash_karp54<vector_k<T> > >(abs_tol, rel_tol), odeClass, ICs, x0, xf, delta_x0, observe<vector_k<T>,U>(y_temp,x_temp));
+			size_t steps = integrate_adaptive(make_controlled<runge_kutta_dopri5<vector_k<T> > >(abs_tol, rel_tol), odeClass, ICs, x0, xf, delta_x0, observe<vector_k<T>,U>(y_temp,x_temp));
 		}
 
         ODE_type<U,T> ans;
@@ -2412,7 +2412,7 @@ namespace keycpp
 
 		{
 			using namespace boost::numeric::odeint;
-			size_t steps = integrate_times(make_controlled<runge_kutta_cash_karp54<vector_k<T> > >(abs_tol, rel_tol), odeClass, ICs, x_ode.begin(), x_ode.end(), delta_x0, observe<vector_k<T>,U>(y_temp,x_temp));
+			size_t steps = integrate_times(make_dense_output<runge_kutta_dopri5<vector_k<T> > >(abs_tol, rel_tol), odeClass, ICs, x_ode.begin(), x_ode.end(), delta_x0, observe<vector_k<T>,U>(y_temp,x_temp));
 		}
 
 		matrix<T> y(y_temp);
@@ -2425,7 +2425,7 @@ namespace keycpp
 		h.set(property,val);
 	}
 	
-	inline void set(Figure &h, std::string property, std::initializer_list<int> list)
+	inline void set(Figure &h, std::string property, std::initializer_list<size_t> list)
 	{
 		h.set(property,list);
 	}
@@ -2439,10 +2439,10 @@ namespace keycpp
 	struct Sort_Matrix
 	{
 		matrix<T> B;
-		matrix<int> index;
+		matrix<size_t> index;
 	};
 	
-	template<class T> Sort_Matrix<T> sort(const matrix<T> &A, const int &dim = 2, std::string method = "ascend")
+	template<class T> Sort_Matrix<T> sort(const matrix<T> &A, const size_t &dim = 2, std::string method = "ascend")
 	{
 		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
 		if(method.compare("ascend") != 0 && method.compare("descend") != 0)
@@ -2455,25 +2455,25 @@ namespace keycpp
 		}
 		bool swapped = true;
 		T temp;
-		int temp_i;
+		size_t temp_i;
 		matrix<T> B(A.size(1), A.size(2));
-		matrix<int> index(A.size(1),A.size(2));
+		matrix<size_t> index(A.size(1),A.size(2));
 		if(dim == 2)
 		{
-			for(int ii = 0; ii < A.size(1); ii++)
+			for(size_t ii = 0; ii < A.size(1); ii++)
 			{
-				for(int jj = 0; jj < A.size(2); jj++)
+				for(size_t jj = 0; jj < A.size(2); jj++)
 				{
 					index(ii,jj) = ii;
 				}
 			}
-			for(int jj = 0; jj < A.size(2); jj++)
+			for(size_t jj = 0; jj < A.size(2); jj++)
 			{
 				swapped = true;
 				while(swapped)
 				{     
 					swapped = false;
-					for(int ii = 1; ii < A.size(1); ii++)
+					for(size_t ii = 1; ii < A.size(1); ii++)
 					{
 						if(((A(ii-1,jj)) > (A(ii,jj)) && method.compare("ascend") == 0) || ((A(ii-1,jj)) < (A(ii,jj)) && method.compare("descend") == 0))
 						{
@@ -2488,9 +2488,9 @@ namespace keycpp
 					}
 				}
 			}
-			for(int ii = 0; ii < A.size(2); ii++)
+			for(size_t ii = 0; ii < A.size(2); ii++)
 			{
-				for(int jj = 0; jj < A.size(2); jj++)
+				for(size_t jj = 0; jj < A.size(2); jj++)
 				{
 					B(ii,jj) = A(index(ii,jj),jj);
 				}
@@ -2498,20 +2498,20 @@ namespace keycpp
 		}
 		else if(dim == 1)
 		{
-			for(int ii = 0; ii < A.size(1); ii++)
+			for(size_t ii = 0; ii < A.size(1); ii++)
 			{
-				for(int jj = 0; jj < A.size(2); jj++)
+				for(size_t jj = 0; jj < A.size(2); jj++)
 				{
 					index(ii,jj) = jj;
 				}
 			}
-			for(int ii = 0; ii < A.size(1); ii++)
+			for(size_t ii = 0; ii < A.size(1); ii++)
 			{
 				swapped = true;
 				while(swapped)
 				{     
 					swapped = false;
-					for(int jj = 1; jj < A.size(2); jj++)
+					for(size_t jj = 1; jj < A.size(2); jj++)
 					{
 						if(((A(ii,jj-1)) > (A(ii,jj)) && method.compare("ascend") == 0) || ((A(ii,jj-1)) < (A(ii,jj)) && method.compare("descend") == 0))
 						{
@@ -2526,9 +2526,9 @@ namespace keycpp
 					}
 				}
 			}
-			for(int ii = 0; ii < A.size(1); ii++)
+			for(size_t ii = 0; ii < A.size(1); ii++)
 			{
-				for(int jj = 0; jj < A.size(2); jj++)
+				for(size_t jj = 0; jj < A.size(2); jj++)
 				{
 					B(ii,jj) = A(ii,index(ii,jj));
 				}
@@ -2550,7 +2550,7 @@ namespace keycpp
 	struct Sort_Vector
 	{
 		vector_k<T> v;
-		vector_k<int> index;
+		vector_k<size_t> index;
 	};
 	
 	template<class T> Sort_Vector<T> sort(const vector_k<T> &v1, std::string method = "ascend")
@@ -2566,14 +2566,14 @@ namespace keycpp
 		}
 		bool swapped = true;
 		T temp;
-		int temp_i;
-		vector_k<int> index(v1.size());
-		for(int ii = 0; ii < v1.size(); ii++)
+		size_t temp_i;
+		vector_k<size_t> index(v1.size());
+		for(size_t ii = 0; ii < v1.size(); ii++)
 		{
 			index[ii] = ii;
 		}
 		vector_k<T> v2(v1.size());
-		for(int ii = 0; ii < v2.size(); ii++)
+		for(size_t ii = 0; ii < v2.size(); ii++)
 		{
 			v2[ii] = v1[ii];
 		}
@@ -2581,7 +2581,7 @@ namespace keycpp
 		while(swapped)
 		{     
 			swapped = false;
-			for(int ii = 1; ii < v1.size(); ii++)
+			for(size_t ii = 1; ii < v1.size(); ii++)
 			{
 				if(((v2[ii-1]) > (v2[ii]) && method.compare("ascend") == 0) || ((v2[ii-1]) < (v2[ii]) && method.compare("descend") == 0))
 				{
@@ -2646,7 +2646,7 @@ namespace keycpp
 	/** \brief Returns the number of elements in a vector.
 	 */
 	template<class T>
-	int length(const vector_k<T> &v1)
+	size_t length(const vector_k<T> &v1)
 	{
 	    return v1.size();
 	}
@@ -2654,15 +2654,15 @@ namespace keycpp
 	/** \brief Returns the length of the largest dimension of A.
 	 */
 	template<class T>
-	int length(const matrix<T> &A)
+	size_t length(const matrix<T> &A)
 	{
-	    int m = A.size(1);
-	    int n = A.size(2);
+	    size_t m = A.size(1);
+	    size_t n = A.size(2);
 	    return ((m > n)?(m):(n));
 	}
 	
 	template<class T>
-	int numel(const matrix<T> &A)
+	size_t numel(const matrix<T> &A)
 	{
 	    return (A.size(1)*A.size(2));
 	}
@@ -2670,10 +2670,10 @@ namespace keycpp
 	/** \brief Finds and returns the indices of non-zero elements of v1.
 	 */
 	template<class T>
-	vector_k<int> find(const vector_k<T> &v1, const int &k = -1, std::string start = "")
+	vector_k<size_t> find(const vector_k<T> &v1, const size_t &k = -1, std::string start = "")
 	{
 		std::transform(start.begin(), start.end(), start.begin(), ::tolower);
-	    vector_k<int> v2;
+	    vector_k<size_t> v2;
 	    if(v1.empty())
 	    {
 	        return v2;
@@ -2682,7 +2682,7 @@ namespace keycpp
 	       start.compare("last") != 0))
 	    {
 	        v2.reserve(v1.size());
-	        for(int ii = 0; ii < v1.size(); ii++)
+	        for(size_t ii = 0; ii < v1.size(); ii++)
 	        {
 	            if(std::abs(v1[ii]) > eps)
 	            {
@@ -2693,8 +2693,8 @@ namespace keycpp
 	    else if(start.compare("first") == 0 && k > 0 && k < v1.size())
 	    {
 	        v2.reserve(k);
-	        int count = 0;
-	        for(int ii = 0; ii < v1.size(); ii++)
+	        size_t count = 0;
+	        for(size_t ii = 0; ii < v1.size(); ii++)
 	        {
 	            if(std::abs(v1[ii]) > eps)
 	            {
@@ -2710,8 +2710,8 @@ namespace keycpp
 	    else if(start.compare("last") == 0 && k > 0 && k < v1.size())
 	    {
 	        v2.reserve(k);
-	        int count = 0;
-	        for(int ii = v1.size()-1; ii >= 0; ii--)
+	        size_t count = 0;
+	        for(size_t ii = v1.size()-1; ii >= 0; ii--)
 	        {
 	            if(std::abs(v1[ii]) > eps)
 	            {
@@ -2736,8 +2736,8 @@ namespace keycpp
 	template<class T>
 	struct matrix_find_type
 	{
-		vector_k<int> rows;
-		vector_k<int> cols;
+		vector_k<size_t> rows;
+		vector_k<size_t> cols;
 		vector_k<T> v;
 	};
 	
@@ -2755,9 +2755,9 @@ namespace keycpp
         out.rows.reserve(numel(A));
         out.cols.reserve(numel(A));
         out.v.reserve(numel(A));
-        for(int ii = 0; ii < A.size(1); ii++)
+        for(size_t ii = 0; ii < A.size(1); ii++)
         {
-            for(int jj = 0; jj < A.size(2); jj++)
+            for(size_t jj = 0; jj < A.size(2); jj++)
             {
                 if(std::abs(A(ii,jj)) > eps)
                 {
@@ -2772,7 +2772,7 @@ namespace keycpp
 	}
 	
 	template<class T>
-	matrix<T> reshape(const matrix<T> &A, const int &m, const int &n)
+	matrix<T> reshape(const matrix<T> &A, const size_t &m, const size_t &n)
 	{
 	    if(A.empty())
 	    {
@@ -2784,12 +2784,12 @@ namespace keycpp
 	    }
 	    
 	    matrix<T> B(m,n);
-	    int count = 0;
-	    int m0 = A.size(1);
-	    int n0 = A.size(2);
-	    for(int ii = 0; ii < m; ii++)
+	    size_t count = 0;
+	    size_t m0 = A.size(1);
+	    size_t n0 = A.size(2);
+	    for(size_t ii = 0; ii < m; ii++)
 	    {
-	        for(int jj = 0; jj < n; jj++)
+	        for(size_t jj = 0; jj < n; jj++)
 	        {
 	            B(ii,jj) = A(count % m0, count/m0);
 	            count++;
@@ -2799,7 +2799,7 @@ namespace keycpp
 	}
 	
 	template<class T>
-	matrix<T> reshape(const vector_k<T> &v1, const int &m, const int &n)
+	matrix<T> reshape(const vector_k<T> &v1, const size_t &m, const size_t &n)
 	{
 	    return reshape(vec2mat(v1),m,n);
 	}
@@ -2818,7 +2818,7 @@ namespace keycpp
 	        throw KeyCppException("Vectors must be same size in dot()!");
 	    }
 	    decltype(std::declval<T>()*std::declval<U>()) result = 0.0;
-	    for(int ii = 0; ii < v1.size(); ii++)
+	    for(size_t ii = 0; ii < v1.size(); ii++)
 	    {
 	        result += v1[ii]*v2[ii];
 	    }
@@ -2838,7 +2838,7 @@ namespace keycpp
 	    {
 	        throw KeyCppException("Vectors must be same size in dot()!");
 	    }
-	    int inca = 1, incb = 1, N = v1.size();
+	    int inca = 1, incb = 1, N = (int)v1.size();
 	    return ddot_(&N, &v1[0], &inca, &v2[0], &incb);
 	}
 	
@@ -2855,7 +2855,7 @@ namespace keycpp
 	    {
 	        throw KeyCppException("Vectors must be same size in dot()!");
 	    }
-	    int inca = 1, incb = 1, N = v1.size();
+	    int inca = 1, incb = 1, N = (int)v1.size();
 	    std::complex<double> result;
 	    zdotu_(&result, &N, &v1[0], &inca, &v2[0], &incb);
 	    return result;
@@ -2864,7 +2864,7 @@ namespace keycpp
 	/** \brief Computes the dot product between the first non-singleton dimension of A and B.
 	 */
 	template<class T, class U>
-	vector_k<decltype(std::declval<T>()*std::declval<U>())> dot(const matrix<T> &A, const matrix<U> &B, const int &dim = -1)
+	vector_k<decltype(std::declval<T>()*std::declval<U>())> dot(const matrix<T> &A, const matrix<U> &B, const size_t &dim = -1)
 	{
 	    if(A.empty() || B.empty())
 	    {
@@ -2878,7 +2878,7 @@ namespace keycpp
 	    if((A.size(1) > 1 || dim == 1) && dim != 2)
 	    {
 	        result = vector_k<decltype(std::declval<T>()*std::declval<U>())>(A.size(2));
-	        for(int ii = 0; ii < result.size(); ii++)
+	        for(size_t ii = 0; ii < result.size(); ii++)
 	        {
 	            result[ii] = dot(A.getCol(ii),B.getCol(ii));
 	        }
@@ -2886,7 +2886,7 @@ namespace keycpp
 	    else
 	    {
 	        result = vector_k<decltype(std::declval<T>()*std::declval<U>())>(A.size(1));
-	        for(int ii = 0; ii < result.size(); ii++)
+	        for(size_t ii = 0; ii < result.size(); ii++)
 	        {
 	            result[ii] = dot(A.getRow(ii),B.getRow(ii));
 	        }
@@ -2918,11 +2918,13 @@ namespace keycpp
 	
 	
 	template<class T,class X>
-	struct SVD_type
+	class SVD_type
 	{
-		matrix<X> S;
-		matrix<T> U;
-		matrix<T> V;
+	    public:
+		    matrix<X> S;
+		    matrix<T> U;
+		    matrix<T> V;
+		SVD_type() : S(), U(), V() {};
 	};
 	
 	template<class T>
@@ -2937,7 +2939,7 @@ namespace keycpp
 	    if(!method.empty() && method.find_first_not_of("-+0123456789") == std::string::npos)
 	    {
 	        int p = atoi(method.c_str());
-	        for(int ii = 0; ii < v1.size(); ii++)
+	        for(size_t ii = 0; ii < v1.size(); ii++)
 	        {
 	            anorm += pow(std::abs(v1[ii]),p);
 	        }
@@ -2946,7 +2948,7 @@ namespace keycpp
 	    else if(method.compare("inf") == 0)
 	    {
 	        anorm = 0.0;
-	        for(int ii = 0; ii < v1.size(); ii++)
+	        for(size_t ii = 0; ii < v1.size(); ii++)
 	        {
 	            if(std::abs(v1[ii]) > anorm)
 	            {
@@ -2957,7 +2959,7 @@ namespace keycpp
 	    else if(method.compare("-inf") == 0)
 	    {
 	        anorm = -1.0;
-	        for(int ii = 0; ii < v1.size(); ii++)
+	        for(size_t ii = 0; ii < v1.size(); ii++)
 	        {
 	            if(std::abs(v1[ii]) < anorm || anorm < 0.0)
 	            {
@@ -2997,7 +2999,7 @@ namespace keycpp
 	    vector_k<int> index;
 	    auto S = diag(output.S);
 	    index.reserve(S.size());
-	    int max_dim = (A.size(1) > A.size(2))?A.size(1):A.size(2);
+	    size_t max_dim = (A.size(1) > A.size(2))?A.size(1):A.size(2);
 	    for(int ii = 0; ii < S.size(); ii++)
 	    {
 	        if(std::abs(S[ii]) < eps*max_dim)
@@ -3006,9 +3008,9 @@ namespace keycpp
 	        }
 	    }
 	    matrix<T> B(output.V.size(1),length(index));
-	    for(int ii = 0; ii < B.size(1); ii++)
+	    for(size_t ii = 0; ii < B.size(1); ii++)
 	    {
-	        for(int jj = 0; jj < B.size(2); jj++)
+	        for(size_t jj = 0; jj < B.size(2); jj++)
 	        {
 	            B(ii,jj) = output.V(ii,index[jj]);
 	        }
@@ -3034,9 +3036,9 @@ namespace keycpp
 	template<class T>
 	bool any(const matrix<T> &A)
 	{
-	    for(int ii = 0; ii < A.size(1); ii++)
+	    for(size_t ii = 0; ii < A.size(1); ii++)
 	    {
-	        for(int jj = 0; jj < A.size(2); jj++)
+	        for(size_t jj = 0; jj < A.size(2); jj++)
 	        {
 	            if(std::abs(A(ii,jj)) > eps)
 	            {
@@ -3052,7 +3054,7 @@ namespace keycpp
 	template<class T>
 	bool any(const vector_k<T> &v1)
 	{
-	    for(int ii = 0; ii < v1.size(); ii++)
+	    for(size_t ii = 0; ii < v1.size(); ii++)
 	    {
             if(std::abs(v1[ii]) > eps)
             {
@@ -3079,9 +3081,9 @@ namespace keycpp
 	template<class T>
 	bool all(const matrix<T> &A)
 	{
-	    for(int ii = 0; ii < A.size(1); ii++)
+	    for(size_t ii = 0; ii < A.size(1); ii++)
 	    {
-	        for(int jj = 0; jj < A.size(2); jj++)
+	        for(size_t jj = 0; jj < A.size(2); jj++)
 	        {
 	            if(std::abs(A(ii,jj)) < eps)
 	            {
@@ -3097,7 +3099,7 @@ namespace keycpp
 	template<class T>
 	bool all(const vector_k<T> &v1)
 	{
-	    for(int ii = 0; ii < v1.size(); ii++)
+	    for(size_t ii = 0; ii < v1.size(); ii++)
 	    {
             if(std::abs(v1[ii]) < eps)
             {
@@ -3132,9 +3134,9 @@ namespace keycpp
 	matrix<bool> finite(const matrix<T> &A)
 	{
 	    matrix<bool> out(A.size(1),A.size(2));
-	    for(int ii = 0; ii < A.size(1); ii++)
+	    for(size_t ii = 0; ii < A.size(1); ii++)
 	    {
-	        for(int jj = 0; jj < A.size(2); jj++)
+	        for(size_t jj = 0; jj < A.size(2); jj++)
 	        {
 	            out(ii,jj) = finite(A(ii,jj));
             }
@@ -3149,7 +3151,7 @@ namespace keycpp
 	vector_k<bool> finite(const vector_k<T> &v1)
 	{
 	    vector_k<bool> out(v1.size());
-	    for(int ii = 0; ii < v1.size(); ii++)
+	    for(size_t ii = 0; ii < v1.size(); ii++)
 	    {
             out[ii] = finite(v1[ii]);
 	    }
@@ -3181,9 +3183,9 @@ namespace keycpp
 	matrix<bool> isinf(const matrix<T> &A)
 	{
 	    matrix<bool> out(A.size(1),A.size(2));
-	    for(int ii = 0; ii < A.size(1); ii++)
+	    for(size_t ii = 0; ii < A.size(1); ii++)
 	    {
-	        for(int jj = 0; jj < A.size(2); jj++)
+	        for(size_t jj = 0; jj < A.size(2); jj++)
 	        {
 	            out(ii,jj) = isinf(A(ii,jj));
             }
@@ -3198,28 +3200,10 @@ namespace keycpp
 	vector_k<bool> isinf(const vector_k<T> &v1)
 	{
 	    vector_k<bool> out(v1.size());
-	    for(int ii = 0; ii < v1.size(); ii++)
+	    for(size_t ii = 0; ii < v1.size(); ii++)
 	    {
 	        out[ii] = isinf(v1[ii]);
 	    }
-	    return out;
-	}
-	
-	/** \brief Returns boolean value that is true if
-	 *         a is NaN.
-	 */
-	template<class T>
-	vector_k<bool> isnan(const T &a)
-	{
-	    bool out;
-        if(a != a)
-        {
-            out = true;
-        }
-        else
-        {
-            out = false;
-        }
 	    return out;
 	}
 	
@@ -3230,9 +3214,9 @@ namespace keycpp
 	matrix<bool> isnan(const matrix<T> &A)
 	{
 	    matrix<bool> out(A.size(1),A.size(2));
-	    for(int ii = 0; ii < A.size(1); ii++)
+	    for(size_t ii = 0; ii < A.size(1); ii++)
 	    {
-	        for(int jj = 0; jj < A.size(2); jj++)
+	        for(size_t jj = 0; jj < A.size(2); jj++)
 	        {
 	            out(ii,jj) = isnan(A(ii,jj));
             }
@@ -3247,7 +3231,7 @@ namespace keycpp
 	vector_k<bool> isnan(const vector_k<T> &v1)
 	{
 	    vector_k<bool> out(v1.size());
-	    for(int ii = 0; ii < v1.size(); ii++)
+	    for(size_t ii = 0; ii < v1.size(); ii++)
 	    {
 	        out[ii] = isnan(v1[ii]);
 	    }
@@ -3305,7 +3289,7 @@ namespace keycpp
 	template<class T>
 	bool isreal(const vector_k<T> &v1)
 	{
-	    for(int ii = 0; ii < v1.size(); ii++)
+	    for(size_t ii = 0; ii < v1.size(); ii++)
 	    {
             if(abs(imag(v1[ii])) > eps)
             {
@@ -3344,9 +3328,9 @@ namespace keycpp
 	matrix<T> ceil(const matrix<T> &A)
 	{
 	    matrix<T> B(A.size(1),A.size(2));
-	    for(int ii = 0; ii < B.size(1); ii++)
+	    for(size_t ii = 0; ii < B.size(1); ii++)
 	    {
-	        for(int jj = 0; jj < B.size(2); jj++)
+	        for(size_t jj = 0; jj < B.size(2); jj++)
 	        {
 	            B(ii,jj) = ceil(A(ii,jj));
 	        }
@@ -3359,7 +3343,7 @@ namespace keycpp
 	{
 	    decltype(std::declval<T>()*std::declval<U>()) val = 0.0;
 	    
-        for(int ii = 0; ii < p.size()-1; ii++)
+        for(size_t ii = 0; ii < p.size()-1; ii++)
         {
             val += p[ii]*pow(x,p.size()-ii-1);
         }
@@ -3373,9 +3357,9 @@ namespace keycpp
 	template<class T>
 	vector_k<T> roots(const vector_k<T> &p)
 	{
-	    int n = p.size()-1;
+	    size_t n = p.size()-1;
 	    matrix<T> A = diag(ones<T>(n-1),-1);
-	    for(int ii = 0; ii < A.size(2); ii++)
+	    for(size_t ii = 0; ii < A.size(2); ii++)
 	    {
             A(0,ii) = -p[ii+1]/p[0];
         }
@@ -3405,7 +3389,7 @@ namespace keycpp
 	{
 	    gettimeofday(&Timer.stop,NULL);
 	    timersub(&Timer.stop,&Timer.start,&Timer.elapsed);
-	    return Timer.elapsed.tv_sec + 1e-6*Timer.elapsed.tv_usec;
+	    return ((double)Timer.elapsed.tv_sec + 1e-6*((double)Timer.elapsed.tv_usec));
 	}
 	
 	/** \brief Overload of the C++ function sprintf(). This overload provides a more MATLAB-like
@@ -3414,18 +3398,17 @@ namespace keycpp
 	inline std::string sprintf(const std::string &fmt, ...)
 	{
         int size = 100;
-        std::string str;
         va_list ap;
+        char* s;
         while(1)
         {
-            str.resize(size);
+            s = new char[size + 1];
             va_start(ap, fmt);
-            int n = vsnprintf((char *)str.c_str(), size, fmt.c_str(), ap);
+            int n = vsnprintf(s, size, fmt.c_str(), ap);
             va_end(ap);
             if(n > -1 && n < size)
             {
-                str.resize(n);
-                return str;
+                size = n;
             }
             if (n > -1)
             {
@@ -3435,7 +3418,9 @@ namespace keycpp
             {
                 size *= 2;
             }
+            delete [] s;
         }
+        std::string str(s);
         return str;
     }
     
@@ -3443,11 +3428,11 @@ namespace keycpp
      *         hour, minute, and second. This is based on the system clock. The number of hours
      *         is based on the 24-hour clock.
      */
-    inline vector_k<int> clock()
+    inline vector_k<size_t> clock()
     {
         time_t t = time(0);
         struct tm * now = localtime(&t);
-        vector_k<int> dt(6);
+        vector_k<size_t> dt(6);
         dt[0] = (now->tm_year + 1900); // year
         dt[1] = (now->tm_mon + 1); // month
         dt[2] = (now->tm_mday); // day
@@ -3475,7 +3460,7 @@ namespace keycpp
         auto svd_out = svd(A);
         
         vector_k<T> s_inv = diag(svd_out.S);
-        for(int ii = 0; ii < s_inv.size(); ii++)
+        for(size_t ii = 0; ii < s_inv.size(); ii++)
         {
             if(any(s_inv[ii]))
             {
@@ -3537,8 +3522,6 @@ namespace keycpp
 	        dummy = removeWhiteSpace(dummy);
             if(!dummy.empty())
             {
-                vector_k<double> b;
-                b.reserve(100);
 	            ss << dummy;
 	            while(ss >> temp)
 	            {
@@ -3565,7 +3548,7 @@ namespace keycpp
     {
         T v_bar = mean(v1);
         T temp = 0.0;
-        for(int ii = 0; ii < v1.size(); ii++)
+        for(size_t ii = 0; ii < v1.size(); ii++)
         {
             temp += pow((v1[ii] - v_bar),2.0);
         }
@@ -3579,11 +3562,11 @@ namespace keycpp
     {
         std::complex<double> v_bar = mean(v1);
         double temp = 0.0;
-        for(int ii = 0; ii < v1.size(); ii++)
+        for(size_t ii = 0; ii < v1.size(); ii++)
         {
             temp += std::abs((v1[ii] - v_bar)*conj(v1[ii] - v_bar));
         }
-        temp = std::sqrt(temp/(v1.size()-1.0));
+        temp = std::sqrt(temp/((double)v1.size()-1.0));
         
         return temp;
     }

@@ -1,6 +1,6 @@
 IDIR =../include
 CC=g++
-CFLAGS=-I$(IDIR) -std=c++11 -O3
+CFLAGS=-I$(IDIR) -std=c++11 -O3 -Wall
 
 ODIR=obj
 LDIR =../lib
@@ -11,7 +11,7 @@ else
         LIBS=-lm -lkeycpp -lblas -llapack
 endif
 
-_DEPS = keycpp.h Matrix.h kiss_fft.h gnuplot_i.h
+_DEPS = Figure.h Spline.h keycpp.h vector_k.h Matrix.h kiss_fft.h gnuplot_i.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS)) ../lib/libkeycpp.a
 
 _OBJ = example.o

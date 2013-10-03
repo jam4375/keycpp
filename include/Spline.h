@@ -24,9 +24,9 @@ namespace keycpp
 			bool isDouble;
 			std::string extrap_string;
 			double extrap_val;
-			Extrap() : isString(false), isDouble(false) {}
-			Extrap(const char * extrap) : extrap_string(extrap), isString(true), isDouble(false) {}
-			Extrap(double extrap) : extrap_val(extrap), isString(false), isDouble(true) {}
+			Extrap() : isString(false), isDouble(false), extrap_string(""), extrap_val() {}
+			Extrap(const char * extrap) : isString(true), isDouble(false), extrap_string(extrap), extrap_val() {}
+			Extrap(double extrap) : isString(false), isDouble(true), extrap_string(""), extrap_val(extrap) {}
 	};
 
 	template<class U, class T>

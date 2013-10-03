@@ -203,10 +203,11 @@ static void kf_bfly_generic(
         int p
         )
 {
-    int u,k,q1,q;
+    size_t k;
+    int u,q1,q;
     kiss_fft_cpx * twiddles = st->twiddles;
     kiss_fft_cpx t;
-    int Norig = st->nfft;
+    size_t Norig = st->nfft;
 
     kiss_fft_cpx * scratch = (kiss_fft_cpx*)KISS_FFT_TMP_ALLOC(sizeof(kiss_fft_cpx)*p);
 
@@ -220,7 +221,7 @@ static void kf_bfly_generic(
 
         k=u;
         for ( q1=0 ; q1<p ; ++q1 ) {
-            int twidx=0;
+            size_t twidx=0;
             Fout[ k ] = scratch[0];
             for (q=1;q<p;++q ) {
                 twidx += fstride * k;

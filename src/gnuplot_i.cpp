@@ -34,7 +34,7 @@
 //
 // initialize static data
 //
-int Gnuplot::tmpfile_num = 0;
+long unsigned int Gnuplot::tmpfile_num = 0;
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__TOS_WIN__)
 std::string Gnuplot::m_sGNUPlotFileName = "pgnuplot.exe";
@@ -744,10 +744,10 @@ Gnuplot& Gnuplot::plot_image(const unsigned char * ucPicBuf,
     //
     // write the data to file
     //
-    int iIndex = 0;
-    for(int iRow = 0; iRow < iHeight; iRow++)
+    unsigned int iIndex = 0;
+    for(unsigned int iRow = 0; iRow < iHeight; iRow++)
     {
-        for(int iColumn = 0; iColumn < iWidth; iColumn++)
+        for(unsigned int iColumn = 0; iColumn < iWidth; iColumn++)
         {
             tmp << iColumn << " " << iRow  << " " 
                 << static_cast<float>(ucPicBuf[iIndex++]) << std::endl;
@@ -1022,6 +1022,7 @@ bool Gnuplot::file_available(const std::string &filename){
         throw GnuplotException( except.str() );
         return false;
     }
+    return true;
 }
 
 

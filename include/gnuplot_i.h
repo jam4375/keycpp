@@ -75,23 +75,23 @@ class Gnuplot
     // member data
 	///\brief pointer to the stream that can be used to write to the pipe
         FILE                    *gnucmd; 
-	///\brief validation of gnuplot session      
-        bool                     valid;  
-	///\brief true = 2d, false = 3d      
-        bool                     two_dim;  
 	///\brief number of plots in session   
-        int                      nplots;  
+        int                      nplots;    
   	///\brief functions and data are displayed in a defined styles   
         std::string              pstyle;  
   	///\brief interpolate and approximate data in defined styles (e.g. spline)
         std::string              smooth;    
   	///\brief list of created tmpfiles   
         std::vector<std::string> tmpfile_list; 
+	///\brief validation of gnuplot session      
+        bool                     valid;  
+	///\brief true = 2d, false = 3d      
+        bool                     two_dim;
 
     //----------------------------------------------------------------------------------
     // static data
 	///\brief number of all tmpfiles (number of tmpfiles restricted)
-        static int               tmpfile_num;   
+        static long unsigned int tmpfile_num;   
 	///\brief name of executed GNUPlot file     
         static std::string       m_sGNUPlotFileName; 
 	///\brief gnuplot path
@@ -206,6 +206,11 @@ class Gnuplot
                 const std::string &labelx = "x",
                 const std::string &labely = "y",
                 const std::string &labelz = "z");
+                
+        Gnuplot(const Gnuplot& other) : gnucmd(NULL), nplots(other.nplots), pstyle(other.pstyle), smooth(other.smooth), tmpfile_list(other.tmpfile_list), valid(other.valid), two_dim(other.two_dim)
+        {};
+        
+        Gnuplot& operator=(const Gnuplot& other) {valid = other.valid; two_dim = other.two_dim; nplots = other.nplots; pstyle = other.pstyle; smooth = other.smooth; tmpfile_list = other.tmpfile_list; return *this;};
 
          /// destructor: needed to delete temporary files
         ~Gnuplot();
@@ -595,7 +600,7 @@ class Gnuplot
 // constructor: set a style during construction
 //
 inline Gnuplot::Gnuplot(const std::string &style)
-			   :gnucmd(NULL) ,valid(false) ,two_dim(false) ,nplots(0)
+			   : gnucmd(NULL), nplots(0), pstyle(), smooth(), tmpfile_list(), valid(false), two_dim(false)
 
 {
     init();
@@ -611,7 +616,7 @@ inline Gnuplot::Gnuplot(const std::vector<double> &x,
                  const std::string &style,
                  const std::string &labelx,
                  const std::string &labely)
-			   :gnucmd(NULL) ,valid(false) ,two_dim(false) ,nplots(0)
+			   : gnucmd(NULL), nplots(0), pstyle(), smooth(), tmpfile_list(), valid(false), two_dim(false)
 {
     init();
 
@@ -633,7 +638,7 @@ inline Gnuplot::Gnuplot(const std::vector<double> &x,
                  const std::string &style,
                  const std::string &labelx,
                  const std::string &labely)
-			   :gnucmd(NULL) ,valid(false) ,two_dim(false) ,nplots(0)
+			   : gnucmd(NULL), nplots(0), pstyle(), smooth(), tmpfile_list(), valid(false), two_dim(false)
 {
     init();
 
@@ -657,7 +662,7 @@ inline Gnuplot::Gnuplot(const std::vector<double> &x,
                  const std::string &labelx,
                  const std::string &labely,
                  const std::string &labelz)
-			   :gnucmd(NULL) ,valid(false) ,two_dim(false) ,nplots(0)
+			   : gnucmd(NULL), nplots(0), pstyle(), smooth(), tmpfile_list(), valid(false), two_dim(false)
 {
     init();
 

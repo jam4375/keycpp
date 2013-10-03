@@ -48,7 +48,7 @@ namespace keycpp
 	    ~Plots();
 	    Plots& operator=(const Plots& other);
 		bool hold_on_bool = false;
-		int num_plots = 0;
+		size_t num_plots = 0;
 		vector_k<vector_k<double> > x_plot_data;
 		vector_k<vector_k<double> > y_plot_data;
 		vector_k<std::string> plot_format;
@@ -72,7 +72,7 @@ namespace keycpp
 	};
 	
     inline Plots::Plots(const Plots& other) :
-    hold_on_bool(other.hold_on_bool), num_plots(other.num_plots), x_plot_data(other.x_plot_data), y_plot_data(other.y_plot_data), plot_format(other.plot_format), plot_linewidth(other.plot_linewidth), plot_markersize(other.plot_markersize), plot_val(other.plot_val), legend_entries(other.legend_entries), legend_location(other.legend_location), legend_box(other.legend_box), m_xlabel(other.m_xlabel), m_ylabel(other.m_ylabel), m_title(other.m_title), ymin(other.ymin), ymax(other.ymax), xmin(other.xmin), xmax(other.xmax), grid_on_bool(other.grid_on_bool), logscale_x(other.logscale_x), logscale_y(other.logscale_y)
+    hold_on_bool(other.hold_on_bool), num_plots(other.num_plots), x_plot_data(other.x_plot_data), y_plot_data(other.y_plot_data), plot_format(other.plot_format), plot_linewidth(other.plot_linewidth), plot_markersize(other.plot_markersize), plot_val(other.plot_val), legend_entries(other.legend_entries), legend_location(other.legend_location), legend_box(other.legend_box), m_xlabel(other.m_xlabel), m_ylabel(other.m_ylabel), m_title(other.m_title), ymin(other.ymin), ymax(other.ymax), xmin(other.xmin), xmax(other.xmax), grid_on_bool(other.grid_on_bool), logscale_x(other.logscale_x), logscale_y(other.logscale_y), cmdstr()
     {}
     
     inline Plots& Plots::operator=(const Plots& other)
@@ -102,12 +102,8 @@ namespace keycpp
         return *this;
     }
 	
-	inline Plots::Plots()
+	inline Plots::Plots(): hold_on_bool(false), num_plots(0), x_plot_data(), y_plot_data(), plot_format(), plot_linewidth(), plot_markersize(), plot_val(), legend_entries(), legend_location("ins vert right top"), legend_box(" box"), m_xlabel(), m_ylabel(), m_title(), ymin(nan("")), ymax(nan("")), xmin(nan("")), xmax(nan("")), grid_on_bool(false), logscale_x(false), logscale_y(false), cmdstr()
 	{
-		ymin = nan("");
-		ymax = nan("");
-		xmin = nan("");
-		xmax = nan("");
 	}
 	
 	inline Plots::~Plots()
@@ -120,15 +116,15 @@ namespace keycpp
 		Gnuplot g;
 		matrix<double> colors;
 		vector_k<Plots> p;
-		int fontsize = 10;
+		size_t fontsize = 10;
 		std::string fontname = "Helvetica";
 		bool multiplot = false;
-		int current_plot = 0;
+		size_t current_plot = 0;
 		int multi_rows = -1;
 		int multi_cols = -1;
 		bool final_replot = false;
-		int m_width = 560;
-		int m_height = 420;
+		size_t m_width = 560;
+		size_t m_height = 420;
 		std::string term;
 		std::string filename;
 	
@@ -169,19 +165,20 @@ namespace keycpp
 		void grid_off();
 		void hold_on();
 		void hold_off();
-		void subplot(int mrows, int mcols, int index);
+		void subplot(size_t mrows, size_t mcols, size_t index);
 		void legend(std::initializer_list<std::string> lst, std::string property1 = "", std::string val1 = "", std::string property2 = "", std::string val2 = "");
 		void ylim(std::initializer_list<double> lst);
 		void xlim(std::initializer_list<double> lst);
 		void replot_all();
-		void setFontsize(int p_fontsize) {fontsize = p_fontsize;};
-		int getFontsize() {return fontsize;};
+		void setFontsize(size_t p_fontsize) {fontsize = p_fontsize;};
+		size_t getFontsize() {return fontsize;};
 		void set(std::string property, double val);
+		void set(std::string property, std::string val);
 		void print(std::string pterm, std::string pfilename) {term = pterm; filename = pfilename;};
-		void set(std::string property, std::initializer_list<int> list);
+		void set(std::string property, std::initializer_list<size_t> list);
 	};
 	
-	inline Figure::Figure() try : g("lines"), p(1)
+	inline Figure::Figure() try : g("lines"), colors(), p(1), term(""), filename("")
 	{
 		colors = {{0.0,0.0,1.0},
 			{1.0,0.0,0.0},
@@ -500,7 +497,7 @@ namespace keycpp
 			        {
 			            term_stream << "pdf size ";
 			            term_stream << m_width/100 << "," << m_height/100 << " enhanced font '" << fontname << ",";
-			            term_stream << fontsize*1.5;
+			            term_stream << ((double)fontsize*1.5);
 			            term_stream << "'";
 			            lw = 2.0*lw;
 			        }
@@ -508,7 +505,7 @@ namespace keycpp
 			        {
 			            term_stream << "postscript color size ";
 			            term_stream << m_width/100 << "," << m_height/100 << " enhanced font '" << fontname << ",";
-			            term_stream << fontsize*1.5;
+			            term_stream << ((double)fontsize*1.5);
 			            term_stream << "'";
 			            lw = 2.0*lw;
 			        }
@@ -546,14 +543,14 @@ namespace keycpp
 				    g.reset_plot();
 			    }
 			
-			    if(p[current_plot].xmin == p[current_plot].xmin && p[current_plot].xmax == p[current_plot].xmax) // Check for NaNs
+			    if(!std::isnan(p[current_plot].xmin) && !std::isnan(p[current_plot].xmax)) // Check for NaNs
 			    {
 				    std::stringstream temp_stream;
 				    temp_stream << "set xrange [";
 				    temp_stream << p[current_plot].xmin << ":" << p[current_plot].xmax << "]";
 				    g.cmd(temp_stream.str());
 			    }
-			    if(p[current_plot].ymin == p[current_plot].ymin && p[current_plot].ymax == p[current_plot].ymax) // Check for NaNs
+			    if(!std::isnan(p[current_plot].ymin) && !std::isnan(p[current_plot].ymax)) // Check for NaNs
 			    {
 				    std::stringstream temp_stream;
 				    temp_stream << "set yrange [";
@@ -661,7 +658,7 @@ namespace keycpp
                     throw FigureException("Error creating temporary file!");
                 }
 
-                for(int ii = 0; ii < x.size(); ii++)
+                for(size_t ii = 0; ii < x.size(); ii++)
                 {
                     tmp << x[ii] << " " << y[ii] << std::endl;
                 }
@@ -724,7 +721,7 @@ namespace keycpp
 	template<class T> void Figure::plot(vector_k<T> y, std::string format, std::string property1, double val1)
 	{
 	    vector_k<T> x(y.size());
-	    for(int ii = 0; ii < y.size(); ii++)
+	    for(size_t ii = 0; ii < y.size(); ii++)
 	    {
 	        x[ii] = ii;
 	    }
@@ -734,7 +731,7 @@ namespace keycpp
 	template<class T> void Figure::plot(vector_k<T> y, std::string format, std::string property1, double val1, std::string property2, double val2)
 	{
 	    vector_k<T> x(y.size());
-	    for(int ii = 0; ii < y.size(); ii++)
+	    for(size_t ii = 0; ii < y.size(); ii++)
 	    {
 	        x[ii] = ii;
 	    }
@@ -744,7 +741,7 @@ namespace keycpp
 	template<class T> void Figure::plot(vector_k<T> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
 	{
 	    vector_k<T> x(y.size());
-	    for(int ii = 0; ii < y.size(); ii++)
+	    for(size_t ii = 0; ii < y.size(); ii++)
 	    {
 	        x[ii] = ii;
 	    }
@@ -769,7 +766,7 @@ namespace keycpp
 	template<class T> void Figure::plot(matrix<T> y, std::string format, std::string property1, double val1)
 	{
 	    hold_on();
-	    for(int ii = 0; ii < y.size(2); ii++)
+	    for(size_t ii = 0; ii < y.size(2); ii++)
 	    {
 	        plot(y.getCol(ii),format,property1,val1);
 	    }
@@ -778,7 +775,7 @@ namespace keycpp
 	template<class T> void Figure::plot(matrix<T> y, std::string format, std::string property1, double val1, std::string property2, double val2)
 	{
 	    hold_on();
-	    for(int ii = 0; ii < y.size(2); ii++)
+	    for(size_t ii = 0; ii < y.size(2); ii++)
 	    {
 	        plot(y.getCol(ii),format,property1,val1,property2,val2);
 	    }
@@ -787,7 +784,7 @@ namespace keycpp
 	template<class T> void Figure::plot(matrix<T> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
 	{
 	    hold_on();
-	    for(int ii = 0; ii < y.size(2); ii++)
+	    for(size_t ii = 0; ii < y.size(2); ii++)
 	    {
 	        plot(y.getCol(ii),arguments,val,lw,ps,legend_entry);
 	    }
@@ -800,7 +797,7 @@ namespace keycpp
 	        throw FigureException("Matrices must be same size in plot()!");
 	    }
 	    hold_on();
-	    for(int ii = 0; ii < y.size(2); ii++)
+	    for(size_t ii = 0; ii < y.size(2); ii++)
 	    {
 	        plot(x.getCol(ii), y.getCol(ii),format,property1,val1);
 	    }
@@ -813,7 +810,7 @@ namespace keycpp
 	        throw FigureException("Matrices must be same size in plot()!");
 	    }
 	    hold_on();
-	    for(int ii = 0; ii < y.size(2); ii++)
+	    for(size_t ii = 0; ii < y.size(2); ii++)
 	    {
 	        plot(x.getCol(ii), y.getCol(ii),format,property1,val1,property2,val2);
 	    }
@@ -826,7 +823,7 @@ namespace keycpp
 	        throw FigureException("Matrices must be same size in plot()!");
 	    }
 	    hold_on();
-	    for(int ii = 0; ii < y.size(2); ii++)
+	    for(size_t ii = 0; ii < y.size(2); ii++)
 	    {
 	        plot(x.getCol(ii), y.getCol(ii),arguments,val,lw,ps,legend_entry);
 	    }
@@ -841,14 +838,14 @@ namespace keycpp
 	    hold_on();
 	    if(x.size() == y.size(1))
 	    {
-	        for(int ii = 0; ii < y.size(2); ii++)
+	        for(size_t ii = 0; ii < y.size(2); ii++)
 	        {
 	            plot(x, y.getCol(ii),format,property1,val1);
 	        }
 	    }
 	    else
 	    {
-	        for(int ii = 0; ii < y.size(1); ii++)
+	        for(size_t ii = 0; ii < y.size(1); ii++)
 	        {
 	            plot(x, y.getRow(ii),format,property1,val1);
 	        }
@@ -864,14 +861,14 @@ namespace keycpp
 	    hold_on();
 	    if(x.size() == y.size(1))
 	    {
-	        for(int ii = 0; ii < y.size(2); ii++)
+	        for(size_t ii = 0; ii < y.size(2); ii++)
 	        {
 	            plot(x, y.getCol(ii),format,property1,val1,property2,val2);
 	        }
 	    }
 	    else
 	    {
-	        for(int ii = 0; ii < y.size(1); ii++)
+	        for(size_t ii = 0; ii < y.size(1); ii++)
 	        {
 	            plot(x, y.getRow(ii),format,property1,val1,property2,val2);
 	        }
@@ -887,14 +884,14 @@ namespace keycpp
 	    hold_on();
 	    if(x.size() == y.size(1))
 	    {
-	        for(int ii = 0; ii < y.size(2); ii++)
+	        for(size_t ii = 0; ii < y.size(2); ii++)
 	        {
 	            plot(x, y.getCol(ii),arguments,val,lw,ps,legend_entry);
 	        }
 	    }
 	    else
 	    {
-	        for(int ii = 0; ii < y.size(1); ii++)
+	        for(size_t ii = 0; ii < y.size(1); ii++)
 	        {
 	            plot(x, y.getRow(ii),arguments,val,lw,ps,legend_entry);
 	        }
@@ -910,14 +907,14 @@ namespace keycpp
 	    hold_on();
 	    if(y.size() == x.size(1))
 	    {
-	        for(int ii = 0; ii < x.size(2); ii++)
+	        for(size_t ii = 0; ii < x.size(2); ii++)
 	        {
 	            plot(x.getCol(ii), y,format,property1,val1);
 	        }
 	    }
 	    else
 	    {
-	        for(int ii = 0; ii < x.size(1); ii++)
+	        for(size_t ii = 0; ii < x.size(1); ii++)
 	        {
 	            plot(x.getRow(ii), y,format,property1,val1);
 	        }
@@ -933,14 +930,14 @@ namespace keycpp
 	    hold_on();
 	    if(y.size() == x.size(1))
 	    {
-	        for(int ii = 0; ii < x.size(2); ii++)
+	        for(size_t ii = 0; ii < x.size(2); ii++)
 	        {
 	            plot(x.getCol(ii), y,format,property1,val1,property2,val2);
 	        }
 	    }
 	    else
 	    {
-	        for(int ii = 0; ii < x.size(1); ii++)
+	        for(size_t ii = 0; ii < x.size(1); ii++)
 	        {
 	            plot(x.getRow(ii), y,format,property1,val1,property2,val2);
 	        }
@@ -956,14 +953,14 @@ namespace keycpp
 	    hold_on();
 	    if(y.size() == x.size(1))
 	    {
-	        for(int ii = 0; ii < x.size(2); ii++)
+	        for(size_t ii = 0; ii < x.size(2); ii++)
 	        {
 	            plot(x.getCol(ii), y,arguments,val,lw,ps,legend_entry);
 	        }
 	    }
 	    else
 	    {
-	        for(int ii = 0; ii < x.size(1); ii++)
+	        for(size_t ii = 0; ii < x.size(1); ii++)
 	        {
 	            plot(x.getRow(ii), y,arguments,val,lw,ps,legend_entry);
 	        }
@@ -1079,7 +1076,7 @@ namespace keycpp
 		{
 			throw FigureException("Error! You tried to create a legend with more entries than plots!");
 		}
-		int ii = 0;
+		size_t ii = 0;
 		p[current_plot].legend_entries = vector_k<std::string>(lst.size());
 		for(const auto& l : lst)
 		{
@@ -1250,12 +1247,12 @@ namespace keycpp
 	
 	inline void Figure::replot_all()
 	{
-	    int N = current_plot;
+	    size_t N = current_plot;
 	    for(current_plot = 0; current_plot <= N; current_plot++)
 	    {
 		    p[current_plot].num_plots = 0;
 
-		    for(int jj = 0; jj < p[current_plot].x_plot_data.size(); jj++)
+		    for(size_t jj = 0; jj < p[current_plot].x_plot_data.size(); jj++)
 		    {
 			    if(p[current_plot].legend_entries.size() > jj)
 			    {
@@ -1282,7 +1279,16 @@ namespace keycpp
 		{
 			fontsize = (int)round(val);
 		}
-		else if(property.compare("fontname") == 0)
+		else
+		{
+			throw FigureException("Unknown property in set!");
+		}
+	}
+	
+	inline void Figure::set(std::string property, std::string val)
+	{
+		std::transform(property.begin(), property.end(), property.begin(), ::tolower);
+		if(property.compare("fontname") == 0)
 		{
 			fontname = val;
 		}
@@ -1292,14 +1298,14 @@ namespace keycpp
 		}
 	}
 	
-	inline void Figure::set(std::string property, std::initializer_list<int> list)
+	inline void Figure::set(std::string property, std::initializer_list<size_t> list)
 	{
 		std::transform(property.begin(), property.end(), property.begin(), ::tolower);
 		if(property.compare("position") == 0)
 		{
 		    // Note for compatibility with MATLAB, I have kept the position values
 		    // but we only use the height and width values.
-		    int ii = 0;
+		    size_t ii = 0;
 		    for(const auto& l : list)
 		    {
 			    if(ii == 2)
@@ -1333,7 +1339,7 @@ namespace keycpp
 		{
 			throw FigureException("Error! More than 2 limits provided!");
 		}
-		int ii = 0;
+		size_t ii = 0;
 		for(const auto& l : lst)
 		{
 			if(ii == 0)
@@ -1358,7 +1364,7 @@ namespace keycpp
 		{
 			throw FigureException("Error! More than 2 limits provided!");
 		}
-		int ii = 0;
+		size_t ii = 0;
 		for(const auto& l : lst)
 		{
 			if(ii == 0)
@@ -1373,19 +1379,29 @@ namespace keycpp
 		}
 	}
 	
-	inline void Figure::subplot(int mrows, int mcols, int index)
+	inline void Figure::subplot(size_t mrows, size_t mcols, size_t index)
 	{
-	    if((mrows != multi_rows && multi_rows > 0) || (mcols != multi_cols && multi_cols > 0))
+	    if(multi_rows > 0)
 	    {
-	        throw FigureException("Layout of subplot does not match previous calls!");
+	        if(mrows != (size_t)multi_rows)
+	        {
+	            throw FigureException("Layout of subplot does not match previous calls!");
+	        }
 	    }
-	    if(mrows <= 0 || mcols <= 0 || index < 0 || index >= mrows*mcols)
+	    if(multi_cols > 0)
+	    {
+	        if(mcols != (size_t)multi_cols)
+	        {
+	            throw FigureException("Layout of subplot does not match previous calls!");
+	        }
+	    }
+	    if(mrows == 0 || mcols == 0 || index >= mrows*mcols)
 	    {
 	        throw FigureException("Illegal argument in subplot!");
 	    }
 	    multiplot = true;
-	    multi_rows = mrows;
-	    multi_cols = mcols;
+	    multi_rows = (int)mrows;
+	    multi_cols = (int)mcols;
 	    current_plot = index;
 	    if(p.size() != mrows*mcols)
 	    {

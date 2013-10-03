@@ -33,8 +33,8 @@ namespace keycpp
 
 	struct matrix_size_type
 	{
-		int rows;
-		int cols;
+		long unsigned int rows;
+		long unsigned int cols;
 	};
 
 	class MatrixException : public std::runtime_error
@@ -48,43 +48,43 @@ namespace keycpp
 	{
 	public:
 		matrix();
-		matrix(const int &rows, const int &cols);
+		matrix(const long unsigned int &rows, const long unsigned int &cols);
 		matrix(const vector_k<vector_k<T>>& mat);
 		matrix(const std::initializer_list<std::initializer_list<T>>& lst);
-		T& operator()(const int &i, const int &j);
-		T operator()(const int &i, const int &j) const;
+		T& operator()(const long unsigned int &i, const long unsigned int &j);
+		T operator()(const long unsigned int &i, const long unsigned int &j) const;
 		vector_k<T> operator*(const vector_k<T> &x) const;
 		matrix<T> operator*(const matrix<T> &B) const;
 		matrix<T> operator+(const matrix<T> &B) const;
 		matrix<T>& operator+=(const matrix<T> &B);
 		matrix<T> operator-(const matrix<T> &B) const;
-		int size(const int &n) const;
+		long unsigned int size(const long unsigned int &n) const;
 		bool empty() const;
-		vector_k<T> row(const int &i);
-		int setLastRow(const vector_k<T> &row);
-		int addLastRow(const vector_k<T> &row);
-		vector_k<T> getRow(const int &i) const;
+		vector_k<T> row(const long unsigned int &i);
+		void setLastRow(const vector_k<T> &row);
+		void addLastRow(const vector_k<T> &row);
+		vector_k<T> getRow(const long unsigned int &i) const;
 		vector_k<T> getLastRow() const;
-		vector_k<T> getCol(const int &j) const;
-		vector_k<T> col(const int &j);
-		int reserve(const int &N);
+		vector_k<T> getCol(const long unsigned int &j) const;
+		vector_k<T> col(const long unsigned int &j);
+		void reserve(const long unsigned int &N);
 		vector_k<T> mData;
 
 	private:
-		int mRows;
-		int mCols;
+		long unsigned int mRows;
+		long unsigned int mCols;
 	};
 
 	template<class T>
-	matrix<T>::matrix() : mRows(0), mCols(0)
+	matrix<T>::matrix() : mData(), mRows(0), mCols(0)
 	{
 	}
 
 	template<class T>
-	matrix<T>::matrix(const int &rows, const int &cols)
-	: mRows(rows),
-	  mCols(cols),
-	  mData(rows * cols)
+	matrix<T>::matrix(const long unsigned int &rows, const long unsigned int &cols)
+	: mData(rows * cols),
+	  mRows(rows),
+	  mCols(cols)
 	{
 		if(rows <= 0 || cols <= 0)
 		{
@@ -93,7 +93,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	matrix<T>::matrix(const vector_k<vector_k<T> >& mat) : mRows(mat.size()), mCols(mat[0].size()), mData(mat[0].size()*mat.size())
+	matrix<T>::matrix(const vector_k<vector_k<T> >& mat) : mData(mat[0].size()*mat.size()), mRows(mat.size()), mCols(mat[0].size())
 	{
 		if(mat.empty())
 		{
@@ -104,9 +104,9 @@ namespace keycpp
 			throw MatrixException("Cannot assign empty vector of vectors to a matrix object!");
 		}
 		
-		for(int ii = 0; ii < mRows; ii++)
+		for(long unsigned int ii = 0; ii < mRows; ii++)
 		{
-			for(int jj = 0; jj < mCols; jj++)
+			for(long unsigned int jj = 0; jj < mCols; jj++)
 			{
 				mData[jj*mRows + ii] = mat[ii][jj];
 			}
@@ -120,7 +120,7 @@ namespace keycpp
 		{
 			throw MatrixException("Cannot assign empty initializer list to a matrix object!");
 		}
-		int ii = 0, jj = 0;
+		long unsigned int ii = 0, jj = 0;
 		for(const auto& l : lst)
 		{
 			for(const auto& v : l)
@@ -134,13 +134,13 @@ namespace keycpp
 	}
 
 	template<class T>
-	T& matrix<T>::operator()(const int &i, const int &j)
+	T& matrix<T>::operator()(const long unsigned int &i, const long unsigned int &j)
 	{
 		if(mData.empty())
 		{
 			throw MatrixException("Cannot access member of empty matrix!");
 		}
-		if(i < 0 || i > (mRows-1) || j < 0 || j > (mCols-1))
+		if(i > (mRows-1) || j > (mCols-1))
 		{
 			throw MatrixException("Tried to access invalid matrix member!");
 		}
@@ -148,13 +148,13 @@ namespace keycpp
 	}
 
 	template<class T>
-	T matrix<T>::operator()(const int &i, const int &j) const
+	T matrix<T>::operator()(const long unsigned int &i, const long unsigned int &j) const
 	{
 		if(mData.empty())
 		{
 			throw MatrixException("Cannot access member of empty matrix!");
 		}
-		if(i < 0 || i > (mRows-1) || j < 0 || j > (mCols-1))
+		if(i > (mRows-1) || j > (mCols-1))
 		{
 			throw MatrixException("Tried to access invalid matrix member!");
 		}
@@ -177,10 +177,10 @@ namespace keycpp
 			throw MatrixException("Cannot perform operation on empty matrix!");
 		}
 		vector_k<T> b(mRows);
-		for(int ii = 0; ii < mRows; ii++)
+		for(long unsigned int ii = 0; ii < mRows; ii++)
 		{
 			b[ii] = 0.0;
-			for(int jj = 0; jj < mCols; jj++)
+			for(long unsigned int jj = 0; jj < mCols; jj++)
 			{
 				b[ii] += mData[jj*mRows + ii]*x[jj];
 			}
@@ -204,8 +204,8 @@ namespace keycpp
 			throw MatrixException("Cannot perform operation on empty matrix!");
 		}
 		vector_k<double> b(mRows);
-		int m = mRows;
-		int n = mCols;
+		int m = (int)mRows;
+		int n = (int)mCols;
         char TRANS = 'N';
         double ALPHA = 1.0;
         int LDA = m;
@@ -234,14 +234,13 @@ namespace keycpp
 			throw MatrixException("Cannot perform operation on empty matrix!");
 		}
 		vector_k<std::complex<double>> b(mRows);
-		int m = mRows;
-		int n = mCols;
+		int m = (int)mRows;
+		int n = (int)mCols;
         char TRANS = 'N';
         std::complex<double> ALPHA = 1.0;
         int LDA = m;
         int INCX = 1;
         std::complex<double> BETA = 0.0;
-        std::complex<double> *y = new std::complex<double>[m];
         int INCY = 1;
 
         zgemv_(&TRANS, &m, &n, &ALPHA, &mData[0], &LDA, &x[0],&INCX, &BETA, &b[0], &INCY);
@@ -265,12 +264,12 @@ namespace keycpp
 			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix multiplication!");
 		}
 		matrix<T> C(mRows,B.size(2));
-		for(int kk = 0; kk < B.size(2); kk++)
+		for(long unsigned int kk = 0; kk < B.size(2); kk++)
 		{
-			for(int ii = 0; ii < mRows; ii++)
+			for(long unsigned int ii = 0; ii < mRows; ii++)
 			{
 				C(ii,kk) = 0.0;
-				for(int jj = 0; jj < mCols; jj++)
+				for(long unsigned int jj = 0; jj < mCols; jj++)
 				{
 					C(ii,kk) += mData[jj*mRows + ii]*B(jj,kk);
 				}
@@ -295,9 +294,9 @@ namespace keycpp
 			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix multiplication!");
 		}
 		matrix<double> C(mRows,B.size(2));
-		int m = mRows;
-		int k = mCols;
-		int n = B.size(2);
+		int m = (int)mRows;
+		int k = (int)mCols;
+		int n = (int)B.size(2);
         char TRANS = 'N';
         double ALPHA = 1.0;
         int LDA = m;
@@ -326,9 +325,9 @@ namespace keycpp
 			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix multiplication!");
 		}
 		matrix<std::complex<double>> C(mRows,B.size(2));
-		int n = mRows;
-		int k = mCols;
-		int m = B.size(2);
+		int n = (int)mRows;
+		int k = (int)mCols;
+		int m = (int)B.size(2);
         char TRANS = 'N';
         std::complex<double> ALPHA = 1.0;
         int LDA = n;
@@ -357,9 +356,9 @@ namespace keycpp
 			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix addition!");
 		}
 		matrix<T> C(mRows,mCols);
-		for(int ii = 0; ii < mRows; ii++)
+		for(long unsigned int ii = 0; ii < mRows; ii++)
 		{
-			for(int jj = 0; jj < mCols; jj++)
+			for(long unsigned int jj = 0; jj < mCols; jj++)
 			{
 				C(ii,jj) = mData[jj*mRows + ii] + B(ii,jj);
 			}
@@ -382,9 +381,9 @@ namespace keycpp
 		{
 			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix addition!");
 		}
-		for(int ii = 0; ii < mRows; ii++)
+		for(long unsigned int ii = 0; ii < mRows; ii++)
 		{
-			for(int jj = 0; jj < mCols; jj++)
+			for(long unsigned int jj = 0; jj < mCols; jj++)
 			{
 				mData[jj*mRows + ii] += B(ii,jj);
 			}
@@ -408,9 +407,9 @@ namespace keycpp
 			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix subtraction!");
 		}
 		matrix<T> C(mRows,mCols);
-		for(int ii = 0; ii < mRows; ii++)
+		for(long unsigned int ii = 0; ii < mRows; ii++)
 		{
-			for(int jj = 0; jj < mCols; jj++)
+			for(long unsigned int jj = 0; jj < mCols; jj++)
 			{
 				C(ii,jj) = mData[jj*mRows + ii] - B(ii,jj);
 			}
@@ -419,7 +418,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	int matrix<T>::size(const int &n) const
+	long unsigned int matrix<T>::size(const long unsigned int &n) const
 	{
 		if(n == 1)
 		{
@@ -449,9 +448,9 @@ namespace keycpp
 	}
 	
 	template<class T>
-	vector_k<T> matrix<T>::row(const int &n)
+	vector_k<T> matrix<T>::row(const long unsigned int &n)
 	{
-		if(n > mRows || n < 0)
+		if(n > mRows)
 		{
 			throw MatrixException("Invalid row index in row().");
 		}
@@ -465,9 +464,9 @@ namespace keycpp
 	}
 
 	template<class T>
-	int matrix<T>::setLastRow(const vector_k<T> &row)
+	void matrix<T>::setLastRow(const vector_k<T> &p_row)
 	{
-		if(row.size() != mCols)
+		if(p_row.size() != mCols)
 		{
 			throw MatrixException("Vector dimension is incompatible with matrix dimension in setLastRow().");
 		}
@@ -476,17 +475,16 @@ namespace keycpp
 			throw MatrixException("Cannot use method setLastRow() on empty matrix!");
 		}
 
-		for(int jj = 0; jj < mCols; jj++)
+		for(long unsigned int jj = 0; jj < mCols; jj++)
 		{
-			mData[jj*mRows + (mRows-1)] = row[jj];
+			mData[jj*mRows + (mRows-1)] = p_row[jj];
 		}
-		return 0;
 	}
 
 	template<class T>
-	int matrix<T>::addLastRow(const vector_k<T> &row)
+	void matrix<T>::addLastRow(const vector_k<T> &p_row)
 	{
-		if(row.size() != mCols)
+		if(p_row.size() != mCols)
 		{
 			throw MatrixException("Vector dimension is incompatible with matrix dimension in addLastRow().");
 		}
@@ -494,22 +492,21 @@ namespace keycpp
 		mRows++;
 		vector_k<T> temp = mData;
 		mData.resize(mRows*mCols);
-		for(int jj = 0; jj < mCols; jj++)
+		for(long unsigned int jj = 0; jj < mCols; jj++)
 		{
-		    for(int ii = 0; ii < (mRows-1); ii++)
+		    for(long unsigned int ii = 0; ii < (mRows-1); ii++)
 		    {
 		        mData[jj*mRows + ii] = temp[jj*(mRows-1) + ii];
 		    }
 		}
-		for(int jj = 0; jj < mCols; jj++)
+		for(long unsigned int jj = 0; jj < mCols; jj++)
 		{
-			mData[jj*mRows + (mRows-1)] = row[jj];
+			mData[jj*mRows + (mRows-1)] = p_row[jj];
 		}
-		return 0;
 	}
 
 	template<class T>
-	vector_k<T> matrix<T>::col(const int &n)
+	vector_k<T> matrix<T>::col(const long unsigned int &n)
 	{
 		if(n > mCols || n < 0)
 		{
@@ -525,7 +522,7 @@ namespace keycpp
 	}
 
 	template<class T>
-	vector_k<T> matrix<T>::getRow(const int &n) const
+	vector_k<T> matrix<T>::getRow(const long unsigned int &n) const
 	{
 		if(n > mRows || n < 0)
 		{
@@ -537,7 +534,7 @@ namespace keycpp
 		}
 		vector_k<T> Row(mCols);
 
-		for(int jj = 0; jj < mCols; jj++)
+		for(long unsigned int jj = 0; jj < mCols; jj++)
 		{
 			Row[jj] = mData[jj*mRows + n];
 		}
@@ -554,7 +551,7 @@ namespace keycpp
 		}
 		vector_k<T> Row(mCols);
 
-		for(int jj = 0; jj < mCols; jj++)
+		for(long unsigned int jj = 0; jj < mCols; jj++)
 		{
 			Row[jj] = mData[jj*mRows + (mRows-1)];
 		}
@@ -563,9 +560,9 @@ namespace keycpp
 	}
 
 	template<class T>
-	vector_k<T> matrix<T>::getCol(const int &n) const
+	vector_k<T> matrix<T>::getCol(const long unsigned int &n) const
 	{
-		if(n > mCols || n < 0)
+		if(n > mCols)
 		{
 			throw MatrixException("Invalid column index in getCol().");
 		}
@@ -575,7 +572,7 @@ namespace keycpp
 		}
 		vector_k<T> Col(mRows);
 
-		for(int ii = 0; ii < mRows; ii++)
+		for(long unsigned int ii = 0; ii < mRows; ii++)
 		{
 			Col[ii] = mData[n*mRows + ii];
 		}
@@ -584,16 +581,9 @@ namespace keycpp
 	}
 	
 	template<class T>
-	int matrix<T>::reserve(const int &N)
+	void matrix<T>::reserve(const long unsigned int &N)
 	{
-		if(N < 0)
-		{
-			throw MatrixException("Invalid reserve size!");
-		}
-
 		mData.reserve(N);
-
-		return 0;
 	}
 }
 #endif

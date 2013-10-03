@@ -12,18 +12,19 @@ namespace keycpp
 
         typedef T *iterator;
         typedef const T* const_iterator;
+        typedef size_t size_type;
 
         vector_k();
-        vector_k(unsigned int size);
-        vector_k(unsigned int size, const T &initial);
-        vector_k(T *ptr, unsigned int size, unsigned int pinc);
+        vector_k(size_t size);
+        vector_k(size_t size, const T &initial);
+        vector_k(T *ptr, size_t size, size_t pinc);
 		vector_k(const std::initializer_list<T>& lst);
         vector_k(const vector_k<T> &v);      
-        vector_k(std::vector<T> const &v);      
+        vector_k(const std::vector<T> &v);      
         ~vector_k();
 
-        unsigned int capacity() const;
-        unsigned int size() const;
+        size_t capacity() const;
+        size_t size() const;
         bool empty() const;
         iterator begin();
         iterator end();
@@ -34,11 +35,11 @@ namespace keycpp
         void push_back(const T &value); 
         void pop_back();  
 
-        void reserve(unsigned int capacity);   
-        void resize(unsigned int size);   
+        void reserve(size_t capacity);   
+        void resize(size_t size);   
 
-        T& operator[](const unsigned int index);  
-        const T& operator[](const unsigned int index) const;
+        T& operator[](const size_t index);  
+        const T& operator[](const size_t index) const;
         vector_k<T>& operator=(const vector_k<T>& v);
         vector_k<T>& operator=(const std::vector<T>& v);
         void clear();
@@ -46,7 +47,7 @@ namespace keycpp
         operator std::vector<T>()
         {
             std::vector<T> v1(my_size);
-            for(unsigned int ii = 0; ii < my_size; ii++)
+            for(size_t ii = 0; ii < my_size; ii++)
             {
                 v1[ii] = buffer[ii*inc];
             }
@@ -54,66 +55,61 @@ namespace keycpp
         };
 
     private:
-        unsigned int my_size;
-        unsigned int my_capacity;
-        unsigned int inc = 1;
+        size_t my_size;
+        size_t my_capacity;
+        size_t inc = 1;
         T *buffer;
         bool dontFree = true;
     };
 
     // Your code goes here ...
     template<class T>
-    vector_k<T>::vector_k()
-    {
-        my_capacity = 0;
-        my_size = 0;
-        buffer = 0;
-        dontFree = true;
-    }
+    vector_k<T>::vector_k() : my_size(0), my_capacity(0), buffer(nullptr)
+    {}
 
     template<class T>
-    vector_k<T>::vector_k(const vector_k<T> &v)
+    vector_k<T>::vector_k(const vector_k<T> &v) : my_size(v.my_size), my_capacity(v.my_capacity), buffer(new T[v.my_size])
     {
-        my_size = v.my_size;
-        my_capacity = v.my_capacity;
         dontFree = false;
         inc = 1;
-        buffer = new T[my_size];  
-        for(unsigned int ii = 0; ii < my_size; ii++)
+        for(size_t ii = 0; ii < my_size; ii++)
         {
             buffer[ii*inc] = v.buffer[ii];  
         }
     }
 
     template<class T>
-    vector_k<T>::vector_k(unsigned int size)
+    vector_k<T>::vector_k(const std::vector<T> &v) : my_size(v.size()), my_capacity(v.capacity()), buffer(new T[v.size()])
     {
-        my_capacity = size;
-        my_size = size;
         dontFree = false;
         inc = 1;
-        buffer = new T[size];
+        for(size_t ii = 0; ii < my_size; ii++)
+        {
+            buffer[ii*inc] = v[ii];  
+        }
     }
 
     template<class T>
-    vector_k<T>::vector_k(unsigned int size, const T &initial)
+    vector_k<T>::vector_k(size_t p_size) : my_size(p_size), my_capacity(p_size), buffer(new T[p_size])
     {
-        my_size = size;
-        my_capacity = size;
         dontFree = false;
         inc = 1;
-        buffer = new T[size];
-        for(unsigned int ii = 0; ii < size; ii++)
+    }
+
+    template<class T>
+    vector_k<T>::vector_k(size_t p_size, const T &initial) : my_size(p_size), my_capacity(p_size), buffer(new T[p_size])
+    {
+        dontFree = false;
+        inc = 1;
+        for(size_t ii = 0; ii < p_size; ii++)
         {
             buffer[ii*inc] = initial;
         }
     }
 
     template<class T>
-    vector_k<T>::vector_k(T *ptr, unsigned int size, unsigned int pinc)
+    vector_k<T>::vector_k(T *ptr, size_t p_size, size_t pinc) : my_size(p_size), my_capacity(p_size), buffer(nullptr)
     {
-        my_capacity = size;
-        my_size = size;
         inc = pinc;
         dontFree = true;
         buffer = ptr;
@@ -137,7 +133,7 @@ namespace keycpp
         {
             resize(v.size());
         }
-        for(unsigned int ii = 0; ii < my_size; ii++)
+        for(size_t ii = 0; ii < my_size; ii++)
         {
             buffer[ii*inc] = v.buffer[ii];
         }
@@ -152,7 +148,7 @@ namespace keycpp
         {
             resize(v.size());
         }
-        for(unsigned int ii = 0; ii < my_size; ii++)
+        for(size_t ii = 0; ii < my_size; ii++)
         {
             buffer[ii*inc] = v[ii];
         }
@@ -213,23 +209,23 @@ namespace keycpp
     }
 
     template<class T>
-    void vector_k<T>::reserve(unsigned int capacity)
+    void vector_k<T>::reserve(size_t p_capacity)
     {
-        if(buffer == 0)
+        if(buffer == nullptr)
         {
             my_size = 0;
             my_capacity = 0;
         }
-        T *Newbuffer = new T[capacity];
-        unsigned int l_Size = (capacity < my_size)? capacity : my_size;
+        T *Newbuffer = new T[p_capacity];
+        size_t l_Size = (p_capacity < my_size)? p_capacity : my_size;
 
-        for(unsigned int ii = 0; ii < l_Size; ii++)
+        for(size_t ii = 0; ii < l_Size; ii++)
         {
             Newbuffer[ii] = buffer[ii*inc];
         }
         inc = 1;
 
-        my_capacity = capacity;
+        my_capacity = p_capacity;
         if(!dontFree)
         {
             delete[] buffer;
@@ -240,7 +236,7 @@ namespace keycpp
     }
 
     template<class T>
-    unsigned int vector_k<T>::size() const
+    size_t vector_k<T>::size() const
     {
         return my_size;
     }
@@ -257,26 +253,26 @@ namespace keycpp
     }
 
     template<class T>
-    void vector_k<T>::resize(unsigned int size)
+    void vector_k<T>::resize(size_t p_size)
     {
-        reserve(size);
-        my_size = size;
+        reserve(p_size);
+        my_size = p_size;
     }
 
     template<class T>
-    T& vector_k<T>::operator[](const unsigned int index)
+    T& vector_k<T>::operator[](const size_t index)
     {
         return buffer[index*inc];
     }  
     
     template<class T>
-    const T& vector_k<T>::operator[](const unsigned int index) const
+    const T& vector_k<T>::operator[](const size_t index) const
     {
         return buffer[index*inc];
     }  
 
     template<class T>
-    unsigned int vector_k<T>::capacity() const
+    size_t vector_k<T>::capacity() const
     {
         return my_capacity;
     }
@@ -298,7 +294,7 @@ namespace keycpp
         {
             delete[] buffer;
         }
-        buffer = 0;
+        buffer = nullptr;
     }
 }
 

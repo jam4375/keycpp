@@ -15,12 +15,12 @@ namespace keycpp
 	
 	/** \brief Returns an N x N matrix of random doubles between 0 and 1.0
 	 */
-	matrix<double> rand(const int &N)
+	matrix<double> rand(const unsigned int &N)
 	{
 	    matrix<double> A(N,N);
-	    for(int ii = 0; ii < N; ii++)
+	    for(unsigned int ii = 0; ii < N; ii++)
 	    {
-	        for(int jj = 0; jj < N; jj++)
+	        for(unsigned int jj = 0; jj < N; jj++)
 	        {
 	            A(ii,jj) = ((double)std::rand()/((double)RAND_MAX));
 	        }
@@ -31,12 +31,12 @@ namespace keycpp
 	
 	/** \brief Returns an M x N matrix of random doubles between 0 and 1.0
 	 */
-	matrix<double> rand(const int &M, const int &N)
+	matrix<double> rand(const unsigned int &M, const unsigned int &N)
 	{
 	    matrix<double> A(M,N);
-	    for(int ii = 0; ii < M; ii++)
+	    for(unsigned int ii = 0; ii < M; ii++)
 	    {
-	        for(int jj = 0; jj < N; jj++)
+	        for(unsigned int jj = 0; jj < N; jj++)
 	        {
 	            A(ii,jj) = ((double)std::rand()/((double)RAND_MAX));
 	        }
@@ -54,8 +54,11 @@ namespace keycpp
 	 */
     vector_k<complex<double> > eig(const matrix<complex<double> > &A, const matrix<complex<double> > &B, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
 	{
-		int n, lda, ldb, ldvl, ldvr, lwork, info;
-		n = lda = ldb = A.size(1);
+		unsigned int n;
+		int nn, lda, ldb, ldvl, ldvr, lwork, info;
+		n = (unsigned)A.size(1);
+		lda = ldb = (int)A.size(1);
+		nn = n;
 		lwork = n*n + 64;
 		char jobvl, jobvr;
 
@@ -89,28 +92,28 @@ namespace keycpp
 		complex<double> *beta = new complex<double>[n];
 		complex<double> *work = new complex<double>[lwork];
 		double *rwork = new double[8*n];
-		for(int ii = 0; ii < n; ii++)
+		for(unsigned int ii = 0; ii < n; ii++)
 		{
-			for(int jj = 0; jj < n; jj++)
+			for(unsigned int jj = 0; jj < n; jj++)
 			{
 				a[ii*n + jj] = A(jj,ii);
 				b[ii*n + jj] = B(jj,ii);
 			}
 		}
 
-		zggev_(&jobvl, &jobvr, &n, a, &lda, b, &ldb, alpha, beta, vl, &ldvl, vr, &ldvr, work, &lwork, rwork, &info);
+		zggev_(&jobvl, &jobvr, &nn, a, &lda, b, &ldb, alpha, beta, vl, &ldvl, vr, &ldvr, work, &lwork, rwork, &info);
 
 		vector_k<complex<double> > lambda(n);
-		for(int ii = 0; ii < n; ii++)
+		for(unsigned int ii = 0; ii < n; ii++)
 		{
 			lambda[ii] = alpha[ii]/beta[ii];
 		}
 		if(jobvr == 'V')
 		{
 			(*vr_return) = matrix<complex<double> >(n,n);
-			for(int ii = 0; ii < n; ii++)
+			for(unsigned int ii = 0; ii < n; ii++)
 			{
-				for(int jj = 0; jj < n; jj++)
+				for(unsigned int jj = 0; jj < n; jj++)
 				{
 					(*vr_return)(jj,ii) = vr[ii*n + jj];
 				}
@@ -119,9 +122,9 @@ namespace keycpp
 		if(jobvl == 'V')
 		{
 			(*vl_return) = matrix<complex<double> >(n,n);
-			for(int ii = 0; ii < n; ii++)
+			for(unsigned int ii = 0; ii < n; ii++)
 			{
-				for(int jj = 0; jj < n; jj++)
+				for(unsigned int jj = 0; jj < n; jj++)
 				{
 					(*vl_return)(jj,ii) = vl[ii*n + jj];
 				}
@@ -149,8 +152,11 @@ namespace keycpp
 	 */
     vector_k<complex<double> > eig(const matrix<complex<double> > &A, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
 	{
-		int n, lda, ldb, ldvl, ldvr, lwork, info;
-		n = lda = ldb = A.size(1);
+		unsigned int n;
+		int nn, lda, ldb, ldvl, ldvr, lwork, info;
+		n = (unsigned)A.size(1);
+		lda = ldb = (int)A.size(1);
+		nn = n;
 		lwork = 2*n;
 		char jobvl, jobvr;
 
@@ -182,27 +188,27 @@ namespace keycpp
 		complex<double> *w = new complex<double>[n];
 		complex<double> *work = new complex<double>[lwork];
 		double *rwork = new double[lwork];
-		for(int ii = 0; ii < n; ii++)
+		for(unsigned int ii = 0; ii < n; ii++)
 		{
-			for(int jj = 0; jj < n; jj++)
+			for(unsigned int jj = 0; jj < n; jj++)
 			{
 				a[ii*n + jj] = A(jj,ii);
 			}
 		}
 
-	    zgeev_(&jobvl, &jobvr, &n, a, &lda, w, vl, &ldvl, vr, &ldvr, work, &lwork, rwork, &info);
+	    zgeev_(&jobvl, &jobvr, &nn, a, &lda, w, vl, &ldvl, vr, &ldvr, work, &lwork, rwork, &info);
 
 		vector_k<complex<double> > lambda(n);
-		for(int ii = 0; ii < n; ii++)
+		for(unsigned int ii = 0; ii < n; ii++)
 		{
 			lambda[ii] = w[ii];
 		}
 		if(jobvr == 'V')
 		{
 			(*vr_return) = matrix<complex<double> >(n,n);
-			for(int ii = 0; ii < n; ii++)
+			for(unsigned int ii = 0; ii < n; ii++)
 			{
-				for(int jj = 0; jj < n; jj++)
+				for(unsigned int jj = 0; jj < n; jj++)
 				{
 					(*vr_return)(jj,ii) = vr[ii*n + jj];
 				}
@@ -211,9 +217,9 @@ namespace keycpp
 		if(jobvl == 'V')
 		{
 			(*vl_return) = matrix<complex<double> >(n,n);
-			for(int ii = 0; ii < n; ii++)
+			for(unsigned int ii = 0; ii < n; ii++)
 			{
-				for(int jj = 0; jj < n; jj++)
+				for(unsigned int jj = 0; jj < n; jj++)
 				{
 					(*vl_return)(jj,ii) = vl[ii*n + jj];
 				}
@@ -241,9 +247,9 @@ namespace keycpp
     vector_k<complex<double> > eig(const matrix<double> &A, matrix<complex<double> > *vr_return, matrix<complex<double> > *vl_return)
 	{
 	    matrix<complex<double>> B(A.size(1),A.size(2));
-	    for(int ii = 0; ii < B.size(1); ii++)
+	    for(unsigned int ii = 0; ii < B.size(1); ii++)
 	    {
-	        for(int jj = 0; jj < B.size(2); jj++)
+	        for(unsigned int jj = 0; jj < B.size(2); jj++)
 	        {
 	            B(ii,jj) = A(ii,jj);
 	        }
@@ -264,14 +270,14 @@ namespace keycpp
         int *iw = new int[A.size(1)];
         double *w = new double[A.size(1)*A.size(2) + 64];
         double *x = new double[A.size(1)*A.size(2)];
-        for(int ii = 0; ii < A.size(2); ii++)
+        for(unsigned int ii = 0; ii < A.size(2); ii++)
         {
-            for(int jj = 0; jj < A.size(1); jj++)
+            for(unsigned int jj = 0; jj < A.size(1); jj++)
             {
                 x[ii*A.size(1) + jj] = A(jj,ii);
             }
         }
-        n = A.size(1);
+        n = (int)A.size(1);
         lda = n;
 
         /* Computes the norm of x */
@@ -312,14 +318,14 @@ namespace keycpp
         double *w1 = new double[A.size(1)*A.size(2) + 64];
         std::complex<double> *w2 = new std::complex<double>[A.size(1)*A.size(2) + 64];
         std::complex<double> *x = new std::complex<double>[A.size(1)*A.size(2)];
-        for(int ii = 0; ii < A.size(2); ii++)
+        for(unsigned int ii = 0; ii < A.size(2); ii++)
         {
-            for(int jj = 0; jj < A.size(1); jj++)
+            for(unsigned int jj = 0; jj < A.size(1); jj++)
             {
                 x[ii*A.size(1) + jj] = A(jj,ii);
             }
         }
-        n = A.size(1);
+        n = (int)A.size(1);
         lda = n;
 
         /* Computes the norm of x */
@@ -359,8 +365,9 @@ namespace keycpp
 			throw KeyCppException("Error in linsolve()! Matrix and vector sizes are not compatible!");
 		}
 		
-		int n = b_in.size();
-		int m = A_in.size(2);
+		unsigned int n = (unsigned)b_in.size();
+		int nn = n;
+		int m = (int)A_in.size(2);
 		int nrhs = 1;
 
         int info, lda;
@@ -370,9 +377,9 @@ namespace keycpp
         std::complex<double> *w1 = new std::complex<double>[A_in.size(1)*A_in.size(2) + 64];
         double *w2 = new double[A_in.size(1)*A_in.size(2) + 64];
         std::complex<double> *A = new std::complex<double>[A_in.size(1)*A_in.size(2)];
-        for(int ii = 0; ii < A_in.size(2); ii++)
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
         {
-            for(int jj = 0; jj < A_in.size(1); jj++)
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
             {
                 A[ii*A_in.size(1) + jj] = A_in(jj,ii);
             }
@@ -380,10 +387,10 @@ namespace keycpp
         lda = n;
 
         /* Computes the norm of A */
-        anorm = zlange_("1", &n, &n, A, &lda, w2);
+        anorm = zlange_("1", &nn, &nn, A, &lda, w2);
 
         /* Modifies A in place with a LU decomposition */
-        zgetrf_(&n, &n, A, &lda, iw, &info);
+        zgetrf_(&nn, &nn, A, &lda, iw, &info);
         if(info != 0)
         {
             if(info > 0)
@@ -397,7 +404,7 @@ namespace keycpp
         }
 
         /* Computes the reciprocal norm */
-        zgecon_("1", &n, A, &lda, &anorm, &rcond, w1, w2, &info);
+        zgecon_("1", &nn, A, &lda, &anorm, &rcond, w1, w2, &info);
         if(info != 0)
         {
             throw KeyCppException("Unknown error in linsolve()!");
@@ -409,18 +416,18 @@ namespace keycpp
         }
         
         complex<double> *b = new complex<double>[n];
-        for(int ii = 0; ii < n; ii++)
+        for(unsigned int ii = 0; ii < n; ii++)
         {
             b[ii] = b_in[ii];
         }
-        zgetrs_("N", &m, &nrhs, A, &lda, iw, b, &n, &info);
+        zgetrs_("N", &m, &nrhs, A, &lda, iw, b, &nn, &info);
         if(info != 0)
         {
             throw KeyCppException("Unknown error in linsolve()!");
         }
         
         vector_k<complex<double>> x_out(n);
-        for(int ii = 0; ii < n; ii++)
+        for(unsigned int ii = 0; ii < n; ii++)
         {
             x_out[ii] = b[ii];
         }
@@ -447,9 +454,9 @@ namespace keycpp
 			throw KeyCppException("Error in linsolve()! Matrix and vector sizes are not compatible!");
 		}
 		
-		int n = b_in.size();
-		int m = A_in.size(2);
-		int nrhs = 1;
+		unsigned int n = (unsigned)b_in.size();
+		unsigned int m = (unsigned)A_in.size(2);
+		int nrhs = 1, nn = n, mm = m;
 
         int info = 0, lda;
         double anorm, rcond;
@@ -458,9 +465,9 @@ namespace keycpp
         double *w1 = new double[A_in.size(1)*A_in.size(2) + 64];
         int *w2 = new int[A_in.size(1)*A_in.size(2) + 64];
         double *A = new double[A_in.size(1)*A_in.size(2)];
-        for(int ii = 0; ii < A_in.size(2); ii++)
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
         {
-            for(int jj = 0; jj < A_in.size(1); jj++)
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
             {
                 A[ii*A_in.size(1) + jj] = A_in(jj,ii);
             }
@@ -468,10 +475,10 @@ namespace keycpp
         lda = n;
 
         /* Computes the norm of A */
-        anorm = dlange_("1", &n, &n, A, &lda, w1);
+        anorm = dlange_("1", &nn, &nn, A, &lda, w1);
 
         /* Modifies A in place with a LU decomposition */
-        dgetrf_(&n, &n, A, &lda, iw, &info);
+        dgetrf_(&nn, &nn, A, &lda, iw, &info);
         if(info != 0)
         {
             if(info > 0)
@@ -485,7 +492,7 @@ namespace keycpp
         }
 
         /* Computes the reciprocal norm */
-        dgecon_("1", &n, A, &lda, &anorm, &rcond, w1, w2, &info);
+        dgecon_("1", &nn, A, &lda, &anorm, &rcond, w1, w2, &info);
         if(info != 0)
         {
             throw KeyCppException("Unknown error in linsolve()!");
@@ -497,19 +504,19 @@ namespace keycpp
         }
         
         double *b = new double[n];
-        for(int ii = 0; ii < n; ii++)
+        for(unsigned int ii = 0; ii < n; ii++)
         {
             b[ii] = b_in[ii];
         }
         
-        dgetrs_("N", &m, &nrhs, A, &lda, iw, b, &n, &info);
+        dgetrs_("N", &mm, &nrhs, A, &lda, iw, b, &nn, &info);
         if(info != 0)
         {
             throw KeyCppException("Unknown error in linsolve()!");
         }
         
         vector_k<double> x_out(n);
-        for(int ii = 0; ii < n; ii++)
+        for(unsigned int ii = 0; ii < n; ii++)
         {
             x_out[ii] = b[ii];
         }
@@ -534,20 +541,20 @@ namespace keycpp
 		    throw KeyCppException("Error in inv()! Matrix must be square!");
 		}
 		
-		int n = A_in.size(1);
-		int m = A_in.size(2);
+		unsigned int n = (unsigned)A_in.size(1);
+		int nn = (int)n;
 
         int info, lda;
         double anorm, rcond;
         
         int *iw = new int[A_in.size(1)];
-        int lwork = A_in.size(1)*A_in.size(2) + 64;
+        int lwork = (int)(A_in.size(1)*A_in.size(2)) + 64;
         double *w1 = new double[lwork];
         int *w2 = new int[lwork];
         double *A = new double[A_in.size(1)*A_in.size(2)];
-        for(int ii = 0; ii < A_in.size(2); ii++)
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
         {
-            for(int jj = 0; jj < A_in.size(1); jj++)
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
             {
                 A[ii*A_in.size(1) + jj] = A_in(jj,ii);
             }
@@ -555,17 +562,17 @@ namespace keycpp
         lda = n;
 
         /* Computes the norm of A */
-        anorm = dlange_("1", &n, &n, A, &lda, w1);
+        anorm = dlange_("1", &nn, &nn, A, &lda, w1);
 
         /* Modifies A in place with a LU decomposition */
-        dgetrf_(&n, &n, A, &lda, iw, &info);
+        dgetrf_(&nn, &nn, A, &lda, iw, &info);
         if(info != 0)
         {
             throw KeyCppException("Unknown error in inv()!");
         }
 
         /* Computes the reciprocal norm */
-        dgecon_("1", &n, A, &lda, &anorm, &rcond, w1, w2, &info);
+        dgecon_("1", &nn, A, &lda, &anorm, &rcond, w1, w2, &info);
         if(info != 0)
         {
             throw KeyCppException("Unknown error in inv()!");
@@ -576,12 +583,12 @@ namespace keycpp
             cerr << "Warning: Matrix is close to singular or badly scaled. Results may be inaccurate.\nrcond = " << rcond << endl;
         }
 
-        dgetri_(&n,A,&n,iw,w1,&lwork,&info);
+        dgetri_(&nn,A,&nn,iw,w1,&lwork,&info);
 
         matrix<double> A_out(A_in.size(1),A_in.size(2));
-        for(int ii = 0; ii < n; ii++)
+        for(unsigned int ii = 0; ii < n; ii++)
         {
-            for(int jj = 0; jj < n; jj++)
+            for(unsigned int jj = 0; jj < n; jj++)
             {
                 A_out(jj,ii) = A[ii*n + jj];
             }
@@ -606,21 +613,20 @@ namespace keycpp
 			throw KeyCppException("Error in inv()! Matrix must be square!");
 		}
 		
-		int n = A_in.size(1);
-		int m = A_in.size(2);
-		int nrhs = 1;
+		unsigned int n = (unsigned)A_in.size(1);
+		int nn = n;
 
         int info, lda;
         double anorm, rcond;
         
         int *iw = new int[A_in.size(1)];
-        int lwork = A_in.size(1)*A_in.size(2) + 64;
+        int lwork = (int)(A_in.size(1)*A_in.size(2)) + 64;
         std::complex<double> *w1 = new std::complex<double>[lwork];
         double *w2 = new double[lwork];
         std::complex<double> *A = new std::complex<double>[A_in.size(1)*A_in.size(2)];
-        for(int ii = 0; ii < A_in.size(2); ii++)
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
         {
-            for(int jj = 0; jj < A_in.size(1); jj++)
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
             {
                 A[ii*A_in.size(1) + jj] = A_in(jj,ii);
             }
@@ -628,17 +634,17 @@ namespace keycpp
         lda = n;
 
         /* Computes the norm of A */
-        anorm = zlange_("1", &n, &n, A, &lda, w2);
+        anorm = zlange_("1", &nn, &nn, A, &lda, w2);
 
         /* Modifies A in place with a LU decomposition */
-        zgetrf_(&n, &n, A, &lda, iw, &info);
+        zgetrf_(&nn, &nn, A, &lda, iw, &info);
         if(info != 0)
         {
             throw KeyCppException("Unknown error in inv()!");
         }
 
         /* Computes the reciprocal norm */
-        zgecon_("1", &n, A, &lda, &anorm, &rcond, w1, w2, &info);
+        zgecon_("1", &nn, A, &lda, &anorm, &rcond, w1, w2, &info);
         if(info != 0)
         {
             throw KeyCppException("Unknown error in inv()!");
@@ -649,12 +655,12 @@ namespace keycpp
             cerr << "Warning: Matrix is close to singular or badly scaled. Results may be inaccurate.\nrcond = " << rcond << endl;
         }
         
-        zgetri_(&n,A,&n,iw,w1,&lwork,&info);
+        zgetri_(&nn,A,&nn,iw,w1,&lwork,&info);
 
         matrix<complex<double>> A_out(A_in.size(1),A_in.size(2));
-        for(int ii = 0; ii < n; ii++)
+        for(unsigned int ii = 0; ii < n; ii++)
         {
-            for(int jj = 0; jj < n; jj++)
+            for(unsigned int jj = 0; jj < n; jj++)
             {
                 A_out(jj,ii) = A[ii*n + jj];
             }
@@ -696,11 +702,11 @@ namespace keycpp
 		}
 		else
 		{
-	        int m = A_in.size(1);
-	        int n = A_in.size(2);
+	        int m = (int)A_in.size(1);
+	        int n = (int)A_in.size(2);
 
-            int info, lda;
-            int lwork = A_in.size(1)*A_in.size(2) + 64;
+            int lda;
+            int lwork = (int)(A_in.size(1)*A_in.size(2)) + 64;
             double *w1 = new double[lwork];
             lda = m;
             anorm = dlange_(method.c_str(), &m, &n, &A_in.mData[0], &lda, w1);
@@ -721,22 +727,23 @@ namespace keycpp
 		}
 		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
 		
-	    int m = A_in.size(1);
-	    int n = A_in.size(2);
-
-        int info, lda, ldu, ldvt;
-        double anorm;
+	    unsigned int m = (unsigned)A_in.size(1);
+	    unsigned int n = (unsigned)A_in.size(2);
+	    int nn = n, mm = m;
         
-        int col_u;
+        unsigned int ldvt;
+        int info, lda, ldu, ldvt2;
+        
+        unsigned int col_u;
         
         SVD_type<double,double> out;
-        int lwork = A_in.size(1)*A_in.size(2) + 64;
+        int lwork = (int)(A_in.size(1)*A_in.size(2)) + 64;
         double *work = new double[lwork];
         double *A = new double[A_in.size(1)*A_in.size(2)];
         double *U;
         double *S;
         double *VT;
-        int min_dim;
+        unsigned int min_dim;
         if(m > n)
         {
             min_dim = n;
@@ -746,9 +753,9 @@ namespace keycpp
             min_dim = m;
         }
         S = new double[min_dim];
-        for(int ii = 0; ii < A_in.size(2); ii++)
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
         {
-            for(int jj = 0; jj < A_in.size(1); jj++)
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
             {
                 A[ii*A_in.size(1) + jj] = A_in(jj,ii);
             }
@@ -815,8 +822,8 @@ namespace keycpp
         {
             throw KeyCppException("Unknown argument to svd()!");
         }
-		
-		dgesvd_(jobu.c_str(), jobvt.c_str(), &m, &n, A, &lda, S, U, &ldu, VT, &ldvt, work, &lwork, &info);
+		ldvt2 = ldvt;
+		dgesvd_(jobu.c_str(), jobvt.c_str(), &mm, &nn, A, &lda, S, U, &ldu, VT, &ldvt2, work, &lwork, &info);
                  
         if(info != 0)
         {
@@ -826,21 +833,21 @@ namespace keycpp
         out.U = matrix<double>(m,col_u);
         out.V = matrix<double>(n,ldvt);
         
-        for(int ii = 0; ii < min_dim; ii++)
+        for(unsigned int ii = 0; ii < min_dim; ii++)
         {
             out.S(ii,ii) = S[ii];
         }
-        for(int ii = 0; ii < m; ii++)
+        for(unsigned int ii = 0; ii < m; ii++)
         {
-            for(int jj = 0; jj < col_u; jj++)
+            for(unsigned int jj = 0; jj < col_u; jj++)
             {
                 out.U(ii,jj) = U[jj*m + ii];
             }
         }
         
-        for(int ii = 0; ii < n; ii++)
+        for(unsigned int ii = 0; ii < n; ii++)
         {
-            for(int jj = 0; jj < ldvt; jj++)
+            for(unsigned int jj = 0; jj < ldvt; jj++)
             {
                 out.V(ii,jj) = VT[ii*ldvt + jj];
             }
@@ -883,11 +890,11 @@ namespace keycpp
 		}
 		else
 		{
-	        int m = A_in.size(1);
-	        int n = A_in.size(2);
+	        int m = (int)A_in.size(1);
+	        int n = (int)A_in.size(2);
 
-            int info, lda;
-            int lwork = A_in.size(1)*A_in.size(2) + 64;
+            int lda;
+            int lwork = (int)(A_in.size(1)*A_in.size(2)) + 64;
             double *w1 = new double[lwork];
             lda = m;
             anorm = zlange_(method.c_str(), &m, &n, &A_in.mData[0], &lda, w1);
@@ -908,23 +915,24 @@ namespace keycpp
 		}
 		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
 		
-	    int m = A_in.size(1);
-	    int n = A_in.size(2);
+	    unsigned int m = (unsigned)A_in.size(1);
+	    unsigned int n = (unsigned)A_in.size(2);
+	    int mm = (int)m, nn = (int)n;
 
-        int info, lda, ldu, ldvt;
-        double anorm;
+        unsigned int ldvt;
+        int info, lda, ldu, ldvt2;
         
-        int col_u;
+        unsigned int col_u;
         
         SVD_type<std::complex<double>,double> out;
-        int lwork = A_in.size(1)*A_in.size(2) + 64;
+        int lwork = (int)(A_in.size(1)*A_in.size(2)) + 64;
         double *rwork = new double[lwork];
         complex<double> *work = new complex<double>[lwork];
         complex<double> *A = new complex<double>[A_in.size(1)*A_in.size(2)];
         complex<double> *U;
         double *S;
         complex<double> *VT;
-        int min_dim;
+        unsigned int min_dim;
         if(m > n)
         {
             min_dim = n;
@@ -934,9 +942,9 @@ namespace keycpp
             min_dim = m;
         }
         S = new double[min_dim];
-        for(int ii = 0; ii < A_in.size(2); ii++)
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
         {
-            for(int jj = 0; jj < A_in.size(1); jj++)
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
             {
                 A[ii*A_in.size(1) + jj] = A_in(jj,ii);
             }
@@ -1003,8 +1011,8 @@ namespace keycpp
         {
             throw KeyCppException("Unknown argument to svd()!");
         }
-		
-		zgesvd_(jobu.c_str(), jobvt.c_str(), &m, &n, A, &lda, S, U, &ldu, VT, &ldvt, work, &lwork, rwork, &info);
+		ldvt2 = ldvt;
+		zgesvd_(jobu.c_str(), jobvt.c_str(), &mm, &nn, A, &lda, S, U, &ldu, VT, &ldvt2, work, &lwork, rwork, &info);
                  
         if(info != 0)
         {
@@ -1014,21 +1022,21 @@ namespace keycpp
         out.U = matrix<complex<double>>(m,col_u);
         out.V = matrix<complex<double>>(n,ldvt);
         
-        for(int ii = 0; ii < min_dim; ii++)
+        for(unsigned int ii = 0; ii < min_dim; ii++)
         {
             out.S(ii,ii) = S[ii];
         }
-        for(int ii = 0; ii < m; ii++)
+        for(unsigned int ii = 0; ii < m; ii++)
         {
-            for(int jj = 0; jj < col_u; jj++)
+            for(unsigned int jj = 0; jj < col_u; jj++)
             {
                 out.U(ii,jj) = U[jj*m + ii];
             }
         }
         
-        for(int ii = 0; ii < n; ii++)
+        for(unsigned int ii = 0; ii < n; ii++)
         {
-            for(int jj = 0; jj < ldvt; jj++)
+            for(unsigned int jj = 0; jj < ldvt; jj++)
             {
                 out.V(ii,jj) = VT[ii*ldvt + jj];
             }
