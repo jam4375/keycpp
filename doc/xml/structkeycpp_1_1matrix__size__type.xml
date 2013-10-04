@@ -3,9 +3,9 @@
   <compounddef id="structkeycpp_1_1matrix__size__type" kind="struct" prot="public">
     <compoundname>keycpp::matrix_size_type</compoundname>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structkeycpp_1_1matrix__size__type_1a1f4893efb4e5b2da85019e0895a06d0c" prot="public" static="no" mutable="no">
-        <type>long unsigned int</type>
-        <definition>long unsigned int keycpp::matrix_size_type::rows</definition>
+      <memberdef kind="variable" id="structkeycpp_1_1matrix__size__type_1a25a616d584e78820d6b00c689e39038e" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t keycpp::matrix_size_type::rows</definition>
         <argsstring></argsstring>
         <name>rows</name>
         <briefdescription>
@@ -16,9 +16,9 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="36" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="36" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structkeycpp_1_1matrix__size__type_1a767a412ec6534bed823157ac5a62ec21" prot="public" static="no" mutable="no">
-        <type>long unsigned int</type>
-        <definition>long unsigned int keycpp::matrix_size_type::cols</definition>
+      <memberdef kind="variable" id="structkeycpp_1_1matrix__size__type_1a4115aab64a45e14a9e77d575ffdda951" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t keycpp::matrix_size_type::cols</definition>
         <argsstring></argsstring>
         <name>cols</name>
         <briefdescription>
@@ -36,8 +36,8 @@
     </detaileddescription>
     <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="35" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="34" bodyend="38"/>
     <listofallmembers>
-      <member refid="structkeycpp_1_1matrix__size__type_1a767a412ec6534bed823157ac5a62ec21" prot="public" virt="non-virtual"><scope>keycpp::matrix_size_type</scope><name>cols</name></member>
-      <member refid="structkeycpp_1_1matrix__size__type_1a1f4893efb4e5b2da85019e0895a06d0c" prot="public" virt="non-virtual"><scope>keycpp::matrix_size_type</scope><name>rows</name></member>
+      <member refid="structkeycpp_1_1matrix__size__type_1a4115aab64a45e14a9e77d575ffdda951" prot="public" virt="non-virtual"><scope>keycpp::matrix_size_type</scope><name>cols</name></member>
+      <member refid="structkeycpp_1_1matrix__size__type_1a25a616d584e78820d6b00c689e39038e" prot="public" virt="non-virtual"><scope>keycpp::matrix_size_type</scope><name>rows</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

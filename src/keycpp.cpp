@@ -415,28 +415,17 @@ namespace keycpp
             cerr << "Warning: Matrix is close to singular or badly scaled. Results may be inaccurate.\nrcond = " << rcond << endl;
         }
         
-        complex<double> *b = new complex<double>[n];
-        for(unsigned int ii = 0; ii < n; ii++)
-        {
-            b[ii] = b_in[ii];
-        }
-        zgetrs_("N", &m, &nrhs, A, &lda, iw, b, &nn, &info);
+        vector_k<complex<double>> x_out(b_in);
+        zgetrs_("N", &m, &nrhs, A, &lda, iw, &x_out[0], &nn, &info);
         if(info != 0)
         {
             throw KeyCppException("Unknown error in linsolve()!");
-        }
-        
-        vector_k<complex<double>> x_out(n);
-        for(unsigned int ii = 0; ii < n; ii++)
-        {
-            x_out[ii] = b[ii];
         }
         
         delete [] iw;
         delete [] w1;
         delete [] w2;
         delete [] A;
-        delete [] b;
         
 		return x_out;
 	}
@@ -503,29 +492,17 @@ namespace keycpp
             cerr << "Warning: Matrix is close to singular or badly scaled. Results may be inaccurate.\nrcond = " << rcond << endl;
         }
         
-        double *b = new double[n];
-        for(unsigned int ii = 0; ii < n; ii++)
-        {
-            b[ii] = b_in[ii];
-        }
-        
-        dgetrs_("N", &mm, &nrhs, A, &lda, iw, b, &nn, &info);
+        vector_k<double> x_out(b_in);
+        dgetrs_("N", &mm, &nrhs, A, &lda, iw, &x_out[0], &nn, &info);
         if(info != 0)
         {
             throw KeyCppException("Unknown error in linsolve()!");
-        }
-        
-        vector_k<double> x_out(n);
-        for(unsigned int ii = 0; ii < n; ii++)
-        {
-            x_out[ii] = b[ii];
         }
         
         delete [] iw;
         delete [] w1;
         delete [] w2;
         delete [] A;
-        delete [] b;
         
 		return x_out;
 	}

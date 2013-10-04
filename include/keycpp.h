@@ -473,7 +473,7 @@ namespace keycpp
 	    {
 	        throw KeyCppException("Cannot add vectors of different sizes!");
 	    }
-	    int N = (int)v1.size(), incx = 1, incy = 1;
+	    int N = (int)v1.size(), incx = (int)v1.get_inc(), incy = 1;
 	    double alpha = 1.0;
 		vector_k<double> result(v2);
 	    daxpy_(&N, &alpha, &v1[0], &incx, &result[0], &incy);
@@ -491,7 +491,7 @@ namespace keycpp
 	    {
 	        throw KeyCppException("Cannot add vectors of different sizes!");
 	    }
-	    int N = (int)v1.size(), incx = 1, incy = 1;
+	    int N = (int)v1.size(), incx = (int)v1.get_inc(), incy = 1;
 	    std::complex<double> alpha = 1.0;
 		vector_k<std::complex<double>> result(v2);
 	    zaxpy_(&N, &alpha, &v1[0], &incx, &result[0], &incy);
@@ -621,7 +621,7 @@ namespace keycpp
 	    {
 	        throw KeyCppException("Cannot subtract vectors of different sizes!");
 	    }
-	    int N = (int)v1.size(), incx = 1, incy = 1;
+	    int N = (int)v1.size(), incx = (int)v2.get_inc(), incy = 1;
 	    double alpha = -1.0;
 		vector_k<double> result(v1);
 	    daxpy_(&N, &alpha, &v2[0], &incx, &result[0], &incy);
@@ -639,7 +639,7 @@ namespace keycpp
 	    {
 	        throw KeyCppException("Cannot subtract vectors of different sizes!");
 	    }
-	    int N = (int)v1.size(), incx = 1, incy = 1;
+	    int N = (int)v1.size(), incx = (int)v2.get_inc(), incy = 1;
 	    std::complex<double> alpha = -1.0;
 		vector_k<std::complex<double>> result(v1);
 	    zaxpy_(&N, &alpha, &v2[0], &incx, &result[0], &incy);
@@ -718,7 +718,7 @@ namespace keycpp
 	inline vector_k<double> operator*(const double& a, const vector_k<double>& v1)
 	{
 		vector_k<double> v2(v1);
-		int N = (int)v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = (int)v1.get_inc();
 		dscal_(&N, &a, &v2[0], &incx);
 		return v2;
 	}
@@ -727,7 +727,7 @@ namespace keycpp
 	inline vector_k<std::complex<double>> operator*(const std::complex<double>& a, const vector_k<std::complex<double>>& v1)
 	{
 		vector_k<std::complex<double>> v2(v1);
-		int N = (int)v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = (int)v2.get_inc();
 		zscal_(&N, &a, &v2[0], &incx);
 		return v2;
 	}
@@ -746,7 +746,7 @@ namespace keycpp
 	inline vector_k<double> operator*(const vector_k<double>& v1, const double& a)
 	{
 		vector_k<double> v2(v1);
-		int N = (int)v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = (int)v2.get_inc();
 		dscal_(&N, &a, &v2[0], &incx);
 		return v2;
 	}
@@ -755,7 +755,7 @@ namespace keycpp
 	inline vector_k<std::complex<double>> operator*(const vector_k<std::complex<double>>& v1, const std::complex<double>& a)
 	{
 		vector_k<std::complex<double>> v2(v1);
-		int N = (int)v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = (int)v2.get_inc();
 		zscal_(&N, &a, &v2[0], &incx);
 		return v2;
 	}
@@ -775,7 +775,7 @@ namespace keycpp
 	{
 		vector_k<double> v2(v1);
 		double a = -1.0;
-		int N = (int)v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = (int)v2.get_inc();
 		dscal_(&N, &a, &v2[0], &incx);
 		return v2;
 	}
@@ -785,7 +785,7 @@ namespace keycpp
 	{
 		vector_k<std::complex<double>> v2(v1);
 		std::complex<double> a = -1.0;
-		int N = (int)v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = (int)v2.get_inc();
 		zscal_(&N, &a, &v2[0], &incx);
 		return v2;
 	}
@@ -850,7 +850,7 @@ namespace keycpp
 	{
 		vector_k<double> v2(v1);
 		double aa = 1.0/a;
-		int N = (int)v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = (int)v2.get_inc();
 		dscal_(&N, &aa, &v2[0], &incx);
 		return v2;
 	}
@@ -860,7 +860,7 @@ namespace keycpp
 	{
 		vector_k<std::complex<double>> v2(v1);
 		std::complex<double> aa = 1.0/a;
-		int N = (int)v1.size(), incx = 1;
+		int N = (int)v1.size(), incx = (int)v2.get_inc();
 		zscal_(&N, &aa, &v2[0], &incx);
 		return v2;
 	}
@@ -2615,9 +2615,9 @@ namespace keycpp
      *         the operator << is defined for its type.
      */
 	template<class T>
-	void disp(const T &x)
+	void disp(const T &x, std::ostream& outStream = std::cout)
 	{
-	    std::cout << x << std::endl;
+	    outStream << x << std::endl;
 	    return;
 	}
 	

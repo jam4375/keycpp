@@ -183,29 +183,29 @@
   </compound>
   <compound refid="classkeycpp_1_1matrix" kind="class"><name>keycpp::matrix</name>
     <member refid="classkeycpp_1_1matrix_1a6ddee82f1659df325d1d67f17d261c19" kind="variable"><name>mData</name></member>
-    <member refid="classkeycpp_1_1matrix_1abe4763f5477a7d43a850ad340760b9bb" kind="variable"><name>mRows</name></member>
-    <member refid="classkeycpp_1_1matrix_1a5ee47ddd1b351ed29b7caa9c9f8f5a0d" kind="variable"><name>mCols</name></member>
+    <member refid="classkeycpp_1_1matrix_1a82011d83357d4fbe2d2a516257567164" kind="variable"><name>mRows</name></member>
+    <member refid="classkeycpp_1_1matrix_1a3b912d93e1a713c8f0b7056d6a747be0" kind="variable"><name>mCols</name></member>
     <member refid="classkeycpp_1_1matrix_1a67ccf4f864b38b69dfd8bdb507be243c" kind="function"><name>matrix</name></member>
-    <member refid="classkeycpp_1_1matrix_1a5a24003e2c33f18b3f854bab4d68db7f" kind="function"><name>matrix</name></member>
+    <member refid="classkeycpp_1_1matrix_1af9abe487935979b178a5ba19bbc2407d" kind="function"><name>matrix</name></member>
     <member refid="classkeycpp_1_1matrix_1a0a591c69e753fe21b73031192d8b7209" kind="function"><name>matrix</name></member>
     <member refid="classkeycpp_1_1matrix_1ad8797411bc30cc0d42e0e9b8bcc899d7" kind="function"><name>matrix</name></member>
-    <member refid="classkeycpp_1_1matrix_1a7ac2b9bb6b42468e63cce8bd527811fb" kind="function"><name>operator()</name></member>
-    <member refid="classkeycpp_1_1matrix_1a8fd3fc1c1f75f80e37637bc10c3d8aa0" kind="function"><name>operator()</name></member>
+    <member refid="classkeycpp_1_1matrix_1a1d6aee76640bf28088de06c41d2ed0cb" kind="function"><name>operator()</name></member>
+    <member refid="classkeycpp_1_1matrix_1aad7f8337116fdca0bb494fb1b5e2e8bc" kind="function"><name>operator()</name></member>
     <member refid="classkeycpp_1_1matrix_1a02963edbfa5435269e367e12fb2cdd59" kind="function"><name>operator*</name></member>
     <member refid="classkeycpp_1_1matrix_1add1f4ca03e1cce57574c905ab7ca89fe" kind="function"><name>operator*</name></member>
     <member refid="classkeycpp_1_1matrix_1a8c0520cf5064379afa5128cf7f660832" kind="function"><name>operator+</name></member>
     <member refid="classkeycpp_1_1matrix_1a78655e73267b48e16909a68291f4c074" kind="function"><name>operator+=</name></member>
     <member refid="classkeycpp_1_1matrix_1a1c6cb00f8859e6486a7054f11b1c7e6a" kind="function"><name>operator-</name></member>
-    <member refid="classkeycpp_1_1matrix_1a64df749d122ac1272738836329e76b24" kind="function"><name>size</name></member>
+    <member refid="classkeycpp_1_1matrix_1ab1844162a6b015001d1295629ed8978c" kind="function"><name>size</name></member>
     <member refid="classkeycpp_1_1matrix_1ad522f701e86eafc344d8904d4f0a8f19" kind="function"><name>empty</name></member>
-    <member refid="classkeycpp_1_1matrix_1ad8fe3c5d70837cf529f35c85196f3890" kind="function"><name>row</name></member>
+    <member refid="classkeycpp_1_1matrix_1ace5c8485795a33d10d1cd58ca6636b68" kind="function"><name>row</name></member>
     <member refid="classkeycpp_1_1matrix_1a5fc527ff5096ff162580db9c9eb1637e" kind="function"><name>setLastRow</name></member>
     <member refid="classkeycpp_1_1matrix_1a5cbaeebb6b9c8d87656728c8f2183119" kind="function"><name>addLastRow</name></member>
-    <member refid="classkeycpp_1_1matrix_1ae2a7a1a14ded018f2b3740ff3a8ca6a1" kind="function"><name>getRow</name></member>
+    <member refid="classkeycpp_1_1matrix_1a6f237ab7b8559f85f0279d2411b6e9fa" kind="function"><name>getRow</name></member>
     <member refid="classkeycpp_1_1matrix_1aa37578e0da4d4f7531feed0627846a5a" kind="function"><name>getLastRow</name></member>
-    <member refid="classkeycpp_1_1matrix_1a3a24c261103af23606ca1505144869d5" kind="function"><name>getCol</name></member>
-    <member refid="classkeycpp_1_1matrix_1a1f70c345e600bae285d2ceb4ec616fc2" kind="function"><name>col</name></member>
-    <member refid="classkeycpp_1_1matrix_1a453f9c8670ff98dda14dcc9b656a5958" kind="function"><name>reserve</name></member>
+    <member refid="classkeycpp_1_1matrix_1ac930da1cf8a44eb685d565288c28f731" kind="function"><name>getCol</name></member>
+    <member refid="classkeycpp_1_1matrix_1a65e7a0716a3da9359c9db6d2e88447be" kind="function"><name>col</name></member>
+    <member refid="classkeycpp_1_1matrix_1a54b4b47a34e9946ff4f98995f20408a8" kind="function"><name>reserve</name></member>
     <member refid="classkeycpp_1_1matrix_1a83c99c62f50eca6f4ddee84bc48ebdbc" kind="function"><name>operator*</name></member>
     <member refid="classkeycpp_1_1matrix_1a472df909e5b8722de11df74046817db9" kind="function"><name>operator*</name></member>
     <member refid="classkeycpp_1_1matrix_1a0e9fdbebdf1d95dd225a2bd1310cba30" kind="function"><name>operator*</name></member>
@@ -217,8 +217,8 @@
     <member refid="structkeycpp_1_1matrix__find__type_1afa61a4c5c45be1ce35a4c35e5c71ff66" kind="variable"><name>v</name></member>
   </compound>
   <compound refid="structkeycpp_1_1matrix__size__type" kind="struct"><name>keycpp::matrix_size_type</name>
-    <member refid="structkeycpp_1_1matrix__size__type_1a1f4893efb4e5b2da85019e0895a06d0c" kind="variable"><name>rows</name></member>
-    <member refid="structkeycpp_1_1matrix__size__type_1a767a412ec6534bed823157ac5a62ec21" kind="variable"><name>cols</name></member>
+    <member refid="structkeycpp_1_1matrix__size__type_1a25a616d584e78820d6b00c689e39038e" kind="variable"><name>rows</name></member>
+    <member refid="structkeycpp_1_1matrix__size__type_1a4115aab64a45e14a9e77d575ffdda951" kind="variable"><name>cols</name></member>
   </compound>
   <compound refid="classkeycpp_1_1_matrix_exception" kind="class"><name>keycpp::MatrixException</name>
     <member refid="classkeycpp_1_1_matrix_exception_1ae558e1658f52404739cbb6fe784f196d" kind="function"><name>MatrixException</name></member>
@@ -317,7 +317,6 @@
     <member refid="classkeycpp_1_1vector__k_1a2dea1dcfadd6a74e75961940a95bb10d" kind="variable"><name>buffer</name></member>
     <member refid="classkeycpp_1_1vector__k_1a0811d7f18a7f0c608735424203d575b4" kind="variable"><name>dontFree</name></member>
     <member refid="classkeycpp_1_1vector__k_1a245bd9e09e97babbd19328d25c33695e" kind="function"><name>vector_k</name></member>
-    <member refid="classkeycpp_1_1vector__k_1a2fa975294c1ae939afa67863d3b84fc0" kind="function"><name>vector_k</name></member>
     <member refid="classkeycpp_1_1vector__k_1a1f65dfce13d605312c497195081b71fa" kind="function"><name>vector_k</name></member>
     <member refid="classkeycpp_1_1vector__k_1a6902434fbd3b5ebbbedc1b068c3df3ec" kind="function"><name>vector_k</name></member>
     <member refid="classkeycpp_1_1vector__k_1a5b6df14409684df91f883c3bb33204f5" kind="function"><name>vector_k</name></member>
@@ -343,6 +342,7 @@
     <member refid="classkeycpp_1_1vector__k_1a318832966719bc35aa0147ec2aeabb6f" kind="function"><name>operator=</name></member>
     <member refid="classkeycpp_1_1vector__k_1a926f7d20093e3b36e92f10aaeea1e909" kind="function"><name>clear</name></member>
     <member refid="classkeycpp_1_1vector__k_1a54ffbb92ed1926e6066d26db886b4132" kind="function"><name>operator std::vector&lt; T &gt;</name></member>
+    <member refid="classkeycpp_1_1vector__k_1a09f9ee871078a9f6602d564088a0e2ac" kind="function"><name>get_inc</name></member>
   </compound>
   <compound refid="namespaceboost" kind="namespace"><name>boost</name>
   </compound>
@@ -553,7 +553,7 @@
     <member refid="namespacekeycpp_1af9dec3da4533a1db21a6c6c4fe8e740a" kind="function"><name>print</name></member>
     <member refid="namespacekeycpp_1abe567d1c5cdf91722dfbe5da89e859e8" kind="function"><name>sort</name></member>
     <member refid="namespacekeycpp_1a0ab724c8ffc30f7beac54280a4ee81eb" kind="function"><name>sort</name></member>
-    <member refid="namespacekeycpp_1a6a8a286886d48471685b18b7782f1e4a" kind="function"><name>disp</name></member>
+    <member refid="namespacekeycpp_1af4a2245da139cf6cf2e03426476b3b88" kind="function"><name>disp</name></member>
     <member refid="namespacekeycpp_1aba69db64fe38ad271de1939d3f1a5520" kind="function"><name>input</name></member>
     <member refid="namespacekeycpp_1a4bca7924aad17a920f2f5f0606e6d9a9" kind="function"><name>str2num</name></member>
     <member refid="namespacekeycpp_1aa605bad9095a6c529656926dc4fb35cf" kind="function"><name>length</name></member>

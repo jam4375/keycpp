@@ -535,7 +535,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;            {</div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                <span class="keywordflow">throw</span> KeyCppException(<span class="stringliteral">&quot;Cannot add vectors of different sizes!&quot;</span>);</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;            }</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            <span class="keywordtype">int</span> N = (int)v1.size(), incx = 1, incy = 1;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            <span class="keywordtype">int</span> N = (int)v1.size(), incx = (int)v1.get_inc(), incy = 1;</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            <span class="keywordtype">double</span> alpha = 1.0;</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                vector_k&lt;double&gt; result(v2);</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;            <a class="code" href="namespacekeycpp.html#ae99c5b242a21ba683701ccb6ab6534b1" title="This provides a C interface to BLAS&#39;s double vector addition function.">daxpy_</a>(&amp;N, &amp;alpha, &amp;v1[0], &amp;incx, &amp;result[0], &amp;incy);</div>
@@ -553,7 +553,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            {</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                <span class="keywordflow">throw</span> KeyCppException(<span class="stringliteral">&quot;Cannot add vectors of different sizes!&quot;</span>);</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;            }</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;            <span class="keywordtype">int</span> N = (int)v1.size(), incx = 1, incy = 1;</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;            <span class="keywordtype">int</span> N = (int)v1.size(), incx = (int)v1.get_inc(), incy = 1;</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            std::complex&lt;double&gt; alpha = 1.0;</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                vector_k&lt;std::complex&lt;double&gt;&gt; result(v2);</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            <a class="code" href="namespacekeycpp.html#a6460fa334239dde761d8f737b9438fed" title="This provides a C interface to BLAS&#39;s complex double vector addition function.">zaxpy_</a>(&amp;N, &amp;alpha, &amp;v1[0], &amp;incx, &amp;result[0], &amp;incy);</div>
@@ -683,7 +683,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;            {</div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                <span class="keywordflow">throw</span> KeyCppException(<span class="stringliteral">&quot;Cannot subtract vectors of different sizes!&quot;</span>);</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;            }</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;            <span class="keywordtype">int</span> N = (int)v1.size(), incx = 1, incy = 1;</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;            <span class="keywordtype">int</span> N = (int)v1.size(), incx = (int)v2.get_inc(), incy = 1;</div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            <span class="keywordtype">double</span> alpha = -1.0;</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                vector_k&lt;double&gt; result(v1);</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            <a class="code" href="namespacekeycpp.html#ae99c5b242a21ba683701ccb6ab6534b1" title="This provides a C interface to BLAS&#39;s double vector addition function.">daxpy_</a>(&amp;N, &amp;alpha, &amp;v2[0], &amp;incx, &amp;result[0], &amp;incy);</div>
@@ -701,7 +701,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            {</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                <span class="keywordflow">throw</span> KeyCppException(<span class="stringliteral">&quot;Cannot subtract vectors of different sizes!&quot;</span>);</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            }</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;            <span class="keywordtype">int</span> N = (int)v1.size(), incx = 1, incy = 1;</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;            <span class="keywordtype">int</span> N = (int)v1.size(), incx = (int)v2.get_inc(), incy = 1;</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;            std::complex&lt;double&gt; alpha = -1.0;</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                vector_k&lt;std::complex&lt;double&gt;&gt; result(v1);</div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;            <a class="code" href="namespacekeycpp.html#a6460fa334239dde761d8f737b9438fed" title="This provides a C interface to BLAS&#39;s complex double vector addition function.">zaxpy_</a>(&amp;N, &amp;alpha, &amp;v2[0], &amp;incx, &amp;result[0], &amp;incy);</div>
@@ -780,7 +780,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keyword">inline</span> vector_k&lt;double&gt; operator*(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; a, <span class="keyword">const</span> vector_k&lt;double&gt;&amp; v1)</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        {</div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;                vector_k&lt;double&gt; v2(v1);</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = 1;</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = (int)v1.get_inc();</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                <a class="code" href="namespacekeycpp.html#a7d249dd978770119c1b91d88009fefbd" title="This provides a C interface to BLAS&#39;s double scalar-vector multiplication function.">dscal_</a>(&amp;N, &amp;a, &amp;v2[0], &amp;incx);</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                <span class="keywordflow">return</span> v2;</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        }</div>
@@ -789,7 +789,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        <span class="keyword">inline</span> vector_k&lt;std::complex&lt;double&gt;&gt; operator*(<span class="keyword">const</span> std::complex&lt;double&gt;&amp; a, <span class="keyword">const</span> vector_k&lt;std::complex&lt;double&gt;&gt;&amp; v1)</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        {</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                vector_k&lt;std::complex&lt;double&gt;&gt; v2(v1);</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = 1;</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = (int)v2.get_inc();</div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                <a class="code" href="namespacekeycpp.html#ad9dd69d0d355e4805a832813199f1dff" title="This provides a C interface to BLAS&#39;s complex double scalar-vector multiplication function...">zscal_</a>(&amp;N, &amp;a, &amp;v2[0], &amp;incx);</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                <span class="keywordflow">return</span> v2;</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        }</div>
@@ -808,7 +808,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        <span class="keyword">inline</span> vector_k&lt;double&gt; operator*(<span class="keyword">const</span> vector_k&lt;double&gt;&amp; v1, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; a)</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        {</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                vector_k&lt;double&gt; v2(v1);</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = 1;</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = (int)v2.get_inc();</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                <a class="code" href="namespacekeycpp.html#a7d249dd978770119c1b91d88009fefbd" title="This provides a C interface to BLAS&#39;s double scalar-vector multiplication function.">dscal_</a>(&amp;N, &amp;a, &amp;v2[0], &amp;incx);</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                <span class="keywordflow">return</span> v2;</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        }</div>
@@ -817,7 +817,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        <span class="keyword">inline</span> vector_k&lt;std::complex&lt;double&gt;&gt; operator*(<span class="keyword">const</span> vector_k&lt;std::complex&lt;double&gt;&gt;&amp; v1, <span class="keyword">const</span> std::complex&lt;double&gt;&amp; a)</div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        {</div>
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                vector_k&lt;std::complex&lt;double&gt;&gt; v2(v1);</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = 1;</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = (int)v2.get_inc();</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                <a class="code" href="namespacekeycpp.html#ad9dd69d0d355e4805a832813199f1dff" title="This provides a C interface to BLAS&#39;s complex double scalar-vector multiplication function...">zscal_</a>(&amp;N, &amp;a, &amp;v2[0], &amp;incx);</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                <span class="keywordflow">return</span> v2;</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        }</div>
@@ -837,7 +837,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        {</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                vector_k&lt;double&gt; v2(v1);</div>
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                <span class="keywordtype">double</span> a = -1.0;</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = 1;</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = (int)v2.get_inc();</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                <a class="code" href="namespacekeycpp.html#a7d249dd978770119c1b91d88009fefbd" title="This provides a C interface to BLAS&#39;s double scalar-vector multiplication function.">dscal_</a>(&amp;N, &amp;a, &amp;v2[0], &amp;incx);</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                <span class="keywordflow">return</span> v2;</div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        }</div>
@@ -847,7 +847,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        {</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                vector_k&lt;std::complex&lt;double&gt;&gt; v2(v1);</div>
 <div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                std::complex&lt;double&gt; a = -1.0;</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = 1;</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = (int)v2.get_inc();</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                <a class="code" href="namespacekeycpp.html#ad9dd69d0d355e4805a832813199f1dff" title="This provides a C interface to BLAS&#39;s complex double scalar-vector multiplication function...">zscal_</a>(&amp;N, &amp;a, &amp;v2[0], &amp;incx);</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                <span class="keywordflow">return</span> v2;</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        }</div>
@@ -912,7 +912,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;        {</div>
 <div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;                vector_k&lt;double&gt; v2(v1);</div>
 <div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;                <span class="keywordtype">double</span> aa = 1.0/a;</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = 1;</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = (int)v2.get_inc();</div>
 <div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;                <a class="code" href="namespacekeycpp.html#a7d249dd978770119c1b91d88009fefbd" title="This provides a C interface to BLAS&#39;s double scalar-vector multiplication function.">dscal_</a>(&amp;N, &amp;aa, &amp;v2[0], &amp;incx);</div>
 <div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;                <span class="keywordflow">return</span> v2;</div>
 <div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        }</div>
@@ -922,7 +922,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;        {</div>
 <div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;                vector_k&lt;std::complex&lt;double&gt;&gt; v2(v1);</div>
 <div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;                std::complex&lt;double&gt; aa = 1.0/a;</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = 1;</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;                <span class="keywordtype">int</span> N = (int)v1.size(), incx = (int)v2.get_inc();</div>
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                <a class="code" href="namespacekeycpp.html#ad9dd69d0d355e4805a832813199f1dff" title="This provides a C interface to BLAS&#39;s complex double scalar-vector multiplication function...">zscal_</a>(&amp;N, &amp;aa, &amp;v2[0], &amp;incx);</div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                <span class="keywordflow">return</span> v2;</div>
 <div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;        }</div>
@@ -2482,9 +2482,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l02612"></a><span class="lineno"> 2612</span>&#160;        }</div>
 <div class="line"><a name="l02613"></a><span class="lineno"> 2613</span>&#160;        </div>
 <div class="line"><a name="l02617"></a><span class="lineno"> 2617</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l02618"></a><span class="lineno"><a class="code" href="namespacekeycpp.html#a6a8a286886d48471685b18b7782f1e4a"> 2618</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="namespacekeycpp.html#a6a8a286886d48471685b18b7782f1e4a" title="Displays on standard output any parameter passed to it provided the operator &lt;&lt; is defined for its ty...">disp</a>(<span class="keyword">const</span> T &amp;x)</div>
+<div class="line"><a name="l02618"></a><span class="lineno"><a class="code" href="namespacekeycpp.html#af4a2245da139cf6cf2e03426476b3b88"> 2618</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="namespacekeycpp.html#af4a2245da139cf6cf2e03426476b3b88" title="Displays on standard output any parameter passed to it provided the operator &lt;&lt; is defined for its ty...">disp</a>(<span class="keyword">const</span> T &amp;x, std::ostream&amp; outStream = std::cout)</div>
 <div class="line"><a name="l02619"></a><span class="lineno"> 2619</span>&#160;        {</div>
-<div class="line"><a name="l02620"></a><span class="lineno"> 2620</span>&#160;            std::cout &lt;&lt; x &lt;&lt; std::endl;</div>
+<div class="line"><a name="l02620"></a><span class="lineno"> 2620</span>&#160;            outStream &lt;&lt; x &lt;&lt; std::endl;</div>
 <div class="line"><a name="l02621"></a><span class="lineno"> 2621</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l02622"></a><span class="lineno"> 2622</span>&#160;        }</div>
 <div class="line"><a name="l02623"></a><span class="lineno"> 2623</span>&#160;        </div>
@@ -3356,7 +3356,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 4 2013 10:39:50 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 4 2013 17:05:28 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

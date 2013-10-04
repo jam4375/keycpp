@@ -270,6 +270,18 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
         BOOST_CHECK_EQUAL(v2.front(),1111);
         BOOST_CHECK_EQUAL(v2.back(),2222);
     }
+    
+    // Test initialization values
+    {
+        keycpp::vector_k<int> v1(10);
+        BOOST_CHECK_EQUAL(v1[0],0);
+        BOOST_CHECK_EQUAL(v1[9],0);
+        
+        double tol = 1e-10;
+        keycpp::vector_k<double> v2(10);
+        BOOST_CHECK_CLOSE(v2[0],0.0,tol);
+        BOOST_CHECK_CLOSE(v2[9],0.0,tol);
+    }
 }
 
 BOOST_AUTO_TEST_SUITE_END()

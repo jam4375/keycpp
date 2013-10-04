@@ -15,7 +15,6 @@ namespace keycpp
         typedef size_t size_type;
 
         vector_k();
-        vector_k(size_t size);
         vector_k(size_t size, const T &initial);
         vector_k(T *ptr, size_t size, size_t pinc);
 		vector_k(const std::initializer_list<T>& lst);
@@ -53,6 +52,8 @@ namespace keycpp
             }
             return v1;
         };
+        
+        size_t get_inc() const {return inc;};
 
     private:
         size_t my_size;
@@ -74,7 +75,7 @@ namespace keycpp
         inc = 1;
         for(size_t ii = 0; ii < my_size; ii++)
         {
-            buffer[ii*inc] = v.buffer[ii];  
+            buffer[ii*inc] = v[ii];  
         }
     }
 
@@ -90,14 +91,7 @@ namespace keycpp
     }
 
     template<class T>
-    vector_k<T>::vector_k(size_t p_size) : my_size(p_size), my_capacity(p_size), buffer(new T[p_size])
-    {
-        dontFree = false;
-        inc = 1;
-    }
-
-    template<class T>
-    vector_k<T>::vector_k(size_t p_size, const T &initial) : my_size(p_size), my_capacity(p_size), buffer(new T[p_size])
+    vector_k<T>::vector_k(size_t p_size, const T &initial = T()) : my_size(p_size), my_capacity(p_size), buffer(new T[p_size])
     {
         dontFree = false;
         inc = 1;
