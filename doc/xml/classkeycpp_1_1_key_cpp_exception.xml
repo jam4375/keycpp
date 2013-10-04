@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="40" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="40" bodyend="40"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="49" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="49" bodyend="49"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -27,17 +27,6 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="14">
-        <label>keycpp::KeyCppException</label>
-        <link refid="classkeycpp_1_1_key_cpp_exception"/>
-        <childnode refid="15" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>runtime_error</label>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="16">
         <label>keycpp::KeyCppException</label>
         <link refid="classkeycpp_1_1_key_cpp_exception"/>
@@ -47,8 +36,19 @@
       <node id="17">
         <label>runtime_error</label>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="18">
+        <label>keycpp::KeyCppException</label>
+        <link refid="classkeycpp_1_1_key_cpp_exception"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>runtime_error</label>
+      </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="38" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="37" bodyend="41"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="47" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="46" bodyend="50"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1_key_cpp_exception_1af12dadc3f596f1e82cd65d55c2f64c65" prot="public" virt="non-virtual"><scope>keycpp::KeyCppException</scope><name>KeyCppException</name></member>
     </listofallmembers>

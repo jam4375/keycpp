@@ -41,7 +41,7 @@ namespace keycpp
 	static constexpr double pi = 3.1415926535897932384626433832795;
 	static constexpr double eps = std::numeric_limits<double>::epsilon();
 	static constexpr double Inf = std::numeric_limits<double>::infinity();
-	static constexpr double NaN = nan("");
+	static constexpr double NaN = std::numeric_limits<double>::quiet_NaN();
 	
 	class KeyCppException : public std::runtime_error
 	{
@@ -3170,18 +3170,9 @@ namespace keycpp
 	 *         a is infinite.
 	 */
 	template<class T>
-	vector_k<bool> isinf(const T &a)
+	bool isinf(const T &a)
 	{
-	    bool out;
-        if(isfinite(a))
-        {
-            out = false;
-        }
-        else
-        {
-            out = true;
-        }
-	    return out;
+	    return std::isinf(a);
 	}
 	
 	/** \brief Returns matrix containing boolean values that are true if
@@ -3195,7 +3186,7 @@ namespace keycpp
 	    {
 	        for(size_t jj = 0; jj < A.size(2); jj++)
 	        {
-	            out(ii,jj) = isinf(A(ii,jj));
+	            out(ii,jj) = std::isinf(A(ii,jj));
             }
 	    }
 	    return out;
@@ -3210,7 +3201,7 @@ namespace keycpp
 	    vector_k<bool> out(v1.size());
 	    for(size_t ii = 0; ii < v1.size(); ii++)
 	    {
-	        out[ii] = isinf(v1[ii]);
+	        out[ii] = std::isinf(v1[ii]);
 	    }
 	    return out;
 	}
@@ -3226,10 +3217,19 @@ namespace keycpp
 	    {
 	        for(size_t jj = 0; jj < A.size(2); jj++)
 	        {
-	            out(ii,jj) = isnan(A(ii,jj));
+	            out(ii,jj) = std::isnan(A(ii,jj));
             }
 	    }
 	    return out;
+	}
+	
+	/** \brief Returns boolean value that is true if
+	 *         a is NaN.
+	 */
+	template<class T>
+	bool isnan(const T &a)
+	{
+	    return std::isnan(a);
 	}
 	
 	/** \brief Returns vector containing boolean values that are true if
@@ -3241,7 +3241,7 @@ namespace keycpp
 	    vector_k<bool> out(v1.size());
 	    for(size_t ii = 0; ii < v1.size(); ii++)
 	    {
-	        out[ii] = isnan(v1[ii]);
+	        out[ii] = std::isnan(v1[ii]);
 	    }
 	    return out;
 	}

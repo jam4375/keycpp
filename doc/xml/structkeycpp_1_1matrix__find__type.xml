@@ -10,9 +10,9 @@
       </param>
     </templateparamlist>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structkeycpp_1_1matrix__find__type_1a34ca318ae96bc18fe29ac2a42ab1b520" prot="public" static="no" mutable="no">
-        <type>std::vector&lt; int &gt;</type>
-        <definition>std::vector&lt;int&gt; keycpp::matrix_find_type&lt; T &gt;::rows</definition>
+      <memberdef kind="variable" id="structkeycpp_1_1matrix__find__type_1aa24c1aaa15157e73257d21d4b1602476" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; size_t &gt;</type>
+        <definition>vector_k&lt;size_t&gt; keycpp::matrix_find_type&lt; T &gt;::rows</definition>
         <argsstring></argsstring>
         <name>rows</name>
         <briefdescription>
@@ -21,11 +21,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2676" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2676" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2747" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2747" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structkeycpp_1_1matrix__find__type_1a034a9a0159b07d68cdc688e36648667c" prot="public" static="no" mutable="no">
-        <type>std::vector&lt; int &gt;</type>
-        <definition>std::vector&lt;int&gt; keycpp::matrix_find_type&lt; T &gt;::cols</definition>
+      <memberdef kind="variable" id="structkeycpp_1_1matrix__find__type_1a86829d2b406e6879e4e0af71678beea6" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; size_t &gt;</type>
+        <definition>vector_k&lt;size_t&gt; keycpp::matrix_find_type&lt; T &gt;::cols</definition>
         <argsstring></argsstring>
         <name>cols</name>
         <briefdescription>
@@ -34,11 +34,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2677" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2677" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2748" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2748" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structkeycpp_1_1matrix__find__type_1a46d32e3990c9333dbbfc77adece4159b" prot="public" static="no" mutable="no">
-        <type>std::vector&lt; T &gt;</type>
-        <definition>std::vector&lt;T&gt; keycpp::matrix_find_type&lt; T &gt;::v</definition>
+      <memberdef kind="variable" id="structkeycpp_1_1matrix__find__type_1afa61a4c5c45be1ce35a4c35e5c71ff66" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+        <definition>vector_k&lt;T&gt; keycpp::matrix_find_type&lt; T &gt;::v</definition>
         <argsstring></argsstring>
         <name>v</name>
         <briefdescription>
@@ -47,18 +47,32 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2678" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2678" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2749" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2749" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2675" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2674" bodyend="2679"/>
+    <collaborationgraph>
+      <node id="28">
+        <label>keycpp::matrix_find_type&lt; T &gt;</label>
+        <link refid="structkeycpp_1_1matrix__find__type"/>
+        <childnode refid="29" relation="usage">
+          <edgelabel>cols</edgelabel>
+          <edgelabel>rows</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>keycpp::vector_k&lt; size_t &gt;</label>
+        <link refid="classkeycpp_1_1vector__k"/>
+      </node>
+    </collaborationgraph>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2746" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2745" bodyend="2750"/>
     <listofallmembers>
-      <member refid="structkeycpp_1_1matrix__find__type_1a034a9a0159b07d68cdc688e36648667c" prot="public" virt="non-virtual"><scope>keycpp::matrix_find_type</scope><name>cols</name></member>
-      <member refid="structkeycpp_1_1matrix__find__type_1a34ca318ae96bc18fe29ac2a42ab1b520" prot="public" virt="non-virtual"><scope>keycpp::matrix_find_type</scope><name>rows</name></member>
-      <member refid="structkeycpp_1_1matrix__find__type_1a46d32e3990c9333dbbfc77adece4159b" prot="public" virt="non-virtual"><scope>keycpp::matrix_find_type</scope><name>v</name></member>
+      <member refid="structkeycpp_1_1matrix__find__type_1a86829d2b406e6879e4e0af71678beea6" prot="public" virt="non-virtual"><scope>keycpp::matrix_find_type</scope><name>cols</name></member>
+      <member refid="structkeycpp_1_1matrix__find__type_1aa24c1aaa15157e73257d21d4b1602476" prot="public" virt="non-virtual"><scope>keycpp::matrix_find_type</scope><name>rows</name></member>
+      <member refid="structkeycpp_1_1matrix__find__type_1afa61a4c5c45be1ce35a4c35e5c71ff66" prot="public" virt="non-virtual"><scope>keycpp::matrix_find_type</scope><name>v</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

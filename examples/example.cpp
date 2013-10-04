@@ -17,7 +17,7 @@ class OdeClass
         }
 };
 
-int main(int argc, char** argv)
+int main()
 {
     // First, lets create some data: y1 = t^2 and y2 = t^3
     vector_k<double> t = linspace(-2.0,2.0,100);

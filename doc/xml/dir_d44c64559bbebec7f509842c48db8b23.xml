@@ -9,6 +9,7 @@
     <innerfile refid="kiss__fft_8h">kiss_fft.h</innerfile>
     <innerfile refid="_matrix_8h">Matrix.h</innerfile>
     <innerfile refid="_spline_8h">Spline.h</innerfile>
+    <innerfile refid="vector__k_8h">vector_k.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

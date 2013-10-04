@@ -221,7 +221,7 @@
       <memberdef kind="define" id="__kiss__fft__guts_8h_1a0b812a30fdb0c530a90a18d1692fab6c" prot="public" static="no">
         <name>HALF_OF</name>
         <param><defname>x</defname></param>
-        <initializer>((x)*.5)</initializer>
+        <initializer>((x)*.5f)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -428,7 +428,7 @@
 <codeline lineno="138"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else</highlight></codeline>
 <codeline lineno="139"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>KISS_FFT_COS(phase)<sp/>(kiss_fft_scalar)<sp/>cos(phase)</highlight></codeline>
 <codeline lineno="140"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>KISS_FFT_SIN(phase)<sp/>(kiss_fft_scalar)<sp/>sin(phase)</highlight></codeline>
-<codeline lineno="141"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>HALF_OF(x)<sp/>((x)*.5)</highlight></codeline>
+<codeline lineno="141"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>HALF_OF(x)<sp/>((x)*.5f)</highlight></codeline>
 <codeline lineno="142"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
 <codeline lineno="143"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>kf_cexp(x,phase)<sp/>\</highlight></codeline>

@@ -61,14 +61,14 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="22">
+      <node id="24">
         <label>kiss_fft_cpx</label>
         <link refid="structkiss__fft__cpx"/>
       </node>
-      <node id="21">
+      <node id="23">
         <label>kiss_fft_state</label>
         <link refid="structkiss__fft__state"/>
-        <childnode refid="22" relation="usage">
+        <childnode refid="24" relation="usage">
           <edgelabel>twiddles</edgelabel>
         </childnode>
       </node>

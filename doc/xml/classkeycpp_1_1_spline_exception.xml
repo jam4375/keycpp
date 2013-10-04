@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="16" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="16" bodyend="16"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="17" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="17" bodyend="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -27,28 +27,28 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="47">
+      <node id="60">
         <label>runtime_error</label>
       </node>
-      <node id="46">
+      <node id="59">
         <label>keycpp::SplineException</label>
         <link refid="classkeycpp_1_1_spline_exception"/>
-        <childnode refid="47" relation="public-inheritance">
+        <childnode refid="60" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="49">
+      <node id="62">
         <label>runtime_error</label>
       </node>
-      <node id="48">
+      <node id="61">
         <label>keycpp::SplineException</label>
         <link refid="classkeycpp_1_1_spline_exception"/>
-        <childnode refid="49" relation="public-inheritance">
+        <childnode refid="62" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="14" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="13" bodyend="17"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="15" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="14" bodyend="18"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1_spline_exception_1a7c13b157534ec469e0b735c071192df8" prot="public" virt="non-virtual"><scope>keycpp::SplineException</scope><name>SplineException</name></member>
     </listofallmembers>

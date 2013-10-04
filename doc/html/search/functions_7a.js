@@ -2,7 +2,7 @@ var searchData=
 [
   ['zaxpy_5f',['zaxpy_',['../namespacekeycpp.html#a6460fa334239dde761d8f737b9438fed',1,'keycpp']]],
   ['zdotu_5f',['zdotu_',['../namespacekeycpp.html#a2ce99b4fe4a13b9c70ada81761eb0ca2',1,'keycpp']]],
-  ['zeros',['zeros',['../namespacekeycpp.html#a5699c522088657287bf0ac01173b716c',1,'keycpp::zeros(const int &amp;M, const int &amp;N)'],['../namespacekeycpp.html#a9a0f013931cb9989320b014d151cc527',1,'keycpp::zeros(const int &amp;N)']]],
+  ['zeros',['zeros',['../namespacekeycpp.html#a5699c522088657287bf0ac01173b716c',1,'keycpp::zeros(const int &amp;M, const int &amp;N)'],['../namespacekeycpp.html#ac00f5a8f1eba98722c1aac6b637a18c7',1,'keycpp::zeros(const int &amp;N)']]],
   ['zgecon_5f',['zgecon_',['../namespacekeycpp.html#a444e3cdc7e7929414370b6b50ea1218c',1,'keycpp']]],
   ['zgeev_5f',['zgeev_',['../namespacekeycpp.html#a8c1cca2a162f40fc6c6218c35cadf9f2',1,'keycpp']]],
   ['zgemm_5f',['zgemm_',['../namespacekeycpp.html#a29fb4e46ee1b9cce0fd8bc79a2490c72',1,'keycpp']]],

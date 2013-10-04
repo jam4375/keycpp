@@ -100,8 +100,8 @@ Example Code}
 7 \textcolor{keyword}{class }\hyperlink{class_ode_class}{OdeClass}
 8 \{
 9     \textcolor{keyword}{public}:
-10         \textcolor{keywordtype}{void} operator()(\textcolor{keyword}{const} vector<double> &y,
-11                         vector<double> &dy,
+10         \textcolor{keywordtype}{void} operator()(\textcolor{keyword}{const} \hyperlink{classkeycpp_1_1vector__k}{vector\_k<double>} &y,
+11                         \hyperlink{classkeycpp_1_1vector__k}{vector\_k<double>} &dy,
 12                         \textcolor{keyword}{const} \textcolor{keywordtype}{double} t)
 13         \{
 14             dy[0] = y[1]*y[2];
@@ -110,12 +110,12 @@ Example Code}
 17         \}
 18 \};
 19 
-20 \textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv)
+20 \textcolor{keywordtype}{int} main()
 21 \{
 22     \textcolor{comment}{// First, lets create some data: y1 = t^2 and y2 = t^3}
-23     vector<double> t = \hyperlink{namespacekeycpp_a4e8769de1f22713d3564350d53125b26}{linspace}(-2.0,2.0,100);
-24     vector<double> y1 = \hyperlink{namespacekeycpp_ac1ff99e34619478096c271b38df1f3d7}{times}(t,t);
-25     vector<double> y2 = \hyperlink{namespacekeycpp_ac1ff99e34619478096c271b38df1f3d7}{times}(t,\hyperlink{namespacekeycpp_ac1ff99e34619478096c271b38df1f3d7}{times}(t,t));
+23     \hyperlink{classkeycpp_1_1vector__k}{vector\_k<double>} t = \hyperlink{namespacekeycpp_ab690e7da060fb0e4c42e53cf65d76c7a}{linspace}(-2.0,2.0,100);
+24     \hyperlink{classkeycpp_1_1vector__k}{vector\_k<double>} y1 = \hyperlink{namespacekeycpp_ac1ff99e34619478096c271b38df1f3d7}{times}(t,t);
+25     \hyperlink{classkeycpp_1_1vector__k}{vector\_k<double>} y2 = \hyperlink{namespacekeycpp_ac1ff99e34619478096c271b38df1f3d7}{times}(t,\hyperlink{namespacekeycpp_ac1ff99e34619478096c271b38df1f3d7}{times}(t,t));
 26 
 27     \textcolor{comment}{// Now, lets plot the data we just created:}
 28     \hyperlink{classkeycpp_1_1_figure}{Figure} h1;
@@ -131,9 +131,9 @@ Example Code}
 38     \textcolor{comment}{// This is how to solve linear equations of the form Ax = b:}
 39     \hyperlink{classkeycpp_1_1matrix}{matrix<double>} A = \{\{1.0, 2.0\},
 40                         \{1.0,-1.0\}\};
-41     vector<double> b = \{1.1,
+41     \hyperlink{classkeycpp_1_1vector__k}{vector\_k<double>} b = \{1.1,
 42                         2.1\};
-43     vector<double> x = linsolve(A,b);
+43     \hyperlink{classkeycpp_1_1vector__k}{vector\_k<double>} x = linsolve(A,b);
 44     \textcolor{comment}{// Print the result to the screen:}
 45     \hyperlink{namespacekeycpp_a6a8a286886d48471685b18b7782f1e4a}{disp}(x);
 46 
@@ -144,16 +144,16 @@ Example Code}
 51     \textcolor{comment}{// y(3)' = 0.51*y(1)*y(2);}
 52     \textcolor{comment}{// With initial conditions at t = 0: y(1) = 0; y(2) = 1; y(3) = 1;}
 53     \hyperlink{class_ode_class}{OdeClass} myOde;
-54     vector<double> t2 = \hyperlink{namespacekeycpp_a4e8769de1f22713d3564350d53125b26}{linspace}(0.0,12.0,100);
-55     vector<double> ICs = \{0.0, 1.0, 1.0\};
+54     \hyperlink{classkeycpp_1_1vector__k}{vector\_k<double>} t2 = \hyperlink{namespacekeycpp_ab690e7da060fb0e4c42e53cf65d76c7a}{linspace}(0.0,12.0,100);
+55     \hyperlink{classkeycpp_1_1vector__k}{vector\_k<double>} ICs = \{0.0, 1.0, 1.0\};
 56     \hyperlink{classkeycpp_1_1matrix}{matrix<double>} y = ode45(myOde, t2, ICs);
 57     
 58     \textcolor{comment}{// Now that we have solved the ODE, lets plot the results:}
 59     \hyperlink{classkeycpp_1_1_figure}{Figure} h2;
-60     h2.plot(t2,y.getCol(0),\textcolor{stringliteral}{"-"});
+60     h2.plot(t2,y.col(0),\textcolor{stringliteral}{"-"});
 61     h2.hold\_on();
-62     h2.plot(t2,y.getCol(1),\textcolor{stringliteral}{"-."});
-63     h2.plot(t2,y.getCol(2),\textcolor{stringliteral}{"x"});
+62     h2.plot(t2,y.col(1),\textcolor{stringliteral}{"-."});
+63     h2.plot(t2,y.col(2),\textcolor{stringliteral}{"x"});
 64     h2.xlabel(\textcolor{stringliteral}{"t"});
 65     h2.ylabel(\textcolor{stringliteral}{"y"});
 66     \textcolor{keyword}{set}(h2,\textcolor{stringliteral}{"fontsize"},14);
@@ -197,8 +197,8 @@ Note\-: You can omit the {\ttfamily keycpp\-:\-:} prefix from the following comm
 {\ttfamily A./\-B} &{\ttfamily keycpp\-::rdivide(\-A,\-B);} &\\\cline{1-3}
 {\ttfamily A\textbackslash{}b} &{\ttfamily keycpp\-::linsolve(\-A,b);} &{\ttfamily b} is a vector \\\cline{1-3}
 {\ttfamily \mbox{[}V, D\mbox{]} = eig(\-A,\-B)} &{\ttfamily std\-::vector$<$std\-::complex$<$double$>$$>$ d = keycpp\-::eig(\-A,\-B,\&\-V);} &Non-\/\-Hermitian generalized eigenvalue/eigenvector solver uses L\-A\-P\-A\-C\-K. \\\cline{1-3}
-{\ttfamily x = linspace(0,10,\-N\-\_\-x)} &{\ttfamily std\-::vector$<$double$>$ x = \hyperlink{namespacekeycpp_a4e8769de1f22713d3564350d53125b26}{keycpp\-::linspace}(0.\-0,10.\-0,N\-\_\-x);} &\\\cline{1-3}
-{\ttfamily x = logspace(1,3,\-N\-\_\-x)} &{\ttfamily std\-::vector$<$double$>$ x = \hyperlink{namespacekeycpp_a1704b4adc18c9353ee63fa63539df54d}{keycpp\-::logspace}(1.\-0,3.\-0,N\-\_\-x);} &{\ttfamily 10 $<$= x $<$= 1000} \\\cline{1-3}
+{\ttfamily x = linspace(0,10,\-N\-\_\-x)} &{\ttfamily std\-::vector$<$double$>$ x = \hyperlink{namespacekeycpp_ab690e7da060fb0e4c42e53cf65d76c7a}{keycpp\-::linspace}(0.\-0,10.\-0,N\-\_\-x);} &\\\cline{1-3}
+{\ttfamily x = logspace(1,3,\-N\-\_\-x)} &{\ttfamily std\-::vector$<$double$>$ x = \hyperlink{namespacekeycpp_a9e1c37fd71074c56e963be121e5de0f3}{keycpp\-::logspace}(1.\-0,3.\-0,N\-\_\-x);} &{\ttfamily 10 $<$= x $<$= 1000} \\\cline{1-3}
 {\ttfamily A = diag(\mbox{[}a1, a2, a3\mbox{]})} &{\ttfamily \hyperlink{classkeycpp_1_1matrix}{keycpp\-::matrix}$<$double$>$ A = keycpp\-::diag(\{a1, a2, a3\});} &{\ttfamily a1}, {\ttfamily a2}, and {\ttfamily a3} are scalar elements of {\ttfamily A} \\\cline{1-3}
 {\ttfamily A = \mbox{[}\mbox{[}a1, a2\mbox{]}; \mbox{[}a3, a4\mbox{]}\mbox{]}} &{\ttfamily \hyperlink{classkeycpp_1_1matrix}{keycpp\-::matrix}$<$double$>$ A = \{\{a1, a2\}, \{a3, a4\}\};} &\\\cline{1-3}
 \end{TabularC}

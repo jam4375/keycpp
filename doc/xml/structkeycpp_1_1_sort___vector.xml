@@ -8,9 +8,9 @@
       </param>
     </templateparamlist>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structkeycpp_1_1_sort___vector_1aa43234b1dcb6f8f6e844e41047ea06c0" prot="public" static="no" mutable="no">
-        <type>std::vector&lt; T &gt;</type>
-        <definition>std::vector&lt;T&gt; keycpp::Sort_Vector&lt; T &gt;::v</definition>
+      <memberdef kind="variable" id="structkeycpp_1_1_sort___vector_1a73081398ef2f44d6c4053e6579ee6683" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+        <definition>vector_k&lt;T&gt; keycpp::Sort_Vector&lt; T &gt;::v</definition>
         <argsstring></argsstring>
         <name>v</name>
         <briefdescription>
@@ -19,11 +19,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2489" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2489" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2560" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2560" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structkeycpp_1_1_sort___vector_1ac8c282f95bba2e355688421526cc139c" prot="public" static="no" mutable="no">
-        <type>std::vector&lt; int &gt;</type>
-        <definition>std::vector&lt;int&gt; keycpp::Sort_Vector&lt; T &gt;::index</definition>
+      <memberdef kind="variable" id="structkeycpp_1_1_sort___vector_1ab776635d9e46ad5b61280771bf6209db" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; size_t &gt;</type>
+        <definition>vector_k&lt;size_t&gt; keycpp::Sort_Vector&lt; T &gt;::index</definition>
         <argsstring></argsstring>
         <name>index</name>
         <briefdescription>
@@ -32,17 +32,30 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2490" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2490" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2561" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2561" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2488" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2487" bodyend="2491"/>
+    <collaborationgraph>
+      <node id="55">
+        <label>keycpp::Sort_Vector&lt; T &gt;</label>
+        <link refid="structkeycpp_1_1_sort___vector"/>
+        <childnode refid="56" relation="usage">
+          <edgelabel>index</edgelabel>
+        </childnode>
+      </node>
+      <node id="56">
+        <label>keycpp::vector_k&lt; size_t &gt;</label>
+        <link refid="classkeycpp_1_1vector__k"/>
+      </node>
+    </collaborationgraph>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2559" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2558" bodyend="2562"/>
     <listofallmembers>
-      <member refid="structkeycpp_1_1_sort___vector_1ac8c282f95bba2e355688421526cc139c" prot="public" virt="non-virtual"><scope>keycpp::Sort_Vector</scope><name>index</name></member>
-      <member refid="structkeycpp_1_1_sort___vector_1aa43234b1dcb6f8f6e844e41047ea06c0" prot="public" virt="non-virtual"><scope>keycpp::Sort_Vector</scope><name>v</name></member>
+      <member refid="structkeycpp_1_1_sort___vector_1ab776635d9e46ad5b61280771bf6209db" prot="public" virt="non-virtual"><scope>keycpp::Sort_Vector</scope><name>index</name></member>
+      <member refid="structkeycpp_1_1_sort___vector_1a73081398ef2f44d6c4053e6579ee6683" prot="public" virt="non-virtual"><scope>keycpp::Sort_Vector</scope><name>v</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

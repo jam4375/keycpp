@@ -144,8 +144,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span><a class="code" href="class_ode_class.html">OdeClass</a></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> vector&lt;double&gt; &amp;y,</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                        vector&lt;double&gt; &amp;dy,</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> <a class="code" href="classkeycpp_1_1vector__k.html">vector_k&lt;double&gt;</a> &amp;y,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                        <a class="code" href="classkeycpp_1_1vector__k.html">vector_k&lt;double&gt;</a> &amp;dy,</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">double</span> t)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            dy[0] = y[1]*y[2];</div>
@@ -154,12 +154,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">int</span> main()</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// First, lets create some data: y1 = t^2 and y2 = t^3</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    vector&lt;double&gt; t = <a class="code" href="namespacekeycpp.html#a4e8769de1f22713d3564350d53125b26" title="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">linspace</a>(-2.0,2.0,100);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    vector&lt;double&gt; y1 = <a class="code" href="namespacekeycpp.html#ac1ff99e34619478096c271b38df1f3d7" title="Performs array multiplication on matrices A and B.">times</a>(t,t);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    vector&lt;double&gt; y2 = <a class="code" href="namespacekeycpp.html#ac1ff99e34619478096c271b38df1f3d7" title="Performs array multiplication on matrices A and B.">times</a>(t,<a class="code" href="namespacekeycpp.html#ac1ff99e34619478096c271b38df1f3d7" title="Performs array multiplication on matrices A and B.">times</a>(t,t));</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classkeycpp_1_1vector__k.html">vector_k&lt;double&gt;</a> t = <a class="code" href="namespacekeycpp.html#ab690e7da060fb0e4c42e53cf65d76c7a" title="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">linspace</a>(-2.0,2.0,100);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classkeycpp_1_1vector__k.html">vector_k&lt;double&gt;</a> y1 = <a class="code" href="namespacekeycpp.html#ac1ff99e34619478096c271b38df1f3d7" title="Performs array multiplication on matrices A and B.">times</a>(t,t);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classkeycpp_1_1vector__k.html">vector_k&lt;double&gt;</a> y2 = <a class="code" href="namespacekeycpp.html#ac1ff99e34619478096c271b38df1f3d7" title="Performs array multiplication on matrices A and B.">times</a>(t,<a class="code" href="namespacekeycpp.html#ac1ff99e34619478096c271b38df1f3d7" title="Performs array multiplication on matrices A and B.">times</a>(t,t));</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Now, lets plot the data we just created:</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classkeycpp_1_1_figure.html">Figure</a> h1;</div>
@@ -175,9 +175,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// This is how to solve linear equations of the form Ax = b:</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classkeycpp_1_1matrix.html">matrix&lt;double&gt;</a> A = {{1.0, 2.0},</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        {1.0,-1.0}};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    vector&lt;double&gt; b = {1.1,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classkeycpp_1_1vector__k.html">vector_k&lt;double&gt;</a> b = {1.1,</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        2.1};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    vector&lt;double&gt; x = linsolve(A,b);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classkeycpp_1_1vector__k.html">vector_k&lt;double&gt;</a> x = linsolve(A,b);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Print the result to the screen:</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="namespacekeycpp.html#a6a8a286886d48471685b18b7782f1e4a" title="Displays on standard output any parameter passed to it provided the operator &lt;&lt; is defined for its ty...">disp</a>(x);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
@@ -188,16 +188,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// y(3)&#39; = 0.51*y(1)*y(2);</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// With initial conditions at t = 0: y(1) = 0; y(2) = 1; y(3) = 1;</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="class_ode_class.html">OdeClass</a> myOde;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    vector&lt;double&gt; t2 = <a class="code" href="namespacekeycpp.html#a4e8769de1f22713d3564350d53125b26" title="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">linspace</a>(0.0,12.0,100);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    vector&lt;double&gt; ICs = {0.0, 1.0, 1.0};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classkeycpp_1_1vector__k.html">vector_k&lt;double&gt;</a> t2 = <a class="code" href="namespacekeycpp.html#ab690e7da060fb0e4c42e53cf65d76c7a" title="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">linspace</a>(0.0,12.0,100);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classkeycpp_1_1vector__k.html">vector_k&lt;double&gt;</a> ICs = {0.0, 1.0, 1.0};</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classkeycpp_1_1matrix.html">matrix&lt;double&gt;</a> y = ode45(myOde, t2, ICs);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Now that we have solved the ODE, lets plot the results:</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classkeycpp_1_1_figure.html">Figure</a> h2;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    h2.plot(t2,y.getCol(0),<span class="stringliteral">&quot;-&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    h2.plot(t2,y.col(0),<span class="stringliteral">&quot;-&quot;</span>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    h2.hold_on();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    h2.plot(t2,y.getCol(1),<span class="stringliteral">&quot;-.&quot;</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    h2.plot(t2,y.getCol(2),<span class="stringliteral">&quot;x&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    h2.plot(t2,y.col(1),<span class="stringliteral">&quot;-.&quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    h2.plot(t2,y.col(2),<span class="stringliteral">&quot;x&quot;</span>);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    h2.xlabel(<span class="stringliteral">&quot;t&quot;</span>);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    h2.ylabel(<span class="stringliteral">&quot;y&quot;</span>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">set</span>(h2,<span class="stringliteral">&quot;fontsize&quot;</span>,14);</div>
@@ -256,9 +256,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr>
 <td><code>[V, D] = eig(A,B)</code> </td><td><code>std::vector&lt;std::complex&lt;double&gt;&gt; d = keycpp::eig(A,B,&amp;V);</code> </td><td>Non-Hermitian generalized eigenvalue/eigenvector solver uses LAPACK. </td></tr>
 <tr>
-<td><code>x = linspace(0,10,N_x)</code> </td><td><code>std::vector&lt;double&gt; x = <a class="el" href="namespacekeycpp.html#a4e8769de1f22713d3564350d53125b26" title="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">keycpp::linspace</a>(0.0,10.0,N_x);</code> </td><td></td></tr>
+<td><code>x = linspace(0,10,N_x)</code> </td><td><code>std::vector&lt;double&gt; x = <a class="el" href="namespacekeycpp.html#ab690e7da060fb0e4c42e53cf65d76c7a" title="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">keycpp::linspace</a>(0.0,10.0,N_x);</code> </td><td></td></tr>
 <tr>
-<td><code>x = logspace(1,3,N_x)</code> </td><td><code>std::vector&lt;double&gt; x = <a class="el" href="namespacekeycpp.html#a1704b4adc18c9353ee63fa63539df54d" title="Produces a vector containing N values logarithmically spaced between 10^(x1) and 10^(x2), inclusively.">keycpp::logspace</a>(1.0,3.0,N_x);</code> </td><td><code>10 &lt;= x &lt;= 1000</code> </td></tr>
+<td><code>x = logspace(1,3,N_x)</code> </td><td><code>std::vector&lt;double&gt; x = <a class="el" href="namespacekeycpp.html#a9e1c37fd71074c56e963be121e5de0f3" title="Produces a vector containing N values logarithmically spaced between 10^(x1) and 10^(x2), inclusively.">keycpp::logspace</a>(1.0,3.0,N_x);</code> </td><td><code>10 &lt;= x &lt;= 1000</code> </td></tr>
 <tr>
 <td><code>A = diag([a1, a2, a3])</code> </td><td><code><a class="el" href="classkeycpp_1_1matrix.html">keycpp::matrix</a>&lt;double&gt; A = keycpp::diag({a1, a2, a3});</code> </td><td><code>a1</code>, <code>a2</code>, and <code>a3</code> are scalar elements of <code>A</code> </td></tr>
 <tr>
@@ -268,7 +268,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 27 2013 13:57:28 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 4 2013 10:39:51 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

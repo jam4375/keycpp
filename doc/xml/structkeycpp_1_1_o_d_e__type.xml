@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+  <compounddef id="structkeycpp_1_1_o_d_e__type" kind="struct" prot="public">
+    <compoundname>keycpp::ODE_type</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+      <param>
+        <type>class Y</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structkeycpp_1_1_o_d_e__type_1a6681f7b538b38b98836748e70dd388cf" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+        <definition>vector_k&lt;T&gt; keycpp::ODE_type&lt; T, Y &gt;::t</definition>
+        <argsstring></argsstring>
+        <name>t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2361" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2361" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structkeycpp_1_1_o_d_e__type_1a4b8dba697c9ad61a930b8967f8c54802" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; Y &gt;</type>
+        <definition>matrix&lt;Y&gt; keycpp::ODE_type&lt; T, Y &gt;::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2362" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2362" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="41">
+        <label>keycpp::matrix&lt; Y &gt;</label>
+        <link refid="classkeycpp_1_1matrix"/>
+        <childnode refid="42" relation="usage">
+          <edgelabel>mData</edgelabel>
+        </childnode>
+      </node>
+      <node id="42">
+        <label>keycpp::vector_k&lt; Y &gt;</label>
+        <link refid="classkeycpp_1_1vector__k"/>
+      </node>
+      <node id="40">
+        <label>keycpp::ODE_type&lt; T, Y &gt;</label>
+        <link refid="structkeycpp_1_1_o_d_e__type"/>
+        <childnode refid="41" relation="usage">
+          <edgelabel>y</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2360" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2359" bodyend="2363"/>
+    <listofallmembers>
+      <member refid="structkeycpp_1_1_o_d_e__type_1a6681f7b538b38b98836748e70dd388cf" prot="public" virt="non-virtual"><scope>keycpp::ODE_type</scope><name>t</name></member>
+      <member refid="structkeycpp_1_1_o_d_e__type_1a4b8dba697c9ad61a930b8967f8c54802" prot="public" virt="non-virtual"><scope>keycpp::ODE_type</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
