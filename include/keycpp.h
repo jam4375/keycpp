@@ -15,7 +15,15 @@
 #include <algorithm>
 #include <limits>
 #include <ctime>
-#include <sys/time.h>
+
+#ifdef __linux__ 
+    #include <sys/time.h>
+#elif _WIN32
+    #include <time.h>
+#else
+    static_assert(false,"Unsupported Operating System");
+#endif
+
 #include <stdarg.h>
 #include "vector_k.h"
 #include "Matrix.h"
@@ -30,10 +38,10 @@
  */
 namespace keycpp
 {
-	#define pi 3.1415926535897932384626433832795
-	#define eps std::numeric_limits<double>::epsilon()
-	#define Inf std::numeric_limits<double>::infinity()
-	#define NaN nan("")
+	static constexpr double pi = 3.1415926535897932384626433832795;
+	static constexpr double eps = std::numeric_limits<double>::epsilon();
+	static constexpr double Inf = std::numeric_limits<double>::infinity();
+	static constexpr double NaN = nan("");
 	
 	class KeyCppException : public std::runtime_error
 	{
@@ -2935,7 +2943,7 @@ namespace keycpp
 	        throw KeyCppException("Cannot compute norm of empty vector!");
 	    }
 		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
-	    double anorm;
+	    double anorm = 0.0;
 	    if(!method.empty() && method.find_first_not_of("-+0123456789") == std::string::npos)
 	    {
 	        int p = atoi(method.c_str());
