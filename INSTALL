@@ -1,8 +1,4 @@
 #!/bin/sh
 
-cd ./src/
-make;
-cd ..
-ln -s $(pwd)/lib/libkeycpp.a /usr/lib/libkeycpp.a
 mkdir /usr/include/keycpp
 ln -s $(pwd)/include/* /usr/include/keycpp/

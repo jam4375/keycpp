@@ -40,6 +40,6 @@ var searchData=
   ['stdev',['stdev',['../namespacekeycpp.html#a61234b7bb0f3126b3db82634675c2951',1,'keycpp::stdev(vector_k&lt; T &gt; v1)'],['../namespacekeycpp.html#abdec07a4c4dd0fc5de230a753bf59066',1,'keycpp::stdev(vector_k&lt; std::complex&lt; double &gt;&gt; v1)']]],
   ['str2num',['str2num',['../namespacekeycpp.html#a4bca7924aad17a920f2f5f0606e6d9a9',1,'keycpp']]],
   ['sum',['sum',['../namespacekeycpp.html#a7d3157bfc97800f25010c32280dde212',1,'keycpp::sum(const vector_k&lt; T &gt; &amp;v1)'],['../namespacekeycpp.html#a022f7e64d039d6d8289e36edd440fc86',1,'keycpp::sum(const matrix&lt; T &gt; &amp;A)']]],
-  ['svd',['svd',['../namespacekeycpp.html#a838fc93d66e1ab63d68d04781086d81a',1,'keycpp::svd(const matrix&lt; double &gt; &amp;A_in, std::string method)'],['../namespacekeycpp.html#a72ae28f3433b8617a1252c7995fc21db',1,'keycpp::svd(const matrix&lt; complex&lt; double &gt;&gt; &amp;A_in, std::string method)']]],
+  ['svd',['svd',['../namespacekeycpp.html#a838fc93d66e1ab63d68d04781086d81a',1,'keycpp::svd(const matrix&lt; double &gt; &amp;A_in, std::string method)'],['../namespacekeycpp.html#ad610adca37ac4c85df23b899d29d5dfc',1,'keycpp::svd(const matrix&lt; std::complex&lt; double &gt;&gt; &amp;A_in, std::string method)']]],
   ['svd_5ftype',['SVD_type',['../classkeycpp_1_1_s_v_d__type.html',1,'keycpp']]]
 ];

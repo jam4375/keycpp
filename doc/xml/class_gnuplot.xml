@@ -95,29 +95,24 @@
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="89" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       </sectiondef>
-      <sectiondef kind="private-static-attrib">
-      <memberdef kind="variable" id="class_gnuplot_1aeb5608cbd5c03aa7ef318f11f0cc54ab" prot="private" static="yes" mutable="no">
-        <type>long unsigned int</type>
-        <definition>long unsigned int Gnuplot::tmpfile_num</definition>
-        <argsstring></argsstring>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_gnuplot_1abf2e3b6bbb9a070a380c77ef64525e90" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long unsigned int &amp;</type>
+        <definition>long unsigned int &amp; Gnuplot::tmpfile_num</definition>
+        <argsstring>()</argsstring>
         <name>tmpfile_num</name>
-        <initializer>= 0</initializer>
         <briefdescription>
 <para>number of all tmpfiles (number of tmpfiles restricted) </para>        </briefdescription>
         <detaileddescription>
-<para>A C++ interface to gnuplot.</para><para>The interface uses pipes and so won&apos;t run on a system that doesn&apos;t have POSIX pipe support Tested on Windows (MinGW and Visual C++) and Linux (GCC)</para><para>Version history: 0. C interface by N. Devillard (27/01/03)<orderedlist>
-<listitem><para>C++ interface: direct translation from the C interface by Rajarshi Guha (07/03/03)</para></listitem><listitem><para>corrections for Win32 compatibility by V. Chyzhdzenka (20/05/03)</para></listitem><listitem><para>some member functions added, corrections for Win32 and Linux compatibility by M. Burgis (10/03/08)</para></listitem><listitem><para>Some minor modifications to allow use by KeyCpp by J. Monschke (08/15/2013)</para></listitem></orderedlist>
-</para><para>Requirements:<itemizedlist>
-<listitem><para>gnuplot has to be installed (<ulink url="http://www.gnuplot.info/download.html">http://www.gnuplot.info/download.html</ulink>)</para></listitem><listitem><para>for Windows: set Path-Variable for <ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> path (e.g. C:/program files/gnuplot/bin) or set <ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> path with: <ref refid="class_gnuplot_1a67cae885c26ced821e335d98986f1967" kindref="member">Gnuplot::set_GNUPlotPath(const std::string &amp;path)</ref>; </para></listitem></itemizedlist>
-</para>        </detaileddescription>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="94" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="94" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="94" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="904" bodyend="908"/>
       </memberdef>
-      <memberdef kind="variable" id="class_gnuplot_1ae71e004ab7266f34d270cf76ea143e2b" prot="private" static="yes" mutable="no">
-        <type>std::string</type>
-        <definition>std::string Gnuplot::m_sGNUPlotFileName</definition>
-        <argsstring></argsstring>
+      <memberdef kind="function" id="class_gnuplot_1a433e47ea0fed2174845b115f48f9fdaf" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string &amp;</type>
+        <definition>std::string &amp; Gnuplot::m_sGNUPlotFileName</definition>
+        <argsstring>()</argsstring>
         <name>m_sGNUPlotFileName</name>
         <briefdescription>
 <para>name of executed GNUPlot file </para>        </briefdescription>
@@ -125,12 +120,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="96" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="96" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="96" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="910" bodyend="918"/>
       </memberdef>
-      <memberdef kind="variable" id="class_gnuplot_1a3c5949b04c54833eb685c30322c816e6" prot="private" static="yes" mutable="no">
-        <type>std::string</type>
-        <definition>std::string Gnuplot::m_sGNUPlotPath</definition>
-        <argsstring></argsstring>
+      <memberdef kind="function" id="class_gnuplot_1a76ca6d463fa2ec0eef4beae56e06267b" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string &amp;</type>
+        <definition>std::string &amp; Gnuplot::m_sGNUPlotPath</definition>
+        <argsstring>()</argsstring>
         <name>m_sGNUPlotPath</name>
         <briefdescription>
 <para>gnuplot path </para>        </briefdescription>
@@ -138,12 +133,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="98" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="98" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="98" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="920" bodyend="928"/>
       </memberdef>
-      <memberdef kind="variable" id="class_gnuplot_1ad763c98e6b2f51bef05f0b2da522fef4" prot="private" static="yes" mutable="no">
-        <type>std::string</type>
-        <definition>std::string Gnuplot::terminal_std</definition>
-        <argsstring></argsstring>
+      <memberdef kind="function" id="class_gnuplot_1afdccc7335caf1d0fbbe1c604a36347bd" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string &amp;</type>
+        <definition>std::string &amp; Gnuplot::terminal_std</definition>
+        <argsstring>()</argsstring>
         <name>terminal_std</name>
         <briefdescription>
 <para>standart terminal, used by showonscreen </para>        </briefdescription>
@@ -151,68 +146,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="100" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="100" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="100" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="930" bodyend="940"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
-      <memberdef kind="function" id="class_gnuplot_1a08d1e4ec069ec1cb82bb96427d1e0d7f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void Gnuplot::init</definition>
-        <argsstring>()</argsstring>
-        <name>init</name>
-        <briefdescription>
-<para>get_program_path(); and popen(); </para>        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>&amp;ndash;&gt;</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>void</para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>&lt;<ndash/> void </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="111" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="839" bodyend="896"/>
-      </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a3ceb471d375865fccd412105cb587dd1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool Gnuplot::file_available</definition>
-        <argsstring>(const std::string &amp;filename)</argsstring>
-        <name>file_available</name>
-        <param>
-          <type>const std::string &amp;</type>
-          <declname>filename</declname>
-        </param>
-        <briefdescription>
-<para>checks if file is available </para>        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>filename</parametername>
-</parameternamelist>
-<parameterdescription>
-<para><ndash/>&gt; the filename </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>mode</parametername>
-</parameternamelist>
-<parameterdescription>
-<para><ndash/>&gt; the mode [optional,default value = 0]</para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>file exists (yes == true, no == false) </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="130" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="1010" bodyend="1026"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-static-func">
-      <memberdef kind="function" id="class_gnuplot_1a3a769e47861d74fa713070ecd857dd17" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a3a769e47861d74fa713070ecd857dd17" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool Gnuplot::get_program_path</definition>
         <argsstring>()</argsstring>
@@ -232,9 +168,9 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="120" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="903" bodyend="968"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="120" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1788" bodyend="1853"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1abc0f1d75cb78804a5b8efdfa4df582cd" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1abc0f1d75cb78804a5b8efdfa4df582cd" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool Gnuplot::file_exists</definition>
         <argsstring>(const std::string &amp;filename, int mode=0)</argsstring>
@@ -270,11 +206,68 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="140" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="976" bodyend="1008"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="140" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1861" bodyend="1893"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_gnuplot_1a08d1e4ec069ec1cb82bb96427d1e0d7f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Gnuplot::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+<para>get_program_path(); and popen(); </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>&amp;ndash;&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>void</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>&lt;<ndash/> void </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="111" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1724" bodyend="1781"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gnuplot_1a3ceb471d375865fccd412105cb587dd1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Gnuplot::file_available</definition>
+        <argsstring>(const std::string &amp;filename)</argsstring>
+        <name>file_available</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>checks if file is available </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ndash/>&gt; the filename </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ndash/>&gt; the mode [optional,default value = 0]</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>file exists (yes == true, no == false) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="130" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1895" bodyend="1911"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_gnuplot_1a8ced9e766e0677b938178dafe9264ff7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a8ced9e766e0677b938178dafe9264ff7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
         <definition>std::string Gnuplot::create_tmpfile</definition>
         <argsstring>(std::ofstream &amp;tmp)</argsstring>
@@ -298,7 +291,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="151" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="1034" bodyend="1098"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="151" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1919" bodyend="1983"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1af51b1d33cffebc835a4b493cce1b0bce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
@@ -519,7 +512,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="216" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="887" bodyend="898"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a07607803ede8dd5416906df0a1924fc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a07607803ede8dd5416906df0a1924fc5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::cmd</definition>
         <argsstring>(const std::string &amp;cmdstr)</argsstring>
@@ -534,7 +527,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="222" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="789" bodyend="831"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="222" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1674" bodyend="1716"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1afb69631c7a498077e378a3cbb56f38c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
@@ -562,7 +555,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="231" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="231" bodyend="234"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a356d2faaa79f08d13fec9718b776b28d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a356d2faaa79f08d13fec9718b776b28d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::showonscreen</definition>
         <argsstring>()</argsstring>
@@ -573,9 +566,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="242" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="213" bodyend="219"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="242" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1098" bodyend="1104"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a032072c7c01b508a7535a17fb08562b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a032072c7c01b508a7535a17fb08562b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::savetops</definition>
         <argsstring>(const std::string &amp;filename=&quot;gnuplot_output&quot;)</argsstring>
@@ -591,9 +584,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="245" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="225" bodyend="234"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="245" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1110" bodyend="1119"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1acfdcda292650775ebed4683e8e1515b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1acfdcda292650775ebed4683e8e1515b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_style</definition>
         <argsstring>(const std::string &amp;stylestr=&quot;points&quot;)</argsstring>
@@ -609,9 +602,9 @@
 <para>set line style (some of these styles require additional information): lines, points, linespoints, impulses, dots, steps, fsteps, histeps, boxes, histograms, filledcurves </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="254" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="143" bodyend="182"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="254" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1028" bodyend="1067"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1aa18386919da2ec4c994f1f9c7195d384" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1aa18386919da2ec4c994f1f9c7195d384" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_smooth</definition>
         <argsstring>(const std::string &amp;stylestr=&quot;csplines&quot;)</argsstring>
@@ -627,7 +620,7 @@
 <para>interpolation and approximation of data, arguments: csplines, bezier, acsplines (for data values &gt; 0), sbezier, unique, frequency (works only with plot_x, plot_xy, plotfile_x, plotfile_xy (if smooth is set, set_style has no effekt on data plotting) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="260" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="189" bodyend="206"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="260" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1074" bodyend="1091"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1ad9dfbccd66dece1dbe5803605c6ab08c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
@@ -651,7 +644,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="270" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="270" bodyend="270"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a95ec1636a871447dfe99463b769339c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a95ec1636a871447dfe99463b769339c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_pointsize</definition>
         <argsstring>(const double pointsize=1.0)</argsstring>
@@ -667,7 +660,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="274" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="296" bodyend="303"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="274" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1181" bodyend="1188"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1a5416c8e81f1b9945b9631fa85a8d4f47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
@@ -739,7 +732,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="297" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="297" bodyend="297"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a671cbe7b18a267ea59f532c83a0035f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a671cbe7b18a267ea59f532c83a0035f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_samples</definition>
         <argsstring>(const int samples=100)</argsstring>
@@ -755,9 +748,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="302" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="309" bodyend="316"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="302" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1194" bodyend="1201"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1ab810fa4c02fb49ae197786c305b78702" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1ab810fa4c02fb49ae197786c305b78702" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_isosamples</definition>
         <argsstring>(const int isolines=10)</argsstring>
@@ -773,7 +766,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="304" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="323" bodyend="330"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="304" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1208" bodyend="1215"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1a891f9800705eddc3f73886f265c009b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
@@ -819,7 +812,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="322" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="322" bodyend="322"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1af845efc728a90d7e10de764eff0b2423" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1af845efc728a90d7e10de764eff0b2423" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_contour</definition>
         <argsstring>(const std::string &amp;position=&quot;base&quot;)</argsstring>
@@ -835,7 +828,7 @@
 <para>enables/disables contour drawing for surfaces (for 3d plot) base, surface, both </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="326" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="338" bodyend="352"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="326" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1223" bodyend="1237"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1a0b8522cb81e46dd4f5a22b7b48f977b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
@@ -903,7 +896,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="353" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="353" bodyend="353"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1ad64a717dac18167f656c4f09239973f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1ad64a717dac18167f656c4f09239973f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_legend</definition>
         <argsstring>(const std::string &amp;position=&quot;default&quot;)</argsstring>
@@ -919,7 +912,7 @@
 <para>switches legend on/off position: inside/outside, left/center/right, top/center/bottom, nobox/box </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="358" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="240" bodyend="248"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="358" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1125" bodyend="1133"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1ace901a18ab1a459213afd3ee0233b5ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
@@ -992,7 +985,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="395" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="395" bodyend="395"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1afcb311938827f8718f19ed52d66bad7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1afcb311938827f8718f19ed52d66bad7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_ylabel</definition>
         <argsstring>(const std::string &amp;label=&quot;x&quot;)</argsstring>
@@ -1008,9 +1001,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="399" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="372" bodyend="380"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="399" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1257" bodyend="1265"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1aa93589a95aeab869ba731e2583843ae4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1aa93589a95aeab869ba731e2583843ae4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_xlabel</definition>
         <argsstring>(const std::string &amp;label=&quot;y&quot;)</argsstring>
@@ -1026,9 +1019,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="401" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="359" bodyend="367"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="401" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1244" bodyend="1252"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1ab3206e715d20f05cc0dd1eec89ce8b07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1ab3206e715d20f05cc0dd1eec89ce8b07" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_zlabel</definition>
         <argsstring>(const std::string &amp;label=&quot;z&quot;)</argsstring>
@@ -1044,9 +1037,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="403" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="385" bodyend="393"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="403" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1270" bodyend="1278"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a4b8d96018f2d2d4e2922d4df153d6a84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a4b8d96018f2d2d4e2922d4df153d6a84" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_xrange</definition>
         <argsstring>(const double iFrom, const double iTo)</argsstring>
@@ -1065,9 +1058,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="407" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="400" bodyend="409"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="407" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1285" bodyend="1294"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a461271b7bfd4f84bdfc0055457226f28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a461271b7bfd4f84bdfc0055457226f28" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_yrange</definition>
         <argsstring>(const double iFrom, const double iTo)</argsstring>
@@ -1086,9 +1079,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="410" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="414" bodyend="423"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="410" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1299" bodyend="1308"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a7273f6a48024117b4d234d0251106e78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a7273f6a48024117b4d234d0251106e78" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_zrange</definition>
         <argsstring>(const double iFrom, const double iTo)</argsstring>
@@ -1107,7 +1100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="413" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="428" bodyend="437"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="413" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1313" bodyend="1322"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1a11a62a04c203f01607c3c21a727e318d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
@@ -1175,7 +1168,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="438" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="438" bodyend="438"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1aff546fad227d93babeb5d2cc9f047b89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1aff546fad227d93babeb5d2cc9f047b89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_xlogscale</definition>
         <argsstring>(const double base=10)</argsstring>
@@ -1191,9 +1184,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="442" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="254" bodyend="262"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="442" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1139" bodyend="1147"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a201a802d2f27fece0d39809c4eb3bce0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a201a802d2f27fece0d39809c4eb3bce0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_ylogscale</definition>
         <argsstring>(const double base=10)</argsstring>
@@ -1209,9 +1202,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="444" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="268" bodyend="276"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="444" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1153" bodyend="1161"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a1da3838163b0dbde8809b55c5b5c56b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a1da3838163b0dbde8809b55c5b5c56b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_zlogscale</definition>
         <argsstring>(const double base=10)</argsstring>
@@ -1227,7 +1220,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="446" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="282" bodyend="290"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="446" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1167" bodyend="1175"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1a7b178184260f1498cd0c11a197ea0ac2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
@@ -1295,7 +1288,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="473" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="473" bodyend="473"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a2228f5ab4cce2da463fc90383076a598" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a2228f5ab4cce2da463fc90383076a598" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::set_cbrange</definition>
         <argsstring>(const double iFrom, const double iTo)</argsstring>
@@ -1314,9 +1307,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="477" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="443" bodyend="452"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="477" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1328" bodyend="1337"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a4fc34218cdfdd27a65b92eea1f1f9e84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a4fc34218cdfdd27a65b92eea1f1f9e84" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::plotfile_x</definition>
         <argsstring>(const std::string &amp;filename, const unsigned int column=1, const std::string &amp;title=&quot;&quot;)</argsstring>
@@ -1341,7 +1334,7 @@
 <para>plot a single std::vector: x from file </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="487" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="560" bodyend="597"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="487" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1445" bodyend="1482"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1a80f3b2baae2bceff78ad005d9c3ec3fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1370,7 +1363,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="490" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="683" bodyend="709"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a10e1fc7344bd726faa2d70cd5ced5e5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a10e1fc7344bd726faa2d70cd5ced5e5e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::plotfile_xy</definition>
         <argsstring>(const std::string &amp;filename, const unsigned int column_x=1, const unsigned int column_y=2, const std::string &amp;title=&quot;&quot;)</argsstring>
@@ -1400,7 +1393,7 @@
 <para>plot x,y pairs: x y from file </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="498" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="605" bodyend="643"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="498" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1490" bodyend="1528"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1a0514a7391de6b42e79732ce746c310f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1436,7 +1429,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="501" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="717" bodyend="750"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1afe9d44ba12f617188111ab915010f3ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1afe9d44ba12f617188111ab915010f3ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::plotfile_xy_err</definition>
         <argsstring>(const std::string &amp;filename, const unsigned int column_x=1, const unsigned int column_y=2, const unsigned int column_dy=3, const std::string &amp;title=&quot;&quot;)</argsstring>
@@ -1471,7 +1464,7 @@
 <para>plot x,y pairs with dy errorbars: x y dy from file </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="510" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="650" bodyend="685"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="510" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1535" bodyend="1570"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1a3c5d382eba33f92b26ba85f201bc7dea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1515,7 +1508,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="514" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="757" bodyend="794"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a9dbde2a91eb816481657f3a22c9b0046" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a9dbde2a91eb816481657f3a22c9b0046" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::plotfile_xyz</definition>
         <argsstring>(const std::string &amp;filename, const unsigned int column_x=1, const unsigned int column_y=2, const unsigned int column_z=3, const std::string &amp;title=&quot;&quot;)</argsstring>
@@ -1550,7 +1543,7 @@
 <para>plot x,y,z triples: x y z from file </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="523" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="692" bodyend="726"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="523" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1577" bodyend="1611"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1af89cb366fa7d09ffc1c351516ae54df5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1593,7 +1586,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="529" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="802" bodyend="838"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a51ea5105eb87285820bb93910f8d346c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a51ea5105eb87285820bb93910f8d346c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::plot_slope</definition>
         <argsstring>(const double a, const double b, const std::string &amp;title=&quot;&quot;)</argsstring>
@@ -1617,9 +1610,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="536" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="459" bodyend="487"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="536" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1344" bodyend="1372"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a42dfb8c9d4636745c7be277ed818e849" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a42dfb8c9d4636745c7be277ed818e849" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::plot_equation</definition>
         <argsstring>(const std::string &amp;equation, const std::string &amp;title=&quot;&quot;)</argsstring>
@@ -1639,9 +1632,9 @@
 <para>plot an equation supplied as a std::string y=f(x), write only the function f(x) not y= the independent variable has to be x binary operators: ** exponentiation, * multiply, / divide, + add, - substract, % modulo unary operators: - minus, ! factorial elementary functions: rand(x), abs(x), sgn(x), ceil(x), floor(x), int(x), imag(x), real(x), arg(x), sqrt(x), exp(x), log(x), log10(x), sin(x), cos(x), tan(x), asin(x), acos(x), atan(x), atan2(y,x), sinh(x), cosh(x), tanh(x), asinh(x), acosh(x), atanh(x) special functions: erf(x), erfc(x), inverf(x), gamma(x), igamma(a,x), lgamma(x), ibeta(p,q,x), besj0(x), besj1(x), besy0(x), besy1(x), lambertw(x) statistical fuctions: norm(x), invnorm(x) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="550" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="493" bodyend="520"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="550" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1378" bodyend="1405"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a79aed3a6927f7d1d3497cba441e8a943" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a79aed3a6927f7d1d3497cba441e8a943" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::plot_equation3d</definition>
         <argsstring>(const std::string &amp;equation, const std::string &amp;title=&quot;&quot;)</argsstring>
@@ -1661,9 +1654,9 @@
 <para>plot an equation supplied as a std::string z=f(x,y), write only the function f(x,y) not z= the independent variables have to be x and y </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="555" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="526" bodyend="553"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="555" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1411" bodyend="1438"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1aae22c0470a6fbbc1f5e84dec8d023381" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1aae22c0470a6fbbc1f5e84dec8d023381" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::plot_image</definition>
         <argsstring>(const unsigned char *ucPicBuf, const unsigned int iWidth, const unsigned int iHeight, const std::string &amp;title=&quot;&quot;)</argsstring>
@@ -1693,7 +1686,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="562" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="734" bodyend="781"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="562" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1619" bodyend="1666"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1a34c1b3e877d246a841a29f857a29f502" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
@@ -1720,7 +1713,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="574" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="574" bodyend="574"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a6797761712d3c311e3685bcccba65dd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a6797761712d3c311e3685bcccba65dd4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::reset_plot</definition>
         <argsstring>()</argsstring>
@@ -1731,9 +1724,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="577" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="110" bodyend="117"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="577" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="995" bodyend="1002"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a9aedfe8371083a1a3ac2b9493810049c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a9aedfe8371083a1a3ac2b9493810049c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_gnuplot" kindref="compound">Gnuplot</ref> &amp;</type>
         <definition>Gnuplot &amp; Gnuplot::reset_all</definition>
         <argsstring>()</argsstring>
@@ -1744,9 +1737,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="580" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="124" bodyend="136"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="580" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1009" bodyend="1021"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a2e449552587b0055f40f4ee079d62a8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a2e449552587b0055f40f4ee079d62a8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void Gnuplot::remove_tmpfiles</definition>
         <argsstring>()</argsstring>
@@ -1757,7 +1750,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="583" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="1100" bodyend="1108"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="583" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="1985" bodyend="1993"/>
       </memberdef>
       <memberdef kind="function" id="class_gnuplot_1a3135ffebb308b50c4f3178a62b23ab03" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -1783,7 +1776,7 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="class_gnuplot_1a67cae885c26ced821e335d98986f1967" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a67cae885c26ced821e335d98986f1967" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool Gnuplot::set_GNUPlotPath</definition>
         <argsstring>(const std::string &amp;path)</argsstring>
@@ -1807,9 +1800,9 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="164" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="62" bodyend="82"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="164" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="947" bodyend="967"/>
       </memberdef>
-      <memberdef kind="function" id="class_gnuplot_1a21feba7a3916708b742c3dc25850ab2f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_gnuplot_1a21feba7a3916708b742c3dc25850ab2f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void Gnuplot::set_terminal_std</definition>
         <argsstring>(const std::string &amp;type)</argsstring>
@@ -1833,7 +1826,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="175" bodyfile="/media/Storage/Research/open_source/keycpp/src/gnuplot_i.cpp" bodystart="90" bodyend="102"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" line="175" bodyfile="/media/Storage/Research/open_source/keycpp/include/gnuplot_i.h" bodystart="975" bodyend="987"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1857,8 +1850,8 @@
       <member refid="class_gnuplot_1a21bb10ffa0dbf0fd09e28054840c61f9" prot="public" virt="non-virtual"><scope>Gnuplot</scope><name>Gnuplot</name></member>
       <member refid="class_gnuplot_1a08d1e4ec069ec1cb82bb96427d1e0d7f" prot="private" virt="non-virtual"><scope>Gnuplot</scope><name>init</name></member>
       <member refid="class_gnuplot_1a3135ffebb308b50c4f3178a62b23ab03" prot="public" virt="non-virtual"><scope>Gnuplot</scope><name>is_valid</name></member>
-      <member refid="class_gnuplot_1ae71e004ab7266f34d270cf76ea143e2b" prot="private" virt="non-virtual"><scope>Gnuplot</scope><name>m_sGNUPlotFileName</name></member>
-      <member refid="class_gnuplot_1a3c5949b04c54833eb685c30322c816e6" prot="private" virt="non-virtual"><scope>Gnuplot</scope><name>m_sGNUPlotPath</name></member>
+      <member refid="class_gnuplot_1a433e47ea0fed2174845b115f48f9fdaf" prot="private" virt="non-virtual"><scope>Gnuplot</scope><name>m_sGNUPlotFileName</name></member>
+      <member refid="class_gnuplot_1a76ca6d463fa2ec0eef4beae56e06267b" prot="private" virt="non-virtual"><scope>Gnuplot</scope><name>m_sGNUPlotPath</name></member>
       <member refid="class_gnuplot_1acceb0a453297bb0ec7b26ec1dafbcec2" prot="private" virt="non-virtual"><scope>Gnuplot</scope><name>nplots</name></member>
       <member refid="class_gnuplot_1afb69631c7a498077e378a3cbb56f38c8" prot="public" virt="non-virtual"><scope>Gnuplot</scope><name>operator&lt;&lt;</name></member>
       <member refid="class_gnuplot_1a18bcf3e5d5081e50cf1ba8244973e514" prot="public" virt="non-virtual"><scope>Gnuplot</scope><name>operator=</name></member>
@@ -1909,9 +1902,9 @@
       <member refid="class_gnuplot_1a7273f6a48024117b4d234d0251106e78" prot="public" virt="non-virtual"><scope>Gnuplot</scope><name>set_zrange</name></member>
       <member refid="class_gnuplot_1a356d2faaa79f08d13fec9718b776b28d" prot="public" virt="non-virtual"><scope>Gnuplot</scope><name>showonscreen</name></member>
       <member refid="class_gnuplot_1a492b77047e8a79ef760e54ceb89de539" prot="private" virt="non-virtual"><scope>Gnuplot</scope><name>smooth</name></member>
-      <member refid="class_gnuplot_1ad763c98e6b2f51bef05f0b2da522fef4" prot="private" virt="non-virtual"><scope>Gnuplot</scope><name>terminal_std</name></member>
+      <member refid="class_gnuplot_1afdccc7335caf1d0fbbe1c604a36347bd" prot="private" virt="non-virtual"><scope>Gnuplot</scope><name>terminal_std</name></member>
       <member refid="class_gnuplot_1a7b9f721714ffb6aff0d374fcf1c8c90f" prot="private" virt="non-virtual"><scope>Gnuplot</scope><name>tmpfile_list</name></member>
-      <member refid="class_gnuplot_1aeb5608cbd5c03aa7ef318f11f0cc54ab" prot="private" virt="non-virtual"><scope>Gnuplot</scope><name>tmpfile_num</name></member>
+      <member refid="class_gnuplot_1abf2e3b6bbb9a070a380c77ef64525e90" prot="private" virt="non-virtual"><scope>Gnuplot</scope><name>tmpfile_num</name></member>
       <member refid="class_gnuplot_1a871efce13e856022b3ba36caaa10ea33" prot="private" virt="non-virtual"><scope>Gnuplot</scope><name>two_dim</name></member>
       <member refid="class_gnuplot_1a0b8522cb81e46dd4f5a22b7b48f977b1" prot="public" virt="non-virtual"><scope>Gnuplot</scope><name>unset_contour</name></member>
       <member refid="class_gnuplot_1a53183e1487bc6977f0d46bf75d19b4d3" prot="public" virt="non-virtual"><scope>Gnuplot</scope><name>unset_grid</name></member>

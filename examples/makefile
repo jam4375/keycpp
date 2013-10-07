@@ -6,13 +6,13 @@ ODIR=obj
 LDIR =../lib
 
 ifeq ($(lib),mkl)
-        LIBS=-lm -lkeycpp -L/$(MKLROOT)/lib/intel64 -lmkl_rt
+        LIBS=-lm -L/$(MKLROOT)/lib/intel64 -lmkl_rt
 else
-        LIBS=-lm -lkeycpp -lblas -llapack
+        LIBS=-lm -lblas -llapack
 endif
 
 _DEPS = Figure.h Spline.h keycpp.h vector_k.h Matrix.h kiss_fft.h gnuplot_i.h
-DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS)) ../lib/libkeycpp.a
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ = example.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))

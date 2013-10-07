@@ -27,7 +27,7 @@
 #include <stdarg.h>
 #include "vector_k.h"
 #include "Matrix.h"
-#include "kiss_fft.h"
+#include "_kiss_fft_guts.h"
 #include "Spline.h"
 #include "Figure.h"
 
@@ -1948,7 +1948,7 @@ namespace keycpp
 				}
 				else
 				{
-					throw KeyCppException("ERROR! Could not interpolate!! Unknown string in interp1!");
+					throw KeyCppException("ERROR! Could not interpolate!! Unknown std::string in interp1!");
 					return nan("");
 				}
 			}
@@ -1992,7 +1992,7 @@ namespace keycpp
 				}
 				else
 				{
-					throw KeyCppException("ERROR! Could not interpolate!! Unknown string in interp1!");
+					throw KeyCppException("ERROR! Could not interpolate!! Unknown std::string in interp1!");
 					return nan("");
 				}
 			}
@@ -2643,7 +2643,7 @@ namespace keycpp
 	    return in;
 	}
 	
-	/** \brief Converts a string to a double. Currently only works on single numbers.
+	/** \brief Converts a std::string to a double. Currently only works on single numbers.
 	 *         In the future this should be expanded to work on vectors and matrices. (see MATLAB docs)
 	 */
 	inline double str2num(const std::string &in)
@@ -3307,7 +3307,7 @@ namespace keycpp
 	    return true;
 	}
 	
-	/** \brief Rounds the real and imaginary parts of complex<double> a towards
+	/** \brief Rounds the real and imaginary parts of std::complex<double> a towards
 	 *         positive infinity seperately.
 	 */
 	inline std::complex<double> ceil(const std::complex<double> &a)
@@ -3513,8 +3513,6 @@ namespace keycpp
         }
         
         matrix<double> A;
-        vector_k<double> b;
-        b.reserve(100);
         A.reserve(1000);
         
         std::stringstream ss;
@@ -3523,6 +3521,8 @@ namespace keycpp
 	
         while(std::getline(in, dummy))
         {
+            vector_k<double> b;
+            b.reserve(100);
 	        ss.str("");
 	        ss.clear();
 	        ss << dummy;
@@ -3593,6 +3593,1029 @@ namespace keycpp
     {
         return pow(stdev(v1),2.0);
     }
+    
+    /** \brief Returns a random double between 0 and 1.0
+	 */
+	inline double rand()
+	{
+		return ((double)std::rand()/((double)RAND_MAX));
+	}
+	
+	/** \brief Returns an N x N matrix of random doubles between 0 and 1.0
+	 */
+	inline matrix<double> rand(const unsigned int &N)
+	{
+	    matrix<double> A(N,N);
+	    for(unsigned int ii = 0; ii < N; ii++)
+	    {
+	        for(unsigned int jj = 0; jj < N; jj++)
+	        {
+	            A(ii,jj) = ((double)std::rand()/((double)RAND_MAX));
+	        }
+        }
+	    
+		return A;
+	}
+	
+	/** \brief Returns an M x N matrix of random doubles between 0 and 1.0
+	 */
+	inline matrix<double> rand(const unsigned int &M, const unsigned int &N)
+	{
+	    matrix<double> A(M,N);
+	    for(unsigned int ii = 0; ii < M; ii++)
+	    {
+	        for(unsigned int jj = 0; jj < N; jj++)
+	        {
+	            A(ii,jj) = ((double)std::rand()/((double)RAND_MAX));
+	        }
+        }
+	    
+		return A;
+	}
+
+	/** \brief Generalized complex-valued eigenvalue solver using LAPACK function call. 
+	 *  
+	 *  This function returns the eigenvalues(lambda) of the complex-valued generalized
+	 *  eigenvalue problem: Ax_r = lambda*Bx_r or x_l^T*A = lambda*x_l^T*B. The eigenvalues
+	 *  are returned by default. To return the right or left eigenvectors, supply the
+	 *  function with a std::complex<double> matrix object in the 3rd or 4th parameters, respectively.
+	 */
+    inline vector_k<std::complex<double> > eig(const matrix<std::complex<double> > &A, const matrix<std::complex<double> > &B, matrix<std::complex<double> > *vr_return, matrix<std::complex<double> > *vl_return)
+	{
+		unsigned int n;
+		int nn, lda, ldb, ldvl, ldvr, lwork, info;
+		n = (unsigned)A.size(1);
+		lda = ldb = (int)A.size(1);
+		nn = n;
+		lwork = n*n + 64;
+		char jobvl, jobvr;
+
+		if(vl_return == NULL)
+		{
+			jobvl = 'N';
+			ldvl = 1;
+		}
+		else
+		{
+			jobvl = 'V';
+			ldvl = n;
+		}
+
+		if(vr_return == NULL)
+		{
+			jobvr = 'N';
+			ldvr = 1;
+		}
+		else
+		{
+			jobvr = 'V';
+			ldvr = n;
+		}
+
+		std::complex<double> *a = new std::complex<double>[n*n];
+		std::complex<double> *b = new std::complex<double>[n*n];
+		std::complex<double> *vr = new std::complex<double>[n*n];
+		std::complex<double> *vl = new std::complex<double>[n*n];
+		std::complex<double> *alpha = new std::complex<double>[n];
+		std::complex<double> *beta = new std::complex<double>[n];
+		std::complex<double> *work = new std::complex<double>[lwork];
+		double *rwork = new double[8*n];
+		for(unsigned int ii = 0; ii < n; ii++)
+		{
+			for(unsigned int jj = 0; jj < n; jj++)
+			{
+				a[ii*n + jj] = A(jj,ii);
+				b[ii*n + jj] = B(jj,ii);
+			}
+		}
+
+		zggev_(&jobvl, &jobvr, &nn, a, &lda, b, &ldb, alpha, beta, vl, &ldvl, vr, &ldvr, work, &lwork, rwork, &info);
+
+		vector_k<std::complex<double> > lambda(n);
+		for(unsigned int ii = 0; ii < n; ii++)
+		{
+			lambda[ii] = alpha[ii]/beta[ii];
+		}
+		if(jobvr == 'V')
+		{
+			(*vr_return) = matrix<std::complex<double> >(n,n);
+			for(unsigned int ii = 0; ii < n; ii++)
+			{
+				for(unsigned int jj = 0; jj < n; jj++)
+				{
+					(*vr_return)(jj,ii) = vr[ii*n + jj];
+				}
+			}
+		}
+		if(jobvl == 'V')
+		{
+			(*vl_return) = matrix<std::complex<double> >(n,n);
+			for(unsigned int ii = 0; ii < n; ii++)
+			{
+				for(unsigned int jj = 0; jj < n; jj++)
+				{
+					(*vl_return)(jj,ii) = vl[ii*n + jj];
+				}
+			}
+		}
+
+		delete [] a;
+		delete [] b;
+		delete [] vr;
+		delete [] vl;
+		delete [] alpha;
+		delete [] beta;
+		delete [] work;
+		delete [] rwork;
+
+		return lambda;
+	}
+	
+	/** \brief Complex-valued eigenvalue solver using LAPACK function call. 
+	 *  
+	 *  This function returns the eigenvalues(lambda) of the complex-valued
+	 *  eigenvalue problem: Ax_r = lambda*x_r or x_l^T*A = lambda*x_l^T. The eigenvalues
+	 *  are returned by default. To return the right or left eigenvectors, supply the
+	 *  function with a std::complex<double> matrix object in the 2nd or 3rd parameters, respectively.
+	 */
+    inline vector_k<std::complex<double> > eig(const matrix<std::complex<double> > &A, matrix<std::complex<double> > *vr_return, matrix<std::complex<double> > *vl_return)
+	{
+		unsigned int n;
+		int nn, lda, ldb, ldvl, ldvr, lwork, info;
+		n = (unsigned)A.size(1);
+		lda = ldb = (int)A.size(1);
+		nn = n;
+		lwork = 2*n;
+		char jobvl, jobvr;
+
+		if(vl_return == NULL)
+		{
+			jobvl = 'N';
+			ldvl = 1;
+		}
+		else
+		{
+			jobvl = 'V';
+			ldvl = n;
+		}
+
+		if(vr_return == NULL)
+		{
+			jobvr = 'N';
+			ldvr = 1;
+		}
+		else
+		{
+			jobvr = 'V';
+			ldvr = n;
+		}
+
+		std::complex<double> *a = new std::complex<double>[n*n];
+		std::complex<double> *vr = new std::complex<double>[n*n];
+		std::complex<double> *vl = new std::complex<double>[n*n];
+		std::complex<double> *w = new std::complex<double>[n];
+		std::complex<double> *work = new std::complex<double>[lwork];
+		double *rwork = new double[lwork];
+		for(unsigned int ii = 0; ii < n; ii++)
+		{
+			for(unsigned int jj = 0; jj < n; jj++)
+			{
+				a[ii*n + jj] = A(jj,ii);
+			}
+		}
+
+	    zgeev_(&jobvl, &jobvr, &nn, a, &lda, w, vl, &ldvl, vr, &ldvr, work, &lwork, rwork, &info);
+
+		vector_k<std::complex<double> > lambda(n);
+		for(unsigned int ii = 0; ii < n; ii++)
+		{
+			lambda[ii] = w[ii];
+		}
+		if(jobvr == 'V')
+		{
+			(*vr_return) = matrix<std::complex<double> >(n,n);
+			for(unsigned int ii = 0; ii < n; ii++)
+			{
+				for(unsigned int jj = 0; jj < n; jj++)
+				{
+					(*vr_return)(jj,ii) = vr[ii*n + jj];
+				}
+			}
+		}
+		if(jobvl == 'V')
+		{
+			(*vl_return) = matrix<std::complex<double> >(n,n);
+			for(unsigned int ii = 0; ii < n; ii++)
+			{
+				for(unsigned int jj = 0; jj < n; jj++)
+				{
+					(*vl_return)(jj,ii) = vl[ii*n + jj];
+				}
+			}
+		}
+
+		delete [] a;
+		delete [] vr;
+		delete [] vl;
+		delete [] w;
+		delete [] work;
+		delete [] rwork;
+
+		return lambda;
+	}
+	
+	
+	/** \brief Double precision eigenvalue solver using LAPACK function call. 
+	 *  
+	 *  This function returns the eigenvalues(lambda) of the
+	 *  eigenvalue problem: Ax_r = lambda*x_r or x_l^T*A = lambda*x_l^T. The eigenvalues
+	 *  are returned by default. To return the right or left eigenvectors, supply the
+	 *  function with a std::complex<double> matrix object in the 2nd or 3rd parameters, respectively.
+	 */
+    inline vector_k<std::complex<double> > eig(const matrix<double> &A, matrix<std::complex<double> > *vr_return, matrix<std::complex<double> > *vl_return)
+	{
+	    matrix<std::complex<double>> B(A.size(1),A.size(2));
+	    for(unsigned int ii = 0; ii < B.size(1); ii++)
+	    {
+	        for(unsigned int jj = 0; jj < B.size(2); jj++)
+	        {
+	            B(ii,jj) = A(ii,jj);
+	        }
+	    }
+	    return eig(B, vr_return, vl_return);
+	}
+	
+	inline double rcond(const matrix<double> &A)
+	{
+	    if(A.size(1) != A.size(2))
+	    {
+	        throw KeyCppException("In rcond(), input must be a square matrix.");
+	    }
+	    
+	    int info, n, lda;
+        double anorm, rcond;
+        
+        int *iw = new int[A.size(1)];
+        double *w = new double[A.size(1)*A.size(2) + 64];
+        double *x = new double[A.size(1)*A.size(2)];
+        for(unsigned int ii = 0; ii < A.size(2); ii++)
+        {
+            for(unsigned int jj = 0; jj < A.size(1); jj++)
+            {
+                x[ii*A.size(1) + jj] = A(jj,ii);
+            }
+        }
+        n = (int)A.size(1);
+        lda = n;
+
+        /* Computes the norm of x */
+        anorm = dlange_("1", &n, &n, x, &lda, w);
+
+        /* Modifies x in place with a LU decomposition */
+        dgetrf_(&n, &n, x, &lda, iw, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in rcond()!");
+        }
+
+        /* Computes the reciprocal norm */
+        dgecon_("1", &n, x, &lda, &anorm, &rcond, w, iw, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in rcond()!");
+        }
+        
+        delete [] iw;
+        delete [] w;
+        delete [] x;
+
+        return rcond;
+	}
+	
+	inline double rcond(const matrix<std::complex<double>> &A)
+	{
+	    if(A.size(1) != A.size(2))
+	    {
+	        throw KeyCppException("In rcond(), input must be a square matrix.");
+	    }
+	    
+	    int info, n, lda;
+        double anorm, rcond;
+        
+        int *iw = new int[A.size(1)];
+        double *w1 = new double[A.size(1)*A.size(2) + 64];
+        std::complex<double> *w2 = new std::complex<double>[A.size(1)*A.size(2) + 64];
+        std::complex<double> *x = new std::complex<double>[A.size(1)*A.size(2)];
+        for(unsigned int ii = 0; ii < A.size(2); ii++)
+        {
+            for(unsigned int jj = 0; jj < A.size(1); jj++)
+            {
+                x[ii*A.size(1) + jj] = A(jj,ii);
+            }
+        }
+        n = (int)A.size(1);
+        lda = n;
+
+        /* Computes the norm of x */
+        anorm = zlange_("1", &n, &n, x, &lda, w1);
+
+        /* Modifies x in place with a LU decomposition */
+        zgetrf_(&n, &n, x, &lda, iw, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in rcond()!");
+        }
+
+        /* Computes the reciprocal norm */
+        zgecon_("1", &n, x, &lda, &anorm, &rcond, w2, w1, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in rcond()!");
+        }
+        
+        delete [] iw;
+        delete [] w1;
+        delete [] w2;
+        delete [] x;
+
+        return rcond;
+	}
+	
+	inline vector_k<std::complex<double>> linsolve(const matrix<std::complex<double>>& A_in,
+	                                      const vector_k<std::complex<double>>& b_in)
+	{
+		if(b_in.empty() || A_in.size(1) <= 0 || A_in.size(2) <= 0)
+		{
+			throw KeyCppException("Error in linsolve()! Empty matrix or vector supplied!");
+		}
+		if(A_in.size(2) != b_in.size())
+		{
+			throw KeyCppException("Error in linsolve()! Matrix and vector sizes are not compatible!");
+		}
+		
+		unsigned int n = (unsigned)b_in.size();
+		int nn = n;
+		int m = (int)A_in.size(2);
+		int nrhs = 1;
+
+        int info, lda;
+        double anorm, rcond;
+        
+        int *iw = new int[A_in.size(1)];
+        std::complex<double> *w1 = new std::complex<double>[A_in.size(1)*A_in.size(2) + 64];
+        double *w2 = new double[A_in.size(1)*A_in.size(2) + 64];
+        std::complex<double> *A = new std::complex<double>[A_in.size(1)*A_in.size(2)];
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
+        {
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
+            {
+                A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+            }
+        }
+        lda = n;
+
+        /* Computes the norm of A */
+        anorm = zlange_("1", &nn, &nn, A, &lda, w2);
+
+        /* Modifies A in place with a LU decomposition */
+        zgetrf_(&nn, &nn, A, &lda, iw, &info);
+        if(info != 0)
+        {
+            if(info > 0)
+            {
+                std::cerr << "Warning: Matrix is singular. Results may be inaccurate.\n";
+            }
+            else
+            {
+                throw KeyCppException("Unknown error in linsolve()!");
+            }
+        }
+
+        /* Computes the reciprocal norm */
+        zgecon_("1", &nn, A, &lda, &anorm, &rcond, w1, w2, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in linsolve()!");
+        }
+        
+        if(rcond < 1e-15)
+        {
+            std::cerr << "Warning: Matrix is close to singular or badly scaled. Results may be inaccurate.\nrcond = " << rcond << std::endl;
+        }
+        
+        vector_k<std::complex<double>> x_out(b_in);
+        zgetrs_("N", &m, &nrhs, A, &lda, iw, &x_out[0], &nn, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in linsolve()!");
+        }
+        
+        delete [] iw;
+        delete [] w1;
+        delete [] w2;
+        delete [] A;
+        
+		return x_out;
+	}
+	
+	
+	inline vector_k<double> linsolve(const matrix<double>& A_in,
+	                                      const vector_k<double>& b_in)
+	{
+		if(b_in.empty() || A_in.size(1) <= 0 || A_in.size(2) <= 0)
+		{
+			throw KeyCppException("Error in linsolve()! Empty matrix or vector supplied!");
+		}
+		if(A_in.size(2) != b_in.size())
+		{
+			throw KeyCppException("Error in linsolve()! Matrix and vector sizes are not compatible!");
+		}
+		
+		unsigned int n = (unsigned)b_in.size();
+		unsigned int m = (unsigned)A_in.size(2);
+		int nrhs = 1, nn = n, mm = m;
+
+        int info = 0, lda;
+        double anorm, rcond;
+        
+        int *iw = new int[A_in.size(1)];
+        double *w1 = new double[A_in.size(1)*A_in.size(2) + 64];
+        int *w2 = new int[A_in.size(1)*A_in.size(2) + 64];
+        double *A = new double[A_in.size(1)*A_in.size(2)];
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
+        {
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
+            {
+                A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+            }
+        }
+        lda = n;
+
+        /* Computes the norm of A */
+        anorm = dlange_("1", &nn, &nn, A, &lda, w1);
+
+        /* Modifies A in place with a LU decomposition */
+        dgetrf_(&nn, &nn, A, &lda, iw, &info);
+        if(info != 0)
+        {
+            if(info > 0)
+            {
+                std::cerr << "Warning: Matrix is singular. Results may be inaccurate.\n";
+            }
+            else
+            {
+                throw KeyCppException("Unknown error in linsolve()!");
+            }
+        }
+
+        /* Computes the reciprocal norm */
+        dgecon_("1", &nn, A, &lda, &anorm, &rcond, w1, w2, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in linsolve()!");
+        }
+        
+        if(rcond < 1e-15)
+        {
+            std::cerr << "Warning: Matrix is close to singular or badly scaled. Results may be inaccurate.\nrcond = " << rcond << std::endl;
+        }
+        
+        vector_k<double> x_out(b_in);
+        dgetrs_("N", &mm, &nrhs, A, &lda, iw, &x_out[0], &nn, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in linsolve()!");
+        }
+        
+        delete [] iw;
+        delete [] w1;
+        delete [] w2;
+        delete [] A;
+        
+		return x_out;
+	}
+	
+	inline matrix<double> inv(const matrix<double>& A_in)
+	{
+	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
+		{
+			throw KeyCppException("Error in inv()! Empty matrix supplied!");
+		}
+		if(A_in.size(1) != A_in.size(2))
+		{
+		    throw KeyCppException("Error in inv()! Matrix must be square!");
+		}
+		
+		unsigned int n = (unsigned)A_in.size(1);
+		int nn = (int)n;
+
+        int info, lda;
+        double anorm, rcond;
+        
+        int *iw = new int[A_in.size(1)];
+        int lwork = (int)(A_in.size(1)*A_in.size(2)) + 64;
+        double *w1 = new double[lwork];
+        int *w2 = new int[lwork];
+        double *A = new double[A_in.size(1)*A_in.size(2)];
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
+        {
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
+            {
+                A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+            }
+        }
+        lda = n;
+
+        /* Computes the norm of A */
+        anorm = dlange_("1", &nn, &nn, A, &lda, w1);
+
+        /* Modifies A in place with a LU decomposition */
+        dgetrf_(&nn, &nn, A, &lda, iw, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in inv()!");
+        }
+
+        /* Computes the reciprocal norm */
+        dgecon_("1", &nn, A, &lda, &anorm, &rcond, w1, w2, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in inv()!");
+        }
+        
+        if(rcond < 1e-15)
+        {
+            std::cerr << "Warning: Matrix is close to singular or badly scaled. Results may be inaccurate.\nrcond = " << rcond << std::endl;
+        }
+
+        dgetri_(&nn,A,&nn,iw,w1,&lwork,&info);
+
+        matrix<double> A_out(A_in.size(1),A_in.size(2));
+        for(unsigned int ii = 0; ii < n; ii++)
+        {
+            for(unsigned int jj = 0; jj < n; jj++)
+            {
+                A_out(jj,ii) = A[ii*n + jj];
+            }
+        }
+
+        delete [] iw;
+        delete [] w1;
+        delete [] w2;
+        delete [] A;
+        
+        return A_out;
+    }
+    
+    inline matrix<std::complex<double>> inv(const matrix<std::complex<double>>& A_in)
+	{
+		if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
+		{
+			throw KeyCppException("Error in inv()! Empty matrix supplied!");
+		}
+		if(A_in.size(1) != A_in.size(2))
+		{
+			throw KeyCppException("Error in inv()! Matrix must be square!");
+		}
+		
+		unsigned int n = (unsigned)A_in.size(1);
+		int nn = n;
+
+        int info, lda;
+        double anorm, rcond;
+        
+        int *iw = new int[A_in.size(1)];
+        int lwork = (int)(A_in.size(1)*A_in.size(2)) + 64;
+        std::complex<double> *w1 = new std::complex<double>[lwork];
+        double *w2 = new double[lwork];
+        std::complex<double> *A = new std::complex<double>[A_in.size(1)*A_in.size(2)];
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
+        {
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
+            {
+                A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+            }
+        }
+        lda = n;
+
+        /* Computes the norm of A */
+        anorm = zlange_("1", &nn, &nn, A, &lda, w2);
+
+        /* Modifies A in place with a LU decomposition */
+        zgetrf_(&nn, &nn, A, &lda, iw, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in inv()!");
+        }
+
+        /* Computes the reciprocal norm */
+        zgecon_("1", &nn, A, &lda, &anorm, &rcond, w1, w2, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in inv()!");
+        }
+        
+        if(rcond < 1e-15)
+        {
+            std::cerr << "Warning: Matrix is close to singular or badly scaled. Results may be inaccurate.\nrcond = " << rcond << std::endl;
+        }
+        
+        zgetri_(&nn,A,&nn,iw,w1,&lwork,&info);
+
+        matrix<std::complex<double>> A_out(A_in.size(1),A_in.size(2));
+        for(unsigned int ii = 0; ii < n; ii++)
+        {
+            for(unsigned int jj = 0; jj < n; jj++)
+            {
+                A_out(jj,ii) = A[ii*n + jj];
+            }
+        }
+        
+        delete [] iw;
+        delete [] w1;
+        delete [] w2;
+        delete [] A;
+        
+		return A_out;
+	}
+	
+	inline double norm(const matrix<double> &A_in, std::string method)
+	{
+	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
+		{
+			throw KeyCppException("Error in norm()! Empty matrix supplied!");
+		}
+		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
+		if(method.compare("1") != 0 && method.compare("2") != 0 && method.compare("inf") != 0 && method.compare("fro") != 0)
+		{
+		    throw KeyCppException("Unknown norm type!");
+		}
+		if(method.compare("fro") == 0)
+		{
+		    method = "f";
+		}
+		else if(method.compare("inf") == 0)
+		{
+		    method = "i";
+		}
+		
+        double anorm;
+		if(method.compare("2") == 0)
+		{
+		    auto svd_out = svd(A_in);
+		    anorm = max(max(svd_out.S));
+		}
+		else
+		{
+	        int m = (int)A_in.size(1);
+	        int n = (int)A_in.size(2);
+
+            int lda;
+            int lwork = (int)(A_in.size(1)*A_in.size(2)) + 64;
+            double *w1 = new double[lwork];
+            lda = m;
+            anorm = dlange_(method.c_str(), &m, &n, &A_in.mData[0], &lda, w1);
+            
+            delete [] w1;
+        }
+        
+        return anorm;
+	}
+	
+	/** \brief Computes the singular value decomposition of matrix A_in.
+	 */
+	inline SVD_type<double,double> svd(const matrix<double> &A_in, std::string method)
+	{
+	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
+		{
+			throw KeyCppException("Error in svd()! Empty matrix supplied!");
+		}
+		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
+		
+	    unsigned int m = (unsigned)A_in.size(1);
+	    unsigned int n = (unsigned)A_in.size(2);
+	    int nn = n, mm = m;
+        
+        unsigned int ldvt;
+        int info, lda, ldu, ldvt2;
+        
+        unsigned int col_u;
+        
+        SVD_type<double,double> out;
+        int lwork = (int)(A_in.size(1)*A_in.size(2)) + 64;
+        double *work = new double[lwork];
+        double *A = new double[A_in.size(1)*A_in.size(2)];
+        double *U;
+        double *S;
+        double *VT;
+        unsigned int min_dim;
+        if(m > n)
+        {
+            min_dim = n;
+        }
+        else
+        {
+            min_dim = m;
+        }
+        S = new double[min_dim];
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
+        {
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
+            {
+                A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+            }
+        }
+        lda = m;
+        ldu = m;
+        std::string jobu, jobvt;
+        if(method.compare("0") == 0)
+        {
+            jobu = "S";
+            jobvt = "A";
+            U = new double[m*min_dim];
+            col_u = min_dim;
+            VT = new double[n*n];
+            ldvt = n;
+            if(m > n)
+            {
+                out.S = matrix<double>(n,n);
+            }
+            else
+            {
+                out.S = matrix<double>(m,n);
+            }
+        }
+        else if(method.compare("econ") == 0)
+        {
+            jobu = "S";
+            jobvt = "S";
+            U = new double[m*min_dim];
+            col_u = min_dim;
+            VT = new double[n*min_dim];
+            if(m > n)
+            {
+                ldvt = n;
+            }
+            else
+            {
+                ldvt = m;
+            }
+            if(m >= n)
+            {
+                out.S = matrix<double>(n,n);
+            }
+            else if(m < n)
+            {
+                out.S = matrix<double>(m,m);
+            }
+            else
+            {
+                out.S = matrix<double>(m,n);
+            }
+        }
+        else if(method.empty())
+        {
+            jobu = "A";
+            jobvt = "A";
+            U = new double[m*m];
+            col_u = m;
+            VT = new double[n*n];
+            ldvt = n;
+            out.S = matrix<double>(m,n);
+        }
+        else
+        {
+            throw KeyCppException("Unknown argument to svd()!");
+        }
+		ldvt2 = ldvt;
+		dgesvd_(jobu.c_str(), jobvt.c_str(), &mm, &nn, A, &lda, S, U, &ldu, VT, &ldvt2, work, &lwork, &info);
+                 
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in svd()!");
+        }
+        
+        out.U = matrix<double>(m,col_u);
+        out.V = matrix<double>(n,ldvt);
+        
+        for(unsigned int ii = 0; ii < min_dim; ii++)
+        {
+            out.S(ii,ii) = S[ii];
+        }
+        for(unsigned int ii = 0; ii < m; ii++)
+        {
+            for(unsigned int jj = 0; jj < col_u; jj++)
+            {
+                out.U(ii,jj) = U[jj*m + ii];
+            }
+        }
+        
+        for(unsigned int ii = 0; ii < n; ii++)
+        {
+            for(unsigned int jj = 0; jj < ldvt; jj++)
+            {
+                out.V(ii,jj) = VT[ii*ldvt + jj];
+            }
+        }
+                 
+        delete [] work;
+        delete [] A;
+        delete [] U;
+        delete [] S;
+        delete [] VT;
+        
+        return out;
+	}
+	
+	inline double norm(const matrix<std::complex<double>> &A_in, std::string method)
+	{
+	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
+		{
+			throw KeyCppException("Error in norm()! Empty matrix supplied!");
+		}
+		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
+		if(method.compare("1") != 0 && method.compare("2") != 0 && method.compare("inf") != 0 && method.compare("fro") != 0)
+		{
+		    throw KeyCppException("Unknown norm type!");
+		}
+		if(method.compare("fro") == 0)
+		{
+		    method = "f";
+		}
+		else if(method.compare("inf") == 0)
+		{
+		    method = "i";
+		}
+		
+        double anorm;
+		if(method.compare("2") == 0)
+		{
+		    auto svd_out = svd(A_in);
+		    anorm = max(max(svd_out.S));
+		}
+		else
+		{
+	        int m = (int)A_in.size(1);
+	        int n = (int)A_in.size(2);
+
+            int lda;
+            int lwork = (int)(A_in.size(1)*A_in.size(2)) + 64;
+            double *w1 = new double[lwork];
+            lda = m;
+            anorm = zlange_(method.c_str(), &m, &n, &A_in.mData[0], &lda, w1);
+            
+            delete [] w1;
+        }
+        
+        return anorm;
+	}
+	
+	/** \brief Computes the singular value decomposition of matrix A_in.
+	 */
+	inline SVD_type<std::complex<double>, double> svd(const matrix<std::complex<double>> &A_in, std::string method)
+	{
+	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
+		{
+			throw KeyCppException("Error in svd()! Empty matrix supplied!");
+		}
+		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
+		
+	    unsigned int m = (unsigned)A_in.size(1);
+	    unsigned int n = (unsigned)A_in.size(2);
+	    int mm = (int)m, nn = (int)n;
+
+        unsigned int ldvt;
+        int info, lda, ldu, ldvt2;
+        
+        unsigned int col_u;
+        
+        SVD_type<std::complex<double>,double> out;
+        int lwork = (int)(A_in.size(1)*A_in.size(2)) + 64;
+        double *rwork = new double[lwork];
+        std::complex<double> *work = new std::complex<double>[lwork];
+        std::complex<double> *A = new std::complex<double>[A_in.size(1)*A_in.size(2)];
+        std::complex<double> *U;
+        double *S;
+        std::complex<double> *VT;
+        unsigned int min_dim;
+        if(m > n)
+        {
+            min_dim = n;
+        }
+        else
+        {
+            min_dim = m;
+        }
+        S = new double[min_dim];
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
+        {
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
+            {
+                A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+            }
+        }
+        lda = m;
+        ldu = m;
+        std::string jobu, jobvt;
+        if(method.compare("0") == 0)
+        {
+            jobu = "S";
+            jobvt = "A";
+            U = new std::complex<double>[m*min_dim];
+            col_u = min_dim;
+            VT = new std::complex<double>[n*n];
+            ldvt = n;
+            if(m > n)
+            {
+                out.S = matrix<double>(n,n);
+            }
+            else
+            {
+                out.S = matrix<double>(m,n);
+            }
+        }
+        else if(method.compare("econ") == 0)
+        {
+            jobu = "S";
+            jobvt = "S";
+            U = new std::complex<double>[m*min_dim];
+            col_u = min_dim;
+            VT = new std::complex<double>[n*min_dim];
+            if(m > n)
+            {
+                ldvt = n;
+            }
+            else
+            {
+                ldvt = m;
+            }
+            if(m >= n)
+            {
+                out.S = matrix<double>(n,n);
+            }
+            else if(m < n)
+            {
+                out.S = matrix<double>(m,m);
+            }
+            else
+            {
+                out.S = matrix<double>(m,n);
+            }
+        }
+        else if(method.empty())
+        {
+            jobu = "A";
+            jobvt = "A";
+            U = new std::complex<double>[m*m];
+            col_u = m;
+            VT = new std::complex<double>[n*n];
+            ldvt = n;
+            out.S = matrix<double>(m,n);
+        }
+        else
+        {
+            throw KeyCppException("Unknown argument to svd()!");
+        }
+		ldvt2 = ldvt;
+		zgesvd_(jobu.c_str(), jobvt.c_str(), &mm, &nn, A, &lda, S, U, &ldu, VT, &ldvt2, work, &lwork, rwork, &info);
+                 
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in SVD()!");
+        }
+        
+        out.U = matrix<std::complex<double>>(m,col_u);
+        out.V = matrix<std::complex<double>>(n,ldvt);
+        
+        for(unsigned int ii = 0; ii < min_dim; ii++)
+        {
+            out.S(ii,ii) = S[ii];
+        }
+        for(unsigned int ii = 0; ii < m; ii++)
+        {
+            for(unsigned int jj = 0; jj < col_u; jj++)
+            {
+                out.U(ii,jj) = U[jj*m + ii];
+            }
+        }
+        
+        for(unsigned int ii = 0; ii < n; ii++)
+        {
+            for(unsigned int jj = 0; jj < ldvt; jj++)
+            {
+                out.V(ii,jj) = VT[ii*ldvt + jj];
+            }
+        }
+                 
+        delete [] rwork;
+        delete [] work;
+        delete [] A;
+        delete [] U;
+        delete [] S;
+        delete [] VT;
+        
+        return out;
+	}
 }
 
 #endif

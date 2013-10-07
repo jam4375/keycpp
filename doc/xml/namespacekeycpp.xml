@@ -1309,10 +1309,10 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="141"/>
       </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1ab08546b5ffdc4b792b2a835c823340cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacekeycpp_1a516e693670ca88debd44ca9a48b2f225" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; std::complex&lt; double &gt; &gt;</type>
-        <definition>vector_k&lt;std::complex&lt;double&gt; &gt; keycpp::eig</definition>
-        <argsstring>(const matrix&lt; std::complex&lt; double &gt; &gt; &amp;A, const matrix&lt; std::complex&lt; double &gt; &gt; &amp;B, matrix&lt; std::complex&lt; double &gt; &gt; *vr_return=NULL, matrix&lt; std::complex&lt; double &gt; &gt; *vl_return=NULL)</argsstring>
+        <definition>vector_k&lt; std::complex&lt; double &gt; &gt; keycpp::eig</definition>
+        <argsstring>(const matrix&lt; std::complex&lt; double &gt; &gt; &amp;A, const matrix&lt; std::complex&lt; double &gt; &gt; &amp;B, matrix&lt; std::complex&lt; double &gt; &gt; *vr_return, matrix&lt; std::complex&lt; double &gt; &gt; *vl_return)</argsstring>
         <name>eig</name>
         <param>
           <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt; &gt; &amp;</type>
@@ -1333,17 +1333,17 @@
           <defval>NULL</defval>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Generalized complex-valued eigenvalue solver using LAPACK function call. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This function returns the eigenvalues(lambda) of the complex-valued generalized eigenvalue problem: Ax_r = lambda*Bx_r or x_l^T*A = lambda*x_l^T*B. The eigenvalues are returned by default. To return the right or left eigenvectors, supply the function with a std::complex&lt;double&gt; matrix object in the 3rd or 4th parameters, respectively. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="147"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="147" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3643" bodyend="3732"/>
       </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1a192bcf724ea788d3d3e759117220e940" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacekeycpp_1ae24a17765339d2464a0cccb476782bff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; std::complex&lt; double &gt; &gt;</type>
-        <definition>vector_k&lt;std::complex&lt;double&gt; &gt; keycpp::eig</definition>
-        <argsstring>(const matrix&lt; std::complex&lt; double &gt; &gt; &amp;A, matrix&lt; std::complex&lt; double &gt; &gt; *vr_return=NULL, matrix&lt; std::complex&lt; double &gt; &gt; *vl_return=NULL)</argsstring>
+        <definition>vector_k&lt; std::complex&lt; double &gt; &gt; keycpp::eig</definition>
+        <argsstring>(const matrix&lt; std::complex&lt; double &gt; &gt; &amp;A, matrix&lt; std::complex&lt; double &gt; &gt; *vr_return, matrix&lt; std::complex&lt; double &gt; &gt; *vl_return)</argsstring>
         <name>eig</name>
         <param>
           <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt; &gt; &amp;</type>
@@ -1360,12 +1360,12 @@
           <defval>NULL</defval>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Complex-valued eigenvalue solver using LAPACK function call. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This function returns the eigenvalues(lambda) of the complex-valued eigenvalue problem: Ax_r = lambda*x_r or x_l^T*A = lambda*x_l^T. The eigenvalues are returned by default. To return the right or left eigenvectors, supply the function with a std::complex&lt;double&gt; matrix object in the 2nd or 3rd parameters, respectively. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="151"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="151" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3741" bodyend="3825"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a42950497e518f5882a0689bb78fa667f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; std::complex&lt; double &gt; &gt;</type>
@@ -1394,7 +1394,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="155"/>
       </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1a3905cfc35dbd146f5dbf7bcb5729c2c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacekeycpp_1a3905cfc35dbd146f5dbf7bcb5729c2c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
         <definition>double keycpp::rcond</definition>
         <argsstring>(const matrix&lt; double &gt; &amp;A)</argsstring>
@@ -1409,9 +1409,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="157" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="260" bodyend="305"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="157" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3848" bodyend="3893"/>
       </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1a4d9a9dd04453e5a417f7a9eb8ae4391b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacekeycpp_1a4d9a9dd04453e5a417f7a9eb8ae4391b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
         <definition>double keycpp::rcond</definition>
         <argsstring>(const matrix&lt; std::complex&lt; double &gt;&gt; &amp;A)</argsstring>
@@ -1426,11 +1426,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="158" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="307" bodyend="354"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="158" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3895" bodyend="3942"/>
       </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1ad650072c8cf30a8674431dcf414b1c3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacekeycpp_1aa0c91a82f4eadf681f9a690d6f309665" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; std::complex&lt; double &gt; &gt;</type>
-        <definition>vector_k&lt;std::complex&lt;double&gt; &gt; keycpp::linsolve</definition>
+        <definition>vector_k&lt; std::complex&lt; double &gt; &gt; keycpp::linsolve</definition>
         <argsstring>(const matrix&lt; std::complex&lt; double &gt;&gt; &amp;A_in, const vector_k&lt; std::complex&lt; double &gt;&gt; &amp;b_in)</argsstring>
         <name>linsolve</name>
         <param>
@@ -1447,9 +1447,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="160"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="160" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3944" bodyend="4019"/>
       </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1a13a89a2c6d30c991f4de63ca8f62c0e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacekeycpp_1a13a89a2c6d30c991f4de63ca8f62c0e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; double &gt;</type>
         <definition>vector_k&lt; double &gt; keycpp::linsolve</definition>
         <argsstring>(const matrix&lt; double &gt; &amp;A_in, const vector_k&lt; double &gt; &amp;b_in)</argsstring>
@@ -1468,9 +1468,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="162" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="434" bodyend="508"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="162" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="4022" bodyend="4096"/>
       </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1adc96927cda2df7a6e8e2031941c43601" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacekeycpp_1adc96927cda2df7a6e8e2031941c43601" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt;</type>
         <definition>matrix&lt; double &gt; keycpp::inv</definition>
         <argsstring>(const matrix&lt; double &gt; &amp;A_in)</argsstring>
@@ -1485,11 +1485,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="163" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="510" bodyend="580"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="163" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="4098" bodyend="4168"/>
       </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1a6b74369f5415c3ed45f63995149ad992" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacekeycpp_1a9085342fc708fd5babae39321da3b89a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt; &gt;</type>
-        <definition>matrix&lt;std::complex&lt;double&gt; &gt; keycpp::inv</definition>
+        <definition>matrix&lt; std::complex&lt; double &gt; &gt; keycpp::inv</definition>
         <argsstring>(const matrix&lt; std::complex&lt; double &gt;&gt; &amp;A_in)</argsstring>
         <name>inv</name>
         <param>
@@ -1502,9 +1502,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="164"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="164" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="4170" bodyend="4240"/>
       </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1a5ef5c1f5951e8182a7c4ec9612f3f7e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacekeycpp_1a5ef5c1f5951e8182a7c4ec9612f3f7e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
         <definition>double keycpp::rand</definition>
         <argsstring>()</argsstring>
@@ -1515,7 +1515,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="166" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="11" bodyend="14"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="166" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3599" bodyend="3602"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1ac224964eb5e1a55c3f7d58f0e9b71d3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt;</type>
@@ -5691,7 +5691,7 @@
           <declname>in</declname>
         </param>
         <briefdescription>
-<para>Converts a string to a double. Currently only works on single numbers. In the future this should be expanded to work on vectors and matrices. (see MATLAB docs) </para>        </briefdescription>
+<para>Converts a std::string to a double. Currently only works on single numbers. In the future this should be expanded to work on vectors and matrices. (see MATLAB docs) </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -6043,7 +6043,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2940" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2939" bodyend="2984"/>
       </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1aeb34bdd249af3ce92341cdda62f95f65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacekeycpp_1aeb34bdd249af3ce92341cdda62f95f65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
         <definition>double keycpp::norm</definition>
         <argsstring>(const matrix&lt; double &gt; &amp;A_in, std::string method=&quot;2&quot;)</argsstring>
@@ -6063,9 +6063,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2986" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="654" bodyend="695"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2986" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="4242" bodyend="4283"/>
       </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1a838fc93d66e1ab63d68d04781086d81a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacekeycpp_1a838fc93d66e1ab63d68d04781086d81a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_s_v_d__type" kindref="compound">SVD_type</ref>&lt; double, double &gt;</type>
         <definition>SVD_type&lt; double, double &gt; keycpp::svd</definition>
         <argsstring>(const matrix&lt; double &gt; &amp;A_in, std::string method)</argsstring>
@@ -6085,9 +6085,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2987" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="699" bodyend="840"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2987" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="4287" bodyend="4428"/>
       </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1ad211ab5ae14ac9710265c662f70f20ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacekeycpp_1ad211ab5ae14ac9710265c662f70f20ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
         <definition>double keycpp::norm</definition>
         <argsstring>(const matrix&lt; std::complex&lt; double &gt;&gt; &amp;A_in, std::string method=&quot;2&quot;)</argsstring>
@@ -6107,12 +6107,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2988"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2988" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="4430" bodyend="4471"/>
       </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1ab96149e6d3b76c5363601903c4fb72bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacekeycpp_1ad610adca37ac4c85df23b899d29d5dfc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_s_v_d__type" kindref="compound">SVD_type</ref>&lt; std::complex&lt; double &gt;, double &gt;</type>
-        <definition>SVD_type&lt;std::complex&lt;double&gt;,double&gt; keycpp::svd</definition>
-        <argsstring>(const matrix&lt; std::complex&lt; double &gt;&gt; &amp;A_in, std::string method=&quot;&quot;)</argsstring>
+        <definition>SVD_type&lt; std::complex&lt; double &gt;, double &gt; keycpp::svd</definition>
+        <argsstring>(const matrix&lt; std::complex&lt; double &gt;&gt; &amp;A_in, std::string method)</argsstring>
         <name>svd</name>
         <param>
           <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt;&gt; &amp;</type>
@@ -6124,12 +6124,12 @@
           <defval>&quot;&quot;</defval>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Computes the singular value decomposition of matrix A_in. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2989"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2989" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="4475" bodyend="4618"/>
       </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1aeb9efbc77cc58fa22403ea7ae5f4555c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6625,7 +6625,7 @@
           <declname>a</declname>
         </param>
         <briefdescription>
-<para>Rounds the real and imaginary parts of complex&lt;double&gt; a towards positive infinity seperately. </para>        </briefdescription>
+<para>Rounds the real and imaginary parts of std::complex&lt;double&gt; a towards positive infinity seperately. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -6924,6 +6924,69 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3593" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3592" bodyend="3595"/>
       </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ab99a9561cf5654ae722a0879b41d9d73" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt;</type>
+        <definition>matrix&lt;double&gt; keycpp::rand</definition>
+        <argsstring>(const unsigned int &amp;N)</argsstring>
+        <name>rand</name>
+        <param>
+          <type>const unsigned int &amp;</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Returns an N x N matrix of random doubles between 0 and 1.0. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3607" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3606" bodyend="3618"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1af6413232f2de6f8ac96efde6531c3055" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt;</type>
+        <definition>matrix&lt;double&gt; keycpp::rand</definition>
+        <argsstring>(const unsigned int &amp;M, const unsigned int &amp;N)</argsstring>
+        <name>rand</name>
+        <param>
+          <type>const unsigned int &amp;</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type>const unsigned int &amp;</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Returns an M x N matrix of random doubles between 0 and 1.0. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3623" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3622" bodyend="3634"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1aa14e19e286b30265734236c0af2f9e78" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; std::complex&lt; double &gt; &gt;</type>
+        <definition>vector_k&lt;std::complex&lt;double&gt; &gt; keycpp::eig</definition>
+        <argsstring>(const matrix&lt; double &gt; &amp;A, matrix&lt; std::complex&lt; double &gt; &gt; *vr_return, matrix&lt; std::complex&lt; double &gt; &gt; *vl_return)</argsstring>
+        <name>eig</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt; &gt; *</type>
+          <declname>vr_return</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt; &gt; *</type>
+          <declname>vl_return</declname>
+        </param>
+        <briefdescription>
+<para>Double precision eigenvalue solver using LAPACK function call. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function returns the eigenvalues(lambda) of the eigenvalue problem: Ax_r = lambda*x_r or x_l^T*A = lambda*x_l^T. The eigenvalues are returned by default. To return the right or left eigenvectors, supply the function with a std::complex&lt;double&gt; matrix object in the 2nd or 3rd parameters, respectively. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3836" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3835" bodyend="3846"/>
+      </memberdef>
       <memberdef kind="function" id="namespacekeycpp_1a16b58f47ed977cafdc96227468f5f10a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void keycpp::dgemm_</definition>
@@ -7167,203 +7230,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="31"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1ab99a9561cf5654ae722a0879b41d9d73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt;</type>
-        <definition>matrix&lt;double&gt; keycpp::rand</definition>
-        <argsstring>(const unsigned int &amp;N)</argsstring>
-        <name>rand</name>
-        <param>
-          <type>const unsigned int &amp;</type>
-          <declname>N</declname>
-        </param>
-        <briefdescription>
-<para>Returns an N x N matrix of random doubles between 0 and 1.0. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" line="19" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="18" bodyend="30"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1af6413232f2de6f8ac96efde6531c3055" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt;</type>
-        <definition>matrix&lt;double&gt; keycpp::rand</definition>
-        <argsstring>(const unsigned int &amp;M, const unsigned int &amp;N)</argsstring>
-        <name>rand</name>
-        <param>
-          <type>const unsigned int &amp;</type>
-          <declname>M</declname>
-        </param>
-        <param>
-          <type>const unsigned int &amp;</type>
-          <declname>N</declname>
-        </param>
-        <briefdescription>
-<para>Returns an M x N matrix of random doubles between 0 and 1.0. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" line="35" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="34" bodyend="46"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1a35bb0a44bc7cc89e11e17598b12fb790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; complex&lt; double &gt; &gt;</type>
-        <definition>vector_k&lt;complex&lt;double&gt; &gt; keycpp::eig</definition>
-        <argsstring>(const matrix&lt; complex&lt; double &gt; &gt; &amp;A, const matrix&lt; complex&lt; double &gt; &gt; &amp;B, matrix&lt; complex&lt; double &gt; &gt; *vr_return, matrix&lt; complex&lt; double &gt; &gt; *vl_return)</argsstring>
-        <name>eig</name>
-        <param>
-          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt; &amp;</type>
-          <declname>A</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt; &amp;</type>
-          <declname>B</declname>
-        </param>
-        <param>
-          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt; *</type>
-          <declname>vr_return</declname>
-        </param>
-        <param>
-          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt; *</type>
-          <declname>vl_return</declname>
-        </param>
-        <briefdescription>
-<para>Generalized complex-valued eigenvalue solver using LAPACK function call. </para>        </briefdescription>
-        <detaileddescription>
-<para>This function returns the eigenvalues(lambda) of the complex-valued generalized eigenvalue problem: Ax_r = lambda*Bx_r or x_l^T*A = lambda*x_l^T*B. The eigenvalues are returned by default. To return the right or left eigenvectors, supply the function with a complex&lt;double&gt; matrix object in the 3rd or 4th parameters, respectively. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" line="56" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="55" bodyend="144"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1add8c0a1a89a17e871de965e9e0752cf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; complex&lt; double &gt; &gt;</type>
-        <definition>vector_k&lt;complex&lt;double&gt; &gt; keycpp::eig</definition>
-        <argsstring>(const matrix&lt; complex&lt; double &gt; &gt; &amp;A, matrix&lt; complex&lt; double &gt; &gt; *vr_return, matrix&lt; complex&lt; double &gt; &gt; *vl_return)</argsstring>
-        <name>eig</name>
-        <param>
-          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt; &amp;</type>
-          <declname>A</declname>
-        </param>
-        <param>
-          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt; *</type>
-          <declname>vr_return</declname>
-        </param>
-        <param>
-          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt; *</type>
-          <declname>vl_return</declname>
-        </param>
-        <briefdescription>
-<para>Complex-valued eigenvalue solver using LAPACK function call. </para>        </briefdescription>
-        <detaileddescription>
-<para>This function returns the eigenvalues(lambda) of the complex-valued eigenvalue problem: Ax_r = lambda*x_r or x_l^T*A = lambda*x_l^T. The eigenvalues are returned by default. To return the right or left eigenvectors, supply the function with a complex&lt;double&gt; matrix object in the 2nd or 3rd parameters, respectively. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" line="154" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="153" bodyend="237"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1ae420202cfd39b4a62c508ac9efb64484" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; complex&lt; double &gt; &gt;</type>
-        <definition>vector_k&lt;complex&lt;double&gt; &gt; keycpp::eig</definition>
-        <argsstring>(const matrix&lt; double &gt; &amp;A, matrix&lt; complex&lt; double &gt; &gt; *vr_return, matrix&lt; complex&lt; double &gt; &gt; *vl_return)</argsstring>
-        <name>eig</name>
-        <param>
-          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt; &amp;</type>
-          <declname>A</declname>
-        </param>
-        <param>
-          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt; *</type>
-          <declname>vr_return</declname>
-        </param>
-        <param>
-          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt; *</type>
-          <declname>vl_return</declname>
-        </param>
-        <briefdescription>
-<para>Double precision eigenvalue solver using LAPACK function call. </para>        </briefdescription>
-        <detaileddescription>
-<para>This function returns the eigenvalues(lambda) of the eigenvalue problem: Ax_r = lambda*x_r or x_l^T*A = lambda*x_l^T. The eigenvalues are returned by default. To return the right or left eigenvectors, supply the function with a complex&lt;double&gt; matrix object in the 2nd or 3rd parameters, respectively. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" line="248" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="247" bodyend="258"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1a6471980b21aa921afce634693f9a0c6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; complex&lt; double &gt; &gt;</type>
-        <definition>vector_k&lt;complex&lt;double&gt; &gt; keycpp::linsolve</definition>
-        <argsstring>(const matrix&lt; complex&lt; double &gt;&gt; &amp;A_in, const vector_k&lt; complex&lt; double &gt;&gt; &amp;b_in)</argsstring>
-        <name>linsolve</name>
-        <param>
-          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt;&gt; &amp;</type>
-          <declname>A_in</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; complex&lt; double &gt;&gt; &amp;</type>
-          <declname>b_in</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" line="358" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="356" bodyend="431"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1ac9cabca49e9650ae8b5aadf5ee2f7f4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt; &gt;</type>
-        <definition>matrix&lt;complex&lt;double&gt; &gt; keycpp::inv</definition>
-        <argsstring>(const matrix&lt; complex&lt; double &gt;&gt; &amp;A_in)</argsstring>
-        <name>inv</name>
-        <param>
-          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt;&gt; &amp;</type>
-          <declname>A_in</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" line="583" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="582" bodyend="652"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1a55e5e5bd17f11bc2585161c4229e6eaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>double</type>
-        <definition>double keycpp::norm</definition>
-        <argsstring>(const matrix&lt; complex&lt; double &gt;&gt; &amp;A_in, std::string method)</argsstring>
-        <name>norm</name>
-        <param>
-          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt;&gt; &amp;</type>
-          <declname>A_in</declname>
-        </param>
-        <param>
-          <type>std::string</type>
-          <declname>method</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" line="843" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="842" bodyend="883"/>
-      </memberdef>
-      <memberdef kind="function" id="namespacekeycpp_1a72ae28f3433b8617a1252c7995fc21db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classkeycpp_1_1_s_v_d__type" kindref="compound">SVD_type</ref>&lt; complex&lt; double &gt;, double &gt;</type>
-        <definition>SVD_type&lt;complex&lt;double&gt;, double&gt; keycpp::svd</definition>
-        <argsstring>(const matrix&lt; complex&lt; double &gt;&gt; &amp;A_in, std::string method)</argsstring>
-        <name>svd</name>
-        <param>
-          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; complex&lt; double &gt;&gt; &amp;</type>
-          <declname>A_in</declname>
-        </param>
-        <param>
-          <type>std::string</type>
-          <declname>method</declname>
-        </param>
-        <briefdescription>
-<para>Computes the singular value decomposition of matrix A_in. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" line="888" bodyfile="/media/Storage/Research/open_source/keycpp/src/keycpp.cpp" bodystart="887" bodyend="1030"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

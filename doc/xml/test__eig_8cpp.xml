@@ -5,208 +5,219 @@
     <includes local="no">boost/test/unit_test.hpp</includes>
     <includes refid="keycpp_8h" local="yes">keycpp.h</includes>
     <incdepgraph>
-      <node id="184">
+      <node id="137">
         <label>list</label>
       </node>
-      <node id="168">
+      <node id="119">
         <label>stdarg.h</label>
       </node>
-      <node id="158">
+      <node id="109">
         <label>iomanip</label>
       </node>
-      <node id="166">
+      <node id="117">
         <label>limits</label>
       </node>
-      <node id="155">
+      <node id="106">
         <label>boost/test/unit_test.hpp</label>
       </node>
-      <node id="156">
+      <node id="107">
         <label>keycpp.h</label>
         <link refid="keycpp_8h"/>
-        <childnode refid="157" relation="include">
+        <childnode refid="108" relation="include">
         </childnode>
-        <childnode refid="158" relation="include">
+        <childnode refid="109" relation="include">
         </childnode>
-        <childnode refid="159" relation="include">
+        <childnode refid="110" relation="include">
         </childnode>
-        <childnode refid="160" relation="include">
+        <childnode refid="111" relation="include">
         </childnode>
-        <childnode refid="161" relation="include">
+        <childnode refid="112" relation="include">
         </childnode>
-        <childnode refid="162" relation="include">
+        <childnode refid="113" relation="include">
         </childnode>
-        <childnode refid="163" relation="include">
+        <childnode refid="114" relation="include">
         </childnode>
-        <childnode refid="164" relation="include">
+        <childnode refid="115" relation="include">
         </childnode>
-        <childnode refid="165" relation="include">
+        <childnode refid="116" relation="include">
         </childnode>
-        <childnode refid="166" relation="include">
+        <childnode refid="117" relation="include">
         </childnode>
-        <childnode refid="167" relation="include">
+        <childnode refid="118" relation="include">
         </childnode>
-        <childnode refid="168" relation="include">
+        <childnode refid="119" relation="include">
         </childnode>
-        <childnode refid="169" relation="include">
+        <childnode refid="120" relation="include">
         </childnode>
-        <childnode refid="170" relation="include">
+        <childnode refid="121" relation="include">
         </childnode>
-        <childnode refid="172" relation="include">
+        <childnode refid="123" relation="include">
         </childnode>
-        <childnode refid="177" relation="include">
+        <childnode refid="130" relation="include">
         </childnode>
-        <childnode refid="178" relation="include">
+        <childnode refid="131" relation="include">
         </childnode>
       </node>
-      <node id="173">
+      <node id="125">
         <label>stdlib.h</label>
       </node>
-      <node id="162">
+      <node id="113">
         <label>cmath</label>
       </node>
-      <node id="171">
+      <node id="122">
         <label>stdexcept</label>
       </node>
-      <node id="161">
+      <node id="112">
         <label>string</label>
       </node>
-      <node id="181">
+      <node id="134">
         <label>fstream</label>
       </node>
-      <node id="169">
+      <node id="120">
         <label>vector_k.h</label>
         <link refid="vector__k_8h_source"/>
-        <childnode refid="160" relation="include">
+        <childnode refid="111" relation="include">
         </childnode>
       </node>
-      <node id="176">
+      <node id="129">
+        <label>limits.h</label>
+      </node>
+      <node id="128">
         <label>string.h</label>
       </node>
-      <node id="182">
+      <node id="135">
         <label>cstdio</label>
       </node>
-      <node id="167">
+      <node id="118">
         <label>ctime</label>
       </node>
-      <node id="154">
+      <node id="105">
         <label>test_eig.cpp</label>
         <link refid="test_eig.cpp"/>
-        <childnode refid="155" relation="include">
+        <childnode refid="106" relation="include">
         </childnode>
-        <childnode refid="156" relation="include">
+        <childnode refid="107" relation="include">
         </childnode>
       </node>
-      <node id="160">
+      <node id="111">
         <label>vector</label>
       </node>
-      <node id="164">
+      <node id="115">
         <label>utility</label>
       </node>
-      <node id="179">
+      <node id="132">
         <label>sstream</label>
       </node>
-      <node id="178">
+      <node id="131">
         <label>Figure.h</label>
         <link refid="_figure_8h_source"/>
-        <childnode refid="162" relation="include">
+        <childnode refid="113" relation="include">
         </childnode>
-        <childnode refid="160" relation="include">
+        <childnode refid="111" relation="include">
         </childnode>
-        <childnode refid="159" relation="include">
+        <childnode refid="110" relation="include">
         </childnode>
-        <childnode refid="158" relation="include">
+        <childnode refid="109" relation="include">
         </childnode>
-        <childnode refid="161" relation="include">
+        <childnode refid="112" relation="include">
         </childnode>
-        <childnode refid="179" relation="include">
+        <childnode refid="132" relation="include">
         </childnode>
-        <childnode refid="169" relation="include">
+        <childnode refid="120" relation="include">
         </childnode>
-        <childnode refid="180" relation="include">
+        <childnode refid="133" relation="include">
         </childnode>
-        <childnode refid="170" relation="include">
+        <childnode refid="121" relation="include">
         </childnode>
       </node>
-      <node id="163">
+      <node id="114">
         <label>boost/numeric/odeint.hpp</label>
       </node>
-      <node id="177">
+      <node id="130">
         <label>Spline.h</label>
         <link refid="_spline_8h_source"/>
-        <childnode refid="157" relation="include">
+        <childnode refid="108" relation="include">
         </childnode>
-        <childnode refid="162" relation="include">
+        <childnode refid="113" relation="include">
         </childnode>
-        <childnode refid="160" relation="include">
+        <childnode refid="111" relation="include">
         </childnode>
-        <childnode refid="159" relation="include">
+        <childnode refid="110" relation="include">
         </childnode>
-        <childnode refid="169" relation="include">
+        <childnode refid="120" relation="include">
         </childnode>
       </node>
-      <node id="175">
+      <node id="127">
         <label>math.h</label>
       </node>
-      <node id="183">
+      <node id="136">
         <label>cstdlib</label>
       </node>
-      <node id="157">
+      <node id="108">
         <label>iostream</label>
       </node>
-      <node id="180">
+      <node id="133">
         <label>gnuplot_i.h</label>
         <link refid="gnuplot__i_8h_source"/>
-        <childnode refid="157" relation="include">
+        <childnode refid="108" relation="include">
         </childnode>
-        <childnode refid="161" relation="include">
+        <childnode refid="112" relation="include">
         </childnode>
-        <childnode refid="160" relation="include">
+        <childnode refid="111" relation="include">
         </childnode>
-        <childnode refid="181" relation="include">
+        <childnode refid="134" relation="include">
         </childnode>
-        <childnode refid="179" relation="include">
+        <childnode refid="132" relation="include">
         </childnode>
-        <childnode refid="171" relation="include">
+        <childnode refid="122" relation="include">
         </childnode>
-        <childnode refid="182" relation="include">
+        <childnode refid="135" relation="include">
         </childnode>
-        <childnode refid="183" relation="include">
+        <childnode refid="136" relation="include">
         </childnode>
-        <childnode refid="184" relation="include">
+        <childnode refid="137" relation="include">
         </childnode>
       </node>
-      <node id="170">
+      <node id="121">
         <label>Matrix.h</label>
         <link refid="_matrix_8h_source"/>
-        <childnode refid="157" relation="include">
+        <childnode refid="108" relation="include">
         </childnode>
-        <childnode refid="171" relation="include">
+        <childnode refid="122" relation="include">
         </childnode>
-        <childnode refid="160" relation="include">
+        <childnode refid="111" relation="include">
         </childnode>
-        <childnode refid="169" relation="include">
+        <childnode refid="120" relation="include">
         </childnode>
       </node>
-      <node id="172">
+      <node id="124">
         <label>kiss_fft.h</label>
         <link refid="kiss__fft_8h_source"/>
-        <childnode refid="173" relation="include">
+        <childnode refid="125" relation="include">
         </childnode>
-        <childnode refid="174" relation="include">
+        <childnode refid="126" relation="include">
         </childnode>
-        <childnode refid="175" relation="include">
+        <childnode refid="127" relation="include">
         </childnode>
-        <childnode refid="176" relation="include">
+        <childnode refid="128" relation="include">
         </childnode>
       </node>
-      <node id="159">
+      <node id="110">
         <label>complex</label>
       </node>
-      <node id="165">
+      <node id="116">
         <label>algorithm</label>
       </node>
-      <node id="174">
+      <node id="126">
         <label>stdio.h</label>
+      </node>
+      <node id="123">
+        <label>_kiss_fft_guts.h</label>
+        <link refid="__kiss__fft__guts_8h_source"/>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -249,7 +260,7 @@
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;double&gt;</ref><sp/>lambda2<sp/>=<sp/>{3.0,<sp/>-1.0};</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;std::complex&lt;double&gt;</ref>&gt;<sp/>vec;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ans<sp/>=<sp/>eig(A,<sp/>&amp;vec);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ans<sp/>=<sp/><ref refid="namespacekeycpp_1a516e693670ca88debd44ca9a48b2f225" kindref="member" tooltip="Generalized complex-valued eigenvalue solver using LAPACK function call.">eig</ref>(A,<sp/>&amp;vec);</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK((abs(keycpp::norm(lambda1-ans))<sp/>&lt;<sp/>tol)<sp/>||<sp/>(abs(keycpp::norm(lambda2-ans))<sp/>&lt;<sp/>tol));</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(abs(keycpp::norm(lambda1-ans))<sp/>&lt;<sp/>tol)</highlight></codeline>

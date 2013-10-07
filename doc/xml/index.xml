@@ -83,14 +83,14 @@
     <member refid="class_gnuplot_1a7b9f721714ffb6aff0d374fcf1c8c90f" kind="variable"><name>tmpfile_list</name></member>
     <member refid="class_gnuplot_1a0155f4026915ed9b05b18c1e89ba9757" kind="variable"><name>valid</name></member>
     <member refid="class_gnuplot_1a871efce13e856022b3ba36caaa10ea33" kind="variable"><name>two_dim</name></member>
-    <member refid="class_gnuplot_1aeb5608cbd5c03aa7ef318f11f0cc54ab" kind="variable"><name>tmpfile_num</name></member>
-    <member refid="class_gnuplot_1ae71e004ab7266f34d270cf76ea143e2b" kind="variable"><name>m_sGNUPlotFileName</name></member>
-    <member refid="class_gnuplot_1a3c5949b04c54833eb685c30322c816e6" kind="variable"><name>m_sGNUPlotPath</name></member>
-    <member refid="class_gnuplot_1ad763c98e6b2f51bef05f0b2da522fef4" kind="variable"><name>terminal_std</name></member>
-    <member refid="class_gnuplot_1a08d1e4ec069ec1cb82bb96427d1e0d7f" kind="function"><name>init</name></member>
-    <member refid="class_gnuplot_1a3ceb471d375865fccd412105cb587dd1" kind="function"><name>file_available</name></member>
+    <member refid="class_gnuplot_1abf2e3b6bbb9a070a380c77ef64525e90" kind="function"><name>tmpfile_num</name></member>
+    <member refid="class_gnuplot_1a433e47ea0fed2174845b115f48f9fdaf" kind="function"><name>m_sGNUPlotFileName</name></member>
+    <member refid="class_gnuplot_1a76ca6d463fa2ec0eef4beae56e06267b" kind="function"><name>m_sGNUPlotPath</name></member>
+    <member refid="class_gnuplot_1afdccc7335caf1d0fbbe1c604a36347bd" kind="function"><name>terminal_std</name></member>
     <member refid="class_gnuplot_1a3a769e47861d74fa713070ecd857dd17" kind="function"><name>get_program_path</name></member>
     <member refid="class_gnuplot_1abc0f1d75cb78804a5b8efdfa4df582cd" kind="function"><name>file_exists</name></member>
+    <member refid="class_gnuplot_1a08d1e4ec069ec1cb82bb96427d1e0d7f" kind="function"><name>init</name></member>
+    <member refid="class_gnuplot_1a3ceb471d375865fccd412105cb587dd1" kind="function"><name>file_available</name></member>
     <member refid="class_gnuplot_1a8ced9e766e0677b938178dafe9264ff7" kind="function"><name>create_tmpfile</name></member>
     <member refid="class_gnuplot_1af51b1d33cffebc835a4b493cce1b0bce" kind="function"><name>get_style</name></member>
     <member refid="class_gnuplot_1ae2cd259922eb5d9486a4c5082c16e028" kind="function"><name>get_terminal_std</name></member>
@@ -384,15 +384,15 @@
     <member refid="namespacekeycpp_1a4190e125fe33133aafa586089ca6e174" kind="function"><name>zgetri_</name></member>
     <member refid="namespacekeycpp_1a8fe7a71afbb6c5dc049cdd7afff6c0af" kind="function"><name>dgesvd_</name></member>
     <member refid="namespacekeycpp_1afa5e2f74110f53bd288c15ce1f183f9b" kind="function"><name>zgesvd_</name></member>
-    <member refid="namespacekeycpp_1ab08546b5ffdc4b792b2a835c823340cc" kind="function"><name>eig</name></member>
-    <member refid="namespacekeycpp_1a192bcf724ea788d3d3e759117220e940" kind="function"><name>eig</name></member>
+    <member refid="namespacekeycpp_1a516e693670ca88debd44ca9a48b2f225" kind="function"><name>eig</name></member>
+    <member refid="namespacekeycpp_1ae24a17765339d2464a0cccb476782bff" kind="function"><name>eig</name></member>
     <member refid="namespacekeycpp_1a42950497e518f5882a0689bb78fa667f" kind="function"><name>eig</name></member>
     <member refid="namespacekeycpp_1a3905cfc35dbd146f5dbf7bcb5729c2c2" kind="function"><name>rcond</name></member>
     <member refid="namespacekeycpp_1a4d9a9dd04453e5a417f7a9eb8ae4391b" kind="function"><name>rcond</name></member>
-    <member refid="namespacekeycpp_1ad650072c8cf30a8674431dcf414b1c3b" kind="function"><name>linsolve</name></member>
+    <member refid="namespacekeycpp_1aa0c91a82f4eadf681f9a690d6f309665" kind="function"><name>linsolve</name></member>
     <member refid="namespacekeycpp_1a13a89a2c6d30c991f4de63ca8f62c0e1" kind="function"><name>linsolve</name></member>
     <member refid="namespacekeycpp_1adc96927cda2df7a6e8e2031941c43601" kind="function"><name>inv</name></member>
-    <member refid="namespacekeycpp_1a6b74369f5415c3ed45f63995149ad992" kind="function"><name>inv</name></member>
+    <member refid="namespacekeycpp_1a9085342fc708fd5babae39321da3b89a" kind="function"><name>inv</name></member>
     <member refid="namespacekeycpp_1a5ef5c1f5951e8182a7c4ec9612f3f7e1" kind="function"><name>rand</name></member>
     <member refid="namespacekeycpp_1ac224964eb5e1a55c3f7d58f0e9b71d3d" kind="function"><name>rand</name></member>
     <member refid="namespacekeycpp_1ae5c4b142a4101e9bb1df9f19efaf7d2f" kind="function"><name>rand</name></member>
@@ -572,7 +572,7 @@
     <member refid="namespacekeycpp_1aeb34bdd249af3ce92341cdda62f95f65" kind="function"><name>norm</name></member>
     <member refid="namespacekeycpp_1a838fc93d66e1ab63d68d04781086d81a" kind="function"><name>svd</name></member>
     <member refid="namespacekeycpp_1ad211ab5ae14ac9710265c662f70f20ff" kind="function"><name>norm</name></member>
-    <member refid="namespacekeycpp_1ab96149e6d3b76c5363601903c4fb72bb" kind="function"><name>svd</name></member>
+    <member refid="namespacekeycpp_1ad610adca37ac4c85df23b899d29d5dfc" kind="function"><name>svd</name></member>
     <member refid="namespacekeycpp_1aeb9efbc77cc58fa22403ea7ae5f4555c" kind="function"><name>rank</name></member>
     <member refid="namespacekeycpp_1a8f497e2da901adba0e1257be943595a1" kind="function"><name>null</name></member>
     <member refid="namespacekeycpp_1a70b89ab3e8f66f86c47c3bde004d4487" kind="function"><name>any</name></member>
@@ -611,19 +611,13 @@
     <member refid="namespacekeycpp_1abdec07a4c4dd0fc5de230a753bf59066" kind="function"><name>stdev</name></member>
     <member refid="namespacekeycpp_1a553528cf7a020895037ce3b1a828a04c" kind="function"><name>var</name></member>
     <member refid="namespacekeycpp_1af3249effde70a573fbd8881dc4629e04" kind="function"><name>var</name></member>
+    <member refid="namespacekeycpp_1ab99a9561cf5654ae722a0879b41d9d73" kind="function"><name>rand</name></member>
+    <member refid="namespacekeycpp_1af6413232f2de6f8ac96efde6531c3055" kind="function"><name>rand</name></member>
+    <member refid="namespacekeycpp_1aa14e19e286b30265734236c0af2f9e78" kind="function"><name>eig</name></member>
     <member refid="namespacekeycpp_1a16b58f47ed977cafdc96227468f5f10a" kind="function"><name>dgemm_</name></member>
     <member refid="namespacekeycpp_1a29fb4e46ee1b9cce0fd8bc79a2490c72" kind="function"><name>zgemm_</name></member>
     <member refid="namespacekeycpp_1af0676a4a89dbb63f09fc627c05e12699" kind="function"><name>dgemv_</name></member>
     <member refid="namespacekeycpp_1aea174778653491b5fd21dd2960c0f7cb" kind="function"><name>zgemv_</name></member>
-    <member refid="namespacekeycpp_1ab99a9561cf5654ae722a0879b41d9d73" kind="function"><name>rand</name></member>
-    <member refid="namespacekeycpp_1af6413232f2de6f8ac96efde6531c3055" kind="function"><name>rand</name></member>
-    <member refid="namespacekeycpp_1a35bb0a44bc7cc89e11e17598b12fb790" kind="function"><name>eig</name></member>
-    <member refid="namespacekeycpp_1add8c0a1a89a17e871de965e9e0752cf3" kind="function"><name>eig</name></member>
-    <member refid="namespacekeycpp_1ae420202cfd39b4a62c508ac9efb64484" kind="function"><name>eig</name></member>
-    <member refid="namespacekeycpp_1a6471980b21aa921afce634693f9a0c6f" kind="function"><name>linsolve</name></member>
-    <member refid="namespacekeycpp_1ac9cabca49e9650ae8b5aadf5ee2f7f4e" kind="function"><name>inv</name></member>
-    <member refid="namespacekeycpp_1a55e5e5bd17f11bc2585161c4229e6eaf" kind="function"><name>norm</name></member>
-    <member refid="namespacekeycpp_1a72ae28f3433b8617a1252c7995fc21db" kind="function"><name>svd</name></member>
   </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
   </compound>
@@ -645,34 +639,28 @@
     <member refid="__kiss__fft__guts_8h_1ac1abb41ecdedd05dda5d1ce83b67a704" kind="define"><name>pcpx</name></member>
     <member refid="__kiss__fft__guts_8h_1abd992e9886fb74f97bf0b6e057fe08a5" kind="define"><name>KISS_FFT_TMP_ALLOC</name></member>
     <member refid="__kiss__fft__guts_8h_1ab915c572fe96a51a3528b7419248b655" kind="define"><name>KISS_FFT_TMP_FREE</name></member>
+    <member refid="__kiss__fft__guts_8h_1a1d97d74ec66398db90ac4e6ae08ffa80" kind="function"><name>kf_bfly2</name></member>
+    <member refid="__kiss__fft__guts_8h_1a0976fd89e0c02bf44e5df3b689dfe115" kind="function"><name>kf_bfly4</name></member>
+    <member refid="__kiss__fft__guts_8h_1a6b2ff941baf8c5dc00828591927ce4d6" kind="function"><name>kf_bfly3</name></member>
+    <member refid="__kiss__fft__guts_8h_1afae5a86498c64fc9a8ccc4032de62ee0" kind="function"><name>kf_bfly5</name></member>
+    <member refid="__kiss__fft__guts_8h_1a43383279ff41679c7ae47bc163d7050c" kind="function"><name>kf_bfly_generic</name></member>
+    <member refid="__kiss__fft__guts_8h_1a96e4f47862a2df7183ae9e8caaf7a866" kind="function"><name>kf_work</name></member>
+    <member refid="__kiss__fft__guts_8h_1a4472db9715ee64fc7858ba895054f734" kind="function"><name>kf_factor</name></member>
+    <member refid="__kiss__fft__guts_8h_1ab5ad1560b58375ec071da45401911358" kind="function"><name>kiss_fft_alloc</name></member>
+    <member refid="__kiss__fft__guts_8h_1aec345dab68815f4c5c2904978626d877" kind="function"><name>kiss_fft_stride</name></member>
+    <member refid="__kiss__fft__guts_8h_1ab36e2bb33b74c1a7eabe3271d0916030" kind="function"><name>kiss_fft</name></member>
+    <member refid="__kiss__fft__guts_8h_1aab7972365fc8f30a13eed91fa29172ba" kind="function"><name>kiss_fft_cleanup</name></member>
+    <member refid="__kiss__fft__guts_8h_1a26b8ac31a43a356943061318831508e9" kind="function"><name>kiss_fft_next_fast_size</name></member>
   </compound>
   <compound refid="example_8cpp" kind="file"><name>example.cpp</name>
     <member refid="example_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
   </compound>
   <compound refid="_figure_8h" kind="file"><name>Figure.h</name>
   </compound>
-  <compound refid="gnuplot__i_8cpp" kind="file"><name>gnuplot_i.cpp</name>
-  </compound>
   <compound refid="gnuplot__i_8h" kind="file"><name>gnuplot_i.h</name>
     <member refid="gnuplot__i_8h_1a999b660e008a191d56b4c01a09a38f45" kind="function"><name>stringtok</name></member>
   </compound>
-  <compound refid="keycpp_8cpp" kind="file"><name>keycpp.cpp</name>
-  </compound>
   <compound refid="keycpp_8h" kind="file"><name>keycpp.h</name>
-  </compound>
-  <compound refid="kiss__fft_8cpp" kind="file"><name>kiss_fft.cpp</name>
-    <member refid="kiss__fft_8cpp_1a1d97d74ec66398db90ac4e6ae08ffa80" kind="function"><name>kf_bfly2</name></member>
-    <member refid="kiss__fft_8cpp_1a0976fd89e0c02bf44e5df3b689dfe115" kind="function"><name>kf_bfly4</name></member>
-    <member refid="kiss__fft_8cpp_1a6b2ff941baf8c5dc00828591927ce4d6" kind="function"><name>kf_bfly3</name></member>
-    <member refid="kiss__fft_8cpp_1afae5a86498c64fc9a8ccc4032de62ee0" kind="function"><name>kf_bfly5</name></member>
-    <member refid="kiss__fft_8cpp_1a43383279ff41679c7ae47bc163d7050c" kind="function"><name>kf_bfly_generic</name></member>
-    <member refid="kiss__fft_8cpp_1a96e4f47862a2df7183ae9e8caaf7a866" kind="function"><name>kf_work</name></member>
-    <member refid="kiss__fft_8cpp_1a4472db9715ee64fc7858ba895054f734" kind="function"><name>kf_factor</name></member>
-    <member refid="kiss__fft_8cpp_1ab5ad1560b58375ec071da45401911358" kind="function"><name>kiss_fft_alloc</name></member>
-    <member refid="kiss__fft_8cpp_1aec345dab68815f4c5c2904978626d877" kind="function"><name>kiss_fft_stride</name></member>
-    <member refid="kiss__fft_8cpp_1ab36e2bb33b74c1a7eabe3271d0916030" kind="function"><name>kiss_fft</name></member>
-    <member refid="kiss__fft_8cpp_1aab7972365fc8f30a13eed91fa29172ba" kind="function"><name>kiss_fft_cleanup</name></member>
-    <member refid="kiss__fft_8cpp_1a26b8ac31a43a356943061318831508e9" kind="function"><name>kiss_fft_next_fast_size</name></member>
   </compound>
   <compound refid="kiss__fft_8h" kind="file"><name>kiss_fft.h</name>
     <member refid="kiss__fft_8h_1aa6e24524bfa0247ac606c950e43a9a4d" kind="define"><name>KISS_FFT_MALLOC</name></member>
@@ -713,8 +701,6 @@
   <compound refid="dir_d28a4824dc47e487b107a5db32ef43c4" kind="dir"><name>examples</name>
   </compound>
   <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
-  </compound>
-  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
   </compound>
   <compound refid="dir_64f94c193e4d03baf6e89b1053934749" kind="dir"><name>testing</name>
   </compound>

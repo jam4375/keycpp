@@ -135,12 +135,10 @@ class \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}
 \hypertarget{namespacekeycpp_afa5e2f74110f53bd288c15ce1f183f9b}{void \hyperlink{namespacekeycpp_afa5e2f74110f53bd288c15ce1f183f9b}{zgesvd\-\_\-} (const char $\ast$jobu, const char $\ast$jobvt, const int $\ast$m, const int $\ast$n, std\-::complex$<$ double $>$ $\ast$A, const int $\ast$lda, double $\ast$S, std\-::complex$<$ double $>$ $\ast$U, const int $\ast$ldu, std\-::complex$<$ double $>$ $\ast$V\-T, const int $\ast$ldvt, std\-::complex$<$ double $>$ $\ast$work, const int $\ast$lwork, double $\ast$rwork, int $\ast$info)}\label{namespacekeycpp_afa5e2f74110f53bd288c15ce1f183f9b}
 
 \begin{DoxyCompactList}\small\item\em This provides a C interface to L\-A\-P\-A\-C\-K's complex S\-V\-D function. \end{DoxyCompactList}\item 
-\hypertarget{namespacekeycpp_ab08546b5ffdc4b792b2a835c823340cc}{\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ std\-::complex$<$ double $>$ $>$ {\bfseries eig} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ \&A, const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ \&B, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ $\ast$vr\-\_\-return=N\-U\-L\-L, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ $\ast$vl\-\_\-return=N\-U\-L\-L)}\label{namespacekeycpp_ab08546b5ffdc4b792b2a835c823340cc}
-
-\item 
-\hypertarget{namespacekeycpp_a192bcf724ea788d3d3e759117220e940}{\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ std\-::complex$<$ double $>$ $>$ {\bfseries eig} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ \&A, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ $\ast$vr\-\_\-return=N\-U\-L\-L, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ $\ast$vl\-\_\-return=N\-U\-L\-L)}\label{namespacekeycpp_a192bcf724ea788d3d3e759117220e940}
-
-\item 
+\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ std\-::complex$<$ double $>$ $>$ \hyperlink{namespacekeycpp_a516e693670ca88debd44ca9a48b2f225}{eig} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ \&A, const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ \&B, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ $\ast$vr\-\_\-return, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ $\ast$vl\-\_\-return)
+\begin{DoxyCompactList}\small\item\em Generalized complex-\/valued eigenvalue solver using L\-A\-P\-A\-C\-K function call. \end{DoxyCompactList}\item 
+\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ std\-::complex$<$ double $>$ $>$ \hyperlink{namespacekeycpp_ae24a17765339d2464a0cccb476782bff}{eig} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ \&A, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ $\ast$vr\-\_\-return, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ $\ast$vl\-\_\-return)
+\begin{DoxyCompactList}\small\item\em Complex-\/valued eigenvalue solver using L\-A\-P\-A\-C\-K function call. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a42950497e518f5882a0689bb78fa667f}{\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ std\-::complex$<$ double $>$ $>$ {\bfseries eig} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \&A, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$$>$ $\ast$vr\-\_\-return=N\-U\-L\-L, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$$>$ $\ast$vl\-\_\-return=N\-U\-L\-L)}\label{namespacekeycpp_a42950497e518f5882a0689bb78fa667f}
 
 \item 
@@ -150,7 +148,7 @@ class \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}
 \hypertarget{namespacekeycpp_a4d9a9dd04453e5a417f7a9eb8ae4391b}{double {\bfseries rcond} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$$>$ \&A)}\label{namespacekeycpp_a4d9a9dd04453e5a417f7a9eb8ae4391b}
 
 \item 
-\hypertarget{namespacekeycpp_ad650072c8cf30a8674431dcf414b1c3b}{\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ std\-::complex$<$ double $>$ $>$ {\bfseries linsolve} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$$>$ \&A\-\_\-in, const \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ std\-::complex$<$ double $>$$>$ \&b\-\_\-in)}\label{namespacekeycpp_ad650072c8cf30a8674431dcf414b1c3b}
+\hypertarget{namespacekeycpp_aa0c91a82f4eadf681f9a690d6f309665}{\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ std\-::complex$<$ double $>$ $>$ {\bfseries linsolve} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$$>$ \&A\-\_\-in, const \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ std\-::complex$<$ double $>$$>$ \&b\-\_\-in)}\label{namespacekeycpp_aa0c91a82f4eadf681f9a690d6f309665}
 
 \item 
 \hypertarget{namespacekeycpp_a13a89a2c6d30c991f4de63ca8f62c0e1}{\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ double $>$ {\bfseries linsolve} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \&A\-\_\-in, const \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ double $>$ \&b\-\_\-in)}\label{namespacekeycpp_a13a89a2c6d30c991f4de63ca8f62c0e1}
@@ -159,7 +157,7 @@ class \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}
 \hypertarget{namespacekeycpp_adc96927cda2df7a6e8e2031941c43601}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ {\bfseries inv} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \&A\-\_\-in)}\label{namespacekeycpp_adc96927cda2df7a6e8e2031941c43601}
 
 \item 
-\hypertarget{namespacekeycpp_a6b74369f5415c3ed45f63995149ad992}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ {\bfseries inv} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$$>$ \&A\-\_\-in)}\label{namespacekeycpp_a6b74369f5415c3ed45f63995149ad992}
+\hypertarget{namespacekeycpp_a9085342fc708fd5babae39321da3b89a}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ {\bfseries inv} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$$>$ \&A\-\_\-in)}\label{namespacekeycpp_a9085342fc708fd5babae39321da3b89a}
 
 \item 
 \hypertarget{namespacekeycpp_a5ef5c1f5951e8182a7c4ec9612f3f7e1}{double \hyperlink{namespacekeycpp_a5ef5c1f5951e8182a7c4ec9612f3f7e1}{rand} ()}\label{namespacekeycpp_a5ef5c1f5951e8182a7c4ec9612f3f7e1}
@@ -660,7 +658,7 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_acee6d21
 \begin{DoxyCompactList}\small\item\em Prints the prompt to the screen and then waits for user input. Currently the option must be supplied as \char`\"{}s\char`\"{} because C++ is a statically typed language. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a4bca7924aad17a920f2f5f0606e6d9a9}{double \hyperlink{namespacekeycpp_a4bca7924aad17a920f2f5f0606e6d9a9}{str2num} (const std\-::string \&in)}\label{namespacekeycpp_a4bca7924aad17a920f2f5f0606e6d9a9}
 
-\begin{DoxyCompactList}\small\item\em Converts a string to a double. Currently only works on single numbers. In the future this should be expanded to work on vectors and matrices. (see M\-A\-T\-L\-A\-B docs) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Converts a std\-::string to a double. Currently only works on single numbers. In the future this should be expanded to work on vectors and matrices. (see M\-A\-T\-L\-A\-B docs) \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_aa605bad9095a6c529656926dc4fb35cf}{{\footnotesize template$<$class T $>$ }\\size\-\_\-t \hyperlink{namespacekeycpp_aa605bad9095a6c529656926dc4fb35cf}{length} (const \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ T $>$ \&v1)}\label{namespacekeycpp_aa605bad9095a6c529656926dc4fb35cf}
 
 \begin{DoxyCompactList}\small\item\em Returns the number of elements in a vector. \end{DoxyCompactList}\item 
@@ -712,10 +710,10 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_aa590a69
 \hypertarget{namespacekeycpp_ad211ab5ae14ac9710265c662f70f20ff}{double {\bfseries norm} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$$>$ \&A\-\_\-in, std\-::string method=\char`\"{}2\char`\"{})}\label{namespacekeycpp_ad211ab5ae14ac9710265c662f70f20ff}
 
 \item 
-\hypertarget{namespacekeycpp_ab96149e6d3b76c5363601903c4fb72bb}{\hyperlink{classkeycpp_1_1_s_v_d__type}{S\-V\-D\-\_\-type}$<$ std\-::complex$<$ double $>$\\*
-, double $>$ {\bfseries svd} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$$>$ \&A\-\_\-in, std\-::string method=\char`\"{}\char`\"{})}\label{namespacekeycpp_ab96149e6d3b76c5363601903c4fb72bb}
+\hypertarget{namespacekeycpp_ad610adca37ac4c85df23b899d29d5dfc}{\hyperlink{classkeycpp_1_1_s_v_d__type}{S\-V\-D\-\_\-type}$<$ std\-::complex$<$ double $>$\\*
+, double $>$ \hyperlink{namespacekeycpp_ad610adca37ac4c85df23b899d29d5dfc}{svd} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$$>$ \&A\-\_\-in, std\-::string method)}\label{namespacekeycpp_ad610adca37ac4c85df23b899d29d5dfc}
 
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the singular value decomposition of matrix A\-\_\-in. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_aeb9efbc77cc58fa22403ea7ae5f4555c}{{\footnotesize template$<$class T $>$ }\\int \hyperlink{namespacekeycpp_aeb9efbc77cc58fa22403ea7ae5f4555c}{rank} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ \&A)}\label{namespacekeycpp_aeb9efbc77cc58fa22403ea7ae5f4555c}
 
 \begin{DoxyCompactList}\small\item\em Estimates the rank of a matrix by counting the singular values whose absolute value is greater than epsilon. \end{DoxyCompactList}\item 
@@ -784,7 +782,7 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_aa590a69
 \begin{DoxyCompactList}\small\item\em Returns true if all elements of v1 are real. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a005c1190f7087fb1d2545c38c080fd1a}{std\-::complex$<$ double $>$ \hyperlink{namespacekeycpp_a005c1190f7087fb1d2545c38c080fd1a}{ceil} (const std\-::complex$<$ double $>$ \&a)}\label{namespacekeycpp_a005c1190f7087fb1d2545c38c080fd1a}
 
-\begin{DoxyCompactList}\small\item\em Rounds the real and imaginary parts of complex$<$double$>$ a towards positive infinity seperately. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Rounds the real and imaginary parts of std\-::complex$<$double$>$ a towards positive infinity seperately. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_abc86c63af2d6788c45ac99a1f3b14ad8}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ T $>$ \hyperlink{namespacekeycpp_abc86c63af2d6788c45ac99a1f3b14ad8}{ceil} (const \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ T $>$ \&v1)}\label{namespacekeycpp_abc86c63af2d6788c45ac99a1f3b14ad8}
 
 \begin{DoxyCompactList}\small\item\em Rounds the elements of v1 towards positive infinity. \end{DoxyCompactList}\item 
@@ -831,6 +829,14 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_aa590a69
 \hypertarget{namespacekeycpp_af3249effde70a573fbd8881dc4629e04}{double \hyperlink{namespacekeycpp_af3249effde70a573fbd8881dc4629e04}{var} (\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ std\-::complex$<$ double $>$$>$ v1)}\label{namespacekeycpp_af3249effde70a573fbd8881dc4629e04}
 
 \begin{DoxyCompactList}\small\item\em Returns the variance (square of standard deviation) for inputed vector. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_ab99a9561cf5654ae722a0879b41d9d73}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \hyperlink{namespacekeycpp_ab99a9561cf5654ae722a0879b41d9d73}{rand} (const unsigned int \&N)}\label{namespacekeycpp_ab99a9561cf5654ae722a0879b41d9d73}
+
+\begin{DoxyCompactList}\small\item\em Returns an N x N matrix of random doubles between 0 and 1.\-0. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_af6413232f2de6f8ac96efde6531c3055}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \hyperlink{namespacekeycpp_af6413232f2de6f8ac96efde6531c3055}{rand} (const unsigned int \&M, const unsigned int \&N)}\label{namespacekeycpp_af6413232f2de6f8ac96efde6531c3055}
+
+\begin{DoxyCompactList}\small\item\em Returns an M x N matrix of random doubles between 0 and 1.\-0. \end{DoxyCompactList}\item 
+\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ std\-::complex$<$ double $>$ $>$ \hyperlink{namespacekeycpp_aa14e19e286b30265734236c0af2f9e78}{eig} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \&A, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ $\ast$vr\-\_\-return, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ $\ast$vl\-\_\-return)
+\begin{DoxyCompactList}\small\item\em Double precision eigenvalue solver using L\-A\-P\-A\-C\-K function call. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a16b58f47ed977cafdc96227468f5f10a}{void \hyperlink{namespacekeycpp_a16b58f47ed977cafdc96227468f5f10a}{dgemm\-\_\-} (const char $\ast$T\-R\-A\-N\-S\-A, const char $\ast$T\-R\-A\-N\-S\-B, const int $\ast$M, const int $\ast$N, const int $\ast$K, double $\ast$A\-L\-P\-H\-A, const double $\ast$A, const int $\ast$L\-D\-A, const double $\ast$B, const int $\ast$L\-D\-B, double $\ast$B\-E\-T\-A, double $\ast$C, const int $\ast$L\-D\-C)}\label{namespacekeycpp_a16b58f47ed977cafdc96227468f5f10a}
 
 \begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's double matrix-\/matrix multiplication function. \end{DoxyCompactList}\item 
@@ -842,32 +848,7 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_aa590a69
 \begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's double matrix-\/vector multiplication function. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_aea174778653491b5fd21dd2960c0f7cb}{void \hyperlink{namespacekeycpp_aea174778653491b5fd21dd2960c0f7cb}{zgemv\-\_\-} (const char $\ast$T\-R\-A\-N\-S, const int $\ast$M, const int $\ast$N, const std\-::complex$<$ double $>$ $\ast$A\-L\-P\-H\-A, const std\-::complex$<$ double $>$ $\ast$A, const int $\ast$L\-D\-A, const std\-::complex$<$ double $>$ $\ast$X, const int $\ast$I\-N\-C\-X, const std\-::complex$<$ double $>$ $\ast$B\-E\-T\-A, std\-::complex$<$ double $>$ $\ast$Y, const int $\ast$I\-N\-C\-Y)}\label{namespacekeycpp_aea174778653491b5fd21dd2960c0f7cb}
 
-\begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's complex double matrix-\/vector multiplication function. \end{DoxyCompactList}\item 
-\hypertarget{namespacekeycpp_ab99a9561cf5654ae722a0879b41d9d73}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \hyperlink{namespacekeycpp_ab99a9561cf5654ae722a0879b41d9d73}{rand} (const unsigned int \&N)}\label{namespacekeycpp_ab99a9561cf5654ae722a0879b41d9d73}
-
-\begin{DoxyCompactList}\small\item\em Returns an N x N matrix of random doubles between 0 and 1.\-0. \end{DoxyCompactList}\item 
-\hypertarget{namespacekeycpp_af6413232f2de6f8ac96efde6531c3055}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \hyperlink{namespacekeycpp_af6413232f2de6f8ac96efde6531c3055}{rand} (const unsigned int \&M, const unsigned int \&N)}\label{namespacekeycpp_af6413232f2de6f8ac96efde6531c3055}
-
-\begin{DoxyCompactList}\small\item\em Returns an M x N matrix of random doubles between 0 and 1.\-0. \end{DoxyCompactList}\item 
-\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ complex$<$ double $>$ $>$ \hyperlink{namespacekeycpp_a35bb0a44bc7cc89e11e17598b12fb790}{eig} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ \&A, const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ \&B, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ $\ast$vr\-\_\-return, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ $\ast$vl\-\_\-return)
-\begin{DoxyCompactList}\small\item\em Generalized complex-\/valued eigenvalue solver using L\-A\-P\-A\-C\-K function call. \end{DoxyCompactList}\item 
-\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ complex$<$ double $>$ $>$ \hyperlink{namespacekeycpp_add8c0a1a89a17e871de965e9e0752cf3}{eig} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ \&A, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ $\ast$vr\-\_\-return, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ $\ast$vl\-\_\-return)
-\begin{DoxyCompactList}\small\item\em Complex-\/valued eigenvalue solver using L\-A\-P\-A\-C\-K function call. \end{DoxyCompactList}\item 
-\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ complex$<$ double $>$ $>$ \hyperlink{namespacekeycpp_ae420202cfd39b4a62c508ac9efb64484}{eig} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \&A, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ $\ast$vr\-\_\-return, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ $\ast$vl\-\_\-return)
-\begin{DoxyCompactList}\small\item\em Double precision eigenvalue solver using L\-A\-P\-A\-C\-K function call. \end{DoxyCompactList}\item 
-\hypertarget{namespacekeycpp_a6471980b21aa921afce634693f9a0c6f}{\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ complex$<$ double $>$ $>$ {\bfseries linsolve} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$$>$ \&A\-\_\-in, const \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ complex$<$ double $>$$>$ \&b\-\_\-in)}\label{namespacekeycpp_a6471980b21aa921afce634693f9a0c6f}
-
-\item 
-\hypertarget{namespacekeycpp_ac9cabca49e9650ae8b5aadf5ee2f7f4e}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$ $>$ {\bfseries inv} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$$>$ \&A\-\_\-in)}\label{namespacekeycpp_ac9cabca49e9650ae8b5aadf5ee2f7f4e}
-
-\item 
-\hypertarget{namespacekeycpp_a55e5e5bd17f11bc2585161c4229e6eaf}{double {\bfseries norm} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$$>$ \&A\-\_\-in, std\-::string method)}\label{namespacekeycpp_a55e5e5bd17f11bc2585161c4229e6eaf}
-
-\item 
-\hypertarget{namespacekeycpp_a72ae28f3433b8617a1252c7995fc21db}{\hyperlink{classkeycpp_1_1_s_v_d__type}{S\-V\-D\-\_\-type}$<$ complex$<$ double $>$\\*
-, double $>$ \hyperlink{namespacekeycpp_a72ae28f3433b8617a1252c7995fc21db}{svd} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ complex$<$ double $>$$>$ \&A\-\_\-in, std\-::string method)}\label{namespacekeycpp_a72ae28f3433b8617a1252c7995fc21db}
-
-\begin{DoxyCompactList}\small\item\em Computes the singular value decomposition of matrix A\-\_\-in. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's complex double matrix-\/vector multiplication function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -878,35 +859,35 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_aa590a69
 \item[{const matrix$<$ T $>$ \&}]{A}
 \end{DoxyParamCaption}
 )}}\label{namespacekeycpp_abb4e57814fd30b7b8d4845bbc16c73e9}
-T\-O\-D\-O\-: Add recursive functionality and make sure it picks first non-\/singleton dimension. Also, accept dimension as argument. See M\-A\-T\-L\-A\-B docs. \hypertarget{namespacekeycpp_a35bb0a44bc7cc89e11e17598b12fb790}{\index{keycpp@{keycpp}!eig@{eig}}
+T\-O\-D\-O\-: Add recursive functionality and make sure it picks first non-\/singleton dimension. Also, accept dimension as argument. See M\-A\-T\-L\-A\-B docs. \hypertarget{namespacekeycpp_a516e693670ca88debd44ca9a48b2f225}{\index{keycpp@{keycpp}!eig@{eig}}
 \index{eig@{eig}!keycpp@{keycpp}}
-\subsubsection[{eig}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-\_\-k}$<$complex$<$double$>$ $>$ keycpp\-::eig (
+\subsubsection[{eig}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-\_\-k}$<$ std\-::complex$<$ double $>$ $>$ keycpp\-::eig (
 \begin{DoxyParamCaption}
-\item[{const matrix$<$ complex$<$ double $>$ $>$ \&}]{A, }
-\item[{const matrix$<$ complex$<$ double $>$ $>$ \&}]{B, }
-\item[{matrix$<$ complex$<$ double $>$ $>$ $\ast$}]{vr\-\_\-return, }
-\item[{matrix$<$ complex$<$ double $>$ $>$ $\ast$}]{vl\-\_\-return}
+\item[{const matrix$<$ std\-::complex$<$ double $>$ $>$ \&}]{A, }
+\item[{const matrix$<$ std\-::complex$<$ double $>$ $>$ \&}]{B, }
+\item[{matrix$<$ std\-::complex$<$ double $>$ $>$ $\ast$}]{vr\-\_\-return, }
+\item[{matrix$<$ std\-::complex$<$ double $>$ $>$ $\ast$}]{vl\-\_\-return}
 \end{DoxyParamCaption}
-)}}\label{namespacekeycpp_a35bb0a44bc7cc89e11e17598b12fb790}
-This function returns the eigenvalues(lambda) of the complex-\/valued generalized eigenvalue problem\-: Ax\-\_\-r = lambda$\ast$\-Bx\-\_\-r or x\-\_\-l$^\wedge$\-T$\ast$\-A = lambda$\ast$x\-\_\-l$^\wedge$\-T$\ast$\-B. The eigenvalues are returned by default. To return the right or left eigenvectors, supply the function with a complex$<$double$>$ matrix object in the 3rd or 4th parameters, respectively. \hypertarget{namespacekeycpp_add8c0a1a89a17e871de965e9e0752cf3}{\index{keycpp@{keycpp}!eig@{eig}}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekeycpp_a516e693670ca88debd44ca9a48b2f225}
+This function returns the eigenvalues(lambda) of the complex-\/valued generalized eigenvalue problem\-: Ax\-\_\-r = lambda$\ast$\-Bx\-\_\-r or x\-\_\-l$^\wedge$\-T$\ast$\-A = lambda$\ast$x\-\_\-l$^\wedge$\-T$\ast$\-B. The eigenvalues are returned by default. To return the right or left eigenvectors, supply the function with a std\-::complex$<$double$>$ matrix object in the 3rd or 4th parameters, respectively. \hypertarget{namespacekeycpp_ae24a17765339d2464a0cccb476782bff}{\index{keycpp@{keycpp}!eig@{eig}}
 \index{eig@{eig}!keycpp@{keycpp}}
-\subsubsection[{eig}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-\_\-k}$<$complex$<$double$>$ $>$ keycpp\-::eig (
+\subsubsection[{eig}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-\_\-k}$<$ std\-::complex$<$ double $>$ $>$ keycpp\-::eig (
 \begin{DoxyParamCaption}
-\item[{const matrix$<$ complex$<$ double $>$ $>$ \&}]{A, }
-\item[{matrix$<$ complex$<$ double $>$ $>$ $\ast$}]{vr\-\_\-return, }
-\item[{matrix$<$ complex$<$ double $>$ $>$ $\ast$}]{vl\-\_\-return}
+\item[{const matrix$<$ std\-::complex$<$ double $>$ $>$ \&}]{A, }
+\item[{matrix$<$ std\-::complex$<$ double $>$ $>$ $\ast$}]{vr\-\_\-return, }
+\item[{matrix$<$ std\-::complex$<$ double $>$ $>$ $\ast$}]{vl\-\_\-return}
 \end{DoxyParamCaption}
-)}}\label{namespacekeycpp_add8c0a1a89a17e871de965e9e0752cf3}
-This function returns the eigenvalues(lambda) of the complex-\/valued eigenvalue problem\-: Ax\-\_\-r = lambda$\ast$x\-\_\-r or x\-\_\-l$^\wedge$\-T$\ast$\-A = lambda$\ast$x\-\_\-l$^\wedge$\-T. The eigenvalues are returned by default. To return the right or left eigenvectors, supply the function with a complex$<$double$>$ matrix object in the 2nd or 3rd parameters, respectively. \hypertarget{namespacekeycpp_ae420202cfd39b4a62c508ac9efb64484}{\index{keycpp@{keycpp}!eig@{eig}}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekeycpp_ae24a17765339d2464a0cccb476782bff}
+This function returns the eigenvalues(lambda) of the complex-\/valued eigenvalue problem\-: Ax\-\_\-r = lambda$\ast$x\-\_\-r or x\-\_\-l$^\wedge$\-T$\ast$\-A = lambda$\ast$x\-\_\-l$^\wedge$\-T. The eigenvalues are returned by default. To return the right or left eigenvectors, supply the function with a std\-::complex$<$double$>$ matrix object in the 2nd or 3rd parameters, respectively. \hypertarget{namespacekeycpp_aa14e19e286b30265734236c0af2f9e78}{\index{keycpp@{keycpp}!eig@{eig}}
 \index{eig@{eig}!keycpp@{keycpp}}
-\subsubsection[{eig}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-\_\-k}$<$complex$<$double$>$ $>$ keycpp\-::eig (
+\subsubsection[{eig}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector\-\_\-k}$<$std\-::complex$<$double$>$ $>$ keycpp\-::eig (
 \begin{DoxyParamCaption}
 \item[{const matrix$<$ double $>$ \&}]{A, }
-\item[{matrix$<$ complex$<$ double $>$ $>$ $\ast$}]{vr\-\_\-return, }
-\item[{matrix$<$ complex$<$ double $>$ $>$ $\ast$}]{vl\-\_\-return}
+\item[{matrix$<$ std\-::complex$<$ double $>$ $>$ $\ast$}]{vr\-\_\-return, }
+\item[{matrix$<$ std\-::complex$<$ double $>$ $>$ $\ast$}]{vl\-\_\-return}
 \end{DoxyParamCaption}
-)}}\label{namespacekeycpp_ae420202cfd39b4a62c508ac9efb64484}
-This function returns the eigenvalues(lambda) of the eigenvalue problem\-: Ax\-\_\-r = lambda$\ast$x\-\_\-r or x\-\_\-l$^\wedge$\-T$\ast$\-A = lambda$\ast$x\-\_\-l$^\wedge$\-T. The eigenvalues are returned by default. To return the right or left eigenvectors, supply the function with a complex$<$double$>$ matrix object in the 2nd or 3rd parameters, respectively. \hypertarget{namespacekeycpp_ac57d32902cba2c399475015235aeccec}{\index{keycpp@{keycpp}!ldivide@{ldivide}}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekeycpp_aa14e19e286b30265734236c0af2f9e78}
+This function returns the eigenvalues(lambda) of the eigenvalue problem\-: Ax\-\_\-r = lambda$\ast$x\-\_\-r or x\-\_\-l$^\wedge$\-T$\ast$\-A = lambda$\ast$x\-\_\-l$^\wedge$\-T. The eigenvalues are returned by default. To return the right or left eigenvectors, supply the function with a std\-::complex$<$double$>$ matrix object in the 2nd or 3rd parameters, respectively. \hypertarget{namespacekeycpp_ac57d32902cba2c399475015235aeccec}{\index{keycpp@{keycpp}!ldivide@{ldivide}}
 \index{ldivide@{ldivide}!keycpp@{keycpp}}
 \subsubsection[{ldivide}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class U $>$ {\bf matrix}$<$decltype(std\-::declval$<$T$>$)$\ast$std\-::declval$<$U$>$))$>$ keycpp\-::ldivide (
 \begin{DoxyParamCaption}

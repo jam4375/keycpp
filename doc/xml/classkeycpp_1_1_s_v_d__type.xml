@@ -4,10 +4,14 @@
     <compoundname>keycpp::SVD_type</compoundname>
     <templateparamlist>
       <param>
-        <type>class T</type>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
       </param>
       <param>
-        <type>class X</type>
+        <type>class</type>
+        <declname>X</declname>
+        <defname>X</defname>
       </param>
     </templateparamlist>
       <sectiondef kind="public-attrib">
