@@ -359,10 +359,10 @@
     <member refid="classkeycpp_1_1vector__k_1a651efbae7ea28e3e4cc3a07375a8de72" kind="function"><name>capacity</name></member>
     <member refid="classkeycpp_1_1vector__k_1a829c7caf8f696e161375d18b715c918a" kind="function"><name>size</name></member>
     <member refid="classkeycpp_1_1vector__k_1abbba6e3a7e0dc425a78645f78417c62c" kind="function"><name>empty</name></member>
-    <member refid="classkeycpp_1_1vector__k_1ad70ec20714961768933f3dcf59ec7817" kind="function"><name>begin</name></member>
-    <member refid="classkeycpp_1_1vector__k_1a4402253e247d64a4fd810978ef3ae683" kind="function"><name>end</name></member>
-    <member refid="classkeycpp_1_1vector__k_1a71746b5acb4d71694b79f3152c4913cb" kind="function"><name>begin</name></member>
-    <member refid="classkeycpp_1_1vector__k_1a8f9a33e07ed170ce00052dfa01105df8" kind="function"><name>end</name></member>
+    <member refid="classkeycpp_1_1vector__k_1a57ec9796301fc1db249c531cbcb02b86" kind="function"><name>begin</name></member>
+    <member refid="classkeycpp_1_1vector__k_1ad0768d945f869ec2bae8042952ef70c3" kind="function"><name>end</name></member>
+    <member refid="classkeycpp_1_1vector__k_1a4a0b078263c4dee69535701358c62b4a" kind="function"><name>begin</name></member>
+    <member refid="classkeycpp_1_1vector__k_1a9453d606e3e95d4fa81e9287fc3914d3" kind="function"><name>end</name></member>
     <member refid="classkeycpp_1_1vector__k_1ac59a48a400d54bc34eb3355a0692a2f8" kind="function"><name>front</name></member>
     <member refid="classkeycpp_1_1vector__k_1a07dff703d64e581533d2e5513a609577" kind="function"><name>back</name></member>
     <member refid="classkeycpp_1_1vector__k_1a3672772db9bc7c4190c3b9c10b2d8e22" kind="function"><name>push_back</name></member>

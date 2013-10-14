@@ -282,9 +282,9 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="184" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="396" bodyend="404"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1vector__k_1ad70ec20714961768933f3dcf59ec7817" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1vector__k_1a57ec9796301fc1db249c531cbcb02b86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">iterator</ref></type>
-        <definition>class vector_k&lt; T &gt;::iterator keycpp::vector_k&lt; T &gt;::begin</definition>
+        <definition>vector_k&lt; T &gt;::iterator keycpp::vector_k&lt; T &gt;::begin</definition>
         <argsstring>()</argsstring>
         <name>begin</name>
         <briefdescription>
@@ -295,9 +295,9 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="185" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="311" bodyend="314"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1vector__k_1a4402253e247d64a4fd810978ef3ae683" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1vector__k_1ad0768d945f869ec2bae8042952ef70c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">iterator</ref></type>
-        <definition>class vector_k&lt; T &gt;::iterator keycpp::vector_k&lt; T &gt;::end</definition>
+        <definition>vector_k&lt; T &gt;::iterator keycpp::vector_k&lt; T &gt;::end</definition>
         <argsstring>()</argsstring>
         <name>end</name>
         <briefdescription>
@@ -308,9 +308,9 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="186" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="317" bodyend="320"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1vector__k_1a71746b5acb4d71694b79f3152c4913cb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1vector__k_1a4a0b078263c4dee69535701358c62b4a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">const_iterator</ref></type>
-        <definition>class vector_k&lt; T &gt;::const_iterator keycpp::vector_k&lt; T &gt;::begin</definition>
+        <definition>vector_k&lt; T &gt;::const_iterator keycpp::vector_k&lt; T &gt;::begin</definition>
         <argsstring>() const </argsstring>
         <name>begin</name>
         <briefdescription>
@@ -321,9 +321,9 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="187" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="323" bodyend="326"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1vector__k_1a8f9a33e07ed170ce00052dfa01105df8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1vector__k_1a9453d606e3e95d4fa81e9287fc3914d3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">const_iterator</ref></type>
-        <definition>class vector_k&lt; T &gt;::const_iterator keycpp::vector_k&lt; T &gt;::end</definition>
+        <definition>vector_k&lt; T &gt;::const_iterator keycpp::vector_k&lt; T &gt;::end</definition>
         <argsstring>() const </argsstring>
         <name>end</name>
         <briefdescription>
@@ -539,16 +539,16 @@
     <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="165" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="164" bodyend="221"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1vector__k_1a07dff703d64e581533d2e5513a609577" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>back</name></member>
-      <member refid="classkeycpp_1_1vector__k_1ad70ec20714961768933f3dcf59ec7817" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>begin</name></member>
-      <member refid="classkeycpp_1_1vector__k_1a71746b5acb4d71694b79f3152c4913cb" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>begin</name></member>
+      <member refid="classkeycpp_1_1vector__k_1a57ec9796301fc1db249c531cbcb02b86" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>begin</name></member>
+      <member refid="classkeycpp_1_1vector__k_1a4a0b078263c4dee69535701358c62b4a" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>begin</name></member>
       <member refid="classkeycpp_1_1vector__k_1a2dea1dcfadd6a74e75961940a95bb10d" prot="private" virt="non-virtual"><scope>keycpp::vector_k</scope><name>buffer</name></member>
       <member refid="classkeycpp_1_1vector__k_1a651efbae7ea28e3e4cc3a07375a8de72" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>capacity</name></member>
       <member refid="classkeycpp_1_1vector__k_1a926f7d20093e3b36e92f10aaeea1e909" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>clear</name></member>
       <member refid="classkeycpp_1_1vector__k_1a7f0415773f7c1b1cac7699d141ed1d3b" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>const_iterator</name></member>
       <member refid="classkeycpp_1_1vector__k_1a0811d7f18a7f0c608735424203d575b4" prot="private" virt="non-virtual"><scope>keycpp::vector_k</scope><name>dontFree</name></member>
       <member refid="classkeycpp_1_1vector__k_1abbba6e3a7e0dc425a78645f78417c62c" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>empty</name></member>
-      <member refid="classkeycpp_1_1vector__k_1a4402253e247d64a4fd810978ef3ae683" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>end</name></member>
-      <member refid="classkeycpp_1_1vector__k_1a8f9a33e07ed170ce00052dfa01105df8" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>end</name></member>
+      <member refid="classkeycpp_1_1vector__k_1ad0768d945f869ec2bae8042952ef70c3" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>end</name></member>
+      <member refid="classkeycpp_1_1vector__k_1a9453d606e3e95d4fa81e9287fc3914d3" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>end</name></member>
       <member refid="classkeycpp_1_1vector__k_1ac59a48a400d54bc34eb3355a0692a2f8" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>front</name></member>
       <member refid="classkeycpp_1_1vector__k_1a09f9ee871078a9f6602d564088a0e2ac" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>get_inc</name></member>
       <member refid="classkeycpp_1_1vector__k_1a91d31a4cc042d8629f70873b4daabb59" prot="private" virt="non-virtual"><scope>keycpp::vector_k</scope><name>inc</name></member>

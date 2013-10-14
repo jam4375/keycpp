@@ -308,25 +308,25 @@ namespace keycpp
     }
 
     template<class T>
-    class vector_k<T>::iterator vector_k<T>::begin()
+    typename vector_k<T>::iterator vector_k<T>::begin()
     {
         return iterator(buffer,inc);
     }
 
     template<class T>
-    class vector_k<T>::iterator vector_k<T>::end()
+    typename vector_k<T>::iterator vector_k<T>::end()
     {
         return iterator(buffer+size()*inc,inc);
     }
 
     template<class T>
-    class vector_k<T>::const_iterator vector_k<T>::begin() const
+    typename vector_k<T>::const_iterator vector_k<T>::begin() const
     {
         return const_iterator(buffer,inc);
     }
 
     template<class T>
-    class vector_k<T>::const_iterator vector_k<T>::end() const
+    typename vector_k<T>::const_iterator vector_k<T>::end() const
     {
         return const_iterator(buffer+size()*inc,inc);
     }

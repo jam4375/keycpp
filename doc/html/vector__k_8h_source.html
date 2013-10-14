@@ -409,27 +409,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keyword">class </span>vector_k&lt;T&gt;::iterator vector_k&lt;T&gt;::begin()</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keyword">typename</span> vector_k&lt;T&gt;::iterator vector_k&lt;T&gt;::begin()</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    {</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keywordflow">return</span> iterator(buffer,inc);</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    }</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keyword">class </span>vector_k&lt;T&gt;::iterator vector_k&lt;T&gt;::end()</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keyword">typename</span> vector_k&lt;T&gt;::iterator vector_k&lt;T&gt;::end()</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordflow">return</span> iterator(buffer+size()*inc,inc);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordflow">return</span> iterator(buffer+<a class="code" href="namespacekeycpp.html#a2824156817719ffe96a842dd0ef27ae5" title="Returns the number of elements along dimension dim.">size</a>()*inc,inc);</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    }</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keyword">class </span>vector_k&lt;T&gt;::const_iterator vector_k&lt;T&gt;::begin() const</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keyword">typename</span> vector_k&lt;T&gt;::const_iterator vector_k&lt;T&gt;::begin()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">return</span> const_iterator(buffer,inc);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keyword">class </span>vector_k&lt;T&gt;::const_iterator vector_k&lt;T&gt;::end() const</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    {</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordflow">return</span> const_iterator(buffer+size()*inc,inc);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keyword">typename</span> vector_k&lt;T&gt;::const_iterator vector_k&lt;T&gt;::end()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordflow">return</span> const_iterator(buffer+<a class="code" href="namespacekeycpp.html#a2824156817719ffe96a842dd0ef27ae5" title="Returns the number of elements along dimension dim.">size</a>()*inc,inc);</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
@@ -555,7 +555,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 10:23:06 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 14 2013 10:29:41 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
