@@ -270,6 +270,87 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
         BOOST_CHECK_CLOSE(v2[0],0.0,tol);
         BOOST_CHECK_CLOSE(v2[9],0.0,tol);
     }
+    
+    // Test vector_k iterator
+    {
+        keycpp::vector_k<int> v1(10);
+        for(keycpp::vector_k<int>::iterator it = v1.begin(); it != v1.end(); it++)
+        {
+            *it = 1;
+        }
+        for(auto ii : v1)
+        {
+            BOOST_CHECK_EQUAL(ii,1);
+        }
+        for(keycpp::vector_k<int>::iterator it = v1.begin(); it != v1.end(); it += 1)
+        {
+            BOOST_CHECK_EQUAL(*it,1);
+        }
+        keycpp::vector_k<int>::iterator it1 = v1.begin() + 5;
+        BOOST_CHECK_EQUAL(*it1,1);
+        
+        keycpp::vector_k<int> v2(&v1[0],5,2);
+        for(keycpp::vector_k<int>::iterator it = v2.begin(); it != v2.end(); it++)
+        {
+            *it = 2;
+        }
+        for(keycpp::vector_k<int>::iterator it = v2.begin(); it != v2.end(); it++)
+        {
+            BOOST_CHECK_EQUAL(*it,2);
+        }
+        
+        keycpp::vector_k<int>::iterator it2 = v1.begin() + 2;
+        BOOST_CHECK_EQUAL(*it2,2);
+        BOOST_CHECK_EQUAL(v1[0],2);
+        BOOST_CHECK_EQUAL(v1[1],1);
+        
+        keycpp::vector_k<int>::iterator it3 = v2.begin() + 1;
+        BOOST_CHECK_EQUAL(it3.get_inc(),2);
+        BOOST_CHECK_EQUAL(*it3,2);
+        it3 += 1;
+        BOOST_CHECK_EQUAL(*it3,2);
+        
+        for(auto ii : v2)
+        {
+            BOOST_CHECK_EQUAL(ii,2);
+        }
+        
+        keycpp::vector_k<int>::iterator it4 = v2.end();
+        BOOST_CHECK_EQUAL((--it4) - v2.begin(),v2.size()-1);
+        
+        keycpp::vector_k<int>::iterator it5 = v2.begin();
+        BOOST_CHECK_EQUAL(v2.end() - (++it5),v2.size()-1);
+    }
+    
+    // Test with Boost.range
+    {
+        using namespace boost;
+        typedef keycpp::vector_k<int> vec_t;
+        vec_t                    vec;
+        vec.push_back( 3 ); vec.push_back( 4 );
+        const vec_t              cvec( vec ); 
+
+        BOOST_STATIC_ASSERT(( is_same< range_value<vec_t>::type, vec_t::value_type >::value ));
+        BOOST_STATIC_ASSERT(( is_same< range_iterator<vec_t>::type, vec_t::iterator >::value ));
+        BOOST_STATIC_ASSERT(( is_same< range_iterator<const vec_t>::type, vec_t::const_iterator >::value ));
+        BOOST_STATIC_ASSERT(( is_same< range_difference<vec_t>::type, vec_t::difference_type >::value ));
+        BOOST_STATIC_ASSERT(( is_same< range_size<vec_t>::type, vec_t::size_type >::value ));
+        BOOST_STATIC_ASSERT(( is_same< range_iterator<vec_t>::type, vec_t::iterator >::value ));
+        BOOST_STATIC_ASSERT(( is_same< range_iterator<const vec_t>::type, vec_t::const_iterator >::value ));
+        
+        BOOST_STATIC_ASSERT(( is_same< range_difference<const vec_t>::type, vec_t::difference_type >::value ));
+        BOOST_STATIC_ASSERT(( is_same< range_size<const vec_t>::type, vec_t::size_type >::value ));
+
+        BOOST_CHECK( begin( vec ) == vec.begin() );
+        BOOST_CHECK( end( vec )   == vec.end() );
+        BOOST_CHECK( empty( vec ) == vec.empty() );
+        BOOST_CHECK( (std::size_t)size( vec ) == vec.size() );
+        
+        BOOST_CHECK( begin( cvec ) == cvec.begin() );
+        BOOST_CHECK( end( cvec )   == cvec.end() );
+        BOOST_CHECK( empty( cvec ) == cvec.empty() );
+        BOOST_CHECK( (std::size_t)size( cvec ) == cvec.size() );
+    }
 }
 
 BOOST_AUTO_TEST_SUITE_END()

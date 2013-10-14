@@ -294,7 +294,6 @@
     <member refid="classkeycpp_1_1_pointer_iterator_1a29c4edb27dcc46bea93df78eef3eb1f7" kind="friend"><name>operator&gt;</name></member>
     <member refid="classkeycpp_1_1_pointer_iterator_1afc6f64c3c35e55197f846b2328cb21f8" kind="friend"><name>operator&lt;=</name></member>
     <member refid="classkeycpp_1_1_pointer_iterator_1a7a58bf216a9bd8b4a4cfd2905a421b8c" kind="friend"><name>operator&gt;=</name></member>
-    <member refid="classkeycpp_1_1_pointer_iterator_1a8e7bea4d56f15979b01078c740fc9d33" kind="friend"><name>operator+</name></member>
     <member refid="classkeycpp_1_1_pointer_iterator_1a0c82b8711579ffa15e4ec6f8952e7bda" kind="friend"><name>operator-</name></member>
   </compound>
   <compound refid="structkeycpp_1_1_sort___matrix" kind="struct"><name>keycpp::Sort_Matrix</name>
@@ -344,6 +343,8 @@
     <member refid="classkeycpp_1_1vector__k_1a0c53a4d249da380a1eec01c56176de9c" kind="typedef"><name>iterator</name></member>
     <member refid="classkeycpp_1_1vector__k_1a7f0415773f7c1b1cac7699d141ed1d3b" kind="typedef"><name>const_iterator</name></member>
     <member refid="classkeycpp_1_1vector__k_1a66a8ed8296d754341cedd8b242fc980a" kind="typedef"><name>size_type</name></member>
+    <member refid="classkeycpp_1_1vector__k_1abc7ae2bed19ed75dccc2f0aa57af689e" kind="typedef"><name>value_type</name></member>
+    <member refid="classkeycpp_1_1vector__k_1aae155cf6b11b7c611b461db5b8b5bee2" kind="typedef"><name>difference_type</name></member>
     <member refid="classkeycpp_1_1vector__k_1af198dad61aeb005bb53aa82d4466e202" kind="variable"><name>my_size</name></member>
     <member refid="classkeycpp_1_1vector__k_1ac56e38785acd5c1df6920eb77f32feda" kind="variable"><name>my_capacity</name></member>
     <member refid="classkeycpp_1_1vector__k_1a91d31a4cc042d8629f70873b4daabb59" kind="variable"><name>inc</name></member>
@@ -657,7 +658,6 @@
     <member refid="namespacekeycpp_1a7330eaaa701d2308c19f84adda097685" kind="function"><name>operator&gt;</name></member>
     <member refid="namespacekeycpp_1a9b02f40e92cad47b419ac09207518b9f" kind="function"><name>operator&lt;=</name></member>
     <member refid="namespacekeycpp_1af6e928cddf953cbdd90b0cd6f3802b24" kind="function"><name>operator&gt;=</name></member>
-    <member refid="namespacekeycpp_1a8f3cb7bbad85e56561214615c9e8165e" kind="function"><name>operator+</name></member>
     <member refid="namespacekeycpp_1ad88546738baf0a658bbe540827343939" kind="function"><name>operator-</name></member>
   </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>

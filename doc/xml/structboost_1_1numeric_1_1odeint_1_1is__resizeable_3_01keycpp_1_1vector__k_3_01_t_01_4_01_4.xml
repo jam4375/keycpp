@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2349" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2349" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2350" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2350" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
@@ -35,14 +35,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2350" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2350" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2351" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2351" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2348" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2347" bodyend="2351"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2349" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2348" bodyend="2352"/>
     <listofallmembers>
       <member refid="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01keycpp_1_1vector__k_3_01_t_01_4_01_4_1a2ca1ce78b24323da779c4f39b56a03be" prot="public" virt="non-virtual"><scope>boost::numeric::odeint::is_resizeable&lt; keycpp::vector_k&lt; T &gt; &gt;</scope><name>type</name></member>
       <member refid="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01keycpp_1_1vector__k_3_01_t_01_4_01_4_1a5d0fce0d73884387eacdedeccc44b6c3" prot="public" virt="non-virtual"><scope>boost::numeric::odeint::is_resizeable&lt; keycpp::vector_k&lt; T &gt; &gt;</scope><name>value</name></member>

@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="49" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="49" bodyend="49"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="50" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="50" bodyend="50"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -48,7 +48,7 @@
         <label>runtime_error</label>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="47" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="46" bodyend="50"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="48" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="47" bodyend="51"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1_key_cpp_exception_1af12dadc3f596f1e82cd65d55c2f64c65" prot="public" virt="non-virtual"><scope>keycpp::KeyCppException</scope><name>KeyCppException</name></member>
     </listofallmembers>

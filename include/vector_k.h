@@ -54,19 +54,19 @@ namespace keycpp
 		    { m_pData -= inc; return *this; }
 		
 	    PointerIterator operator++(int)
-		    { return PointerIterator(pointer(m_pData + inc)); }
+		    { auto ii = *this; m_pData += inc; return ii; }
 	
 	    PointerIterator operator--(int)
-		    { return PointerIterator(pointer(m_pData - inc)); }
+		    { auto ii = *this; m_pData -= inc; return ii; }
 		
 	    PointerIterator operator+(const difference_type& n) const
-		    { return PointerIterator(pointer(m_pData + n*inc)); }
+		    { return PointerIterator(pointer(m_pData + n*inc),inc); }
 		
 	    PointerIterator& operator+=(const difference_type& n)
 		    { m_pData += n*inc; return *this; }
 	
 	    PointerIterator operator-(const difference_type& n) const
-		    { return PointerIterator(pointer(m_pData - n*inc)); }			
+		    { return PointerIterator(pointer(m_pData - n*inc),inc); }			
 		
 	    PointerIterator& operator-=(const difference_type& n)
 		    { m_pData -= n*inc; return *this; }
@@ -110,11 +110,6 @@ namespace keycpp
 	    friend bool operator>=(
 		    const PointerIterator<T>& r1,
 		    const PointerIterator<T>& r2);
-		
-	    template<typename T>	
-	    friend typename PointerIterator<T>::difference_type operator+(
-		    const PointerIterator<T>& r1,
-		    const PointerIterator<T>& r2);
 
 	    template<typename T>	
 	    friend typename PointerIterator<T>::difference_type operator-(
@@ -149,15 +144,9 @@ namespace keycpp
 	    { return (r1.m_pData >= r2.m_pData); }
 
     template<typename T>	
-    typename PointerIterator<T>::difference_type operator+(
-	    const PointerIterator<T>& r1,
-	    const PointerIterator<T>& r2)
-    { return PointerIterator<T>(r1.m_pData + r2.m_pData); }
-
-    template<typename T>	
     typename PointerIterator<T>::difference_type operator-(
 	    const PointerIterator<T>& r1, const PointerIterator<T>& r2)
-    { return r1.m_pData - r2.m_pData; }
+    { return (r1.m_pData - r2.m_pData)/r1.inc; }
 
 
     template <class T>
@@ -170,6 +159,8 @@ namespace keycpp
         //typedef T *iterator;
         //typedef const T* const_iterator;
         typedef size_t size_type;
+        typedef T value_type;
+        typedef typename iterator::difference_type difference_type;
 
         vector_k();
         vector_k(size_t size, const T &initial);
@@ -310,24 +301,28 @@ namespace keycpp
     template<class T>
     typename vector_k<T>::iterator vector_k<T>::begin()
     {
+        //return buffer;
         return iterator(buffer,inc);
     }
 
     template<class T>
     typename vector_k<T>::iterator vector_k<T>::end()
     {
+        //return buffer + size();
         return iterator(buffer+size()*inc,inc);
     }
 
     template<class T>
     typename vector_k<T>::const_iterator vector_k<T>::begin() const
     {
+        //return buffer;
         return const_iterator(buffer,inc);
     }
 
     template<class T>
     typename vector_k<T>::const_iterator vector_k<T>::end() const
     {
+        //return buffer + size();
         return const_iterator(buffer+size()*inc,inc);
     }
 

@@ -11,6 +11,7 @@
 #include <string>
 #include <cmath>
 #include <boost/numeric/odeint.hpp>
+#include <boost/range.hpp>
 #include <utility>
 #include <algorithm>
 #include <limits>
@@ -2321,7 +2322,7 @@ namespace keycpp
 			cx_in[ii].i = imag((std::complex<double>)u[ii]);
 		}
 
-		kiss_fft_cfg cfg = kiss_fft_alloc(N,false,0,0);
+		kiss_fft_cfg cfg = kiss_fft_alloc(N,false,NULL,NULL);
 		kiss_fft(cfg,cx_in,cx_out);
 
 		for(int ii = 0; ii < N; ii++)
@@ -2330,8 +2331,8 @@ namespace keycpp
 		}
 
 		free(cfg);
-		delete cx_in;
-		delete cx_out;
+		delete [] cx_in;
+		delete [] cx_out;
 
 		return u_hat;
 	}
@@ -3417,6 +3418,7 @@ namespace keycpp
             if(n > -1 && n < size)
             {
                 std::string str(s);
+                delete [] s;
                 str.resize(n);
                 return str;
             }
