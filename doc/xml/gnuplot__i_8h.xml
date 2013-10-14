@@ -13,40 +13,36 @@
     <includes local="no">list</includes>
     <includedby refid="_figure_8h" local="yes">Figure.h</includedby>
     <incdepgraph>
-      <node id="40">
+      <node id="42">
         <label>list</label>
       </node>
-      <node id="37">
+      <node id="39">
         <label>stdexcept</label>
       </node>
-      <node id="33">
+      <node id="35">
         <label>string</label>
       </node>
-      <node id="35">
+      <node id="37">
         <label>fstream</label>
       </node>
-      <node id="38">
+      <node id="40">
         <label>cstdio</label>
       </node>
-      <node id="34">
+      <node id="36">
         <label>vector</label>
       </node>
-      <node id="36">
+      <node id="38">
         <label>sstream</label>
       </node>
-      <node id="39">
+      <node id="41">
         <label>cstdlib</label>
       </node>
-      <node id="32">
+      <node id="34">
         <label>iostream</label>
       </node>
-      <node id="31">
+      <node id="33">
         <label>gnuplot_i.h</label>
         <link refid="gnuplot_i.h"/>
-        <childnode refid="32" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
         <childnode refid="34" relation="include">
         </childnode>
         <childnode refid="35" relation="include">
@@ -61,23 +57,27 @@
         </childnode>
         <childnode refid="40" relation="include">
         </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="43">
+      <node id="45">
         <label>keycpp.h</label>
         <link refid="keycpp_8h"/>
       </node>
-      <node id="42">
+      <node id="44">
         <label>Figure.h</label>
         <link refid="_figure_8h_source"/>
-        <childnode refid="43" relation="include">
+        <childnode refid="45" relation="include">
         </childnode>
       </node>
-      <node id="41">
+      <node id="43">
         <label>gnuplot_i.h</label>
         <link refid="gnuplot_i.h"/>
-        <childnode refid="42" relation="include">
+        <childnode refid="44" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

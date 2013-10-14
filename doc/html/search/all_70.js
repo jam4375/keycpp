@@ -14,5 +14,6 @@ var searchData=
   ['plotfile_5fxy_5ferr',['plotfile_xy_err',['../class_gnuplot.html#afe9d44ba12f617188111ab915010f3ab',1,'Gnuplot']]],
   ['plotfile_5fxyz',['plotfile_xyz',['../class_gnuplot.html#a9dbde2a91eb816481657f3a22c9b0046',1,'Gnuplot']]],
   ['plots',['Plots',['../classkeycpp_1_1_plots.html',1,'keycpp']]],
+  ['pointeriterator',['PointerIterator',['../classkeycpp_1_1_pointer_iterator.html',1,'keycpp']]],
   ['prod',['prod',['../namespacekeycpp.html#add55ad2a40111d6368744a3d4144f25a',1,'keycpp::prod(const vector_k&lt; T &gt; &amp;x)'],['../namespacekeycpp.html#af5471fc9074471701bde9e68eb7971b4',1,'keycpp::prod(const matrix&lt; T &gt; &amp;A)']]]
 ];

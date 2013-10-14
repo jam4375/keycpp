@@ -40,21 +40,21 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="51">
+      <node id="55">
         <label>keycpp::Sort_Matrix&lt; T &gt;</label>
         <link refid="structkeycpp_1_1_sort___matrix"/>
-        <childnode refid="52" relation="usage">
+        <childnode refid="56" relation="usage">
           <edgelabel>index</edgelabel>
         </childnode>
       </node>
-      <node id="52">
+      <node id="56">
         <label>keycpp::matrix&lt; size_t &gt;</label>
         <link refid="classkeycpp_1_1matrix"/>
-        <childnode refid="53" relation="usage">
+        <childnode refid="57" relation="usage">
           <edgelabel>mData</edgelabel>
         </childnode>
       </node>
-      <node id="53">
+      <node id="57">
         <label>keycpp::vector_k&lt; size_t &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>

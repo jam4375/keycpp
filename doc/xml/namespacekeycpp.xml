@@ -19,6 +19,7 @@
     <innerclass refid="classkeycpp_1_1_spline_exception" prot="public">keycpp::SplineException</innerclass>
     <innerclass refid="classkeycpp_1_1_extrap" prot="public">keycpp::Extrap</innerclass>
     <innerclass refid="classkeycpp_1_1_spline" prot="public">keycpp::Spline</innerclass>
+    <innerclass refid="classkeycpp_1_1_pointer_iterator" prot="public">keycpp::PointerIterator</innerclass>
     <innerclass refid="classkeycpp_1_1vector__k" prot="public">keycpp::vector_k</innerclass>
       <sectiondef kind="var">
       <memberdef kind="variable" id="namespacekeycpp_1a8d3ada618b663c38fe93a45de99c4c50" prot="public" static="yes" mutable="no">
@@ -7230,6 +7231,214 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="31"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1adfb32fd99bb09455f5a124df4560ab0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool keycpp::operator==</definition>
+        <argsstring>(const PointerIterator&lt; T &gt; &amp;r1, const PointerIterator&lt; T &gt; &amp;r2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="129" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="128" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a9358d5f3f08dd8ed262697b7e8b2a4f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool keycpp::operator!=</definition>
+        <argsstring>(const PointerIterator&lt; T &gt; &amp;r1, const PointerIterator&lt; T &gt; &amp;r2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="133" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="132" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a689a724b505d52660e42e1148eba1a9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool keycpp::operator&lt;</definition>
+        <argsstring>(const PointerIterator&lt; T &gt; &amp;r1, const PointerIterator&lt; T &gt; &amp;r2)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="137" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="136" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a7330eaaa701d2308c19f84adda097685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool keycpp::operator&gt;</definition>
+        <argsstring>(const PointerIterator&lt; T &gt; &amp;r1, const PointerIterator&lt; T &gt; &amp;r2)</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="141" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="140" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a9b02f40e92cad47b419ac09207518b9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool keycpp::operator&lt;=</definition>
+        <argsstring>(const PointerIterator&lt; T &gt; &amp;r1, const PointerIterator&lt; T &gt; &amp;r2)</argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="145" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="144" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1af6e928cddf953cbdd90b0cd6f3802b24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool keycpp::operator&gt;=</definition>
+        <argsstring>(const PointerIterator&lt; T &gt; &amp;r1, const PointerIterator&lt; T &gt; &amp;r2)</argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="149" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="148" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1a8f3cb7bbad85e56561214615c9e8165e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt;::difference_type</type>
+        <definition>PointerIterator&lt;T&gt;::difference_type keycpp::operator+</definition>
+        <argsstring>(const PointerIterator&lt; T &gt; &amp;r1, const PointerIterator&lt; T &gt; &amp;r2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="155" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="152" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1ad88546738baf0a658bbe540827343939" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt;::difference_type</type>
+        <definition>PointerIterator&lt;T&gt;::difference_type keycpp::operator-</definition>
+        <argsstring>(const PointerIterator&lt; T &gt; &amp;r1, const PointerIterator&lt; T &gt; &amp;r2)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="160" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="158" bodyend="160"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

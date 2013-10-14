@@ -10,19 +10,17 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
         BOOST_CHECK_EQUAL(v1.capacity(),0);
         BOOST_CHECK_EQUAL(v1.size(),0);
         BOOST_CHECK(v1.empty());
-        BOOST_CHECK(v1.begin() == nullptr);
-        BOOST_CHECK(v1.end() == nullptr);
+        BOOST_CHECK(v1.begin() == v1.end());
         
         keycpp::vector_k<int> v2(10);
         BOOST_CHECK(v2.capacity() >= 10);
         BOOST_CHECK_EQUAL(v2.size(),10);
         BOOST_CHECK(!v2.empty());
-        BOOST_CHECK(v2.begin() != nullptr);
-        BOOST_CHECK(v2.end() != nullptr);
+        BOOST_CHECK(v2.begin() != v2.end());
         v2[0] = 1234;
         v2[9] = 4321;
         BOOST_CHECK_EQUAL(*v2.begin(),1234);
-        int* it_end = v2.end();
+        keycpp::vector_k<int>::iterator it_end = v2.end();
         std::advance(it_end,-1);
         BOOST_CHECK_EQUAL(*(it_end),4321);
         
@@ -30,8 +28,7 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
         BOOST_CHECK(v2.capacity() >= 20);
         BOOST_CHECK_EQUAL(v2.size(),10);
         BOOST_CHECK(!v2.empty());
-        BOOST_CHECK(v2.begin() != nullptr);
-        BOOST_CHECK(v2.end() != nullptr);
+        BOOST_CHECK(v2.begin() != v2.end());
         v2[0] = 5678;
         v2[9] = 8765;
         BOOST_CHECK_EQUAL(*v2.begin(),5678);
@@ -43,17 +40,16 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
         BOOST_CHECK(v2.capacity() >= 20);
         BOOST_CHECK_EQUAL(v2.size(),20);
         BOOST_CHECK(!v2.empty());
-        BOOST_CHECK(v2.begin() != nullptr);
-        BOOST_CHECK(v2.end() != nullptr);
+        BOOST_CHECK(v2.begin() != v2.end());
         v2[0] = 1111;
         v2[19] = 2222;
         BOOST_CHECK_EQUAL(*v2.begin(),1111);
         it_end = v2.end();
         std::advance(it_end,-1);
         BOOST_CHECK_EQUAL(*(it_end),2222);
-        const int* it_begin2 = v2.begin();
+        keycpp::vector_k<int>::const_iterator it_begin2 = v2.begin();
         BOOST_CHECK_EQUAL(*it_begin2,1111);
-        const int* it_end2 = v2.end();
+        keycpp::vector_k<int>::const_iterator it_end2 = v2.end();
         std::advance(it_end2,-1);
         BOOST_CHECK_EQUAL(*(it_end2),2222);
         BOOST_CHECK_EQUAL(v2.front(),1111);
@@ -63,8 +59,7 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
         BOOST_CHECK(v2.capacity() >= 21);
         BOOST_CHECK_EQUAL(v2.size(),21);
         BOOST_CHECK(!v2.empty());
-        BOOST_CHECK(v2.begin() != nullptr);
-        BOOST_CHECK(v2.end() != nullptr);
+        BOOST_CHECK(v2.begin() != v2.end());
         BOOST_CHECK_EQUAL(*v2.begin(),1111);
         it_end = v2.end();
         std::advance(it_end,-1);
@@ -79,8 +74,7 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
         BOOST_CHECK(v2.capacity() >= 21);
         BOOST_CHECK_EQUAL(v2.size(),20);
         BOOST_CHECK(!v2.empty());
-        BOOST_CHECK(v2.begin() != nullptr);
-        BOOST_CHECK(v2.end() != nullptr);
+        BOOST_CHECK(v2.begin() != v2.end());
         BOOST_CHECK_EQUAL(*v2.begin(),1111);
         it_end = v2.end();
         std::advance(it_end,-1);
@@ -170,16 +164,15 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
     // Now test everything again using a vector reference
     {
         keycpp::vector_k<int> v1(10,100);
-        keycpp::vector_k<int> v2(v1.begin(),v1.size(),1);
+        keycpp::vector_k<int> v2(&v1[0],v1.size(),1);
         BOOST_CHECK(v2.capacity() >= 10);
         BOOST_CHECK_EQUAL(v2.size(),10);
         BOOST_CHECK(!v2.empty());
-        BOOST_CHECK(v2.begin() != nullptr);
-        BOOST_CHECK(v2.end() != nullptr);
+        BOOST_CHECK(v2.begin() != v2.end());
         v2[0] = 1234;
         v2[9] = 4321;
         BOOST_CHECK_EQUAL(*v2.begin(),1234);
-        int* it_end = v2.end();
+        keycpp::vector_k<int>::iterator it_end = v2.end();
         std::advance(it_end,-1);
         BOOST_CHECK_EQUAL(*(it_end),4321);
         BOOST_CHECK_EQUAL(v1[0],1234);
@@ -189,8 +182,7 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
         BOOST_CHECK(v2.capacity() >= 20);
         BOOST_CHECK_EQUAL(v2.size(),10);
         BOOST_CHECK(!v2.empty());
-        BOOST_CHECK(v2.begin() != nullptr);
-        BOOST_CHECK(v2.end() != nullptr);
+        BOOST_CHECK(v2.begin() != v2.end());
         v2[0] = 5678;
         v2[9] = 8765;
         BOOST_CHECK_EQUAL(*v2.begin(),5678);
@@ -202,17 +194,16 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
         BOOST_CHECK(v2.capacity() >= 20);
         BOOST_CHECK_EQUAL(v2.size(),20);
         BOOST_CHECK(!v2.empty());
-        BOOST_CHECK(v2.begin() != nullptr);
-        BOOST_CHECK(v2.end() != nullptr);
+        BOOST_CHECK(v2.begin() != v2.end());
         v2[0] = 1111;
         v2[19] = 2222;
         BOOST_CHECK_EQUAL(*v2.begin(),1111);
         it_end = v2.end();
         std::advance(it_end,-1);
         BOOST_CHECK_EQUAL(*(it_end),2222);
-        const int* it_begin2 = v2.begin();
+        keycpp::vector_k<int>::const_iterator it_begin2 = v2.begin();
         BOOST_CHECK_EQUAL(*it_begin2,1111);
-        const int* it_end2 = v2.end();
+        keycpp::vector_k<int>::const_iterator it_end2 = v2.end();
         std::advance(it_end2,-1);
         BOOST_CHECK_EQUAL(*(it_end2),2222);
         BOOST_CHECK_EQUAL(v2.front(),1111);
@@ -222,16 +213,15 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
     // Now test everything again using a vector reference and an increment
     {
         keycpp::vector_k<int> v1(20,100);
-        keycpp::vector_k<int> v2(v1.begin(),10,2);
+        keycpp::vector_k<int> v2(&v1[0],10,2);
         BOOST_CHECK(v2.capacity() >= 10);
         BOOST_CHECK_EQUAL(v2.size(),10);
         BOOST_CHECK(!v2.empty());
-        BOOST_CHECK(v2.begin() != nullptr);
-        BOOST_CHECK(v2.end() != nullptr);
+        BOOST_CHECK(v2.begin() != v2.end());
         v2[0] = 1234;
         v2[9] = 4321;
         BOOST_CHECK_EQUAL(*v2.begin(),1234);
-        int* it_end = v2.end();
+        keycpp::vector_k<int>::iterator it_end = v2.end();
         std::advance(it_end,-1);
         BOOST_CHECK_EQUAL(*(it_end),4321);
         BOOST_CHECK_EQUAL(v1[0],1234);
@@ -241,8 +231,7 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
         BOOST_CHECK(v2.capacity() >= 20);
         BOOST_CHECK_EQUAL(v2.size(),10);
         BOOST_CHECK(!v2.empty());
-        BOOST_CHECK(v2.begin() != nullptr);
-        BOOST_CHECK(v2.end() != nullptr);
+        BOOST_CHECK(v2.begin() != v2.end());
         v2[0] = 5678;
         v2[9] = 8765;
         BOOST_CHECK_EQUAL(*v2.begin(),5678);
@@ -254,17 +243,16 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
         BOOST_CHECK(v2.capacity() >= 20);
         BOOST_CHECK_EQUAL(v2.size(),20);
         BOOST_CHECK(!v2.empty());
-        BOOST_CHECK(v2.begin() != nullptr);
-        BOOST_CHECK(v2.end() != nullptr);
+        BOOST_CHECK(v2.begin() != v2.end());
         v2[0] = 1111;
         v2[19] = 2222;
         BOOST_CHECK_EQUAL(*v2.begin(),1111);
         it_end = v2.end();
         std::advance(it_end,-1);
         BOOST_CHECK_EQUAL(*(it_end),2222);
-        const int* it_begin2 = v2.begin();
+        keycpp::vector_k<int>::const_iterator it_begin2 = v2.begin();
         BOOST_CHECK_EQUAL(*it_begin2,1111);
-        const int* it_end2 = v2.end();
+        keycpp::vector_k<int>::const_iterator it_end2 = v2.end();
         std::advance(it_end2,-1);
         BOOST_CHECK_EQUAL(*(it_end2),2222);
         BOOST_CHECK_EQUAL(v2.front(),1111);

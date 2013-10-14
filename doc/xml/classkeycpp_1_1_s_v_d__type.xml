@@ -75,21 +75,21 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="64">
+      <node id="68">
         <label>keycpp::SVD_type&lt; T, X &gt;</label>
         <link refid="classkeycpp_1_1_s_v_d__type"/>
-        <childnode refid="65" relation="usage">
+        <childnode refid="69" relation="usage">
           <edgelabel>S</edgelabel>
         </childnode>
       </node>
-      <node id="66">
+      <node id="70">
         <label>keycpp::vector_k&lt; X &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>
-      <node id="65">
+      <node id="69">
         <label>keycpp::matrix&lt; X &gt;</label>
         <link refid="classkeycpp_1_1matrix"/>
-        <childnode refid="66" relation="usage">
+        <childnode refid="70" relation="usage">
           <edgelabel>mData</edgelabel>
         </childnode>
       </node>

@@ -40,14 +40,14 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="55">
+      <node id="59">
         <label>keycpp::Sort_Vector&lt; T &gt;</label>
         <link refid="structkeycpp_1_1_sort___vector"/>
-        <childnode refid="56" relation="usage">
+        <childnode refid="60" relation="usage">
           <edgelabel>index</edgelabel>
         </childnode>
       </node>
-      <node id="56">
+      <node id="60">
         <label>keycpp::vector_k&lt; size_t &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>

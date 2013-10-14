@@ -1,17 +1,174 @@
 #ifndef vector_k_KEYCPP_H_
 #define vector_k_KEYCPP_H_
 
+#include <iterator>
+#include <algorithm>
+#include <iostream>
+#include <stdexcept>
 #include <vector>
+
 
 namespace keycpp
 {
+
+    template<typename TypeT>
+    class PointerIterator :
+	    public std::iterator<std::random_access_iterator_tag, TypeT>
+    {
+    protected:
+	    TypeT* m_pData;
+	    size_t inc;
+	
+    public:
+	    typedef std::random_access_iterator_tag iterator_category;
+	    typedef 
+		    typename std::iterator<std::random_access_iterator_tag, TypeT>::value_type
+		    value_type;
+	    typedef
+		    typename std::iterator<std::random_access_iterator_tag, TypeT>::difference_type
+		    difference_type;
+	    typedef 
+		    typename std::iterator<std::random_access_iterator_tag, TypeT>::reference
+		    reference;
+	    typedef 
+		    typename std::iterator<std::random_access_iterator_tag, TypeT>::pointer
+		    pointer;
+	
+
+	    PointerIterator() : m_pData(NULL), inc(1) {}
+	
+	
+	    template<typename T2>
+	    PointerIterator(const PointerIterator<T2>& r) : m_pData(&(*r)), inc(r.get_inc()) {}
+	
+	    PointerIterator(pointer pData, size_t pinc = 1) : m_pData(pData), inc(pinc) {}
+		
+	    template<typename T2>
+	    PointerIterator& operator=(const PointerIterator<T2>& r)
+		    { m_pData = &(*r); inc = r.get_inc(); return *this; }
+	
+	    PointerIterator& operator++()
+		    { m_pData += inc; return *this; }
+	
+	    PointerIterator& operator--()
+		    { m_pData -= inc; return *this; }
+		
+	    PointerIterator operator++(int)
+		    { return PointerIterator(pointer(m_pData + inc)); }
+	
+	    PointerIterator operator--(int)
+		    { return PointerIterator(pointer(m_pData - inc)); }
+		
+	    PointerIterator operator+(const difference_type& n) const
+		    { return PointerIterator(pointer(m_pData + n*inc)); }
+		
+	    PointerIterator& operator+=(const difference_type& n)
+		    { m_pData += n*inc; return *this; }
+	
+	    PointerIterator operator-(const difference_type& n) const
+		    { return PointerIterator(pointer(m_pData - n*inc)); }			
+		
+	    PointerIterator& operator-=(const difference_type& n)
+		    { m_pData -= n*inc; return *this; }
+	
+	    reference operator*() const
+		    { return *m_pData; }
+		
+	    pointer operator->() const
+		    { return m_pData; }
+		
+	    reference operator[](const difference_type& n) const
+		    { return m_pData[n]; }
+		
+		
+	    template<typename T>
+	    friend bool operator==(
+		    const PointerIterator<T>& r1,
+		    const PointerIterator<T>& r2);
+
+	    template<typename T>
+	    friend bool operator!=(
+		    const PointerIterator<T>& r1,
+		    const PointerIterator<T>& r2);
+
+	    template<typename T>
+	    friend bool operator<(
+		    const PointerIterator<T>& r1,
+		    const PointerIterator<T>& r2);
+
+	    template<typename T>
+	    friend bool operator>(
+		    const PointerIterator<T>& r1,
+		    const PointerIterator<T>& r2);
+
+	    template<typename T>
+	    friend bool operator<=(
+		    const PointerIterator<T>& r1,
+		    const PointerIterator<T>& r2);
+
+	    template<typename T>
+	    friend bool operator>=(
+		    const PointerIterator<T>& r1,
+		    const PointerIterator<T>& r2);
+		
+	    template<typename T>	
+	    friend typename PointerIterator<T>::difference_type operator+(
+		    const PointerIterator<T>& r1,
+		    const PointerIterator<T>& r2);
+
+	    template<typename T>	
+	    friend typename PointerIterator<T>::difference_type operator-(
+		    const PointerIterator<T>& r1,
+		    const PointerIterator<T>& r2);	
+		
+		size_t get_inc() const {return inc;};
+    };
+
+    template<typename T>
+    bool operator==(const PointerIterator<T>& r1, const PointerIterator<T>& r2)
+	    { return (r1.m_pData == r2.m_pData); }
+
+    template<typename T>	
+    bool operator!=(const PointerIterator<T>& r1, const PointerIterator<T>& r2)
+	    { return (r1.m_pData != r2.m_pData); }
+	
+    template<typename T>
+    bool operator<(const PointerIterator<T>& r1, const PointerIterator<T>& r2)
+	    { return (r1.m_pData < r2.m_pData); }
+
+    template<typename T>	
+    bool operator>(const PointerIterator<T>& r1, const PointerIterator<T>& r2)
+	    { return (r1.m_pData > r2.m_pData); }
+
+    template<typename T>
+    bool operator<=(const PointerIterator<T>& r1, const PointerIterator<T>& r2)
+	    { return (r1.m_pData <= r2.m_pData); }
+
+    template<typename T>	
+    bool operator>=(const PointerIterator<T>& r1, const PointerIterator<T>& r2)
+	    { return (r1.m_pData >= r2.m_pData); }
+
+    template<typename T>	
+    typename PointerIterator<T>::difference_type operator+(
+	    const PointerIterator<T>& r1,
+	    const PointerIterator<T>& r2)
+    { return PointerIterator<T>(r1.m_pData + r2.m_pData); }
+
+    template<typename T>	
+    typename PointerIterator<T>::difference_type operator-(
+	    const PointerIterator<T>& r1, const PointerIterator<T>& r2)
+    { return r1.m_pData - r2.m_pData; }
+
+
     template <class T>
     class  vector_k
     {
     public:
 
-        typedef T *iterator;
-        typedef const T* const_iterator;
+        typedef PointerIterator<T> iterator;
+        typedef PointerIterator<const T> const_iterator;
+        //typedef T *iterator;
+        //typedef const T* const_iterator;
         typedef size_t size_type;
 
         vector_k();
@@ -151,27 +308,27 @@ namespace keycpp
     }
 
     template<class T>
-    typename vector_k<T>::iterator vector_k<T>::begin()
+    class vector_k<T>::iterator vector_k<T>::begin()
     {
-        return buffer;
+        return iterator(buffer,inc);
     }
 
     template<class T>
-    typename vector_k<T>::iterator vector_k<T>::end()
+    class vector_k<T>::iterator vector_k<T>::end()
     {
-        return buffer + size();
+        return iterator(buffer+size()*inc,inc);
     }
 
     template<class T>
-    typename vector_k<T>::const_iterator vector_k<T>::begin() const
+    class vector_k<T>::const_iterator vector_k<T>::begin() const
     {
-        return buffer;
+        return const_iterator(buffer,inc);
     }
 
     template<class T>
-    typename vector_k<T>::const_iterator vector_k<T>::end() const
+    class vector_k<T>::const_iterator vector_k<T>::end() const
     {
-        return buffer + size();
+        return const_iterator(buffer+size()*inc,inc);
     }
 
     template<class T>

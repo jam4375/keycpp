@@ -27,24 +27,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="60">
+      <node id="64">
         <label>runtime_error</label>
       </node>
-      <node id="59">
+      <node id="63">
         <label>keycpp::SplineException</label>
         <link refid="classkeycpp_1_1_spline_exception"/>
-        <childnode refid="60" relation="public-inheritance">
+        <childnode refid="64" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="62">
+      <node id="66">
         <label>runtime_error</label>
       </node>
-      <node id="61">
+      <node id="65">
         <label>keycpp::SplineException</label>
         <link refid="classkeycpp_1_1_spline_exception"/>
-        <childnode refid="62" relation="public-inheritance">
+        <childnode refid="66" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

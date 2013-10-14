@@ -4,10 +4,10 @@ CFLAGS=-I$(IDIR) -std=c++11 -O3 -Wall -Wextra -pedantic
 
 ODIR=obj
 LDIR =../lib
-LIBS=-lm -lkeycpp -lblas -llapack
+LIBS=-lm -lblas -llapack
 
 _DEPS = Figure.h Spline.h keycpp.h vector_k.h Matrix.h kiss_fft.h gnuplot_i.h
-DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS)) ../lib/libkeycpp.a
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ = test_eig.o test_sprintf.o test_fft.o test_vec.o test.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))

@@ -43,6 +43,8 @@ class \hyperlink{classkeycpp_1_1_extrap}{Extrap}
 \item 
 class \hyperlink{classkeycpp_1_1_spline}{Spline}
 \item 
+class \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}
+\item 
 class \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
@@ -848,7 +850,33 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_aa590a69
 \begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's double matrix-\/vector multiplication function. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_aea174778653491b5fd21dd2960c0f7cb}{void \hyperlink{namespacekeycpp_aea174778653491b5fd21dd2960c0f7cb}{zgemv\-\_\-} (const char $\ast$T\-R\-A\-N\-S, const int $\ast$M, const int $\ast$N, const std\-::complex$<$ double $>$ $\ast$A\-L\-P\-H\-A, const std\-::complex$<$ double $>$ $\ast$A, const int $\ast$L\-D\-A, const std\-::complex$<$ double $>$ $\ast$X, const int $\ast$I\-N\-C\-X, const std\-::complex$<$ double $>$ $\ast$B\-E\-T\-A, std\-::complex$<$ double $>$ $\ast$Y, const int $\ast$I\-N\-C\-Y)}\label{namespacekeycpp_aea174778653491b5fd21dd2960c0f7cb}
 
-\begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's complex double matrix-\/vector multiplication function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This provides a C interface to B\-L\-A\-S's complex double matrix-\/vector multiplication function. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_adfb32fd99bb09455f5a124df4560ab0f}{{\footnotesize template$<$typename T $>$ }\\bool {\bfseries operator==} (const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r1, const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r2)}\label{namespacekeycpp_adfb32fd99bb09455f5a124df4560ab0f}
+
+\item 
+\hypertarget{namespacekeycpp_a9358d5f3f08dd8ed262697b7e8b2a4f1}{{\footnotesize template$<$typename T $>$ }\\bool {\bfseries operator!=} (const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r1, const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r2)}\label{namespacekeycpp_a9358d5f3f08dd8ed262697b7e8b2a4f1}
+
+\item 
+\hypertarget{namespacekeycpp_a689a724b505d52660e42e1148eba1a9a}{{\footnotesize template$<$typename T $>$ }\\bool {\bfseries operator$<$} (const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r1, const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r2)}\label{namespacekeycpp_a689a724b505d52660e42e1148eba1a9a}
+
+\item 
+\hypertarget{namespacekeycpp_a7330eaaa701d2308c19f84adda097685}{{\footnotesize template$<$typename T $>$ }\\bool {\bfseries operator$>$} (const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r1, const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r2)}\label{namespacekeycpp_a7330eaaa701d2308c19f84adda097685}
+
+\item 
+\hypertarget{namespacekeycpp_a9b02f40e92cad47b419ac09207518b9f}{{\footnotesize template$<$typename T $>$ }\\bool {\bfseries operator$<$=} (const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r1, const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r2)}\label{namespacekeycpp_a9b02f40e92cad47b419ac09207518b9f}
+
+\item 
+\hypertarget{namespacekeycpp_af6e928cddf953cbdd90b0cd6f3802b24}{{\footnotesize template$<$typename T $>$ }\\bool {\bfseries operator$>$=} (const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r1, const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r2)}\label{namespacekeycpp_af6e928cddf953cbdd90b0cd6f3802b24}
+
+\item 
+\hypertarget{namespacekeycpp_a8f3cb7bbad85e56561214615c9e8165e}{{\footnotesize template$<$typename T $>$ }\\\hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$\\*
+\-::difference\-\_\-type {\bfseries operator+} (const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r1, const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r2)}\label{namespacekeycpp_a8f3cb7bbad85e56561214615c9e8165e}
+
+\item 
+\hypertarget{namespacekeycpp_ad88546738baf0a658bbe540827343939}{{\footnotesize template$<$typename T $>$ }\\\hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$\\*
+\-::difference\-\_\-type {\bfseries operator-\/} (const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r1, const \hyperlink{classkeycpp_1_1_pointer_iterator}{Pointer\-Iterator}$<$ T $>$ \&r2)}\label{namespacekeycpp_ad88546738baf0a658bbe540827343939}
+
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
