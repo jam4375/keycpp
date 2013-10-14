@@ -2387,7 +2387,7 @@ namespace keycpp
 
 		{
 			using namespace boost::numeric::odeint;
-			size_t steps = integrate_adaptive(make_controlled<runge_kutta_dopri5<vector_k<T> > >(abs_tol, rel_tol), odeClass, ICs, x0, xf, delta_x0, observe<vector_k<T>,U>(y_temp,x_temp));
+			integrate_adaptive(make_controlled<runge_kutta_dopri5<vector_k<T> > >(abs_tol, rel_tol), odeClass, ICs, x0, xf, delta_x0, observe<vector_k<T>,U>(y_temp,x_temp));
 		}
 
         ODE_type<U,T> ans;
@@ -2413,15 +2413,13 @@ namespace keycpp
 			throw KeyCppException("Error in ode45()! Invalid vector x_ode!");
 		}
 
-		U x0 = x_ode[0];
-		U xf = x_ode[x_ode.size()-1];
 		U delta_x0 = x_ode[1] - x_ode[0];
 		vector_k<vector_k<T> > y_temp;
 		vector_k<U> x_temp;
 
 		{
 			using namespace boost::numeric::odeint;
-			size_t steps = integrate_times(make_dense_output<runge_kutta_dopri5<vector_k<T> > >(abs_tol, rel_tol), odeClass, ICs, x_ode.begin(), x_ode.end(), delta_x0, observe<vector_k<T>,U>(y_temp,x_temp));
+			integrate_times(make_dense_output<runge_kutta_dopri5<vector_k<T> > >(abs_tol, rel_tol), odeClass, ICs, x_ode.begin(), x_ode.end(), delta_x0, observe<vector_k<T>,U>(y_temp,x_temp));
 		}
 
 		matrix<T> y(y_temp);

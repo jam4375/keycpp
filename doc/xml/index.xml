@@ -235,6 +235,7 @@
   </compound>
   <compound refid="class_ode_class" kind="class"><name>OdeClass</name>
     <member refid="class_ode_class_1a60e726a29e90b8531f8772ab7de04df3" kind="function"><name>operator()</name></member>
+    <member refid="class_ode_class_1af12f38cd721ebf26cb84d06a59fd4302" kind="function"><name>operator()</name></member>
   </compound>
   <compound refid="classkeycpp_1_1_plots" kind="class"><name>keycpp::Plots</name>
     <member refid="classkeycpp_1_1_plots_1afe961c1f35d88bc181bd426fc47ade00" kind="variable"><name>hold_on_bool</name></member>
@@ -730,6 +731,9 @@
   </compound>
   <compound refid="test__fft_8cpp" kind="file"><name>test_fft.cpp</name>
     <member refid="test__fft_8cpp_1a4d23291996ac09ddd233538560256e99" kind="function"><name>BOOST_AUTO_TEST_CASE</name></member>
+  </compound>
+  <compound refid="test__ode45_8cpp" kind="file"><name>test_ode45.cpp</name>
+    <member refid="test__ode45_8cpp_1aea75e33fb7f6b41158d429749a911184" kind="function"><name>BOOST_AUTO_TEST_CASE</name></member>
   </compound>
   <compound refid="test__sprintf_8cpp" kind="file"><name>test_sprintf.cpp</name>
     <member refid="test__sprintf_8cpp_1ae02b78d03c3044da8c7f247914fd021a" kind="function"><name>BOOST_AUTO_TEST_CASE</name></member>

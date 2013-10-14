@@ -508,7 +508,7 @@ namespace keycpp
 	template<class T>
 	vector_k<T> matrix<T>::col(const size_t &n)
 	{
-		if(n > mCols || n < 0)
+		if(n > mCols)
 		{
 			throw MatrixException("Invalid column index in col().");
 		}

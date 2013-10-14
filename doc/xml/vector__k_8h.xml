@@ -12,71 +12,71 @@
     <includedby refid="keycpp_8h" local="yes">keycpp.h</includedby>
     <includedby refid="_spline_8h" local="yes">Spline.h</includedby>
     <incdepgraph>
-      <node id="259">
+      <node id="295">
         <label>iterator</label>
       </node>
-      <node id="262">
+      <node id="298">
         <label>stdexcept</label>
       </node>
-      <node id="258">
+      <node id="294">
         <label>vector_k.h</label>
         <link refid="vector_k.h"/>
-        <childnode refid="259" relation="include">
+        <childnode refid="295" relation="include">
         </childnode>
-        <childnode refid="260" relation="include">
+        <childnode refid="296" relation="include">
         </childnode>
-        <childnode refid="261" relation="include">
+        <childnode refid="297" relation="include">
         </childnode>
-        <childnode refid="262" relation="include">
+        <childnode refid="298" relation="include">
         </childnode>
-        <childnode refid="263" relation="include">
+        <childnode refid="299" relation="include">
         </childnode>
       </node>
-      <node id="263">
+      <node id="299">
         <label>vector</label>
       </node>
-      <node id="261">
+      <node id="297">
         <label>iostream</label>
       </node>
-      <node id="260">
+      <node id="296">
         <label>algorithm</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="266">
+      <node id="302">
         <label>keycpp.h</label>
         <link refid="keycpp_8h"/>
       </node>
-      <node id="264">
+      <node id="300">
         <label>vector_k.h</label>
         <link refid="vector_k.h"/>
-        <childnode refid="265" relation="include">
+        <childnode refid="301" relation="include">
         </childnode>
-        <childnode refid="267" relation="include">
+        <childnode refid="303" relation="include">
         </childnode>
-        <childnode refid="266" relation="include">
+        <childnode refid="302" relation="include">
         </childnode>
-        <childnode refid="268" relation="include">
+        <childnode refid="304" relation="include">
         </childnode>
       </node>
-      <node id="265">
+      <node id="301">
         <label>Figure.h</label>
         <link refid="_figure_8h_source"/>
-        <childnode refid="266" relation="include">
+        <childnode refid="302" relation="include">
         </childnode>
       </node>
-      <node id="268">
+      <node id="304">
         <label>Spline.h</label>
         <link refid="_spline_8h_source"/>
-        <childnode refid="266" relation="include">
+        <childnode refid="302" relation="include">
         </childnode>
       </node>
-      <node id="267">
+      <node id="303">
         <label>Matrix.h</label>
         <link refid="_matrix_8h_source"/>
-        <childnode refid="265" relation="include">
+        <childnode refid="301" relation="include">
         </childnode>
-        <childnode refid="266" relation="include">
+        <childnode refid="302" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

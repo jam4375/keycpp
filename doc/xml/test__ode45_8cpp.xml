@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+  <compounddef id="test__ode45_8cpp" kind="file">
+    <compoundname>test_ode45.cpp</compoundname>
+    <includes local="no">boost/test/unit_test.hpp</includes>
+    <includes refid="keycpp_8h" local="yes">keycpp.h</includes>
+    <incdepgraph>
+      <node id="220">
+        <label>list</label>
+      </node>
+      <node id="201">
+        <label>stdarg.h</label>
+      </node>
+      <node id="190">
+        <label>iomanip</label>
+      </node>
+      <node id="199">
+        <label>limits</label>
+      </node>
+      <node id="203">
+        <label>iterator</label>
+      </node>
+      <node id="187">
+        <label>boost/test/unit_test.hpp</label>
+      </node>
+      <node id="188">
+        <label>keycpp.h</label>
+        <link refid="keycpp_8h"/>
+        <childnode refid="189" relation="include">
+        </childnode>
+        <childnode refid="190" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="193" relation="include">
+        </childnode>
+        <childnode refid="194" relation="include">
+        </childnode>
+        <childnode refid="195" relation="include">
+        </childnode>
+        <childnode refid="196" relation="include">
+        </childnode>
+        <childnode refid="197" relation="include">
+        </childnode>
+        <childnode refid="198" relation="include">
+        </childnode>
+        <childnode refid="199" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="205" relation="include">
+        </childnode>
+        <childnode refid="206" relation="include">
+        </childnode>
+        <childnode refid="213" relation="include">
+        </childnode>
+        <childnode refid="214" relation="include">
+        </childnode>
+      </node>
+      <node id="208">
+        <label>stdlib.h</label>
+      </node>
+      <node id="194">
+        <label>cmath</label>
+      </node>
+      <node id="204">
+        <label>stdexcept</label>
+      </node>
+      <node id="193">
+        <label>string</label>
+      </node>
+      <node id="217">
+        <label>fstream</label>
+      </node>
+      <node id="202">
+        <label>vector_k.h</label>
+        <link refid="vector__k_8h_source"/>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="198" relation="include">
+        </childnode>
+        <childnode refid="189" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+      </node>
+      <node id="212">
+        <label>limits.h</label>
+      </node>
+      <node id="196">
+        <label>boost/range.hpp</label>
+      </node>
+      <node id="211">
+        <label>string.h</label>
+      </node>
+      <node id="218">
+        <label>cstdio</label>
+      </node>
+      <node id="200">
+        <label>ctime</label>
+      </node>
+      <node id="192">
+        <label>vector</label>
+      </node>
+      <node id="197">
+        <label>utility</label>
+      </node>
+      <node id="215">
+        <label>sstream</label>
+      </node>
+      <node id="214">
+        <label>Figure.h</label>
+        <link refid="_figure_8h_source"/>
+        <childnode refid="194" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="190" relation="include">
+        </childnode>
+        <childnode refid="193" relation="include">
+        </childnode>
+        <childnode refid="215" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="216" relation="include">
+        </childnode>
+        <childnode refid="205" relation="include">
+        </childnode>
+      </node>
+      <node id="195">
+        <label>boost/numeric/odeint.hpp</label>
+      </node>
+      <node id="213">
+        <label>Spline.h</label>
+        <link refid="_spline_8h_source"/>
+        <childnode refid="189" relation="include">
+        </childnode>
+        <childnode refid="194" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+      </node>
+      <node id="210">
+        <label>math.h</label>
+      </node>
+      <node id="186">
+        <label>test_ode45.cpp</label>
+        <link refid="test_ode45.cpp"/>
+        <childnode refid="187" relation="include">
+        </childnode>
+        <childnode refid="188" relation="include">
+        </childnode>
+      </node>
+      <node id="219">
+        <label>cstdlib</label>
+      </node>
+      <node id="189">
+        <label>iostream</label>
+      </node>
+      <node id="216">
+        <label>gnuplot_i.h</label>
+        <link refid="gnuplot__i_8h_source"/>
+        <childnode refid="189" relation="include">
+        </childnode>
+        <childnode refid="193" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="217" relation="include">
+        </childnode>
+        <childnode refid="215" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
+        </childnode>
+        <childnode refid="219" relation="include">
+        </childnode>
+        <childnode refid="220" relation="include">
+        </childnode>
+      </node>
+      <node id="205">
+        <label>Matrix.h</label>
+        <link refid="_matrix_8h_source"/>
+        <childnode refid="189" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+      </node>
+      <node id="207">
+        <label>kiss_fft.h</label>
+        <link refid="kiss__fft_8h_source"/>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="210" relation="include">
+        </childnode>
+        <childnode refid="211" relation="include">
+        </childnode>
+      </node>
+      <node id="191">
+        <label>complex</label>
+      </node>
+      <node id="198">
+        <label>algorithm</label>
+      </node>
+      <node id="209">
+        <label>stdio.h</label>
+      </node>
+      <node id="206">
+        <label>_kiss_fft_guts.h</label>
+        <link refid="__kiss__fft__guts_8h_source"/>
+        <childnode refid="207" relation="include">
+        </childnode>
+        <childnode refid="212" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_ode_class" prot="public">OdeClass</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test__ode45_8cpp_1aea75e33fb7f6b41158d429749a911184" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BOOST_AUTO_TEST_CASE</definition>
+        <argsstring>(ode45_test)</argsstring>
+        <name>BOOST_AUTO_TEST_CASE</name>
+        <param>
+          <type>ode45_test</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/testing/test_ode45.cpp" line="21" bodyfile="/media/Storage/Research/open_source/keycpp/testing/test_ode45.cpp" bodystart="20" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;boost/test/unit_test.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="keycpp_8h" kindref="compound">keycpp.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">BOOST_AUTO_TEST_SUITE(KeyCpp_Unit_Testing)</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Define<sp/>a<sp/>class<sp/>for<sp/>our<sp/>ordinary<sp/>differential<sp/>equation<sp/>that<sp/>we<sp/>will<sp/>use<sp/>later:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">class<sp/><ref refid="class_ode_class" kindref="compound">OdeClass</ref></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator()(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;double&gt;</ref><sp/>&amp;y,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;double&gt;</ref><sp/>&amp;dy,</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dy[0]<sp/>=<sp/>t;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dy[0]<sp/>=<sp/>y[1];</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dy[1]<sp/>=<sp/>-y[0];</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">BOOST_AUTO_TEST_CASE(ode45_test)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_ode_class" kindref="compound">OdeClass</ref><sp/>myOde;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;double&gt;</ref><sp/>t<sp/>=<sp/><ref refid="namespacekeycpp_1ab690e7da060fb0e4c42e53cf65d76c7a" kindref="member" tooltip="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">keycpp::linspace</ref>(0.0,12.0,100);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;double&gt;</ref><sp/>ICs<sp/>=<sp/>{1.0,<sp/>0.0};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;double&gt;</ref><sp/>y<sp/>=<sp/>keycpp::ode45(myOde,<sp/>t,<sp/>ICs);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>ii<sp/>=<sp/>0;<sp/>ii<sp/>&lt;<sp/>t.size();<sp/>ii++)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_CLOSE(y(ii,0),<ref refid="namespacekeycpp_1a917607e20e487553be913b7ccaa4736d" kindref="member" tooltip="Return a vector containing the cosine of each element of v1.">cos</ref>(t[ii]),0.01);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">BOOST_AUTO_TEST_SUITE_END()</highlight></codeline>
+    </programlisting>
+    <location file="/media/Storage/Research/open_source/keycpp/testing/test_ode45.cpp"/>
+  </compounddef>
+</doxygen>
