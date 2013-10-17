@@ -26,7 +26,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2931" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2931" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2958" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2958" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_s_v_d__type_1a31194fbf88ec1fb87f2681d0f518761d" prot="public" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
@@ -39,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2932" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2932" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2959" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2959" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_s_v_d__type_1ad0a6e396e2548ab4762a5676ae88e4bd" prot="public" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2933" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2933" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2960" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2960" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2934" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2934" bodyend="2934"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2961" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2961" bodyend="2961"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -75,26 +75,34 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="68">
+      <node id="70">
         <label>keycpp::SVD_type&lt; T, X &gt;</label>
         <link refid="classkeycpp_1_1_s_v_d__type"/>
-        <childnode refid="69" relation="usage">
+        <childnode refid="71" relation="usage">
+          <edgelabel>U</edgelabel>
+          <edgelabel>V</edgelabel>
+        </childnode>
+        <childnode refid="72" relation="usage">
           <edgelabel>S</edgelabel>
         </childnode>
       </node>
-      <node id="70">
+      <node id="73">
         <label>keycpp::vector_k&lt; X &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>
-      <node id="69">
+      <node id="72">
         <label>keycpp::matrix&lt; X &gt;</label>
         <link refid="classkeycpp_1_1matrix"/>
-        <childnode refid="70" relation="usage">
+        <childnode refid="73" relation="usage">
           <edgelabel>mData</edgelabel>
         </childnode>
       </node>
+      <node id="71">
+        <label>keycpp::matrix&lt; T &gt;</label>
+        <link refid="classkeycpp_1_1matrix"/>
+      </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2929" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2928" bodyend="2935"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2956" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2955" bodyend="2962"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1_s_v_d__type_1afcf98e82919e015758d99cee5adb65bf" prot="public" virt="non-virtual"><scope>keycpp::SVD_type</scope><name>S</name></member>
       <member refid="classkeycpp_1_1_s_v_d__type_1a05952f19afaf3a1d27718fce42651476" prot="public" virt="non-virtual"><scope>keycpp::SVD_type</scope><name>SVD_type</name></member>

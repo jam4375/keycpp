@@ -5,37 +5,27 @@
     <includes local="no">boost/test/unit_test.hpp</includes>
     <includes refid="keycpp_8h" local="yes">keycpp.h</includes>
     <incdepgraph>
-      <node id="184">
+      <node id="189">
         <label>list</label>
       </node>
-      <node id="165">
+      <node id="170">
         <label>stdarg.h</label>
       </node>
-      <node id="154">
+      <node id="159">
         <label>iomanip</label>
       </node>
-      <node id="163">
+      <node id="168">
         <label>limits</label>
       </node>
-      <node id="167">
+      <node id="172">
         <label>iterator</label>
       </node>
-      <node id="151">
+      <node id="156">
         <label>boost/test/unit_test.hpp</label>
       </node>
-      <node id="152">
+      <node id="157">
         <label>keycpp.h</label>
         <link refid="keycpp_8h"/>
-        <childnode refid="153" relation="include">
-        </childnode>
-        <childnode refid="154" relation="include">
-        </childnode>
-        <childnode refid="155" relation="include">
-        </childnode>
-        <childnode refid="156" relation="include">
-        </childnode>
-        <childnode refid="157" relation="include">
-        </childnode>
         <childnode refid="158" relation="include">
         </childnode>
         <childnode refid="159" relation="include">
@@ -54,185 +44,197 @@
         </childnode>
         <childnode refid="166" relation="include">
         </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
         <childnode refid="169" relation="include">
         </childnode>
         <childnode refid="170" relation="include">
         </childnode>
-        <childnode refid="177" relation="include">
-        </childnode>
-        <childnode refid="178" relation="include">
-        </childnode>
-      </node>
-      <node id="172">
-        <label>stdlib.h</label>
-      </node>
-      <node id="158">
-        <label>cmath</label>
-      </node>
-      <node id="168">
-        <label>stdexcept</label>
-      </node>
-      <node id="157">
-        <label>string</label>
-      </node>
-      <node id="181">
-        <label>fstream</label>
-      </node>
-      <node id="166">
-        <label>vector_k.h</label>
-        <link refid="vector__k_8h_source"/>
-        <childnode refid="167" relation="include">
-        </childnode>
-        <childnode refid="162" relation="include">
-        </childnode>
-        <childnode refid="153" relation="include">
-        </childnode>
-        <childnode refid="168" relation="include">
-        </childnode>
-        <childnode refid="156" relation="include">
-        </childnode>
-      </node>
-      <node id="176">
-        <label>limits.h</label>
-      </node>
-      <node id="160">
-        <label>boost/range.hpp</label>
-      </node>
-      <node id="150">
-        <label>test_fft.cpp</label>
-        <link refid="test_fft.cpp"/>
-        <childnode refid="151" relation="include">
-        </childnode>
-        <childnode refid="152" relation="include">
-        </childnode>
-      </node>
-      <node id="175">
-        <label>string.h</label>
-      </node>
-      <node id="182">
-        <label>cstdio</label>
-      </node>
-      <node id="164">
-        <label>ctime</label>
-      </node>
-      <node id="156">
-        <label>vector</label>
-      </node>
-      <node id="161">
-        <label>utility</label>
-      </node>
-      <node id="179">
-        <label>sstream</label>
-      </node>
-      <node id="178">
-        <label>Figure.h</label>
-        <link refid="_figure_8h_source"/>
-        <childnode refid="158" relation="include">
-        </childnode>
-        <childnode refid="156" relation="include">
-        </childnode>
-        <childnode refid="155" relation="include">
-        </childnode>
-        <childnode refid="154" relation="include">
-        </childnode>
-        <childnode refid="157" relation="include">
-        </childnode>
-        <childnode refid="179" relation="include">
-        </childnode>
-        <childnode refid="166" relation="include">
-        </childnode>
-        <childnode refid="180" relation="include">
-        </childnode>
-        <childnode refid="169" relation="include">
-        </childnode>
-      </node>
-      <node id="159">
-        <label>boost/numeric/odeint.hpp</label>
-      </node>
-      <node id="177">
-        <label>Spline.h</label>
-        <link refid="_spline_8h_source"/>
-        <childnode refid="153" relation="include">
-        </childnode>
-        <childnode refid="158" relation="include">
-        </childnode>
-        <childnode refid="156" relation="include">
-        </childnode>
-        <childnode refid="155" relation="include">
-        </childnode>
-        <childnode refid="166" relation="include">
-        </childnode>
-      </node>
-      <node id="174">
-        <label>math.h</label>
-      </node>
-      <node id="183">
-        <label>cstdlib</label>
-      </node>
-      <node id="153">
-        <label>iostream</label>
-      </node>
-      <node id="180">
-        <label>gnuplot_i.h</label>
-        <link refid="gnuplot__i_8h_source"/>
-        <childnode refid="153" relation="include">
-        </childnode>
-        <childnode refid="157" relation="include">
-        </childnode>
-        <childnode refid="156" relation="include">
-        </childnode>
-        <childnode refid="181" relation="include">
-        </childnode>
-        <childnode refid="179" relation="include">
-        </childnode>
-        <childnode refid="168" relation="include">
-        </childnode>
-        <childnode refid="182" relation="include">
-        </childnode>
-        <childnode refid="183" relation="include">
-        </childnode>
-        <childnode refid="184" relation="include">
-        </childnode>
-      </node>
-      <node id="169">
-        <label>Matrix.h</label>
-        <link refid="_matrix_8h_source"/>
-        <childnode refid="153" relation="include">
-        </childnode>
-        <childnode refid="168" relation="include">
-        </childnode>
-        <childnode refid="156" relation="include">
-        </childnode>
-        <childnode refid="166" relation="include">
-        </childnode>
-      </node>
-      <node id="171">
-        <label>kiss_fft.h</label>
-        <link refid="kiss__fft_8h_source"/>
-        <childnode refid="172" relation="include">
-        </childnode>
-        <childnode refid="173" relation="include">
+        <childnode refid="171" relation="include">
         </childnode>
         <childnode refid="174" relation="include">
         </childnode>
         <childnode refid="175" relation="include">
         </childnode>
+        <childnode refid="182" relation="include">
+        </childnode>
+        <childnode refid="183" relation="include">
+        </childnode>
       </node>
-      <node id="155">
-        <label>complex</label>
+      <node id="177">
+        <label>stdlib.h</label>
       </node>
-      <node id="162">
-        <label>algorithm</label>
+      <node id="163">
+        <label>cmath</label>
       </node>
       <node id="173">
-        <label>stdio.h</label>
+        <label>stdexcept</label>
       </node>
-      <node id="170">
-        <label>_kiss_fft_guts.h</label>
-        <link refid="__kiss__fft__guts_8h_source"/>
+      <node id="162">
+        <label>string</label>
+      </node>
+      <node id="186">
+        <label>fstream</label>
+      </node>
+      <node id="171">
+        <label>vector_k.h</label>
+        <link refid="vector__k_8h_source"/>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+      </node>
+      <node id="181">
+        <label>limits.h</label>
+      </node>
+      <node id="165">
+        <label>boost/range.hpp</label>
+      </node>
+      <node id="155">
+        <label>test_fft.cpp</label>
+        <link refid="test_fft.cpp"/>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+      </node>
+      <node id="180">
+        <label>string.h</label>
+      </node>
+      <node id="187">
+        <label>cstdio</label>
+      </node>
+      <node id="169">
+        <label>ctime</label>
+      </node>
+      <node id="161">
+        <label>vector</label>
+      </node>
+      <node id="166">
+        <label>utility</label>
+      </node>
+      <node id="184">
+        <label>sstream</label>
+      </node>
+      <node id="183">
+        <label>Figure.h</label>
+        <link refid="_figure_8h_source"/>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
         <childnode refid="171" relation="include">
         </childnode>
+        <childnode refid="185" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+      </node>
+      <node id="164">
+        <label>boost/numeric/odeint.hpp</label>
+      </node>
+      <node id="182">
+        <label>Spline.h</label>
+        <link refid="_spline_8h_source"/>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+      </node>
+      <node id="179">
+        <label>math.h</label>
+      </node>
+      <node id="188">
+        <label>cstdlib</label>
+      </node>
+      <node id="158">
+        <label>iostream</label>
+      </node>
+      <node id="185">
+        <label>gnuplot_i.h</label>
+        <link refid="gnuplot__i_8h_source"/>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="186" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="187" relation="include">
+        </childnode>
+        <childnode refid="188" relation="include">
+        </childnode>
+        <childnode refid="189" relation="include">
+        </childnode>
+      </node>
+      <node id="174">
+        <label>Matrix.h</label>
+        <link refid="_matrix_8h_source"/>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+      </node>
+      <node id="176">
+        <label>kiss_fft.h</label>
+        <link refid="kiss__fft_8h_source"/>
+        <childnode refid="177" relation="include">
+        </childnode>
+        <childnode refid="178" relation="include">
+        </childnode>
+        <childnode refid="179" relation="include">
+        </childnode>
+        <childnode refid="180" relation="include">
+        </childnode>
+      </node>
+      <node id="160">
+        <label>complex</label>
+      </node>
+      <node id="167">
+        <label>algorithm</label>
+      </node>
+      <node id="178">
+        <label>stdio.h</label>
+      </node>
+      <node id="175">
+        <label>_kiss_fft_guts.h</label>
+        <link refid="__kiss__fft__guts_8h_source"/>
         <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="181" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -270,19 +272,19 @@
 <codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>L<sp/>=<sp/>1000;</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Fs<sp/>=<sp/>1000;</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>T<sp/>=<sp/>1.0/Fs;</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;double&gt;</ref><sp/>f<sp/>=<sp/>Fs*<ref refid="namespacekeycpp_1ab690e7da060fb0e4c42e53cf65d76c7a" kindref="member" tooltip="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">keycpp::linspace</ref>(0.0,1.0,L);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;double,1&gt;</ref><sp/>f<sp/>=<sp/>Fs*keycpp::linspace(0.0,1.0,L);</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;double&gt;</ref><sp/>t<sp/>=<sp/><ref refid="namespacekeycpp_1ab690e7da060fb0e4c42e53cf65d76c7a" kindref="member" tooltip="Produces a vector containing N values equally spaced between x1 and x2, inclusively.">keycpp::linspace</ref>(0.0,(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)(L-1),L)*T;</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;double&gt;</ref><sp/>y<sp/>=<sp/><ref refid="namespacekeycpp_1a3fad354ed572051e939cc71209c112ab" kindref="member" tooltip="Return a vector containing the sine of each element of v1.">keycpp::sin</ref>(2.0*keycpp::pi*t);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;std::complex&lt;double&gt;</ref>&gt;<sp/>Y<sp/>=<sp/>keycpp::fft(y)*2.0/1000.0;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;double,1&gt;</ref><sp/>t<sp/>=<sp/>keycpp::linspace(0.0,(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)(L-1),L)*T;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;double,1&gt;</ref><sp/>y<sp/>=<sp/><ref refid="namespacekeycpp_1a3fad354ed572051e939cc71209c112ab" kindref="member" tooltip="Return a vector containing the sine of each element of v1.">keycpp::sin</ref>(2.0*keycpp::pi*t);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;std::complex&lt;double&gt;</ref>,1&gt;<sp/>Y<sp/>=<sp/>keycpp::fft(y)*2.0/1000.0;</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(abs(Y[1])<sp/>-<sp/>1.0)<sp/>&lt;<sp/>1e-6);</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(abs(Y[0])<sp/>-<sp/>0.0)<sp/>&lt;<sp/>1e-6);</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(abs(Y[L-1])<sp/>-<sp/>1.0)<sp/>&lt;<sp/>1e-6);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(abs(Y[L-2])<sp/>-<sp/>0.0)<sp/>&lt;<sp/>1e-6);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(keycpp::angle(Y[0]))<sp/>&lt;<sp/>1e-6);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(keycpp::angle(Y[1])<sp/>+<sp/>keycpp::pi/2.0)<sp/>&lt;<sp/>1e-6);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(keycpp::angle(Y[L-1])<sp/>-<sp/>keycpp::pi/2.0)<sp/>&lt;<sp/>1e-6);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(abs(Y(1))<sp/>-<sp/>1.0)<sp/>&lt;<sp/>1e-6);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(abs(Y(0))<sp/>-<sp/>0.0)<sp/>&lt;<sp/>1e-6);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(abs(Y(L-1))<sp/>-<sp/>1.0)<sp/>&lt;<sp/>1e-6);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(abs(Y(L-2))<sp/>-<sp/>0.0)<sp/>&lt;<sp/>1e-6);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(keycpp::angle(Y(0)))<sp/>&lt;<sp/>1e-6);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(keycpp::angle(Y(1))<sp/>+<sp/>keycpp::pi/2.0)<sp/>&lt;<sp/>1e-6);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK(abs(keycpp::angle(Y(L-1))<sp/>-<sp/>keycpp::pi/2.0)<sp/>&lt;<sp/>1e-6);</highlight></codeline>
 <codeline lineno="25"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal">BOOST_AUTO_TEST_SUITE_END()</highlight></codeline>

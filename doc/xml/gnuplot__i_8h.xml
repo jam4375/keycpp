@@ -13,38 +13,36 @@
     <includes local="no">list</includes>
     <includedby refid="_figure_8h" local="yes">Figure.h</includedby>
     <incdepgraph>
-      <node id="42">
+      <node id="43">
         <label>list</label>
       </node>
-      <node id="39">
+      <node id="40">
         <label>stdexcept</label>
       </node>
-      <node id="35">
+      <node id="36">
         <label>string</label>
       </node>
-      <node id="37">
+      <node id="38">
         <label>fstream</label>
       </node>
-      <node id="40">
+      <node id="41">
         <label>cstdio</label>
       </node>
-      <node id="36">
+      <node id="37">
         <label>vector</label>
       </node>
-      <node id="38">
+      <node id="39">
         <label>sstream</label>
       </node>
-      <node id="41">
+      <node id="42">
         <label>cstdlib</label>
       </node>
-      <node id="34">
+      <node id="35">
         <label>iostream</label>
       </node>
-      <node id="33">
+      <node id="34">
         <label>gnuplot_i.h</label>
         <link refid="gnuplot_i.h"/>
-        <childnode refid="34" relation="include">
-        </childnode>
         <childnode refid="35" relation="include">
         </childnode>
         <childnode refid="36" relation="include">
@@ -61,23 +59,25 @@
         </childnode>
         <childnode refid="42" relation="include">
         </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="45">
+      <node id="46">
         <label>keycpp.h</label>
         <link refid="keycpp_8h"/>
       </node>
-      <node id="44">
+      <node id="45">
         <label>Figure.h</label>
         <link refid="_figure_8h_source"/>
-        <childnode refid="45" relation="include">
+        <childnode refid="46" relation="include">
         </childnode>
       </node>
-      <node id="43">
+      <node id="44">
         <label>gnuplot_i.h</label>
         <link refid="gnuplot_i.h"/>
-        <childnode refid="44" relation="include">
+        <childnode refid="45" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -1878,7 +1878,7 @@
 <codeline lineno="1983"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1984"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1985" refid="class_gnuplot_1a2e449552587b0055f40f4ee079d62a8d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_gnuplot_1a2e449552587b0055f40f4ee079d62a8d" kindref="member" tooltip="deletes temporary files">Gnuplot::remove_tmpfiles</ref>(){</highlight></codeline>
-<codeline lineno="1986"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((tmpfile_list).<ref refid="namespacekeycpp_1a2824156817719ffe96a842dd0ef27ae5" kindref="member" tooltip="Returns the number of elements along dimension dim.">size</ref>()<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="1986"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((tmpfile_list).<ref refid="namespacekeycpp_1acfe17126168656af54ae76ab6c487407" kindref="member" tooltip="Returns the size of matrix A.">size</ref>()<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="1987"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1988"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>tmpfile_list.size();<sp/>i++)</highlight></codeline>
 <codeline lineno="1989"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">remove</highlight><highlight class="normal">(<sp/>tmpfile_list[i].c_str()<sp/>);</highlight></codeline>

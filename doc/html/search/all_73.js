@@ -29,8 +29,8 @@ var searchData=
   ['set_5fzlogscale',['set_zlogscale',['../class_gnuplot.html#a1da3838163b0dbde8809b55c5b5c56b1',1,'Gnuplot']]],
   ['set_5fzrange',['set_zrange',['../class_gnuplot.html#a7273f6a48024117b4d234d0251106e78',1,'Gnuplot']]],
   ['showonscreen',['showonscreen',['../class_gnuplot.html#a356d2faaa79f08d13fec9718b776b28d',1,'Gnuplot']]],
-  ['sin',['sin',['../namespacekeycpp.html#a3fad354ed572051e939cc71209c112ab',1,'keycpp::sin(const vector_k&lt; std::complex&lt; T &gt;&gt; &amp;v1)'],['../namespacekeycpp.html#aea600162295a122a2371d75f80f764c5',1,'keycpp::sin(const vector_k&lt; T &gt; &amp;v1)'],['../namespacekeycpp.html#a62fe1fbcb9ed4e33c5b31dc2c77bdbc4',1,'keycpp::sin(const matrix&lt; std::complex&lt; T &gt;&gt; &amp;A)'],['../namespacekeycpp.html#ab89a85c0315b92a6844a77e352b5d50b',1,'keycpp::sin(const matrix&lt; T &gt; &amp;A)']]],
-  ['size',['size',['../namespacekeycpp.html#a2824156817719ffe96a842dd0ef27ae5',1,'keycpp::size(const matrix&lt; T &gt; &amp;A, const int &amp;dim)'],['../namespacekeycpp.html#ae713df143a5e71da166f450e01a536e2',1,'keycpp::size(const matrix&lt; T &gt; &amp;A)']]],
+  ['sin',['sin',['../namespacekeycpp.html#a3fad354ed572051e939cc71209c112ab',1,'keycpp::sin(const vector_k&lt; std::complex&lt; T &gt;&gt; &amp;v1)'],['../namespacekeycpp.html#aea600162295a122a2371d75f80f764c5',1,'keycpp::sin(const vector_k&lt; T &gt; &amp;v1)'],['../namespacekeycpp.html#a18a3ebbda3c25527ae280f5c5725ff4e',1,'keycpp::sin(const matrix&lt; std::complex&lt; T &gt;, dim &gt; &amp;A)'],['../namespacekeycpp.html#aedb234b850e34f9331031d39084fdbb0',1,'keycpp::sin(const matrix&lt; T, dim &gt; &amp;A)']]],
+  ['size',['size',['../namespacekeycpp.html#acfe17126168656af54ae76ab6c487407',1,'keycpp::size(const matrix&lt; T, dim &gt; &amp;A)'],['../namespacekeycpp.html#a2824156817719ffe96a842dd0ef27ae5',1,'keycpp::size(const matrix&lt; T &gt; &amp;A, const int &amp;dim)']]],
   ['sort_5fmatrix',['Sort_Matrix',['../structkeycpp_1_1_sort___matrix.html',1,'keycpp']]],
   ['sort_5fvector',['Sort_Vector',['../structkeycpp_1_1_sort___vector.html',1,'keycpp']]],
   ['spline',['Spline',['../classkeycpp_1_1_spline.html',1,'keycpp']]],
@@ -39,7 +39,7 @@ var searchData=
   ['sqrt',['sqrt',['../namespacekeycpp.html#aa4b7e86c9291f2ca9c5aacdb8e08f9ff',1,'keycpp::sqrt(const vector_k&lt; std::complex&lt; T &gt;&gt; &amp;v1)'],['../namespacekeycpp.html#a38b52fad75e8cf7db8b8d3ee7d1a7412',1,'keycpp::sqrt(const vector_k&lt; T &gt; &amp;v1)'],['../namespacekeycpp.html#ae5bcff39b329c05d8feded07f03c211e',1,'keycpp::sqrt(const matrix&lt; std::complex&lt; T &gt;&gt; &amp;A)'],['../namespacekeycpp.html#a9238ebdadb19806695736975e6dcdf4c',1,'keycpp::sqrt(const matrix&lt; T &gt; &amp;A)']]],
   ['stdev',['stdev',['../namespacekeycpp.html#a61234b7bb0f3126b3db82634675c2951',1,'keycpp::stdev(vector_k&lt; T &gt; v1)'],['../namespacekeycpp.html#abdec07a4c4dd0fc5de230a753bf59066',1,'keycpp::stdev(vector_k&lt; std::complex&lt; double &gt;&gt; v1)']]],
   ['str2num',['str2num',['../namespacekeycpp.html#a4bca7924aad17a920f2f5f0606e6d9a9',1,'keycpp']]],
-  ['sum',['sum',['../namespacekeycpp.html#a7d3157bfc97800f25010c32280dde212',1,'keycpp::sum(const vector_k&lt; T &gt; &amp;v1)'],['../namespacekeycpp.html#a022f7e64d039d6d8289e36edd440fc86',1,'keycpp::sum(const matrix&lt; T &gt; &amp;A)']]],
+  ['sum',['sum',['../namespacekeycpp.html#a7d3157bfc97800f25010c32280dde212',1,'keycpp::sum(const vector_k&lt; T &gt; &amp;v1)'],['../namespacekeycpp.html#a90f53f3dc1a16e2afc809f2510b35c00',1,'keycpp::sum(const matrix&lt; T, 2 &gt; &amp;A)']]],
   ['svd',['svd',['../namespacekeycpp.html#a838fc93d66e1ab63d68d04781086d81a',1,'keycpp::svd(const matrix&lt; double &gt; &amp;A_in, std::string method)'],['../namespacekeycpp.html#ad610adca37ac4c85df23b899d29d5dfc',1,'keycpp::svd(const matrix&lt; std::complex&lt; double &gt;&gt; &amp;A_in, std::string method)']]],
   ['svd_5ftype',['SVD_type',['../classkeycpp_1_1_s_v_d__type.html',1,'keycpp']]]
 ];

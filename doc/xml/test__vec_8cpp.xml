@@ -5,45 +5,35 @@
     <includes local="no">boost/test/unit_test.hpp</includes>
     <includes refid="keycpp_8h" local="yes">keycpp.h</includes>
     <incdepgraph>
-      <node id="292">
+      <node id="297">
         <label>list</label>
       </node>
-      <node id="258">
+      <node id="263">
         <label>test_vec.cpp</label>
         <link refid="test_vec.cpp"/>
-        <childnode refid="259" relation="include">
-        </childnode>
-        <childnode refid="260" relation="include">
-        </childnode>
-      </node>
-      <node id="273">
-        <label>stdarg.h</label>
-      </node>
-      <node id="262">
-        <label>iomanip</label>
-      </node>
-      <node id="271">
-        <label>limits</label>
-      </node>
-      <node id="275">
-        <label>iterator</label>
-      </node>
-      <node id="259">
-        <label>boost/test/unit_test.hpp</label>
-      </node>
-      <node id="260">
-        <label>keycpp.h</label>
-        <link refid="keycpp_8h"/>
-        <childnode refid="261" relation="include">
-        </childnode>
-        <childnode refid="262" relation="include">
-        </childnode>
-        <childnode refid="263" relation="include">
-        </childnode>
         <childnode refid="264" relation="include">
         </childnode>
         <childnode refid="265" relation="include">
         </childnode>
+      </node>
+      <node id="278">
+        <label>stdarg.h</label>
+      </node>
+      <node id="267">
+        <label>iomanip</label>
+      </node>
+      <node id="276">
+        <label>limits</label>
+      </node>
+      <node id="280">
+        <label>iterator</label>
+      </node>
+      <node id="264">
+        <label>boost/test/unit_test.hpp</label>
+      </node>
+      <node id="265">
+        <label>keycpp.h</label>
+        <link refid="keycpp_8h"/>
         <childnode refid="266" relation="include">
         </childnode>
         <childnode refid="267" relation="include">
@@ -62,177 +52,189 @@
         </childnode>
         <childnode refid="274" relation="include">
         </childnode>
+        <childnode refid="275" relation="include">
+        </childnode>
+        <childnode refid="276" relation="include">
+        </childnode>
         <childnode refid="277" relation="include">
         </childnode>
         <childnode refid="278" relation="include">
         </childnode>
-        <childnode refid="285" relation="include">
-        </childnode>
-        <childnode refid="286" relation="include">
-        </childnode>
-      </node>
-      <node id="280">
-        <label>stdlib.h</label>
-      </node>
-      <node id="266">
-        <label>cmath</label>
-      </node>
-      <node id="276">
-        <label>stdexcept</label>
-      </node>
-      <node id="265">
-        <label>string</label>
-      </node>
-      <node id="289">
-        <label>fstream</label>
-      </node>
-      <node id="274">
-        <label>vector_k.h</label>
-        <link refid="vector__k_8h_source"/>
-        <childnode refid="275" relation="include">
-        </childnode>
-        <childnode refid="270" relation="include">
-        </childnode>
-        <childnode refid="261" relation="include">
-        </childnode>
-        <childnode refid="276" relation="include">
-        </childnode>
-        <childnode refid="264" relation="include">
-        </childnode>
-      </node>
-      <node id="284">
-        <label>limits.h</label>
-      </node>
-      <node id="268">
-        <label>boost/range.hpp</label>
-      </node>
-      <node id="283">
-        <label>string.h</label>
-      </node>
-      <node id="290">
-        <label>cstdio</label>
-      </node>
-      <node id="272">
-        <label>ctime</label>
-      </node>
-      <node id="264">
-        <label>vector</label>
-      </node>
-      <node id="269">
-        <label>utility</label>
-      </node>
-      <node id="287">
-        <label>sstream</label>
-      </node>
-      <node id="286">
-        <label>Figure.h</label>
-        <link refid="_figure_8h_source"/>
-        <childnode refid="266" relation="include">
-        </childnode>
-        <childnode refid="264" relation="include">
-        </childnode>
-        <childnode refid="263" relation="include">
-        </childnode>
-        <childnode refid="262" relation="include">
-        </childnode>
-        <childnode refid="265" relation="include">
-        </childnode>
-        <childnode refid="287" relation="include">
-        </childnode>
-        <childnode refid="274" relation="include">
-        </childnode>
-        <childnode refid="288" relation="include">
-        </childnode>
-        <childnode refid="277" relation="include">
-        </childnode>
-      </node>
-      <node id="267">
-        <label>boost/numeric/odeint.hpp</label>
-      </node>
-      <node id="285">
-        <label>Spline.h</label>
-        <link refid="_spline_8h_source"/>
-        <childnode refid="261" relation="include">
-        </childnode>
-        <childnode refid="266" relation="include">
-        </childnode>
-        <childnode refid="264" relation="include">
-        </childnode>
-        <childnode refid="263" relation="include">
-        </childnode>
-        <childnode refid="274" relation="include">
-        </childnode>
-      </node>
-      <node id="282">
-        <label>math.h</label>
-      </node>
-      <node id="291">
-        <label>cstdlib</label>
-      </node>
-      <node id="261">
-        <label>iostream</label>
-      </node>
-      <node id="288">
-        <label>gnuplot_i.h</label>
-        <link refid="gnuplot__i_8h_source"/>
-        <childnode refid="261" relation="include">
-        </childnode>
-        <childnode refid="265" relation="include">
-        </childnode>
-        <childnode refid="264" relation="include">
-        </childnode>
-        <childnode refid="289" relation="include">
-        </childnode>
-        <childnode refid="287" relation="include">
-        </childnode>
-        <childnode refid="276" relation="include">
-        </childnode>
-        <childnode refid="290" relation="include">
-        </childnode>
-        <childnode refid="291" relation="include">
-        </childnode>
-        <childnode refid="292" relation="include">
-        </childnode>
-      </node>
-      <node id="277">
-        <label>Matrix.h</label>
-        <link refid="_matrix_8h_source"/>
-        <childnode refid="261" relation="include">
-        </childnode>
-        <childnode refid="276" relation="include">
-        </childnode>
-        <childnode refid="264" relation="include">
-        </childnode>
-        <childnode refid="274" relation="include">
-        </childnode>
-      </node>
-      <node id="279">
-        <label>kiss_fft.h</label>
-        <link refid="kiss__fft_8h_source"/>
-        <childnode refid="280" relation="include">
-        </childnode>
-        <childnode refid="281" relation="include">
+        <childnode refid="279" relation="include">
         </childnode>
         <childnode refid="282" relation="include">
         </childnode>
         <childnode refid="283" relation="include">
         </childnode>
+        <childnode refid="290" relation="include">
+        </childnode>
+        <childnode refid="291" relation="include">
+        </childnode>
       </node>
-      <node id="263">
-        <label>complex</label>
+      <node id="285">
+        <label>stdlib.h</label>
       </node>
-      <node id="270">
-        <label>algorithm</label>
+      <node id="271">
+        <label>cmath</label>
       </node>
       <node id="281">
-        <label>stdio.h</label>
+        <label>stdexcept</label>
       </node>
-      <node id="278">
-        <label>_kiss_fft_guts.h</label>
-        <link refid="__kiss__fft__guts_8h_source"/>
+      <node id="270">
+        <label>string</label>
+      </node>
+      <node id="294">
+        <label>fstream</label>
+      </node>
+      <node id="279">
+        <label>vector_k.h</label>
+        <link refid="vector__k_8h_source"/>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="275" relation="include">
+        </childnode>
+        <childnode refid="266" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="269" relation="include">
+        </childnode>
+      </node>
+      <node id="289">
+        <label>limits.h</label>
+      </node>
+      <node id="273">
+        <label>boost/range.hpp</label>
+      </node>
+      <node id="288">
+        <label>string.h</label>
+      </node>
+      <node id="295">
+        <label>cstdio</label>
+      </node>
+      <node id="277">
+        <label>ctime</label>
+      </node>
+      <node id="269">
+        <label>vector</label>
+      </node>
+      <node id="274">
+        <label>utility</label>
+      </node>
+      <node id="292">
+        <label>sstream</label>
+      </node>
+      <node id="291">
+        <label>Figure.h</label>
+        <link refid="_figure_8h_source"/>
+        <childnode refid="271" relation="include">
+        </childnode>
+        <childnode refid="269" relation="include">
+        </childnode>
+        <childnode refid="268" relation="include">
+        </childnode>
+        <childnode refid="267" relation="include">
+        </childnode>
+        <childnode refid="270" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
         <childnode refid="279" relation="include">
         </childnode>
+        <childnode refid="293" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+      </node>
+      <node id="272">
+        <label>boost/numeric/odeint.hpp</label>
+      </node>
+      <node id="290">
+        <label>Spline.h</label>
+        <link refid="_spline_8h_source"/>
+        <childnode refid="266" relation="include">
+        </childnode>
+        <childnode refid="271" relation="include">
+        </childnode>
+        <childnode refid="269" relation="include">
+        </childnode>
+        <childnode refid="268" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+      </node>
+      <node id="287">
+        <label>math.h</label>
+      </node>
+      <node id="296">
+        <label>cstdlib</label>
+      </node>
+      <node id="266">
+        <label>iostream</label>
+      </node>
+      <node id="293">
+        <label>gnuplot_i.h</label>
+        <link refid="gnuplot__i_8h_source"/>
+        <childnode refid="266" relation="include">
+        </childnode>
+        <childnode refid="270" relation="include">
+        </childnode>
+        <childnode refid="269" relation="include">
+        </childnode>
+        <childnode refid="294" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="295" relation="include">
+        </childnode>
+        <childnode refid="296" relation="include">
+        </childnode>
+        <childnode refid="297" relation="include">
+        </childnode>
+      </node>
+      <node id="282">
+        <label>Matrix.h</label>
+        <link refid="_matrix_8h_source"/>
+        <childnode refid="266" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="269" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+        <childnode refid="279" relation="include">
+        </childnode>
+      </node>
+      <node id="284">
+        <label>kiss_fft.h</label>
+        <link refid="kiss__fft_8h_source"/>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+        <childnode refid="287" relation="include">
+        </childnode>
+        <childnode refid="288" relation="include">
+        </childnode>
+      </node>
+      <node id="268">
+        <label>complex</label>
+      </node>
+      <node id="275">
+        <label>algorithm</label>
+      </node>
+      <node id="286">
+        <label>stdio.h</label>
+      </node>
+      <node id="283">
+        <label>_kiss_fft_guts.h</label>
+        <link refid="__kiss__fft__guts_8h_source"/>
         <childnode refid="284" relation="include">
+        </childnode>
+        <childnode refid="289" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -251,7 +253,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/testing/test_vec.cpp" line="7" bodyfile="/media/Storage/Research/open_source/keycpp/testing/test_vec.cpp" bodystart="6" bodyend="354"/>
+        <location file="/media/Storage/Research/open_source/keycpp/testing/test_vec.cpp" line="7" bodyfile="/media/Storage/Research/open_source/keycpp/testing/test_vec.cpp" bodystart="6" bodyend="358"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -525,96 +527,100 @@
 <codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;int&gt;</ref><sp/>v1(10);</highlight></codeline>
 <codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(v1[0],0);</highlight></codeline>
 <codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(v1[9],0);</highlight></codeline>
-<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tol<sp/>=<sp/>1e-10;</highlight></codeline>
-<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;double&gt;</ref><sp/>v2(10);</highlight></codeline>
-<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_CLOSE(v2[0],0.0,tol);</highlight></codeline>
-<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_CLOSE(v2[9],0.0,tol);</highlight></codeline>
-<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Test<sp/>vector_k<sp/>iterator</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;int&gt;</ref><sp/>v1(10);</highlight></codeline>
-<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it<sp/>=<sp/>v1.begin();<sp/>it<sp/>!=<sp/>v1.end();<sp/>it++)</highlight></codeline>
-<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*it<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ii<sp/>:<sp/>v1)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v1.resize(20);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(v1[19],0);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tol<sp/>=<sp/>1e-10;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;double&gt;</ref><sp/>v2(10);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_CLOSE(v2[0],0.0,tol);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_CLOSE(v2[9],0.0,tol);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v2.resize(20);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_CLOSE(v2[19],0.0,tol);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Test<sp/>vector_k<sp/>iterator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;int&gt;</ref><sp/>v1(10);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it<sp/>=<sp/>v1.begin();<sp/>it<sp/>!=<sp/>v1.end();<sp/>it++)</highlight></codeline>
 <codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(ii,1);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*it<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it<sp/>=<sp/>v1.begin();<sp/>it<sp/>!=<sp/>v1.end();<sp/>it<sp/>+=<sp/>1)</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ii<sp/>:<sp/>v1)</highlight></codeline>
 <codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(*it,1);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(ii,1);</highlight></codeline>
 <codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it1<sp/>=<sp/>v1.begin()<sp/>+<sp/>5;</highlight></codeline>
-<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(*it1,1);</highlight></codeline>
-<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;int&gt;</ref><sp/>v2(&amp;v1[0],5,2);</highlight></codeline>
-<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it<sp/>=<sp/>v2.begin();<sp/>it<sp/>!=<sp/>v2.end();<sp/>it++)</highlight></codeline>
-<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*it<sp/>=<sp/>2;</highlight></codeline>
-<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it<sp/>=<sp/>v1.begin();<sp/>it<sp/>!=<sp/>v1.end();<sp/>it<sp/>+=<sp/>1)</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(*it,1);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it1<sp/>=<sp/>v1.begin()<sp/>+<sp/>5;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(*it1,1);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;int&gt;</ref><sp/>v2(&amp;v1[0],5,2);</highlight></codeline>
 <codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it<sp/>=<sp/>v2.begin();<sp/>it<sp/>!=<sp/>v2.end();<sp/>it++)</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(*it,2);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*it<sp/>=<sp/>2;</highlight></codeline>
 <codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it2<sp/>=<sp/>v1.begin()<sp/>+<sp/>2;</highlight></codeline>
-<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(*it2,2);</highlight></codeline>
-<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(v1[0],2);</highlight></codeline>
-<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(v1[1],1);</highlight></codeline>
-<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it3<sp/>=<sp/>v2.begin()<sp/>+<sp/>1;</highlight></codeline>
-<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(it3.get_inc(),2);</highlight></codeline>
-<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(*it3,2);</highlight></codeline>
-<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it3<sp/>+=<sp/>1;</highlight></codeline>
-<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(*it3,2);</highlight></codeline>
-<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ii<sp/>:<sp/>v2)</highlight></codeline>
-<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(ii,2);</highlight></codeline>
-<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it4<sp/>=<sp/>v2.end();</highlight></codeline>
-<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL((--it4)<sp/>-<sp/>v2.begin(),v2.size()-1);</highlight></codeline>
-<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it5<sp/>=<sp/>v2.begin();</highlight></codeline>
-<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(v2.end()<sp/>-<sp/>(++it5),v2.size()-1);</highlight></codeline>
-<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Test<sp/>with<sp/>Boost.range</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">boost;</highlight></codeline>
-<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;int&gt;</ref><sp/>vec_t;</highlight></codeline>
-<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec;</highlight></codeline>
-<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec.push_back(<sp/>3<sp/>);<sp/>vec.push_back(<sp/>4<sp/>);</highlight></codeline>
-<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vec_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cvec(<sp/>vec<sp/>);<sp/></highlight></codeline>
-<codeline lineno="332"><highlight class="normal"></highlight></codeline>
-<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_value&lt;vec_t&gt;::type,<sp/>vec_t::value_type<sp/>&gt;::value<sp/>));</highlight></codeline>
-<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_iterator&lt;vec_t&gt;::type,<sp/>vec_t::iterator<sp/>&gt;::value<sp/>));</highlight></codeline>
-<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_iterator&lt;const<sp/>vec_t&gt;::type,<sp/>vec_t::const_iterator<sp/>&gt;::value<sp/>));</highlight></codeline>
-<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_difference&lt;vec_t&gt;::type,<sp/>vec_t::difference_type<sp/>&gt;::value<sp/>));</highlight></codeline>
-<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_size&lt;vec_t&gt;::type,<sp/>vec_t::size_type<sp/>&gt;::value<sp/>));</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it<sp/>=<sp/>v2.begin();<sp/>it<sp/>!=<sp/>v2.end();<sp/>it++)</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(*it,2);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it2<sp/>=<sp/>v1.begin()<sp/>+<sp/>2;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(*it2,2);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(v1[0],2);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(v1[1],1);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it3<sp/>=<sp/>v2.begin()<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(it3.get_inc(),2);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(*it3,2);</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it3<sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(*it3,2);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ii<sp/>:<sp/>v2)</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(ii,2);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it4<sp/>=<sp/>v2.end();</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL((--it4)<sp/>-<sp/>v2.begin(),v2.size()-1);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">keycpp::vector_k&lt;int&gt;::iterator</ref><sp/>it5<sp/>=<sp/>v2.begin();</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_EQUAL(v2.end()<sp/>-<sp/>(++it5),v2.size()-1);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Test<sp/>with<sp/>Boost.range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">boost;</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;int&gt;</ref><sp/>vec_t;</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec.push_back(<sp/>3<sp/>);<sp/>vec.push_back(<sp/>4<sp/>);</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vec_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cvec(<sp/>vec<sp/>);<sp/></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_value&lt;vec_t&gt;::type,<sp/>vec_t::value_type<sp/>&gt;::value<sp/>));</highlight></codeline>
 <codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_iterator&lt;vec_t&gt;::type,<sp/>vec_t::iterator<sp/>&gt;::value<sp/>));</highlight></codeline>
 <codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_iterator&lt;const<sp/>vec_t&gt;::type,<sp/>vec_t::const_iterator<sp/>&gt;::value<sp/>));</highlight></codeline>
-<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_difference&lt;const<sp/>vec_t&gt;::type,<sp/>vec_t::difference_type<sp/>&gt;::value<sp/>));</highlight></codeline>
-<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_size&lt;const<sp/>vec_t&gt;::type,<sp/>vec_t::size_type<sp/>&gt;::value<sp/>));</highlight></codeline>
-<codeline lineno="343"><highlight class="normal"></highlight></codeline>
-<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>begin(<sp/>vec<sp/>)<sp/>==<sp/>vec.begin()<sp/>);</highlight></codeline>
-<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>end(<sp/>vec<sp/>)<sp/><sp/><sp/>==<sp/>vec.end()<sp/>);</highlight></codeline>
-<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>empty(<sp/>vec<sp/>)<sp/>==<sp/>vec.empty()<sp/>);</highlight></codeline>
-<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>(std::size_t)<ref refid="namespacekeycpp_1a2824156817719ffe96a842dd0ef27ae5" kindref="member" tooltip="Returns the number of elements along dimension dim.">size</ref>(<sp/>vec<sp/>)<sp/>==<sp/>vec.size()<sp/>);</highlight></codeline>
-<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>begin(<sp/>cvec<sp/>)<sp/>==<sp/>cvec.begin()<sp/>);</highlight></codeline>
-<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>end(<sp/>cvec<sp/>)<sp/><sp/><sp/>==<sp/>cvec.end()<sp/>);</highlight></codeline>
-<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>empty(<sp/>cvec<sp/>)<sp/>==<sp/>cvec.empty()<sp/>);</highlight></codeline>
-<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>(std::size_t)<ref refid="namespacekeycpp_1a2824156817719ffe96a842dd0ef27ae5" kindref="member" tooltip="Returns the number of elements along dimension dim.">size</ref>(<sp/>cvec<sp/>)<sp/>==<sp/>cvec.size()<sp/>);</highlight></codeline>
-<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="354"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="355"><highlight class="normal"></highlight></codeline>
-<codeline lineno="356"><highlight class="normal">BOOST_AUTO_TEST_SUITE_END()</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_difference&lt;vec_t&gt;::type,<sp/>vec_t::difference_type<sp/>&gt;::value<sp/>));</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_size&lt;vec_t&gt;::type,<sp/>vec_t::size_type<sp/>&gt;::value<sp/>));</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_iterator&lt;vec_t&gt;::type,<sp/>vec_t::iterator<sp/>&gt;::value<sp/>));</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_iterator&lt;const<sp/>vec_t&gt;::type,<sp/>vec_t::const_iterator<sp/>&gt;::value<sp/>));</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_difference&lt;const<sp/>vec_t&gt;::type,<sp/>vec_t::difference_type<sp/>&gt;::value<sp/>));</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_STATIC_ASSERT((<sp/>is_same&lt;<sp/>range_size&lt;const<sp/>vec_t&gt;::type,<sp/>vec_t::size_type<sp/>&gt;::value<sp/>));</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>begin(<sp/>vec<sp/>)<sp/>==<sp/>vec.begin()<sp/>);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>end(<sp/>vec<sp/>)<sp/><sp/><sp/>==<sp/>vec.end()<sp/>);</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>empty(<sp/>vec<sp/>)<sp/>==<sp/>vec.empty()<sp/>);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>(std::size_t)<ref refid="namespacekeycpp_1acfe17126168656af54ae76ab6c487407" kindref="member" tooltip="Returns the size of matrix A.">size</ref>(<sp/>vec<sp/>)<sp/>==<sp/>vec.size()<sp/>);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>begin(<sp/>cvec<sp/>)<sp/>==<sp/>cvec.begin()<sp/>);</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>end(<sp/>cvec<sp/>)<sp/><sp/><sp/>==<sp/>cvec.end()<sp/>);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>empty(<sp/>cvec<sp/>)<sp/>==<sp/>cvec.empty()<sp/>);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>(std::size_t)<ref refid="namespacekeycpp_1acfe17126168656af54ae76ab6c487407" kindref="member" tooltip="Returns the size of matrix A.">size</ref>(<sp/>cvec<sp/>)<sp/>==<sp/>cvec.size()<sp/>);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="358"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal">BOOST_AUTO_TEST_SUITE_END()</highlight></codeline>
     </programlisting>
     <location file="/media/Storage/Research/open_source/keycpp/testing/test_vec.cpp"/>
   </compounddef>

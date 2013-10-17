@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2448" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2448" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2475" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2475" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1_sort___matrix_1a45d52509b6ba6164098c1aa8ef5c4af9" prot="public" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; size_t &gt;</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2449" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2449" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2476" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2476" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -40,26 +40,33 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="55">
+      <node id="56">
         <label>keycpp::Sort_Matrix&lt; T &gt;</label>
         <link refid="structkeycpp_1_1_sort___matrix"/>
-        <childnode refid="56" relation="usage">
+        <childnode refid="57" relation="usage">
+          <edgelabel>B</edgelabel>
+        </childnode>
+        <childnode refid="58" relation="usage">
           <edgelabel>index</edgelabel>
         </childnode>
       </node>
-      <node id="56">
+      <node id="58">
         <label>keycpp::matrix&lt; size_t &gt;</label>
         <link refid="classkeycpp_1_1matrix"/>
-        <childnode refid="57" relation="usage">
+        <childnode refid="59" relation="usage">
           <edgelabel>mData</edgelabel>
         </childnode>
       </node>
-      <node id="57">
+      <node id="59">
         <label>keycpp::vector_k&lt; size_t &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>
+      <node id="57">
+        <label>keycpp::matrix&lt; T &gt;</label>
+        <link refid="classkeycpp_1_1matrix"/>
+      </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2447" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2446" bodyend="2450"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2474" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2473" bodyend="2477"/>
     <listofallmembers>
       <member refid="structkeycpp_1_1_sort___matrix_1acd2c90a02e9c57964fd924d75eece798" prot="public" virt="non-virtual"><scope>keycpp::Sort_Matrix</scope><name>B</name></member>
       <member refid="structkeycpp_1_1_sort___matrix_1a45d52509b6ba6164098c1aa8ef5c4af9" prot="public" virt="non-virtual"><scope>keycpp::Sort_Matrix</scope><name>index</name></member>

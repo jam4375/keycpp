@@ -2,11 +2,11 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
   <compounddef id="namespaceboost_1_1numeric_1_1odeint" kind="namespace">
     <compoundname>boost::numeric::odeint</compoundname>
-    <innerclass refid="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01keycpp_1_1vector__k_3_01_t_01_4_01_4" prot="public">boost::numeric::odeint::is_resizeable&lt; keycpp::vector_k&lt; T &gt; &gt;</innerclass>
+    <innerclass refid="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01keycpp_1_1matrix_3_01_t_00_011_01_4_01_4" prot="public">boost::numeric::odeint::is_resizeable&lt; keycpp::matrix&lt; T, 1 &gt; &gt;</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2346"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2373"/>
   </compounddef>
 </doxygen>

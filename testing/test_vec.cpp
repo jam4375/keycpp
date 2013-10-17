@@ -264,11 +264,15 @@ BOOST_AUTO_TEST_CASE(vector_k_test)
         keycpp::vector_k<int> v1(10);
         BOOST_CHECK_EQUAL(v1[0],0);
         BOOST_CHECK_EQUAL(v1[9],0);
+        v1.resize(20);
+        BOOST_CHECK_EQUAL(v1[19],0);
         
         double tol = 1e-10;
         keycpp::vector_k<double> v2(10);
         BOOST_CHECK_CLOSE(v2[0],0.0,tol);
         BOOST_CHECK_CLOSE(v2[9],0.0,tol);
+        v2.resize(20);
+        BOOST_CHECK_CLOSE(v2[19],0.0,tol);
     }
     
     // Test vector_k iterator

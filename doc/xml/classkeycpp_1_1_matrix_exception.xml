@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="43" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="43" bodyend="43"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="38" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="38" bodyend="38"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -27,6 +27,17 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="30">
+        <label>keycpp::MatrixException</label>
+        <link refid="classkeycpp_1_1_matrix_exception"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>std::runtime_error</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="32">
         <label>keycpp::MatrixException</label>
         <link refid="classkeycpp_1_1_matrix_exception"/>
@@ -36,19 +47,8 @@
       <node id="33">
         <label>std::runtime_error</label>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="34">
-        <label>keycpp::MatrixException</label>
-        <link refid="classkeycpp_1_1_matrix_exception"/>
-        <childnode refid="35" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="35">
-        <label>std::runtime_error</label>
-      </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="41" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="40" bodyend="44"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="36" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="35" bodyend="39"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1_matrix_exception_1ae558e1658f52404739cbb6fe784f196d" prot="public" virt="non-virtual"><scope>keycpp::MatrixException</scope><name>MatrixException</name></member>
     </listofallmembers>

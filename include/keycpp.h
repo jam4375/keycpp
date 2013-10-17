@@ -168,16 +168,28 @@ namespace keycpp
 	matrix<double> rand(const int &N);
 	matrix<double> rand(const int &M, const int &N);
 	
-	template<class T>
-	matrix<T> eop(const matrix<T> &A, T (*f)(const T&))
+	template<class T, size_t dim> matrix<size_t,1> size(const matrix<T,dim> &A);
+	
+	template<class T,size_t dim>
+	matrix<T,dim> eop(const matrix<T,dim> &A, T (*f)(const T&))
 	{
-	    matrix<T> B(A.size(1), A.size(2));
-	    for(int ii = 0; ii < A.size(1); ii++)
+	    matrix<T,dim> B;
+	    B.resize(size(A));
+	    for(size_t ii = 0; ii < A.mData.size(); ii++)
 	    {
-	        for(int jj = 0; jj < A.size(2); jj++)
-	        {
-	            B(ii,jj) = (*f)(A(ii,jj));
-	        }
+	        B.mData[ii] = (*f)(A.mData[ii]);
+	    }
+	    return B;
+	}
+	
+	template<class T,size_t dim>
+	matrix<T,dim> eop(const matrix<std::complex<T>,dim> &A, T (*f)(const std::complex<T>&))
+	{
+	    matrix<T,dim> B;
+	    B.resize(size(A));
+	    for(size_t ii = 0; ii < A.mData.size(); ii++)
+	    {
+	        B.mData[ii] = (*f)(A.mData[ii]);
 	    }
 	    return B;
 	}
@@ -193,16 +205,14 @@ namespace keycpp
 	    return v2;
 	}
 	
-	template<class T>
-	matrix<T> eop(const matrix<T> &A, T (*f)(T))
+	template<class T, size_t dim>
+	matrix<T,dim> eop(const matrix<T,dim> &A, T (*f)(T))
 	{
-	    matrix<T> B(A.size(1), A.size(2));
-	    for(size_t ii = 0; ii < A.size(1); ii++)
+	    matrix<T,dim> B;
+	    B.resize(size(A));
+	    for(size_t ii = 0; ii < A.mData.size(); ii++)
 	    {
-	        for(size_t jj = 0; jj < A.size(2); jj++)
-	        {
-	            B(ii,jj) = (*f)(A(ii,jj));
-	        }
+	        B.mData[ii] = (*f)(A.mData[ii]);
 	    }
 	    return B;
 	}
@@ -219,20 +229,6 @@ namespace keycpp
 	}
 	
 	template<class T>
-	matrix<T> eop(const matrix<std::complex<T>> &A, T (*f)(const std::complex<T>&))
-	{
-	    matrix<T> B(A.size(1), A.size(2));
-	    for(size_t ii = 0; ii < A.size(1); ii++)
-	    {
-	        for(size_t jj = 0; jj < A.size(2); jj++)
-	        {
-	            B(ii,jj) = (*f)(A(ii,jj));
-	        }
-	    }
-	    return B;
-	}
-	
-	template<class T>
 	vector_k<T> eop(const vector_k<std::complex<T>> &v1, T (*f)(const std::complex<T>&))
 	{
 	    vector_k<T> v2(v1.size());
@@ -243,16 +239,14 @@ namespace keycpp
 	    return v2;
 	}
 	
-	template<class T>
-	matrix<T> eop(const matrix<std::complex<T>> &A, T (*f)(std::complex<T>))
+	template<class T,size_t dim>
+	matrix<T,dim> eop(const matrix<std::complex<T>,dim> &A, T (*f)(std::complex<T>))
 	{
-	    matrix<T> B(A.size(1), A.size(2));
-	    for(size_t ii = 0; ii < A.size(1); ii++)
+	    matrix<T,dim> B;
+	    B.resize(size(A));
+	    for(size_t ii = 0; ii < A.mData.size(); ii++)
 	    {
-	        for(size_t jj = 0; jj < A.size(2); jj++)
-	        {
-	            B(ii,jj) = (*f)(A(ii,jj));
-	        }
+	        B.mData[ii] = (*f)(A.mData[ii]);
 	    }
 	    return B;
 	}
@@ -271,29 +265,54 @@ namespace keycpp
 	
 	template<class T, class U> struct observe
 	{
-		vector_k<T>& y;
-		vector_k<U>& x_ode;
+		matrix<T,2>& y;
+		matrix<U,1>& x_ode;
+		size_t ii;
 
-		observe(vector_k<T> &p_y, vector_k<U> &p_x_ode) : y(p_y), x_ode(p_x_ode) { };
+		observe(matrix<T,2> &p_y, matrix<U,1> &p_x_ode) : y(p_y), x_ode(p_x_ode), ii(0) { };
 
-		void operator()(const T &y_temp, U x_temp)
+		void operator()(const matrix<T,1> &y_temp, U x_temp)
 		{
-			y.push_back(y_temp);
-			x_ode.push_back(x_temp);
+		    if(ii >= y.size(1))
+		    {
+		        matrix<size_t,1> temp_size = size(y);
+		        temp_size(0)++;
+		        y.resize(temp_size);
+		        x_ode.resize(temp_size(0));
+		    }
+		    x_ode.mData[ii] = x_temp;
+		    for(size_t jj = 0; jj < y_temp.size(1); jj++)
+		    {
+			    y(ii,jj) = y_temp(jj);
+			}
+			ii++;
 		}
 	};
 	
-	template<class T>
-	std::ostream& operator<<(std::ostream &out, const matrix<T> &A)
+	template<class T, size_t dim>
+	std::ostream& operator<<(std::ostream &out, const matrix<T,dim> &A)
 	{
-        for(size_t ii = 0; ii < A.size(1); ii++)
-        {
-            for(size_t jj = 0; jj < A.size(2); jj++)
+	    static_assert((dim == 2 || dim == 1),"This function is only available for matrices of dimension 1 or 2.");
+	    
+	    if(dim == 2)
+	    {
+            for(size_t ii = 0; ii < A.size(1); ii++)
             {
-                out << A(ii,jj) << " ";
+                for(size_t jj = 0; jj < A.size(2); jj++)
+                {
+                    out << A(ii,jj) << " ";
+                }
+                out << std::endl;
             }
-            out << std::endl;
         }
+        else if(dim == 1)
+        {
+            for(size_t ii = 0; ii < A.size(1); ii++)
+            {
+                out << A.mData[ii] << std::endl;
+            }
+        }
+        
         return out;
     }
 	
@@ -336,7 +355,7 @@ namespace keycpp
 	        x[0] = 1.0;
 	        return x;
 	    }
-		vector_k<T> B = A.getRow(0);
+		vector_k<T> B = A.row(0);
 		for(size_t jj = 0; jj < A.size(2); jj++)
 		{
 		    for(size_t ii = 1; ii < A.size(1); ii++)
@@ -390,7 +409,7 @@ namespace keycpp
 		return eop(v1,static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::conj));
 	}
 
-	template<class T> matrix<std::complex<T>> conj(const matrix<std::complex<T>> &A)
+	template<class T,size_t dim> matrix<std::complex<T>,dim> conj(const matrix<std::complex<T>,dim> &A)
 	{
 		return eop(A,static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::conj));
 	}
@@ -400,7 +419,7 @@ namespace keycpp
 		return eop(v1,static_cast<T (*)(const std::complex<T> &)>(&std::real));
 	}
 
-	template<class T> matrix<T> real(const matrix<std::complex<T>> &A)
+	template<class T,size_t dim> matrix<T,dim> real(const matrix<std::complex<T>,dim> &A)
 	{
 		return eop(A,static_cast<T (*)(const std::complex<T> &)>(&std::real));
 	}
@@ -410,7 +429,7 @@ namespace keycpp
 		return eop(v1,static_cast<T (*)(const std::complex<T> &)>(&std::imag));
 	}
 
-	template<class T> matrix<T> imag(const matrix<std::complex<T>> &A)
+	template<class T, size_t dim> matrix<T,dim> imag(const matrix<std::complex<T>,dim> &A)
 	{
 		return eop(A,static_cast<T (*)(const std::complex<T> &)>(&std::imag));
 	}
@@ -425,12 +444,12 @@ namespace keycpp
 		return eop(v1,static_cast<T (*)(const std::complex<T> &)>(&std::abs));
 	}
 
-	template<class T> matrix<T> abs(const matrix<T> &A)
+	template<class T,size_t dim> matrix<T,dim> abs(const matrix<T,dim> &A)
 	{
 		return eop(A,static_cast<T (*)(T)>(&std::abs));
 	}
 
-	template<class T> matrix<T> abs(const matrix<std::complex<T>> &A)
+	template<class T,size_t dim> matrix<T,dim> abs(const matrix<std::complex<T>,dim> &A)
 	{
 		return eop(A,static_cast<T (*)(const std::complex<T> &)>(&std::abs));
 	}
@@ -567,28 +586,24 @@ namespace keycpp
 		return result;
 	}
 
-	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator-(const matrix<T>& A, const U& a)
+	template<class T, class U,size_t dim> matrix<decltype(std::declval<T>()*std::declval<U>()),dim> operator-(const matrix<T,dim>& A, const U& a)
 	{
-		matrix<decltype(std::declval<T>()*std::declval<U>())> result(A.size(1),A.size(2));
-		for(size_t ii = 0; ii < result.size(1); ii++)
+		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> result;
+		result.resize(size(A));
+		for(size_t ii = 0; ii < result.mData.size(); ii++)
 		{
-		    for(size_t jj = 0; jj < result.size(2); jj++)
-		    {
-			    result(ii,jj) = A(ii,jj)-a;
-			}
+			result.mData[ii] = A.mData[ii]-a;
 		}
 		return result;
 	}
 
-	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator-(const U& a, const matrix<T>& A)
+	template<class T, class U,size_t dim> matrix<decltype(std::declval<T>()*std::declval<U>()),dim> operator-(const U& a, const matrix<T,dim>& A)
 	{
-		matrix<decltype(std::declval<T>()*std::declval<U>())> result(A.size(1),A.size(2));
-		for(size_t ii = 0; ii < result.size(1); ii++)
+		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> result;
+		result.resize(size(A));
+		for(size_t ii = 0; ii < result.mData.size(); ii++)
 		{
-		    for(size_t jj = 0; jj < result.size(2); jj++)
-		    {
-			    result(ii,jj) = a-A(ii,jj);
-			}
+			result.mData[ii] = a-A.mData[ii];
 		}
 		return result;
 	}
@@ -647,28 +662,26 @@ namespace keycpp
 		return result;
 	}
 
-	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator*(const T& a, const matrix<U>& A)
+	template<class T, class U,size_t dim> matrix<decltype(std::declval<T>()*std::declval<U>()),dim> operator*(const T& a, const matrix<U,dim>& A)
 	{
-		matrix<decltype(std::declval<T>()*std::declval<U>())> B(A.size(1),A.size(2));
-		for(size_t ii = 0; ii < B.size(1); ii++)
+		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> B;
+		matrix<size_t,1> temp = size(A);
+		B.resize(temp);
+		for(size_t ii = 0; ii < B.mData.size(); ii++)
 		{
-			for(size_t jj = 0; jj < B.size(2); jj++)
-			{
-				B(ii,jj) = a*A(ii,jj);
-			}
+			B.mData[ii] = a*A.mData[ii];
 		}
 		return B;
 	}
 	
-	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator*(const matrix<U>& A, const T& a)
+	template<class T, class U,size_t dim> matrix<decltype(std::declval<T>()*std::declval<U>()),dim> operator*(const matrix<U,dim>& A, const T& a)
 	{
-		matrix<decltype(std::declval<T>()*std::declval<U>())> B(A.size(1),A.size(2));
-		for(size_t ii = 0; ii < B.size(1); ii++)
+		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> B;
+		matrix<size_t,1> temp = size(A);
+		B.resize(temp);
+		for(size_t ii = 0; ii < B.mData.size(); ii++)
 		{
-			for(size_t jj = 0; jj < B.size(2); jj++)
-			{
-				B(ii,jj) = a*A(ii,jj);
-			}
+			B.mData[ii] = a*A.mData[ii];
 		}
 		return B;
 	}
@@ -791,15 +804,13 @@ namespace keycpp
 		return v2;
 	}
 	
-	template<class T> matrix<T> operator-(const matrix<T>& A)
+	template<class T,size_t dim> matrix<T,dim> operator-(const matrix<T,dim>& A)
 	{
-		matrix<T> B(A.size(1),A.size(2));
-		for(size_t ii = 0; ii < B.size(1); ii++)
+		matrix<T,dim> B;
+		B.resize(size(A));
+		for(size_t ii = 0; ii < B.mData.size(); ii++)
 		{
-			for(size_t jj = 0; jj < B.size(2); jj++)
-			{
-				B(ii,jj) = -A(ii,jj);
-			}
+			B.mData[ii] = -A.mData[ii];
 		}
 		return B;
 	}
@@ -823,15 +834,15 @@ namespace keycpp
 		return B;
 	}
 	
-	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator/(const matrix<T>& A, const U& a)
+	template<class T, class U, size_t dim> matrix<decltype(std::declval<T>()*std::declval<U>()),dim> operator/(const matrix<T,dim>& A, const U& a)
 	{
-		matrix<decltype(std::declval<T>()*std::declval<U>())> B(A.size(1),A.size(2));
-		for(size_t ii = 0; ii < B.size(1); ii++)
+		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> B;
+		matrix<size_t,1> temp = size(A);
+		B.resize(temp);
+		
+		for(size_t ii = 0; ii < A.mData.size(); ii++)
 		{
-			for(size_t jj = 0; jj < B.size(2); jj++)
-			{
-				B(ii,jj) = A(ii,jj)/a;
-			}
+			B.mData[ii] = A.mData[ii]/a;
 		}
 		return B;
 	}
@@ -866,15 +877,15 @@ namespace keycpp
 		return v2;
 	}
 	
-	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator/(const U& a, const matrix<T>& A)
+	template<class T, class U,size_t dim> matrix<decltype(std::declval<T>()*std::declval<U>()),dim> operator/(const U& a, const matrix<T,dim>& A)
 	{
-		matrix<decltype(std::declval<T>()*std::declval<U>())> B(A.size(1),A.size(2));
-		for(size_t ii = 0; ii < B.size(1); ii++)
+		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> B;
+		matrix<size_t,1> temp = size(A);
+		B.resize(temp);
+		
+		for(size_t ii = 0; ii < A.mData.size(); ii++)
 		{
-			for(size_t jj = 0; jj < B.size(2); jj++)
-			{
-				B(ii,jj) = a/A(ii,jj);
-			}
+			B.mData[ii] = a/A.mData[ii];
 		}
 		return B;
 	}
@@ -906,15 +917,15 @@ namespace keycpp
 	
 	/** \brief Return a vector containing the sine of each element of A.
 	 */
-	template<class T>
-    vector_k<std::complex<T>> sin(const matrix<std::complex<T>> &A)
+	template<class T, size_t dim>
+    matrix<std::complex<T>,dim> sin(const matrix<std::complex<T>,dim> &A)
     {
         return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::sin<T>));
     }
 	
 	/** \brief Return a vector containing the sine of each element of A.
 	 */
-	template<class T> vector_k<T> sin(const matrix<T> &A)
+	template<class T, size_t dim> matrix<T,dim> sin(const matrix<T,dim> &A)
 	{
 		return eop(A,static_cast<T (*)(T)>(&std::sin));
 	}
@@ -936,15 +947,15 @@ namespace keycpp
 	
 	/** \brief Return a vector containing the cosine of each element of A.
 	 */
-	template<class T>
-    vector_k<std::complex<T>> cos(const matrix<std::complex<T>> &A)
+	template<class T, size_t dim>
+    matrix<std::complex<T>,dim> cos(const matrix<std::complex<T>, dim> &A)
     {
         return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::cos<T>));
     }
 	
 	/** \brief Return a vector containing the cos of each element of A.
 	 */
-	template<class T> vector_k<T> cos(const matrix<T> &A)
+	template<class T, size_t dim> matrix<T, dim> cos(const matrix<T,dim> &A)
 	{
 		return eop(A,static_cast<T (*)(T)>(&std::cos));
 	}
@@ -1056,15 +1067,15 @@ namespace keycpp
 	
 	/** \brief Return a vector containing the exponential of each element of A.
 	 */
-	template<class T>
-    vector_k<std::complex<T>> exp(const matrix<std::complex<T>> &A)
+	template<class T,size_t dim>
+    matrix<std::complex<T>,dim> exp(const matrix<std::complex<T>,dim> &A)
     {
         return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&std::exp<T>));
     }
 	
 	/** \brief Return a vector containing the exponential of each element of A.
 	 */
-	template<class T> vector_k<T> exp(const matrix<T> &A)
+	template<class T,size_t dim> matrix<T,dim> exp(const matrix<T,dim> &A)
 	{
 		return eop(A,static_cast<T (*)(T)>(&std::exp));
 	}
@@ -1220,11 +1231,13 @@ namespace keycpp
      *   @param[in] A matrix for which you want to know the size.
      *   @return A matrix_size_type variable containing the number of rows and cols.
      */
-	template<class T> matrix_size_type size(const matrix<T> &A)
+	template<class T, size_t dim> matrix<size_t,1> size(const matrix<T,dim> &A)
 	{
-	    matrix_size_type msize;
-	    msize.rows = A.size(1);
-	    msize.cols = A.size(2);
+	    matrix<size_t,1> msize(dim);
+	    for(size_t ii = 0; ii < dim; ii++)
+	    {
+	        msize.mData[ii] = A.size(ii+1);
+	    }
 		return msize;
 	}
 	
@@ -1319,28 +1332,28 @@ namespace keycpp
 		return A;
 	}
 	
-	template<class T> matrix<T> diag(const vector_k<T> &v1, const int &d = 0)
+	template<class T> matrix<T,2> diag(const matrix<T,1> &v1, const int &d = 0)
 	{
-		matrix<T> A(std::abs(d)+v1.size(),std::abs(d)+v1.size());
+		matrix<T,2> A(std::abs(d)+v1.size(1),std::abs(d)+v1.size(1));
 		if(d != 0)
 		{
-		    for(int ii = 0; ii < v1.size(); ii++)
+		    for(int ii = 0; ii < v1.size(1); ii++)
 		    {
 		        if(d < 0)
 		        {
-			        A(ii+std::abs(d),ii) = v1[ii];
+			        A(ii+std::abs(d),ii) = v1.mData[ii];
 			    }
 			    else
 		        {
-			        A(ii,ii+std::abs(d)) = v1[ii];
+			        A(ii,ii+std::abs(d)) = v1.mData[ii];
 			    }
 		    }
 		}
 		else
 		{
-		    for(int ii = 0; ii < v1.size(); ii++)
+		    for(int ii = 0; ii < v1.size(1); ii++)
 		    {
-			    A(ii,ii) = v1[ii];
+			    A(ii,ii) = v1.mData[ii];
 		    }
 		}
 		return A;
@@ -1394,9 +1407,9 @@ namespace keycpp
 		return v1;
 	}
 	
-	template<class T> matrix<T> repmat(const matrix<T> &A, const int &m, const int &n)
+	template<class T> matrix<T,2> repmat(const matrix<T,2> &A, const int &m, const int &n)
 	{
-		matrix<T> B(m*A.size(1), n*A.size(2));
+		matrix<T,2> B(m*A.size(1), n*A.size(2));
 		for(int ii = 0; ii < m; ii++)
 		{
 			for(int jj = 0; jj < n; jj++)
@@ -1413,9 +1426,9 @@ namespace keycpp
 		return B;
 	}
 	
-	template<class T> matrix<T> repmat(const vector_k<T> v1, const int &m, const int &n)
+	template<class T> matrix<T,2> repmat(const vector_k<T> v1, const int &m, const int &n)
 	{
-		matrix<T> B(m*v1.size(), n);
+		matrix<T,2> B(m, n*v1.size());
 		for(int ii = 0; ii < m; ii++)
 		{
 			for(int jj = 0; jj < n; jj++)
@@ -1429,29 +1442,44 @@ namespace keycpp
 		return B;
 	}
 	
+	template<class T> matrix<T,2> repmat(const matrix<T,1> v1, const int &m, const int &n)
+	{
+		matrix<T,2> B(m, n*v1.size(1));
+		for(int ii = 0; ii < m; ii++)
+		{
+			for(int jj = 0; jj < n; jj++)
+			{
+				for(int kk = 0; kk < v1.size(1); kk++)
+				{
+					B(ii,jj*v1.size(1) + kk) = v1(kk);
+				}
+			}
+		}
+		return B;
+	}
+	
 	/** \brief Performs array multiplication on matrices A and B.
 	 *
 	 *  Each element of A is multiplied by each element of B. The matrix that is
 	 *  returned is the same size as A and B.
 	 */
-	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> times(const matrix<T>& A, const matrix<U>& B)
+	template<class T, class U, size_t dim> matrix<decltype(std::declval<T>()*std::declval<U>()),dim> times(const matrix<T,dim>& A, const matrix<U,dim>& B)
 	{
-	    if(A.size(1) <= 0 || A.size(2) <= 0 || B.size(1) <= 0 || B.size(2) <= 0)
+	    if(A.empty() || B.empty())
 	    {
 	        throw KeyCppException("Cannot multiply an empty matrix!");
 	    }
-	    if(A.size(1) != B.size(1) || A.size(2) != B.size(2))
+	    if(size(A) != size(B))
 	    {
 	        throw KeyCppException("Matrix dimensions must agree in times().");
 	    }
-		matrix<decltype(std::declval<T>()*std::declval<U>())> C(A.size(1),B.size(2));
-		for(int ii = 0; ii < A.size(1); ii++)
+		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> C;
+		C.resize(size(A));
+		for(int ii = 0; ii < A.mData.size(); ii++)
 		{
-			for(int jj = 0; jj < A.size(2); jj++)
-			{
-				C(ii,jj) = A(ii,jj)*B(ii,jj);
-			}
+		    C.mData[ii] = A.mData[ii]*B.mData[ii];
 		}
+		
 		return C;
 	}
 	
@@ -1592,8 +1620,8 @@ namespace keycpp
         return eop(v1, static_cast<T (*)(const std::complex<T> &)>(&std::arg<T>));
     }
 	
-	template<class T>
-    vector_k<T> angle(const matrix<std::complex<T>> &A)
+	template<class T,size_t dim>
+    matrix<T,dim> angle(const matrix<std::complex<T>,dim> &A)
     {
         return eop(A, static_cast<T (*)(const std::complex<T> &)>(&std::arg<T>));
     }
@@ -1630,13 +1658,33 @@ namespace keycpp
 		return x[index];
 	}
 	
-	template<class T> vector_k<T> max(const matrix<T> &A)
+	template<class T,size_t dim> matrix<T,dim-1> max(const matrix<T,dim> &A)
 	{
-	    vector_k<T> v(A.size(2));
-	    for(size_t ii = 0; ii < v.size(); ii++)
+	    static_assert(dim == 2,"This function is only available for matrices of dimension 2.");
+	    matrix<T,dim-1> v(A.size(2));
+	    
+	    for(size_t jj = 0; jj < A.size(2); jj++)
 	    {
-	        v[ii] = max(A.getCol(ii));
+	        vector_k<T> v2(A.size(1));
+	        for(size_t ii = 0; ii < A.size(1); ii++)
+	        {
+	            v2[ii] = A(ii,jj);
+	        }
+	        v(jj) = max(v2);
 	    }
+	    return v;
+	}
+	
+	template<class T> T max(const matrix<T,1> &A)
+	{
+	    T v;
+	    
+	    vector_k<T> v2(A.size(1));
+        for(size_t ii = 0; ii < A.size(1); ii++)
+        {
+            v2[ii] = A.mData[ii];
+        }
+        v = max(v2);
 	    return v;
 	}
 
@@ -1678,7 +1726,7 @@ namespace keycpp
 	    vector_k<T> v(A.size(2));
 	    for(size_t ii = 0; ii < v.size(); ii++)
 	    {
-	        v[ii] = min(A.getCol(ii));
+	        v[ii] = min(A.col(ii));
 	    }
 	    return v;
 	}
@@ -1698,12 +1746,22 @@ namespace keycpp
 		return B;
 	}
 	
+	template<class T> matrix<T,2> transpose(const matrix<T,1> &v1)
+	{
+		matrix<T,2> B(v1.size(1),1);
+		for(size_t ii = 0; ii < v1.size(1); ii++)
+		{
+			B(ii,0) = v1.mData[ii];
+		}
+		return B;
+	}
+	
 	/** \brief Returns the transpose of vector v1.
 	 */
 	template<class T> matrix<T> transpose(const vector_k<T> &v1)
 	{
-		matrix<T> B(1,v1.size());
-		for(size_t ii = 0; ii < v1.size(); ii++)
+		matrix<T> B(1,v1.size(1));
+		for(size_t ii = 0; ii < v1.size(1); ii++)
 		{
 			B(0,ii) = v1[ii];
 		}
@@ -1732,12 +1790,27 @@ namespace keycpp
 		return transpose(A);
 	}
 	
+	template<class T> matrix<T,2> ctranspose(const matrix<T,1> &v1)
+	{
+		matrix<T,2> B(v1.size(1),1);
+		for(size_t ii = 0; ii < v1.size(1); ii++)
+		{
+			B(ii,0) = conj(v1.mData[ii]);
+		}
+		return B;
+	}
+	
+	template<> inline matrix<double,2> ctranspose(const matrix<double,1> &v1)
+	{
+		return transpose(v1);
+	}
+	
 	/** \brief Returns the complex-conjugate transpose of vector v1.
 	 */
 	template<class T> matrix<T> ctranspose(const vector_k<T> &v1)
 	{
-		matrix<T> B(1,v1.size());
-		for(size_t ii = 0; ii < v1.size(); ii++)
+		matrix<T> B(1,v1.size(1));
+		for(size_t ii = 0; ii < v1.size(1); ii++)
 		{
 			B(0,ii) = conj(v1[ii]);
 		}
@@ -1755,15 +1828,25 @@ namespace keycpp
 		}
 		return a;
 	}
+
+	template<class T> T sum(const matrix<T,1> &v1)
+	{
+		T a = 0.0;
+		for(size_t ii = 0; ii < v1.size(1); ii++)
+		{
+			a += v1.mData[ii];
+		}
+		return a;
+	}
 	
 	/** \brief Computes the sum of each column of A.
 	 */
-	template<class T> vector_k<T> sum(const matrix<T> &A)
+	template<class T> matrix<T,1> sum(const matrix<T,2> &A)
 	{
-		vector_k<T> v1(A.size(2));
-		for(size_t ii = 0; ii < v1.size(); ii++)
+		matrix<T,1> v1(A.size(2));
+		for(size_t ii = 0; ii < v1.size(1); ii++)
 		{
-			v1[ii] = sum(A.getCol(ii));
+			v1.mData[ii] = sum(A.col(ii));
 		}
 		return v1;
 	}
@@ -1800,22 +1883,12 @@ namespace keycpp
 		return A;
 	}
 	
-    /**  \brief Produces a vector containing N values equally spaced between
-     *          x1 and x2, inclusively.
-     *   @details
-     *    Produces a vector containing N values equally spaced between
-     *    x1 and x2, inclusively.
-     *   @param[in] x1 The minimum value.
-     *   @param[in] x2 The maximum value.
-     *   @param[in] N The number of values between x1 and x2. 
-     *   @return A vector containing N equally spaced values between x1 and x2, inclusively. 
-     */
-	template<class T> vector_k<T> linspace(const T &x1, const T &x2, const size_t &N)
+	template<class T> matrix<T,1> linspace(const T &x1, const T &x2, const size_t &N)
 	{
-		vector_k<T> x(N);
+		matrix<T,1> x(N);
 		if(N == 1)
 		{
-			x[0] = x2;
+			x.mData[0] = x2;
 			return x;
 		}
 
@@ -1823,10 +1896,10 @@ namespace keycpp
 
 		for(size_t ii = 0; ii < N; ii++)
 		{
-			x[ii] = x1 + ii*delta_x;
+			x.mData[ii] = x1 + ii*delta_x;
 		}
 
-		x[N-1] = x2;
+		x.mData[N-1] = x2;
 
 		return x;
 	}
@@ -1862,22 +1935,22 @@ namespace keycpp
 		return x;
 	}
 	
-	template<class T> vector_k<T> unwrap(const vector_k<T>& v1, const T &tol = pi)
+	template<class T> matrix<T,1> unwrap(const matrix<T,1>& v1, const T &tol = pi)
 	{
-		vector_k<T> v2(v1.size());
-		v2[0] = v1[0];
+		matrix<T,1> v2(v1.size(1));
+		v2(0) = v1(0);
 		int correction = 0;
-		for(size_t ii = 1; ii < v1.size(); ii++)
+		for(size_t ii = 1; ii < v1.size(1); ii++)
 		{
-			if((v1[ii] - v1[ii-1]) > tol)
+			if((v1.mData[ii] - v1.mData[ii-1]) > tol)
 			{
 				correction -= 1;
 			}
-			else if((v1[ii] - v1[ii-1]) < -tol)
+			else if((v1.mData[ii] - v1.mData[ii-1]) < -tol)
 			{
 				correction += 1;
 			}
-			v2[ii] = v1[ii] + correction*2*pi;
+			v2.mData[ii] = v1.mData[ii] + correction*2*pi;
 		}
 		return v2;
 	}
@@ -1896,18 +1969,18 @@ namespace keycpp
 		return m/tot;
 	}
 	
-	template<class T, class U> T interp1(const vector_k<U> &x, const vector_k<T> &y, const U &x_interp, std::string method = "linear", Extrap extrap = Extrap())
+	template<class T, class U> T interp1(const matrix<U,1> &x, const matrix<T,1> &y, const U &x_interp, std::string method = "linear", Extrap extrap = Extrap())
 	{
 		if(x.empty() || y.empty())
 		{
 			throw KeyCppException("Error in interp1! Cannot interpolate on an empty vector!");
 		}
-		if(x.size() != y.size())
+		if(x.size(1) != y.size(1))
 		{
 			throw KeyCppException("Error in interp1! Variables `x` and `y` have incompatible sizes!");
 		}
 		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
-		size_t N = x.size();
+		size_t N = x.size(1);
 		T y2;
 		if(method.compare("spline") == 0)
 		{
@@ -1919,32 +1992,32 @@ namespace keycpp
 		{
 			for(size_t ii = 0; ii < (N-1); ii++)
 			{
-				if(x_interp == x[ii])
+				if(x_interp == x.mData[ii])
 				{
-					return y[ii];
+					return y.mData[ii];
 				}
-				else if((x_interp > x[ii] && x_interp < x[ii+1]) || (x_interp < x[ii] && x_interp > x[ii+1]))
+				else if((x_interp > x.mData[ii] && x_interp < x.mData[ii+1]) || (x_interp < x.mData[ii] && x_interp > x.mData[ii+1]))
 				{
-					return (y[ii] + (x_interp - x[ii])*(y[ii+1] - y[ii])/(x[ii+1] - x[ii]));
+					return (y.mData[ii] + (x_interp - x.mData[ii])*(y.mData[ii+1] - y.mData[ii])/(x.mData[ii+1] - x.mData[ii]));
 				}
 			}
 
-			if(x_interp == x[N-1])
+			if(x_interp == x.mData[N-1])
 			{
-				return y[N-1];
+				return y.mData[N-1];
 			}
 			
 			if(extrap.isString)
 			{
 				if(extrap.extrap_string.compare("extrap") == 0)
 				{
-					if(x_interp < x[0])
+					if(x_interp < x.mData[0])
 					{
-						return (y[0] + (x_interp - x[0])*(y[1] - y[0])/(x[1] - x[0]));
+						return (y.mData[0] + (x_interp - x.mData[0])*(y.mData[1] - y.mData[0])/(x.mData[1] - x.mData[0]));
 					}
 					else
 					{
-						return (y[N-2] + (x_interp - x[N-2])*(y[N-1] - y[N-2])/(x[N-1] - x[N-2]));
+						return (y.mData[N-2] + (x_interp - x.mData[N-2])*(y.mData[N-1] - y.mData[N-2])/(x.mData[N-1] - x.mData[N-2]));
 					}
 				}
 				else
@@ -1969,20 +2042,20 @@ namespace keycpp
 			int index = -1;
 			for(size_t ii = 0; ii < N; ii++)
 			{
-				if(std::abs(x[ii] - x_interp) < std::abs(min_val))
+				if(std::abs(x.mData[ii] - x_interp) < std::abs(min_val))
 				{
-					min_val = x[ii] - x_interp;
+					min_val = x.mData[ii] - x_interp;
 					index = ii;
 				}
-				else if(std::abs(x[ii] - x_interp) == std::abs(min_val) && (x[ii] - x_interp) > min_val)
+				else if(std::abs(x.mData[ii] - x_interp) == std::abs(min_val) && (x.mData[ii] - x_interp) > min_val)
 				{
-					min_val = x[ii] - x_interp;
+					min_val = x.mData[ii] - x_interp;
 					index = ii;
 				}
 			}
 			if(index >= 0)
 			{
-				return y[index];
+				return y(index);
 			}
 			
 			if(extrap.isString)
@@ -2016,20 +2089,20 @@ namespace keycpp
 	}
 
 
-	template<class T, class U> vector_k<T> interp1(const vector_k<U> &x, const vector_k<T> &y, const vector_k<U> &x_interp, std::string method = "linear", Extrap extrap = Extrap())
+	template<class T, class U> matrix<T,1> interp1(const matrix<U,1> &x, const matrix<T,1> &y, const matrix<U,1> &x_interp, std::string method = "linear", Extrap extrap = Extrap())
 	{
 		if(x.empty() || y.empty() || x_interp.empty())
 		{
 			throw KeyCppException("Error in interp1! Cannot interpolate on an empty vector!");
 		}
-		if(x.size() != y.size())
+		if(x.size(1) != y.size(1))
 		{
 			throw KeyCppException("Error in interp1! Variables `x` and `y` have incompatible sizes!");
 		}
 		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
-		size_t N = x.size();
-		size_t N_int = x_interp.size();
-		vector_k<T> y2(N_int);
+		size_t N = x.size(1);
+		size_t N_int = x_interp.size(1);
+		matrix<T,1> y2(N_int);
 
 		if(method.compare("spline") == 0)
 		{	
@@ -2037,14 +2110,14 @@ namespace keycpp
 			spline.compute_spline();
 			for(size_t ii = 0; ii < N_int; ii++)
 			{
-				y2[ii] = spline.J(x_interp[ii]);
+				y2.mData[ii] = spline.J(x_interp.mData[ii]);
 			}
 		}
 		else if(method.compare("linear") == 0 || method.compare("nearest") == 0)
 		{
 			for(size_t ii = 0; ii < N_int; ii++)
 			{
-				y2[ii] = interp1(x, y, x_interp[ii],method,extrap);
+				y2.mData[ii] = interp1(x, y, x_interp.mData[ii],method,extrap);
 			}
 		}
 		else
@@ -2055,149 +2128,103 @@ namespace keycpp
 		return y2;
 	}
 
-	template<class T, class U> matrix<T> interp1(const vector_k<U> &x, const matrix<T> &y, const vector_k<U> &x_interp, std::string method = "linear", Extrap extrap = Extrap())
+	template<class T, class U> matrix<T,2> interp1(const matrix<U,1> &x, const matrix<T,2> &y, const matrix<U,1> &x_interp, std::string method = "linear", Extrap extrap = Extrap())
 	{
 		if(x.empty() || y.size(1) <= 0 || y.size(2) <= 0 || x_interp.empty())
 		{
 			throw KeyCppException("Error in interp1! Cannot interpolate on an empty vector or matrix!");
 		}
-		if(x.size() != y.size(1))
+		if(x.size(1) != y.size(1))
 		{
 			throw KeyCppException("Error in interp1! Variables `x` and `y` have incompatible sizes!");
 		}
-		matrix<T> y2(x_interp.size(),y.size(2));
+		matrix<T,2> y2(x_interp.size(1),y.size(2));
 
 		for(size_t kk = 0; kk < y.size(2); kk++)
 		{
-			y2.col(kk) = interp1(x,y.getCol(kk),x_interp,method, extrap);
-		}
-
-		return y2;
-	}
-
-
-	template<class T, class U> matrix<T> interp1(const vector_k<U> &x, const vector_k<vector_k<T> > &y, const vector_k<U> &x_interp, std::string method = "linear", Extrap extrap = Extrap())
-	{
-		if(x.empty() || y.empty() || y[0].empty() || x_interp.empty())
-		{
-			throw KeyCppException("Error in interp1! Cannot interpolate on an empty vector or matrix!");
-		}
-		if(x.size() != y.size())
-		{
-			throw KeyCppException("Error in interp1! Variables `x` and `y` have incompatible sizes!");
-		}
-		
-		matrix<T> y2(x_interp.size(),y[0].size());
-		for(size_t kk = 0; kk < y[0].size(); kk++)
-		{
-			vector_k<T> y_temp(x.size());
-			for(size_t ii = 0; ii < x.size(); ii++)
-			{
-				y_temp[ii] = y[ii][kk];
-			}
-			y2.col(kk) = interp1(x,y_temp,x_interp,method, extrap);
+			y2.col(kk) = interp1(x,y.col(kk),x_interp,method, extrap);
 		}
 
 		return y2;
 	}
 	
-	template<class T, class U> matrix<T> interp1(const vector_k<U> &x, const vector_k<T> &y, const matrix<U> &x_interp, std::string method = "linear", Extrap extrap = Extrap())
+	template<class T, class U> matrix<T,2> interp1(const matrix<U,1> &x, const matrix<T,1> &y, const matrix<U,2> &x_interp, std::string method = "linear", Extrap extrap = Extrap())
 	{
 		if(x.empty() || y.empty() || x_interp.size(1) <= 0 || x_interp.size(2) <= 0)
 		{
 			throw KeyCppException("Error in interp1! Cannot interpolate on an empty vector or matrix!");
 		}
-		if(x.size() != y.size())
+		if(x.size(1) != y.size(1))
 		{
 			throw KeyCppException("Error in interp1! Variables `x` and `y` have incompatible sizes!");
 		}
-		matrix<T> y2(x_interp.size(1),x_interp.size(2));
+		matrix<T,2> y2(x_interp.size(1),x_interp.size(2));
 
 		for(size_t kk = 0; kk < x_interp.size(2); kk++)
 		{
-			y2.col(kk) = interp1(x,y,x_interp.getCol(kk),method, extrap);
+			y2.col(kk) = interp1(x,y,x_interp.col(kk),method, extrap);
 		}
 
 		return y2;
 	}	
-	
-	template<class T, class U> matrix<T> interp1(const vector_k<U> &x, const vector_k<T> &y, const vector_k<vector_k<U> > &x_interp, std::string method = "linear", Extrap extrap = Extrap())
-	{
-		if(x.empty() || y.empty() || x_interp.empty() || x_interp[0].empty())
-		{
-			throw KeyCppException("Error in interp1! Cannot interpolate on an empty vector or matrix!");
-		}
-		if(x.size() != y.size())
-		{
-			throw KeyCppException("Error in interp1! Variables `x` and `y` have incompatible sizes!");
-		}
-		matrix<T> y2(x_interp.size(),x_interp[0].size());
 
-		for(size_t kk = 0; kk < x_interp.size(); kk++)
-		{
-			y2.row(kk) = interp1(x,y,x_interp[kk],method, extrap);
-		}
-
-		return y2;
-	}
-
-	template<class U, class T> T trapz(const vector_k<U> &eta, const vector_k<T> &integrand)
+	template<class U, class T> T trapz(const matrix<U,1> &eta, const matrix<T,1> &integrand)
 	{
 		if(eta.empty() || integrand.empty())
 		{
 			throw KeyCppException("Error in trapz()! Empty vector supplied!");
 		}
-		if(eta.size() != integrand.size())
+		if(eta.size(1) != integrand.size(1))
 		{
 			throw KeyCppException("Error in trapz()! Vector sizes are not compatible!");
 		}
-		size_t N = eta.size();
+		size_t N = eta.size(1);
 		T sum = 0.0;
 
 		for(size_t ii = 0; ii < N-1; ii++)
 		{
-			sum += (eta[ii+1] - eta[ii])*(integrand[ii+1] + integrand[ii]);
+			sum += (eta.mData[ii+1] - eta.mData[ii])*(integrand.mData[ii+1] + integrand.mData[ii]);
 		}
 		return 0.5*sum;
 	}
 
-	template<class U, class T> vector_k<T> trapz(const vector_k<U> &eta, const matrix<T> &integrand)
+	template<class U, class T> matrix<T,1> trapz(const matrix<U,1> &eta, const matrix<T,2> &integrand)
 	{
 		if(eta.empty() || integrand.empty())
 		{
 			throw KeyCppException("Error in trapz()! Empty vector/matrix supplied!");
 		}
-		if(eta.size() != integrand.size(1) && integrand.size(1) > 1)
+		if(eta.size(1) != integrand.size(1) && integrand.size(1) > 1)
 		{
 			throw KeyCppException("Error in trapz()! Vector and matrix sizes are not compatible!");
 		}
-		if(eta.size() != integrand.size(2) && integrand.size(1) <= 1)
+		if(eta.size(1) != integrand.size(2) && integrand.size(1) <= 1)
 		{
 			throw KeyCppException("Error in trapz()! Vector and matrix sizes are not compatible!");
 		}
 		
 		size_t N;
-		vector_k<T> z;
-		if(eta.size() == integrand.size(1))
+		matrix<T,1> z;
+		if(eta.size(1) == integrand.size(1))
 		{
 		    N = integrand.size(2);
-		    z = vector_k<T>(N);
+		    z = matrix<T,1>(N);
 		    for(size_t ii = 0; ii < N; ii++)
 		    {
-			    z[ii] = trapz(eta,integrand.getCol(ii));
+			    z.mData[ii] = trapz(eta,integrand.col(ii));
 		    }
 		}
 		else
 		{
 		    N = 1;
-		    z = vector_k<T>(N);
-			z[0] = trapz(eta,integrand.getRow(0));
+		    z = matrix<T,1>(N);
+			z(0) = trapz(eta,integrand.row(0));
 		}
 		return z;
 	}
 
 
-	template<class T, class U> matrix<T> diffxy(const matrix<U> &eta, const matrix<T> &u, const int &index = 2)
+	template<class T, class U> matrix<T,2> diffxy(const matrix<U,2> &eta, const matrix<T,2> &u, const int &index = 2)
 	{
 		if(eta.size(1) <= 0 || eta.size(2) <= 0 || u.size(1) <= 0 || u.size(2) <= 0)
 		{
@@ -2210,7 +2237,7 @@ namespace keycpp
 		size_t N = u.size(1);
 		size_t P = u.size(2);
 
-		matrix<T> du(N,P);
+		matrix<T,2> du(N,P);
 		if(index == 1)
 		{
 			for(size_t p = 0; p < P; p++)
@@ -2237,29 +2264,29 @@ namespace keycpp
 		return du;
 	}
 
-	template<class T, class U> matrix<T> diffxy(const vector_k<U> &eta, const matrix<T> &u)
+	template<class T, class U> matrix<T,2> diffxy(const matrix<U,1> &eta, const matrix<T,2> &u)
 	{
 		if(eta.empty() || u.size(1) <= 0 || u.size(2) <= 0)
 		{
 			throw KeyCppException("Error in diffxy()! Empty vector or matrix supplied!");
 		}
-		if(eta.size() != u.size(1) && eta.size() != u.size(2))
+		if(eta.size(1) != u.size(1) && eta.size(1) != u.size(2))
 		{
 			throw KeyCppException("Error in diffxy()! Vector and matrix sizes are not compatible!");
 		}
 		size_t N = u.size(1);
 		size_t P = u.size(2);
 
-		matrix<T> du(N,P);
-		if(N == eta.size())
+		matrix<T,2> du(N,P);
+		if(N == eta.size(1))
 		{
 			for(size_t p = 0; p < P; p++)
 			{
 				for(size_t ii = 0; ii < N-1; ii++)
 				{
-					du(ii,p) = (u(ii+1,p) - u(ii,p))/(eta[ii+1] - eta[ii]);
+					du(ii,p) = (u(ii+1,p) - u(ii,p))/(eta.mData[ii+1] - eta.mData[ii]);
 				}
-				du(N-1,p) = (u(N-1,p) - u(N-2,p))/(eta[N-1] - eta[N-2]);
+				du(N-1,p) = (u(N-1,p) - u(N-2,p))/(eta.mData[N-1] - eta.mData[N-2]);
 			}
 		}
 		else
@@ -2268,38 +2295,38 @@ namespace keycpp
 			{
 				for(size_t p = 0; p < P-1; p++)
 				{
-					du(ii,p) = (u(ii,p+1) - u(ii,p))/(eta[p+1] - eta[p]);
+					du(ii,p) = (u(ii,p+1) - u(ii,p))/(eta(p+1) - eta(p));
 				}
-				du(ii,P-1) = (u(ii,P-1) - u(ii,P-2))/(eta[P-1] - eta[P-2]);
+				du(ii,P-1) = (u(ii,P-1) - u(ii,P-2))/(eta(P-1) - eta(P-2));
 			}
 		}
 
 		return du;
 	}
 
-	template<class T, class U> vector_k<T> diffxy(const vector_k<U> &eta, const vector_k<T> &u)
+	template<class T, class U> matrix<T,1> diffxy(const matrix<U,1> &eta, const matrix<T,1> &u)
 	{
 		if(eta.empty() || u.empty())
 		{
 			throw KeyCppException("Error in diffxy()! Empty vector supplied!");
 		}
-		if(eta.size() != u.size())
+		if(eta.size(1) != u.size(1))
 		{
 			throw KeyCppException("Error in diffxy()! Vector sizes are not compatible!");
 		}
-		size_t N = u.size();
+		size_t N = u.size(1);
 
-		vector_k<T> du(N);
+		matrix<T,1> du(N);
 		for(size_t ii = 0; ii < N-1; ii++)
 		{
-			du[ii] = (u[ii+1] - u[ii])/(eta[ii+1] - eta[ii]);
+			du.mData[ii] = (u.mData[ii+1] - u.mData[ii])/(eta.mData[ii+1] - eta.mData[ii]);
 		}
-		du[N-1] = (u[N-1] - u[N-2])/(eta[N-1] - eta[N-2]);
+		du.mData[N-1] = (u.mData[N-1] - u.mData[N-2])/(eta.mData[N-1] - eta.mData[N-2]);
 
 		return du;
 	}
 
-	template<class T> vector_k<std::complex<double> > fft(const vector_k<T> &u, int N = -1)
+	template<class T> matrix<std::complex<double>,1> fft(const matrix<T,1> &u, int N = -1)
 	{
 		if(u.empty())
 		{
@@ -2308,18 +2335,18 @@ namespace keycpp
 		
 		if(N < 0)
 		{
-			N = u.size();
+			N = u.size(1);
 		}
 		
 		kiss_fft_cpx *cx_in = new kiss_fft_cpx[N];
 		kiss_fft_cpx *cx_out = new kiss_fft_cpx[N];
 
-		vector_k<std::complex<double> > u_hat(N);
+		matrix<std::complex<double>,1> u_hat(N);
 
 		for(int ii = 0; ii < N; ii++)
 		{
-			cx_in[ii].r = real((std::complex<double>)u[ii]);
-			cx_in[ii].i = imag((std::complex<double>)u[ii]);
+			cx_in[ii].r = real((std::complex<double>)u.mData[ii]);
+			cx_in[ii].i = imag((std::complex<double>)u.mData[ii]);
 		}
 
 		kiss_fft_cfg cfg = kiss_fft_alloc(N,false,NULL,NULL);
@@ -2327,7 +2354,7 @@ namespace keycpp
 
 		for(int ii = 0; ii < N; ii++)
 		{
-			u_hat[ii] = std::complex<T>((T)cx_out[ii].r,(T)cx_out[ii].i);
+			u_hat.mData[ii] = std::complex<T>((T)cx_out[ii].r,(T)cx_out[ii].i);
 		}
 
 		free(cfg);
@@ -2345,7 +2372,7 @@ namespace boost
         namespace odeint
         {
             template<class T>
-            struct is_resizeable<keycpp::vector_k<T> >
+            struct is_resizeable<keycpp::matrix<T,1> >
             {
                 typedef boost::true_type type;
                 const static bool value = type::value;
@@ -2359,12 +2386,12 @@ namespace keycpp
 	template<class T,class Y>
 	struct ODE_type
 	{
-		vector_k<T> t;
-		matrix<Y> y;
+		matrix<T,1> t;
+		matrix<Y,2> y;
 	};
 
 	template<class T, class U, class F>
-	ODE_type<U,T> ode45(F odeClass, const std::initializer_list<U> &x_span, vector_k<T> ICs, double abs_tol = 1.0e-10, double rel_tol = 1.0e-6)
+	ODE_type<U,T> ode45(F odeClass, const std::initializer_list<U> &x_span, matrix<T,1> ICs, double abs_tol = 1.0e-10, double rel_tol = 1.0e-6)
 	{
 		if(x_span.size() <= 0)
 		{
@@ -2382,23 +2409,23 @@ namespace keycpp
 		U x0 = *(x_span.begin());
 		U xf = *(x_span.end()-1);
 		U delta_x0 = (xf-x0)/1000.0;
-		vector_k<vector_k<T> > y_temp;
-		vector_k<U> x_temp;
+		matrix<T,2> y_temp(2,ICs.size(1));
+		matrix<U,1> x_temp(2);
 
 		{
 			using namespace boost::numeric::odeint;
-			integrate_adaptive(make_controlled<runge_kutta_dopri5<vector_k<T> > >(abs_tol, rel_tol), odeClass, ICs, x0, xf, delta_x0, observe<vector_k<T>,U>(y_temp,x_temp));
+			integrate_adaptive(make_controlled<runge_kutta_dopri5<matrix<T,1> > >(abs_tol, rel_tol), odeClass, ICs, x0, xf, delta_x0, observe<T,U>(y_temp,x_temp));
 		}
 
         ODE_type<U,T> ans;
         ans.t = x_temp;
-        ans.y = matrix<T>(y_temp);
+        ans.y = y_temp;
 		
 		return ans;
 	}
 	
 	template<class T, class U, class F>
-	matrix<T> ode45(F odeClass, vector_k<U> x_ode, vector_k<T> ICs, double abs_tol = 1.0e-10, double rel_tol = 1.0e-6)
+	matrix<T> ode45(F odeClass, matrix<U,1> x_ode, matrix<T,1> ICs, double abs_tol = 1.0e-10, double rel_tol = 1.0e-6)
 	{
 		if(x_ode.empty())
 		{
@@ -2408,18 +2435,18 @@ namespace keycpp
 		{
 			throw KeyCppException("Error in ode45()! Must provide initial conditions!");
 		}
-		if(x_ode.size() < 2)
+		if(x_ode.size(1) < 2)
 		{
 			throw KeyCppException("Error in ode45()! Invalid vector x_ode!");
 		}
 
-		U delta_x0 = x_ode[1] - x_ode[0];
-		vector_k<vector_k<T> > y_temp;
-		vector_k<U> x_temp;
+		U delta_x0 = x_ode(1) - x_ode(0);
+		matrix<T,2> y_temp(x_ode.size(1),ICs.size(1));
+		matrix<U,1> x_temp(x_ode.size(1));
 
 		{
 			using namespace boost::numeric::odeint;
-			integrate_times(make_dense_output<runge_kutta_dopri5<vector_k<T> > >(abs_tol, rel_tol), odeClass, ICs, x_ode.begin(), x_ode.end(), delta_x0, observe<vector_k<T>,U>(y_temp,x_temp));
+			integrate_times(make_dense_output<runge_kutta_dopri5<matrix<T,1> > >(abs_tol, rel_tol), odeClass, ICs, x_ode.begin(), x_ode.end(), delta_x0, observe<T,U>(y_temp,x_temp));
 		}
 
 		matrix<T> y(y_temp);
@@ -2887,7 +2914,7 @@ namespace keycpp
 	        result = vector_k<decltype(std::declval<T>()*std::declval<U>())>(A.size(2));
 	        for(size_t ii = 0; ii < result.size(); ii++)
 	        {
-	            result[ii] = dot(A.getCol(ii),B.getCol(ii));
+	            result[ii] = dot(A.col(ii),B.col(ii));
 	        }
 	    }
 	    else
@@ -2895,7 +2922,7 @@ namespace keycpp
 	        result = vector_k<decltype(std::declval<T>()*std::declval<U>())>(A.size(1));
 	        for(size_t ii = 0; ii < result.size(); ii++)
 	        {
-	            result[ii] = dot(A.getRow(ii),B.getRow(ii));
+	            result[ii] = dot(A.row(ii),B.row(ii));
 	        }
 	    }
 	    return result;
@@ -3544,7 +3571,10 @@ namespace keycpp
                 }
                 else
                 {
-                    A.addLastRow(b);
+                    auto temp_size = size(A);
+                    temp_size(0)++;
+                    A.resize(temp_size);
+                    A.row(temp_size(0)-1) = b;
                 }
             }
         }

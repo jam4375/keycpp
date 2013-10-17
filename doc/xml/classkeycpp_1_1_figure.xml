@@ -222,7 +222,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="133" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="211" bodyend="215"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a5e3cff38d4f1df2543d221c741a515eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a5a062460f59124050db83df4e4a40113" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -233,14 +233,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::plot</definition>
-        <argsstring>(vector_k&lt; U &gt; x, vector_k&lt; T &gt; y, std::string format, std::string property1, double val1)</argsstring>
+        <argsstring>(matrix&lt; U, 1 &gt; x, matrix&lt; T, 1 &gt; y, std::string format, std::string property1, double val1)</argsstring>
         <name>plot</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; U &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -263,7 +263,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="134" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="217" bodyend="251"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a38b649480d000a9c67541d3b310a920f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1ae408abfc6e8afe57f03a4a27f85f8aa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -274,14 +274,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::plot</definition>
-        <argsstring>(vector_k&lt; U &gt; x, vector_k&lt; T &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
+        <argsstring>(matrix&lt; U, 1 &gt; x, matrix&lt; T, 1 &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
         <name>plot</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; U &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -312,7 +312,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="135" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="253" bodyend="323"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a6c228be127b88c455a11bc6ec6604290" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a0a4b5dccade75ce6ccf12f44d2fb5073" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -323,14 +323,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::plot</definition>
-        <argsstring>(vector_k&lt; U &gt; x, vector_k&lt; T &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
+        <argsstring>(matrix&lt; U, 1 &gt; x, matrix&lt; T, 1 &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
         <name>plot</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; U &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -366,7 +366,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="136" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="325" bodyend="719"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a9039b7eee3ef0fae5c7aca397837f629" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a926ff8dedfb7f0a55b764758d7282d4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -374,10 +374,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::plot</definition>
-        <argsstring>(vector_k&lt; T &gt; y, std::string format, std::string property1, double val1)</argsstring>
+        <argsstring>(matrix&lt; T, 1 &gt; y, std::string format, std::string property1, double val1)</argsstring>
         <name>plot</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -400,7 +400,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="137" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="721" bodyend="729"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1ae78a7ea84ec3acbe86ecbb962cc23207" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a699f1514e3480e10304d5fc90c4ba43a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -408,10 +408,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::plot</definition>
-        <argsstring>(vector_k&lt; T &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
+        <argsstring>(matrix&lt; T, 1 &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
         <name>plot</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -442,7 +442,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="138" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="731" bodyend="739"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1ac5ab6d77e2ddca6eca08bcf9d60035b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a1850a24b9d1f6cccc0dd759822344ba8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -450,10 +450,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::plot</definition>
-        <argsstring>(vector_k&lt; T &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
+        <argsstring>(matrix&lt; T, 1 &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
         <name>plot</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -747,7 +747,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="145" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="819" bodyend="830"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a2b05fd4f96d56c354ce344b214a78cfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a0988a3407d023ed5cdae56ffdb22d8fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -755,14 +755,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::plot</definition>
-        <argsstring>(matrix&lt; T &gt; x, vector_k&lt; T &gt; y, std::string format, std::string property1, double val1)</argsstring>
+        <argsstring>(matrix&lt; T &gt; x, matrix&lt; T, 1 &gt; y, std::string format, std::string property1, double val1)</argsstring>
         <name>plot</name>
         <param>
           <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -785,7 +785,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="146" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="901" bodyend="922"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a72edd078b62d033a88e8c27994fd7183" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1aa1e56a0aff841b0ba7d3c3a56768e05b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -793,14 +793,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::plot</definition>
-        <argsstring>(matrix&lt; T &gt; x, vector_k&lt; T &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
+        <argsstring>(matrix&lt; T &gt; x, matrix&lt; T, 1 &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
         <name>plot</name>
         <param>
           <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -831,7 +831,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="147" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="924" bodyend="945"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a7d7e581c877ec95b5218d0197ac8d585" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a1e96644138f10db60f0f0be9272d5004" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -839,14 +839,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::plot</definition>
-        <argsstring>(matrix&lt; T &gt; x, vector_k&lt; T &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
+        <argsstring>(matrix&lt; T &gt; x, matrix&lt; T, 1 &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
         <name>plot</name>
         <param>
           <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -882,7 +882,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="148" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="947" bodyend="968"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a83d16db4e568f76cf480a7b88d603bd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a6bda5ff8217267ad27af53d2bd3e0933" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -890,10 +890,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::plot</definition>
-        <argsstring>(vector_k&lt; T &gt; x, matrix&lt; T &gt; y, std::string format, std::string property1, double val1)</argsstring>
+        <argsstring>(matrix&lt; T, 1 &gt; x, matrix&lt; T &gt; y, std::string format, std::string property1, double val1)</argsstring>
         <name>plot</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
@@ -920,7 +920,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="149" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="832" bodyend="853"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a53ceddd520e6d9ad9bd1f3a5aa4bf8d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a2e927307a66214a443fd30576ebb8830" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -928,10 +928,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::plot</definition>
-        <argsstring>(vector_k&lt; T &gt; x, matrix&lt; T &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
+        <argsstring>(matrix&lt; T, 1 &gt; x, matrix&lt; T &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
         <name>plot</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
@@ -966,7 +966,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="150" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="855" bodyend="876"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1ab74716ad7453b9305e76dc0c79c39923" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a2ce4e8bb56d156982d108657b21a8067" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -974,10 +974,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::plot</definition>
-        <argsstring>(vector_k&lt; T &gt; x, matrix&lt; T &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
+        <argsstring>(matrix&lt; T, 1 &gt; x, matrix&lt; T &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
         <name>plot</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
@@ -1017,7 +1017,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="151" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="878" bodyend="899"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a663bc64182ce6a0ea4fb77d749a26ca5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a60684bff54e496733aff380036e5d009" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -1028,14 +1028,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::semilogx</definition>
-        <argsstring>(vector_k&lt; U &gt; x, vector_k&lt; T &gt; y, std::string format, std::string property1, double val1)</argsstring>
+        <argsstring>(matrix&lt; U, 1 &gt; x, matrix&lt; T, 1 &gt; y, std::string format, std::string property1, double val1)</argsstring>
         <name>semilogx</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; U &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -1058,7 +1058,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="152" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="970" bodyend="974"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a0d7cec066cb7027166ea1adae6fd5909" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1ad2e51044ad2b47b13249553cb62ff549" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -1069,14 +1069,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::semilogx</definition>
-        <argsstring>(vector_k&lt; U &gt; x, vector_k&lt; T &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
+        <argsstring>(matrix&lt; U, 1 &gt; x, matrix&lt; T, 1 &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
         <name>semilogx</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; U &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -1107,7 +1107,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="153" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="976" bodyend="980"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1aade4dc8470fc4b3be109794494e91496" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a475b3fd86dceb24c4b54ba37d3322e2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -1118,14 +1118,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::semilogx</definition>
-        <argsstring>(vector_k&lt; U &gt; x, vector_k&lt; T &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
+        <argsstring>(matrix&lt; U, 1 &gt; x, matrix&lt; T, 1 &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
         <name>semilogx</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; U &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -1161,7 +1161,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="154" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="982" bodyend="986"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a26d3fd1e2f41c9b74c9b853c43c6d08e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a56ff722f72d5bcd0647a958f4fa6b126" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -1172,14 +1172,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::semilogy</definition>
-        <argsstring>(vector_k&lt; U &gt; x, vector_k&lt; T &gt; y, std::string format, std::string property1, double val1)</argsstring>
+        <argsstring>(matrix&lt; U, 1 &gt; x, matrix&lt; T, 1 &gt; y, std::string format, std::string property1, double val1)</argsstring>
         <name>semilogy</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; U &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -1202,7 +1202,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="155" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="988" bodyend="992"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a64d11674ab53a7017dbd1ad2748928f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a3bca3cb378226263f7d12ec958a0b04d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -1213,14 +1213,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::semilogy</definition>
-        <argsstring>(vector_k&lt; U &gt; x, vector_k&lt; T &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
+        <argsstring>(matrix&lt; U, 1 &gt; x, matrix&lt; T, 1 &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
         <name>semilogy</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; U &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -1251,7 +1251,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="156" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="994" bodyend="998"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a001bbf728ad18ea05da06315b56aa144" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1af5423942c7365262ea4d5d49fb677ee4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -1262,14 +1262,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::semilogy</definition>
-        <argsstring>(vector_k&lt; U &gt; x, vector_k&lt; T &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
+        <argsstring>(matrix&lt; U, 1 &gt; x, matrix&lt; T, 1 &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
         <name>semilogy</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; U &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -1305,7 +1305,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="157" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="1000" bodyend="1004"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a248d3eb2d41456db865676a3d0b3faeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1af6214a2be48dc42ad4f2888ba3491284" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -1316,14 +1316,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::loglog</definition>
-        <argsstring>(vector_k&lt; U &gt; x, vector_k&lt; T &gt; y, std::string format, std::string property1, double val1)</argsstring>
+        <argsstring>(matrix&lt; U, 1 &gt; x, matrix&lt; T, 1 &gt; y, std::string format, std::string property1, double val1)</argsstring>
         <name>loglog</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; U &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -1346,7 +1346,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="158" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="1006" bodyend="1011"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a754029d234c8f158bc76f922478b4989" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a3cb4cdb5bcc2228492dd7577bc774b34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -1357,14 +1357,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::loglog</definition>
-        <argsstring>(vector_k&lt; U &gt; x, vector_k&lt; T &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
+        <argsstring>(matrix&lt; U, 1 &gt; x, matrix&lt; T, 1 &gt; y, std::string format, std::string property1, double val1, std::string property2, double val2)</argsstring>
         <name>loglog</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; U &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -1395,7 +1395,7 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="159" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="1013" bodyend="1018"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1_figure_1a47bd6b639238654f2b1318fb0cfa601e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1_figure_1a61dae76a8b73c0bf1af686692c3d57ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -1406,14 +1406,14 @@
         </templateparamlist>
         <type>void</type>
         <definition>void keycpp::Figure::loglog</definition>
-        <argsstring>(vector_k&lt; U &gt; x, vector_k&lt; T &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
+        <argsstring>(matrix&lt; U, 1 &gt; x, matrix&lt; T, 1 &gt; y, std::string arguments=&quot;&quot;, double val=-1, double lw=2, double ps=1.5, std::string legend_entry=&quot;&quot;)</argsstring>
         <name>loglog</name>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; U &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -1796,41 +1796,41 @@
       <member refid="classkeycpp_1_1_figure_1ae5e5ac67e9450ea4fbf06fb3fcc6523a" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>hold_off</name></member>
       <member refid="classkeycpp_1_1_figure_1a65b80e5b67c7bbf225e3001a538a6dad" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>hold_on</name></member>
       <member refid="classkeycpp_1_1_figure_1a2b5a0aae355a33024d2f6c51a8754786" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>legend</name></member>
-      <member refid="classkeycpp_1_1_figure_1a248d3eb2d41456db865676a3d0b3faeb" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>loglog</name></member>
-      <member refid="classkeycpp_1_1_figure_1a754029d234c8f158bc76f922478b4989" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>loglog</name></member>
-      <member refid="classkeycpp_1_1_figure_1a47bd6b639238654f2b1318fb0cfa601e" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>loglog</name></member>
+      <member refid="classkeycpp_1_1_figure_1af6214a2be48dc42ad4f2888ba3491284" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>loglog</name></member>
+      <member refid="classkeycpp_1_1_figure_1a3cb4cdb5bcc2228492dd7577bc774b34" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>loglog</name></member>
+      <member refid="classkeycpp_1_1_figure_1a61dae76a8b73c0bf1af686692c3d57ae" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>loglog</name></member>
       <member refid="classkeycpp_1_1_figure_1a7802dbc7639870dc650ab1ed29afbcce" prot="private" virt="non-virtual"><scope>keycpp::Figure</scope><name>m_height</name></member>
       <member refid="classkeycpp_1_1_figure_1a53af620de75d87adce205a76ccbdc860" prot="private" virt="non-virtual"><scope>keycpp::Figure</scope><name>m_width</name></member>
       <member refid="classkeycpp_1_1_figure_1a4c366a20b79f8f2d99fa02588c82997b" prot="private" virt="non-virtual"><scope>keycpp::Figure</scope><name>multi_cols</name></member>
       <member refid="classkeycpp_1_1_figure_1aadf70a04a81caed7bc1ba30eac255c79" prot="private" virt="non-virtual"><scope>keycpp::Figure</scope><name>multi_rows</name></member>
       <member refid="classkeycpp_1_1_figure_1af7b1068f17391548038b9fdcfee37504" prot="private" virt="non-virtual"><scope>keycpp::Figure</scope><name>multiplot</name></member>
       <member refid="classkeycpp_1_1_figure_1a92105412a983c4bcf226458ff2f0241a" prot="private" virt="non-virtual"><scope>keycpp::Figure</scope><name>p</name></member>
-      <member refid="classkeycpp_1_1_figure_1a5e3cff38d4f1df2543d221c741a515eb" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
-      <member refid="classkeycpp_1_1_figure_1a38b649480d000a9c67541d3b310a920f" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
-      <member refid="classkeycpp_1_1_figure_1a6c228be127b88c455a11bc6ec6604290" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
-      <member refid="classkeycpp_1_1_figure_1a9039b7eee3ef0fae5c7aca397837f629" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
-      <member refid="classkeycpp_1_1_figure_1ae78a7ea84ec3acbe86ecbb962cc23207" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
-      <member refid="classkeycpp_1_1_figure_1ac5ab6d77e2ddca6eca08bcf9d60035b5" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a5a062460f59124050db83df4e4a40113" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1ae408abfc6e8afe57f03a4a27f85f8aa4" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a0a4b5dccade75ce6ccf12f44d2fb5073" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a926ff8dedfb7f0a55b764758d7282d4a" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a699f1514e3480e10304d5fc90c4ba43a" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a1850a24b9d1f6cccc0dd759822344ba8" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
       <member refid="classkeycpp_1_1_figure_1a88e55b3a2c1b05c7c7fe2e6785e11f58" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
       <member refid="classkeycpp_1_1_figure_1a2e6daf7811c3d34fabb83bc8368e1e7c" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
       <member refid="classkeycpp_1_1_figure_1a39dd5e2d5e6acb6db99ac75476ea777a" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
       <member refid="classkeycpp_1_1_figure_1a35987b305f55c3b8c612fbaec2223060" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
       <member refid="classkeycpp_1_1_figure_1a9000f7c76f21a37d4c70bee3103fe623" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
       <member refid="classkeycpp_1_1_figure_1a79f823ad4b62e20a85c9f1270e65fb01" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
-      <member refid="classkeycpp_1_1_figure_1a2b05fd4f96d56c354ce344b214a78cfb" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
-      <member refid="classkeycpp_1_1_figure_1a72edd078b62d033a88e8c27994fd7183" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
-      <member refid="classkeycpp_1_1_figure_1a7d7e581c877ec95b5218d0197ac8d585" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
-      <member refid="classkeycpp_1_1_figure_1a83d16db4e568f76cf480a7b88d603bd5" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
-      <member refid="classkeycpp_1_1_figure_1a53ceddd520e6d9ad9bd1f3a5aa4bf8d5" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
-      <member refid="classkeycpp_1_1_figure_1ab74716ad7453b9305e76dc0c79c39923" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a0988a3407d023ed5cdae56ffdb22d8fe" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1aa1e56a0aff841b0ba7d3c3a56768e05b" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a1e96644138f10db60f0f0be9272d5004" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a6bda5ff8217267ad27af53d2bd3e0933" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a2e927307a66214a443fd30576ebb8830" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
+      <member refid="classkeycpp_1_1_figure_1a2ce4e8bb56d156982d108657b21a8067" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>plot</name></member>
       <member refid="classkeycpp_1_1_figure_1ac6d1881c6dc996eb508adf2126905d38" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>print</name></member>
       <member refid="classkeycpp_1_1_figure_1a47cae082612e5436a6b0bc3d7f27e9d9" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>replot_all</name></member>
-      <member refid="classkeycpp_1_1_figure_1a663bc64182ce6a0ea4fb77d749a26ca5" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogx</name></member>
-      <member refid="classkeycpp_1_1_figure_1a0d7cec066cb7027166ea1adae6fd5909" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogx</name></member>
-      <member refid="classkeycpp_1_1_figure_1aade4dc8470fc4b3be109794494e91496" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogx</name></member>
-      <member refid="classkeycpp_1_1_figure_1a26d3fd1e2f41c9b74c9b853c43c6d08e" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogy</name></member>
-      <member refid="classkeycpp_1_1_figure_1a64d11674ab53a7017dbd1ad2748928f8" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogy</name></member>
-      <member refid="classkeycpp_1_1_figure_1a001bbf728ad18ea05da06315b56aa144" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogy</name></member>
+      <member refid="classkeycpp_1_1_figure_1a60684bff54e496733aff380036e5d009" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogx</name></member>
+      <member refid="classkeycpp_1_1_figure_1ad2e51044ad2b47b13249553cb62ff549" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogx</name></member>
+      <member refid="classkeycpp_1_1_figure_1a475b3fd86dceb24c4b54ba37d3322e2c" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogx</name></member>
+      <member refid="classkeycpp_1_1_figure_1a56ff722f72d5bcd0647a958f4fa6b126" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogy</name></member>
+      <member refid="classkeycpp_1_1_figure_1a3bca3cb378226263f7d12ec958a0b04d" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogy</name></member>
+      <member refid="classkeycpp_1_1_figure_1af5423942c7365262ea4d5d49fb677ee4" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>semilogy</name></member>
       <member refid="classkeycpp_1_1_figure_1a7375fe8611759fda180d626f91eab510" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>set</name></member>
       <member refid="classkeycpp_1_1_figure_1a1f6c04d0276c0419c3feb974639fb7c2" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>set</name></member>
       <member refid="classkeycpp_1_1_figure_1abceb69bfb4476f2c9423f248bc04a6c8" prot="public" virt="non-virtual"><scope>keycpp::Figure</scope><name>set</name></member>

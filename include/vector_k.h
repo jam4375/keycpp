@@ -7,9 +7,11 @@
 #include <stdexcept>
 #include <vector>
 
-
 namespace keycpp
 {
+
+    template<class T=double, size_t dim=2>
+    class matrix;
 
     template<typename TypeT>
     class PointerIterator :
@@ -201,6 +203,16 @@ namespace keycpp
             return v1;
         };
         
+        operator matrix<T,1>()
+        {
+            matrix<T,1> v1(my_size);
+            for(size_t ii = 0; ii < my_size; ii++)
+            {
+                v1(ii) = buffer[ii*inc];
+            }
+            return v1;
+        };
+        
         size_t get_inc() const {return inc;};
 
     private:
@@ -211,9 +223,8 @@ namespace keycpp
         bool dontFree = true;
     };
 
-    // Your code goes here ...
     template<class T>
-    vector_k<T>::vector_k() : my_size(0), my_capacity(0), buffer(nullptr)
+    vector_k<T>::vector_k() : my_size(0), my_capacity(0), buffer(0)
     {}
 
     template<class T>
@@ -402,6 +413,10 @@ namespace keycpp
     void vector_k<T>::resize(size_t p_size)
     {
         reserve(p_size);
+        for(size_t ii = my_size; ii < p_size; ii++)
+        {
+            buffer[ii] = T();
+        }
         my_size = p_size;
     }
 

@@ -108,21 +108,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a25cd784e02dd29ddc7c9e7aa32c04164"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25cd784e02dd29ddc7c9e7aa32c04164"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>observe</b> (<a class="el" href="classkeycpp_1_1vector__k.html">vector_k</a>&lt; T &gt; &amp;p_y, <a class="el" href="classkeycpp_1_1vector__k.html">vector_k</a>&lt; U &gt; &amp;p_x_ode)</td></tr>
-<tr class="separator:a25cd784e02dd29ddc7c9e7aa32c04164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0063ab6fcada5756c6dca31ac7c17af9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0063ab6fcada5756c6dca31ac7c17af9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const T &amp;y_temp, U x_temp)</td></tr>
-<tr class="separator:a0063ab6fcada5756c6dca31ac7c17af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1f4dd52d947ffc2a3943a71dde5392e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1f4dd52d947ffc2a3943a71dde5392e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>observe</b> (<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2 &gt; &amp;p_y, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U, 1 &gt; &amp;p_x_ode)</td></tr>
+<tr class="separator:af1f4dd52d947ffc2a3943a71dde5392e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af50e6153473d58abe82d6baa44fc5ece"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af50e6153473d58abe82d6baa44fc5ece"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 1 &gt; &amp;y_temp, U x_temp)</td></tr>
+<tr class="separator:af50e6153473d58abe82d6baa44fc5ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ab743b1b0a5ae0e8e63e780b798e9947b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab743b1b0a5ae0e8e63e780b798e9947b"></a>
-<a class="el" href="classkeycpp_1_1vector__k.html">vector_k</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
-<tr class="separator:ab743b1b0a5ae0e8e63e780b798e9947b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a855c64ce69030f46682add6c53390cb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a855c64ce69030f46682add6c53390cb8"></a>
-<a class="el" href="classkeycpp_1_1vector__k.html">vector_k</a>&lt; U &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>x_ode</b></td></tr>
-<tr class="separator:a855c64ce69030f46682add6c53390cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad06476e501cfc03b9b05badb312aaf15"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad06476e501cfc03b9b05badb312aaf15"></a>
+<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
+<tr class="separator:ad06476e501cfc03b9b05badb312aaf15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a332dd43fe9cab832a79f8b20eac2e118"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a332dd43fe9cab832a79f8b20eac2e118"></a>
+<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U, 1 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>x_ode</b></td></tr>
+<tr class="separator:a332dd43fe9cab832a79f8b20eac2e118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26f43b79b19af889827df682270a4d57"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26f43b79b19af889827df682270a4d57"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>ii</b></td></tr>
+<tr class="separator:a26f43b79b19af889827df682270a4d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="keycpp_8h_source.html">keycpp.h</a></li>
@@ -131,7 +134,7 @@ Public Attributes</h2></td></tr>
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 14:15:06 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 17 2013 15:37:21 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -1,28 +1,27 @@
 #include <iostream>
 #include <keycpp/keycpp.h>
-using namespace std;
 using namespace keycpp;
 
 // Define a class for our ordinary differential equation that we will use later:
 class OdeClass
 {
     public:
-        void operator()(const vector_k<double> &y,
-                        vector_k<double> &dy,
-                        const double t)
+        void operator()(const matrix<double,1> &y,
+                        matrix<double,1> &dy,
+                        const double)
         {
-            dy[0] = y[1]*y[2];
-            dy[1] = -y[0]*y[2];
-            dy[2] = -0.51*y[0]*y[1];
+            dy(0) = y(1)*y(2);
+            dy(1) = -y(0)*y(2);
+            dy(2) = -0.51*y(0)*y(1);
         }
 };
 
 int main()
 {
     // First, lets create some data: y1 = t^2 and y2 = t^3
-    vector_k<double> t = linspace(-2.0,2.0,100);
-    vector_k<double> y1 = times(t,t);
-    vector_k<double> y2 = times(t,times(t,t));
+    matrix<double,1> t = linspace(-2.0,2.0,100);
+    matrix<double,1> y1 = times(t,t);
+    matrix<double,1> y2 = times(t,times(t,t));
 
     // Now, lets plot the data we just created:
     Figure h1;
@@ -36,11 +35,11 @@ int main()
     set(h1,"fontsize",14);
 
     // This is how to solve linear equations of the form Ax = b:
-    matrix<double> A = {{1.0, 2.0},
-                        {1.0,-1.0}};
-    vector_k<double> b = {1.1,
-                        2.1};
-    vector_k<double> x = linsolve(A,b);
+    matrix<double,2> A = {{1.0, 2.0},
+                          {1.0,-1.0}};
+    matrix<double,1> b = {1.1,
+                          2.1};
+    matrix<double,1> x = linsolve(A,b);
     // Print the result to the screen:
     disp(x);
 
@@ -51,9 +50,9 @@ int main()
     // y(3)' = 0.51*y(1)*y(2);
     // With initial conditions at t = 0: y(1) = 0; y(2) = 1; y(3) = 1;
     OdeClass myOde;
-    vector_k<double> t2 = linspace(0.0,12.0,100);
-    vector_k<double> ICs = {0.0, 1.0, 1.0};
-    matrix<double> y = ode45(myOde, t2, ICs);
+    matrix<double,1> t2 = linspace(0.0,12.0,100);
+    matrix<double,1> ICs = {0.0, 1.0, 1.0};
+    matrix<double,2> y = ode45(myOde, t2, ICs);
     
     // Now that we have solved the ODE, lets plot the results:
     Figure h2;

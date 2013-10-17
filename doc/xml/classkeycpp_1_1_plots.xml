@@ -31,9 +31,9 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="51" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="51" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classkeycpp_1_1_plots_1a9d1e2733700545d650240710449ca82c" prot="public" static="no" mutable="no">
-        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; <ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; double &gt; &gt;</type>
-        <definition>vector_k&lt;vector_k&lt;double&gt; &gt; keycpp::Plots::x_plot_data</definition>
+      <memberdef kind="variable" id="classkeycpp_1_1_plots_1afcf9625ba05d1814a1f452525a1171a1" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double, 1 &gt; &gt;</type>
+        <definition>vector_k&lt;matrix&lt;double,1&gt; &gt; keycpp::Plots::x_plot_data</definition>
         <argsstring></argsstring>
         <name>x_plot_data</name>
         <briefdescription>
@@ -44,9 +44,9 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="52" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="52" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classkeycpp_1_1_plots_1ae50b52ddb8dd739b553f0488d0f89434" prot="public" static="no" mutable="no">
-        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; <ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; double &gt; &gt;</type>
-        <definition>vector_k&lt;vector_k&lt;double&gt; &gt; keycpp::Plots::y_plot_data</definition>
+      <memberdef kind="variable" id="classkeycpp_1_1_plots_1a4f4dca5ee8235c6c698a0eb0b7fa2f17" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double, 1 &gt; &gt;</type>
+        <definition>vector_k&lt;matrix&lt;double,1&gt; &gt; keycpp::Plots::y_plot_data</definition>
         <argsstring></argsstring>
         <name>y_plot_data</name>
         <briefdescription>
@@ -364,33 +364,33 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="46">
+      <node id="47">
         <label>keycpp::Plots</label>
         <link refid="classkeycpp_1_1_plots"/>
-        <childnode refid="47" relation="usage">
-          <edgelabel>plot_val</edgelabel>
-          <edgelabel>plot_markersize</edgelabel>
-          <edgelabel>plot_linewidth</edgelabel>
-        </childnode>
         <childnode refid="48" relation="usage">
           <edgelabel>y_plot_data</edgelabel>
           <edgelabel>x_plot_data</edgelabel>
         </childnode>
         <childnode refid="49" relation="usage">
+          <edgelabel>plot_val</edgelabel>
+          <edgelabel>plot_markersize</edgelabel>
+          <edgelabel>plot_linewidth</edgelabel>
+        </childnode>
+        <childnode refid="50" relation="usage">
           <edgelabel>plot_format</edgelabel>
           <edgelabel>legend_entries</edgelabel>
         </childnode>
       </node>
-      <node id="49">
+      <node id="50">
         <label>keycpp::vector_k&lt; std::string &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>
-      <node id="47">
+      <node id="49">
         <label>keycpp::vector_k&lt; double &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>
       <node id="48">
-        <label>keycpp::vector_k&lt; keycpp::vector_k&lt; double &gt; &gt;</label>
+        <label>keycpp::vector_k&lt; keycpp::matrix&lt; double, 1 &gt; &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>
     </collaborationgraph>
@@ -415,10 +415,10 @@
       <member refid="classkeycpp_1_1_plots_1ab67ed9d8c321380f223baea8f05630ed" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>plot_val</name></member>
       <member refid="classkeycpp_1_1_plots_1aa90698aa691c410c4a206bab375f4235" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>Plots</name></member>
       <member refid="classkeycpp_1_1_plots_1ada2764ac9764ec42df312e7226750181" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>Plots</name></member>
-      <member refid="classkeycpp_1_1_plots_1a9d1e2733700545d650240710449ca82c" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>x_plot_data</name></member>
+      <member refid="classkeycpp_1_1_plots_1afcf9625ba05d1814a1f452525a1171a1" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>x_plot_data</name></member>
       <member refid="classkeycpp_1_1_plots_1a4d7f34173d13de92014702ffba6fb1d4" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>xmax</name></member>
       <member refid="classkeycpp_1_1_plots_1a1d027ed119d5b4a8d7d9ccc72f9a0eb1" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>xmin</name></member>
-      <member refid="classkeycpp_1_1_plots_1ae50b52ddb8dd739b553f0488d0f89434" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>y_plot_data</name></member>
+      <member refid="classkeycpp_1_1_plots_1a4f4dca5ee8235c6c698a0eb0b7fa2f17" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>y_plot_data</name></member>
       <member refid="classkeycpp_1_1_plots_1ad411158572c6ee36b1f4abc9c9dfec77" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>ymax</name></member>
       <member refid="classkeycpp_1_1_plots_1a54578198c41d34705e9fbe94a88ec6ae" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>ymin</name></member>
       <member refid="classkeycpp_1_1_plots_1acca893595120ea254781c3f79d516441" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>~Plots</name></member>
