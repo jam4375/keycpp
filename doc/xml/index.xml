@@ -24,6 +24,7 @@
     <member refid="classkeycpp_1_1_figure_1a7802dbc7639870dc650ab1ed29afbcce" kind="variable"><name>m_height</name></member>
     <member refid="classkeycpp_1_1_figure_1ae8a318c5edf3025eaa7154d1839f489d" kind="variable"><name>term</name></member>
     <member refid="classkeycpp_1_1_figure_1acd006fa122b634b92ff43427080dfd70" kind="variable"><name>filename</name></member>
+    <member refid="classkeycpp_1_1_figure_1af12e55b9d98075e13e9a11eac36abe42" kind="variable"><name>remove_temp_files</name></member>
     <member refid="classkeycpp_1_1_figure_1a3224183e0cbd0a034f83946263a7c881" kind="function"><name>Figure</name></member>
     <member refid="classkeycpp_1_1_figure_1a318799c9b423d48894395b1820c55c54" kind="function"><name>~Figure</name></member>
     <member refid="classkeycpp_1_1_figure_1a5a062460f59124050db83df4e4a40113" kind="function"><name>plot</name></member>
@@ -573,9 +574,9 @@
     <member refid="namespacekeycpp_1a61e3069eeec7219d10f997367701e488" kind="function"><name>max</name></member>
     <member refid="namespacekeycpp_1abfa0ebe44ce33d380a100f6db8232a2d" kind="function"><name>max</name></member>
     <member refid="namespacekeycpp_1aa5f79e58739abeaa5e3f7d5c422cc409" kind="function"><name>max</name></member>
-    <member refid="namespacekeycpp_1a3f6e11da7ff0d018261f1d66703672af" kind="function"><name>min</name></member>
+    <member refid="namespacekeycpp_1a9d3aca14baf0d8e395876f286c284bcf" kind="function"><name>min</name></member>
     <member refid="namespacekeycpp_1aa56d65d68004f40352c8e33bffb0e0eb" kind="function"><name>min</name></member>
-    <member refid="namespacekeycpp_1a51bbe7de3141b751cc3ce36cdfb51000" kind="function"><name>min</name></member>
+    <member refid="namespacekeycpp_1aa14bd8b7f4585287019e5e6ebff8222b" kind="function"><name>min</name></member>
     <member refid="namespacekeycpp_1a7fd5ce0385e9cc7bed5b44ed8475e8aa" kind="function"><name>transpose</name></member>
     <member refid="namespacekeycpp_1af86c195d39e32dd81020c07cab17baa9" kind="function"><name>transpose</name></member>
     <member refid="namespacekeycpp_1a24d241b78ac9d5764e08c3f03bdffd07" kind="function"><name>transpose</name></member>

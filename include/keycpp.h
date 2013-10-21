@@ -1688,19 +1688,19 @@ namespace keycpp
 	    return v;
 	}
 
-	template<class T> T min(const vector_k<T> &x)
+	template<class T> T min(const matrix<T,1> &x)
 	{
 		double a = nan("");
 		int index = 0;
-		for(int ii = 0; ii < x.size(); ii++)
+		for(int ii = 0; ii < x.size(1); ii++)
 		{
-			if(!std::isnan(x[ii]) && (x[ii] < a || std::isnan(a)))
+			if(!std::isnan(x(ii)) && (x(ii) < a || std::isnan(a)))
 			{
-				a = x[ii];
+				a = x(ii);
 				index = ii;
 			}
 		}
-		return x[index];
+		return x(index);
 	}
 
 	inline std::complex<double> min(const vector_k<std::complex<double> > &x)
@@ -1721,12 +1721,12 @@ namespace keycpp
 	}
 	
 	
-	template<class T> vector_k<T> min(const matrix<T> &A)
+	template<class T> matrix<T,1> min(const matrix<T,2> &A)
 	{
-	    vector_k<T> v(A.size(2));
-	    for(size_t ii = 0; ii < v.size(); ii++)
+	    matrix<T,1> v(A.size(2));
+	    for(size_t ii = 0; ii < v.size(1); ii++)
 	    {
-	        v[ii] = min(A.col(ii));
+	        v(ii) = min(A.col(ii));
 	    }
 	    return v;
 	}

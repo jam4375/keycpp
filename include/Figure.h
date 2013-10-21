@@ -9,6 +9,8 @@
 #include <iomanip>
 #include <string>
 #include <sstream>
+#include <chrono>
+#include <thread>
 #include "vector_k.h"
 #include "gnuplot_i.h"
 #include "Matrix.h"
@@ -127,6 +129,7 @@ namespace keycpp
 		size_t m_height = 420;
 		std::string term;
 		std::string filename;
+		bool remove_temp_files = false;
 	
 	public:
 		Figure();
@@ -212,6 +215,11 @@ namespace keycpp
 	{
 	    final_replot = true;
 	    replot_all();
+	    if(remove_temp_files)
+	    {
+	        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+	        g.remove_tmpfiles();
+	    }
 	}
 	
 	template<class U, class T> void Figure::plot(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1)
@@ -499,7 +507,7 @@ namespace keycpp
 			            term_stream << m_width/100 << "," << m_height/100 << " enhanced font '" << fontname << ",";
 			            term_stream << ((double)fontsize*1.5);
 			            term_stream << "'";
-			            lw = 2.0*lw;
+			            remove_temp_files = true;
 			        }
 			        else if(term.compare("-deps") == 0)
 			        {
@@ -507,7 +515,15 @@ namespace keycpp
 			            term_stream << m_width/100 << "," << m_height/100 << " enhanced font '" << fontname << ",";
 			            term_stream << ((double)fontsize*1.5);
 			            term_stream << "'";
-			            lw = 2.0*lw;
+			            remove_temp_files = true;
+			        }
+			        else if(term.compare("-dpng") == 0)
+			        {
+			            term_stream << "pngcairo color size ";
+			            term_stream << m_width << "," << m_height << " enhanced font '" << fontname << ",";
+			            term_stream << fontsize;
+			            term_stream << "'";
+			            remove_temp_files = true;
 			        }
 			        else
 			        {
@@ -537,6 +553,12 @@ namespace keycpp
 			        g.cmd("set termoption dashed");
 			        g.cmd("set border linewidth 1.5");
 			    }
+			    
+			    
+			    if(term.compare("-dpdf") == 0 || term.compare("-deps") == 0)
+	            {
+	                lw = 2.0*lw;
+	            }
 			
 			    if(!p[current_plot].hold_on_bool)
 			    {
@@ -550,12 +572,21 @@ namespace keycpp
 				    temp_stream << p[current_plot].xmin << ":" << p[current_plot].xmax << "]";
 				    g.cmd(temp_stream.str());
 			    }
+			    else
+			    {
+			        g.cmd("set autoscale x");
+			    }
+			    
 			    if(!std::isnan(p[current_plot].ymin) && !std::isnan(p[current_plot].ymax)) // Check for NaNs
 			    {
 				    std::stringstream temp_stream;
 				    temp_stream << "set yrange [";
 				    temp_stream << p[current_plot].ymin << ":" << p[current_plot].ymax << "]";
 				    g.cmd(temp_stream.str());
+			    }
+			    else
+			    {
+			        g.cmd("set autoscale y");
 			    }
 			
 			    std::stringstream stream1;

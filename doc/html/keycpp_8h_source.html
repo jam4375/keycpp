@@ -1599,19 +1599,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l01688"></a><span class="lineno"> 1688</span>&#160;            <span class="keywordflow">return</span> v;</div>
 <div class="line"><a name="l01689"></a><span class="lineno"> 1689</span>&#160;        }</div>
 <div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;</div>
-<div class="line"><a name="l01691"></a><span class="lineno"> 1691</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; T min(<span class="keyword">const</span> vector_k&lt;T&gt; &amp;x)</div>
+<div class="line"><a name="l01691"></a><span class="lineno"> 1691</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; T min(<span class="keyword">const</span> matrix&lt;T,1&gt; &amp;x)</div>
 <div class="line"><a name="l01692"></a><span class="lineno"> 1692</span>&#160;        {</div>
 <div class="line"><a name="l01693"></a><span class="lineno"> 1693</span>&#160;                <span class="keywordtype">double</span> a = nan(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l01694"></a><span class="lineno"> 1694</span>&#160;                <span class="keywordtype">int</span> index = 0;</div>
-<div class="line"><a name="l01695"></a><span class="lineno"> 1695</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii = 0; ii &lt; x.size(); ii++)</div>
+<div class="line"><a name="l01695"></a><span class="lineno"> 1695</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii = 0; ii &lt; x.size(1); ii++)</div>
 <div class="line"><a name="l01696"></a><span class="lineno"> 1696</span>&#160;                {</div>
-<div class="line"><a name="l01697"></a><span class="lineno"> 1697</span>&#160;                        <span class="keywordflow">if</span>(!<a class="code" href="namespacekeycpp.html#ad3b16064066dc041be364e6fbefa173a" title="Returns matrix containing boolean values that are true if corresponding elements of A are NaN...">std::isnan</a>(x[ii]) &amp;&amp; (x[ii] &lt; a || <a class="code" href="namespacekeycpp.html#ad3b16064066dc041be364e6fbefa173a" title="Returns matrix containing boolean values that are true if corresponding elements of A are NaN...">std::isnan</a>(a)))</div>
+<div class="line"><a name="l01697"></a><span class="lineno"> 1697</span>&#160;                        <span class="keywordflow">if</span>(!<a class="code" href="namespacekeycpp.html#ad3b16064066dc041be364e6fbefa173a" title="Returns matrix containing boolean values that are true if corresponding elements of A are NaN...">std::isnan</a>(x(ii)) &amp;&amp; (x(ii) &lt; a || <a class="code" href="namespacekeycpp.html#ad3b16064066dc041be364e6fbefa173a" title="Returns matrix containing boolean values that are true if corresponding elements of A are NaN...">std::isnan</a>(a)))</div>
 <div class="line"><a name="l01698"></a><span class="lineno"> 1698</span>&#160;                        {</div>
-<div class="line"><a name="l01699"></a><span class="lineno"> 1699</span>&#160;                                a = x[ii];</div>
+<div class="line"><a name="l01699"></a><span class="lineno"> 1699</span>&#160;                                a = x(ii);</div>
 <div class="line"><a name="l01700"></a><span class="lineno"> 1700</span>&#160;                                index = ii;</div>
 <div class="line"><a name="l01701"></a><span class="lineno"> 1701</span>&#160;                        }</div>
 <div class="line"><a name="l01702"></a><span class="lineno"> 1702</span>&#160;                }</div>
-<div class="line"><a name="l01703"></a><span class="lineno"> 1703</span>&#160;                <span class="keywordflow">return</span> x[index];</div>
+<div class="line"><a name="l01703"></a><span class="lineno"> 1703</span>&#160;                <span class="keywordflow">return</span> x(index);</div>
 <div class="line"><a name="l01704"></a><span class="lineno"> 1704</span>&#160;        }</div>
 <div class="line"><a name="l01705"></a><span class="lineno"> 1705</span>&#160;</div>
 <div class="line"><a name="l01706"></a><span class="lineno"> 1706</span>&#160;        <span class="keyword">inline</span> std::complex&lt;double&gt; min(<span class="keyword">const</span> vector_k&lt;std::complex&lt;double&gt; &gt; &amp;x)</div>
@@ -1632,12 +1632,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l01721"></a><span class="lineno"> 1721</span>&#160;        }</div>
 <div class="line"><a name="l01722"></a><span class="lineno"> 1722</span>&#160;        </div>
 <div class="line"><a name="l01723"></a><span class="lineno"> 1723</span>&#160;        </div>
-<div class="line"><a name="l01724"></a><span class="lineno"> 1724</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; vector_k&lt;T&gt; min(<span class="keyword">const</span> matrix&lt;T&gt; &amp;A)</div>
+<div class="line"><a name="l01724"></a><span class="lineno"> 1724</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; matrix&lt;T,1&gt; min(<span class="keyword">const</span> matrix&lt;T,2&gt; &amp;A)</div>
 <div class="line"><a name="l01725"></a><span class="lineno"> 1725</span>&#160;        {</div>
-<div class="line"><a name="l01726"></a><span class="lineno"> 1726</span>&#160;            vector_k&lt;T&gt; v(A.size(2));</div>
-<div class="line"><a name="l01727"></a><span class="lineno"> 1727</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> ii = 0; ii &lt; v.size(); ii++)</div>
+<div class="line"><a name="l01726"></a><span class="lineno"> 1726</span>&#160;            matrix&lt;T,1&gt; v(A.size(2));</div>
+<div class="line"><a name="l01727"></a><span class="lineno"> 1727</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> ii = 0; ii &lt; v.size(1); ii++)</div>
 <div class="line"><a name="l01728"></a><span class="lineno"> 1728</span>&#160;            {</div>
-<div class="line"><a name="l01729"></a><span class="lineno"> 1729</span>&#160;                v[ii] = min(A.col(ii));</div>
+<div class="line"><a name="l01729"></a><span class="lineno"> 1729</span>&#160;                v(ii) = min(A.col(ii));</div>
 <div class="line"><a name="l01730"></a><span class="lineno"> 1730</span>&#160;            }</div>
 <div class="line"><a name="l01731"></a><span class="lineno"> 1731</span>&#160;            <span class="keywordflow">return</span> v;</div>
 <div class="line"><a name="l01732"></a><span class="lineno"> 1732</span>&#160;        }</div>
@@ -4388,7 +4388,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2013 15:37:19 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 21 2013 15:59:29 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
