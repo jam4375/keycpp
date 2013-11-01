@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
+  <compounddef id="namespacekeycpp_1_1rng__ns" kind="namespace">
+    <compoundname>keycpp::rng_ns</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacekeycpp_1_1rng__ns_1acec23b716c59b79aa5bcfba801575e88" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int keycpp::rng_ns::choice</definition>
+        <argsstring></argsstring>
+        <name>choice</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3696" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3696" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacekeycpp_1_1rng__ns_1a3bf767e92ce424c11f6853a1a8f64196" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::default_random_engine</type>
+        <definition>std::default_random_engine keycpp::rng_ns::default_rng</definition>
+        <argsstring>(std::random_device{}())</argsstring>
+        <name>default_rng</name>
+        <param>
+          <type>std::random_device{}</type>
+          <array>()</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3697" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1_1rng__ns_1a5efe922cfcb550742fbe773cc0557264" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::mt19937</type>
+        <definition>std::mt19937 keycpp::rng_ns::mt_rng</definition>
+        <argsstring>(std::random_device{}())</argsstring>
+        <name>mt_rng</name>
+        <param>
+          <type>std::random_device{}</type>
+          <array>()</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3698" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeycpp_1_1rng__ns_1a57fcde21a51c59175595cb5c048bf155" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ranlux24_base</type>
+        <definition>std::ranlux24_base keycpp::rng_ns::lagfib_rng</definition>
+        <argsstring>(std::random_device{}())</argsstring>
+        <name>lagfib_rng</name>
+        <param>
+          <type>std::random_device{}</type>
+          <array>()</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3699" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3695" column="1"/>
+  </compounddef>
+</doxygen>

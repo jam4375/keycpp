@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.3.1">
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.4">
   <compound refid="classkeycpp_1_1_extrap" kind="class"><name>keycpp::Extrap</name>
     <member refid="classkeycpp_1_1_extrap_1a93fce8d80071b330c9d98a3c636bec59" kind="variable"><name>isString</name></member>
     <member refid="classkeycpp_1_1_extrap_1a40e7a484deffd17a1b85bf4fc4c55df4" kind="variable"><name>isDouble</name></member>
@@ -25,6 +25,7 @@
     <member refid="classkeycpp_1_1_figure_1ae8a318c5edf3025eaa7154d1839f489d" kind="variable"><name>term</name></member>
     <member refid="classkeycpp_1_1_figure_1acd006fa122b634b92ff43427080dfd70" kind="variable"><name>filename</name></member>
     <member refid="classkeycpp_1_1_figure_1af12e55b9d98075e13e9a11eac36abe42" kind="variable"><name>remove_temp_files</name></member>
+    <member refid="classkeycpp_1_1_figure_1a397f3f987dafa643c40f51d3ef62cd8d" kind="variable"><name>hist_bool</name></member>
     <member refid="classkeycpp_1_1_figure_1a3224183e0cbd0a034f83946263a7c881" kind="function"><name>Figure</name></member>
     <member refid="classkeycpp_1_1_figure_1a318799c9b423d48894395b1820c55c54" kind="function"><name>~Figure</name></member>
     <member refid="classkeycpp_1_1_figure_1a5a062460f59124050db83df4e4a40113" kind="function"><name>plot</name></member>
@@ -54,6 +55,7 @@
     <member refid="classkeycpp_1_1_figure_1af6214a2be48dc42ad4f2888ba3491284" kind="function"><name>loglog</name></member>
     <member refid="classkeycpp_1_1_figure_1a3cb4cdb5bcc2228492dd7577bc774b34" kind="function"><name>loglog</name></member>
     <member refid="classkeycpp_1_1_figure_1a61dae76a8b73c0bf1af686692c3d57ae" kind="function"><name>loglog</name></member>
+    <member refid="classkeycpp_1_1_figure_1acb0fbfcc5f1116fef0a308c9fbde822b" kind="function"><name>hist</name></member>
     <member refid="classkeycpp_1_1_figure_1addd610a718f021f3e6c7c94f9bc7f285" kind="function"><name>xlabel</name></member>
     <member refid="classkeycpp_1_1_figure_1aa965967db2165b001860f75fc22c9f28" kind="function"><name>ylabel</name></member>
     <member refid="classkeycpp_1_1_figure_1a922bd966ed40095f0ae7fa184f9d0ada" kind="function"><name>title</name></member>
@@ -255,6 +257,8 @@
   </compound>
   <compound refid="classkeycpp_1_1_plots" kind="class"><name>keycpp::Plots</name>
     <member refid="classkeycpp_1_1_plots_1afe961c1f35d88bc181bd426fc47ade00" kind="variable"><name>hold_on_bool</name></member>
+    <member refid="classkeycpp_1_1_plots_1a2ca8aa3e36820c128a2d43b8c4349940" kind="variable"><name>hist_bool</name></member>
+    <member refid="classkeycpp_1_1_plots_1a69bc4d0c87b7467113e164f592321fa5" kind="variable"><name>bin_width</name></member>
     <member refid="classkeycpp_1_1_plots_1ad3b0aabd8ea6dc14a690fe6b1e37852d" kind="variable"><name>num_plots</name></member>
     <member refid="classkeycpp_1_1_plots_1afcf9625ba05d1814a1f452525a1171a1" kind="variable"><name>x_plot_data</name></member>
     <member refid="classkeycpp_1_1_plots_1a4f4dca5ee8235c6c698a0eb0b7fa2f17" kind="variable"><name>y_plot_data</name></member>
@@ -411,6 +415,8 @@
     <member refid="namespacekeycpp_1a6ab8937a6378526f7514c6124fb9991a" kind="function"><name>real</name></member>
     <member refid="namespacekeycpp_1ac70fdb60acaa9b85c49cdd36ac68a6ae" kind="function"><name>imag</name></member>
     <member refid="namespacekeycpp_1a026d42394a53ae81f292d1e3de4383cb" kind="function"><name>imag</name></member>
+    <member refid="namespacekeycpp_1a596aa3ce9318961af77f3a286854f8d4" kind="function"><name>linspace</name></member>
+    <member refid="namespacekeycpp_1af4a2245da139cf6cf2e03426476b3b88" kind="function"><name>disp</name></member>
     <member refid="namespacekeycpp_1a90b60f7fefe3931699f4d587a241c12e" kind="function"><name>Figure::plot&lt; std::complex&lt; double &gt; &gt;</name></member>
     <member refid="namespacekeycpp_1a83249f0263926905c67d2a177495eef8" kind="function"><name>Figure::plot&lt; std::complex&lt; double &gt; &gt;</name></member>
     <member refid="namespacekeycpp_1a7368f9a35fb8dbc5c29420fb9677ea30" kind="function"><name>Figure::plot&lt; std::complex&lt; double &gt; &gt;</name></member>
@@ -445,9 +451,6 @@
     <member refid="namespacekeycpp_1a13a89a2c6d30c991f4de63ca8f62c0e1" kind="function"><name>linsolve</name></member>
     <member refid="namespacekeycpp_1adc96927cda2df7a6e8e2031941c43601" kind="function"><name>inv</name></member>
     <member refid="namespacekeycpp_1a9085342fc708fd5babae39321da3b89a" kind="function"><name>inv</name></member>
-    <member refid="namespacekeycpp_1a5ef5c1f5951e8182a7c4ec9612f3f7e1" kind="function"><name>rand</name></member>
-    <member refid="namespacekeycpp_1ac224964eb5e1a55c3f7d58f0e9b71d3d" kind="function"><name>rand</name></member>
-    <member refid="namespacekeycpp_1ae5c4b142a4101e9bb1df9f19efaf7d2f" kind="function"><name>rand</name></member>
     <member refid="namespacekeycpp_1acfe17126168656af54ae76ab6c487407" kind="function"><name>size</name></member>
     <member refid="namespacekeycpp_1ac999bd518fb456aa9a4fbd2c04f007de" kind="function"><name>eop</name></member>
     <member refid="namespacekeycpp_1a0865e2c884915d6ed0e3ef7bf73438b0" kind="function"><name>eop</name></member>
@@ -478,7 +481,7 @@
     <member refid="namespacekeycpp_1ade9508aa24d2496bd63dcdb72229c8b0" kind="function"><name>operator+</name></member>
     <member refid="namespacekeycpp_1a68fe0fe851bce021be6a0609da7df82d" kind="function"><name>operator+</name></member>
     <member refid="namespacekeycpp_1af28312b8c309091f03e373e1ae5f3d46" kind="function"><name>operator+</name></member>
-    <member refid="namespacekeycpp_1adff86e062c6497110b7505b0ef715c2c" kind="function"><name>operator+</name></member>
+    <member refid="namespacekeycpp_1adb8866924fddc4057262b0ab42615437" kind="function"><name>operator+</name></member>
     <member refid="namespacekeycpp_1a4b4a64905c9d681c174b2dfcfba272c4" kind="function"><name>operator+</name></member>
     <member refid="namespacekeycpp_1a520b72efca1fbe800845b21a84d2d472" kind="function"><name>operator-</name></member>
     <member refid="namespacekeycpp_1a1222c1fe6037feb8eacf0d2bd5152751" kind="function"><name>operator-</name></member>
@@ -590,7 +593,6 @@
     <member refid="namespacekeycpp_1a90f53f3dc1a16e2afc809f2510b35c00" kind="function"><name>sum</name></member>
     <member refid="namespacekeycpp_1a049d8e50ce9c2c5e0b7a0ad95cc559b3" kind="function"><name>mat2vec</name></member>
     <member refid="namespacekeycpp_1a6fb905e99ba06b2a005547e7f5d0f54f" kind="function"><name>vec2mat</name></member>
-    <member refid="namespacekeycpp_1a3667b0575327bba14f481cd3524197fc" kind="function"><name>linspace</name></member>
     <member refid="namespacekeycpp_1a9e1c37fd71074c56e963be121e5de0f3" kind="function"><name>logspace</name></member>
     <member refid="namespacekeycpp_1ae471c1edede10cab9baaa3f97b79f9fe" kind="function"><name>unwrap</name></member>
     <member refid="namespacekeycpp_1ae2909bfb67450be6a6d53a62752a2106" kind="function"><name>mean</name></member>
@@ -611,7 +613,6 @@
     <member refid="namespacekeycpp_1af9dec3da4533a1db21a6c6c4fe8e740a" kind="function"><name>print</name></member>
     <member refid="namespacekeycpp_1abe567d1c5cdf91722dfbe5da89e859e8" kind="function"><name>sort</name></member>
     <member refid="namespacekeycpp_1a0ab724c8ffc30f7beac54280a4ee81eb" kind="function"><name>sort</name></member>
-    <member refid="namespacekeycpp_1af4a2245da139cf6cf2e03426476b3b88" kind="function"><name>disp</name></member>
     <member refid="namespacekeycpp_1aba69db64fe38ad271de1939d3f1a5520" kind="function"><name>input</name></member>
     <member refid="namespacekeycpp_1a4bca7924aad17a920f2f5f0606e6d9a9" kind="function"><name>str2num</name></member>
     <member refid="namespacekeycpp_1aa605bad9095a6c529656926dc4fb35cf" kind="function"><name>length</name></member>
@@ -627,6 +628,7 @@
     <member refid="namespacekeycpp_1a0d4eac6fbefd72947d7fe26fada6c221" kind="function"><name>dot</name></member>
     <member refid="namespacekeycpp_1aa590a6946f71f4c1b2e575bdb791f00f" kind="function"><name>cross</name></member>
     <member refid="namespacekeycpp_1a78ea0301dbb858bbfdf2646a857a1ec6" kind="function"><name>norm</name></member>
+    <member refid="namespacekeycpp_1ab1fd21d6dd27cb843b98af78a3ea6acc" kind="function"><name>norm</name></member>
     <member refid="namespacekeycpp_1aeb34bdd249af3ce92341cdda62f95f65" kind="function"><name>norm</name></member>
     <member refid="namespacekeycpp_1a838fc93d66e1ab63d68d04781086d81a" kind="function"><name>svd</name></member>
     <member refid="namespacekeycpp_1ad211ab5ae14ac9710265c662f70f20ff" kind="function"><name>norm</name></member>
@@ -655,7 +657,10 @@
     <member refid="namespacekeycpp_1ae5db41667f15caabbbdf37362e2f1990" kind="function"><name>isreal</name></member>
     <member refid="namespacekeycpp_1a005c1190f7087fb1d2545c38c080fd1a" kind="function"><name>ceil</name></member>
     <member refid="namespacekeycpp_1abc86c63af2d6788c45ac99a1f3b14ad8" kind="function"><name>ceil</name></member>
-    <member refid="namespacekeycpp_1a4bba31744fef3693901a075fda07857c" kind="function"><name>ceil</name></member>
+    <member refid="namespacekeycpp_1a6f75eb747c57c3e5ff91323f65a02b5f" kind="function"><name>ceil</name></member>
+    <member refid="namespacekeycpp_1ab30437496fbd2011521b31aee7961516" kind="function"><name>floor</name></member>
+    <member refid="namespacekeycpp_1ac2f984ff29cefe4dc924cb6d69e53786" kind="function"><name>floor</name></member>
+    <member refid="namespacekeycpp_1a8aad0f0ac8036ee114a14da17aefcb5f" kind="function"><name>floor</name></member>
     <member refid="namespacekeycpp_1ae7de6c3e5c495e91b1b1de7d716e7a5d" kind="function"><name>polyval</name></member>
     <member refid="namespacekeycpp_1a21cb545ca871d88bcd449b61bd8bdbfb" kind="function"><name>roots</name></member>
     <member refid="namespacekeycpp_1a6069a9eec0edfa1d401230013d98765e" kind="function"><name>tic</name></member>
@@ -669,8 +674,14 @@
     <member refid="namespacekeycpp_1abdec07a4c4dd0fc5de230a753bf59066" kind="function"><name>stdev</name></member>
     <member refid="namespacekeycpp_1a553528cf7a020895037ce3b1a828a04c" kind="function"><name>var</name></member>
     <member refid="namespacekeycpp_1af3249effde70a573fbd8881dc4629e04" kind="function"><name>var</name></member>
+    <member refid="namespacekeycpp_1a93e133b94bc27c9b984d0383b01772d4" kind="function"><name>rng</name></member>
+    <member refid="namespacekeycpp_1af2478c69f713d8664b53d31f25718530" kind="function"><name>rng</name></member>
+    <member refid="namespacekeycpp_1a5ef5c1f5951e8182a7c4ec9612f3f7e1" kind="function"><name>rand</name></member>
     <member refid="namespacekeycpp_1ab99a9561cf5654ae722a0879b41d9d73" kind="function"><name>rand</name></member>
     <member refid="namespacekeycpp_1af6413232f2de6f8ac96efde6531c3055" kind="function"><name>rand</name></member>
+    <member refid="namespacekeycpp_1abbb4c27d8c550f3a522dcd4334986161" kind="function"><name>randn</name></member>
+    <member refid="namespacekeycpp_1ab55434470472a4b6c511e5a713a4d654" kind="function"><name>randn</name></member>
+    <member refid="namespacekeycpp_1a43bbf0f2c5e3c68a4e03abcce5aa63da" kind="function"><name>randn</name></member>
     <member refid="namespacekeycpp_1aa14e19e286b30265734236c0af2f9e78" kind="function"><name>eig</name></member>
     <member refid="namespacekeycpp_1a16b58f47ed977cafdc96227468f5f10a" kind="function"><name>dgemm_</name></member>
     <member refid="namespacekeycpp_1a29fb4e46ee1b9cce0fd8bc79a2490c72" kind="function"><name>zgemm_</name></member>
@@ -683,6 +694,12 @@
     <member refid="namespacekeycpp_1a9b02f40e92cad47b419ac09207518b9f" kind="function"><name>operator&lt;=</name></member>
     <member refid="namespacekeycpp_1af6e928cddf953cbdd90b0cd6f3802b24" kind="function"><name>operator&gt;=</name></member>
     <member refid="namespacekeycpp_1ad88546738baf0a658bbe540827343939" kind="function"><name>operator-</name></member>
+  </compound>
+  <compound refid="namespacekeycpp_1_1rng__ns" kind="namespace"><name>keycpp::rng_ns</name>
+    <member refid="namespacekeycpp_1_1rng__ns_1acec23b716c59b79aa5bcfba801575e88" kind="variable"><name>choice</name></member>
+    <member refid="namespacekeycpp_1_1rng__ns_1a3bf767e92ce424c11f6853a1a8f64196" kind="function"><name>default_rng</name></member>
+    <member refid="namespacekeycpp_1_1rng__ns_1a5efe922cfcb550742fbe773cc0557264" kind="function"><name>mt_rng</name></member>
+    <member refid="namespacekeycpp_1_1rng__ns_1a57fcde21a51c59175595cb5c048bf155" kind="function"><name>lagfib_rng</name></member>
   </compound>
   <compound refid="__kiss__fft__guts_8h" kind="file"><name>_kiss_fft_guts.h</name>
     <member refid="__kiss__fft__guts_8h_1af176a125e008eb443996cf0f83cc135c" kind="define"><name>MAXFACTORS</name></member>

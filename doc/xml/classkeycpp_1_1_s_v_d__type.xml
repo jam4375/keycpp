@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
   <compounddef id="classkeycpp_1_1_s_v_d__type" kind="class" prot="public">
     <compoundname>keycpp::SVD_type</compoundname>
     <templateparamlist>
@@ -26,7 +26,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2958" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2958" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2953" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2953" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_s_v_d__type_1a31194fbf88ec1fb87f2681d0f518761d" prot="public" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
@@ -39,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2959" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2959" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2954" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2954" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_s_v_d__type_1ad0a6e396e2548ab4762a5676ae88e4bd" prot="public" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2960" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2960" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2955" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2955" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2961" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2961" bodyend="2961"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2956" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2956" bodyend="2956"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -75,34 +75,34 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="70">
+      <node id="71">
         <label>keycpp::SVD_type&lt; T, X &gt;</label>
         <link refid="classkeycpp_1_1_s_v_d__type"/>
-        <childnode refid="71" relation="usage">
+        <childnode refid="72" relation="usage">
           <edgelabel>U</edgelabel>
           <edgelabel>V</edgelabel>
         </childnode>
-        <childnode refid="72" relation="usage">
+        <childnode refid="73" relation="usage">
           <edgelabel>S</edgelabel>
         </childnode>
       </node>
-      <node id="73">
+      <node id="74">
         <label>keycpp::vector_k&lt; X &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>
-      <node id="72">
+      <node id="73">
         <label>keycpp::matrix&lt; X &gt;</label>
         <link refid="classkeycpp_1_1matrix"/>
-        <childnode refid="73" relation="usage">
+        <childnode refid="74" relation="usage">
           <edgelabel>mData</edgelabel>
         </childnode>
       </node>
-      <node id="71">
+      <node id="72">
         <label>keycpp::matrix&lt; T &gt;</label>
         <link refid="classkeycpp_1_1matrix"/>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2956" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2955" bodyend="2962"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2951" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2950" bodyend="2957"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1_s_v_d__type_1afcf98e82919e015758d99cee5adb65bf" prot="public" virt="non-virtual"><scope>keycpp::SVD_type</scope><name>S</name></member>
       <member refid="classkeycpp_1_1_s_v_d__type_1a05952f19afaf3a1d27718fce42651476" prot="public" virt="non-virtual"><scope>keycpp::SVD_type</scope><name>SVD_type</name></member>

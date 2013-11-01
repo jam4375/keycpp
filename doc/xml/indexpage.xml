@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
   <compounddef id="indexpage" kind="page">
     <compoundname>index</compoundname>
     <title>KeyCpp</title>
@@ -36,8 +36,8 @@
 <codeline lineno="20"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>First,<sp/>lets<sp/>create<sp/>some<sp/>data:<sp/>y1<sp/>=<sp/>t^2<sp/>and<sp/>y2<sp/>=<sp/>t^3</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix&lt;double,1&gt;</ref><sp/>t<sp/>=<sp/>linspace(-2.0,2.0,100);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix&lt;double,1&gt;</ref><sp/>y1<sp/>=<sp/><ref refid="namespacekeycpp_1a23a0fd48168263aad7f77f1769dc2f2a" kindref="member" tooltip="Performs array multiplication on matrices A and B.">times</ref>(t,t);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix&lt;double,1&gt;</ref><sp/>y2<sp/>=<sp/><ref refid="namespacekeycpp_1a23a0fd48168263aad7f77f1769dc2f2a" kindref="member" tooltip="Performs array multiplication on matrices A and B.">times</ref>(t,<ref refid="namespacekeycpp_1a23a0fd48168263aad7f77f1769dc2f2a" kindref="member" tooltip="Performs array multiplication on matrices A and B.">times</ref>(t,t));</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix&lt;double,1&gt;</ref><sp/>y1<sp/>=<sp/><ref refid="namespacekeycpp_1a23a0fd48168263aad7f77f1769dc2f2a" kindref="member" tooltip="Performs array multiplication on matrices A and B. ">times</ref>(t,t);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix&lt;double,1&gt;</ref><sp/>y2<sp/>=<sp/><ref refid="namespacekeycpp_1a23a0fd48168263aad7f77f1769dc2f2a" kindref="member" tooltip="Performs array multiplication on matrices A and B. ">times</ref>(t,<ref refid="namespacekeycpp_1a23a0fd48168263aad7f77f1769dc2f2a" kindref="member" tooltip="Performs array multiplication on matrices A and B. ">times</ref>(t,t));</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now,<sp/>lets<sp/>plot<sp/>the<sp/>data<sp/>we<sp/>just<sp/>created:</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1_figure" kindref="compound">Figure</ref><sp/>h1;</highlight></codeline>
@@ -48,7 +48,7 @@
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>h1.xlabel(</highlight><highlight class="stringliteral">&quot;t&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>h1.ylabel(</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>h1.legend({</highlight><highlight class="stringliteral">&quot;y1<sp/>=<sp/>t^2&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;y2<sp/>=<sp/>t^3&quot;</highlight><highlight class="normal">});</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">(h1,</highlight><highlight class="stringliteral">&quot;fontsize&quot;</highlight><highlight class="normal">,14);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>set(h1,</highlight><highlight class="stringliteral">&quot;fontsize&quot;</highlight><highlight class="normal">,14);</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>how<sp/>to<sp/>solve<sp/>linear<sp/>equations<sp/>of<sp/>the<sp/>form<sp/>Ax<sp/>=<sp/>b:</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix&lt;double,2&gt;</ref><sp/>A<sp/>=<sp/>{{1.0,<sp/>2.0},</highlight></codeline>
@@ -78,7 +78,7 @@
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.plot(t2,y.col(2),</highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.xlabel(</highlight><highlight class="stringliteral">&quot;t&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.ylabel(</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">(h2,</highlight><highlight class="stringliteral">&quot;fontsize&quot;</highlight><highlight class="normal">,14);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>set(h2,</highlight><highlight class="stringliteral">&quot;fontsize&quot;</highlight><highlight class="normal">,14);</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.title(</highlight><highlight class="stringliteral">&quot;ODE<sp/>Solution&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
@@ -93,7 +93,7 @@
  <linebreak/>
 </para><para><heading level="1">MATLAB/Octave to KeyCpp Conversion Chart</heading>
 </para><para>Although the goal of this library is to offer a C++ interface similar in syntax to MATLAB/Octave, there are some minor differences. The goal of this document is to provide a conversion chart for some of the most commonly used features.</para><para>Note: You can omit the <computeroutput>keycpp::</computeroutput> prefix from the following commands by placing <computeroutput>using namespace keycpp;</computeroutput> in the same scope. This shortcut should be used with care as collisions with other libraries are possible.</para><para><table rows="19" cols="3"><row>
-<entry thead="yes"><para><emphasis>MATLAB/Octave</emphasis> </para></entry><entry thead="yes"><para><emphasis>KeyCpp</emphasis> </para></entry><entry thead="yes"><para>Notes </para></entry></row>
+<entry thead="yes"><para><emphasis>MATLAB/Octave</emphasis> </para></entry><entry thead="yes"><para><emphasis>KeyCpp</emphasis> </para></entry><entry thead="yes"><para>Notes  </para></entry></row>
 <row>
 <entry thead="no"><para><computeroutput>A(1,1)</computeroutput> </para></entry><entry thead="no"><para><computeroutput>A(0,0);</computeroutput> </para></entry><entry thead="no"><para>Indexing starts at 0 in KeyCpp </para></entry></row>
 <row>

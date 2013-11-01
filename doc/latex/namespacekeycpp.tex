@@ -60,6 +60,12 @@ class \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}
 \hypertarget{namespacekeycpp_a026d42394a53ae81f292d1e3de4383cb}{{\footnotesize template$<$class T , size\-\_\-t dim$>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, dim $>$ {\bfseries imag} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ T $>$, dim $>$ \&A)}\label{namespacekeycpp_a026d42394a53ae81f292d1e3de4383cb}
 
 \item 
+\hypertarget{namespacekeycpp_a596aa3ce9318961af77f3a286854f8d4}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, 1 $>$ {\bfseries linspace} (const T \&x1, const T \&x2, const size\-\_\-t \&N)}\label{namespacekeycpp_a596aa3ce9318961af77f3a286854f8d4}
+
+\item 
+\hypertarget{namespacekeycpp_af4a2245da139cf6cf2e03426476b3b88}{{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacekeycpp_af4a2245da139cf6cf2e03426476b3b88}{disp} (const T \&x, std\-::ostream \&out\-Stream=std\-::cout)}\label{namespacekeycpp_af4a2245da139cf6cf2e03426476b3b88}
+
+\begin{DoxyCompactList}\small\item\em Displays on standard output any parameter passed to it provided the operator $<$$<$ is defined for its type. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a90b60f7fefe3931699f4d587a241c12e}{{\footnotesize template$<$$>$ }\\void {\bfseries Figure\-::plot$<$ std\-::complex$<$ double $>$ $>$} (\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$, 1 $>$ y, std\-::string format, std\-::string property1, double val1)}\label{namespacekeycpp_a90b60f7fefe3931699f4d587a241c12e}
 
 \item 
@@ -160,15 +166,6 @@ class \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}
 \hypertarget{namespacekeycpp_a9085342fc708fd5babae39321da3b89a}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ {\bfseries inv} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$$>$ \&A\-\_\-in)}\label{namespacekeycpp_a9085342fc708fd5babae39321da3b89a}
 
 \item 
-\hypertarget{namespacekeycpp_a5ef5c1f5951e8182a7c4ec9612f3f7e1}{double \hyperlink{namespacekeycpp_a5ef5c1f5951e8182a7c4ec9612f3f7e1}{rand} ()}\label{namespacekeycpp_a5ef5c1f5951e8182a7c4ec9612f3f7e1}
-
-\begin{DoxyCompactList}\small\item\em Returns a random double between 0 and 1.\-0. \end{DoxyCompactList}\item 
-\hypertarget{namespacekeycpp_ac224964eb5e1a55c3f7d58f0e9b71d3d}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ {\bfseries rand} (const int \&N)}\label{namespacekeycpp_ac224964eb5e1a55c3f7d58f0e9b71d3d}
-
-\item 
-\hypertarget{namespacekeycpp_ae5c4b142a4101e9bb1df9f19efaf7d2f}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ {\bfseries rand} (const int \&M, const int \&N)}\label{namespacekeycpp_ae5c4b142a4101e9bb1df9f19efaf7d2f}
-
-\item 
 {\footnotesize template$<$class T , size\-\_\-t dim$>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ size\-\_\-t, 1 $>$ \hyperlink{namespacekeycpp_acfe17126168656af54ae76ab6c487407}{size} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, dim $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Returns the size of matrix A. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_ac999bd518fb456aa9a4fbd2c04f007de}{{\footnotesize template$<$class T , size\-\_\-t dim$>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, dim $>$ {\bfseries eop} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, dim $>$ \&A, T($\ast$f)(const T \&))}\label{namespacekeycpp_ac999bd518fb456aa9a4fbd2c04f007de}
@@ -260,8 +257,9 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries operator+} (const \hyper
 $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries operator+} (const U \&a, const \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ T $>$ \&v2)}\label{namespacekeycpp_af28312b8c309091f03e373e1ae5f3d46}
 
 \item 
-\hypertarget{namespacekeycpp_adff86e062c6497110b7505b0ef715c2c}{{\footnotesize template$<$class T , class U $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ decltype(std\-::declval\\*
-$<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ {\bfseries operator+} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ \&A, const U \&a)}\label{namespacekeycpp_adff86e062c6497110b7505b0ef715c2c}
+\hypertarget{namespacekeycpp_adb8866924fddc4057262b0ab42615437}{{\footnotesize template$<$class T , class U , size\-\_\-t dim$>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ decltype(std\-::declval\\*
+$<$ T $>$)$\ast$std\-::declval$<$ U $>$\\*
+)), dim $>$ {\bfseries operator+} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, dim $>$ \&A, const U \&a)}\label{namespacekeycpp_adb8866924fddc4057262b0ab42615437}
 
 \item 
 \hypertarget{namespacekeycpp_a4b4a64905c9d681c174b2dfcfba272c4}{{\footnotesize template$<$class T , class U $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ decltype(std\-::declval\\*
@@ -614,9 +612,6 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_acee6d21
 \hypertarget{namespacekeycpp_a6fb905e99ba06b2a005547e7f5d0f54f}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ \hyperlink{namespacekeycpp_a6fb905e99ba06b2a005547e7f5d0f54f}{vec2mat} (const \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ T $>$ \&v1)}\label{namespacekeycpp_a6fb905e99ba06b2a005547e7f5d0f54f}
 
 \begin{DoxyCompactList}\small\item\em Converts a column vector to a 1 x length(v1) matrix. \end{DoxyCompactList}\item 
-\hypertarget{namespacekeycpp_a3667b0575327bba14f481cd3524197fc}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, 1 $>$ {\bfseries linspace} (const T \&x1, const T \&x2, const size\-\_\-t \&N)}\label{namespacekeycpp_a3667b0575327bba14f481cd3524197fc}
-
-\item 
 {\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ T $>$ \hyperlink{namespacekeycpp_a9e1c37fd71074c56e963be121e5de0f3}{logspace} (const T \&x1, const T \&x2, const int \&N)
 \begin{DoxyCompactList}\small\item\em Produces a vector containing N values logarithmically spaced between 10$^\wedge$(x1) and 10$^\wedge$(x2), inclusively. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_ae471c1edede10cab9baaa3f97b79f9fe}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, 1 $>$ {\bfseries unwrap} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, 1 $>$ \&v1, const T \&tol=pi)}\label{namespacekeycpp_ae471c1edede10cab9baaa3f97b79f9fe}
@@ -676,9 +671,6 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_acee6d21
 \hypertarget{namespacekeycpp_a0ab724c8ffc30f7beac54280a4ee81eb}{{\footnotesize template$<$class T $>$ }\\\hyperlink{structkeycpp_1_1_sort___vector}{Sort\-\_\-\-Vector}$<$ T $>$ {\bfseries sort} (const \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ T $>$ \&v1, std\-::string method=\char`\"{}ascend\char`\"{})}\label{namespacekeycpp_a0ab724c8ffc30f7beac54280a4ee81eb}
 
 \item 
-\hypertarget{namespacekeycpp_af4a2245da139cf6cf2e03426476b3b88}{{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacekeycpp_af4a2245da139cf6cf2e03426476b3b88}{disp} (const T \&x, std\-::ostream \&out\-Stream=std\-::cout)}\label{namespacekeycpp_af4a2245da139cf6cf2e03426476b3b88}
-
-\begin{DoxyCompactList}\small\item\em Displays on standard output any parameter passed to it provided the operator $<$$<$ is defined for its type. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_aba69db64fe38ad271de1939d3f1a5520}{std\-::string \hyperlink{namespacekeycpp_aba69db64fe38ad271de1939d3f1a5520}{input} (const std\-::string \&prompt, std\-::string option)}\label{namespacekeycpp_aba69db64fe38ad271de1939d3f1a5520}
 
 \begin{DoxyCompactList}\small\item\em Prints the prompt to the screen and then waits for user input. Currently the option must be supplied as \char`\"{}s\char`\"{} because C++ is a statically typed language. \end{DoxyCompactList}\item 
@@ -725,6 +717,9 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_aa590a69
 
 \begin{DoxyCompactList}\small\item\em Computes the cross product between vectors v1 and v2. Both vectors must have exactly 3 elements. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a78ea0301dbb858bbfdf2646a857a1ec6}{{\footnotesize template$<$class T $>$ }\\double {\bfseries norm} (const \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ T $>$ \&v1, std\-::string method=\char`\"{}2\char`\"{})}\label{namespacekeycpp_a78ea0301dbb858bbfdf2646a857a1ec6}
+
+\item 
+\hypertarget{namespacekeycpp_ab1fd21d6dd27cb843b98af78a3ea6acc}{{\footnotesize template$<$class T $>$ }\\double {\bfseries norm} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, 1 $>$ \&v1, std\-::string method=\char`\"{}2\char`\"{})}\label{namespacekeycpp_ab1fd21d6dd27cb843b98af78a3ea6acc}
 
 \item 
 \hypertarget{namespacekeycpp_aeb34bdd249af3ce92341cdda62f95f65}{double {\bfseries norm} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \&A\-\_\-in, std\-::string method=\char`\"{}2\char`\"{})}\label{namespacekeycpp_aeb34bdd249af3ce92341cdda62f95f65}
@@ -812,9 +807,18 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_aa590a69
 \hypertarget{namespacekeycpp_abc86c63af2d6788c45ac99a1f3b14ad8}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ T $>$ \hyperlink{namespacekeycpp_abc86c63af2d6788c45ac99a1f3b14ad8}{ceil} (const \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ T $>$ \&v1)}\label{namespacekeycpp_abc86c63af2d6788c45ac99a1f3b14ad8}
 
 \begin{DoxyCompactList}\small\item\em Rounds the elements of v1 towards positive infinity. \end{DoxyCompactList}\item 
-\hypertarget{namespacekeycpp_a4bba31744fef3693901a075fda07857c}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ \hyperlink{namespacekeycpp_a4bba31744fef3693901a075fda07857c}{ceil} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T $>$ \&A)}\label{namespacekeycpp_a4bba31744fef3693901a075fda07857c}
+\hypertarget{namespacekeycpp_a6f75eb747c57c3e5ff91323f65a02b5f}{{\footnotesize template$<$class T , size\-\_\-t dim$>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, dim $>$ \hyperlink{namespacekeycpp_a6f75eb747c57c3e5ff91323f65a02b5f}{ceil} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, dim $>$ \&A)}\label{namespacekeycpp_a6f75eb747c57c3e5ff91323f65a02b5f}
 
 \begin{DoxyCompactList}\small\item\em Rounds the elements of A towards positive infinity. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_ab30437496fbd2011521b31aee7961516}{std\-::complex$<$ double $>$ \hyperlink{namespacekeycpp_ab30437496fbd2011521b31aee7961516}{floor} (const std\-::complex$<$ double $>$ \&a)}\label{namespacekeycpp_ab30437496fbd2011521b31aee7961516}
+
+\begin{DoxyCompactList}\small\item\em Rounds the real and imaginary parts of std\-::complex$<$double$>$ a towards negative infinity seperately. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_ac2f984ff29cefe4dc924cb6d69e53786}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ T $>$ \hyperlink{namespacekeycpp_ac2f984ff29cefe4dc924cb6d69e53786}{floor} (const \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ T $>$ \&v1)}\label{namespacekeycpp_ac2f984ff29cefe4dc924cb6d69e53786}
+
+\begin{DoxyCompactList}\small\item\em Rounds the elements of v1 towards negative infinity. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a8aad0f0ac8036ee114a14da17aefcb5f}{{\footnotesize template$<$class T , size\-\_\-t dim$>$ }\\\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, dim $>$ \hyperlink{namespacekeycpp_a8aad0f0ac8036ee114a14da17aefcb5f}{floor} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ T, dim $>$ \&A)}\label{namespacekeycpp_a8aad0f0ac8036ee114a14da17aefcb5f}
+
+\begin{DoxyCompactList}\small\item\em Rounds the elements of A towards negative infinity. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_ae7de6c3e5c495e91b1b1de7d716e7a5d}{{\footnotesize template$<$class T , class U $>$ }\\decltype(std\-::declval$<$ T $>$\\*
 ()$\ast$std\-::declval$<$ U $>$()) {\bfseries polyval} (const \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ T $>$ \&p, const U \&x)}\label{namespacekeycpp_ae7de6c3e5c495e91b1b1de7d716e7a5d}
 
@@ -855,12 +859,30 @@ $<$ T $>$)$\ast$std\-::declval$<$ U $>$))$>$ \hyperlink{namespacekeycpp_aa590a69
 \hypertarget{namespacekeycpp_af3249effde70a573fbd8881dc4629e04}{double \hyperlink{namespacekeycpp_af3249effde70a573fbd8881dc4629e04}{var} (\hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ std\-::complex$<$ double $>$$>$ v1)}\label{namespacekeycpp_af3249effde70a573fbd8881dc4629e04}
 
 \begin{DoxyCompactList}\small\item\em Returns the variance (square of standard deviation) for inputed vector. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_a93e133b94bc27c9b984d0383b01772d4}{void {\bfseries rng} (size\-\_\-t seed=0, std\-::string generator=\char`\"{}twister\char`\"{})}\label{namespacekeycpp_a93e133b94bc27c9b984d0383b01772d4}
+
+\item 
+\hypertarget{namespacekeycpp_af2478c69f713d8664b53d31f25718530}{void {\bfseries rng} (std\-::string shuffle=\char`\"{}\char`\"{}, std\-::string generator=\char`\"{}\char`\"{})}\label{namespacekeycpp_af2478c69f713d8664b53d31f25718530}
+
+\item 
+\hypertarget{namespacekeycpp_a5ef5c1f5951e8182a7c4ec9612f3f7e1}{double \hyperlink{namespacekeycpp_a5ef5c1f5951e8182a7c4ec9612f3f7e1}{rand} ()}\label{namespacekeycpp_a5ef5c1f5951e8182a7c4ec9612f3f7e1}
+
+\begin{DoxyCompactList}\small\item\em Returns a random double between 0 and 1.\-0. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_ab99a9561cf5654ae722a0879b41d9d73}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \hyperlink{namespacekeycpp_ab99a9561cf5654ae722a0879b41d9d73}{rand} (const unsigned int \&N)}\label{namespacekeycpp_ab99a9561cf5654ae722a0879b41d9d73}
 
 \begin{DoxyCompactList}\small\item\em Returns an N x N matrix of random doubles between 0 and 1.\-0. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_af6413232f2de6f8ac96efde6531c3055}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \hyperlink{namespacekeycpp_af6413232f2de6f8ac96efde6531c3055}{rand} (const unsigned int \&M, const unsigned int \&N)}\label{namespacekeycpp_af6413232f2de6f8ac96efde6531c3055}
 
 \begin{DoxyCompactList}\small\item\em Returns an M x N matrix of random doubles between 0 and 1.\-0. \end{DoxyCompactList}\item 
+\hypertarget{namespacekeycpp_abbb4c27d8c550f3a522dcd4334986161}{double {\bfseries randn} ()}\label{namespacekeycpp_abbb4c27d8c550f3a522dcd4334986161}
+
+\item 
+\hypertarget{namespacekeycpp_ab55434470472a4b6c511e5a713a4d654}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ {\bfseries randn} (const unsigned int \&N)}\label{namespacekeycpp_ab55434470472a4b6c511e5a713a4d654}
+
+\item 
+\hypertarget{namespacekeycpp_a43bbf0f2c5e3c68a4e03abcce5aa63da}{\hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ {\bfseries randn} (const unsigned int \&M, const unsigned int \&N)}\label{namespacekeycpp_a43bbf0f2c5e3c68a4e03abcce5aa63da}
+
+\item 
 \hyperlink{classkeycpp_1_1vector__k}{vector\-\_\-k}$<$ std\-::complex$<$ double $>$ $>$ \hyperlink{namespacekeycpp_aa14e19e286b30265734236c0af2f9e78}{eig} (const \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ double $>$ \&A, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ $\ast$vr\-\_\-return, \hyperlink{classkeycpp_1_1matrix}{matrix}$<$ std\-::complex$<$ double $>$ $>$ $\ast$vl\-\_\-return)
 \begin{DoxyCompactList}\small\item\em Double precision eigenvalue solver using L\-A\-P\-A\-C\-K function call. \end{DoxyCompactList}\item 
 \hypertarget{namespacekeycpp_a16b58f47ed977cafdc96227468f5f10a}{void \hyperlink{namespacekeycpp_a16b58f47ed977cafdc96227468f5f10a}{dgemm\-\_\-} (const char $\ast$T\-R\-A\-N\-S\-A, const char $\ast$T\-R\-A\-N\-S\-B, const int $\ast$M, const int $\ast$N, const int $\ast$K, double $\ast$A\-L\-P\-H\-A, const double $\ast$A, const int $\ast$L\-D\-A, const double $\ast$B, const int $\ast$L\-D\-B, double $\ast$B\-E\-T\-A, double $\ast$C, const int $\ast$L\-D\-C)}\label{namespacekeycpp_a16b58f47ed977cafdc96227468f5f10a}

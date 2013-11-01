@@ -163,10 +163,6 @@ namespace keycpp
                                  const vector_k<double>& b_in);
     matrix<double> inv(const matrix<double>& A_in);
     matrix<std::complex<double>> inv(const matrix<std::complex<double>>& A_in);
-
-	double rand();
-	matrix<double> rand(const int &N);
-	matrix<double> rand(const int &M, const int &N);
 	
 	template<class T, size_t dim> matrix<size_t,1> size(const matrix<T,dim> &A);
 	
@@ -538,17 +534,16 @@ namespace keycpp
 		return result;
 	}
 
-	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator+(const matrix<T>& A, const U& a)
+	template<class T, class U, size_t dim> matrix<decltype(std::declval<T>()*std::declval<U>()),dim> operator+(const matrix<T,dim>& A, const U& a)
 	{
-		matrix<decltype(std::declval<T>()*std::declval<U>())> result(A.size(1),A.size(2));
-		for(size_t ii = 0; ii < result.size(1); ii++)
+		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> B;
+		matrix<size_t,1> temp = size(A);
+		B.resize(temp);
+		for(size_t ii = 0; ii < B.mData.size(); ii++)
 		{
-		    for(size_t jj = 0; jj < result.size(2); jj++)
-		    {
-			    result(ii,jj) = A(ii,jj)+a;
-			}
+			B.mData[ii] = a+A.mData[ii];
 		}
-		return result;
+		return B;
 	}
 
 	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator+(const U& a, const matrix<T>& A)
@@ -3009,6 +3004,55 @@ namespace keycpp
 	    return anorm;
 	}
 	
+	
+	template<class T>
+	double norm(const matrix<T,1> &v1, std::string method = "2")
+	{
+	    if(v1.empty())
+	    {
+	        throw KeyCppException("Cannot compute norm of empty vector!");
+	    }
+		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
+	    double anorm = 0.0;
+	    if(!method.empty() && method.find_first_not_of("-+0123456789") == std::string::npos)
+	    {
+	        int p = atoi(method.c_str());
+	        for(size_t ii = 0; ii < v1.size(1); ii++)
+	        {
+	            anorm += pow(std::abs(v1(ii)),p);
+	        }
+	        anorm = pow(anorm,1.0/p);
+	    }
+	    else if(method.compare("inf") == 0)
+	    {
+	        anorm = 0.0;
+	        for(size_t ii = 0; ii < v1.size(1); ii++)
+	        {
+	            if(std::abs(v1(ii)) > anorm)
+	            {
+	                anorm = std::abs(v1(ii));
+	            }
+	        }
+	    }
+	    else if(method.compare("-inf") == 0)
+	    {
+	        anorm = -1.0;
+	        for(size_t ii = 0; ii < v1.size(1); ii++)
+	        {
+	            if(std::abs(v1(ii)) < anorm || anorm < 0.0)
+	            {
+	                anorm = std::abs(v1(ii));
+	            }
+	        }
+	    }
+	    else
+	    {
+	        throw KeyCppException("Error in norm! Unknown norm type!");
+	    }
+	    
+	    return anorm;
+	}
+	
 	double norm(const matrix<double> &A_in, std::string method = "2");
 	SVD_type<double,double> svd(const matrix<double> &A_in, std::string method = "");
 	double norm(const matrix<std::complex<double>> &A_in, std::string method = "2");
@@ -3358,18 +3402,41 @@ namespace keycpp
 	
 	/** \brief Rounds the elements of A towards positive infinity.
 	 */
-	template<class T>
-	matrix<T> ceil(const matrix<T> &A)
+	template<class T, size_t dim>
+	matrix<T,dim> ceil(const matrix<T,dim> &A)
 	{
-	    matrix<T> B(A.size(1),A.size(2));
-	    for(size_t ii = 0; ii < B.size(1); ii++)
+	    return eop(A,static_cast<T (*)(T)>(&std::ceil));
+	}
+	
+	/** \brief Rounds the real and imaginary parts of std::complex<double> a towards
+	 *         negative infinity seperately.
+	 */
+	inline std::complex<double> floor(const std::complex<double> &a)
+	{
+	    std::complex<double> b;
+	    b = floor(real(a)) + std::complex<double>(0.0,1.0)*floor(imag(a));
+	    return b;
+	}
+	
+	/** \brief Rounds the elements of v1 towards negative infinity.
+	 */
+	template<class T>
+	vector_k<T> floor(const vector_k<T> &v1)
+	{
+	    vector_k<T> v2(v1.size());
+	    for(int ii = 0; ii < v2.size(); ii++)
 	    {
-	        for(size_t jj = 0; jj < B.size(2); jj++)
-	        {
-	            B(ii,jj) = ceil(A(ii,jj));
-	        }
+	        v2[ii] = floor(v1[ii]);
 	    }
-	    return B;
+	    return v2;
+	}
+	
+	/** \brief Rounds the elements of A towards negative infinity.
+	 */
+	template<class T, size_t dim>
+	matrix<T,dim> floor(const matrix<T,dim> &A)
+	{
+	    return eop(A,static_cast<T (*)(T)>(&std::floor));
 	}
 	
 	template<class T, class U>
@@ -3624,11 +3691,86 @@ namespace keycpp
         return pow(stdev(v1),2.0);
     }
     
+    namespace rng_ns
+    {
+        int choice = 1;
+        std::default_random_engine default_rng(std::random_device{}()); // Choice = 0;
+        std::mt19937 mt_rng(std::random_device{}()); // Choice = 1;
+        std::ranlux24_base lagfib_rng(std::random_device{}()); // Choice = 2;
+    }
+    
+    inline void rng(size_t seed = 0, std::string generator = "twister")
+    {
+		std::transform(generator.begin(), generator.end(), generator.begin(), ::tolower);
+		if(generator.compare("twister") == 0)
+		{
+		    rng_ns::choice = 1;
+		    rng_ns::mt_rng = std::mt19937(seed);
+		}
+		else if(generator.compare("multFibonacci") == 0)
+		{
+		    rng_ns::choice = 2;
+		    rng_ns::lagfib_rng = std::ranlux24_base(seed);
+		}
+    }
+    
+    inline void rng(std::string shuffle = "", std::string generator = "")
+    {
+		std::transform(generator.begin(), generator.end(), generator.begin(), ::tolower);
+		std::transform(shuffle.begin(), shuffle.end(), shuffle.begin(), ::tolower);
+		if(generator.empty())
+		{
+		    if(shuffle.compare("shuffle") == 0)
+		    {
+		        if(rng_ns::choice == 2)
+		        {
+		            rng(std::random_device{}(),"multFibonacci");
+		        }
+		        else
+                {
+		            rng(std::random_device{}(),"twister");
+                }
+		    }
+		    else if(shuffle.compare("default") == 0)
+		    {
+		        rng_ns::choice = 1;
+		        rng_ns::mt_rng = std::mt19937(0);
+		    }
+		}
+		else
+		{
+		    if(generator.compare("twister") == 0)
+		    {
+		        rng_ns::choice = 1;
+		        rng_ns::mt_rng = std::mt19937(std::random_device{}());
+		    }
+		    else if(generator.compare("multFibonacci") == 0)
+		    {
+		        rng_ns::choice = 2;
+		        rng_ns::lagfib_rng = std::ranlux24_base(std::random_device{}());
+		    }
+		}
+    }
+    
     /** \brief Returns a random double between 0 and 1.0
 	 */
 	inline double rand()
 	{
-		return ((double)std::rand()/((double)RAND_MAX));
+        std::uniform_real_distribution<double> distribution(0.0, 1.0);
+        double randomNumber;
+        if(rng_ns::choice == 1)
+        {
+            randomNumber = distribution(rng_ns::mt_rng);
+        }
+        else if(rng_ns::choice == 2)
+        {
+            randomNumber = distribution(rng_ns::lagfib_rng);
+        }
+        else
+        {
+            throw KeyCppException("Unknown random number generator!");
+        }
+		return randomNumber;
 	}
 	
 	/** \brief Returns an N x N matrix of random doubles between 0 and 1.0
@@ -3640,7 +3782,7 @@ namespace keycpp
 	    {
 	        for(unsigned int jj = 0; jj < N; jj++)
 	        {
-	            A(ii,jj) = ((double)std::rand()/((double)RAND_MAX));
+	            A(ii,jj) = keycpp::rand();
 	        }
         }
 	    
@@ -3656,7 +3798,54 @@ namespace keycpp
 	    {
 	        for(unsigned int jj = 0; jj < N; jj++)
 	        {
-	            A(ii,jj) = ((double)std::rand()/((double)RAND_MAX));
+	            A(ii,jj) = keycpp::rand();
+	        }
+        }
+	    
+		return A;
+	}
+	
+	inline double randn()
+	{
+        std::normal_distribution<double> distribution(0.0, 1.0);
+        double randomNumber;
+        if(rng_ns::choice == 1)
+        {
+            randomNumber = distribution(rng_ns::mt_rng);
+        }
+        else if(rng_ns::choice == 2)
+        {
+            randomNumber = distribution(rng_ns::lagfib_rng);
+        }
+        else
+        {
+            throw KeyCppException("Unknown random number generator!");
+        }
+		return randomNumber;
+	}
+
+	inline matrix<double> randn(const unsigned int &N)
+	{
+	    matrix<double> A(N,N);
+	    for(unsigned int ii = 0; ii < N; ii++)
+	    {
+	        for(unsigned int jj = 0; jj < N; jj++)
+	        {
+	            A(ii,jj) = keycpp::randn();
+	        }
+        }
+	    
+		return A;
+	}
+
+	inline matrix<double> randn(const unsigned int &M, const unsigned int &N)
+	{
+	    matrix<double> A(M,N);
+	    for(unsigned int ii = 0; ii < M; ii++)
+	    {
+	        for(unsigned int jj = 0; jj < N; jj++)
+	        {
+	            A(ii,jj) = keycpp::randn();
 	        }
         }
 	    

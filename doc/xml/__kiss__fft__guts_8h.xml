@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
   <compounddef id="__kiss__fft__guts_8h" kind="file">
     <compoundname>_kiss_fft_guts.h</compoundname>
     <includes refid="kiss__fft_8h" local="yes">kiss_fft.h</includes>
@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="25" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="25" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="25" column="9" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1a944e08f3916c56a9697bbfed458eaa94" prot="public" static="no">
         <name>S_MUL</name>
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="89" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="89" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="89" column="12" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1ab5092aa032092f1057feca5fbea40758" prot="public" static="no">
         <name>C_MUL</name>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="92" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="90" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="90" column="9" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1a05e11bb1e8e815dd7bdd199060b7555a" prot="public" static="no">
         <name>C_FIXDIV</name>
@@ -106,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="93" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="93" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="93" column="12" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="93" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1a958da96ff02cad6be35cafa3019804b5" prot="public" static="no">
         <name>C_MULBYSCALAR</name>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="96" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="94" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="94" column="12" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="94" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1a664c056b2a7093f88391d7db3558aa24" prot="public" static="no">
         <name>CHECK_OVERFLOW_OP</name>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="100" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="100" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="100" column="11" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="100" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1a1f70747639c855259a0965de768e030a" prot="public" static="no">
         <name>C_ADD</name>
@@ -152,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="108" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="103" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="103" column="10" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1a8c00bd9702f25a8514402a3779b3bdda" prot="public" static="no">
         <name>C_SUB</name>
@@ -170,7 +170,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="114" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="109" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="109" column="10" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="109" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1a2042ee8c6fb9306eb20d62e6506446aa" prot="public" static="no">
         <name>C_ADDTO</name>
@@ -187,7 +187,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="120" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="115" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="115" column="9" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="115" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1aa3f448e1963492dfc145fc391cbedd27" prot="public" static="no">
         <name>C_SUBFROM</name>
@@ -204,7 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="127" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="122" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="122" column="9" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="122" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1a2e780e8fe86d9c3e7b6a469f61aaf5d1" prot="public" static="no">
         <name>KISS_FFT_COS</name>
@@ -216,7 +216,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="139" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="139" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="139" column="12" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="139" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1a2d4fc93cde15512f1946f364d5271dd3" prot="public" static="no">
         <name>KISS_FFT_SIN</name>
@@ -228,7 +228,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="140" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="140" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="140" column="11" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="140" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1a0b812a30fdb0c530a90a18d1692fab6c" prot="public" static="no">
         <name>HALF_OF</name>
@@ -240,7 +240,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="141" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="141" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="141" column="11" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="141" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1ac7852abdf2dc5ed4538551be6d1dd20b" prot="public" static="no">
         <name>kf_cexp</name>
@@ -256,7 +256,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="148" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="144" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="144" column="10" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="144" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1ac1abb41ecdedd05dda5d1ce83b67a704" prot="public" static="no">
         <name>pcpx</name>
@@ -268,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="153" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="152" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="152" column="9" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="152" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1abd992e9886fb74f97bf0b6e057fe08a5" prot="public" static="no">
         <name>KISS_FFT_TMP_ALLOC</name>
@@ -280,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="165" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="165" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="165" column="11" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="165" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="__kiss__fft__guts_8h_1ab915c572fe96a51a3528b7419248b655" prot="public" static="no">
         <name>KISS_FFT_TMP_FREE</name>
@@ -292,7 +292,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="166" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="166" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="166" column="10" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="166" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -323,7 +323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="175" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="169" bodyend="190"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="169" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="169" bodyend="190"/>
       </memberdef>
       <memberdef kind="function" id="__kiss__fft__guts_8h_1a0976fd89e0c02bf44e5df3b689dfe115" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -352,7 +352,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="198" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="192" bodyend="238"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="192" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="192" bodyend="238"/>
       </memberdef>
       <memberdef kind="function" id="__kiss__fft__guts_8h_1a6b2ff941baf8c5dc00828591927ce4d6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -381,7 +381,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="246" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="240" bodyend="282"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="240" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="240" bodyend="282"/>
       </memberdef>
       <memberdef kind="function" id="__kiss__fft__guts_8h_1afae5a86498c64fc9a8ccc4032de62ee0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -410,7 +410,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="290" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="284" bodyend="343"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="284" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="284" bodyend="343"/>
       </memberdef>
       <memberdef kind="function" id="__kiss__fft__guts_8h_1a43383279ff41679c7ae47bc163d7050c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -443,7 +443,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="353" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="346" bodyend="384"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="346" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="346" bodyend="384"/>
       </memberdef>
       <memberdef kind="function" id="__kiss__fft__guts_8h_1a96e4f47862a2df7183ae9e8caaf7a866" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -480,7 +480,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="395" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="387" bodyend="451"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="387" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="387" bodyend="451"/>
       </memberdef>
       <memberdef kind="function" id="__kiss__fft__guts_8h_1a4472db9715ee64fc7858ba895054f734" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -501,7 +501,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="459" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="458" bodyend="479"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="458" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="458" bodyend="479"/>
       </memberdef>
       <memberdef kind="function" id="__kiss__fft__guts_8h_1ab5ad1560b58375ec071da45401911358" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structkiss__fft__state" kindref="compound">kiss_fft_cfg</ref></type>
@@ -530,7 +530,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="489" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="488" bodyend="517"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="488" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="488" bodyend="517"/>
       </memberdef>
       <memberdef kind="function" id="__kiss__fft__guts_8h_1aec345dab68815f4c5c2904978626d877" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -559,7 +559,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="521" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="520" bodyend="532"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="520" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="520" bodyend="532"/>
       </memberdef>
       <memberdef kind="function" id="__kiss__fft__guts_8h_1ab36e2bb33b74c1a7eabe3271d0916030" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -584,7 +584,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="535" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="534" bodyend="537"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="534" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="534" bodyend="537"/>
       </memberdef>
       <memberdef kind="function" id="__kiss__fft__guts_8h_1aab7972365fc8f30a13eed91fa29172ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -600,7 +600,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="541" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="540" bodyend="543"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="540" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="540" bodyend="543"/>
       </memberdef>
       <memberdef kind="function" id="__kiss__fft__guts_8h_1a26b8ac31a43a356943061318831508e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -617,7 +617,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="546" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="545" bodyend="557"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="545" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="545" bodyend="557"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1086,7 +1086,7 @@
 <codeline lineno="459"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p=4;</highlight></codeline>
 <codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>floor_sqrt;</highlight></codeline>
-<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/>floor_sqrt<sp/>=<sp/>floor(<sp/><ref refid="namespacekeycpp_1aa4b7e86c9291f2ca9c5aacdb8e08f9ff" kindref="member" tooltip="Return a vector containing the sqrt of each element of v1.">sqrt</ref>((</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)n)<sp/>);</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/>floor_sqrt<sp/>=<sp/><ref refid="namespacekeycpp_1ab30437496fbd2011521b31aee7961516" kindref="member" tooltip="Rounds the real and imaginary parts of std::complex&amp;lt;double&amp;gt; a towards negative infinity seperately...">floor</ref>(<sp/><ref refid="namespacekeycpp_1aa4b7e86c9291f2ca9c5aacdb8e08f9ff" kindref="member" tooltip="Return a vector containing the sqrt of each element of v1. ">sqrt</ref>((</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)n)<sp/>);</highlight></codeline>
 <codeline lineno="463"><highlight class="normal"></highlight></codeline>
 <codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*factor<sp/>out<sp/>powers<sp/>of<sp/>4,<sp/>powers<sp/>of<sp/>2,<sp/>then<sp/>any<sp/>remaining<sp/>primes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
   <compounddef id="classkeycpp_1_1_spline" kind="class" prot="public">
     <compoundname>keycpp::Spline</compoundname>
     <templateparamlist>
@@ -22,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="36" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="36" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="36" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_spline_1a615f18a47d7246e57551a38e2550c8e4" prot="private" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="37" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="37" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="37" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_spline_1aa1d23014aa242028389a924c994ff901" prot="private" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="39" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="39" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="39" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_spline_1ac9df0fdf884322d7d194892af0785107" prot="private" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="40" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="40" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="40" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_spline_1a6f0c6777fa1289d5ad762110d6c9d0b9" prot="private" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="41" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="41" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="41" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_spline_1a205ae5eae21bb343b26169ef89a82bc2" prot="private" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 2 &gt;</type>
@@ -87,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="43" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="43" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="43" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_spline_1a4d83f5f9fa76fb7ef967309e5f550d76" prot="private" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="44" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="44" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="44" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_spline_1a78217161ac3d94078e0665debf63372b" prot="private" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="45" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="45" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="45" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_spline_1ab9e3a1fdc325caec790b788b613fcc1c" prot="private" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
@@ -126,7 +126,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="46" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="46" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="46" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_spline_1af4d56d16f485c8ec6cf09e04a0e535d5" prot="private" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
@@ -139,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="47" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="47" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="47" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_spline_1a90b80ef4b03afd238e4841f2730166bf" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -152,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="49" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="49" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="49" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_spline_1a23bc3077a66d75e40c418fdb61d03b14" prot="private" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1_extrap" kindref="compound">Extrap</ref></type>
@@ -165,7 +165,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="55" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="55" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="55" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -180,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="51" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="87" bodyend="135"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="51" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="87" bodyend="135"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_spline_1a38ad21b5b15f39912e54575a689f4949" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -193,7 +193,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="52" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="137" bodyend="172"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="52" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="137" bodyend="172"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_spline_1af937b5ad4d637417fd64f5b07699b6ce" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -206,7 +206,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="53" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="174" bodyend="212"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="53" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="174" bodyend="212"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -237,7 +237,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="58" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="66" bodyend="80"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="58" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="66" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_spline_1a8d7aaf51fd3a1c48ed43d70b2b9c10fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -250,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="59" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="83" bodyend="85"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="59" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="83" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_spline_1afcd84822df41426f4ea9da070d97b376" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="61" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="61" bodyend="61"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="61" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="61" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_spline_1a7fa452b0c1952f0a3e4160f59195d513" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
@@ -280,14 +280,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="62" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="214" bodyend="282"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="62" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="214" bodyend="282"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="34" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="33" bodyend="63"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="34" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="33" bodyend="63"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1_spline_1a4d83f5f9fa76fb7ef967309e5f550d76" prot="private" virt="non-virtual"><scope>keycpp::Spline</scope><name>a</name></member>
       <member refid="classkeycpp_1_1_spline_1a78217161ac3d94078e0665debf63372b" prot="private" virt="non-virtual"><scope>keycpp::Spline</scope><name>b</name></member>

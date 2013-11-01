@@ -35,6 +35,8 @@ namespace keycpp
 	template<class T,size_t dim> matrix<T,dim> real(const matrix<std::complex<T>,dim> &A);
 	template<class T> matrix<T,1> imag(const vector_k<std::complex<T>> &v1);
 	template<class T,size_t dim> matrix<T,dim> imag(const matrix<std::complex<T>,dim> &A);
+	template<class T> matrix<T,1> linspace(const T &x1, const T &x2, const size_t &N);
+	template<class T> void disp(const T &x, std::ostream& outStream = std::cout);
     
 	class FigureException : public std::runtime_error
 	{
@@ -50,6 +52,8 @@ namespace keycpp
 	    ~Plots();
 	    Plots& operator=(const Plots& other);
 		bool hold_on_bool = false;
+		vector_k<bool> hist_bool;
+		double bin_width = 0;
 		size_t num_plots = 0;
 		vector_k<matrix<double,1> > x_plot_data;
 		vector_k<matrix<double,1> > y_plot_data;
@@ -74,12 +78,13 @@ namespace keycpp
 	};
 	
     inline Plots::Plots(const Plots& other) :
-    hold_on_bool(other.hold_on_bool), num_plots(other.num_plots), x_plot_data(other.x_plot_data), y_plot_data(other.y_plot_data), plot_format(other.plot_format), plot_linewidth(other.plot_linewidth), plot_markersize(other.plot_markersize), plot_val(other.plot_val), legend_entries(other.legend_entries), legend_location(other.legend_location), legend_box(other.legend_box), m_xlabel(other.m_xlabel), m_ylabel(other.m_ylabel), m_title(other.m_title), ymin(other.ymin), ymax(other.ymax), xmin(other.xmin), xmax(other.xmax), grid_on_bool(other.grid_on_bool), logscale_x(other.logscale_x), logscale_y(other.logscale_y), cmdstr()
+    hold_on_bool(other.hold_on_bool), hist_bool(other.hist_bool), num_plots(other.num_plots), x_plot_data(other.x_plot_data), y_plot_data(other.y_plot_data), plot_format(other.plot_format), plot_linewidth(other.plot_linewidth), plot_markersize(other.plot_markersize), plot_val(other.plot_val), legend_entries(other.legend_entries), legend_location(other.legend_location), legend_box(other.legend_box), m_xlabel(other.m_xlabel), m_ylabel(other.m_ylabel), m_title(other.m_title), ymin(other.ymin), ymax(other.ymax), xmin(other.xmin), xmax(other.xmax), grid_on_bool(other.grid_on_bool), logscale_x(other.logscale_x), logscale_y(other.logscale_y), cmdstr()
     {}
     
     inline Plots& Plots::operator=(const Plots& other)
     {
         hold_on_bool = other.hold_on_bool;
+        hist_bool = other.hist_bool;
         num_plots = other.num_plots;
         x_plot_data = other.x_plot_data;
         y_plot_data = other.y_plot_data;
@@ -104,7 +109,7 @@ namespace keycpp
         return *this;
     }
 	
-	inline Plots::Plots(): hold_on_bool(false), num_plots(0), x_plot_data(), y_plot_data(), plot_format(), plot_linewidth(), plot_markersize(), plot_val(), legend_entries(), legend_location("ins vert right top"), legend_box(" box"), m_xlabel(), m_ylabel(), m_title(), ymin(nan("")), ymax(nan("")), xmin(nan("")), xmax(nan("")), grid_on_bool(false), logscale_x(false), logscale_y(false), cmdstr()
+	inline Plots::Plots(): hold_on_bool(false), hist_bool(false), num_plots(0), x_plot_data(), y_plot_data(), plot_format(), plot_linewidth(), plot_markersize(), plot_val(), legend_entries(), legend_location("ins vert right top"), legend_box(" box"), m_xlabel(), m_ylabel(), m_title(), ymin(nan("")), ymax(nan("")), xmin(nan("")), xmax(nan("")), grid_on_bool(false), logscale_x(false), logscale_y(false), cmdstr()
 	{
 	}
 	
@@ -130,6 +135,7 @@ namespace keycpp
 		std::string term;
 		std::string filename;
 		bool remove_temp_files = false;
+		bool hist_bool = false;
 	
 	public:
 		Figure();
@@ -161,6 +167,7 @@ namespace keycpp
 		template<class U, class T> void loglog(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1);
 		template<class U, class T> void loglog(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2);
 		template<class U, class T> void loglog(matrix<U,1> x, matrix<T,1> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
+		template<class U> void hist(matrix<U,1> x, size_t nbins = 10);
 		void xlabel(std::string xlabel_text);
 		void ylabel(std::string ylabel_text);
 		void title(std::string title_text);
@@ -584,9 +591,31 @@ namespace keycpp
 				    temp_stream << p[current_plot].ymin << ":" << p[current_plot].ymax << "]";
 				    g.cmd(temp_stream.str());
 			    }
+			    else if(!std::isnan(p[current_plot].ymin) && std::isnan(p[current_plot].ymax)) // Check for NaNs
+			    {
+				    std::stringstream temp_stream;
+				    temp_stream << "set yrange [";
+				    temp_stream << p[current_plot].ymin << ":]";
+				    g.cmd(temp_stream.str());
+			    }
+			    else if(std::isnan(p[current_plot].ymin) && !std::isnan(p[current_plot].ymax)) // Check for NaNs
+			    {
+				    std::stringstream temp_stream;
+				    temp_stream << "set yrange [:" << p[current_plot].ymax << "]";
+				    g.cmd(temp_stream.str());
+			    }
 			    else
 			    {
 			        g.cmd("set autoscale y");
+			    }
+			    if(hist_bool)
+			    {
+				    std::stringstream temp_stream;
+			        temp_stream << "set boxwidth " << p[current_plot].bin_width;
+			        g.cmd(temp_stream.str());
+				    std::stringstream temp_stream2;
+			        temp_stream2 << "set style fill solid 0.8";
+			        g.cmd(temp_stream2.str());
 			    }
 			
 			    std::stringstream stream1;
@@ -653,7 +682,7 @@ namespace keycpp
 			    g.set_style(stream2.str());
 			
 			    
-			    if(!p[current_plot].legend_location.empty() && current_plot == 0)
+			    if(!p[current_plot].legend_location.empty() && current_plot == 0 && !p[current_plot].legend_entries.empty())
 			    {
 			        g.set_legend(p[current_plot].legend_location + p[current_plot].legend_box);
 			    }
@@ -715,8 +744,27 @@ namespace keycpp
                 {
                     p[current_plot].cmdstr << " title \"" << legend_entry << "\" ";
                 }
-                p[current_plot].cmdstr << "with " << g.get_style();
-
+                
+                if(hist_bool)
+                {
+                    p[current_plot].cmdstr << "smooth freq with boxes lc rgb '";
+				    if(color_str.empty())
+				    {
+					    p[current_plot].cmdstr << "#";
+					    p[current_plot].cmdstr << std::setfill ('0') << std::setw(2) << std::hex << (int)round(255*colors((p[current_plot].num_plots-1) % colors.size(1),0));
+					    p[current_plot].cmdstr << std::setfill ('0') << std::setw(2) << std::hex << (int)round(255*colors((p[current_plot].num_plots-1) % colors.size(1),1));
+					    p[current_plot].cmdstr << std::setfill ('0') << std::setw(2) << std::hex << (int)round(255*colors((p[current_plot].num_plots-1) % colors.size(1),2));
+				    }
+				    else
+				    {
+					    p[current_plot].cmdstr << color_str;
+				    }
+				    p[current_plot].cmdstr << "'";
+                }
+                else     
+                {           
+                    p[current_plot].cmdstr << "with " << g.get_style();
+                }
 			    
 		        if(current_plot == p.size()-1 && p[current_plot].num_plots == p[current_plot].x_plot_data.size())
 		        {
@@ -744,6 +792,7 @@ namespace keycpp
 			p[current_plot].plot_linewidth.push_back(lw);
 			p[current_plot].plot_markersize.push_back(ps);
 			p[current_plot].plot_val.push_back(val);
+			p[current_plot].hist_bool.push_back(hist_bool);
 		}
 		
 		return;
@@ -996,6 +1045,85 @@ namespace keycpp
 	            plot(x.getRow(ii), y,arguments,val,lw,ps,legend_entry);
 	        }
 	    }
+	}
+	
+	template<class U> void Figure::hist(matrix<U,1> x, size_t nbins)
+	{
+	    U min_val, max_val;
+	    min_val = min(x);
+	    max_val = max(x);
+	    U width = (max_val - min_val)/nbins;
+	    matrix<double,1> t = linspace(min_val,max_val,nbins+1);
+	
+	    matrix<U,1> bin(x.size(1));
+	    matrix<U,1> val(bin.size(1));
+        for(int ii = 0; ii < val.size(1); ii++)
+        {
+            val(ii) = 1.0;
+            if(x(ii) == t(0))
+            {
+                bin(ii) = (t(1) + t(0))/2.0;
+            }
+            else
+            {
+                for(int jj = 0; jj < nbins; jj++)
+                {
+                    if(x(ii) > t(jj) && x(ii) <= t(jj+1))
+                    {
+                        bin(ii) = (t(jj+1) + t(jj))/2.0;
+                        break;
+                    }
+                }
+            }
+        }
+	
+	    hist_bool = true;
+	    plot(bin, val);
+	    hist_bool = false;
+	    
+	    p[current_plot].bin_width = width;
+	    
+	    U lower_x, upper_x;
+	    U lower_y, upper_y;
+	    
+	    if(!std::isnan(p[current_plot].xmin))
+		{
+		    lower_x = p[current_plot].xmin;
+		}
+		else
+		{
+		    lower_x = min_val;
+		}
+		
+	    if(!std::isnan(p[current_plot].xmax))
+		{
+		    upper_x = p[current_plot].xmax;
+		}
+		else
+		{
+		    upper_x = max_val;
+		}
+		
+	    if(!std::isnan(p[current_plot].ymin))
+		{
+		    lower_y = p[current_plot].ymin;
+		}
+		else
+		{
+		    lower_y = 0.0;
+		}
+		
+	    if(!std::isnan(p[current_plot].ymax))
+		{
+		    upper_y = p[current_plot].ymax;
+		}
+		else
+		{
+		    upper_y = std::numeric_limits<double>::quiet_NaN();
+		}
+	    
+	    xlim({lower_x,upper_x});
+	    ylim({lower_y,upper_y});
 	}
 	
 	template<class U, class T> void Figure::semilogx(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1)
@@ -1285,6 +1413,7 @@ namespace keycpp
 
 		    for(size_t jj = 0; jj < p[current_plot].x_plot_data.size(); jj++)
 		    {
+		        hist_bool = p[current_plot].hist_bool[jj];
 			    if(p[current_plot].legend_entries.size() > jj)
 			    {
 				    plot(p[current_plot].x_plot_data[jj],p[current_plot].y_plot_data[jj],p[current_plot].plot_format[jj],p[current_plot].plot_val[jj],p[current_plot].plot_linewidth[jj],p[current_plot].plot_markersize[jj],p[current_plot].legend_entries[jj]);

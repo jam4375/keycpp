@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
   <compounddef id="classkeycpp_1_1_spline_exception" kind="class" prot="public">
     <compoundname>keycpp::SplineException</compoundname>
     <basecompoundref prot="public" virt="non-virtual">runtime_error</basecompoundref>
@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="17" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="17" bodyend="17"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="17" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="17" bodyend="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -27,28 +27,28 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="66">
+      <node id="67">
         <label>runtime_error</label>
       </node>
-      <node id="65">
+      <node id="66">
         <label>keycpp::SplineException</label>
         <link refid="classkeycpp_1_1_spline_exception"/>
-        <childnode refid="66" relation="public-inheritance">
+        <childnode refid="67" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="68">
+      <node id="69">
         <label>runtime_error</label>
       </node>
-      <node id="67">
+      <node id="68">
         <label>keycpp::SplineException</label>
         <link refid="classkeycpp_1_1_spline_exception"/>
-        <childnode refid="68" relation="public-inheritance">
+        <childnode refid="69" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="15" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="14" bodyend="18"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/Spline.h" line="15" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Spline.h" bodystart="14" bodyend="18"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1_spline_exception_1a7c13b157534ec469e0b735c071192df8" prot="public" virt="non-virtual"><scope>keycpp::SplineException</scope><name>SplineException</name></member>
     </listofallmembers>

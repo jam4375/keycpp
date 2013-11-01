@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ceil',['ceil',['../namespacekeycpp.html#a005c1190f7087fb1d2545c38c080fd1a',1,'keycpp::ceil(const std::complex&lt; double &gt; &amp;a)'],['../namespacekeycpp.html#abc86c63af2d6788c45ac99a1f3b14ad8',1,'keycpp::ceil(const vector_k&lt; T &gt; &amp;v1)'],['../namespacekeycpp.html#a4bba31744fef3693901a075fda07857c',1,'keycpp::ceil(const matrix&lt; T &gt; &amp;A)']]],
+  ['ceil',['ceil',['../namespacekeycpp.html#a005c1190f7087fb1d2545c38c080fd1a',1,'keycpp::ceil(const std::complex&lt; double &gt; &amp;a)'],['../namespacekeycpp.html#abc86c63af2d6788c45ac99a1f3b14ad8',1,'keycpp::ceil(const vector_k&lt; T &gt; &amp;v1)'],['../namespacekeycpp.html#a6f75eb747c57c3e5ff91323f65a02b5f',1,'keycpp::ceil(const matrix&lt; T, dim &gt; &amp;A)']]],
   ['clock',['clock',['../namespacekeycpp.html#a806f0afebdf1131be26a05d7a4a23044',1,'keycpp']]],
   ['cmd',['cmd',['../class_gnuplot.html#a07607803ede8dd5416906df0a1924fc5',1,'Gnuplot']]],
   ['cos',['cos',['../namespacekeycpp.html#a917607e20e487553be913b7ccaa4736d',1,'keycpp::cos(const vector_k&lt; std::complex&lt; T &gt;&gt; &amp;v1)'],['../namespacekeycpp.html#a1d9cd34e13780fffeb1de19287f5636d',1,'keycpp::cos(const vector_k&lt; T &gt; &amp;v1)'],['../namespacekeycpp.html#a918a1ad9493c25e0afb4d2a37af24d25',1,'keycpp::cos(const matrix&lt; std::complex&lt; T &gt;, dim &gt; &amp;A)'],['../namespacekeycpp.html#a882ae0fcbeee4b61db0483546cf76021',1,'keycpp::cos(const matrix&lt; T, dim &gt; &amp;A)']]],

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
   <compounddef id="structkeycpp_1_1tictoc__type" kind="struct" prot="public">
     <compoundname>keycpp::tictoc_type</compoundname>
     <includes refid="keycpp_8h" local="no">keycpp.h</includes>
@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3408" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3408" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3475" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3475" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1tictoc__type_1a4d57057ccd64987a00d47be2eeda40a5" prot="public" static="no" mutable="no">
         <type>timeval</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3408" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3408" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3475" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3475" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1tictoc__type_1aceaa45496add0b4c6714ac69e98c2580" prot="public" static="no" mutable="no">
         <type>timeval</type>
@@ -41,14 +41,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3408" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3408" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3475" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3475" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Data type for using the <ref refid="namespacekeycpp_1a6069a9eec0edfa1d401230013d98765e" kindref="member">tic()</ref> and toc(tictoc_type Timer) commands. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3407" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3406" bodyend="3409"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="3474" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="3473" bodyend="3476"/>
     <listofallmembers>
       <member refid="structkeycpp_1_1tictoc__type_1aceaa45496add0b4c6714ac69e98c2580" prot="public" virt="non-virtual"><scope>keycpp::tictoc_type</scope><name>elapsed</name></member>
       <member refid="structkeycpp_1_1tictoc__type_1ad6878570bb9710bf65574d2296ebd287" prot="public" virt="non-virtual"><scope>keycpp::tictoc_type</scope><name>start</name></member>

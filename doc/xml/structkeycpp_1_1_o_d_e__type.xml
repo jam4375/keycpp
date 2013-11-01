@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
   <compounddef id="structkeycpp_1_1_o_d_e__type" kind="struct" prot="public">
     <compoundname>keycpp::ODE_type</compoundname>
     <templateparamlist>
@@ -22,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2389" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2389" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2384" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2384" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1_o_d_e__type_1aafb0eeede0354cc546c0114ef3c15129" prot="public" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; Y, 2 &gt;</type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2390" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2390" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2385" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2385" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -69,7 +69,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2388" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2387" bodyend="2391"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2383" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2382" bodyend="2386"/>
     <listofallmembers>
       <member refid="structkeycpp_1_1_o_d_e__type_1a1f0ccdab9179cc5cb3d46330261ba85b" prot="public" virt="non-virtual"><scope>keycpp::ODE_type</scope><name>t</name></member>
       <member refid="structkeycpp_1_1_o_d_e__type_1aafb0eeede0354cc546c0114ef3c15129" prot="public" virt="non-virtual"><scope>keycpp::ODE_type</scope><name>y</name></member>

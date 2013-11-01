@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
   <compounddef id="test__eig_8cpp" kind="file">
     <compoundname>test_eig.cpp</compoundname>
     <includes local="no">boost/test/unit_test.hpp</includes>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/testing/test_eig.cpp" line="7" bodyfile="/media/Storage/Research/open_source/keycpp/testing/test_eig.cpp" bodystart="6" bodyend="31"/>
+        <location file="/media/Storage/Research/open_source/keycpp/testing/test_eig.cpp" line="6" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/testing/test_eig.cpp" bodystart="6" bodyend="31"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -288,7 +288,7 @@
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1vector__k" kindref="compound">keycpp::vector_k&lt;double&gt;</ref><sp/>lambda2<sp/>=<sp/>{3.0,<sp/>-1.0};</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;std::complex&lt;double&gt;</ref>&gt;<sp/>vec;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ans<sp/>=<sp/><ref refid="namespacekeycpp_1a516e693670ca88debd44ca9a48b2f225" kindref="member" tooltip="Generalized complex-valued eigenvalue solver using LAPACK function call.">eig</ref>(A,<sp/>&amp;vec);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ans<sp/>=<sp/><ref refid="namespacekeycpp_1a516e693670ca88debd44ca9a48b2f225" kindref="member" tooltip="Generalized complex-valued eigenvalue solver using LAPACK function call. ">eig</ref>(A,<sp/>&amp;vec);</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOST_CHECK((abs(keycpp::norm(lambda1-ans))<sp/>&lt;<sp/>tol)<sp/>||<sp/>(abs(keycpp::norm(lambda2-ans))<sp/>&lt;<sp/>tol));</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(abs(keycpp::norm(lambda1-ans))<sp/>&lt;<sp/>tol)</highlight></codeline>

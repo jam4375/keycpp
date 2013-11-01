@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
   <compounddef id="classkeycpp_1_1_pointer_iterator" kind="class" prot="public">
     <compoundname>keycpp::PointerIterator</compoundname>
     <basecompoundref prot="public" virt="non-virtual">std::iterator&lt; std::random_access_iterator_tag, TypeT &gt;</basecompoundref>
@@ -22,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="25" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="25" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="25" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classkeycpp_1_1_pointer_iterator_1a5cd2295724a4697502177353b7d1f8cf" prot="public" static="no">
         <type>std::iterator&lt; std::random_access_iterator_tag, TypeT &gt;::value_type</type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="28" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="28" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="28" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classkeycpp_1_1_pointer_iterator_1afe9aba481fceabc3ff98dfd05591e199" prot="public" static="no">
         <type>std::iterator&lt; std::random_access_iterator_tag, TypeT &gt;::difference_type</type>
@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="31" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="31" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="31" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classkeycpp_1_1_pointer_iterator_1afb9ff3879d195f7361980a126756ebc0" prot="public" static="no">
         <type>std::iterator&lt; std::random_access_iterator_tag, TypeT &gt;::reference</type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="34" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="34" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="34" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classkeycpp_1_1_pointer_iterator_1adada9309981bd33390b4b461c8f5b853" prot="public" static="no">
         <type>std::iterator&lt; std::random_access_iterator_tag, TypeT &gt;::pointer</type>
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="37" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="37" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="37" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="37" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -89,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="21" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="21" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="21" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_pointer_iterator_1ae2e20193e310cd9fc439a5ef7a949295" prot="protected" static="no" mutable="no">
         <type>size_t</type>
@@ -102,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="22" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="22" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="22" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="22" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -117,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="40" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="40" bodyend="40"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="40" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="40" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1a8144990606b147959521783cc7a7934f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -139,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="44" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="44" bodyend="44"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="44" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="44" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1aa1a5f134d80ade0a24b6232f25d81a52" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -161,7 +161,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="46" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="46" bodyend="46"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="46" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="46" bodyend="46"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1aac3906d9cdca051a792ef7899f78d47a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -183,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="50" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="49" bodyend="50"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="49" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="49" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1adb5f11092924ec2ffdb0987221ac09f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref> &amp;</type>
@@ -196,7 +196,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="53" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="52" bodyend="53"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="52" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="52" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1a8817b17c51afe87381ea2911386d2210" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref> &amp;</type>
@@ -209,7 +209,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="56" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="55" bodyend="56"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="55" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="55" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1a84bfd964409dfdf89343cc9db3e996df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref></type>
@@ -225,7 +225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="59" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="58" bodyend="59"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="58" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="58" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1ac4da97a9c8c09ad6ee1d27f4eb27310f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref></type>
@@ -241,7 +241,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="62" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="61" bodyend="62"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="61" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="61" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1a93d3314a1e2896d39b87fce1c79cf3c0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref></type>
@@ -258,7 +258,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="65" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="64" bodyend="65"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="64" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="64" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1a3cc779696b1e9b2c9aff80608ade1fce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref> &amp;</type>
@@ -275,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="68" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="67" bodyend="68"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="67" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="67" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1a30dbe9e2a35428de230bc91989ef36dd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref></type>
@@ -292,7 +292,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="71" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="70" bodyend="71"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="70" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="70" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1a070e0ded5d9a1e27a81beef460e56dc1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_pointer_iterator" kindref="compound">PointerIterator</ref> &amp;</type>
@@ -309,7 +309,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="74" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="73" bodyend="74"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="73" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="73" bodyend="74"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1a8f90f761a85a25dc17e6c4c1a3d395c9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>reference</type>
@@ -322,7 +322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="77" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="76" bodyend="77"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="76" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="76" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1ae43cd45245f9d970256e1b3f021f3d53" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>pointer</type>
@@ -335,7 +335,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="80" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="79" bodyend="80"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="79" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="79" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1a390b37fc74ce6893512e8a02c4fea83d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>reference</type>
@@ -352,7 +352,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="83" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="82" bodyend="83"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="82" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="82" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_pointer_iterator_1a52500cdd636c14af6f85196b1cae8a44" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>size_t</type>
@@ -365,7 +365,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="121" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="121" bodyend="121"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="121" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="121" bodyend="121"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -393,7 +393,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="89" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="125" bodyend="126"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="87" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="125" bodyend="126"/>
       </memberdef>
       <memberdef kind="friend" id="classkeycpp_1_1_pointer_iterator_1a7682ba01e82b3aba962c6ee0c32d4d3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -419,7 +419,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="94" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="129" bodyend="130"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="92" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="129" bodyend="130"/>
       </memberdef>
       <memberdef kind="friend" id="classkeycpp_1_1_pointer_iterator_1af558be7c8449cd575bbf7b362d27b6f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -445,7 +445,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="99" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="133" bodyend="134"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="97" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="133" bodyend="134"/>
       </memberdef>
       <memberdef kind="friend" id="classkeycpp_1_1_pointer_iterator_1a29c4edb27dcc46bea93df78eef3eb1f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -471,7 +471,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="104" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="137" bodyend="138"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="102" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="137" bodyend="138"/>
       </memberdef>
       <memberdef kind="friend" id="classkeycpp_1_1_pointer_iterator_1afc6f64c3c35e55197f846b2328cb21f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -497,7 +497,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="109" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="141" bodyend="142"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="107" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="141" bodyend="142"/>
       </memberdef>
       <memberdef kind="friend" id="classkeycpp_1_1_pointer_iterator_1a7a58bf216a9bd8b4a4cfd2905a421b8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -523,7 +523,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="114" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="145" bodyend="146"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="112" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="145" bodyend="146"/>
       </memberdef>
       <memberdef kind="friend" id="classkeycpp_1_1_pointer_iterator_1a0c82b8711579ffa15e4ec6f8952e7bda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -549,7 +549,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="119" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="149" bodyend="151"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="117" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="149" bodyend="151"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -557,28 +557,28 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="51">
+      <node id="52">
         <label>keycpp::PointerIterator&lt; TypeT &gt;</label>
         <link refid="classkeycpp_1_1_pointer_iterator"/>
-        <childnode refid="52" relation="public-inheritance">
+        <childnode refid="53" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="52">
+      <node id="53">
         <label>std::iterator&lt;std::random_access_iterator_tag, TypeT&gt;</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="53">
+      <node id="54">
         <label>keycpp::PointerIterator&lt; TypeT &gt;</label>
         <link refid="classkeycpp_1_1_pointer_iterator"/>
-        <childnode refid="54" relation="public-inheritance">
+        <childnode refid="55" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="54">
+      <node id="55">
         <label>std::iterator&lt;std::random_access_iterator_tag, TypeT&gt;</label>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="19" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="17" bodyend="122"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="19" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="17" bodyend="122"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1_pointer_iterator_1afe9aba481fceabc3ff98dfd05591e199" prot="public" virt="non-virtual"><scope>keycpp::PointerIterator</scope><name>difference_type</name></member>
       <member refid="classkeycpp_1_1_pointer_iterator_1a52500cdd636c14af6f85196b1cae8a44" prot="public" virt="non-virtual"><scope>keycpp::PointerIterator</scope><name>get_inc</name></member>

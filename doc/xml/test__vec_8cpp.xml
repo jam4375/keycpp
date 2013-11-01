@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
   <compounddef id="test__vec_8cpp" kind="file">
     <compoundname>test_vec.cpp</compoundname>
     <includes local="no">boost/test/unit_test.hpp</includes>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/testing/test_vec.cpp" line="7" bodyfile="/media/Storage/Research/open_source/keycpp/testing/test_vec.cpp" bodystart="6" bodyend="358"/>
+        <location file="/media/Storage/Research/open_source/keycpp/testing/test_vec.cpp" line="6" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/testing/test_vec.cpp" bodystart="6" bodyend="358"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -621,12 +621,12 @@
 <codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>begin(<sp/>vec<sp/>)<sp/>==<sp/>vec.begin()<sp/>);</highlight></codeline>
 <codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>end(<sp/>vec<sp/>)<sp/><sp/><sp/>==<sp/>vec.end()<sp/>);</highlight></codeline>
 <codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>empty(<sp/>vec<sp/>)<sp/>==<sp/>vec.empty()<sp/>);</highlight></codeline>
-<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>(std::size_t)<ref refid="namespacekeycpp_1acfe17126168656af54ae76ab6c487407" kindref="member" tooltip="Returns the size of matrix A.">size</ref>(<sp/>vec<sp/>)<sp/>==<sp/>vec.size()<sp/>);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>(std::size_t)<ref refid="namespacekeycpp_1acfe17126168656af54ae76ab6c487407" kindref="member" tooltip="Returns the size of matrix A. ">size</ref>(<sp/>vec<sp/>)<sp/>==<sp/>vec.size()<sp/>);</highlight></codeline>
 <codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>begin(<sp/>cvec<sp/>)<sp/>==<sp/>cvec.begin()<sp/>);</highlight></codeline>
 <codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>end(<sp/>cvec<sp/>)<sp/><sp/><sp/>==<sp/>cvec.end()<sp/>);</highlight></codeline>
 <codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>empty(<sp/>cvec<sp/>)<sp/>==<sp/>cvec.empty()<sp/>);</highlight></codeline>
-<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>(std::size_t)<ref refid="namespacekeycpp_1acfe17126168656af54ae76ab6c487407" kindref="member" tooltip="Returns the size of matrix A.">size</ref>(<sp/>cvec<sp/>)<sp/>==<sp/>cvec.size()<sp/>);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK(<sp/>(std::size_t)<ref refid="namespacekeycpp_1acfe17126168656af54ae76ab6c487407" kindref="member" tooltip="Returns the size of matrix A. ">size</ref>(<sp/>cvec<sp/>)<sp/>==<sp/>cvec.size()<sp/>);</highlight></codeline>
 <codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="358"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="359"><highlight class="normal"></highlight></codeline>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.3.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
   <compounddef id="structkiss__fft__state" kind="struct" prot="public">
     <compoundname>kiss_fft_state</compoundname>
       <sectiondef kind="public-attrib">
@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="32" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="32" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="32" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkiss__fft__state_1a8faed935610ffb08bf7ad9ea8d6c81d2" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="33" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="33" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="33" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkiss__fft__state_1a2d5d0897276dbac0674fae556f951d18" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="34" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="34" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="34" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkiss__fft__state_1aa7d1cab86ec03a8ecddfe0d91ef0bd20" prot="public" static="no" mutable="no">
         <type><ref refid="structkiss__fft__cpx" kindref="compound">kiss_fft_cpx</ref></type>
@@ -53,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="35" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="35" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="35" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -73,7 +73,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="31" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="31" bodyend="36"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" line="31" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/_kiss_fft_guts.h" bodystart="31" bodyend="36"/>
     <listofallmembers>
       <member refid="structkiss__fft__state_1a2d5d0897276dbac0674fae556f951d18" prot="public" virt="non-virtual"><scope>kiss_fft_state</scope><name>factors</name></member>
       <member refid="structkiss__fft__state_1a8faed935610ffb08bf7ad9ea8d6c81d2" prot="public" virt="non-virtual"><scope>kiss_fft_state</scope><name>inverse</name></member>

@@ -125,7 +125,7 @@ Example Code}
 32     h1.xlabel(\textcolor{stringliteral}{"t"});
 33     h1.ylabel(\textcolor{stringliteral}{"y"});
 34     h1.legend(\{\textcolor{stringliteral}{"y1 = t^2"},\textcolor{stringliteral}{"y2 = t^3"}\});
-35     \textcolor{keyword}{set}(h1,\textcolor{stringliteral}{"fontsize"},14);
+35     set(h1,\textcolor{stringliteral}{"fontsize"},14);
 36 
 37     \textcolor{comment}{// This is how to solve linear equations of the form Ax = b:}
 38     \hyperlink{classkeycpp_1_1matrix}{matrix<double,2>} A = \{\{1.0, 2.0\},
@@ -155,7 +155,7 @@ Example Code}
 62     h2.plot(t2,y.col(2),\textcolor{stringliteral}{"x"});
 63     h2.xlabel(\textcolor{stringliteral}{"t"});
 64     h2.ylabel(\textcolor{stringliteral}{"y"});
-65     \textcolor{keyword}{set}(h2,\textcolor{stringliteral}{"fontsize"},14);
+65     set(h2,\textcolor{stringliteral}{"fontsize"},14);
 66     h2.title(\textcolor{stringliteral}{"ODE Solution"});
 67     
 68     \textcolor{keywordflow}{return} 0;
@@ -181,7 +181,7 @@ Note\-: You can omit the {\ttfamily keycpp\-:\-:} prefix from the following comm
 
 \begin{TabularC}{3}
 \hline
-\rowcolor{lightgray}{\bf {\itshape M\-A\-T\-L\-A\-B/\-Octave} }&{\bf {\itshape Key\-Cpp} }&{\bf Notes }\\\cline{1-3}
+\rowcolor{lightgray}{\bf {\itshape M\-A\-T\-L\-A\-B/\-Octave} }&{\bf {\itshape Key\-Cpp} }&{\bf Notes  }\\\cline{1-3}
 {\ttfamily A(1,1)} &{\ttfamily A(0,0);} &Indexing starts at 0 in Key\-Cpp \\\cline{1-3}
 {\ttfamily A(\-N,\-N)} &{\ttfamily A(N-\/1,N-\/1);} &\\\cline{1-3}
 {\ttfamily size(\-A,1)} &{\ttfamily keycpp\-::size(\-A,1);} &\\\cline{1-3}
