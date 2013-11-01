@@ -3693,10 +3693,25 @@ namespace keycpp
     
     namespace rng_ns
     {
-        int choice = 1;
-        std::default_random_engine default_rng(std::random_device{}()); // Choice = 0;
-        std::mt19937 mt_rng(std::random_device{}()); // Choice = 1;
-        std::ranlux24_base lagfib_rng(std::random_device{}()); // Choice = 2;
+        inline int& getChoice()
+        {
+            static int choice = 1;
+            return choice;
+        }
+        
+        inline std::mt19937& get_mt_rng()
+        {
+            // Choice = 1;
+            static std::mt19937 mt_rng(std::random_device{}());
+            return mt_rng;
+        }
+        
+        inline std::ranlux24_base& get_lagfib_rng()
+        {
+            // Choice = 2;
+            static std::ranlux24_base lagfib_rng(std::random_device{}());
+            return lagfib_rng;
+        }
     }
     
     inline void rng(size_t seed = 0, std::string generator = "twister")
@@ -3704,13 +3719,13 @@ namespace keycpp
 		std::transform(generator.begin(), generator.end(), generator.begin(), ::tolower);
 		if(generator.compare("twister") == 0)
 		{
-		    rng_ns::choice = 1;
-		    rng_ns::mt_rng = std::mt19937(seed);
+		    rng_ns::getChoice() = 1;
+		    rng_ns::get_mt_rng() = std::mt19937(seed);
 		}
 		else if(generator.compare("multFibonacci") == 0)
 		{
-		    rng_ns::choice = 2;
-		    rng_ns::lagfib_rng = std::ranlux24_base(seed);
+		    rng_ns::getChoice() = 2;
+		    rng_ns::get_lagfib_rng() = std::ranlux24_base(seed);
 		}
     }
     
@@ -3722,7 +3737,7 @@ namespace keycpp
 		{
 		    if(shuffle.compare("shuffle") == 0)
 		    {
-		        if(rng_ns::choice == 2)
+		        if(rng_ns::getChoice() == 2)
 		        {
 		            rng(std::random_device{}(),"multFibonacci");
 		        }
@@ -3733,21 +3748,21 @@ namespace keycpp
 		    }
 		    else if(shuffle.compare("default") == 0)
 		    {
-		        rng_ns::choice = 1;
-		        rng_ns::mt_rng = std::mt19937(0);
+		        rng_ns::getChoice() = 1;
+		        rng_ns::get_mt_rng() = std::mt19937(0);
 		    }
 		}
 		else
 		{
 		    if(generator.compare("twister") == 0)
 		    {
-		        rng_ns::choice = 1;
-		        rng_ns::mt_rng = std::mt19937(std::random_device{}());
+		        rng_ns::getChoice() = 1;
+		        rng_ns::get_mt_rng() = std::mt19937(std::random_device{}());
 		    }
 		    else if(generator.compare("multFibonacci") == 0)
 		    {
-		        rng_ns::choice = 2;
-		        rng_ns::lagfib_rng = std::ranlux24_base(std::random_device{}());
+		        rng_ns::getChoice() = 2;
+		        rng_ns::get_lagfib_rng() = std::ranlux24_base(std::random_device{}());
 		    }
 		}
     }
@@ -3758,13 +3773,13 @@ namespace keycpp
 	{
         std::uniform_real_distribution<double> distribution(0.0, 1.0);
         double randomNumber;
-        if(rng_ns::choice == 1)
+        if(rng_ns::getChoice() == 1)
         {
-            randomNumber = distribution(rng_ns::mt_rng);
+            randomNumber = distribution(rng_ns::get_mt_rng());
         }
-        else if(rng_ns::choice == 2)
+        else if(rng_ns::getChoice() == 2)
         {
-            randomNumber = distribution(rng_ns::lagfib_rng);
+            randomNumber = distribution(rng_ns::get_lagfib_rng());
         }
         else
         {
@@ -3809,13 +3824,13 @@ namespace keycpp
 	{
         std::normal_distribution<double> distribution(0.0, 1.0);
         double randomNumber;
-        if(rng_ns::choice == 1)
+        if(rng_ns::getChoice() == 1)
         {
-            randomNumber = distribution(rng_ns::mt_rng);
+            randomNumber = distribution(rng_ns::get_mt_rng());
         }
-        else if(rng_ns::choice == 2)
+        else if(rng_ns::getChoice() == 2)
         {
-            randomNumber = distribution(rng_ns::lagfib_rng);
+            randomNumber = distribution(rng_ns::get_lagfib_rng());
         }
         else
         {
