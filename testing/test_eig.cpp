@@ -11,8 +11,8 @@ BOOST_AUTO_TEST_CASE(eig_test)
                                 {2.0, 1.0}};
                                 
     // Expected eigenvalues
-    keycpp::vector_k<double> lambda1 = {-1.0, 3.0};
-    keycpp::vector_k<double> lambda2 = {3.0, -1.0};
+    keycpp::matrix<double> lambda1 = keycpp::diag({-1.0, 3.0});
+    keycpp::matrix<double> lambda2 = keycpp::diag({3.0, -1.0});
     
     keycpp::matrix<std::complex<double>> vec;
     auto ans = eig(A, &vec);

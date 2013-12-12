@@ -142,16 +142,16 @@ namespace keycpp
                  std::complex<double>* work, const int* lwork, double *rwork, int* info);
 	}
 
-	vector_k<std::complex<double> > eig(const matrix<std::complex<double> > &A,
+	matrix<std::complex<double> > eig(const matrix<std::complex<double> > &A,
 	                                       const matrix<std::complex<double> > &B,
 	                                       matrix<std::complex<double> > *vr_return = NULL,
 	                                       matrix<std::complex<double> > *vl_return = NULL);
 
-	vector_k<std::complex<double> > eig(const matrix<std::complex<double> > &A,
+	matrix<std::complex<double> > eig(const matrix<std::complex<double> > &A,
 	                                       matrix<std::complex<double> > *vr_return = NULL,
 	                                       matrix<std::complex<double> > *vl_return = NULL);
 	                                       
-	vector_k<std::complex<double>> eig(const matrix<double> &A,
+	matrix<std::complex<double>> eig(const matrix<double> &A,
                                           matrix<std::complex<double>> *vr_return = NULL,
                                           matrix<std::complex<double>> *vl_return = NULL);
 	
@@ -544,6 +544,19 @@ namespace keycpp
 			B.mData[ii] = a+A.mData[ii];
 		}
 		return B;
+	}
+	
+	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator+(const matrix<U>& A, const matrix<T>& B)
+	{
+		matrix<decltype(std::declval<T>()*std::declval<U>())> result(A.size(1),A.size(2));
+		for(size_t ii = 0; ii < result.size(1); ii++)
+		{
+		    for(size_t jj = 0; jj < result.size(2); jj++)
+		    {
+			    result(ii,jj) = A(ii,jj) + B(ii,jj);
+			}
+		}
+		return result;
 	}
 
 	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> operator+(const U& a, const matrix<T>& A)
@@ -1287,12 +1300,12 @@ namespace keycpp
      *   @param[in] N Number of elements.
      *   @return A vector of length N containing ones for each element. 
      */
-	template<class T> vector_k<T> ones(const int &N)
+	template<class T> matrix<T,1> ones(const int &N)
 	{
-		vector_k<T> v1(N);
+		matrix<T,1> v1(N);
 		for(int ii = 0; ii < N; ii++)
 		{
-		    v1[ii] = 1.0;
+		    v1(ii) = 1.0;
 		}
 		return v1;
 	}
@@ -1506,23 +1519,21 @@ namespace keycpp
 	 *  Each element of A is divided by each element of B. The matrix that is
 	 *  returned is the same size as A and B. Equivalent to A./B in MATLAB.
 	 */
-	template<class T, class U> matrix<decltype(std::declval<T>()*std::declval<U>())> rdivide(const matrix<T>& A, const matrix<U>& B)
+	template<class T, class U, size_t dim> matrix<decltype(std::declval<T>()*std::declval<U>()),dim> rdivide(const matrix<T,dim>& A, const matrix<U,dim>& B)
 	{
-	    if(A.size(1) <= 0 || A.size(2) <= 0 || B.size(1) <= 0 || B.size(2) <= 0)
+	    if(A.empty() || B.empty())
 	    {
 	        throw KeyCppException("Cannot rdivide an empty matrix!");
 	    }
-	    if(A.size(1) != B.size(1) || A.size(2) != B.size(2))
+	    if(size(A) != size(B))
 	    {
 	        throw KeyCppException("Matrix dimensions must agree in rdivide().");
 	    }
-		matrix<decltype(std::declval<T>()*std::declval<U>())> C(A.size(1),B.size(2));
-		for(int ii = 0; ii < A.size(1); ii++)
+		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> C;
+		C.resize(size(A));
+		for(int ii = 0; ii < A.mData.size(); ii++)
 		{
-			for(int jj = 0; jj < A.size(2); jj++)
-			{
-				C(ii,jj) = A(ii,jj)/B(ii,jj);
-			}
+		    C.mData[ii] = A.mData[ii]/B.mData[ii];
 		}
 		return C;
 	}
@@ -1952,13 +1963,13 @@ namespace keycpp
 	
 	/** \brief Computes the mean of vector v1.
 	 */
-	template<class T> T mean(const vector_k<T>& v1)
+	template<class T> T mean(const matrix<T,1>& v1)
 	{
 		T m = T(0);
 		double tot = 0.0;
-		for(size_t ii = 0; ii < v1.size(); ii++)
+		for(size_t ii = 0; ii < v1.size(1); ii++)
 		{
-			m += v1[ii];
+			m += v1(ii);
 			tot += 1.0;
 		}
 		return m/tot;
@@ -2454,6 +2465,11 @@ namespace keycpp
 		h.set(property,val);
 	}
 	
+	inline void set(Figure &h, std::string property, std::string val)
+	{
+		h.set(property,val);
+	}
+	
 	inline void set(Figure &h, std::string property, std::initializer_list<size_t> list)
 	{
 		h.set(property,list);
@@ -2578,11 +2594,11 @@ namespace keycpp
 	template<class T>
 	struct Sort_Vector
 	{
-		vector_k<T> v;
-		vector_k<size_t> index;
+		matrix<T,1> v;
+		matrix<size_t,1> index;
 	};
 	
-	template<class T> Sort_Vector<T> sort(const vector_k<T> &v1, std::string method = "ascend")
+	template<class T> Sort_Vector<T> sort(const matrix<T,1> &v1, std::string method = "ascend")
 	{
 		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
 		if(method.compare("ascend") != 0 && method.compare("descend") != 0)
@@ -2596,30 +2612,30 @@ namespace keycpp
 		bool swapped = true;
 		T temp;
 		size_t temp_i;
-		vector_k<size_t> index(v1.size());
-		for(size_t ii = 0; ii < v1.size(); ii++)
+		matrix<size_t,1> index(v1.size(1));
+		for(size_t ii = 0; ii < v1.size(1); ii++)
 		{
-			index[ii] = ii;
+			index(ii) = ii;
 		}
-		vector_k<T> v2(v1.size());
-		for(size_t ii = 0; ii < v2.size(); ii++)
+		matrix<T,1> v2(v1.size(1));
+		for(size_t ii = 0; ii < v2.size(1); ii++)
 		{
-			v2[ii] = v1[ii];
+			v2(ii) = v1(ii);
 		}
 		swapped = true;
 		while(swapped)
 		{     
 			swapped = false;
-			for(size_t ii = 1; ii < v1.size(); ii++)
+			for(size_t ii = 1; ii < v1.size(1); ii++)
 			{
-				if(((v2[ii-1]) > (v2[ii]) && method.compare("ascend") == 0) || ((v2[ii-1]) < (v2[ii]) && method.compare("descend") == 0))
+				if(((v2(ii-1)) > (v2(ii)) && method.compare("ascend") == 0) || ((v2(ii-1)) < (v2(ii)) && method.compare("descend") == 0))
 				{
-					temp = v2[ii-1];
-					v2[ii-1] = v2[ii];
-					v2[ii] = temp;
-					temp_i = index[ii-1];
-					index[ii-1] = index[ii];
-					index[ii] = temp_i;
+					temp = v2(ii-1);
+					v2(ii-1) = v2(ii);
+					v2(ii) = temp;
+					temp_i = index(ii-1);
+					index(ii-1) = index(ii);
+					index(ii) = temp_i;
 					swapped = true;
 				}
 			}
@@ -2831,6 +2847,27 @@ namespace keycpp
 	matrix<T> reshape(const vector_k<T> &v1, const size_t &m, const size_t &n)
 	{
 	    return reshape(vec2mat(v1),m,n);
+	}
+	
+	/** \brief Computes the dot product between vectors v1 and v2.
+	 */
+	template<class T, class U>
+	decltype(std::declval<T>()*std::declval<U>()) dot(const matrix<T,1> &v1, const matrix<U,1> &v2)
+	{
+	    if(v1.empty() || v2.empty())
+	    {
+	        throw KeyCppException("Cannot dot multiply an empty vector!");
+	    }
+	    if(v1.size(1) != v2.size(1))
+	    {
+	        throw KeyCppException("Vectors must be same size in dot()!");
+	    }
+	    decltype(std::declval<T>()*std::declval<U>()) result = 0.0;
+	    for(size_t ii = 0; ii < v1.size(1); ii++)
+	    {
+	        result += v1(ii)*v2(ii);
+	    }
+	    return result;
 	}
 	
 	/** \brief Computes the dot product between vectors v1 and v2.
@@ -3456,15 +3493,15 @@ namespace keycpp
 	 *         of the companion matrix.
 	 */
 	template<class T>
-	vector_k<T> roots(const vector_k<T> &p)
+	matrix<T,1> roots(const matrix<T,1> &p)
 	{
-	    size_t n = p.size()-1;
+	    size_t n = p.size(1)-1;
 	    matrix<T> A = diag(ones<T>(n-1),-1);
 	    for(size_t ii = 0; ii < A.size(2); ii++)
 	    {
-            A(0,ii) = -p[ii+1]/p[0];
+            A(0,ii) = -p(ii+1)/p(0);
         }
-        vector_k<T> v = eig(A);
+        matrix<T,1> v = eig(A);
         return v;
 	}
 	
@@ -3665,28 +3702,28 @@ namespace keycpp
     }
     
     /** \brief Returns the standard deviation of inputed vector. */
-    inline double stdev(vector_k<std::complex<double>> v1)
+    inline double stdev(matrix<std::complex<double>,1> v1)
     {
         std::complex<double> v_bar = mean(v1);
         double temp = 0.0;
-        for(size_t ii = 0; ii < v1.size(); ii++)
+        for(size_t ii = 0; ii < v1.size(1); ii++)
         {
-            temp += std::abs((v1[ii] - v_bar)*conj(v1[ii] - v_bar));
+            temp += std::abs((v1(ii) - v_bar)*conj(v1(ii) - v_bar));
         }
-        temp = std::sqrt(temp/((double)v1.size()-1.0));
+        temp = std::sqrt(temp/((double)v1.size(1)-1.0));
         
         return temp;
     }
     
     /** \brief Returns the variance (square of standard deviation) for inputed vector. */
     template<class T>
-    T var(vector_k<T> v1)
+    T var(matrix<T,1> v1)
     {
         return pow(stdev(v1),2.0);
     }
     
     /** \brief Returns the variance (square of standard deviation) for inputed vector. */
-    inline double var(vector_k<std::complex<double>> v1)
+    inline double var(matrix<std::complex<double>,1> v1)
     {
         return pow(stdev(v1),2.0);
     }
@@ -3874,7 +3911,7 @@ namespace keycpp
 	 *  are returned by default. To return the right or left eigenvectors, supply the
 	 *  function with a std::complex<double> matrix object in the 3rd or 4th parameters, respectively.
 	 */
-    inline vector_k<std::complex<double> > eig(const matrix<std::complex<double> > &A, const matrix<std::complex<double> > &B, matrix<std::complex<double> > *vr_return, matrix<std::complex<double> > *vl_return)
+    inline matrix<std::complex<double> > eig(const matrix<std::complex<double> > &A, const matrix<std::complex<double> > &B, matrix<std::complex<double> > *vr_return, matrix<std::complex<double> > *vl_return)
 	{
 		unsigned int n;
 		int nn, lda, ldb, ldvl, ldvr, lwork, info;
@@ -3925,10 +3962,10 @@ namespace keycpp
 
 		zggev_(&jobvl, &jobvr, &nn, a, &lda, b, &ldb, alpha, beta, vl, &ldvl, vr, &ldvr, work, &lwork, rwork, &info);
 
-		vector_k<std::complex<double> > lambda(n);
+		matrix<std::complex<double> > lambda(n,n);
 		for(unsigned int ii = 0; ii < n; ii++)
 		{
-			lambda[ii] = alpha[ii]/beta[ii];
+			lambda(ii,ii) = alpha[ii]/beta[ii];
 		}
 		if(jobvr == 'V')
 		{
@@ -3972,7 +4009,7 @@ namespace keycpp
 	 *  are returned by default. To return the right or left eigenvectors, supply the
 	 *  function with a std::complex<double> matrix object in the 2nd or 3rd parameters, respectively.
 	 */
-    inline vector_k<std::complex<double> > eig(const matrix<std::complex<double> > &A, matrix<std::complex<double> > *vr_return, matrix<std::complex<double> > *vl_return)
+    inline matrix<std::complex<double>> eig(const matrix<std::complex<double> > &A, matrix<std::complex<double> > *vr_return, matrix<std::complex<double> > *vl_return)
 	{
 		unsigned int n;
 		int nn, lda, ldb, ldvl, ldvr, lwork, info;
@@ -4020,10 +4057,10 @@ namespace keycpp
 
 	    zgeev_(&jobvl, &jobvr, &nn, a, &lda, w, vl, &ldvl, vr, &ldvr, work, &lwork, rwork, &info);
 
-		vector_k<std::complex<double> > lambda(n);
+		matrix<std::complex<double> > lambda(n,n);
 		for(unsigned int ii = 0; ii < n; ii++)
 		{
-			lambda[ii] = w[ii];
+			lambda(ii,ii) = w[ii];
 		}
 		if(jobvr == 'V')
 		{
@@ -4066,7 +4103,7 @@ namespace keycpp
 	 *  are returned by default. To return the right or left eigenvectors, supply the
 	 *  function with a std::complex<double> matrix object in the 2nd or 3rd parameters, respectively.
 	 */
-    inline vector_k<std::complex<double> > eig(const matrix<double> &A, matrix<std::complex<double> > *vr_return, matrix<std::complex<double> > *vl_return)
+    inline matrix<std::complex<double> > eig(const matrix<double> &A, matrix<std::complex<double> > *vr_return, matrix<std::complex<double> > *vl_return)
 	{
 	    matrix<std::complex<double>> B(A.size(1),A.size(2));
 	    for(unsigned int ii = 0; ii < B.size(1); ii++)
@@ -4173,6 +4210,93 @@ namespace keycpp
         delete [] x;
 
         return rcond;
+	}
+	
+	inline matrix<std::complex<double>> linsolve(const matrix<std::complex<double>>& A_in,
+	                                      const matrix<std::complex<double>>& b_in)
+	{
+		if(b_in.empty() || A_in.empty())
+		{
+			throw KeyCppException("Error in linsolve()! Empty matrix or vector supplied!");
+		}
+		if(A_in.size(2) != b_in.size(1) || b_in.size(2) != 1)
+		{
+			throw KeyCppException("Error in linsolve()! Matrix and vector sizes are not compatible!");
+		}
+		
+		unsigned int n = (unsigned)b_in.size(1);
+		int nn = n;
+		int m = (int)A_in.size(2);
+		int nrhs = 1;
+
+        int info, lda;
+        double anorm, rcond;
+        
+        int *iw = new int[A_in.size(1)];
+        std::complex<double> *w1 = new std::complex<double>[A_in.size(1)*A_in.size(2) + 64];
+        double *w2 = new double[A_in.size(1)*A_in.size(2) + 64];
+        std::complex<double> *A = new std::complex<double>[A_in.size(1)*A_in.size(2)];
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
+        {
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
+            {
+                A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+            }
+        }
+        lda = n;
+
+        /* Computes the norm of A */
+        anorm = zlange_("1", &nn, &nn, A, &lda, w2);
+
+        /* Modifies A in place with a LU decomposition */
+        zgetrf_(&nn, &nn, A, &lda, iw, &info);
+        if(info != 0)
+        {
+            if(info > 0)
+            {
+                std::cerr << "Warning: Matrix is singular. Results may be inaccurate.\n";
+            }
+            else
+            {
+                throw KeyCppException("Unknown error in linsolve()!");
+            }
+        }
+
+        /* Computes the reciprocal norm */
+        zgecon_("1", &nn, A, &lda, &anorm, &rcond, w1, w2, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in linsolve()!");
+        }
+        
+        if(rcond < 1e-15)
+        {
+            std::cerr << "Warning: Matrix is close to singular or badly scaled. Results may be inaccurate.\nrcond = " << rcond << std::endl;
+        }
+        
+        vector_k<std::complex<double>> x_out(b_in.size(1));
+        for(size_t ii = 0; ii < b_in.size(1); ii++)
+        {
+            x_out[ii] = b_in(ii,0);
+        }
+        zgetrs_("N", &m, &nrhs, A, &lda, iw, &x_out[0], &nn, &info);
+        if(info != 0)
+        {
+            throw KeyCppException("Unknown error in linsolve()!");
+        }
+        
+        delete [] iw;
+        delete [] w1;
+        delete [] w2;
+        delete [] A;
+        
+        matrix<std::complex<double>> x_return(x_out.size(),1);
+        for(size_t ii = 0; ii < x_out.size(); ii++)
+        {
+            x_return(ii,0) = x_out[ii];
+        }
+        
+		return x_return;
 	}
 	
 	inline vector_k<std::complex<double>> linsolve(const matrix<std::complex<double>>& A_in,
@@ -4850,6 +4974,212 @@ namespace keycpp
         
         return out;
 	}
+	
+	inline matrix<std::complex<double>> lu(const matrix<std::complex<double>>& A_in)
+	{
+		if(A_in.empty())
+		{
+			throw KeyCppException("Error in lu()! Empty matrix supplied!");
+		}
+		
+		int n = (int)A_in.size(2);
+		int m = (int)A_in.size(1);
+
+        int info, lda;
+        
+        int *iw = new int[A_in.size(1)];
+        std::complex<double> *A = new std::complex<double>[A_in.size(1)*A_in.size(2)];
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
+        {
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
+            {
+                A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+            }
+        }
+        lda = m;
+        
+        /* Modifies A in place with a LU decomposition */
+        zgetrf_(&m, &n, A, &lda, iw, &info);
+        if(info != 0)
+        {
+            if(info > 0)
+            {
+                std::cerr << "Warning: Matrix is singular. Results may be inaccurate.\n";
+            }
+            else
+            {
+                throw KeyCppException("Unknown error in lu()!");
+            }
+        }
+        
+        matrix<std::complex<double>> A_out(A_in.size(1),A_in.size(2));
+        for(unsigned int ii = 0; ii < A_out.size(2); ii++)
+        {
+            for(unsigned int jj = 0; jj < A_out.size(1); jj++)
+            {
+                 A_out(jj,ii) = A[ii*A_out.size(1) + jj];
+            }
+        }
+        
+        delete [] A;
+        delete [] iw;
+        
+        return A_out;
+    }
+	
+	inline matrix<double> lu(const matrix<double>& A_in)
+	{
+		if(A_in.empty())
+		{
+			throw KeyCppException("Error in lu()! Empty matrix supplied!");
+		}
+		
+		int n = (int)A_in.size(2);
+		int m = (int)A_in.size(1);
+
+        int info, lda;
+        
+        int *iw = new int[A_in.size(1)];
+        double *A = new double[A_in.size(1)*A_in.size(2)];
+        for(size_t ii = 0; ii < A_in.size(2); ii++)
+        {
+            for(size_t jj = 0; jj < A_in.size(1); jj++)
+            {
+                A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+            }
+        }
+        lda = m;
+        
+        /* Modifies A in place with a LU decomposition */
+        dgetrf_(&m, &n, A, &lda, iw, &info);
+        if(info != 0)
+        {
+            if(info > 0)
+            {
+                std::cerr << "Warning: Matrix is singular. Results may be inaccurate.\n";
+            }
+            else
+            {
+                throw KeyCppException("Unknown error in lu()!");
+            }
+        }
+        
+        matrix<double> A_out(A_in.size(1),A_in.size(2));
+        for(size_t ii = 0; ii < A_out.size(2); ii++)
+        {
+            for(size_t jj = 0; jj < A_out.size(1); jj++)
+            {
+                 A_out(jj,ii) = A[ii*A_out.size(1) + jj];
+            }
+        }
+        
+        delete [] A;
+        delete [] iw;
+        
+        return A_out;
+    }
+	
+	inline matrix<std::complex<double>> lu(const matrix<std::complex<double>>& A_in, int *iw)
+	{
+		if(A_in.empty())
+		{
+			throw KeyCppException("Error in lu()! Empty matrix supplied!");
+		}
+		
+		int n = (int)A_in.size(2);
+		int m = (int)A_in.size(1);
+
+        int info, lda;
+        
+        std::complex<double> *A = new std::complex<double>[A_in.size(1)*A_in.size(2)];
+        for(unsigned int ii = 0; ii < A_in.size(2); ii++)
+        {
+            for(unsigned int jj = 0; jj < A_in.size(1); jj++)
+            {
+                A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+            }
+        }
+        lda = m;
+        
+        /* Modifies A in place with a LU decomposition */
+        zgetrf_(&m, &n, A, &lda, iw, &info);
+        if(info != 0)
+        {
+            if(info > 0)
+            {
+                std::cerr << "Warning: Matrix is singular. Results may be inaccurate.\n";
+            }
+            else
+            {
+                throw KeyCppException("Unknown error in lu()!");
+            }
+        }
+        
+        matrix<std::complex<double>> A_out(A_in.size(1),A_in.size(2));
+        for(unsigned int ii = 0; ii < A_out.size(2); ii++)
+        {
+            for(unsigned int jj = 0; jj < A_out.size(1); jj++)
+            {
+                 A_out(jj,ii) = A[ii*A_out.size(1) + jj];
+            }
+        }
+        
+        delete [] A;
+        
+        return A_out;
+    }
+	
+	inline matrix<double> lu(const matrix<double>& A_in, int *iw)
+	{
+		if(A_in.empty())
+		{
+			throw KeyCppException("Error in lu()! Empty matrix supplied!");
+		}
+		
+		int n = (int)A_in.size(2);
+		int m = (int)A_in.size(1);
+
+        int info, lda;
+        
+        double *A = new double[A_in.size(1)*A_in.size(2)];
+        for(size_t ii = 0; ii < A_in.size(2); ii++)
+        {
+            for(size_t jj = 0; jj < A_in.size(1); jj++)
+            {
+                A[ii*A_in.size(1) + jj] = A_in(jj,ii);
+            }
+        }
+        lda = m;
+        
+        /* Modifies A in place with a LU decomposition */
+        dgetrf_(&m, &n, A, &lda, iw, &info);
+        if(info != 0)
+        {
+            if(info > 0)
+            {
+                std::cerr << "Warning: Matrix is singular. Results may be inaccurate.\n";
+            }
+            else
+            {
+                throw KeyCppException("Unknown error in lu()!");
+            }
+        }
+        
+        matrix<double> A_out(A_in.size(1),A_in.size(2));
+        for(size_t ii = 0; ii < A_out.size(2); ii++)
+        {
+            for(size_t jj = 0; jj < A_out.size(1); jj++)
+            {
+                 A_out(jj,ii) = A[ii*A_out.size(1) + jj];
+            }
+        }
+        
+        delete [] A;
+        
+        return A_out;
+    }
 }
+
+#include "znaupd.h"
 
 #endif

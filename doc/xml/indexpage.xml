@@ -80,13 +80,11 @@
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.ylabel(</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>set(h2,</highlight><highlight class="stringliteral">&quot;fontsize&quot;</highlight><highlight class="normal">,14);</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>h2.title(</highlight><highlight class="stringliteral">&quot;ODE<sp/>Solution&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
 <codeline lineno="69"><highlight class="normal">}</highlight></codeline>
 </programlisting> <linebreak/>
- <anchor id="_1output"/> <bold><computeroutput>Text</computeroutput> Output</bold> <programlisting><codeline lineno="1"><highlight class="normal">1.76667</highlight></codeline>
-<codeline lineno="2"><highlight class="normal">-0.333333</highlight></codeline>
-</programlisting> <linebreak/>
+ <anchor id="_1output"/> <bold><computeroutput>Text</computeroutput> Output</bold> <programlisting></programlisting> <linebreak/>
  <bold><computeroutput>Plot</computeroutput> Output</bold> <image type="html" name="plot1.png"></image>
  <linebreak/>
  <image type="html" name="plot2.png"></image>

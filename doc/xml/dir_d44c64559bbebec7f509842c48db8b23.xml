@@ -10,6 +10,7 @@
     <innerfile refid="_matrix_8h">Matrix.h</innerfile>
     <innerfile refid="_spline_8h">Spline.h</innerfile>
     <innerfile refid="vector__k_8h">vector_k.h</innerfile>
+    <innerfile refid="znaupd_8h">znaupd.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

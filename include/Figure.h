@@ -682,9 +682,14 @@ namespace keycpp
 			    g.set_style(stream2.str());
 			
 			    
-			    if(!p[current_plot].legend_location.empty() && current_plot == 0 && !p[current_plot].legend_entries.empty())
+			    if((!p[current_plot].legend_location.empty() && current_plot == 0 && !p[current_plot].legend_entries.empty()) || (!p[current_plot].legend_location.empty() && multiplot && !p[current_plot].legend_entries.empty()))
 			    {
+			        g.unset_legend();
 			        g.set_legend(p[current_plot].legend_location + p[current_plot].legend_box);
+			    }
+			    else
+			    {
+			        g.unset_legend();
 			    }
 			    if(!p[current_plot].m_xlabel.empty())
 			    {
@@ -848,7 +853,7 @@ namespace keycpp
 	    hold_on();
 	    for(size_t ii = 0; ii < y.size(2); ii++)
 	    {
-	        plot(y.getCol(ii),format,property1,val1);
+	        plot(y.col(ii),format,property1,val1);
 	    }
 	}
 	
@@ -857,7 +862,7 @@ namespace keycpp
 	    hold_on();
 	    for(size_t ii = 0; ii < y.size(2); ii++)
 	    {
-	        plot(y.getCol(ii),format,property1,val1,property2,val2);
+	        plot(y.col(ii),format,property1,val1,property2,val2);
 	    }
 	}
 	
@@ -866,7 +871,7 @@ namespace keycpp
 	    hold_on();
 	    for(size_t ii = 0; ii < y.size(2); ii++)
 	    {
-	        plot(y.getCol(ii),arguments,val,lw,ps,legend_entry);
+	        plot(y.col(ii),arguments,val,lw,ps,legend_entry);
 	    }
 	}
 	
@@ -879,7 +884,7 @@ namespace keycpp
 	    hold_on();
 	    for(size_t ii = 0; ii < y.size(2); ii++)
 	    {
-	        plot(x.getCol(ii), y.getCol(ii),format,property1,val1);
+	        plot(x.col(ii), y.col(ii),format,property1,val1);
 	    }
 	}
 	
@@ -892,7 +897,7 @@ namespace keycpp
 	    hold_on();
 	    for(size_t ii = 0; ii < y.size(2); ii++)
 	    {
-	        plot(x.getCol(ii), y.getCol(ii),format,property1,val1,property2,val2);
+	        plot(x.col(ii), y.col(ii),format,property1,val1,property2,val2);
 	    }
 	}
 	
@@ -905,144 +910,144 @@ namespace keycpp
 	    hold_on();
 	    for(size_t ii = 0; ii < y.size(2); ii++)
 	    {
-	        plot(x.getCol(ii), y.getCol(ii),arguments,val,lw,ps,legend_entry);
+	        plot(x.col(ii), y.col(ii),arguments,val,lw,ps,legend_entry);
 	    }
 	}
 	
 	template<class T> void Figure::plot(matrix<T,1> x, matrix<T> y, std::string format, std::string property1, double val1)
 	{
-	    if(!(x.size() == y.size(1) || x.size() == y.size(2)))
+	    if(!(x.size(1) == y.size(1) || x.size(1) == y.size(2)))
 	    {
 	        throw FigureException("Matrix and vector have incompatible sizes in plot()!");
 	    }
 	    hold_on();
-	    if(x.size() == y.size(1))
+	    if(x.size(1) == y.size(1))
 	    {
 	        for(size_t ii = 0; ii < y.size(2); ii++)
 	        {
-	            plot(x, y.getCol(ii),format,property1,val1);
+	            plot(x, y.col(ii),format,property1,val1);
 	        }
 	    }
 	    else
 	    {
 	        for(size_t ii = 0; ii < y.size(1); ii++)
 	        {
-	            plot(x, y.getRow(ii),format,property1,val1);
+	            plot(x, y.row(ii),format,property1,val1);
 	        }
 	    }
 	}
 	
 	template<class T> void Figure::plot(matrix<T,1> x, matrix<T> y, std::string format, std::string property1, double val1, std::string property2, double val2)
 	{
-	    if(!(x.size() == y.size(1) || x.size() == y.size(2)))
+	    if(!(x.size(1) == y.size(1) || x.size(1) == y.size(2)))
 	    {
 	        throw FigureException("Matrix and vector have incompatible sizes in plot()!");
 	    }
 	    hold_on();
-	    if(x.size() == y.size(1))
+	    if(x.size(1) == y.size(1))
 	    {
 	        for(size_t ii = 0; ii < y.size(2); ii++)
 	        {
-	            plot(x, y.getCol(ii),format,property1,val1,property2,val2);
+	            plot(x, y.col(ii),format,property1,val1,property2,val2);
 	        }
 	    }
 	    else
 	    {
 	        for(size_t ii = 0; ii < y.size(1); ii++)
 	        {
-	            plot(x, y.getRow(ii),format,property1,val1,property2,val2);
+	            plot(x, y.row(ii),format,property1,val1,property2,val2);
 	        }
 	    }
 	}
 	
 	template<class T> void Figure::plot(matrix<T,1> x, matrix<T> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
 	{
-	    if(!(x.size() == y.size(1) || x.size() == y.size(2)))
+	    if(!(x.size(1) == y.size(1) || x.size(1) == y.size(2)))
 	    {
 	        throw FigureException("Matrix and vector have incompatible sizes in plot()!");
 	    }
 	    hold_on();
-	    if(x.size() == y.size(1))
+	    if(x.size(1) == y.size(1))
 	    {
 	        for(size_t ii = 0; ii < y.size(2); ii++)
 	        {
-	            plot(x, y.getCol(ii),arguments,val,lw,ps,legend_entry);
+	            plot(x, y.col(ii),arguments,val,lw,ps,legend_entry);
 	        }
 	    }
 	    else
 	    {
 	        for(size_t ii = 0; ii < y.size(1); ii++)
 	        {
-	            plot(x, y.getRow(ii),arguments,val,lw,ps,legend_entry);
+	            plot(x, y.row(ii),arguments,val,lw,ps,legend_entry);
 	        }
 	    }
 	}
 	
 	template<class T> void Figure::plot(matrix<T> x, matrix<T,1> y, std::string format, std::string property1, double val1)
 	{
-	    if(!(y.size() == x.size(1) || y.size() == x.size(2)))
+	    if(!(y.size(1) == x.size(1) || y.size(1) == x.size(2)))
 	    {
 	        throw FigureException("Matrix and vector have incompatible sizes in plot()!");
 	    }
 	    hold_on();
-	    if(y.size() == x.size(1))
+	    if(y.size(1) == x.size(1))
 	    {
 	        for(size_t ii = 0; ii < x.size(2); ii++)
 	        {
-	            plot(x.getCol(ii), y,format,property1,val1);
+	            plot(x.col(ii), y,format,property1,val1);
 	        }
 	    }
 	    else
 	    {
 	        for(size_t ii = 0; ii < x.size(1); ii++)
 	        {
-	            plot(x.getRow(ii), y,format,property1,val1);
+	            plot(x.row(ii), y,format,property1,val1);
 	        }
 	    }
 	}
 	
 	template<class T> void Figure::plot(matrix<T> x, matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2)
 	{
-	    if(!(y.size() == x.size(1) || y.size() == x.size(2)))
+	    if(!(y.size(1) == x.size(1) || y.size(1) == x.size(2)))
 	    {
 	        throw FigureException("Matrix and vector have incompatible sizes in plot()!");
 	    }
 	    hold_on();
-	    if(y.size() == x.size(1))
+	    if(y.size(1) == x.size(1))
 	    {
 	        for(size_t ii = 0; ii < x.size(2); ii++)
 	        {
-	            plot(x.getCol(ii), y,format,property1,val1,property2,val2);
+	            plot(x.col(ii), y,format,property1,val1,property2,val2);
 	        }
 	    }
 	    else
 	    {
 	        for(size_t ii = 0; ii < x.size(1); ii++)
 	        {
-	            plot(x.getRow(ii), y,format,property1,val1,property2,val2);
+	            plot(x.row(ii), y,format,property1,val1,property2,val2);
 	        }
 	    }
 	}
 	
 	template<class T> void Figure::plot(matrix<T> x, matrix<T,1> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
 	{
-	    if(!(y.size() == x.size(1) || y.size() == x.size(2)))
+	    if(!(y.size(1) == x.size(1) || y.size(1) == x.size(2)))
 	    {
 	        throw FigureException("Matrix and vector have incompatible sizes in plot()!");
 	    }
 	    hold_on();
-	    if(y.size() == x.size(1))
+	    if(y.size(1) == x.size(1))
 	    {
 	        for(size_t ii = 0; ii < x.size(2); ii++)
 	        {
-	            plot(x.getCol(ii), y,arguments,val,lw,ps,legend_entry);
+	            plot(x.col(ii), y,arguments,val,lw,ps,legend_entry);
 	        }
 	    }
 	    else
 	    {
 	        for(size_t ii = 0; ii < x.size(1); ii++)
 	        {
-	            plot(x.getRow(ii), y,arguments,val,lw,ps,legend_entry);
+	            plot(x.row(ii), y,arguments,val,lw,ps,legend_entry);
 	        }
 	    }
 	}

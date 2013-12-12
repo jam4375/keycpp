@@ -8,7 +8,7 @@ LDIR =../lib
 ifeq ($(lib),mkl)
         LIBS=-lm -L/$(MKLROOT)/lib/intel64 -lmkl_rt
 else
-        LIBS=-lm -lblas -llapack
+        LIBS=-lm -lblas -llapack -larpack
 endif
 
 _DEPS = Figure.h Spline.h keycpp.h vector_k.h Matrix.h kiss_fft.h gnuplot_i.h

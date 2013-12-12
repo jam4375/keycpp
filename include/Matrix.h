@@ -65,6 +65,8 @@ namespace keycpp
 		matrix<T,dim> operator+(const matrix<T,dim> &B) const;
 		matrix<T,dim>& operator+=(const matrix<T,dim> &B);
 		matrix<T,dim> operator-(const matrix<T,dim> &B) const;
+		template<class U>
+		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> operator-(const matrix<U,dim> &B) const;
 		bool operator!=(const matrix<T,dim> &B) const;
 		bool operator==(const matrix<T,dim> &B) const;
 		matrix<T,dim>& operator=(const matrix<T,dim> &v);
@@ -589,15 +591,15 @@ namespace keycpp
 			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix multiplication!");
 		}
 		matrix<std::complex<double>> C(mSize[0],B.size(2));
-		int n = (int)mSize[0];
+		int m = (int)mSize[0];
 		int k = (int)mSize[1];
-		int m = (int)B.size(2);
+		int n = (int)B.size(2);
         char TRANS = 'N';
         std::complex<double> ALPHA = 1.0;
-        int LDA = n;
+        int LDA = m;
         int LDB = k;
         std::complex<double> BETA = 0.0;
-        int LDC = n;
+        int LDC = m;
 
         zgemm_(&TRANS, &TRANS, &m, &n, &k, &ALPHA, &mData[0], &LDA, &B.mData[0], &LDB, &BETA, &C.mData[0], &LDC);
         
@@ -686,6 +688,39 @@ namespace keycpp
 		    }
 		}
 		matrix<T,dim> C;
+		C.resize(mSize);
+	    size_t total_size = 1;
+	    for(int ii = 0; ii < dim; ii++)
+	    {
+	        total_size *= mSize[ii];
+	    }
+		for(size_t ii = 0; ii < total_size; ii++)
+		{
+			C.mData[ii] = this->mData[ii] - B.mData[ii];
+		}
+		return C;
+	}
+
+	template<class T, size_t dim>
+	template<class U>
+	matrix<decltype(std::declval<T>()*std::declval<U>()),dim> matrix<T,dim>::operator-(const matrix<U,dim> &B) const
+	{
+		if(mData.empty())
+		{
+			throw MatrixException("Cannot perform operation on empty matrix!");
+		}
+		for(int ii = 0; ii < dim; ii++)
+		{
+		    if(B.size(ii+1) <= 0)
+		    {
+		        throw MatrixException("Cannot perform operation on empty matrix!");
+		    }
+		    if(mSize[ii] != B.size(ii+1))
+		    {
+		        throw MatrixException("Matrix dimensions are not compatible in matrix-matrix addition!");
+		    }
+		}
+		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> C;
 		C.resize(mSize);
 	    size_t total_size = 1;
 	    for(int ii = 0; ii < dim; ii++)
