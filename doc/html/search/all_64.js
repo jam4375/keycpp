@@ -14,6 +14,6 @@ var searchData=
   ['diff',['diff',['../namespacekeycpp.html#a52c37ec9c41349fd6bd862b8ebdd01bb',1,'keycpp::diff(const vector_k&lt; T &gt; &amp;v1)'],['../namespacekeycpp.html#abb4e57814fd30b7b8d4845bbc16c73e9',1,'keycpp::diff(const matrix&lt; T &gt; &amp;A)']]],
   ['disp',['disp',['../namespacekeycpp.html#af4a2245da139cf6cf2e03426476b3b88',1,'keycpp']]],
   ['dlange_5f',['dlange_',['../namespacekeycpp.html#a4507ef954be960fec70ca0f93258d730',1,'keycpp']]],
-  ['dot',['dot',['../namespacekeycpp.html#a042a906d0904e670abe56e73099d6855',1,'keycpp::dot(const matrix&lt; T, 1 &gt; &amp;v1, const matrix&lt; U, 1 &gt; &amp;v2)'],['../namespacekeycpp.html#a04dabe064e99dd423157829c4b133261',1,'keycpp::dot(const vector_k&lt; T &gt; &amp;v1, const vector_k&lt; U &gt; &amp;v2)'],['../namespacekeycpp.html#a3b8c1401db056696103c4ad8f1aa48ce',1,'keycpp::dot(const vector_k&lt; double &gt; &amp;v1, const vector_k&lt; double &gt; &amp;v2)'],['../namespacekeycpp.html#a3499b51e89dfda97b0dcf5dc2461926a',1,'keycpp::dot(const vector_k&lt; std::complex&lt; double &gt;&gt; &amp;v1, const vector_k&lt; std::complex&lt; double &gt;&gt; &amp;v2)'],['../namespacekeycpp.html#a0d4eac6fbefd72947d7fe26fada6c221',1,'keycpp::dot(const matrix&lt; T &gt; &amp;A, const matrix&lt; U &gt; &amp;B, const size_t &amp;dim=-1)']]],
+  ['dot',['dot',['../namespacekeycpp.html#a67c6ec70ba46d1d830acf7fbf8b8b97e',1,'keycpp']]],
   ['dscal_5f',['dscal_',['../namespacekeycpp.html#a7d249dd978770119c1b91d88009fefbd',1,'keycpp']]]
 ];

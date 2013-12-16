@@ -31,11 +31,9 @@ print plot to jpg, png, pdf, or eps
 
 namespace keycpp
 {
-	template<class T> matrix<T,1> real(const vector_k<std::complex<T>> &v1);
 	template<class T,size_t dim> matrix<T,dim> real(const matrix<std::complex<T>,dim> &A);
-	template<class T> matrix<T,1> imag(const vector_k<std::complex<T>> &v1);
 	template<class T,size_t dim> matrix<T,dim> imag(const matrix<std::complex<T>,dim> &A);
-	template<class T> matrix<T,1> linspace(const T &x1, const T &x2, const size_t &N);
+	template<class T> matrix<T,2> linspace(const T &x1, const T &x2, const size_t &N);
 	template<class T> void disp(const T &x, std::ostream& outStream = std::cout);
     
 	class FigureException : public std::runtime_error
@@ -55,8 +53,8 @@ namespace keycpp
 		vector_k<bool> hist_bool;
 		double bin_width = 0;
 		size_t num_plots = 0;
-		vector_k<matrix<double,1> > x_plot_data;
-		vector_k<matrix<double,1> > y_plot_data;
+		vector_k<matrix<double,2> > x_plot_data;
+		vector_k<matrix<double,2> > y_plot_data;
 		vector_k<std::string> plot_format;
 		vector_k<double> plot_linewidth;
 		vector_k<double> plot_markersize;
@@ -140,34 +138,29 @@ namespace keycpp
 	public:
 		Figure();
 		~Figure();
-		template<class U, class T> void plot(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1);
-		template<class U, class T> void plot(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2);
-		template<class U, class T> void plot(matrix<U,1> x, matrix<T,1> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
-		template<class T> void plot(matrix<T,1> y, std::string format, std::string property1, double val1);
-		template<class T> void plot(matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2);
-		template<class T> void plot(matrix<T,1> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
+		template<class U, class T> void plot_vec(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1);
+		template<class U, class T> void plot_vec(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1, std::string property2, double val2);
+		template<class U, class T> void plot_vec(matrix<U,2> x, matrix<T,2> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
+		template<class T> void plot_vec(matrix<T,2> y, std::string format, std::string property1, double val1);
+		template<class T> void plot_vec(matrix<T,2> y, std::string format, std::string property1, double val1, std::string property2, double val2);
+		template<class T> void plot_vec(matrix<T,2> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
 		template<class T> void plot(matrix<T> y, std::string format, std::string property1, double val1);
 		template<class T> void plot(matrix<T> y, std::string format, std::string property1, double val1, std::string property2, double val2);
 		template<class T> void plot(matrix<T> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
 		template<class T> void plot(matrix<T> x, matrix<T> y, std::string format, std::string property1, double val1);
 		template<class T> void plot(matrix<T> x, matrix<T> y, std::string format, std::string property1, double val1, std::string property2, double val2);
 		template<class T> void plot(matrix<T> x, matrix<T> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
-		template<class T> void plot(matrix<T> x, matrix<T,1> y, std::string format, std::string property1, double val1);
-		template<class T> void plot(matrix<T> x, matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2);
-		template<class T> void plot(matrix<T> x, matrix<T,1> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
-		template<class T> void plot(matrix<T,1> x, matrix<T> y, std::string format, std::string property1, double val1);
-		template<class T> void plot(matrix<T,1> x, matrix<T> y, std::string format, std::string property1, double val1, std::string property2, double val2);
-		template<class T> void plot(matrix<T,1> x, matrix<T> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
-		template<class U, class T> void semilogx(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1);
-		template<class U, class T> void semilogx(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2);
-		template<class U, class T> void semilogx(matrix<U,1> x, matrix<T,1> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
-		template<class U, class T> void semilogy(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1);
-		template<class U, class T> void semilogy(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2);
-		template<class U, class T> void semilogy(matrix<U,1> x, matrix<T,1> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
-		template<class U, class T> void loglog(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1);
-		template<class U, class T> void loglog(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2);
-		template<class U, class T> void loglog(matrix<U,1> x, matrix<T,1> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
-		template<class U> void hist(matrix<U,1> x, size_t nbins = 10);
+		
+		template<class U, class T> void semilogx(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1);
+		template<class U, class T> void semilogx(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1, std::string property2, double val2);
+		template<class U, class T> void semilogx(matrix<U,2> x, matrix<T,2> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
+		template<class U, class T> void semilogy(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1);
+		template<class U, class T> void semilogy(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1, std::string property2, double val2);
+		template<class U, class T> void semilogy(matrix<U,2> x, matrix<T,2> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
+		template<class U, class T> void loglog(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1);
+		template<class U, class T> void loglog(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1, std::string property2, double val2);
+		template<class U, class T> void loglog(matrix<U,2> x, matrix<T,2> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
+		template<class U> void hist(matrix<U,2> x, size_t nbins = 10);
 		void xlabel(std::string xlabel_text);
 		void ylabel(std::string ylabel_text);
 		void title(std::string title_text);
@@ -229,7 +222,7 @@ namespace keycpp
 	    }
 	}
 	
-	template<class U, class T> void Figure::plot(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1)
+	template<class U, class T> void Figure::plot_vec(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1)
 	{
 		std::transform(format.begin(), format.end(), format.begin(), ::tolower);
 		std::transform(property1.begin(), property1.end(), property1.begin(), ::tolower);
@@ -246,7 +239,7 @@ namespace keycpp
 					throw FigureException("Unknown property string in Figure!");
 				}
 				lw = val1;
-				plot(x,y,format,-1,lw,ps);
+				plot_vec(x,y,format,-1,lw,ps);
 			}
 			else if(property1.find("markersize") != std::string::npos)
 			{
@@ -256,7 +249,7 @@ namespace keycpp
 					throw FigureException("Unknown property string in Figure!");
 				}
 				ps = val1;
-				plot(x,y,format,-1,lw,ps);
+				plot_vec(x,y,format,-1,lw,ps);
 			}
 		}
 		else
@@ -265,7 +258,7 @@ namespace keycpp
 		}
 	}
 	
-	template<class U, class T> void Figure::plot(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2)
+	template<class U, class T> void Figure::plot_vec(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1, std::string property2, double val2)
 	{
 		std::transform(format.begin(), format.end(), format.begin(), ::tolower);
 		std::transform(property1.begin(), property1.end(), property1.begin(), ::tolower);
@@ -334,10 +327,10 @@ namespace keycpp
 		{
 			throw FigureException("Invalid property while plotting in Figure!");
 		}
-		plot(x,y,format,-1,lw,ps);
+		plot_vec(x,y,format,-1,lw,ps);
 	}
 	
-	template<class U, class T> void Figure::plot(matrix<U,1> x, matrix<T,1> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
+	template<class U, class T> void Figure::plot_vec(matrix<U,2> x, matrix<T,2> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
 	{
 		std::string format;
 		std::transform(arguments.begin(), arguments.end(), arguments.begin(), ::tolower);
@@ -723,7 +716,7 @@ namespace keycpp
                     throw FigureException("Error creating temporary file!");
                 }
 
-                for(size_t ii = 0; ii < x.size(1); ii++)
+                for(size_t ii = 0; ii < x.length(); ii++)
                 {
                     tmp << x(ii) << " " << y(ii) << std::endl;
                 }
@@ -803,266 +796,317 @@ namespace keycpp
 		return;
 	}
 	
-	template<class T> void Figure::plot(matrix<T,1> y, std::string format, std::string property1, double val1)
+	template<class T> void Figure::plot_vec(matrix<T,2> y, std::string format, std::string property1, double val1)
 	{
-	    matrix<T,1> x(y.size(1));
-	    for(size_t ii = 0; ii < y.size(1); ii++)
+	    matrix<T,2> x(y.length());
+	    for(size_t ii = 0; ii < y.length(); ii++)
 	    {
 	        x(ii) = ii;
 	    }
-	    plot(x,y,format,property1,val1);
+	    plot_vec(x,y,format,property1,val1);
 	}
 	
-	template<class T> void Figure::plot(matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2)
+	template<class T> void Figure::plot_vec(matrix<T,2> y, std::string format, std::string property1, double val1, std::string property2, double val2)
 	{
-	    matrix<T,1> x(y.size(1));
-	    for(size_t ii = 0; ii < y.size(1); ii++)
+	    matrix<T,2> x(y.length());
+	    for(size_t ii = 0; ii < y.length(); ii++)
 	    {
 	        x(ii) = ii;
 	    }
-	    plot(x,y,format,property1,val1,property2,val2);
+	    plot_vec(x,y,format,property1,val1,property2,val2);
 	}
 	
-	template<class T> void Figure::plot(matrix<T,1> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
+	template<class T> void Figure::plot_vec(matrix<T,2> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
 	{
-	    matrix<T,1> x(y.size(1));
-	    for(size_t ii = 0; ii < y.size(1); ii++)
+	    matrix<T,2> x(y.length());
+	    for(size_t ii = 0; ii < y.length(); ii++)
 	    {
 	        x(ii) = ii;
 	    }
-	    plot(x,y,arguments,val,lw,ps,legend_entry);
+	    plot_vec(x,y,arguments,val,lw,ps,legend_entry);
 	}
 	
-	template<> inline void Figure::plot<std::complex<double>>(matrix<std::complex<double>,1> y, std::string format, std::string property1, double val1)
+	template<> inline void Figure::plot_vec<std::complex<double>>(matrix<std::complex<double>,2> y, std::string format, std::string property1, double val1)
 	{
-	    plot(real(y),imag(y),format,property1,val1);
+	    plot_vec(real(y),imag(y),format,property1,val1);
 	}
 	
-	template<> inline void Figure::plot<std::complex<double>>(matrix<std::complex<double>,1> y, std::string format, std::string property1, double val1, std::string property2, double val2)
+	template<> inline void Figure::plot_vec<std::complex<double>>(matrix<std::complex<double>,2> y, std::string format, std::string property1, double val1, std::string property2, double val2)
 	{
-	    plot(real(y),imag(y),format,property1,val1,property2,val2);
+	    plot_vec(real(y),imag(y),format,property1,val1,property2,val2);
 	}
 	
-	template<> inline void Figure::plot<std::complex<double>>(matrix<std::complex<double>,1> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
+	template<> inline void Figure::plot_vec<std::complex<double>>(matrix<std::complex<double>,2> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
 	{
-	    plot(real(y),imag(y),arguments,val,lw,ps,legend_entry);
+	    plot_vec(real(y),imag(y),arguments,val,lw,ps,legend_entry);
 	}
 	
 	template<class T> void Figure::plot(matrix<T> y, std::string format, std::string property1, double val1)
 	{
-	    hold_on();
-	    for(size_t ii = 0; ii < y.size(2); ii++)
+	    if(y.size(1) == 1 || y.size(2) == 1)
 	    {
-	        plot(y.col(ii),format,property1,val1);
+	        plot_vec(y,format,property1,val1);
 	    }
+	    else
+	    {
+	        hold_on();
+	        for(size_t ii = 0; ii < y.size(2); ii++)
+	        {
+	            plot_vec(y.col(ii),format,property1,val1);
+	        }
+        }
 	}
 	
 	template<class T> void Figure::plot(matrix<T> y, std::string format, std::string property1, double val1, std::string property2, double val2)
 	{
-	    hold_on();
-	    for(size_t ii = 0; ii < y.size(2); ii++)
+	    if(y.size(1) == 1 || y.size(2) == 1)
 	    {
-	        plot(y.col(ii),format,property1,val1,property2,val2);
+	        plot_vec(y,format,property1,val1,property2,val2);
+	    }
+	    else
+	    {
+	        hold_on();
+	        for(size_t ii = 0; ii < y.size(2); ii++)
+	        {
+	            plot_vec(y.col(ii),format,property1,val1,property2,val2);
+	        }
 	    }
 	}
 	
 	template<class T> void Figure::plot(matrix<T> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
 	{
-	    hold_on();
-	    for(size_t ii = 0; ii < y.size(2); ii++)
+	    if(y.size(1) == 1 || y.size(2) == 1)
 	    {
-	        plot(y.col(ii),arguments,val,lw,ps,legend_entry);
+	        plot_vec(y,arguments,val,lw,ps,legend_entry);
+	    }
+	    else
+	    {
+	        hold_on();
+	        for(size_t ii = 0; ii < y.size(2); ii++)
+	        {
+	            plot_vec(y.col(ii),arguments,val,lw,ps,legend_entry);
+	        }
 	    }
 	}
 	
 	template<class T> void Figure::plot(matrix<T> x, matrix<T> y, std::string format, std::string property1, double val1)
 	{
-	    if(x.size(1) != y.size(1) && x.size(2) != y.size(2))
+	    if(x.isVec() && y.isVec())
 	    {
-	        throw FigureException("Matrices must be same size in plot()!");
+	        plot_vec(x,y,format,property1,val1);
 	    }
-	    hold_on();
-	    for(size_t ii = 0; ii < y.size(2); ii++)
+	    else
 	    {
-	        plot(x.col(ii), y.col(ii),format,property1,val1);
+	        if(x.isVec())
+	        {
+	            if(x.size(1) == y.size(1))
+	            {
+	                hold_on();
+	                for(size_t ii = 0; ii < y.size(2); ii++)
+	                {
+	                    plot_vec(x, y.col(ii),format,property1,val1);
+	                }
+	            }
+	            else if(x.size(2) == y.size(2))
+	            {
+	                hold_on();
+	                for(size_t ii = 0; ii < y.size(1); ii++)
+	                {
+	                    plot_vec(x, y.row(ii),format,property1,val1);
+	                }
+	            }
+	            else
+	            {
+	                throw FigureException("Matrices are incompatible in plot()!");
+	            }
+	        }
+	        else if(y.isVec())
+	        {
+	            if(x.size(1) == y.size(1))
+	            {
+	                hold_on();
+	                for(size_t ii = 0; ii < x.size(2); ii++)
+	                {
+	                    plot_vec(x.col(ii), y,format,property1,val1);
+	                }
+	            }
+	            else if(x.size(2) == y.size(2))
+	            {
+	                hold_on();
+	                for(size_t ii = 0; ii < x.size(1); ii++)
+	                {
+	                    plot_vec(x.row(ii), y,format,property1,val1);
+	                }
+	            }
+	            else
+	            {
+	                throw FigureException("Matrices are incompatible in plot()!");
+	            }
+	        }
+	        else
+	        {
+	            if(x.size(1) != y.size(1) || x.size(2) != y.size(2))
+	            {
+	                throw FigureException("Matrices must be same size in plot()!");
+	            }
+	            hold_on();
+	            for(size_t ii = 0; ii < y.size(2); ii++)
+	            {
+	                plot_vec(x.col(ii), y.col(ii),format,property1,val1);
+	            }
+	        }
 	    }
 	}
 	
 	template<class T> void Figure::plot(matrix<T> x, matrix<T> y, std::string format, std::string property1, double val1, std::string property2, double val2)
 	{
-	    if(x.size(1) != y.size(1) && x.size(2) != y.size(2))
+	    if(x.isVec() && y.isVec())
 	    {
-	        throw FigureException("Matrices must be same size in plot()!");
+	        plot_vec(x,y,format,property1,val1,property2,val2);
 	    }
-	    hold_on();
-	    for(size_t ii = 0; ii < y.size(2); ii++)
+	    else
 	    {
-	        plot(x.col(ii), y.col(ii),format,property1,val1,property2,val2);
+	        if(x.isVec())
+	        {
+	            if(x.size(1) == y.size(1))
+	            {
+	                hold_on();
+	                for(size_t ii = 0; ii < y.size(2); ii++)
+	                {
+	                    plot_vec(x, y.col(ii),format,property1,val1,property2,val2);
+	                }
+	            }
+	            else if(x.size(2) == y.size(2))
+	            {
+	                hold_on();
+	                for(size_t ii = 0; ii < y.size(1); ii++)
+	                {
+	                    plot_vec(x, y.row(ii),format,property1,val1,property2,val2);
+	                }
+	            }
+	            else
+	            {
+	                throw FigureException("Matrices are incompatible in plot()!");
+	            }
+	        }
+	        else if(y.isVec())
+	        {
+	            if(x.size(1) == y.size(1))
+	            {
+	                hold_on();
+	                for(size_t ii = 0; ii < x.size(2); ii++)
+	                {
+	                    plot_vec(x.col(ii), y,format,property1,val1,property2,val2);
+	                }
+	            }
+	            else if(x.size(2) == y.size(2))
+	            {
+	                hold_on();
+	                for(size_t ii = 0; ii < x.size(1); ii++)
+	                {
+	                    plot_vec(x.row(ii), y,format,property1,val1,property2,val2);
+	                }
+	            }
+	            else
+	            {
+	                throw FigureException("Matrices are incompatible in plot()!");
+	            }
+	        }
+	        else
+	        {
+	            if(x.size(1) != y.size(1) || x.size(2) != y.size(2))
+	            {
+	                throw FigureException("Matrices must be same size in plot()!");
+	            }
+	            hold_on();
+	            for(size_t ii = 0; ii < y.size(2); ii++)
+	            {
+	                plot_vec(x.col(ii), y.col(ii),format,property1,val1,property2,val2);
+	            }
+	        }
 	    }
 	}
 	
 	template<class T> void Figure::plot(matrix<T> x, matrix<T> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
 	{
-	    if(x.size(1) != y.size(1) && x.size(2) != y.size(2))
+	    if(x.isVec() && y.isVec())
 	    {
-	        throw FigureException("Matrices must be same size in plot()!");
-	    }
-	    hold_on();
-	    for(size_t ii = 0; ii < y.size(2); ii++)
-	    {
-	        plot(x.col(ii), y.col(ii),arguments,val,lw,ps,legend_entry);
-	    }
-	}
-	
-	template<class T> void Figure::plot(matrix<T,1> x, matrix<T> y, std::string format, std::string property1, double val1)
-	{
-	    if(!(x.size(1) == y.size(1) || x.size(1) == y.size(2)))
-	    {
-	        throw FigureException("Matrix and vector have incompatible sizes in plot()!");
-	    }
-	    hold_on();
-	    if(x.size(1) == y.size(1))
-	    {
-	        for(size_t ii = 0; ii < y.size(2); ii++)
-	        {
-	            plot(x, y.col(ii),format,property1,val1);
-	        }
+	        plot_vec(x,y,arguments,val,lw,ps,legend_entry);
 	    }
 	    else
 	    {
-	        for(size_t ii = 0; ii < y.size(1); ii++)
+	        if(x.isVec())
 	        {
-	            plot(x, y.row(ii),format,property1,val1);
+	            if(x.size(1) == y.size(1))
+	            {
+	                hold_on();
+	                for(size_t ii = 0; ii < y.size(2); ii++)
+	                {
+	                    plot_vec(x, y.col(ii),arguments,val,lw,ps,legend_entry);
+	                }
+	            }
+	            else if(x.size(2) == y.size(2))
+	            {
+	                hold_on();
+	                for(size_t ii = 0; ii < y.size(1); ii++)
+	                {
+	                    plot_vec(x, y.row(ii),arguments,val,lw,ps,legend_entry);
+	                }
+	            }
+	            else
+	            {
+	                throw FigureException("Matrices are incompatible in plot()!");
+	            }
+	        }
+	        else if(y.isVec())
+	        {
+	            if(x.size(1) == y.size(1))
+	            {
+	                hold_on();
+	                for(size_t ii = 0; ii < x.size(2); ii++)
+	                {
+	                    plot_vec(x.col(ii), y,arguments,val,lw,ps,legend_entry);
+	                }
+	            }
+	            else if(x.size(2) == y.size(2))
+	            {
+	                hold_on();
+	                for(size_t ii = 0; ii < x.size(1); ii++)
+	                {
+	                    plot_vec(x.row(ii), y,arguments,val,lw,ps,legend_entry);
+	                }
+	            }
+	            else
+	            {
+	                throw FigureException("Matrices are incompatible in plot()!");
+	            }
+	        }
+	        else
+	        {
+	            if(x.size(1) != y.size(1) || x.size(2) != y.size(2))
+	            {
+	                throw FigureException("Matrices must be same size in plot()!");
+	            }
+	            hold_on();
+	            for(size_t ii = 0; ii < y.size(2); ii++)
+	            {
+	                plot_vec(x.col(ii), y.col(ii),arguments,val,lw,ps,legend_entry);
+	            }
 	        }
 	    }
 	}
 	
-	template<class T> void Figure::plot(matrix<T,1> x, matrix<T> y, std::string format, std::string property1, double val1, std::string property2, double val2)
-	{
-	    if(!(x.size(1) == y.size(1) || x.size(1) == y.size(2)))
-	    {
-	        throw FigureException("Matrix and vector have incompatible sizes in plot()!");
-	    }
-	    hold_on();
-	    if(x.size(1) == y.size(1))
-	    {
-	        for(size_t ii = 0; ii < y.size(2); ii++)
-	        {
-	            plot(x, y.col(ii),format,property1,val1,property2,val2);
-	        }
-	    }
-	    else
-	    {
-	        for(size_t ii = 0; ii < y.size(1); ii++)
-	        {
-	            plot(x, y.row(ii),format,property1,val1,property2,val2);
-	        }
-	    }
-	}
-	
-	template<class T> void Figure::plot(matrix<T,1> x, matrix<T> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
-	{
-	    if(!(x.size(1) == y.size(1) || x.size(1) == y.size(2)))
-	    {
-	        throw FigureException("Matrix and vector have incompatible sizes in plot()!");
-	    }
-	    hold_on();
-	    if(x.size(1) == y.size(1))
-	    {
-	        for(size_t ii = 0; ii < y.size(2); ii++)
-	        {
-	            plot(x, y.col(ii),arguments,val,lw,ps,legend_entry);
-	        }
-	    }
-	    else
-	    {
-	        for(size_t ii = 0; ii < y.size(1); ii++)
-	        {
-	            plot(x, y.row(ii),arguments,val,lw,ps,legend_entry);
-	        }
-	    }
-	}
-	
-	template<class T> void Figure::plot(matrix<T> x, matrix<T,1> y, std::string format, std::string property1, double val1)
-	{
-	    if(!(y.size(1) == x.size(1) || y.size(1) == x.size(2)))
-	    {
-	        throw FigureException("Matrix and vector have incompatible sizes in plot()!");
-	    }
-	    hold_on();
-	    if(y.size(1) == x.size(1))
-	    {
-	        for(size_t ii = 0; ii < x.size(2); ii++)
-	        {
-	            plot(x.col(ii), y,format,property1,val1);
-	        }
-	    }
-	    else
-	    {
-	        for(size_t ii = 0; ii < x.size(1); ii++)
-	        {
-	            plot(x.row(ii), y,format,property1,val1);
-	        }
-	    }
-	}
-	
-	template<class T> void Figure::plot(matrix<T> x, matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2)
-	{
-	    if(!(y.size(1) == x.size(1) || y.size(1) == x.size(2)))
-	    {
-	        throw FigureException("Matrix and vector have incompatible sizes in plot()!");
-	    }
-	    hold_on();
-	    if(y.size(1) == x.size(1))
-	    {
-	        for(size_t ii = 0; ii < x.size(2); ii++)
-	        {
-	            plot(x.col(ii), y,format,property1,val1,property2,val2);
-	        }
-	    }
-	    else
-	    {
-	        for(size_t ii = 0; ii < x.size(1); ii++)
-	        {
-	            plot(x.row(ii), y,format,property1,val1,property2,val2);
-	        }
-	    }
-	}
-	
-	template<class T> void Figure::plot(matrix<T> x, matrix<T,1> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
-	{
-	    if(!(y.size(1) == x.size(1) || y.size(1) == x.size(2)))
-	    {
-	        throw FigureException("Matrix and vector have incompatible sizes in plot()!");
-	    }
-	    hold_on();
-	    if(y.size(1) == x.size(1))
-	    {
-	        for(size_t ii = 0; ii < x.size(2); ii++)
-	        {
-	            plot(x.col(ii), y,arguments,val,lw,ps,legend_entry);
-	        }
-	    }
-	    else
-	    {
-	        for(size_t ii = 0; ii < x.size(1); ii++)
-	        {
-	            plot(x.row(ii), y,arguments,val,lw,ps,legend_entry);
-	        }
-	    }
-	}
-	
-	template<class U> void Figure::hist(matrix<U,1> x, size_t nbins)
+	template<class U> void Figure::hist(matrix<U,2> x, size_t nbins)
 	{
 	    U min_val, max_val;
 	    min_val = min(x);
 	    max_val = max(x);
 	    U width = (max_val - min_val)/nbins;
-	    matrix<double,1> t = linspace(min_val,max_val,nbins+1);
+	    matrix<double,2> t = linspace(min_val,max_val,nbins+1);
 	
-	    matrix<U,1> bin(x.size(1));
-	    matrix<U,1> val(bin.size(1));
-        for(int ii = 0; ii < val.size(1); ii++)
+	    matrix<U,2> bin(x.length());
+	    matrix<U,2> val(bin.length());
+        for(int ii = 0; ii < val.length(); ii++)
         {
             val(ii) = 1.0;
             if(x(ii) == t(0))
@@ -1083,7 +1127,7 @@ namespace keycpp
         }
 	
 	    hist_bool = true;
-	    plot(bin, val);
+	    plot_vec(bin, val);
 	    hist_bool = false;
 	    
 	    p[current_plot].bin_width = width;
@@ -1131,57 +1175,57 @@ namespace keycpp
 	    ylim({lower_y,upper_y});
 	}
 	
-	template<class U, class T> void Figure::semilogx(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1)
+	template<class U, class T> void Figure::semilogx(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1)
 	{
 	    p[current_plot].logscale_x = true;
 	    plot(x,y,format,property1,val1);
 	}
 	
-	template<class U, class T> void Figure::semilogx(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2)
+	template<class U, class T> void Figure::semilogx(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1, std::string property2, double val2)
 	{
 	    p[current_plot].logscale_x = true;
 	    plot(x,y,format,property1,val1,property2,val2);
 	}
 	
-	template<class U, class T> void Figure::semilogx(matrix<U,1> x, matrix<T,1> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
+	template<class U, class T> void Figure::semilogx(matrix<U,2> x, matrix<T,2> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
 	{
 	    p[current_plot].logscale_x = true;
 	    plot(x,y,arguments,val,lw,ps,legend_entry);
 	}
 	
-	template<class U, class T> void Figure::semilogy(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1)
+	template<class U, class T> void Figure::semilogy(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1)
 	{
 	    p[current_plot].logscale_y = true;
 	    plot(x,y,format,property1,val1);
 	}
 	
-	template<class U, class T> void Figure::semilogy(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2)
+	template<class U, class T> void Figure::semilogy(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1, std::string property2, double val2)
 	{
 	    p[current_plot].logscale_y = true;
 	    plot(x,y,format,property1,val1,property2,val2);
 	}
 	
-	template<class U, class T> void Figure::semilogy(matrix<U,1> x, matrix<T,1> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
+	template<class U, class T> void Figure::semilogy(matrix<U,2> x, matrix<T,2> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
 	{
 	    p[current_plot].logscale_y = true;
 	    plot(x,y,arguments,val,lw,ps,legend_entry);
 	}
 	
-	template<class U, class T> void Figure::loglog(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1)
+	template<class U, class T> void Figure::loglog(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1)
 	{
 	    p[current_plot].logscale_x = true;
 	    p[current_plot].logscale_y = true;
 	    plot(x,y,format,property1,val1);
 	}
 	
-	template<class U, class T> void Figure::loglog(matrix<U,1> x, matrix<T,1> y, std::string format, std::string property1, double val1, std::string property2, double val2)
+	template<class U, class T> void Figure::loglog(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1, std::string property2, double val2)
 	{
 	    p[current_plot].logscale_x = true;
 	    p[current_plot].logscale_y = true;
 	    plot(x,y,format,property1,val1,property2,val2);
 	}
 	
-	template<class U, class T> void Figure::loglog(matrix<U,1> x, matrix<T,1> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
+	template<class U, class T> void Figure::loglog(matrix<U,2> x, matrix<T,2> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
 	{
 	    p[current_plot].logscale_x = true;
 	    p[current_plot].logscale_y = true;

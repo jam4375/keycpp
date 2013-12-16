@@ -11,9 +11,9 @@
       </param>
     </templateparamlist>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structkeycpp_1_1_o_d_e__type_1a1f0ccdab9179cc5cb3d46330261ba85b" prot="public" static="no" mutable="no">
-        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt;</type>
-        <definition>matrix&lt;T,1&gt; keycpp::ODE_type&lt; T, Y &gt;::t</definition>
+      <memberdef kind="variable" id="structkeycpp_1_1_o_d_e__type_1a7472927d5cc31aaf06d8dd1024b7640e" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 2 &gt;</type>
+        <definition>matrix&lt;T,2&gt; keycpp::ODE_type&lt; T, Y &gt;::t</definition>
         <argsstring></argsstring>
         <name>t</name>
         <briefdescription>
@@ -22,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2395" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2395" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1577" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1577" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1_o_d_e__type_1aafb0eeede0354cc546c0114ef3c15129" prot="public" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; Y, 2 &gt;</type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2396" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2396" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1578" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1578" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -43,35 +43,35 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="41">
-        <label>keycpp::matrix&lt; T, 1 &gt;</label>
-        <link refid="classkeycpp_1_1matrix"/>
-      </node>
-      <node id="43">
+      <node id="39">
         <label>keycpp::vector_k&lt; Y &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>
       <node id="40">
+        <label>keycpp::matrix&lt; T, 2 &gt;</label>
+        <link refid="classkeycpp_1_1matrix"/>
+      </node>
+      <node id="37">
         <label>keycpp::ODE_type&lt; T, Y &gt;</label>
         <link refid="structkeycpp_1_1_o_d_e__type"/>
-        <childnode refid="41" relation="usage">
-          <edgelabel>t</edgelabel>
-        </childnode>
-        <childnode refid="42" relation="usage">
+        <childnode refid="38" relation="usage">
           <edgelabel>y</edgelabel>
         </childnode>
+        <childnode refid="40" relation="usage">
+          <edgelabel>t</edgelabel>
+        </childnode>
       </node>
-      <node id="42">
+      <node id="38">
         <label>keycpp::matrix&lt; Y, 2 &gt;</label>
         <link refid="classkeycpp_1_1matrix"/>
-        <childnode refid="43" relation="usage">
+        <childnode refid="39" relation="usage">
           <edgelabel>mData</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="2394" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="2393" bodyend="2397"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1576" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1575" bodyend="1579"/>
     <listofallmembers>
-      <member refid="structkeycpp_1_1_o_d_e__type_1a1f0ccdab9179cc5cb3d46330261ba85b" prot="public" virt="non-virtual"><scope>keycpp::ODE_type</scope><name>t</name></member>
+      <member refid="structkeycpp_1_1_o_d_e__type_1a7472927d5cc31aaf06d8dd1024b7640e" prot="public" virt="non-virtual"><scope>keycpp::ODE_type</scope><name>t</name></member>
       <member refid="structkeycpp_1_1_o_d_e__type_1aafb0eeede0354cc546c0114ef3c15129" prot="public" virt="non-virtual"><scope>keycpp::ODE_type</scope><name>y</name></member>
     </listofallmembers>
   </compounddef>

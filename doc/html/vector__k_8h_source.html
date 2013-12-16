@@ -304,9 +304,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keywordflow">return</span> v1;</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        };</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keyword">operator</span> <a class="code" href="classkeycpp_1_1matrix.html">matrix&lt;T,1&gt;</a>()</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keyword">operator</span> <a class="code" href="classkeycpp_1_1matrix.html">matrix&lt;T,2&gt;</a>()</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <a class="code" href="classkeycpp_1_1matrix.html">matrix&lt;T,1&gt;</a> v1(my_size);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <a class="code" href="classkeycpp_1_1matrix.html">matrix&lt;T,2&gt;</a> v1(my_size);</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> ii = 0; ii &lt; my_size; ii++)</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            {</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                v1(ii) = buffer[ii*inc];</div>
@@ -340,7 +340,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    }</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    vector_k&lt;T&gt;::vector_k(<span class="keyword">const</span> std::vector&lt;T&gt; &amp;v) : my_size(v.<a class="code" href="namespacekeycpp.html#acfe17126168656af54ae76ab6c487407" title="Returns the size of matrix A. ">size</a>()), my_capacity(v.capacity()), buffer(new T[v.<a class="code" href="namespacekeycpp.html#acfe17126168656af54ae76ab6c487407" title="Returns the size of matrix A. ">size</a>()])</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    vector_k&lt;T&gt;::vector_k(<span class="keyword">const</span> std::vector&lt;T&gt; &amp;v) : my_size(v.<a class="code" href="namespacekeycpp.html#a3bffa5a846e181974d7bfe2ab41fe03a" title="Returns the size of matrix A. ">size</a>()), my_capacity(v.capacity()), buffer(new T[v.<a class="code" href="namespacekeycpp.html#a3bffa5a846e181974d7bfe2ab41fe03a" title="Returns the size of matrix A. ">size</a>()])</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    {</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        dontFree = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        inc = 1;</div>
@@ -370,7 +370,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    </div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        vector_k&lt;T&gt;::vector_k(<span class="keyword">const</span> std::initializer_list&lt;T&gt;&amp; lst) : vector_k(lst.<a class="code" href="namespacekeycpp.html#acfe17126168656af54ae76ab6c487407" title="Returns the size of matrix A. ">size</a>())</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        vector_k&lt;T&gt;::vector_k(<span class="keyword">const</span> std::initializer_list&lt;T&gt;&amp; lst) : vector_k(lst.<a class="code" href="namespacekeycpp.html#a3bffa5a846e181974d7bfe2ab41fe03a" title="Returns the size of matrix A. ">size</a>())</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        {</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keywordtype">int</span> ii = 0;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; l : lst)</div>
@@ -421,7 +421,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keyword">typename</span> vector_k&lt;T&gt;::iterator vector_k&lt;T&gt;::end()</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    {</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="comment">//return buffer + size();</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordflow">return</span> iterator(buffer+<a class="code" href="namespacekeycpp.html#acfe17126168656af54ae76ab6c487407" title="Returns the size of matrix A. ">size</a>()*inc,inc);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordflow">return</span> iterator(buffer+<a class="code" href="namespacekeycpp.html#a3bffa5a846e181974d7bfe2ab41fe03a" title="Returns the size of matrix A. ">size</a>()*inc,inc);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    }</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
@@ -435,7 +435,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keyword">typename</span> vector_k&lt;T&gt;::const_iterator vector_k&lt;T&gt;::end()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="comment">//return buffer + size();</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">return</span> const_iterator(buffer+<a class="code" href="namespacekeycpp.html#acfe17126168656af54ae76ab6c487407" title="Returns the size of matrix A. ">size</a>()*inc,inc);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">return</span> const_iterator(buffer+<a class="code" href="namespacekeycpp.html#a3bffa5a846e181974d7bfe2ab41fe03a" title="Returns the size of matrix A. ">size</a>()*inc,inc);</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    }</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
@@ -494,7 +494,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="namespacekeycpp.html#acfe17126168656af54ae76ab6c487407" title="Returns the size of matrix A. ">vector_k&lt;T&gt;::size</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="namespacekeycpp.html#a3bffa5a846e181974d7bfe2ab41fe03a" title="Returns the size of matrix A. ">vector_k&lt;T&gt;::size</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordflow">return</span> my_size;</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    }</div>
@@ -565,7 +565,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 12 2013 13:07:46 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 16 2013 13:07:56 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

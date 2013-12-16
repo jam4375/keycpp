@@ -27,24 +27,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="30">
+      <node id="27">
         <label>keycpp::MatrixException</label>
         <link refid="classkeycpp_1_1_matrix_exception"/>
-        <childnode refid="31" relation="public-inheritance">
+        <childnode refid="28" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="31">
+      <node id="28">
         <label>std::runtime_error</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="32">
+      <node id="29">
         <label>keycpp::MatrixException</label>
         <link refid="classkeycpp_1_1_matrix_exception"/>
-        <childnode refid="33" relation="public-inheritance">
+        <childnode refid="30" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="33">
+      <node id="30">
         <label>std::runtime_error</label>
       </node>
     </collaborationgraph>

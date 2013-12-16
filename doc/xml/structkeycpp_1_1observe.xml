@@ -22,11 +22,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="264" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="264" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="221" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="221" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structkeycpp_1_1observe_1a332dd43fe9cab832a79f8b20eac2e118" prot="public" static="no" mutable="no">
-        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt; &amp;</type>
-        <definition>matrix&lt;U,1&gt;&amp; keycpp::observe&lt; T, U &gt;::x_ode</definition>
+      <memberdef kind="variable" id="structkeycpp_1_1observe_1aa888e3317d737be5d8b6beaf5f80da82" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 2 &gt; &amp;</type>
+        <definition>matrix&lt;U,2&gt;&amp; keycpp::observe&lt; T, U &gt;::x_ode</definition>
         <argsstring></argsstring>
         <name>x_ode</name>
         <briefdescription>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="265" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="265" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="222" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="222" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1observe_1a26f43b79b19af889827df682270a4d57" prot="public" static="no" mutable="no">
         <type>size_t</type>
@@ -48,21 +48,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="266" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="266" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="223" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="223" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structkeycpp_1_1observe_1af1f4dd52d947ffc2a3943a71dde5392e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structkeycpp_1_1observe_1a6b92320b534fe90009e4f52276ff5aa3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>keycpp::observe&lt; T, U &gt;::observe</definition>
-        <argsstring>(matrix&lt; T, 2 &gt; &amp;p_y, matrix&lt; U, 1 &gt; &amp;p_x_ode)</argsstring>
+        <argsstring>(matrix&lt; T, 2 &gt; &amp;p_y, matrix&lt; U, 2 &gt; &amp;p_x_ode)</argsstring>
         <name>observe</name>
         <param>
           <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 2 &gt; &amp;</type>
           <declname>p_y</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 1 &gt; &amp;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 2 &gt; &amp;</type>
           <declname>p_x_ode</declname>
         </param>
         <briefdescription>
@@ -71,15 +71,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="268" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="268" bodyend="268"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="225" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="225" bodyend="225"/>
       </memberdef>
-      <memberdef kind="function" id="structkeycpp_1_1observe_1af50e6153473d58abe82d6baa44fc5ece" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structkeycpp_1_1observe_1ad7b1bca76826f4d3c96e24802406f7d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void keycpp::observe&lt; T, U &gt;::operator()</definition>
-        <argsstring>(const matrix&lt; T, 1 &gt; &amp;y_temp, U x_temp)</argsstring>
+        <argsstring>(const matrix&lt; T, 2 &gt; &amp;y_temp, U x_temp)</argsstring>
         <name>operator()</name>
         <param>
-          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 1 &gt; &amp;</type>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 2 &gt; &amp;</type>
           <declname>y_temp</declname>
         </param>
         <param>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="270" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="270" bodyend="285"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="227" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="227" bodyend="242"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -100,38 +100,38 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="37">
+      <node id="35">
         <label>keycpp::vector_k&lt; U &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>
-      <node id="36">
-        <label>keycpp::matrix&lt; U, 1 &gt;</label>
-        <link refid="classkeycpp_1_1matrix"/>
-        <childnode refid="37" relation="usage">
-          <edgelabel>mData</edgelabel>
-        </childnode>
-      </node>
-      <node id="38">
+      <node id="33">
         <label>keycpp::matrix&lt; T, 2 &gt;</label>
         <link refid="classkeycpp_1_1matrix"/>
       </node>
-      <node id="35">
+      <node id="32">
         <label>keycpp::observe&lt; T, U &gt;</label>
         <link refid="structkeycpp_1_1observe"/>
-        <childnode refid="36" relation="usage">
+        <childnode refid="33" relation="usage">
+          <edgelabel>y</edgelabel>
+        </childnode>
+        <childnode refid="34" relation="usage">
           <edgelabel>x_ode</edgelabel>
         </childnode>
-        <childnode refid="38" relation="usage">
-          <edgelabel>y</edgelabel>
+      </node>
+      <node id="34">
+        <label>keycpp::matrix&lt; U, 2 &gt;</label>
+        <link refid="classkeycpp_1_1matrix"/>
+        <childnode refid="35" relation="usage">
+          <edgelabel>mData</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="263" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="262" bodyend="286"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="220" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="219" bodyend="243"/>
     <listofallmembers>
       <member refid="structkeycpp_1_1observe_1a26f43b79b19af889827df682270a4d57" prot="public" virt="non-virtual"><scope>keycpp::observe</scope><name>ii</name></member>
-      <member refid="structkeycpp_1_1observe_1af1f4dd52d947ffc2a3943a71dde5392e" prot="public" virt="non-virtual"><scope>keycpp::observe</scope><name>observe</name></member>
-      <member refid="structkeycpp_1_1observe_1af50e6153473d58abe82d6baa44fc5ece" prot="public" virt="non-virtual"><scope>keycpp::observe</scope><name>operator()</name></member>
-      <member refid="structkeycpp_1_1observe_1a332dd43fe9cab832a79f8b20eac2e118" prot="public" virt="non-virtual"><scope>keycpp::observe</scope><name>x_ode</name></member>
+      <member refid="structkeycpp_1_1observe_1a6b92320b534fe90009e4f52276ff5aa3" prot="public" virt="non-virtual"><scope>keycpp::observe</scope><name>observe</name></member>
+      <member refid="structkeycpp_1_1observe_1ad7b1bca76826f4d3c96e24802406f7d1" prot="public" virt="non-virtual"><scope>keycpp::observe</scope><name>operator()</name></member>
+      <member refid="structkeycpp_1_1observe_1aa888e3317d737be5d8b6beaf5f80da82" prot="public" virt="non-virtual"><scope>keycpp::observe</scope><name>x_ode</name></member>
       <member refid="structkeycpp_1_1observe_1ad06476e501cfc03b9b05badb312aaf15" prot="public" virt="non-virtual"><scope>keycpp::observe</scope><name>y</name></member>
     </listofallmembers>
   </compounddef>

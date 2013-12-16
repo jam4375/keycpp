@@ -544,11 +544,11 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/vector_k.h" line="196" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/vector_k.h" bodystart="196" bodyend="204"/>
       </memberdef>
-      <memberdef kind="function" id="classkeycpp_1_1vector__k_1a29924719e16f5db7308addc0b6e60160" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classkeycpp_1_1vector__k_1a0e0395cff74a011d44bd28db47f46f50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>keycpp::vector_k&lt; T &gt;::operator matrix&lt; T, 1 &gt;</definition>
+        <definition>keycpp::vector_k&lt; T &gt;::operator matrix&lt; T, 2 &gt;</definition>
         <argsstring>()</argsstring>
-        <name>operator matrix&lt; T, 1 &gt;</name>
+        <name>operator matrix&lt; T, 2 &gt;</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -595,7 +595,7 @@
       <member refid="classkeycpp_1_1vector__k_1a0c53a4d249da380a1eec01c56176de9c" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>iterator</name></member>
       <member refid="classkeycpp_1_1vector__k_1ac56e38785acd5c1df6920eb77f32feda" prot="private" virt="non-virtual"><scope>keycpp::vector_k</scope><name>my_capacity</name></member>
       <member refid="classkeycpp_1_1vector__k_1af198dad61aeb005bb53aa82d4466e202" prot="private" virt="non-virtual"><scope>keycpp::vector_k</scope><name>my_size</name></member>
-      <member refid="classkeycpp_1_1vector__k_1a29924719e16f5db7308addc0b6e60160" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>operator matrix&lt; T, 1 &gt;</name></member>
+      <member refid="classkeycpp_1_1vector__k_1a0e0395cff74a011d44bd28db47f46f50" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>operator matrix&lt; T, 2 &gt;</name></member>
       <member refid="classkeycpp_1_1vector__k_1a54ffbb92ed1926e6066d26db886b4132" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>operator std::vector&lt; T &gt;</name></member>
       <member refid="classkeycpp_1_1vector__k_1ab2030403334539d7df1001e8b9037fa9" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>operator=</name></member>
       <member refid="classkeycpp_1_1vector__k_1a318832966719bc35aa0147ec2aeabb6f" prot="public" virt="non-virtual"><scope>keycpp::vector_k</scope><name>operator=</name></member>

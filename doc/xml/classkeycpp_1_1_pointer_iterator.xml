@@ -557,24 +557,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="52">
+      <node id="49">
         <label>keycpp::PointerIterator&lt; TypeT &gt;</label>
         <link refid="classkeycpp_1_1_pointer_iterator"/>
-        <childnode refid="53" relation="public-inheritance">
+        <childnode refid="50" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="53">
+      <node id="50">
         <label>std::iterator&lt;std::random_access_iterator_tag, TypeT&gt;</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="54">
+      <node id="51">
         <label>keycpp::PointerIterator&lt; TypeT &gt;</label>
         <link refid="classkeycpp_1_1_pointer_iterator"/>
-        <childnode refid="55" relation="public-inheritance">
+        <childnode refid="52" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="55">
+      <node id="52">
         <label>std::iterator&lt;std::random_access_iterator_tag, TypeT&gt;</label>
       </node>
     </collaborationgraph>

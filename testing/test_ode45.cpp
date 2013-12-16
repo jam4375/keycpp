@@ -7,8 +7,8 @@ BOOST_AUTO_TEST_SUITE(KeyCpp_Unit_Testing)
 class OdeClass
 {
     public:
-        void operator()(const keycpp::matrix<double,1> &y,
-                        keycpp::matrix<double,1> &dy,
+        void operator()(const keycpp::matrix<double,2> &y,
+                        keycpp::matrix<double,2> &dy,
                         const double t)
         {
             dy(0) = t;
@@ -20,8 +20,8 @@ class OdeClass
 BOOST_AUTO_TEST_CASE(ode45_test)
 {
     OdeClass myOde;
-    keycpp::matrix<double,1> t = keycpp::linspace(0.0,12.0,100);
-    keycpp::matrix<double,1> ICs = {1.0, 0.0};
+    keycpp::matrix<double,2> t = keycpp::linspace(0.0,12.0,100);
+    keycpp::matrix<double,2> ICs = {1.0, 0.0};
     keycpp::matrix<double> y = keycpp::ode45(myOde, t, ICs);
     
     for(size_t ii = 0; ii < t.size(1); ii++)

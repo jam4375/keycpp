@@ -203,9 +203,9 @@ namespace keycpp
             return v1;
         };
         
-        operator matrix<T,1>()
+        operator matrix<T,2>()
         {
-            matrix<T,1> v1(my_size);
+            matrix<T,2> v1(my_size);
             for(size_t ii = 0; ii < my_size; ii++)
             {
                 v1(ii) = buffer[ii*inc];

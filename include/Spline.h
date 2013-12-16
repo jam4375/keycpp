@@ -33,18 +33,18 @@ namespace keycpp
 	class Spline
 	{
 	private:
-		matrix<U,1> x;
-		matrix<T,1> y;
+		matrix<U,2> x;
+		matrix<T,2> y;
 
-		matrix<T,1> s;
-		matrix<T,1> h;
-		matrix<T,1> f;
+		matrix<T,2> s;
+		matrix<T,2> h;
+		matrix<T,2> f;
 
 		matrix<T,2> tri; // tridiagonal array
-		matrix<T,1> a;
-		matrix<T,1> b;
-		matrix<T,1> c;
-		matrix<T,1> d;
+		matrix<T,2> a;
+		matrix<T,2> b;
+		matrix<T,2> c;
+		matrix<T,2> d;
 
 		int n;
 	
@@ -55,7 +55,7 @@ namespace keycpp
 		Extrap extrap;
 	
 	public:
-		Spline(int N, matrix<U,1> X, matrix<T,1> Y, Extrap extrap_in);
+		Spline(int N, matrix<U,2> X, matrix<T,2> Y, Extrap extrap_in);
 		virtual ~Spline();
 	
 		int compute_spline() {find_spline(); return tridiagonal();};
@@ -63,20 +63,24 @@ namespace keycpp
 	};
 
 
-	template<class U, class T> Spline<U,T>::Spline(int N, matrix<U,1> X, matrix<T,1> Y, Extrap extrap_in) : n(N), x(X), y(Y), extrap(extrap_in)
+	template<class U, class T> Spline<U,T>::Spline(int N, matrix<U,2> X, matrix<T,2> Y, Extrap extrap_in) : n(N), x(X), y(Y), extrap(extrap_in)
 	{
-		if(N != X.size(1) || N != Y.size(1))
+		if(N != X.length() || N != Y.length())
+		{
+			std::cout << "ERROR!! Problem with size of inputed matrices to Spline!\n";
+		}
+		if(!X.isVec() || !Y.isVec())
 		{
 			std::cout << "ERROR!! Problem with size of inputed matrices to Spline!\n";
 		}
 
-		s = matrix<T,1>(n);
-		h = matrix<T,1>(n-1);
-		f = matrix<T,1>(n-1);
-		a = matrix<T,1>(n-1);
-		b = matrix<T,1>(n-1);
-		c = matrix<T,1>(n-1);
-		d = matrix<T,1>(n-1);
+		s = matrix<T,2>(n);
+		h = matrix<T,2>(n-1);
+		f = matrix<T,2>(n-1);
+		a = matrix<T,2>(n-1);
+		b = matrix<T,2>(n-1);
+		c = matrix<T,2>(n-1);
+		d = matrix<T,2>(n-1);
 	}
 
 	/** \brief Spline destructor, nothing needs to be done. */
@@ -176,15 +180,15 @@ namespace keycpp
 		bool swapped = true;
 		U temp;
 		int temp_i;
-		matrix<int,1> index(x.size(1));
-		for(int ii = 0; ii < x.size(1); ii++)
+		matrix<int,2> index(x.length());
+		for(int ii = 0; ii < x.length(); ii++)
 		{
 			index(ii) = ii;
 		}
 		while(swapped)
 		{     
 			swapped = false;
-			for(int ii = 1; ii < x.size(1); ii++)
+			for(int ii = 1; ii < x.length(); ii++)
 			{
 				if((x(ii-1)) > (x(ii)))
 				{
@@ -198,12 +202,12 @@ namespace keycpp
 				}
 			}
 		}
-		matrix<T,1> y_temp(y.size(1));
-		for(int ii = 0; ii < y.size(1); ii++)
+		matrix<T,2> y_temp(y.length());
+		for(int ii = 0; ii < y.length(); ii++)
 		{
 			y_temp(ii) = y(index(ii));
 		}
-		for(int ii = 0; ii < y.size(1); ii++)
+		for(int ii = 0; ii < y.length(); ii++)
 		{
 			y(ii) = y_temp(ii);
 		}

@@ -9,11 +9,11 @@ BOOST_AUTO_TEST_CASE(fft_test)
     size_t L = 1000;
     double Fs = 1000;
     double T = 1.0/Fs;
-    keycpp::matrix<double,1> f = Fs*keycpp::linspace(0.0,1.0,L);
+    keycpp::matrix<double,2> f = Fs*keycpp::linspace(0.0,1.0,L);
     
-    keycpp::matrix<double,1> t = keycpp::linspace(0.0,(double)(L-1),L)*T;
-    keycpp::matrix<double,1> y = keycpp::sin(2.0*keycpp::pi*t);
-    keycpp::matrix<std::complex<double>,1> Y = keycpp::fft(y)*2.0/1000.0;
+    keycpp::matrix<double,2> t = keycpp::linspace(0.0,(double)(L-1),L)*T;
+    keycpp::matrix<double,2> y = keycpp::sin(2.0*keycpp::pi*t);
+    keycpp::matrix<std::complex<double>,2> Y = keycpp::fft(y)*2.0/1000.0;
     
     BOOST_CHECK(abs(abs(Y(1)) - 1.0) < 1e-6);
     BOOST_CHECK(abs(abs(Y(0)) - 0.0) < 1e-6);

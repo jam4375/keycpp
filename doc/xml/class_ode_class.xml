@@ -3,17 +3,17 @@
   <compounddef id="class_ode_class" kind="class" prot="public">
     <compoundname>OdeClass</compoundname>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_ode_class_1ac5fe82b7b611a8fdb89103b742778c89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_ode_class_1a1c4fbb90c42265ba4e81664a192f1d8f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void OdeClass::operator()</definition>
-        <argsstring>(const matrix&lt; double, 1 &gt; &amp;y, matrix&lt; double, 1 &gt; &amp;dy, const double)</argsstring>
+        <argsstring>(const matrix&lt; double &gt; &amp;y, matrix&lt; double &gt; &amp;dy, const double)</argsstring>
         <name>operator()</name>
         <param>
-          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double, 1 &gt; &amp;</type>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt; &amp;</type>
           <declname>y</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double, 1 &gt; &amp;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; double &gt; &amp;</type>
           <declname>dy</declname>
         </param>
         <param>
@@ -27,17 +27,17 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/examples/example.cpp" line="9" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/examples/example.cpp" bodystart="9" bodyend="16"/>
       </memberdef>
-      <memberdef kind="function" id="class_ode_class_1abc3eabcda0da3f37065c0ef22a149a2d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_ode_class_1a269b7862197785ff7c52d453cfa0b98e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void OdeClass::operator()</definition>
-        <argsstring>(const keycpp::matrix&lt; double, 1 &gt; &amp;y, keycpp::matrix&lt; double, 1 &gt; &amp;dy, const double t)</argsstring>
+        <argsstring>(const keycpp::matrix&lt; double, 2 &gt; &amp;y, keycpp::matrix&lt; double, 2 &gt; &amp;dy, const double t)</argsstring>
         <name>operator()</name>
         <param>
-          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix</ref>&lt; double, 1 &gt; &amp;</type>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix</ref>&lt; double, 2 &gt; &amp;</type>
           <declname>y</declname>
         </param>
         <param>
-          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix</ref>&lt; double, 1 &gt; &amp;</type>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix</ref>&lt; double, 2 &gt; &amp;</type>
           <declname>dy</declname>
         </param>
         <param>
@@ -59,8 +59,8 @@
     </detaileddescription>
     <location file="/media/Storage/Research/open_source/keycpp/examples/example.cpp" line="7" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/examples/example.cpp" bodystart="6" bodyend="17"/>
     <listofallmembers>
-      <member refid="class_ode_class_1ac5fe82b7b611a8fdb89103b742778c89" prot="public" virt="non-virtual"><scope>OdeClass</scope><name>operator()</name></member>
-      <member refid="class_ode_class_1abc3eabcda0da3f37065c0ef22a149a2d" prot="public" virt="non-virtual"><scope>OdeClass</scope><name>operator()</name></member>
+      <member refid="class_ode_class_1a1c4fbb90c42265ba4e81664a192f1d8f" prot="public" virt="non-virtual"><scope>OdeClass</scope><name>operator()</name></member>
+      <member refid="class_ode_class_1a269b7862197785ff7c52d453cfa0b98e" prot="public" virt="non-virtual"><scope>OdeClass</scope><name>operator()</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

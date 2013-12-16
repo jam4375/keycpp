@@ -293,8 +293,8 @@
 <codeline lineno="7"><highlight class="normal">class<sp/><ref refid="class_ode_class" kindref="compound">OdeClass</ref></highlight></codeline>
 <codeline lineno="8"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator()(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;double,1&gt;</ref><sp/>&amp;y,</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;double,1&gt;</ref><sp/>&amp;dy,</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator()(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;double,2&gt;</ref><sp/>&amp;y,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;double,2&gt;</ref><sp/>&amp;dy,</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t)</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dy(0)<sp/>=<sp/>t;</highlight></codeline>
@@ -306,13 +306,13 @@
 <codeline lineno="20"><highlight class="normal">BOOST_AUTO_TEST_CASE(ode45_test)</highlight></codeline>
 <codeline lineno="21"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_ode_class" kindref="compound">OdeClass</ref><sp/>myOde;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;double,1&gt;</ref><sp/>t<sp/>=<sp/>keycpp::linspace(0.0,12.0,100);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;double,1&gt;</ref><sp/>ICs<sp/>=<sp/>{1.0,<sp/>0.0};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;double,2&gt;</ref><sp/>t<sp/>=<sp/>keycpp::linspace(0.0,12.0,100);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;double,2&gt;</ref><sp/>ICs<sp/>=<sp/>{1.0,<sp/>0.0};</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classkeycpp_1_1matrix" kindref="compound">keycpp::matrix&lt;double&gt;</ref><sp/>y<sp/>=<sp/>keycpp::ode45(myOde,<sp/>t,<sp/>ICs);</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>ii<sp/>=<sp/>0;<sp/>ii<sp/>&lt;<sp/>t.size(1);<sp/>ii++)</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_CLOSE(y(ii,0),<ref refid="namespacekeycpp_1a917607e20e487553be913b7ccaa4736d" kindref="member" tooltip="Return a vector containing the cosine of each element of v1. ">cos</ref>(t(ii)),0.01);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BOOST_CHECK_CLOSE(y(ii,0),<ref refid="namespacekeycpp_1a918a1ad9493c25e0afb4d2a37af24d25" kindref="member" tooltip="Return a vector containing the cosine of each element of A. ">cos</ref>(t(ii)),0.01);</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="31"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
