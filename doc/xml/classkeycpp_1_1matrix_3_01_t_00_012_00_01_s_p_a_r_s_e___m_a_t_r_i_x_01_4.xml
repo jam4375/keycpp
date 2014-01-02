@@ -1,0 +1,850 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
+  <compounddef id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4" kind="class" prot="public">
+    <compoundname>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a3b2380fa46f399cf3b8a90522314cc66" prot="private" static="no" mutable="yes">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; T &gt;</type>
+        <definition>vector_k&lt;T&gt; keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::mData</definition>
+        <argsstring></argsstring>
+        <name>mData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="125" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a5376ac245bd3d764a4954e662a5abc8a" prot="private" static="no" mutable="yes">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; size_t &gt;</type>
+        <definition>vector_k&lt;size_t&gt; keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::rowInd</definition>
+        <argsstring></argsstring>
+        <name>rowInd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="126" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a96b84bf0eea04dab457ba3255104c453" prot="private" static="no" mutable="yes">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; size_t &gt;</type>
+        <definition>vector_k&lt;size_t&gt; keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::colPtr</definition>
+        <argsstring></argsstring>
+        <name>colPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="127" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aa4393e7f3554140548ad2bd511a3bf73" prot="private" static="no" mutable="no">
+        <type>std::array&lt; size_t, 2 &gt;</type>
+        <definition>std::array&lt;size_t,2&gt; keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::mSize</definition>
+        <argsstring></argsstring>
+        <name>mSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="128" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a03433f101efd6b183835dee69f75bb06" prot="private" static="no" mutable="yes">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; Eigen::Triplet&lt; T &gt; &gt;</type>
+        <definition>vector_k&lt;Eigen::Triplet&lt;T&gt; &gt; keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::data_unsorted</definition>
+        <argsstring></argsstring>
+        <name>data_unsorted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="130" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1ad299a15b0f69c3b3987ef0ba64c3b84d" prot="private" static="no" mutable="yes">
+        <type>bool</type>
+        <definition>bool keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::m_update</definition>
+        <argsstring></argsstring>
+        <name>m_update</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="131" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1afef21642149c040f5d9cdb7232eb6981" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::matrix</definition>
+        <argsstring>()</argsstring>
+        <name>matrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="50" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="135" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aa5ca95e990423d26afccbf8b4854ad7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::matrix</definition>
+        <argsstring>(const matrix&lt; T, 2, SPARSE_MATRIX &gt; &amp;A)</argsstring>
+        <name>matrix</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="51" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="144" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a38fe77996613facb50f24b59d1c75f4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::matrix</definition>
+        <argsstring>(const size_t &amp;d1, const size_t &amp;d2)</argsstring>
+        <name>matrix</name>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>d1</declname>
+        </param>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>d2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="52" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="165" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a3708d27c6c19f0060f7c6cd26b214d7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::matrix</definition>
+        <argsstring>(const std::initializer_list&lt; std::initializer_list&lt; T &gt; &gt; &amp;lst)</argsstring>
+        <name>matrix</name>
+        <param>
+          <type>const std::initializer_list&lt; std::initializer_list&lt; T &gt; &gt; &amp;</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="53" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="174" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a554699e86c06fd08c50396813198309c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::matrix</definition>
+        <argsstring>(const std::initializer_list&lt; T &gt; &amp;lst)</argsstring>
+        <name>matrix</name>
+        <param>
+          <type>const std::initializer_list&lt; T &gt; &amp;</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="54" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="180" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a04d22b3e010c3e079372d0483c46bfcb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::update</definition>
+        <argsstring>() const </argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="55" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="206" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a2e821c1a27bc9200764247ed384a734e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>T &amp; keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::operator()</definition>
+        <argsstring>(const size_t &amp;i, const size_t &amp;j)</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="56" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="242" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a74e98658bb65a04ab7372567b37eea52" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::operator()</definition>
+        <argsstring>(const size_t &amp;i, const size_t &amp;j) const </argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="57" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="278" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aaca81a859311fdefdb70bbb8a6f38e93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>T &amp; keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::operator()</definition>
+        <argsstring>(const size_t &amp;i)</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="58" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="495" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a7a12a5086bbcac8a4ed8d210cb9d117c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::operator()</definition>
+        <argsstring>(const size_t &amp;i) const </argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="59" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="501" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a6499ce020565e0f666ef966502b134ce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 2, SPARSE_MATRIX &gt;</type>
+        <definition>matrix&lt; T, 2, SPARSE_MATRIX &gt; keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::operator()</definition>
+        <argsstring>(const size_t &amp;i, const span &amp;cols) const </argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1span" kindref="compound">span</ref> &amp;</type>
+          <declname>cols</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="60" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="305" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a544a0f54e554ca651303896e6c25146b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 2, SPARSE_MATRIX &gt;</type>
+        <definition>matrix&lt; T, 2, SPARSE_MATRIX &gt; keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::operator()</definition>
+        <argsstring>(const span &amp;rows, const size_t &amp;j) const </argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1span" kindref="compound">span</ref> &amp;</type>
+          <declname>rows</declname>
+        </param>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="61" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="359" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a5cd992aa58c20c8e25921df7f2dbdc53" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 2, SPARSE_MATRIX &gt;</type>
+        <definition>matrix&lt; T, 2, SPARSE_MATRIX &gt; keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::operator()</definition>
+        <argsstring>(const span &amp;rows, const span &amp;cols) const </argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1span" kindref="compound">span</ref> &amp;</type>
+          <declname>rows</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1span" kindref="compound">span</ref> &amp;</type>
+          <declname>cols</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="62" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="413" bodyend="492"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a73bb5345dc3cb722ad653bac50979f77" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 2, SPARSE_MATRIX &gt;</type>
+        <definition>matrix&lt; T, 2, SPARSE_MATRIX &gt; keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::row</definition>
+        <argsstring>(const size_t &amp;i) const </argsstring>
+        <name>row</name>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="63" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="507" bodyend="529"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a41e530bd0c38232974f49562f4c97d6a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 2, SPARSE_MATRIX &gt;</type>
+        <definition>matrix&lt; T, 2, SPARSE_MATRIX &gt; keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::col</definition>
+        <argsstring>(const size_t &amp;j) const </argsstring>
+        <name>col</name>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>j</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="64" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="532" bodyend="548"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aafd159e412dffd5ebb84620f8a6a7c0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::operator!=</definition>
+        <argsstring>(const matrix&lt; T, 2, SPARSE_MATRIX &gt; &amp;B) const </argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="65" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="551" bodyend="580"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a79caa90a213715fc7adde1fe8dbf63d5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::operator==</definition>
+        <argsstring>(const matrix&lt; T, 2, SPARSE_MATRIX &gt; &amp;B) const </argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="66" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="583" bodyend="612"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a0d25ced8f8e02ddd30ca3c1f321162c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T, 2, SPARSE_MATRIX &gt; &amp;</type>
+        <definition>matrix&lt; T, 2, SPARSE_MATRIX &gt; &amp; keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::operator=</definition>
+        <argsstring>(const matrix&lt; U, 2, SPARSE_MATRIX &gt; &amp;v)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="68" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="616" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1ab2977935266038f4acb95ffc37c5c466" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::size</definition>
+        <argsstring>(const size_t &amp;n) const </argsstring>
+        <name>size</name>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="69" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="640" bodyend="647"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1ae4a3c19a4f8172b41aaf2523f3318990" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::empty</definition>
+        <argsstring>() const </argsstring>
+        <name>empty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="70" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="650" bodyend="661"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a8dfd039d48a2285abcab5167c2c4a066" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::reserve</definition>
+        <argsstring>(const size_t &amp;N)</argsstring>
+        <name>reserve</name>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="71" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="664" bodyend="667"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aae657b48e49aca00d100122c86818791" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::length</definition>
+        <argsstring>() const </argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="72" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1af24e6ec2af70c9c88fe9ad3cb3acc026" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::numel</definition>
+        <argsstring>() const </argsstring>
+        <name>numel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="76" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a68adfe107494344551f367dcaeb38992" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::isVec</definition>
+        <argsstring>() const </argsstring>
+        <name>isVec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="81" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="81" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a8c42368183176333edc4f01ad7ef17e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::operator T</definition>
+        <argsstring>()</argsstring>
+        <name>operator T</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="109" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="109" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a22504b53fedf28d0e8efd392f6145753" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;::operator matrix&lt; T &gt;</definition>
+        <argsstring>()</argsstring>
+        <name>operator matrix&lt; T &gt;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="119" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="119" bodyend="122"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aed7548fd8b68b1aaa584d8f06c86aea8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class V</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>friend <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; decltype(std::declval&lt; V &gt;)*std::declval&lt; U &gt;)), 2, 0 &gt;</type>
+        <definition>matrix&lt;decltype(std::declval&lt;V&gt;)*std::declval&lt;U&gt;)),2,0&gt; operator*</definition>
+        <argsstring>(const matrix&lt; V, 2, SPARSE_MATRIX &gt; &amp;A, const matrix&lt; U, 2, 0 &gt; &amp;x)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; V, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 2, 0 &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="94" column="1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a2fb7d6f4ddd24db721969190b3e014cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class V</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>friend <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; decltype(std::declval&lt; V &gt;)*std::declval&lt; U &gt;)), 2, SPARSE_MATRIX &gt;</type>
+        <definition>matrix&lt;decltype(std::declval&lt;V&gt;)*std::declval&lt;U&gt;)),2,SPARSE_MATRIX&gt; operator*</definition>
+        <argsstring>(const matrix&lt; V, 2, SPARSE_MATRIX &gt; &amp;A, const matrix&lt; U, 2, SPARSE_MATRIX &gt; &amp;B)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; V, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="96" column="1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1ac8ba2105ba28e3b667582ffe85e74b92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class V</type>
+          </param>
+        </templateparamlist>
+        <type>friend <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; V, 2, 0 &gt;</type>
+        <definition>matrix&lt;V,2,0&gt; full</definition>
+        <argsstring>(const matrix&lt; V, 2, SPARSE_MATRIX &gt; &amp;A)</argsstring>
+        <name>full</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; V, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="98" column="1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1acf84d8e097abee1bf84a723645bb9dd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class V</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>friend <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; decltype(std::declval&lt; V &gt;)+std::declval&lt; U &gt;)), 2, SPARSE_MATRIX &gt;</type>
+        <definition>matrix&lt;decltype(std::declval&lt;V&gt;) + std::declval&lt;U&gt;)),2,SPARSE_MATRIX&gt; operator+</definition>
+        <argsstring>(const matrix&lt; V, 2, SPARSE_MATRIX &gt; &amp;A, const matrix&lt; U, 2, SPARSE_MATRIX &gt; &amp;B)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; V, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="100" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="693" bodyend="713"/>
+      </memberdef>
+      <memberdef kind="friend" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a1f4e330b8bc16400ede05b08d3d2116e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class V</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>friend <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; decltype(std::declval&lt; V &gt;)+std::declval&lt; U &gt;)), 2, SPARSE_MATRIX &gt;</type>
+        <definition>matrix&lt;decltype(std::declval&lt;V&gt;) + std::declval&lt;U&gt;)),2,SPARSE_MATRIX&gt; operator-</definition>
+        <argsstring>(const matrix&lt; V, 2, SPARSE_MATRIX &gt; &amp;A, const matrix&lt; U, 2, SPARSE_MATRIX &gt; &amp;B)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; V, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="102" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="716" bodyend="735"/>
+      </memberdef>
+      <memberdef kind="friend" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a5b258b115970ad79cf09c123b8af1101" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class V</type>
+          </param>
+        </templateparamlist>
+        <type>friend <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; V, 2, SPARSE_MATRIX &gt;</type>
+        <definition>matrix&lt;V,2,SPARSE_MATRIX&gt; transpose</definition>
+        <argsstring>(const matrix&lt; V, 2, SPARSE_MATRIX &gt; &amp;A)</argsstring>
+        <name>transpose</name>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; V, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="104" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="738" bodyend="752"/>
+      </memberdef>
+      <memberdef kind="friend" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1ac73eba4c2e3f7646e4bd09d6a23a8dc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend void</type>
+        <definition>void mv</definition>
+        <argsstring>(int n, std::complex&lt; double &gt; *in, std::complex&lt; double &gt; *out, const matrix&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;A)</argsstring>
+        <name>mv</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>in</declname>
+        </param>
+        <param>
+          <type>std::complex&lt; double &gt; *</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="105" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/znaupd.h" bodystart="38" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="friend" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a7cfd9ddb291c08f9f4411a72ddcdb711" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend void</type>
+        <definition>void znaupd</definition>
+        <argsstring>(int n, int nev, matrix&lt; std::complex&lt; double &gt;&gt; &amp;Evals, std::string which, const matrix&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;A, const matrix&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;B)</argsstring>
+        <name>znaupd</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nev</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt;&gt; &amp;</type>
+          <declname>Evals</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>which</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="106" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/znaupd.h" bodystart="1083" bodyend="1222"/>
+      </memberdef>
+      <memberdef kind="friend" id="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aaa77b1b34bb61284329d31247adadfd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend void</type>
+        <definition>void znaupd</definition>
+        <argsstring>(int n, int nev, matrix&lt; std::complex&lt; double &gt;&gt; &amp;Evals, matrix&lt; std::complex&lt; double &gt;&gt; &amp;Evecs, std::string which, const matrix&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;A, const matrix&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;B)</argsstring>
+        <name>znaupd</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nev</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt;&gt; &amp;</type>
+          <declname>Evals</declname>
+        </param>
+        <param>
+          <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt;&gt; &amp;</type>
+          <declname>Evecs</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>which</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="107" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/znaupd.h" bodystart="1224" bodyend="1363"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="48" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="47" bodyend="132"/>
+    <listofallmembers>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a41e530bd0c38232974f49562f4c97d6a" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>col</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a96b84bf0eea04dab457ba3255104c453" prot="private" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>colPtr</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a03433f101efd6b183835dee69f75bb06" prot="private" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>data_unsorted</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1ae4a3c19a4f8172b41aaf2523f3318990" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>empty</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1ac8ba2105ba28e3b667582ffe85e74b92" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>full</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a68adfe107494344551f367dcaeb38992" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>isVec</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aae657b48e49aca00d100122c86818791" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>length</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1ad299a15b0f69c3b3987ef0ba64c3b84d" prot="private" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>m_update</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1afef21642149c040f5d9cdb7232eb6981" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>matrix</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aa5ca95e990423d26afccbf8b4854ad7d" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>matrix</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a38fe77996613facb50f24b59d1c75f4e" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>matrix</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a3708d27c6c19f0060f7c6cd26b214d7c" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>matrix</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a554699e86c06fd08c50396813198309c" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>matrix</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a3b2380fa46f399cf3b8a90522314cc66" prot="private" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>mData</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aa4393e7f3554140548ad2bd511a3bf73" prot="private" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>mSize</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1ac73eba4c2e3f7646e4bd09d6a23a8dc0" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>mv</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1af24e6ec2af70c9c88fe9ad3cb3acc026" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>numel</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a22504b53fedf28d0e8efd392f6145753" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator matrix&lt; T &gt;</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a8c42368183176333edc4f01ad7ef17e6" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator T</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aafd159e412dffd5ebb84620f8a6a7c0a" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator!=</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a2e821c1a27bc9200764247ed384a734e" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator()</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a74e98658bb65a04ab7372567b37eea52" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator()</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aaca81a859311fdefdb70bbb8a6f38e93" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator()</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a7a12a5086bbcac8a4ed8d210cb9d117c" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator()</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a6499ce020565e0f666ef966502b134ce" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator()</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a544a0f54e554ca651303896e6c25146b" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator()</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a5cd992aa58c20c8e25921df7f2dbdc53" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator()</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aed7548fd8b68b1aaa584d8f06c86aea8" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator*</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a2fb7d6f4ddd24db721969190b3e014cb" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator*</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1acf84d8e097abee1bf84a723645bb9dd6" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator+</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a1f4e330b8bc16400ede05b08d3d2116e" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator-</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a0d25ced8f8e02ddd30ca3c1f321162c4" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator=</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a79caa90a213715fc7adde1fe8dbf63d5" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>operator==</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a8dfd039d48a2285abcab5167c2c4a066" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>reserve</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a73bb5345dc3cb722ad653bac50979f77" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>row</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a5376ac245bd3d764a4954e662a5abc8a" prot="private" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>rowInd</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1ab2977935266038f4acb95ffc37c5c466" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>size</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a5b258b115970ad79cf09c123b8af1101" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>transpose</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a04d22b3e010c3e079372d0483c46bfcb" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>update</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1a7cfd9ddb291c08f9f4411a72ddcdb711" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>znaupd</name></member>
+      <member refid="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4_1aaa77b1b34bb61284329d31247adadfd0" prot="public" virt="non-virtual"><scope>keycpp::matrix&lt; T, 2, SPARSE_MATRIX &gt;</scope><name>znaupd</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

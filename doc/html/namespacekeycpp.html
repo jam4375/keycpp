@@ -124,15 +124,25 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkeycpp_1_1tictoc__type.html">tictoc_type</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type for using the <a class="el" href="namespacekeycpp.html#a6069a9eec0edfa1d401230013d98765e" title="Start the timer. ">tic()</a> and toc(tictoc_type Timer) commands.  <a href="structkeycpp_1_1tictoc__type.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkeycpp_1_1meshgrid__type.html">meshgrid_type</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeycpp_1_1_matrix_exception.html">MatrixException</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeycpp_1_1span.html">span</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeycpp_1_1matrix_3_01_t_00_01dim_00_01_d_e_n_s_e___m_a_t_r_i_x_01_4.html">matrix&lt; T, dim, DENSE_MATRIX &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeycpp_1_1_sparse_matrix_exception.html">SparseMatrixException</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeycpp_1_1matrix_3_01_t_00_012_00_01_s_p_a_r_s_e___m_a_t_r_i_x_01_4.html">matrix&lt; T, 2, SPARSE_MATRIX &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeycpp_1_1_spline_exception.html">SplineException</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeycpp_1_1_extrap.html">Extrap</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeycpp_1_1_spline.html">Spline</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeycpp_1_1_pointer_iterator.html">PointerIterator</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -294,6 +304,11 @@ template&lt;class T &gt; </td></tr>
 <tr class="memitem:ad91dbdf14632d313a304d3ddbadf935f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#ad91dbdf14632d313a304d3ddbadf935f">isnan</a> (const T &amp;a)</td></tr>
 <tr class="memdesc:ad91dbdf14632d313a304d3ddbadf935f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns boolean value that is true if a is NaN. <br/></td></tr>
 <tr class="separator:ad91dbdf14632d313a304d3ddbadf935f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad06706aa6f44dde4b12566f81ed2be94"><td class="memTemplParams" colspan="2"><a class="anchor" id="ad06706aa6f44dde4b12566f81ed2be94"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:ad06706aa6f44dde4b12566f81ed2be94"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#ad06706aa6f44dde4b12566f81ed2be94">isnan</a> (const std::complex&lt; double &gt; &amp;a)</td></tr>
+<tr class="memdesc:ad06706aa6f44dde4b12566f81ed2be94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns boolean value that is true if a is NaN. <br/></td></tr>
+<tr class="separator:ad06706aa6f44dde4b12566f81ed2be94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e322f9a9b9a2bd3446ecaffbcea88cb"><td class="memTemplParams" colspan="2"><a class="anchor" id="a7e322f9a9b9a2bd3446ecaffbcea88cb"></a>
 template&lt;class T , size_t dim&gt; </td></tr>
 <tr class="memitem:a7e322f9a9b9a2bd3446ecaffbcea88cb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; bool, dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a7e322f9a9b9a2bd3446ecaffbcea88cb">isnan</a> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, dim &gt; &amp;A)</td></tr>
@@ -315,10 +330,6 @@ template&lt;class T , size_t dim&gt; </td></tr>
 template&lt;class T , size_t dim&gt; </td></tr>
 <tr class="memitem:a2309a6456fab18ec68a436f269d32d8f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>eop</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; T &gt;, dim &gt; &amp;A, T(*f)(std::complex&lt; T &gt;))</td></tr>
 <tr class="separator:a2309a6456fab18ec68a436f269d32d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdc9a2ec3fa602bd1bad9cd9ea14038e"><td class="memTemplParams" colspan="2"><a class="anchor" id="abdc9a2ec3fa602bd1bad9cd9ea14038e"></a>
-template&lt;class T , size_t dim&gt; </td></tr>
-<tr class="memitem:abdc9a2ec3fa602bd1bad9cd9ea14038e"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;out, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, dim &gt; &amp;A)</td></tr>
-<tr class="separator:abdc9a2ec3fa602bd1bad9cd9ea14038e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86f8946c126102b4467b70da16766b7a"><td class="memTemplParams" colspan="2"><a class="anchor" id="a86f8946c126102b4467b70da16766b7a"></a>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:a86f8946c126102b4467b70da16766b7a"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;out, const <a class="el" href="classkeycpp_1_1vector__k.html">vector_k</a>&lt; T &gt; &amp;v1)</td></tr>
@@ -464,10 +475,10 @@ template&lt;class T , size_t dim&gt; </td></tr>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:a8ae33fb19a521ab1ec1f22e7c39ca076"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>eye</b> (const int &amp;N)</td></tr>
 <tr class="separator:a8ae33fb19a521ab1ec1f22e7c39ca076"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2824156817719ffe96a842dd0ef27ae5"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a2824156817719ffe96a842dd0ef27ae5"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a2824156817719ffe96a842dd0ef27ae5">size</a> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T &gt; &amp;A, const int &amp;dim)</td></tr>
-<tr class="memdesc:a2824156817719ffe96a842dd0ef27ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements along dimension dim.  <a href="#a2824156817719ffe96a842dd0ef27ae5">More...</a><br/></td></tr>
-<tr class="separator:a2824156817719ffe96a842dd0ef27ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a737223780bc4bcda96ca2142a2ac3de9"><td class="memTemplParams" colspan="2">template&lt;class T , size_t dim&gt; </td></tr>
+<tr class="memitem:a737223780bc4bcda96ca2142a2ac3de9"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a737223780bc4bcda96ca2142a2ac3de9">size</a> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, dim &gt; &amp;A, const int &amp;n)</td></tr>
+<tr class="memdesc:a737223780bc4bcda96ca2142a2ac3de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements along dimension dim.  <a href="#a737223780bc4bcda96ca2142a2ac3de9">More...</a><br/></td></tr>
+<tr class="separator:a737223780bc4bcda96ca2142a2ac3de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5699c522088657287bf0ac01173b716c"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a5699c522088657287bf0ac01173b716c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a5699c522088657287bf0ac01173b716c">zeros</a> (const int &amp;M, const int &amp;N)</td></tr>
 <tr class="memdesc:a5699c522088657287bf0ac01173b716c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a matrix of size M x N containing all zeros.  <a href="#a5699c522088657287bf0ac01173b716c">More...</a><br/></td></tr>
@@ -525,10 +536,10 @@ template&lt;class T &gt; </td></tr>
 template&lt;class T , size_t dim&gt; </td></tr>
 <tr class="memitem:afbbe373666d686c14e6ce6517d050373"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>angle</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; T &gt;, dim &gt; &amp;A)</td></tr>
 <tr class="separator:afbbe373666d686c14e6ce6517d050373"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc1d5c652ba4edec0c41b01e36f6a977"><td class="memTemplParams" colspan="2"><a class="anchor" id="adc1d5c652ba4edec0c41b01e36f6a977"></a>
+<tr class="memitem:a03b5a8f06ace0e74416f6b22fbefd1a0"><td class="memTemplParams" colspan="2"><a class="anchor" id="a03b5a8f06ace0e74416f6b22fbefd1a0"></a>
 template&lt;class T &gt; </td></tr>
-<tr class="memitem:adc1d5c652ba4edec0c41b01e36f6a977"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>max</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2 &gt; &amp;A)</td></tr>
-<tr class="separator:adc1d5c652ba4edec0c41b01e36f6a977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03b5a8f06ace0e74416f6b22fbefd1a0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>max</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2 &gt; &amp;A)</td></tr>
+<tr class="separator:a03b5a8f06ace0e74416f6b22fbefd1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adafc954673ba1f1fb140d83ba1d88a23"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adafc954673ba1f1fb140d83ba1d88a23"></a>
 <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>max</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; &amp;A)</td></tr>
 <tr class="separator:adafc954673ba1f1fb140d83ba1d88a23"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -536,6 +547,9 @@ template&lt;class T &gt; </td></tr>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:a96f9dd276a27f616258da602ee559541"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>min</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2 &gt; &amp;A)</td></tr>
 <tr class="separator:a96f9dd276a27f616258da602ee559541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa29add9ed4a57360a11fbf614df7f3a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa29add9ed4a57360a11fbf614df7f3a7"></a>
+<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>min</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; &amp;A)</td></tr>
+<tr class="separator:aa29add9ed4a57360a11fbf614df7f3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fd5ce0385e9cc7bed5b44ed8475e8aa"><td class="memTemplParams" colspan="2"><a class="anchor" id="a7fd5ce0385e9cc7bed5b44ed8475e8aa"></a>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:a7fd5ce0385e9cc7bed5b44ed8475e8aa"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a7fd5ce0385e9cc7bed5b44ed8475e8aa">transpose</a> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T &gt; &amp;A)</td></tr>
@@ -613,10 +627,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (<a class="el
 <tr class="memitem:af9dec3da4533a1db21a6c6c4fe8e740a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9dec3da4533a1db21a6c6c4fe8e740a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (<a class="el" href="classkeycpp_1_1_figure.html">Figure</a> &amp;h, std::string pterm, std::string pfilename)</td></tr>
 <tr class="separator:af9dec3da4533a1db21a6c6c4fe8e740a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe567d1c5cdf91722dfbe5da89e859e8"><td class="memTemplParams" colspan="2"><a class="anchor" id="abe567d1c5cdf91722dfbe5da89e859e8"></a>
+<tr class="memitem:a82fb697518c456560dea0b328e693418"><td class="memTemplParams" colspan="2"><a class="anchor" id="a82fb697518c456560dea0b328e693418"></a>
 template&lt;class T &gt; </td></tr>
-<tr class="memitem:abe567d1c5cdf91722dfbe5da89e859e8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structkeycpp_1_1_sort___matrix.html">Sort_Matrix</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>sort</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T &gt; &amp;A, const size_t &amp;dim=2, std::string method=&quot;ascend&quot;)</td></tr>
-<tr class="separator:abe567d1c5cdf91722dfbe5da89e859e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82fb697518c456560dea0b328e693418"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structkeycpp_1_1_sort___matrix.html">Sort_Matrix</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>sort</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T &gt; &amp;A, const size_t &amp;dim=2, std::string method=&quot;ascend&quot;)</td></tr>
+<tr class="separator:a82fb697518c456560dea0b328e693418"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba69db64fe38ad271de1939d3f1a5520"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba69db64fe38ad271de1939d3f1a5520"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#aba69db64fe38ad271de1939d3f1a5520">input</a> (const std::string &amp;prompt, std::string option)</td></tr>
 <tr class="memdesc:aba69db64fe38ad271de1939d3f1a5520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the prompt to the screen and then waits for user input. Currently the option must be supplied as "s" because C++ is a statically typed language. <br/></td></tr>
@@ -655,16 +669,16 @@ template&lt;class T , class U &gt; </td></tr>
 &lt; T &gt;)*std::declval&lt; U &gt;))&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a157ec9804a57367b3153fb3cc81f9224">cross</a> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T &gt; &amp;v1, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U &gt; &amp;v2)</td></tr>
 <tr class="memdesc:a157ec9804a57367b3153fb3cc81f9224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cross product between vectors v1 and v2. Both vectors must have exactly 3 elements. <br/></td></tr>
 <tr class="separator:a157ec9804a57367b3153fb3cc81f9224"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb34bdd249af3ce92341cdda62f95f65"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb34bdd249af3ce92341cdda62f95f65"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>norm</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; double &gt; &amp;A_in, std::string method=&quot;2&quot;)</td></tr>
-<tr class="separator:aeb34bdd249af3ce92341cdda62f95f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6ba102c379ceaa8bfa814ecfa095a56"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6ba102c379ceaa8bfa814ecfa095a56"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>norm</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; double, 2, 0 &gt; &amp;A_in, std::string method=&quot;2&quot;)</td></tr>
+<tr class="separator:af6ba102c379ceaa8bfa814ecfa095a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a838fc93d66e1ab63d68d04781086d81a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a838fc93d66e1ab63d68d04781086d81a"></a>
 <a class="el" href="classkeycpp_1_1_s_v_d__type.html">SVD_type</a>&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a838fc93d66e1ab63d68d04781086d81a">svd</a> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; double &gt; &amp;A_in, std::string method)</td></tr>
 <tr class="memdesc:a838fc93d66e1ab63d68d04781086d81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the singular value decomposition of matrix A_in. <br/></td></tr>
 <tr class="separator:a838fc93d66e1ab63d68d04781086d81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad211ab5ae14ac9710265c662f70f20ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad211ab5ae14ac9710265c662f70f20ff"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>norm</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A_in, std::string method=&quot;2&quot;)</td></tr>
-<tr class="separator:ad211ab5ae14ac9710265c662f70f20ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d00bd96e42ccdc9faabc117b829f325"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d00bd96e42ccdc9faabc117b829f325"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>norm</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2, 0 &gt; &amp;A_in, std::string method=&quot;2&quot;)</td></tr>
+<tr class="separator:a3d00bd96e42ccdc9faabc117b829f325"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad610adca37ac4c85df23b899d29d5dfc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad610adca37ac4c85df23b899d29d5dfc"></a>
 <a class="el" href="classkeycpp_1_1_s_v_d__type.html">SVD_type</a>&lt; std::complex&lt; double &gt;<br class="typebreak"/>
 , double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#ad610adca37ac4c85df23b899d29d5dfc">svd</a> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A_in, std::string method)</td></tr>
@@ -791,6 +805,10 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>removeWhiteSpa
 <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#ac5c0a8bc58229a412ec2068979b6b84e">importdata</a> (std::string filename)</td></tr>
 <tr class="memdesc:ac5c0a8bc58229a412ec2068979b6b84e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a matrix containing the data read from a text file. Values must be white space separated. <br/></td></tr>
 <tr class="separator:ac5c0a8bc58229a412ec2068979b6b84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a126bda3ea87f21535d3a5da6587985dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a126bda3ea87f21535d3a5da6587985dc"></a>
+<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a126bda3ea87f21535d3a5da6587985dc">importdata_complex</a> (std::string filename)</td></tr>
+<tr class="memdesc:a126bda3ea87f21535d3a5da6587985dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a matrix containing the data read from a text file. Values must be white space separated. <br/></td></tr>
+<tr class="separator:a126bda3ea87f21535d3a5da6587985dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada4b54cb009afd7217ea23f1778021c1"><td class="memTemplParams" colspan="2"><a class="anchor" id="ada4b54cb009afd7217ea23f1778021c1"></a>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:ada4b54cb009afd7217ea23f1778021c1"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#ada4b54cb009afd7217ea23f1778021c1">stdev</a> (<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2 &gt; v1)</td></tr>
@@ -851,6 +869,10 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>randn</b> ()</td></
 <tr class="memitem:ac6ada4f2aa379b6d31cf0a4e1453f809"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6ada4f2aa379b6d31cf0a4e1453f809"></a>
 <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>lu</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; double &gt; &amp;A_in, int *iw)</td></tr>
 <tr class="separator:ac6ada4f2aa379b6d31cf0a4e1453f809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c6eeb7d95bad691033adf85020becc"><td class="memTemplParams" colspan="2"><a class="anchor" id="a29c6eeb7d95bad691033adf85020becc"></a>
+template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a29c6eeb7d95bad691033adf85020becc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structkeycpp_1_1meshgrid__type.html">meshgrid_type</a>&lt; T, U &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>meshgrid</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T &gt; &amp;x, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U &gt; &amp;y)</td></tr>
+<tr class="separator:a29c6eeb7d95bad691033adf85020becc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16b58f47ed977cafdc96227468f5f10a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16b58f47ed977cafdc96227468f5f10a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#a16b58f47ed977cafdc96227468f5f10a">dgemm_</a> (const char *TRANSA, const char *TRANSB, const int *M, const int *N, const int *K, double *ALPHA, const double *A, const int *LDA, const double *B, const int *LDB, double *BETA, double *C, const int *LDC)</td></tr>
 <tr class="memdesc:a16b58f47ed977cafdc96227468f5f10a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This provides a C interface to BLAS's double matrix-matrix multiplication function. <br/></td></tr>
@@ -867,6 +889,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekeycpp.html#aea174778653491b5fd21dd2960c0f7cb">zgemv_</a> (const char *TRANS, const int *M, const int *N, const std::complex&lt; double &gt; *ALPHA, const std::complex&lt; double &gt; *A, const int *LDA, const std::complex&lt; double &gt; *X, const int *INCX, const std::complex&lt; double &gt; *BETA, std::complex&lt; double &gt; *Y, const int *INCY)</td></tr>
 <tr class="memdesc:aea174778653491b5fd21dd2960c0f7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This provides a C interface to BLAS's complex double matrix-vector multiplication function. <br/></td></tr>
 <tr class="separator:aea174778653491b5fd21dd2960c0f7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd7bbf24fe4142557beec72e40dd1975"><td class="memTemplParams" colspan="2"><a class="anchor" id="acd7bbf24fe4142557beec72e40dd1975"></a>
+template&lt;class V , class U &gt; </td></tr>
+<tr class="memitem:acd7bbf24fe4142557beec72e40dd1975"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; decltype(std::declval<br class="typebreak"/>
+&lt; V &gt;)*std::declval&lt; U &gt;)), 2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; V, 2 &gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U, 2 &gt; &amp;B)</td></tr>
+<tr class="separator:acd7bbf24fe4142557beec72e40dd1975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5bd4a5eaf1cc853b600559127289823"><td class="memTemplParams" colspan="2"><a class="anchor" id="ac5bd4a5eaf1cc853b600559127289823"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:ac5bd4a5eaf1cc853b600559127289823"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; double, 2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; double, 2 &gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; double, 2 &gt; &amp;B)</td></tr>
+<tr class="separator:ac5bd4a5eaf1cc853b600559127289823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0310594af20ccc687c25aef068f4cd6d"><td class="memTemplParams" colspan="2"><a class="anchor" id="a0310594af20ccc687c25aef068f4cd6d"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:a0310594af20ccc687c25aef068f4cd6d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; &amp;B)</td></tr>
+<tr class="separator:a0310594af20ccc687c25aef068f4cd6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb8866924fddc4057262b0ab42615437"><td class="memTemplParams" colspan="2"><a class="anchor" id="adb8866924fddc4057262b0ab42615437"></a>
 template&lt;class T , class U , size_t dim&gt; </td></tr>
 <tr class="memitem:adb8866924fddc4057262b0ab42615437"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; decltype(std::declval<br class="typebreak"/>
@@ -945,6 +980,57 @@ template&lt;class T , class U , size_t dim&gt; </td></tr>
 template&lt;class T , size_t dim&gt; </td></tr>
 <tr class="memitem:ae75fa09ce73880f22e79334a51e74adf"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>mat2num</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, dim &gt; &amp;A)</td></tr>
 <tr class="separator:ae75fa09ce73880f22e79334a51e74adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdc9a2ec3fa602bd1bad9cd9ea14038e"><td class="memTemplParams" colspan="2"><a class="anchor" id="abdc9a2ec3fa602bd1bad9cd9ea14038e"></a>
+template&lt;class T , size_t dim&gt; </td></tr>
+<tr class="memitem:abdc9a2ec3fa602bd1bad9cd9ea14038e"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;out, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, dim &gt; &amp;A)</td></tr>
+<tr class="separator:abdc9a2ec3fa602bd1bad9cd9ea14038e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f1888d553533d5f314c332e184ccaed"><td class="memTemplParams" colspan="2"><a class="anchor" id="a7f1888d553533d5f314c332e184ccaed"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a7f1888d553533d5f314c332e184ccaed"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2, SPARSE_MATRIX &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>sparse</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2, 0 &gt; &amp;A)</td></tr>
+<tr class="separator:a7f1888d553533d5f314c332e184ccaed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7daba44de8578d8121d5607f9ba54a65"><td class="memTemplParams" colspan="2"><a class="anchor" id="a7daba44de8578d8121d5607f9ba54a65"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a7daba44de8578d8121d5607f9ba54a65"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><b>compare</b> (const void *a, const void *b)</td></tr>
+<tr class="separator:a7daba44de8578d8121d5607f9ba54a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a526025f6146831819b33713787a37638"><td class="memTemplParams" colspan="2"><a class="anchor" id="a526025f6146831819b33713787a37638"></a>
+template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a526025f6146831819b33713787a37638"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; decltype(std::declval<br class="typebreak"/>
+&lt; T &gt;)*std::declval&lt; U &gt;)), 2, 0 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2, SPARSE_MATRIX &gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U, 2, 0 &gt; &amp;B)</td></tr>
+<tr class="separator:a526025f6146831819b33713787a37638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aafa7da7348137e3af28f89710e1ec1"><td class="memTemplParams" colspan="2"><a class="anchor" id="a9aafa7da7348137e3af28f89710e1ec1"></a>
+template&lt;class V , class U &gt; </td></tr>
+<tr class="memitem:a9aafa7da7348137e3af28f89710e1ec1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; decltype(std::declval<br class="typebreak"/>
+&lt; V &gt;)+std::declval&lt; U &gt;<br class="typebreak"/>
+)), 2, SPARSE_MATRIX &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; V, 2, SPARSE_MATRIX &gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U, 2, SPARSE_MATRIX &gt; &amp;B)</td></tr>
+<tr class="separator:a9aafa7da7348137e3af28f89710e1ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf6b4d610217f949a10626f9b144276b"><td class="memTemplParams" colspan="2"><a class="anchor" id="acf6b4d610217f949a10626f9b144276b"></a>
+template&lt;class V , class U &gt; </td></tr>
+<tr class="memitem:acf6b4d610217f949a10626f9b144276b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; decltype(std::declval<br class="typebreak"/>
+&lt; V &gt;)+std::declval&lt; U &gt;<br class="typebreak"/>
+)), 2, SPARSE_MATRIX &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; V, 2, SPARSE_MATRIX &gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U, 2, SPARSE_MATRIX &gt; &amp;B)</td></tr>
+<tr class="separator:acf6b4d610217f949a10626f9b144276b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a287f66a7a810bf784f06817f38bb0b"><td class="memTemplParams" colspan="2"><a class="anchor" id="a3a287f66a7a810bf784f06817f38bb0b"></a>
+template&lt;class V &gt; </td></tr>
+<tr class="memitem:a3a287f66a7a810bf784f06817f38bb0b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; V, 2, SPARSE_MATRIX &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>transpose</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; V, 2, SPARSE_MATRIX &gt; &amp;A)</td></tr>
+<tr class="separator:a3a287f66a7a810bf784f06817f38bb0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d0c912ddcdb53cde9e68920b6181a53"><td class="memTemplParams" colspan="2"><a class="anchor" id="a8d0c912ddcdb53cde9e68920b6181a53"></a>
+template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a8d0c912ddcdb53cde9e68920b6181a53"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; decltype(std::declval<br class="typebreak"/>
+&lt; T &gt;)*std::declval&lt; U &gt;<br class="typebreak"/>
+)), 2, SPARSE_MATRIX &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2, SPARSE_MATRIX &gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U, 2, SPARSE_MATRIX &gt; &amp;B)</td></tr>
+<tr class="separator:a8d0c912ddcdb53cde9e68920b6181a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ce47094b7daecf247a8c2ca450192c9"><td class="memTemplParams" colspan="2"><a class="anchor" id="a8ce47094b7daecf247a8c2ca450192c9"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a8ce47094b7daecf247a8c2ca450192c9"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>mat2num</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2, SPARSE_MATRIX &gt; &amp;A)</td></tr>
+<tr class="separator:a8ce47094b7daecf247a8c2ca450192c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69efc9ff27b63c2a4ce9e6a73fa3d019"><td class="memTemplParams" colspan="2"><a class="anchor" id="a69efc9ff27b63c2a4ce9e6a73fa3d019"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a69efc9ff27b63c2a4ce9e6a73fa3d019"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;out, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2, SPARSE_MATRIX &gt; &amp;A)</td></tr>
+<tr class="separator:a69efc9ff27b63c2a4ce9e6a73fa3d019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72e99f8ba51f0a533bb512cdd01be66e"><td class="memTemplParams" colspan="2"><a class="anchor" id="a72e99f8ba51f0a533bb512cdd01be66e"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a72e99f8ba51f0a533bb512cdd01be66e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2, 0 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>full</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2, SPARSE_MATRIX &gt; &amp;A)</td></tr>
+<tr class="separator:a72e99f8ba51f0a533bb512cdd01be66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfb32fd99bb09455f5a124df4560ab0f"><td class="memTemplParams" colspan="2"><a class="anchor" id="adfb32fd99bb09455f5a124df4560ab0f"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:adfb32fd99bb09455f5a124df4560ab0f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classkeycpp_1_1_pointer_iterator.html">PointerIterator</a>&lt; T &gt; &amp;r1, const <a class="el" href="classkeycpp_1_1_pointer_iterator.html">PointerIterator</a>&lt; T &gt; &amp;r2)</td></tr>
@@ -983,45 +1069,65 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>zneupd_</b> (int *rve
 <tr class="memitem:a5794468c104a7539534c626147ae057f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5794468c104a7539534c626147ae057f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>mv</b> (int n, std::complex&lt; double &gt; *in, std::complex&lt; double &gt; *out, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A)</td></tr>
 <tr class="separator:a5794468c104a7539534c626147ae057f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03c6774bc936a2d93af7ce9a32f25513"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03c6774bc936a2d93af7ce9a32f25513"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>mv</b> (int n, std::complex&lt; double &gt; *in, std::complex&lt; double &gt; *out, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;A)</td></tr>
+<tr class="separator:a03c6774bc936a2d93af7ce9a32f25513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbe452cbd5260ac6506b4e3183648ea5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adbe452cbd5260ac6506b4e3183648ea5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>mv_special</b> (int n, std::complex&lt; double &gt; *in, std::complex&lt; double &gt; *out, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Y, int *iw)</td></tr>
 <tr class="separator:adbe452cbd5260ac6506b4e3183648ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a456d28ae263f8e6d1ff7e991631ead1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a456d28ae263f8e6d1ff7e991631ead1d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, std::string which, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A)</td></tr>
-<tr class="separator:a456d28ae263f8e6d1ff7e991631ead1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c7ec79c7639fd54fb2ac13ab2044158"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c7ec79c7639fd54fb2ac13ab2044158"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evecs, std::string which, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A)</td></tr>
-<tr class="separator:a7c7ec79c7639fd54fb2ac13ab2044158"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a221e5a7364ba407f7a5201b66e7ae056"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a221e5a7364ba407f7a5201b66e7ae056"></a>
-<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>eigs</b> (<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; A, size_t k=6, std::string sigma=&quot;LM&quot;, matrix&lt; std::complex&lt; double &gt;, 2 &gt; *vr_return=NULL)</td></tr>
-<tr class="separator:a221e5a7364ba407f7a5201b66e7ae056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d58a4fe9b658d14a5a10df3956eb51f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d58a4fe9b658d14a5a10df3956eb51f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>mv_special</b> (int n, std::complex&lt; double &gt; *in, std::complex&lt; double &gt; *out, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;A, Eigen::SparseLU&lt; Eigen::SparseMatrix&lt; std::complex&lt; double &gt;, Eigen::ColMajor &gt;, Eigen::COLAMDOrdering&lt; int &gt; &gt; &amp;solver)</td></tr>
+<tr class="separator:a3d58a4fe9b658d14a5a10df3956eb51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42252cd439a48584ce227e75471f5532"><td class="memTemplParams" colspan="2"><a class="anchor" id="a42252cd439a48584ce227e75471f5532"></a>
+template&lt;int type&gt; </td></tr>
+<tr class="memitem:a42252cd439a48584ce227e75471f5532"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>znaupd</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, std::string which, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2, type &gt; &amp;A)</td></tr>
+<tr class="separator:a42252cd439a48584ce227e75471f5532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44191deca39b1d9ec39037e6cb84bce4"><td class="memTemplParams" colspan="2"><a class="anchor" id="a44191deca39b1d9ec39037e6cb84bce4"></a>
+template&lt;int type&gt; </td></tr>
+<tr class="memitem:a44191deca39b1d9ec39037e6cb84bce4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>znaupd</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evecs, std::string which, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2, type &gt; &amp;A)</td></tr>
+<tr class="separator:a44191deca39b1d9ec39037e6cb84bce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf115de4d97d1f78157f3264ca253b08"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf115de4d97d1f78157f3264ca253b08"></a>
+<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>eigs</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2, DENSE_MATRIX &gt; &amp;A, size_t k=6, std::string sigma=&quot;LM&quot;, matrix&lt; std::complex&lt; double &gt;, 2 &gt; *vr_return=NULL)</td></tr>
+<tr class="separator:acf115de4d97d1f78157f3264ca253b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff34abc1339750817eab644908b5710f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff34abc1339750817eab644908b5710f"></a>
+<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>eigs</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;A, size_t k=6, std::string sigma=&quot;LM&quot;, matrix&lt; std::complex&lt; double &gt;, 2 &gt; *vr_return=NULL)</td></tr>
+<tr class="separator:aff34abc1339750817eab644908b5710f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82061266615ad24ba5b25324aae1cc12"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82061266615ad24ba5b25324aae1cc12"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd_shift_invert</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, std::complex&lt; double &gt; sigma, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A)</td></tr>
 <tr class="separator:a82061266615ad24ba5b25324aae1cc12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae57a4ddfa1c5ed22c8999a7cbb1daac2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae57a4ddfa1c5ed22c8999a7cbb1daac2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd_shift_invert</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evecs, std::complex&lt; double &gt; sigma, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A)</td></tr>
 <tr class="separator:ae57a4ddfa1c5ed22c8999a7cbb1daac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f4ae58835279838a816efea3568e221"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f4ae58835279838a816efea3568e221"></a>
-<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>eigs</b> (<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; A, size_t k, std::complex&lt; double &gt; sigma, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; *vr_return=NULL)</td></tr>
-<tr class="separator:a2f4ae58835279838a816efea3568e221"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abee2fba02e36cee19c4731696b17db50"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abee2fba02e36cee19c4731696b17db50"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, std::string which, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;B)</td></tr>
-<tr class="separator:abee2fba02e36cee19c4731696b17db50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad82232bc5f219be9ffc4313d29755465"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad82232bc5f219be9ffc4313d29755465"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evecs, std::string which, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;B)</td></tr>
-<tr class="separator:ad82232bc5f219be9ffc4313d29755465"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5e47ab53db5cd76c38c2f561903f4a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5e47ab53db5cd76c38c2f561903f4a7"></a>
-<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>eigs</b> (<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; A, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; B, size_t k=6, std::string sigma=&quot;LM&quot;, matrix&lt; std::complex&lt; double &gt;, 2 &gt; *vr_return=NULL)</td></tr>
-<tr class="separator:ab5e47ab53db5cd76c38c2f561903f4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a451ee1ae5c27500a4a1b7a4b351352d1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a451ee1ae5c27500a4a1b7a4b351352d1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd_shift_invert</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, std::complex&lt; double &gt; sigma, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;B)</td></tr>
-<tr class="separator:a451ee1ae5c27500a4a1b7a4b351352d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76e9f0c111ebd439a8457c6d11a5c97f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76e9f0c111ebd439a8457c6d11a5c97f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd_shift_invert</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evecs, std::complex&lt; double &gt; sigma, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;B)</td></tr>
-<tr class="separator:a76e9f0c111ebd439a8457c6d11a5c97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a495cd6f90a746c4a2f39736e865b3096"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a495cd6f90a746c4a2f39736e865b3096"></a>
-<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>eigs</b> (<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; A, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; B, size_t k, std::complex&lt; double &gt; sigma, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; *vr_return=NULL)</td></tr>
-<tr class="separator:a495cd6f90a746c4a2f39736e865b3096"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed068334768b69cdd07d81f766334dd2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed068334768b69cdd07d81f766334dd2"></a>
+<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>eigs</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; &amp;A, size_t k, std::complex&lt; double &gt; sigma, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; *vr_return=NULL)</td></tr>
+<tr class="separator:aed068334768b69cdd07d81f766334dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a48586ae7aa9b525ec4c95eb2a3bf60"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a48586ae7aa9b525ec4c95eb2a3bf60"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, std::string which, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;B)</td></tr>
+<tr class="separator:a3a48586ae7aa9b525ec4c95eb2a3bf60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af636d0e1783e6db55988978301448baf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af636d0e1783e6db55988978301448baf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evecs, std::string which, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;B)</td></tr>
+<tr class="separator:af636d0e1783e6db55988978301448baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0969cbc503faaa741d3482e8285ca976"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0969cbc503faaa741d3482e8285ca976"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, std::string which, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;B)</td></tr>
+<tr class="separator:a0969cbc503faaa741d3482e8285ca976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad462e40814478e9b094e72b83ddf0d88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad462e40814478e9b094e72b83ddf0d88"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evecs, std::string which, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;B)</td></tr>
+<tr class="separator:ad462e40814478e9b094e72b83ddf0d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5afa37bc07eb8bb1fb04d44ba32d458"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5afa37bc07eb8bb1fb04d44ba32d458"></a>
+<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>eigs</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; &amp;B, size_t k=6, std::string sigma=&quot;LM&quot;, matrix&lt; std::complex&lt; double &gt;, 2 &gt; *vr_return=NULL)</td></tr>
+<tr class="separator:ac5afa37bc07eb8bb1fb04d44ba32d458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a810da39d5f5a17a95f17fa2c3a27582e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a810da39d5f5a17a95f17fa2c3a27582e"></a>
+<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>eigs</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2, SPARSE_MATRIX &gt; &amp;B, size_t k=6, std::string sigma=&quot;LM&quot;, matrix&lt; std::complex&lt; double &gt;, 2 &gt; *vr_return=NULL)</td></tr>
+<tr class="separator:a810da39d5f5a17a95f17fa2c3a27582e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5f126fb68111219bcb4183b9bb20310"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad5f126fb68111219bcb4183b9bb20310"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd_shift_invert</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, std::complex&lt; double &gt; sigma, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;B)</td></tr>
+<tr class="separator:ad5f126fb68111219bcb4183b9bb20310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd3346eee20a40d90dd887267b4abb3d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd3346eee20a40d90dd887267b4abb3d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>znaupd_shift_invert</b> (int n, int nev, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evals, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;Evecs, std::complex&lt; double &gt; sigma, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;&gt; &amp;B)</td></tr>
+<tr class="separator:acd3346eee20a40d90dd887267b4abb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0a6f7a9249e745a7420c9292e3bc374"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0a6f7a9249e745a7420c9292e3bc374"></a>
+<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>eigs</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; &amp;A, const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; &amp;B, size_t k, std::complex&lt; double &gt; sigma, <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; *vr_return=NULL)</td></tr>
+<tr class="separator:af0a6f7a9249e745a7420c9292e3bc374"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="abb4e57814fd30b7b8d4845bbc16c73e9"></a>
@@ -1363,23 +1469,23 @@ template&lt;class T , size_t dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a2824156817719ffe96a842dd0ef27ae5"></a>
+<a class="anchor" id="a737223780bc4bcda96ca2142a2ac3de9"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T , size_t dim&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">int keycpp::size </td>
           <td>(</td>
-          <td class="paramtype">const matrix&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const matrix&lt; T, dim &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>dim</em>&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1496,7 +1602,7 @@ template&lt;class T &gt; </div>
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 16 2013 13:07:58 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 2 2014 15:59:17 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

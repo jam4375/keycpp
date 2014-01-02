@@ -43,7 +43,12 @@ namespace keycpp
 	static constexpr double eps = std::numeric_limits<double>::epsilon();
 	static constexpr double Inf = std::numeric_limits<double>::infinity();
 	static constexpr double NaN = std::numeric_limits<double>::quiet_NaN();
+}
+
+#include "SparseMatrix.h"
 	
+namespace keycpp
+{
 	class KeyCppException : public std::runtime_error
 	{
 		public:
@@ -166,6 +171,7 @@ namespace keycpp
 	
 	template<class T, size_t dim> matrix<size_t,2> size(const matrix<T,dim> &A);
 	template<class T> bool isnan(const T &a);
+	template<> bool isnan<>(const std::complex<double> &a);
 	template<class T,size_t dim> matrix<bool,dim> isnan(const matrix<T,dim> &A);
 	
 	template<class T,size_t dim>
@@ -173,9 +179,9 @@ namespace keycpp
 	{
 	    matrix<T,dim> B;
 	    B.resize(size(A));
-	    for(size_t ii = 0; ii < A.mData.size(); ii++)
+	    for(size_t ii = 0; ii < A.numel(); ii++)
 	    {
-	        B.mData[ii] = (*f)(A.mData[ii]);
+	        B(ii) = (*f)(A(ii));
 	    }
 	    return B;
 	}
@@ -185,9 +191,9 @@ namespace keycpp
 	{
 	    matrix<T,dim> B;
 	    B.resize(size(A));
-	    for(size_t ii = 0; ii < A.mData.size(); ii++)
+	    for(size_t ii = 0; ii < A.numel(); ii++)
 	    {
-	        B.mData[ii] = (*f)(A.mData[ii]);
+	        B(ii) = (*f)(A(ii));
 	    }
 	    return B;
 	}
@@ -197,9 +203,9 @@ namespace keycpp
 	{
 	    matrix<T,dim> B;
 	    B.resize(size(A));
-	    for(size_t ii = 0; ii < A.mData.size(); ii++)
+	    for(size_t ii = 0; ii < A.numel(); ii++)
 	    {
-	        B.mData[ii] = (*f)(A.mData[ii]);
+	        B(ii) = (*f)(A(ii));
 	    }
 	    return B;
 	}
@@ -209,9 +215,9 @@ namespace keycpp
 	{
 	    matrix<T,dim> B;
 	    B.resize(size(A));
-	    for(size_t ii = 0; ii < A.mData.size(); ii++)
+	    for(size_t ii = 0; ii < A.numel(); ii++)
 	    {
-	        B.mData[ii] = (*f)(A.mData[ii]);
+	        B(ii) = (*f)(A(ii));
 	    }
 	    return B;
 	}
@@ -233,7 +239,7 @@ namespace keycpp
 		        y.resize(temp_size);
 		        x_ode.resize(temp_size(0));
 		    }
-		    x_ode.mData[ii] = x_temp;
+		    x_ode(ii) = x_temp;
 		    for(size_t jj = 0; jj < y_temp.length(); jj++)
 		    {
 			    y(ii,jj) = y_temp(jj);
@@ -241,33 +247,6 @@ namespace keycpp
 			ii++;
 		}
 	};
-	
-	template<class T, size_t dim>
-	std::ostream& operator<<(std::ostream &out, const matrix<T,dim> &A)
-	{
-	    static_assert((dim == 2 || dim == 1),"This function is only available for matrices of dimension 1 or 2.");
-	    
-	    if(dim == 2)
-	    {
-            for(size_t ii = 0; ii < A.size(1); ii++)
-            {
-                for(size_t jj = 0; jj < A.size(2); jj++)
-                {
-                    out << A(ii,jj) << " ";
-                }
-                out << std::endl;
-            }
-        }
-        else if(dim == 1)
-        {
-            for(size_t ii = 0; ii < A.size(1); ii++)
-            {
-                out << A.mData[ii] << std::endl;
-            }
-        }
-        
-        return out;
-    }
 	
 	template<class T>
 	std::ostream& operator<<(std::ostream &out, const vector_k<T> &v1)
@@ -561,9 +540,9 @@ namespace keycpp
      *              1 = number of rows, 2 = number of columns
      *   @return An integer value of the number of elements along the desired dimension. 
      */
-	template<class T> int size(const matrix<T> &A, const int &dim)
+	template<class T, size_t dim> int size(const matrix<T,dim> &A, const int &n)
 	{
-		return A.size(dim);
+		return A.size(n);
 	}
 	
     /**  \brief Returns the size of matrix A.
@@ -578,7 +557,7 @@ namespace keycpp
 	    matrix<size_t,2> msize(dim);
 	    for(size_t ii = 0; ii < dim; ii++)
 	    {
-	        msize.mData[ii] = A.size(ii+1);
+	        msize(ii) = A.size(ii+1);
 	    }
 		return msize;
 	}
@@ -790,9 +769,9 @@ namespace keycpp
 	    }
 		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> C;
 		C.resize(size(A));
-		for(int ii = 0; ii < A.mData.size(); ii++)
+		for(int ii = 0; ii < A.numel(); ii++)
 		{
-		    C.mData[ii] = A.mData[ii]*B.mData[ii];
+		    C(ii) = A(ii)*B(ii);
 		}
 		
 		return C;
@@ -815,9 +794,9 @@ namespace keycpp
 	    }
 		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> C;
 		C.resize(size(A));
-		for(int ii = 0; ii < A.mData.size(); ii++)
+		for(int ii = 0; ii < A.numel(); ii++)
 		{
-		    C.mData[ii] = A.mData[ii]/B.mData[ii];
+		    C(ii) = A(ii)/B(ii);
 		}
 		return C;
 	}
@@ -870,14 +849,16 @@ namespace keycpp
 	    {
 	        matrix<T,2> v(A.size(2));
 	        
-	        for(size_t ii = 0; ii < v.size(2); ii++)
+	        for(size_t ii = 0; ii < A.size(2); ii++)
 	        {
-	            T temp = NaN;
-	            for(size_t jj = 0; jj < v.size(1); jj++)
+	            T temp = T();
+	            bool flag = true;
+	            for(size_t jj = 0; jj < A.size(1); jj++)
 	            {
-	                if(A(jj,ii) > temp || isnan(temp))
+	                if(!isnan(A(jj,ii)) && (A(jj,ii) > temp || flag))
 	                {
 	                    temp = A(jj,ii);
+	                    flag = false;
 	                }
 	            }
 	            v(ii) = temp;
@@ -886,14 +867,16 @@ namespace keycpp
 	    }
 	    else
 	    {
-	        T a = NaN;
+	        T a = T();
+	        bool flag = true;
 		    size_t index = 0;
 		    for(size_t ii = 0; ii < A.numel(); ii++)
 		    {
-			    if(!isnan(A(ii)) && (A(ii) > a || isnan(a)))
+			    if(!isnan(A(ii)) && (A(ii) > a || flag))
 			    {
 				    a = A(ii);
 				    index = ii;
+				    flag = false;
 			    }
 		    }
 	        matrix<T,2> v(1);
@@ -908,14 +891,14 @@ namespace keycpp
 	    {
 	        matrix<std::complex<double>,2> v(A.size(2));
 	        
-	        for(size_t ii = 0; ii < v.size(2); ii++)
+	        for(size_t ii = 0; ii < A.size(2); ii++)
 	        {
                 double a = nan("");
                 double b = nan("");
                 size_t index = 0;
-	            for(size_t jj = 0; jj < v.size(1); jj++)
+	            for(size_t jj = 0; jj < A.size(1); jj++)
 	            {
-	                if(!std::isnan(real(A(jj,ii))) && !std::isnan(imag(A(jj,ii))) && ((abs(A(jj,ii)) > a && angle(A(jj,ii)) > b) || (std::isnan(a) || std::isnan(b))))
+	                if(!keycpp::isnan(A(jj,ii)) && (std::abs(A(jj,ii)) > a || ((std::abs(A(jj,ii)) - std::abs(a)) < eps && angle(A(jj,ii)) > b) || (std::isnan(a) || std::isnan(b))))
 	                {
                         a = abs(A(jj,ii));
                         b = angle(A(jj,ii));
@@ -933,7 +916,7 @@ namespace keycpp
             size_t index = 0;
 		    for(size_t ii = 0; ii < A.numel(); ii++)
 		    {
-                if(!std::isnan(real(A(ii))) && !std::isnan(imag(A(ii))) && ((abs(A(ii)) > a && angle(A(ii)) > b) || (std::isnan(a) || std::isnan(b))))
+                if(!keycpp::isnan(A(ii)) && (std::abs(A(ii)) > a || ((std::abs(A(ii)) - std::abs(a)) < eps && angle(A(ii)) > b) || (std::isnan(a) || std::isnan(b))))
                 {
                     a = abs(A(ii));
                     b = angle(A(ii));
@@ -952,14 +935,16 @@ namespace keycpp
 	    {
 	        matrix<T,2> v(A.size(2));
 	        
-	        for(size_t ii = 0; ii < v.size(2); ii++)
+	        for(size_t ii = 0; ii < A.size(2); ii++)
 	        {
-	            T temp = NaN;
-	            for(size_t jj = 0; jj < v.size(1); jj++)
+	            T temp = T();
+	            bool flag = true;
+	            for(size_t jj = 0; jj < A.size(1); jj++)
 	            {
-	                if(A(jj,ii) < temp || isnan(temp))
+	                if(!isnan(A(jj,ii)) && (A(jj,ii) < temp || flag))
 	                {
 	                    temp = A(jj,ii);
+	                    flag = false;
 	                }
 	            }
 	            v(ii) = temp;
@@ -968,17 +953,65 @@ namespace keycpp
 	    }
 	    else
 	    {
-	        T a = NaN;
+	        T a = T();
+	        bool flag = true;
 		    size_t index = 0;
 		    for(size_t ii = 0; ii < A.numel(); ii++)
 		    {
-			    if(!isnan(A(ii)) && (A(ii) < a || isnan(a)))
+			    if(!isnan(A(ii)) && (A(ii) < a || flag))
 			    {
 				    a = A(ii);
 				    index = ii;
+				    flag = false;
 			    }
 		    }
-		    return A(index);
+	        matrix<T,2> v(1);
+	        v(0) = A(index);
+		    return v;
+	    }
+	}
+	
+	inline matrix<std::complex<double>,2> min(const matrix<std::complex<double>,2> &A)
+	{
+	    if(!A.isVec())
+	    {
+	        matrix<std::complex<double>,2> v(A.size(2));
+	        
+	        for(size_t ii = 0; ii < A.size(2); ii++)
+	        {
+                double a = nan("");
+                double b = nan("");
+                size_t index = 0;
+	            for(size_t jj = 0; jj < A.size(1); jj++)
+	            {
+	                if(!keycpp::isnan(A(jj,ii)) && (std::abs(A(jj,ii)) < a || ((std::abs(A(jj,ii)) - std::abs(a)) < eps && angle(A(jj,ii)) < b) || (std::isnan(a) || std::isnan(b))))
+	                {
+                        a = abs(A(jj,ii));
+                        b = angle(A(jj,ii));
+                        index = jj;
+	                }
+	            }
+	            v(ii) = A(index,ii);
+	        }
+	        return v;
+	    }
+	    else
+	    {
+            double a = nan("");
+            double b = nan("");
+            size_t index = 0;
+		    for(size_t ii = 0; ii < A.numel(); ii++)
+		    {
+                if(!keycpp::isnan(A(ii)) && (std::abs(A(ii)) < a || ((std::abs(A(ii)) - std::abs(a)) < eps && angle(A(ii)) < b) || (std::isnan(a) || std::isnan(b))))
+                {
+                    a = abs(A(ii));
+                    b = angle(A(ii));
+                    index = ii;
+                }
+		    }
+	        matrix<std::complex<double>,2> v(1);
+	        v(0) = A(index);
+		    return v;
 	    }
 	}
 
@@ -1052,7 +1085,7 @@ namespace keycpp
 		matrix<T,2> x(N);
 		if(N == 1)
 		{
-			x.mData[0] = x2;
+			x(0) = x2;
 			return x;
 		}
 
@@ -1060,10 +1093,10 @@ namespace keycpp
 
 		for(size_t ii = 0; ii < N; ii++)
 		{
-			x.mData[ii] = x1 + ii*delta_x;
+			x(ii) = x1 + ii*delta_x;
 		}
 
-		x.mData[N-1] = x2;
+		x(N-1) = x2;
 
 		return x;
 	}
@@ -1110,15 +1143,15 @@ namespace keycpp
 		int correction = 0;
 		for(size_t ii = 1; ii < v1.size(2); ii++)
 		{
-			if((v1.mData[ii] - v1.mData[ii-1]) > tol)
+			if((v1(ii) - v1(ii-1)) > tol)
 			{
 				correction -= 1;
 			}
-			else if((v1.mData[ii] - v1.mData[ii-1]) < -tol)
+			else if((v1(ii) - v1(ii-1)) < -tol)
 			{
 				correction += 1;
 			}
-			v2.mData[ii] = v1.mData[ii] + correction*2*pi;
+			v2(ii) = v1(ii) + correction*2*pi;
 		}
 		return v2;
 	}
@@ -1168,32 +1201,32 @@ namespace keycpp
 		{
 			for(size_t ii = 0; ii < (N-1); ii++)
 			{
-				if(x_interp == x.mData[ii])
+				if(x_interp == x(ii))
 				{
-					return y.mData[ii];
+					return y(ii);
 				}
-				else if((x_interp > x.mData[ii] && x_interp < x.mData[ii+1]) || (x_interp < x.mData[ii] && x_interp > x.mData[ii+1]))
+				else if((x_interp > x(ii) && x_interp < x(ii+1)) || (x_interp < x(ii) && x_interp > x(ii+1)))
 				{
-					return (y.mData[ii] + (x_interp - x.mData[ii])*(y.mData[ii+1] - y.mData[ii])/(x.mData[ii+1] - x.mData[ii]));
+					return (y(ii) + (x_interp - x(ii))*(y(ii+1) - y(ii))/(x(ii+1) - x(ii)));
 				}
 			}
 
-			if(x_interp == x.mData[N-1])
+			if(x_interp == x(N-1))
 			{
-				return y.mData[N-1];
+				return y(N-1);
 			}
 			
 			if(extrap.isString)
 			{
 				if(extrap.extrap_string.compare("extrap") == 0)
 				{
-					if(x_interp < x.mData[0])
+					if(x_interp < x(0))
 					{
-						return (y.mData[0] + (x_interp - x.mData[0])*(y.mData[1] - y.mData[0])/(x.mData[1] - x.mData[0]));
+						return (y(0) + (x_interp - x(0))*(y(1) - y(0))/(x(1) - x(0)));
 					}
 					else
 					{
-						return (y.mData[N-2] + (x_interp - x.mData[N-2])*(y.mData[N-1] - y.mData[N-2])/(x.mData[N-1] - x.mData[N-2]));
+						return (y(N-2) + (x_interp - x(N-2))*(y(N-1) - y(N-2))/(x(N-1) - x(N-2)));
 					}
 				}
 				else
@@ -1218,14 +1251,14 @@ namespace keycpp
 			int index = -1;
 			for(size_t ii = 0; ii < N; ii++)
 			{
-				if(std::abs(x.mData[ii] - x_interp) < std::abs(min_val))
+				if(std::abs(x(ii) - x_interp) < std::abs(min_val))
 				{
-					min_val = x.mData[ii] - x_interp;
+					min_val = x(ii) - x_interp;
 					index = ii;
 				}
-				else if(std::abs(x.mData[ii] - x_interp) == std::abs(min_val) && (x.mData[ii] - x_interp) > min_val)
+				else if(std::abs(x(ii) - x_interp) == std::abs(min_val) && (x(ii) - x_interp) > min_val)
 				{
-					min_val = x.mData[ii] - x_interp;
+					min_val = x(ii) - x_interp;
 					index = ii;
 				}
 			}
@@ -1533,8 +1566,8 @@ namespace keycpp
 
 		for(int ii = 0; ii < N; ii++)
 		{
-			cx_in[ii].r = real((std::complex<double>)u.mData[ii]);
-			cx_in[ii].i = imag((std::complex<double>)u.mData[ii]);
+			cx_in[ii].r = real((std::complex<double>)u(ii));
+			cx_in[ii].i = imag((std::complex<double>)u(ii));
 		}
 
 		kiss_fft_cfg cfg = kiss_fft_alloc(N,false,NULL,NULL);
@@ -1542,7 +1575,7 @@ namespace keycpp
 
 		for(int ii = 0; ii < N; ii++)
 		{
-			u_hat.mData[ii] = std::complex<T>((T)cx_out[ii].r,(T)cx_out[ii].i);
+			u_hat(ii) = std::complex<T>((T)cx_out[ii].r,(T)cx_out[ii].i);
 		}
 
 		free(cfg);
@@ -1706,7 +1739,7 @@ namespace keycpp
 			    {
 				    swapped = true;
 				    while(swapped)
-				    {     
+				    {
 					    swapped = false;
 					    for(size_t ii = 1; ii < A.size(1); ii++)
 					    {
@@ -1887,7 +1920,7 @@ namespace keycpp
 	    {
 	        return v2;
 	    }
-	    if(k < 0 || k > v1.size() || start.empty() || (start.compare("first") != 0 &&
+	    if(k < 0 || k > v1.numel() || start.empty() || (start.compare("first") != 0 &&
 	       start.compare("last") != 0))
 	    {
 	        v2.reserve(v1.numel());
@@ -2064,9 +2097,9 @@ namespace keycpp
 		SVD_type() : S(), U(), V() {};
 	};
 	
-	double norm(const matrix<double> &A_in, std::string method = "2");
+	double norm(const matrix<double,2,0> &A_in, std::string method = "2");
 	SVD_type<double,double> svd(const matrix<double> &A_in, std::string method = "");
-	double norm(const matrix<std::complex<double>> &A_in, std::string method = "2");
+	double norm(const matrix<std::complex<double>,2,0> &A_in, std::string method = "2");
 	SVD_type<std::complex<double>,double> svd(const matrix<std::complex<double>> &A_in, std::string method = "");
 	
 	/** \brief Estimates the rank of a matrix by counting the singular values
@@ -2217,6 +2250,16 @@ namespace keycpp
 	        out(ii) = isinf(A(ii));
 	    }
 	    return out;
+	}
+	
+	
+	/** \brief Returns boolean value that is true if
+	 *         a is NaN.
+	 */
+	template<>
+	inline bool isnan<>(const std::complex<double> &a)
+	{
+	    return (std::isnan(real(a)) || std::isnan(imag(a)));
 	}
 	
 	/** \brief Returns boolean value that is true if
@@ -2509,6 +2552,59 @@ namespace keycpp
                 if(A.empty())
                 {
                     A = matrix<double>(1,b.size());
+                    A.row(0) = b;
+                }
+                else
+                {
+                    auto temp_size = size(A);
+                    temp_size(0)++;
+                    A.resize(temp_size);
+                    A.row(temp_size(0)-1) = b;
+                }
+            }
+        }
+        in.close();
+        return A;
+    }
+    
+    /** \brief Returns a matrix containing the data read from a text file. Values must be white space separated. */
+    inline matrix<std::complex<double>> importdata_complex(std::string filename)
+    {
+        std::ifstream in(filename.c_str());
+        
+        if(!in.is_open())
+        {
+            throw KeyCppException("ERROR!! Could not open file in importdata!");
+        }
+        
+        matrix<std::complex<double>> A;
+        A.reserve(1000);
+        
+        std::stringstream ss;
+	    std::string dummy = "";
+	    std::complex<double> temp;
+	
+        while(std::getline(in, dummy))
+        {
+            vector_k<std::complex<double>> b;
+            b.reserve(100);
+	        ss.str("");
+	        ss.clear();
+	        ss << dummy;
+	        std::getline(ss,dummy,'/');
+	        ss.str("");
+	        ss.clear();
+	        dummy = removeWhiteSpace(dummy);
+            if(!dummy.empty())
+            {
+	            ss << dummy;
+	            while(ss >> temp)
+	            {
+                    b.push_back(temp);
+                }
+                if(A.empty())
+                {
+                    A = matrix<std::complex<double>>(1,b.size());
                     A.row(0) = b;
                 }
                 else
@@ -3125,7 +3221,7 @@ namespace keycpp
         {
             x_out(ii) = b_in(ii,0);
         }
-        zgetrs_("N", &m, &nrhs, A, &lda, iw, &x_out.mData[0], &nn, &info);
+        zgetrs_("N", &m, &nrhs, A, &lda, iw, &x_out(0), &nn, &info);
         if(info != 0)
         {
             throw KeyCppException("Unknown error in linsolve()!");
@@ -3205,7 +3301,7 @@ namespace keycpp
         {
             x_out(ii) = b_in(ii,0);
         }
-        dgetrs_("N", &mm, &nrhs, A, &lda, iw, &x_out.mData[0], &nn, &info);
+        dgetrs_("N", &mm, &nrhs, A, &lda, iw, &x_out(0), &nn, &info);
         if(info != 0)
         {
             throw KeyCppException("Unknown error in linsolve()!");
@@ -3363,7 +3459,7 @@ namespace keycpp
 		return A_out;
 	}
 	
-	inline double norm(const matrix<double> &A_in, std::string method)
+	inline double norm(const matrix<double,2,0> &A_in, std::string method)
 	{
 	    if(A_in.empty())
 		{
@@ -3551,7 +3647,7 @@ namespace keycpp
         return out;
 	}
 	
-	inline double norm(const matrix<std::complex<double>> &A_in, std::string method)
+	inline double norm(const matrix<std::complex<double>,2,0> &A_in, std::string method)
 	{
 	    if(A_in.size(1) <= 0 || A_in.size(2) <= 0)
 		{
@@ -3943,6 +4039,42 @@ namespace keycpp
         delete [] A;
         
         return A_out;
+    }
+    
+    template<class T, class U>
+    struct meshgrid_type
+    {
+        matrix<T> X;
+        matrix<U> Y;
+    };
+    
+    template<class T, class U>
+    meshgrid_type<T,U> meshgrid(const matrix<T> &x, const matrix<U> &y)
+    {
+        meshgrid_type<T,U> return_struct;
+        if(!x.isVec() || !y.isVec())
+        {
+            throw KeyCppException("Error in meshgrid! Inputs must be vectors!");
+        }
+        
+        if(x.size(1) == 1)
+        {
+            return_struct.X = repmat(x,numel(y),1);
+        }
+        else
+        {
+            return_struct.X = repmat(transpose(x),numel(y),1);
+        }
+        return_struct.Y = repmat(y,1,numel(x));
+        if(y.size(2) == 1)
+        {
+            return_struct.Y = repmat(y,1,numel(x));
+        }
+        else
+        {
+            return_struct.Y = repmat(transpose(y),1,numel(x));
+        }
+        return return_struct;
     }
 }
 

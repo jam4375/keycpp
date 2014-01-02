@@ -6,7 +6,9 @@
     <innerfile refid="test__eig_8cpp">test_eig.cpp</innerfile>
     <innerfile refid="test__eigs_8cpp">test_eigs.cpp</innerfile>
     <innerfile refid="test__fft_8cpp">test_fft.cpp</innerfile>
+    <innerfile refid="test__mat_8cpp">test_mat.cpp</innerfile>
     <innerfile refid="test__ode45_8cpp">test_ode45.cpp</innerfile>
+    <innerfile refid="test__sparse__mat_8cpp">test_sparse_mat.cpp</innerfile>
     <innerfile refid="test__sprintf_8cpp">test_sprintf.cpp</innerfile>
     <innerfile refid="test__vec_8cpp">test_vec.cpp</innerfile>
     <briefdescription>

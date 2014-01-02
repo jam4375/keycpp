@@ -10,7 +10,7 @@
 namespace keycpp
 {
 
-    template<class T=double, size_t dim=2>
+    template<class T=double, size_t dim=2, int type = 0>
     class matrix;
 
     template<typename TypeT>
@@ -158,8 +158,6 @@ namespace keycpp
 
         typedef PointerIterator<T> iterator;
         typedef PointerIterator<const T> const_iterator;
-        //typedef T *iterator;
-        //typedef const T* const_iterator;
         typedef size_t size_type;
         typedef T value_type;
         typedef typename iterator::difference_type difference_type;

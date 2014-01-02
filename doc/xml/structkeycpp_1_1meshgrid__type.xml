@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
+  <compounddef id="structkeycpp_1_1meshgrid__type" kind="struct" prot="public">
+    <compoundname>keycpp::meshgrid_type</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>U</declname>
+        <defname>U</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structkeycpp_1_1meshgrid__type_1a0712fd393d718036db27d038aecd7074" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; T &gt;</type>
+        <definition>matrix&lt;T&gt; keycpp::meshgrid_type&lt; T, U &gt;::X</definition>
+        <argsstring></argsstring>
+        <name>X</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="4047" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="4047" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structkeycpp_1_1meshgrid__type_1acb573b7a117ac6c6f0338ba5ab23c25d" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; U &gt;</type>
+        <definition>matrix&lt;U&gt; keycpp::meshgrid_type&lt; T, U &gt;::Y</definition>
+        <argsstring></argsstring>
+        <name>Y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="4048" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="4048" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="36">
+        <label>keycpp::meshgrid_type&lt; T, U &gt;</label>
+        <link refid="structkeycpp_1_1meshgrid__type"/>
+        <childnode refid="37" relation="usage">
+          <edgelabel>Y</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>X</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>keycpp::matrix&lt; U &gt;</label>
+        <link refid="classkeycpp_1_1matrix"/>
+      </node>
+      <node id="38">
+        <label>keycpp::matrix&lt; T &gt;</label>
+        <link refid="classkeycpp_1_1matrix"/>
+      </node>
+    </collaborationgraph>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="4046" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="4045" bodyend="4049"/>
+    <listofallmembers>
+      <member refid="structkeycpp_1_1meshgrid__type_1a0712fd393d718036db27d038aecd7074" prot="public" virt="non-virtual"><scope>keycpp::meshgrid_type</scope><name>X</name></member>
+      <member refid="structkeycpp_1_1meshgrid__type_1acb573b7a117ac6c6f0338ba5ab23c25d" prot="public" virt="non-virtual"><scope>keycpp::meshgrid_type</scope><name>Y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

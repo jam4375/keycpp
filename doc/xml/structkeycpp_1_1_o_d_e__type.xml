@@ -22,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1577" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1577" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1610" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1610" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structkeycpp_1_1_o_d_e__type_1aafb0eeede0354cc546c0114ef3c15129" prot="public" static="no" mutable="no">
         <type><ref refid="classkeycpp_1_1matrix" kindref="compound">matrix</ref>&lt; Y, 2 &gt;</type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1578" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1578" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1611" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1611" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -43,33 +43,26 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="39">
-        <label>keycpp::vector_k&lt; Y &gt;</label>
-        <link refid="classkeycpp_1_1vector__k"/>
-      </node>
-      <node id="40">
+      <node id="46">
         <label>keycpp::matrix&lt; T, 2 &gt;</label>
         <link refid="classkeycpp_1_1matrix"/>
       </node>
-      <node id="37">
+      <node id="44">
         <label>keycpp::ODE_type&lt; T, Y &gt;</label>
         <link refid="structkeycpp_1_1_o_d_e__type"/>
-        <childnode refid="38" relation="usage">
+        <childnode refid="45" relation="usage">
           <edgelabel>y</edgelabel>
         </childnode>
-        <childnode refid="40" relation="usage">
+        <childnode refid="46" relation="usage">
           <edgelabel>t</edgelabel>
         </childnode>
       </node>
-      <node id="38">
+      <node id="45">
         <label>keycpp::matrix&lt; Y, 2 &gt;</label>
         <link refid="classkeycpp_1_1matrix"/>
-        <childnode refid="39" relation="usage">
-          <edgelabel>mData</edgelabel>
-        </childnode>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1576" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1575" bodyend="1579"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1609" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1608" bodyend="1612"/>
     <listofallmembers>
       <member refid="structkeycpp_1_1_o_d_e__type_1a7472927d5cc31aaf06d8dd1024b7640e" prot="public" virt="non-virtual"><scope>keycpp::ODE_type</scope><name>t</name></member>
       <member refid="structkeycpp_1_1_o_d_e__type_1aafb0eeede0354cc546c0114ef3c15129" prot="public" virt="non-virtual"><scope>keycpp::ODE_type</scope><name>y</name></member>

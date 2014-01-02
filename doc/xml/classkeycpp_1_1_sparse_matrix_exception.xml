@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
+  <compounddef id="classkeycpp_1_1_sparse_matrix_exception" kind="class" prot="public">
+    <compoundname>keycpp::SparseMatrixException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">runtime_error</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkeycpp_1_1_sparse_matrix_exception_1a945e6dc81b78c408d0a14b9001632f7e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>keycpp::SparseMatrixException::SparseMatrixException</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>SparseMatrixException</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="43" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="43" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="65">
+        <label>keycpp::SparseMatrixException</label>
+        <link refid="classkeycpp_1_1_sparse_matrix_exception"/>
+        <childnode refid="66" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>runtime_error</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="67">
+        <label>keycpp::SparseMatrixException</label>
+        <link refid="classkeycpp_1_1_sparse_matrix_exception"/>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>runtime_error</label>
+      </node>
+    </collaborationgraph>
+    <location file="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" line="41" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/SparseMatrix.h" bodystart="40" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classkeycpp_1_1_sparse_matrix_exception_1a945e6dc81b78c408d0a14b9001632f7e" prot="public" virt="non-virtual"><scope>keycpp::SparseMatrixException</scope><name>SparseMatrixException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

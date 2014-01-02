@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>KeyCpp -- A MATLAB-like library for C++: keycpp::matrix&lt; T, dim &gt; Class Template Reference</title>
+<title>KeyCpp -- A MATLAB-like library for C++: keycpp::matrix&lt; T, dim, type &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,181 +97,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="classkeycpp_1_1matrix-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">keycpp::matrix&lt; T, dim &gt; Class Template Reference</div>  </div>
+<div class="title">keycpp::matrix&lt; T, dim, type &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a3f320a21b7c5af7fe8660724e5f713bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f320a21b7c5af7fe8660724e5f713bd"></a>
-typedef <a class="el" href="classkeycpp_1_1vector__k.html">keycpp::vector_k</a>&lt; T &gt;<br class="typebreak"/>
-::<a class="el" href="classkeycpp_1_1_pointer_iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>iterator</b></td></tr>
-<tr class="separator:a3f320a21b7c5af7fe8660724e5f713bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6880872af4caf59eab4ccae9122ffd58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6880872af4caf59eab4ccae9122ffd58"></a>
-typedef <a class="el" href="classkeycpp_1_1vector__k.html">keycpp::vector_k</a>&lt; T &gt;<br class="typebreak"/>
-::<a class="el" href="classkeycpp_1_1_pointer_iterator.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>const_iterator</b></td></tr>
-<tr class="separator:a6880872af4caf59eab4ccae9122ffd58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:aaff8deabd1aca849b288ffe9905c0183"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaff8deabd1aca849b288ffe9905c0183"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>matrix</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, dim &gt; &amp;A)</td></tr>
-<tr class="separator:aaff8deabd1aca849b288ffe9905c0183"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08e0f5af92405fae766008d86bd4d9f6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08e0f5af92405fae766008d86bd4d9f6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>matrix</b> (bool, <a class="el" href="classkeycpp_1_1vector__k.html">vector_k</a>&lt; T &gt; &amp;mat)</td></tr>
-<tr class="separator:a08e0f5af92405fae766008d86bd4d9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b6c5b038abdaa348e057426abb7fbf5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b6c5b038abdaa348e057426abb7fbf5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>matrix</b> (const size_t &amp;d1, const size_t &amp;d2=0,...)</td></tr>
-<tr class="separator:a1b6c5b038abdaa348e057426abb7fbf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec6b86d059d88ae9c02dcc8309c09d97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec6b86d059d88ae9c02dcc8309c09d97"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>matrix</b> (const <a class="el" href="classkeycpp_1_1vector__k.html">vector_k</a>&lt; <a class="el" href="classkeycpp_1_1vector__k.html">vector_k</a>&lt; T &gt;&gt; &amp;mat)</td></tr>
-<tr class="separator:aec6b86d059d88ae9c02dcc8309c09d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b8bc665d15dd7e20fc6a72c8c995232"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b8bc665d15dd7e20fc6a72c8c995232"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>matrix</b> (const <a class="el" href="classkeycpp_1_1vector__k.html">vector_k</a>&lt; T &gt; &amp;mat)</td></tr>
-<tr class="separator:a3b8bc665d15dd7e20fc6a72c8c995232"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf5cdf8a8d5396420b87a188483a6cb3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf5cdf8a8d5396420b87a188483a6cb3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>matrix</b> (const std::initializer_list&lt; std::initializer_list&lt; T &gt;&gt; &amp;lst)</td></tr>
-<tr class="separator:acf5cdf8a8d5396420b87a188483a6cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23a9ee6ced1a3797a8fd974a7d3b0803"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23a9ee6ced1a3797a8fd974a7d3b0803"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>matrix</b> (const std::initializer_list&lt; T &gt; &amp;lst)</td></tr>
-<tr class="separator:a23a9ee6ced1a3797a8fd974a7d3b0803"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7d6c3bda37ffcfb007105fb150dedd1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7d6c3bda37ffcfb007105fb150dedd1"></a>
-T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const size_t &amp;i, const size_t &amp;j, const size_t &amp;k,...)</td></tr>
-<tr class="separator:ab7d6c3bda37ffcfb007105fb150dedd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64eab0f7e909d7858679338a52530ba9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64eab0f7e909d7858679338a52530ba9"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const size_t &amp;i, const size_t &amp;j, const size_t &amp;k,...) const </td></tr>
-<tr class="separator:a64eab0f7e909d7858679338a52530ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3ac80a8839ee1367ed5d6dc2a4f10a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3ac80a8839ee1367ed5d6dc2a4f10a1"></a>
-T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const size_t &amp;i, const size_t &amp;j)</td></tr>
-<tr class="separator:ab3ac80a8839ee1367ed5d6dc2a4f10a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09dd98285ca087613b94dceaf2cdd04d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a09dd98285ca087613b94dceaf2cdd04d"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const size_t &amp;i, const size_t &amp;j) const </td></tr>
-<tr class="separator:a09dd98285ca087613b94dceaf2cdd04d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af19189228f639be9356bf782d546cfbd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af19189228f639be9356bf782d546cfbd"></a>
-T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const size_t &amp;i)</td></tr>
-<tr class="separator:af19189228f639be9356bf782d546cfbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae20c2af1bdff8d29a66a96736794d0ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae20c2af1bdff8d29a66a96736794d0ce"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const size_t &amp;i) const </td></tr>
-<tr class="separator:ae20c2af1bdff8d29a66a96736794d0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68bc6b14efbf17e118cdc50f6acaa34e"><td class="memTemplParams" colspan="2"><a class="anchor" id="a68bc6b14efbf17e118cdc50f6acaa34e"></a>
-template&lt;class U &gt; </td></tr>
-<tr class="memitem:a68bc6b14efbf17e118cdc50f6acaa34e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; decltype(std::declval<br class="typebreak"/>
-&lt; T &gt;)*std::declval&lt; U &gt;<br class="typebreak"/>
-)), dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U, dim &gt; &amp;B) const </td></tr>
-<tr class="separator:a68bc6b14efbf17e118cdc50f6acaa34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a3e220b41546c3c4b5e5845c7afe9b7"><td class="memTemplParams" colspan="2"><a class="anchor" id="a6a3e220b41546c3c4b5e5845c7afe9b7"></a>
-template&lt;class U &gt; </td></tr>
-<tr class="memitem:a6a3e220b41546c3c4b5e5845c7afe9b7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, dim &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator+=</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U, dim &gt; &amp;B)</td></tr>
-<tr class="separator:a6a3e220b41546c3c4b5e5845c7afe9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93827ea9fce509328ecb21731b31aab3"><td class="memTemplParams" colspan="2"><a class="anchor" id="a93827ea9fce509328ecb21731b31aab3"></a>
-template&lt;class U &gt; </td></tr>
-<tr class="memitem:a93827ea9fce509328ecb21731b31aab3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, dim &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator-=</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U, dim &gt; &amp;B)</td></tr>
-<tr class="separator:a93827ea9fce509328ecb21731b31aab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4e52087fbf70c471a215981e84682cd"><td class="memTemplParams" colspan="2"><a class="anchor" id="aa4e52087fbf70c471a215981e84682cd"></a>
-template&lt;class U &gt; </td></tr>
-<tr class="memitem:aa4e52087fbf70c471a215981e84682cd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; decltype(std::declval<br class="typebreak"/>
-&lt; T &gt;)*std::declval&lt; U &gt;<br class="typebreak"/>
-)), dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U, dim &gt; &amp;B) const </td></tr>
-<tr class="separator:aa4e52087fbf70c471a215981e84682cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeff29be0826cee275df82ce9e109873f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeff29be0826cee275df82ce9e109873f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, dim &gt; &amp;B) const </td></tr>
-<tr class="separator:aeff29be0826cee275df82ce9e109873f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81a97884f2b968ecc48a44c057a4d018"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81a97884f2b968ecc48a44c057a4d018"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, dim &gt; &amp;B) const </td></tr>
-<tr class="separator:a81a97884f2b968ecc48a44c057a4d018"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac57cc429ad640030fb038c5e9075174a"><td class="memTemplParams" colspan="2"><a class="anchor" id="ac57cc429ad640030fb038c5e9075174a"></a>
-template&lt;class U &gt; </td></tr>
-<tr class="memitem:ac57cc429ad640030fb038c5e9075174a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, dim &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; U, dim &gt; &amp;v)</td></tr>
-<tr class="separator:ac57cc429ad640030fb038c5e9075174a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae976395cf7fa4eea95deb475e3fe085"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aae976395cf7fa4eea95deb475e3fe085"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> (const size_t &amp;n) const </td></tr>
-<tr class="separator:aae976395cf7fa4eea95deb475e3fe085"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0abc30bb7fc8a2bd0e8998b954a4e65"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad0abc30bb7fc8a2bd0e8998b954a4e65"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resize</b> (const std::array&lt; size_t, dim &gt; &amp;pSize)</td></tr>
-<tr class="separator:ad0abc30bb7fc8a2bd0e8998b954a4e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9b778743153486c7bd4ae4b30c35345"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9b778743153486c7bd4ae4b30c35345"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resize</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; size_t, 2 &gt; &amp;pSize)</td></tr>
-<tr class="separator:af9b778743153486c7bd4ae4b30c35345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acde130c9f5c7b0c77372e8041189bf85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acde130c9f5c7b0c77372e8041189bf85"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resize</b> (const size_t &amp;pSize)</td></tr>
-<tr class="separator:acde130c9f5c7b0c77372e8041189bf85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01ba974989150e9bb0687af01a152b50"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01ba974989150e9bb0687af01a152b50"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b> () const </td></tr>
-<tr class="separator:a01ba974989150e9bb0687af01a152b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24292e6d6ff6c30446fdb6976e63135e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24292e6d6ff6c30446fdb6976e63135e"></a>
-<a class="el" href="classkeycpp_1_1_pointer_iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> ()</td></tr>
-<tr class="separator:a24292e6d6ff6c30446fdb6976e63135e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c48ca34a6f0292f9a39264e2d6148a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c48ca34a6f0292f9a39264e2d6148a4"></a>
-<a class="el" href="classkeycpp_1_1_pointer_iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> ()</td></tr>
-<tr class="separator:a4c48ca34a6f0292f9a39264e2d6148a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f372a4850a0151cf7ce69800cafc196"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f372a4850a0151cf7ce69800cafc196"></a>
-<a class="el" href="classkeycpp_1_1_pointer_iterator.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> () const </td></tr>
-<tr class="separator:a4f372a4850a0151cf7ce69800cafc196"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b05ed2716ac414b02e82f489d3db11a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b05ed2716ac414b02e82f489d3db11a"></a>
-<a class="el" href="classkeycpp_1_1_pointer_iterator.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> () const </td></tr>
-<tr class="separator:a4b05ed2716ac414b02e82f489d3db11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab932480004551a2bb08064b19d476cae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab932480004551a2bb08064b19d476cae"></a>
-<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>row</b> (const size_t &amp;i)</td></tr>
-<tr class="separator:ab932480004551a2bb08064b19d476cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74c5086c59092e4b5480ff6cceb87453"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a74c5086c59092e4b5480ff6cceb87453"></a>
-<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>row</b> (const size_t &amp;i) const </td></tr>
-<tr class="separator:a74c5086c59092e4b5480ff6cceb87453"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16454ed1a63cec4ca273ab2ef218e68b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16454ed1a63cec4ca273ab2ef218e68b"></a>
-<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>col</b> (const size_t &amp;j) const </td></tr>
-<tr class="separator:a16454ed1a63cec4ca273ab2ef218e68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97af00468499faef7493168119ca88fa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97af00468499faef7493168119ca88fa"></a>
-<a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; T, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>col</b> (const size_t &amp;j)</td></tr>
-<tr class="separator:a97af00468499faef7493168119ca88fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed824ccff1fa8367ebf759704e063e36"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed824ccff1fa8367ebf759704e063e36"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>reserve</b> (const size_t &amp;N)</td></tr>
-<tr class="separator:aed824ccff1fa8367ebf759704e063e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c5754fe0f3d99022ca5b9f302fdabaf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3c5754fe0f3d99022ca5b9f302fdabaf"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>length</b> () const </td></tr>
-<tr class="separator:a3c5754fe0f3d99022ca5b9f302fdabaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8233b1486b19743833cd7b166406cadf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8233b1486b19743833cd7b166406cadf"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>numel</b> () const </td></tr>
-<tr class="separator:a8233b1486b19743833cd7b166406cadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01f007273ad64facaffdc0a8ab2b230a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01f007273ad64facaffdc0a8ab2b230a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isVec</b> () const </td></tr>
-<tr class="separator:a01f007273ad64facaffdc0a8ab2b230a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae00b6698c9910ac76c1467877b66b07"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aae00b6698c9910ac76c1467877b66b07"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>operator vector_k&lt; T &gt;</b> ()</td></tr>
-<tr class="separator:aae00b6698c9910ac76c1467877b66b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada003509d697cc3d4a2d1a9ccba44a10"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada003509d697cc3d4a2d1a9ccba44a10"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>operator T</b> ()</td></tr>
-<tr class="separator:ada003509d697cc3d4a2d1a9ccba44a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37ff7d47a6219cf17fb4ebde48f8c7b2"><td class="memTemplParams" colspan="2"><a class="anchor" id="a37ff7d47a6219cf17fb4ebde48f8c7b2"></a>
-template&lt;&gt; </td></tr>
-<tr class="memitem:a37ff7d47a6219cf17fb4ebde48f8c7b2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; double, 2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; double, 2 &gt; &amp;B) const</td></tr>
-<tr class="separator:a37ff7d47a6219cf17fb4ebde48f8c7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5588cdcb9eef1da2fe80623204c5199"><td class="memTemplParams" colspan="2"><a class="anchor" id="af5588cdcb9eef1da2fe80623204c5199"></a>
-template&lt;&gt; </td></tr>
-<tr class="memitem:af5588cdcb9eef1da2fe80623204c5199"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="classkeycpp_1_1matrix.html">matrix</a>&lt; std::complex&lt; double &gt;, 2 &gt; &amp;B) const</td></tr>
-<tr class="separator:af5588cdcb9eef1da2fe80623204c5199"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ab9f011ec2b99ecddf781a89cf780a060"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab9f011ec2b99ecddf781a89cf780a060"></a>
-<a class="el" href="classkeycpp_1_1vector__k.html">vector_k</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mData</b></td></tr>
-<tr class="separator:ab9f011ec2b99ecddf781a89cf780a060"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcebe6fce26a54bce1a2ae376501c77e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afcebe6fce26a54bce1a2ae376501c77e"></a>
-std::array&lt; size_t, dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mSize</b></td></tr>
-<tr class="separator:afcebe6fce26a54bce1a2ae376501c77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_matrix_8h_source.html">Matrix.h</a></li>
+<li><a class="el" href="vector__k_8h_source.html">vector_k.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.3.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 16 2013 13:07:58 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 2 2014 15:59:17 for KeyCpp -- A MATLAB-like library for C++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

@@ -310,6 +310,32 @@
         </inbodydescription>
         <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="74" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="74" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="classkeycpp_1_1_plots_1a6732ae2dd213966e7eb812dba2a307a7" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; bool &gt;</type>
+        <definition>vector_k&lt;bool&gt; keycpp::Plots::contour_plot</definition>
+        <argsstring></argsstring>
+        <name>contour_plot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="75" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classkeycpp_1_1_plots_1ac6617feee46a1e2b7f6c935e44b9e6ac" prot="public" static="no" mutable="no">
+        <type><ref refid="classkeycpp_1_1vector__k" kindref="compound">vector_k</ref>&lt; std::string &gt;</type>
+        <definition>vector_k&lt;std::string&gt; keycpp::Plots::contour_filename</definition>
+        <argsstring></argsstring>
+        <name>contour_filename</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="76" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="classkeycpp_1_1_plots_1a0ed0add050a618468cbf2cffe2529bad" prot="public" static="no" mutable="no">
         <type>std::ostringstream</type>
         <definition>std::ostringstream keycpp::Plots::cmdstr</definition>
@@ -321,7 +347,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="75" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="75" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="77" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="77" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -336,7 +362,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="48" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="110" bodyend="112"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="48" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="114" bodyend="116"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_plots_1ada2764ac9764ec42df312e7226750181" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -353,7 +379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="49" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="78" bodyend="80"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="49" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="80" bodyend="82"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_plots_1acca893595120ea254781c3f79d516441" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -366,7 +392,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="50" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="114" bodyend="116"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="50" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="118" bodyend="120"/>
       </memberdef>
       <memberdef kind="function" id="classkeycpp_1_1_plots_1a15efdc7653ddc4e37d36f97a4240f556" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classkeycpp_1_1_plots" kindref="compound">Plots</ref> &amp;</type>
@@ -383,7 +409,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="51" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="82" bodyend="108"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="51" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="84" bodyend="112"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -391,47 +417,51 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="44">
+      <node id="50">
         <label>keycpp::Plots</label>
         <link refid="classkeycpp_1_1_plots"/>
-        <childnode refid="45" relation="usage">
+        <childnode refid="51" relation="usage">
           <edgelabel>y_plot_data</edgelabel>
           <edgelabel>x_plot_data</edgelabel>
         </childnode>
-        <childnode refid="46" relation="usage">
+        <childnode refid="52" relation="usage">
           <edgelabel>plot_val</edgelabel>
           <edgelabel>plot_markersize</edgelabel>
           <edgelabel>plot_linewidth</edgelabel>
         </childnode>
-        <childnode refid="47" relation="usage">
+        <childnode refid="53" relation="usage">
+          <edgelabel>contour_plot</edgelabel>
           <edgelabel>hist_bool</edgelabel>
         </childnode>
-        <childnode refid="48" relation="usage">
+        <childnode refid="54" relation="usage">
           <edgelabel>plot_format</edgelabel>
+          <edgelabel>contour_filename</edgelabel>
           <edgelabel>legend_entries</edgelabel>
         </childnode>
       </node>
-      <node id="48">
+      <node id="54">
         <label>keycpp::vector_k&lt; std::string &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>
-      <node id="45">
+      <node id="51">
         <label>keycpp::vector_k&lt; keycpp::matrix&lt; double, 2 &gt; &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>
-      <node id="46">
+      <node id="52">
         <label>keycpp::vector_k&lt; double &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>
-      <node id="47">
+      <node id="53">
         <label>keycpp::vector_k&lt; bool &gt;</label>
         <link refid="classkeycpp_1_1vector__k"/>
       </node>
     </collaborationgraph>
-    <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="46" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="45" bodyend="76"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/Figure.h" line="46" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Figure.h" bodystart="45" bodyend="78"/>
     <listofallmembers>
       <member refid="classkeycpp_1_1_plots_1a69bc4d0c87b7467113e164f592321fa5" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>bin_width</name></member>
       <member refid="classkeycpp_1_1_plots_1a0ed0add050a618468cbf2cffe2529bad" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>cmdstr</name></member>
+      <member refid="classkeycpp_1_1_plots_1ac6617feee46a1e2b7f6c935e44b9e6ac" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>contour_filename</name></member>
+      <member refid="classkeycpp_1_1_plots_1a6732ae2dd213966e7eb812dba2a307a7" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>contour_plot</name></member>
       <member refid="classkeycpp_1_1_plots_1abd0c4449bcd999429a3073e2885708d8" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>grid_on_bool</name></member>
       <member refid="classkeycpp_1_1_plots_1a2ca8aa3e36820c128a2d43b8c4349940" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>hist_bool</name></member>
       <member refid="classkeycpp_1_1_plots_1afe961c1f35d88bc181bd426fc47ade00" prot="public" virt="non-virtual"><scope>keycpp::Plots</scope><name>hold_on_bool</name></member>

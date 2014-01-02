@@ -1,4 +1,4 @@
-// matrix.h -- matrix class
+// Matrix.h -- matrix class
 
 #ifndef MATRIX_H_
 #define MATRIX_H_
@@ -8,6 +8,9 @@
 #include <vector>
 #include <stdarg.h>
 #include "vector_k.h"
+
+#define DENSE_MATRIX 0
+#define SPARSE_MATRIX 1
 
 namespace keycpp
 {
@@ -31,15 +34,38 @@ namespace keycpp
 	            const std::complex<double> *A, const int *LDA, const std::complex<double> *X,
 	            const int *INCX, const std::complex<double> *BETA, std::complex<double> *Y, const int *INCY);
 	}
+	
+	std::string sprintf(const std::string &fmt, ...);
+    template<class T> void disp(const T &x, std::ostream& outStream = std::cout);
+	template<class T> matrix<T,2> max(const matrix<T,2> &A);
 
 	class MatrixException : public std::runtime_error
 	{
-	    public:
+	public:
 		MatrixException(const std::string &msg) : std::runtime_error(msg){}
 	};
 	
+	class span
+	{
+    private:
+        size_t m_first, m_last;
+        int m_inc;
+        bool all = false;
+        
+	public:
+        span() : m_first(), m_last(), m_inc(1), all(true) {};
+        span(size_t first, size_t last) : m_first(first), m_last(last), m_inc(1) {};
+        span(size_t first, int increment, size_t last) : m_first(first), m_last(last), m_inc(increment) {};
+        
+        size_t get_first() const {return m_first;};
+        size_t get_last() const {return m_last;};
+        int get_inc() const {return m_inc;};
+        bool get_all() const {return all;};
+	};
+
+	
 	template<class T, size_t dim>
-	class matrix
+	class matrix<T,dim,DENSE_MATRIX>
 	{
 	public:
         typedef typename keycpp::vector_k<T>::iterator iterator;
@@ -47,7 +73,8 @@ namespace keycpp
 	
 		matrix();
 		matrix(const matrix<T,dim> &A);
-		matrix(bool, vector_k<T>& mat);
+		matrix(bool, vector_k<T>& mat, size_t nrows, size_t ncols);
+		matrix(bool, vector_k<T>& mat, size_t nrows, size_t ncols, const vector_k<span> &span_all);
 		matrix(const size_t &d1, const size_t &d2 = 0, ...);
 		matrix(const vector_k<vector_k<T>>& mat);
 		matrix(const vector_k<T>& mat);
@@ -57,25 +84,23 @@ namespace keycpp
 		T operator()(const size_t &i, const size_t &j, const size_t &k, ...) const;
 		T& operator()(const size_t &i, const size_t &j);
 		T operator()(const size_t &i, const size_t &j) const;
+		matrix<T,2> operator()(const size_t &i, const span &cols);
+		matrix<T,2> operator()(const span &rows, const size_t &j);
+		matrix<T,2> operator()(const span &rows, const span &cols);
+		matrix<T,2> operator()(const size_t &i, const span &cols) const;
+		matrix<T,2> operator()(const span &rows, const size_t &j) const;
+		matrix<T,2> operator()(const span &rows, const span &cols) const;
 		T& operator()(const size_t &i);
 		T operator()(const size_t &i) const;
-		/*vector_k<T> operator*(const vector_k<T> &x) const;
-		matrix<T,dim> operator*(const matrix<T,dim-1> &x) const;
-		matrix<T,dim> operator*(const matrix<T,dim+1> &x) const;*/
 		template<class U>
-		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> operator*(const matrix<U,dim> &B) const;
-		//template<class U>
-		//matrix<decltype(std::declval<T>()*std::declval<U>()),dim> operator+(const matrix<U,dim> &B) const;
+        matrix<T,dim>& operator+=(const matrix<U,dim> &B);
 		template<class U>
-		matrix<T,dim>& operator+=(const matrix<U,dim> &B);
-		template<class U>
-		matrix<T,dim>& operator-=(const matrix<U,dim> &B);
-		template<class U>
-		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> operator-(const matrix<U,dim> &B) const;
+        matrix<T,dim>& operator-=(const matrix<U,dim> &B);
 		bool operator!=(const matrix<T,dim> &B) const;
 		bool operator==(const matrix<T,dim> &B) const;
         template<class U>
 		matrix<T,dim>& operator=(const matrix<U,dim> &v);
+		matrix<T,dim>& operator=(const matrix<T,dim> &v);
 		size_t size(const size_t &n) const;
 		void resize(const std::array<size_t,dim> &pSize);
 		void resize(const matrix<size_t,2> &pSize);
@@ -90,15 +115,25 @@ namespace keycpp
 		matrix<T,2> col(const size_t &j) const;
 		matrix<T,2> col(const size_t &j);
 		void reserve(const size_t &N);
-		vector_k<T> mData;
-		std::array<size_t,dim> mSize;
         size_t length() const
         {
             return *std::max_element(mSize.begin(), mSize.end());
         };
         size_t numel() const
         {
-            return mData.size();
+            if(!submat)
+            {
+                return mData.size();
+            }
+            else
+            {
+                size_t temp = 1;
+                for(size_t ii = 0; ii < dim; ii++)
+                {
+                    temp *= this->size(ii+1);
+                }
+                return temp;
+            }
         };
         
         bool isVec() const
@@ -107,7 +142,7 @@ namespace keycpp
             {
                 return false;
             }
-            if(mSize[0] == 1 || mSize[1] == 1)
+            if(this->size(1) == 1 || this->size(2) == 1)
             {
                 return true;
             }
@@ -116,35 +151,73 @@ namespace keycpp
                 return false;
             }
         }
+        
+        size_t get_inc() const {return mData.get_inc();};
+        
+        // Friend functions
+        template<class V, class U>
+        friend matrix<decltype(std::declval<V>()*std::declval<U>()),2> operator*(const matrix<V,2> &A, const matrix<U,2> &B);
+        friend double norm(const matrix<std::complex<double>> &A_in, std::string method);
+        friend double norm(const matrix<double> &A_in, std::string method);
+        friend void mv_special(int n, std::complex<double> *in, std::complex<double> *out, const matrix<std::complex<double>> &A, matrix<std::complex<double>> &Y, int *iw);
+        friend void mv(int n, std::complex<double> *in, std::complex<double> *out, const matrix<std::complex<double>> &A);
+        friend void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, std::complex<double> sigma, const matrix<std::complex<double>> &A);
+        friend void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::complex<double> sigma, const matrix<std::complex<double>> &A);
 		
         operator vector_k<T>()
         {
             static_assert(dim == 2,"Conversion from matrix to vector_k requires matrix with dimension 2.");
-            if(mSize[0] != 1)
+            if(this->size(1) != 1)
             {
                 throw MatrixException("Cannot convert to vector_k(). Number of rows must equal 1.");
             }
-            vector_k<T> v1(mSize[1]);
-            for(size_t ii = 0; ii < mSize[1]; ii++)
+            vector_k<T> v1(this->size(2));
+            for(size_t ii = 0; ii < this->size(2); ii++)
             {
-                v1[ii] = mData[ii];
+                v1[ii] = this->operator()(ii);
             }
             return v1;
         };
         
         operator T()
         {
-            if(mData.size() != 1)
+            if(this->numel() != 1)
             {
                 throw MatrixException("Cannot convert to T. Number of elements must be 1.");
             }
 
-            return mData[0];
+            return this->operator()(0);
         };
+        
+        bool get_submat() const
+        {
+            return submat;
+        }
+        
+        std::array<size_t,dim> get_mSize() const
+        {
+            return mSize;
+        }
+        
+        vector_k<T> get_mData() const
+        {
+            return mData;
+        }
+        
+        vector_k<span> get_mSpan() const
+        {
+            return mSpan;
+        }
+        
+    private:
+		vector_k<T> mData;
+		std::array<size_t,dim> mSize;
+		vector_k<span> mSpan;
+		bool submat = false;
 	};
 
 	template<class T, size_t dim>
-	matrix<T,dim>::matrix() : mData()
+	matrix<T,dim,DENSE_MATRIX>::matrix() : mData()
 	{
 	    static_assert(dim >= 2,"Minimum matrix dimension is 2.");
 	    for(size_t ii = 0; ii < dim; ii++)
@@ -154,22 +227,22 @@ namespace keycpp
 	}
 
 	template<class T, size_t dim>
-	matrix<T,dim>::matrix(const matrix<T,dim> &A) : mData()
+	matrix<T,dim,DENSE_MATRIX>::matrix(const matrix<T,dim> &A) : mData()
 	{
 	    static_assert(dim >= 2,"Minimum matrix dimension is 2.");
 	    for(size_t ii = 0; ii < dim; ii++)
 	    {
-	        mSize[ii] = A.mSize[ii];
+	        mSize[ii] = A.size(ii+1);
 	    }
         mData.resize(A.numel());
 	    for(size_t ii = 0; ii < A.numel(); ii++)
 	    {
-	        mData[ii] = A.mData[ii];
+	        mData[ii] = A(ii);
 	    }
 	}
 
 	template<class T, size_t dim>
-	matrix<T,dim>::matrix(bool, vector_k<T>& mat) : mData(&mat[0],mat.size(),mat.get_inc())
+	matrix<T,dim,DENSE_MATRIX>::matrix(bool, vector_k<T>& mat, size_t nrows, size_t ncols) : mData(&mat[0],mat.size(),mat.get_inc())
 	{
 	    static_assert(dim >= 2,"Minimum matrix dimension is 2.");
 	    static_assert(dim == 2,"This constructor is a specialization for matrices of dimension 2.");
@@ -178,13 +251,27 @@ namespace keycpp
 			throw MatrixException("Cannot assign empty vector to a matrix object!");
 		}
 		
-		mSize[0] = 1;
-		mSize[1] = mat.size();
+		mSize[0] = nrows;
+		mSize[1] = ncols;
+	}
+
+	template<class T, size_t dim>
+	matrix<T,dim,DENSE_MATRIX>::matrix(bool, vector_k<T>& mat, size_t nrows, size_t ncols, const vector_k<span> &span_all) : mData(&mat[0],mat.size(),mat.get_inc()), mSpan(span_all), submat(true)
+	{
+	    static_assert(dim >= 2,"Minimum matrix dimension is 2.");
+	    static_assert(dim == 2,"This constructor is a specialization for matrices of dimension 2.");
+		if(mat.empty())
+		{
+			throw MatrixException("Cannot assign empty vector to a matrix object!");
+		}
+		
+		mSize[0] = nrows;
+		mSize[1] = ncols;
 	}
 
     // First parameter is a trick to not override the default constructor...
 	template<class T, size_t dim>
-	matrix<T,dim>::matrix(const size_t & d1, const size_t & d2, ...) : mData()
+	matrix<T,dim,DENSE_MATRIX>::matrix(const size_t & d1, const size_t & d2, ...) : mData()
 	{
 	    static_assert(dim >= 2,"Minimum matrix dimension is 2.");
         
@@ -221,7 +308,7 @@ namespace keycpp
 	}
 
 	template<class T, size_t dim>
-	matrix<T,dim>::matrix(const vector_k<vector_k<T> >& mat) : mData(mat.size()*mat[0].size())
+	matrix<T,dim,DENSE_MATRIX>::matrix(const vector_k<vector_k<T> >& mat) : mData(mat.size()*mat[0].size())
 	{
 	    static_assert(dim >= 2,"Minimum matrix dimension is 2.");
 	    static_assert(dim == 2,"This constructor is a specialization for matrices of dimension 2.");
@@ -247,7 +334,7 @@ namespace keycpp
 	}
 
 	template<class T, size_t dim>
-	matrix<T,dim>::matrix(const vector_k<T>& mat) : mData(mat.size())
+	matrix<T,dim,DENSE_MATRIX>::matrix(const vector_k<T>& mat) : mData(mat.size())
 	{
 	    static_assert(dim >= 2,"Minimum matrix dimension is 2.");
 	    static_assert(dim == 2,"This constructor is a specialization for matrices of dimension 2.");
@@ -266,7 +353,7 @@ namespace keycpp
 	}
 
 	template<class T, size_t dim>
-	matrix<T,dim>::matrix(const std::initializer_list<std::initializer_list<T> >& lst) : matrix(lst.size(), lst.size() ? lst.begin()->size() : 0)
+	matrix<T,dim,DENSE_MATRIX>::matrix(const std::initializer_list<std::initializer_list<T> >& lst) : matrix(lst.size(), lst.size() ? lst.begin()->size() : 0)
 	{
 	    static_assert(dim >= 2,"Minimum matrix dimension is 2.");
 	    static_assert(dim == 2,"This constructor is a specialization for matrices of dimension 2.");
@@ -288,7 +375,7 @@ namespace keycpp
 	}
 
 	template<class T, size_t dim>
-	matrix<T,dim>::matrix(const std::initializer_list<T>& lst) : matrix(lst.size())
+	matrix<T,dim,DENSE_MATRIX>::matrix(const std::initializer_list<T>& lst) : matrix(lst.size())
 	{
 	    static_assert(dim >= 2,"Minimum matrix dimension is 2.");
 	    static_assert(dim == 2,"This constructor is a specialization for matrices of dimension 2.");
@@ -305,7 +392,7 @@ namespace keycpp
 	}
 
 	template<class T, size_t dim>
-	T& matrix<T,dim>::operator()(const size_t &i, const size_t &j, const size_t &k, ...)
+	T& matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i, const size_t &j, const size_t &k, ...)
 	{
 	    static_assert(dim >= 3,"This function is a specialization for matrices of dimension greater than or equal to 3.");
 		if(mData.empty())
@@ -352,7 +439,7 @@ namespace keycpp
 	}
 
 	template<class T, size_t dim>
-	T matrix<T,dim>::operator()(const size_t &i, const size_t &j, const size_t &k, ...) const
+	T matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i, const size_t &j, const size_t &k, ...) const
 	{
 	    static_assert(dim >= 3,"This function is a specialization for matrices of dimension greater than or equal to 3.");
 		if(mData.empty())
@@ -399,320 +486,366 @@ namespace keycpp
 	}
 
 	template<class T, size_t dim>
-	T& matrix<T,dim>::operator()(const size_t &i, const size_t &j)
+	T& matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i, const size_t &j)
 	{
 	    static_assert(dim == 2,"This function is a specialization for matrices of dimension 2.");
-		if(i > (mSize[0]-1) || j > (mSize[1]-1))
+		if(i > (this->size(1)-1) || j > (this->size(2)-1))
 		{
 			throw MatrixException("Tried to access invalid matrix member!");
 		}
+		if(!submat)
+		{
+		    return mData[j*mSize[0] + i];
+		}
+		else
+		{
+	        size_t r1, c1;
+	        int r_inc, c_inc;
+	        
+	        if(mSpan[0].get_all())
+	        {
+	            r1 = 0;
+	            r_inc = 1;
+	        }
+	        else
+	        {
+	            r1 = mSpan[0].get_first();
+	            r_inc = mSpan[0].get_inc();
+	        }
+	        if(mSpan[1].get_all())
+	        {
+	            c1 = 0;
+	            c_inc = 1;
+	        }
+	        else
+	        {
+	            c1 = mSpan[1].get_first();
+	            c_inc = mSpan[1].get_inc();
+	        }
+	        
+	        size_t i2 = r1 + i*r_inc;
+	        size_t j2 = c1 + j*c_inc;
+		    if(i2 > (mSize[0]-1) || j2 > (mSize[1]-1))
+		    {
+			    throw MatrixException("Tried to access invalid matrix member!");
+		    }
 		
-		return mData[j*mSize[0] + i];
+		    return mData[j2*mSize[0] + i2];
+		}
 	}
 
 	template<class T, size_t dim>
-	T matrix<T,dim>::operator()(const size_t &i, const size_t &j) const
+	T matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i, const size_t &j) const
 	{
 	    static_assert(dim == 2,"This function is a specialization for matrices of dimension 2.");
-		if(i > (mSize[0]-1) || j > (mSize[1]-1))
+		if(i > (this->size(1)-1) || j > (this->size(2)-1))
 		{
 			throw MatrixException("Tried to access invalid matrix member!");
 		}
+		if(!submat)
+		{
+		    return mData[j*mSize[0] + i];
+		}
+		else
+		{
+	        size_t r1, c1;
+	        int r_inc, c_inc;
+	        
+	        if(mSpan[0].get_all())
+	        {
+	            r1 = 0;
+	            r_inc = 1;
+	        }
+	        else
+	        {
+	            r1 = mSpan[0].get_first();
+	            r_inc = mSpan[0].get_inc();
+	        }
+	        if(mSpan[1].get_all())
+	        {
+	            c1 = 0;
+	            c_inc = 1;
+	        }
+	        else
+	        {
+	            c1 = mSpan[1].get_first();
+	            c_inc = mSpan[1].get_inc();
+	        }
+	        
+	        size_t i2 = r1 + i*r_inc;
+	        size_t j2 = c1 + j*c_inc;
+		    if(i2 > (mSize[0]-1) || j2 > (mSize[1]-1))
+		    {
+			    throw MatrixException("Tried to access invalid matrix member!");
+		    }
 		
-		return mData[j*mSize[0] + i];
+		    return mData[j2*mSize[0] + i2];
+		}
+	}
+	
+	template<class T, size_t dim>
+	matrix<T,2> matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i, const span &cols)
+	{
+	    static_assert(dim == 2,"This function is a specialization for matrices of dimension 2.");
+	    
+		vector_k<T> temp(&mData[0],mData.size(),1);
+		
+		vector_k<span> span_all(dim);
+		span_all[0] = span(i,i);
+		span_all[1] = cols;
+		
+		matrix<T,2> submat(true, temp, mSize[0], mSize[1], span_all);
+		
+		return submat;
+	}
+	
+	template<class T, size_t dim>
+	matrix<T,2> matrix<T,dim,DENSE_MATRIX>::operator()(const span &rows, const size_t &j)
+	{
+	    static_assert(dim == 2,"This function is a specialization for matrices of dimension 2.");
+	    
+		vector_k<T> temp(&mData[0],mData.size(),1);
+		
+		vector_k<span> span_all(dim);
+		span_all[0] = rows;
+		span_all[1] = span(j,j);
+		
+		matrix<T,2> submat(true, temp, mSize[0], mSize[1], span_all);
+		
+		return submat;
+	}
+	
+	template<class T, size_t dim>
+	matrix<T,2> matrix<T,dim,DENSE_MATRIX>::operator()(const span &rows, const span &cols)
+	{
+	    static_assert(dim == 2,"This function is a specialization for matrices of dimension 2.");
+	    
+		vector_k<T> temp(&mData[0],mData.size(),1);
+		
+		vector_k<span> span_all(dim);
+		span_all[0] = rows;
+		span_all[1] = cols;
+		
+		matrix<T,2> submat(true, temp, mSize[0], mSize[1], span_all);
+		
+		return submat;
+	}
+	
+	template<class T, size_t dim>
+	matrix<T,2> matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i, const span &cols) const
+	{
+	    static_assert(dim == 2,"This function is a specialization for matrices of dimension 2.");
+	    
+	    size_t c1, c2;
+	    int c_inc;
+	    
+	    int N_j;
+	    if(cols.get_all())
+	    {
+	        N_j = mSize[1];
+	        c1 = 0;
+	        c2 = N_j-1;
+	        c_inc = 1;
+	    }
+	    else
+	    {
+	        c1 = cols.get_first();
+	        c2 = cols.get_last();
+	        c_inc = cols.get_inc();
+	        N_j = (c2 - c1)/c_inc + 1;
+	    }
+	    if(N_j < 0)
+	    {
+	        N_j = 0;
+	        matrix<T,2> B;
+	        return B;
+	    }
+	    matrix<size_t> j(N_j);
+	    for(int jj = 0; jj < N_j; jj++)
+	    {
+	        j(jj) = c1 + jj*c_inc;
+	    }
+		if(i > (mSize[0]-1) || max(j) > (mSize[1]-1))
+		{
+			throw MatrixException("Tried to access invalid matrix member!");
+		}
+	    
+	    matrix<T,2> B(1,N_j);
+        for(size_t jj = 0; jj < (size_t)N_j; jj++)
+        {
+            B(jj) = mData[j(jj)*mSize[0] + i];
+        }
+		
+		return B;
+	}
+	
+	template<class T, size_t dim>
+	matrix<T,2> matrix<T,dim,DENSE_MATRIX>::operator()(const span &rows, const size_t &j) const
+	{
+	    static_assert(dim == 2,"This function is a specialization for matrices of dimension 2.");
+	    
+	    size_t r1, r2;
+	    int r_inc;
+	    
+	    int N_i;
+	    if(rows.get_all())
+	    {
+	        N_i = mSize[0];
+	        r1 = 0;
+	        r2 = N_i-1;
+	        r_inc = 1;
+	    }
+	    else
+	    {
+	        r1 = rows.get_first();
+	        r2 = rows.get_last();
+	        r_inc = rows.get_inc();
+	        N_i = (r2 - r1)/r_inc + 1;
+	    }
+	    if(N_i < 0)
+	    {
+	        N_i = 0;
+	        matrix<T,2> B;
+	        return B;
+	    }
+	    matrix<size_t> i(N_i);
+	    for(int ii = 0; ii < N_i; ii++)
+	    {
+	        i(ii) = r1 + ii*r_inc;
+	    }
+		if(max(i) > (mSize[0]-1) || j > (mSize[1]-1))
+		{
+			throw MatrixException("Tried to access invalid matrix member!");
+		}
+	    
+	    matrix<T,2> B(N_i,1);
+	    for(size_t ii = 0; ii < (size_t)N_i; ii++)
+	    {
+	        B(ii) = mData[j*mSize[0] + i(ii)];
+	    }
+		
+		return B;
+	}
+	
+	template<class T, size_t dim>
+	matrix<T,2> matrix<T,dim,DENSE_MATRIX>::operator()(const span &rows, const span &cols) const
+	{
+	    static_assert(dim == 2,"This function is a specialization for matrices of dimension 2.");
+	    
+	    size_t r1, r2, c1, c2;
+	    int r_inc, c_inc;
+	    
+	    int N_i;
+	    if(rows.get_all())
+	    {
+	        N_i = mSize[0];
+	        r1 = 0;
+	        r2 = N_i-1;
+	        r_inc = 1;
+	    }
+	    else
+	    {
+	        r1 = rows.get_first();
+	        r2 = rows.get_last();
+	        r_inc = rows.get_inc();
+	        N_i = (r2 - r1)/r_inc + 1;
+	    }
+	    if(N_i < 0)
+	    {
+	        N_i = 0;
+	        matrix<T,2> B;
+	        return B;
+	    }
+	    int N_j;
+	    if(cols.get_all())
+	    {
+	        N_j = mSize[1];
+	        c1 = 0;
+	        c2 = N_j-1;
+	        c_inc = 1;
+	    }
+	    else
+	    {
+	        c1 = cols.get_first();
+	        c2 = cols.get_last();
+	        c_inc = cols.get_inc();
+	        N_j = (c2 - c1)/c_inc + 1;
+	    }
+	    if(N_j < 0)
+	    {
+	        N_j = 0;
+	        matrix<T,2> B;
+	        return B;
+	    }
+	    matrix<size_t> i(N_i), j(N_j);
+	    for(int ii = 0; ii < N_i; ii++)
+	    {
+	        i(ii) = r1 + ii*r_inc;
+	    }
+	    for(int jj = 0; jj < N_j; jj++)
+	    {
+	        j(jj) = c1 + jj*c_inc;
+	    }
+		if(max(i) > (mSize[0]-1) || max(j) > (mSize[1]-1))
+		{
+			throw MatrixException("Tried to access invalid matrix member!");
+		}
+	    
+	    matrix<T,2> B(N_i,N_j);
+	    for(size_t ii = 0; ii < (size_t)N_i; ii++)
+	    {
+	        for(size_t jj = 0; jj < (size_t)N_j; jj++)
+	        {
+	            B(ii,jj) = mData[j(jj)*mSize[0] + i(ii)];
+	        }
+	    }
+		
+		return B;
 	}
 
 	template<class T,size_t dim>
-	T& matrix<T,dim>::operator()(const size_t &i)
+	T& matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i)
 	{
-		if(i > mData.size()-1)
-		{
-			throw MatrixException("Tried to access invalid matrix member!");
-		}
-		
-	    return mData[i];
+	    if(i > this->numel()-1)
+	    {
+		    throw MatrixException("Tried to access invalid matrix member!");
+	    }
+	    if(!submat)
+	    {
+	        return mData[i];
+	    }
+	    else
+	    {
+	        size_t ii,jj;
+	        ii = i % this->size(1);
+	        jj = i/this->size(1);
+	        return this->operator()(ii,jj);
+	    }
 	}
 
 	template<class T, size_t dim>
-	T matrix<T,dim>::operator()(const size_t &i) const
+	T matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i) const
 	{
-		if(i > mData.size()-1)
-		{
-			throw MatrixException("Tried to access invalid matrix member!");
-		}
-		
-	    return mData[i];
+	    if(i > this->numel()-1)
+	    {
+		    throw MatrixException("Tried to access invalid matrix member!");
+	    }
+	    if(!submat)
+	    {
+	        return mData[i];
+	    }
+	    else
+	    {
+	        size_t ii,jj;
+	        ii = i % this->size(1);
+	        jj = i/this->size(1);
+	        return this->operator()(ii,jj);
+	    }
 	}
-
-	/*template<class T, size_t dim>
-	vector_k<T> matrix<T,dim>::operator*(const vector_k<T> &x) const
-	{
-	    static_assert(dim == 2,"Matrix-Vector multiplication is for matrices of dimension 2 only.");
-		if(x.empty())
-		{
-			throw MatrixException("Vector `x` cannot be empty in matrix-vector multiplication!");
-		}
-		if(x.size() != mSize[1])
-		{
-			throw MatrixException("Matrix and vector dimensions are not compatible in matrix-vector multiplication!");
-		}
-		if(mData.empty())
-		{
-			throw MatrixException("Cannot perform operation on empty matrix!");
-		}
-		vector_k<T> b(mSize[0]);
-		for(size_t ii = 0; ii < mSize[0]; ii++)
-		{
-			b[ii] = 0.0;
-			for(size_t jj = 0; jj < mSize[1]; jj++)
-			{
-				b[ii] += mData[jj*mSize[0] + ii]*x[jj];
-			}
-		}
-		return b;
-	}*/
-
-	/*template<class T, size_t dim>
-	matrix<T,dim> matrix<T,dim>::operator*(const matrix<T,dim-1> &x) const
-	{
-	    static_assert(dim == 2,"Matrix-Vector multiplication is for matrices of dimension 2 only.");
-		if(x.empty())
-		{
-			throw MatrixException("Vector `x` cannot be empty in matrix-vector multiplication!");
-		}
-		if(mSize[1] != 1)
-		{
-			throw MatrixException("Matrix and vector dimensions are not compatible in matrix-vector multiplication!");
-		}
-		if(mData.empty())
-		{
-			throw MatrixException("Cannot perform operation on empty matrix!");
-		}
-		matrix<T,2> b(mSize[0],x.size(1));
-		for(size_t ii = 0; ii < mSize[0]; ii++)
-		{
-		    for(size_t jj = 0; jj < x.size(1); jj++)
-		    {
-			    b(ii,jj) = mData[ii]*x(jj);
-			}
-		}
-		return b;
-	}*/
-
-	/*template<class T, size_t dim>
-	matrix<T,dim> matrix<T,dim>::operator*(const matrix<T,dim+1> &x) const
-	{
-	    static_assert(dim == 1,"This function requires dimension 1.");
-		if(x.empty())
-		{
-			throw MatrixException("Vector `x` cannot be empty in matrix-vector multiplication!");
-		}
-		if(mSize[0] != x.size(1))
-		{
-			throw MatrixException("Matrix and vector dimensions are not compatible in matrix-vector multiplication!");
-		}
-		if(mData.empty())
-		{
-			throw MatrixException("Cannot perform operation on empty matrix!");
-		}
-		matrix<T,1> b(x.size(2));
-		for(size_t ii = 0; ii < x.size(2); ii++)
-		{
-		    for(size_t jj = 0; jj < x.size(1); jj++)
-		    {
-			    b(ii) += mData[jj]*x(jj,ii);
-			}
-		}
-		return b;
-	}*/
-	
-	/*template<>
-	inline vector_k<double> matrix<double,2>::operator*(const vector_k<double> &x) const
-	{
-		if(x.empty())
-		{
-			throw MatrixException("Vector `x` cannot be empty in matrix-vector multiplication!");
-		}
-		if(x.size() != mSize[1])
-		{
-			throw MatrixException("Matrix and vector dimensions are not compatible in matrix-vector multiplication!");
-		}
-		if(mData.empty())
-		{
-			throw MatrixException("Cannot perform operation on empty matrix!");
-		}
-		vector_k<double> b(mSize[0]);
-		int m = (int)mSize[0];
-		int n = (int)mSize[1];
-        char TRANS = 'N';
-        double ALPHA = 1.0;
-        int LDA = m;
-        int INCX = (int)x.get_inc();
-        double BETA = 0.0;
-        int INCb = (int)b.get_inc();
-
-        dgemv_(&TRANS, &m, &n, &ALPHA, &mData[0], &LDA, &x[0],&INCX, &BETA, &b[0], &INCb);
-        
-        return b;
-    }*/
-	
-	/*template<>
-	inline vector_k<std::complex<double>> matrix<std::complex<double>,2>::operator*(const vector_k<std::complex<double>> &x) const
-	{
-		if(x.empty())
-		{
-			throw MatrixException("Vector `x` cannot be empty in matrix-vector multiplication!");
-		}
-		if(x.size() != mSize[1])
-		{
-			throw MatrixException("Matrix and vector dimensions are not compatible in matrix-vector multiplication!");
-		}
-		if(mData.empty())
-		{
-			throw MatrixException("Cannot perform operation on empty matrix!");
-		}
-		vector_k<std::complex<double>> b(mSize[0]);
-		int m = (int)mSize[0];
-		int n = (int)mSize[1];
-        char TRANS = 'N';
-        std::complex<double> ALPHA = 1.0;
-        int LDA = m;
-        int INCX = (int)x.get_inc();
-        std::complex<double> BETA = 0.0;
-        int INCb = (int)b.get_inc();
-        
-        zgemv_(&TRANS, &m, &n, &ALPHA, &mData[0], &LDA, &x[0],&INCX, &BETA, &b[0], &INCb);
-        
-        return b;
-    }*/
-
-	template<class T, size_t dim>
-	template<class U>
-	matrix<decltype(std::declval<T>()*std::declval<U>()),dim> matrix<T,dim>::operator*(const matrix<U,dim> &B) const
-	{
-	    static_assert(dim == 2,"Matrix multiplication not supported for dimensions greater than 2.");
-		if(B.size(1) <= 0 || B.size(2) <= 0)
-		{
-			throw MatrixException("Cannot perform operation on empty matrix!");
-		}
-		if(mData.empty())
-		{
-			throw MatrixException("Cannot perform operation on empty matrix!");
-		}
-		if(mSize[1] != B.size(1))
-		{
-			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix multiplication!");
-		}
-		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> C(mSize[0],B.size(2));
-		for(size_t kk = 0; kk < B.size(2); kk++)
-		{
-			for(size_t ii = 0; ii < mSize[0]; ii++)
-			{
-				C(ii,kk) = 0.0;
-				for(size_t jj = 0; jj < mSize[1]; jj++)
-				{
-					C(ii,kk) += mData[jj*mSize[0] + ii]*B(jj,kk);
-				}
-			}
-		}
-		return C;
-	}
-	
-	template<>
-	template<>
-	inline matrix<double,2> matrix<double,2>::operator*(const matrix<double,2> &B) const
-	{
-		if(B.size(1) <= 0 || B.size(2) <= 0)
-		{
-			throw MatrixException("Cannot perform operation on empty matrix!");
-		}
-		if(mData.empty())
-		{
-			throw MatrixException("Cannot perform operation on empty matrix!");
-		}
-		if(mSize[1] != B.size(1))
-		{
-			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix multiplication!");
-		}
-		matrix<double> C(mSize[0],B.size(2));
-		int m = (int)mSize[0];
-		int k = (int)mSize[1];
-		int n = (int)B.size(2);
-        char TRANS = 'N';
-        double ALPHA = 1.0;
-        int LDA = m;
-        int LDB = k;
-        double BETA = 0.0;
-        int LDC = m;
-
-        dgemm_(&TRANS, &TRANS, &m, &n, &k, &ALPHA, &mData[0], &LDA, &B.mData[0], &LDB, &BETA, &C.mData[0], &LDC);
-        
-        return C;
-    }
-	
-	template<>
-	template<>
-	inline matrix<std::complex<double>,2> matrix<std::complex<double>,2>::operator*(const matrix<std::complex<double>,2> &B) const
-	{
-		if(B.size(1) <= 0 || B.size(2) <= 0)
-		{
-			throw MatrixException("Cannot perform operation on empty matrix!");
-		}
-		if(mData.empty())
-		{
-			throw MatrixException("Cannot perform operation on empty matrix!");
-		}
-		if(mSize[1] != B.size(1))
-		{
-			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix multiplication!");
-		}
-		matrix<std::complex<double>> C(mSize[0],B.size(2));
-		int m = (int)mSize[0];
-		int k = (int)mSize[1];
-		int n = (int)B.size(2);
-        char TRANS = 'N';
-        std::complex<double> ALPHA = 1.0;
-        int LDA = m;
-        int LDB = k;
-        std::complex<double> BETA = 0.0;
-        int LDC = m;
-
-        zgemm_(&TRANS, &TRANS, &m, &n, &k, &ALPHA, &mData[0], &LDA, &B.mData[0], &LDB, &BETA, &C.mData[0], &LDC);
-        
-        return C;
-    }
-
-	/*template<class T, size_t dim>
-	template<class U>
-	matrix<decltype(std::declval<T>()*std::declval<U>()),dim> matrix<T,dim>::operator+(const matrix<U,dim> &B) const
-	{
-		if(mData.empty())
-		{
-			throw MatrixException("Cannot perform operation on empty matrix!");
-		}
-		for(int ii = 0; ii < dim; ii++)
-		{
-		    if(B.size(ii+1) <= 0)
-		    {
-		        throw MatrixException("Cannot perform operation on empty matrix!");
-		    }
-		    if(mSize[ii] != B.size(ii+1))
-		    {
-		        throw MatrixException("Matrix dimensions are not compatible in matrix-matrix addition!");
-		    }
-		}
-		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> C;
-		C.resize(mSize);
-		for(size_t ii = 0; ii < C.mData.size(); ii++)
-		{
-			C.mData[ii] = this->mData[ii] + B.mData[ii];
-		}
-		return C;
-	}*/
 	
 	template<class T, size_t dim>
 	template<class U>
-	matrix<T,dim>& matrix<T,dim>::operator+=(const matrix<U,dim> &B)
+	matrix<T,dim>& matrix<T,dim,DENSE_MATRIX>::operator+=(const matrix<U,dim> &B)
 	{
 		if(mData.empty())
 		{
@@ -732,14 +865,14 @@ namespace keycpp
 		
 		for(size_t ii = 0; ii < this->mData.size(); ii++)
 		{
-			this->mData[ii] += B.mData[ii];
+			this->mData[ii] += B(ii);
 		}
 		return *this;
 	}
 	
 	template<class T, size_t dim>
 	template<class U>
-	matrix<T,dim>& matrix<T,dim>::operator-=(const matrix<U,dim> &B)
+	matrix<T,dim>& matrix<T,dim,DENSE_MATRIX>::operator-=(const matrix<U,dim> &B)
 	{
 		if(mData.empty())
 		{
@@ -759,65 +892,13 @@ namespace keycpp
 		
 		for(size_t ii = 0; ii < this->mData.size(); ii++)
 		{
-			this->mData[ii] -= B.mData[ii];
+			this->mData[ii] -= B(ii);
 		}
 		return *this;
 	}
 
 	template<class T, size_t dim>
-	template<class U>
-	matrix<decltype(std::declval<T>()*std::declval<U>()),dim> matrix<T,dim>::operator-(const matrix<U,dim> &B) const
-	{
-		if(mData.empty())
-		{
-			throw MatrixException("Cannot perform operation on empty matrix!");
-		}
-		for(int ii = 0; ii < dim; ii++)
-		{
-		    if(B.size(ii+1) <= 0)
-		    {
-		        throw MatrixException("Cannot perform operation on empty matrix!");
-		    }
-		    if(mSize[ii] != B.size(ii+1))
-		    {
-		        throw MatrixException("Matrix dimensions are not compatible in matrix-matrix addition!");
-		    }
-		}
-		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> C;
-		C.resize(mSize);
-		for(size_t ii = 0; ii < C.mData.size(); ii++)
-		{
-			C.mData[ii] = this->mData[ii] - B.mData[ii];
-		}
-		return C;
-	}
-
-	template<class T, size_t dim>
-	bool matrix<T,dim>::operator!=(const matrix<T,dim> &B) const
-	{
-		if(mData.empty() || B.empty())
-		{
-			return true;
-		}
-		for(int ii = 0; ii < dim; ii++)
-		{
-		    if(mSize[ii] != B.size(ii+1))
-		    {
-		        return true;
-		    }
-		}
-		for(size_t ii = 0; ii < mData.size(); ii++)
-		{
-			if(this->mData[ii] != B.mData[ii])
-			{
-			    return true;
-			}
-		}
-		return false;
-	}
-
-	template<class T, size_t dim>
-	bool matrix<T,dim>::operator==(const matrix<T,dim> &B) const
+	bool matrix<T,dim,DENSE_MATRIX>::operator==(const matrix<T,dim> &B) const
 	{
 		if(mData.empty() || B.empty())
 		{
@@ -832,7 +913,7 @@ namespace keycpp
 		}
 		for(size_t ii = 0; ii < mData.size(); ii++)
 		{
-			if(this->mData[ii] != B.mData[ii])
+			if(this->mData[ii] != B(ii))
 			{
 			    return false;
 			}
@@ -840,34 +921,116 @@ namespace keycpp
 		return true;
 	}
 
+	template<class T, size_t dim>
+	bool matrix<T,dim,DENSE_MATRIX>::operator!=(const matrix<T,dim> &B) const
+	{
+		return !(*this == B);
+	}
+
     template<class T, size_t dim>
     template<class U>
-    matrix<T,dim>& matrix<T,dim>::operator=(const matrix<U,dim> &v)
+    matrix<T,dim>& matrix<T,dim,DENSE_MATRIX>::operator=(const matrix<U,dim,DENSE_MATRIX> &v)
     {
-        if(mSize != v.mSize)
+        if(!submat && !v.get_submat())
         {
-            resize(v.mSize);
+            if(mSize != v.get_mSize() && !(numel() == v.numel() && isVec() && v.isVec()))
+            {
+                resize(v.get_mSize());
+            }
+            for(size_t ii = 0; ii < v.numel(); ii++)
+            {
+                mData[ii] = v(ii);
+            }
         }
-        for(size_t ii = 0; ii < v.mData.size(); ii++)
+        else
         {
-            mData[ii] = v.mData[ii];
+            for(size_t ii = 0; ii < dim; ii++)
+            {
+                if(this->size(ii+1) != v.size(ii+1))
+                {
+                    throw MatrixException("Size of submatrix is not compatible in assignment!");
+                }
+            }
+            for(size_t ii = 0; ii < v.numel(); ii++)
+            {
+                this->operator()(ii) = v(ii);
+            }
+        }
+        
+        return *this;
+    }
+    
+    template<class T, size_t dim>
+    matrix<T,dim>& matrix<T,dim,DENSE_MATRIX>::operator=(const matrix<T,dim,DENSE_MATRIX> &v)
+    {
+        if(this == &v)
+        {
+            return *this;
+        }
+        if(!submat && !v.get_submat())
+        {
+            if(mSize != v.get_mSize() && !(numel() == v.numel() && isVec() && v.isVec()))
+            {
+                resize(v.get_mSize());
+            }
+            for(size_t ii = 0; ii < v.numel(); ii++)
+            {
+                mData[ii] = v(ii);
+            }
+        }
+        else
+        {
+            for(size_t ii = 0; ii < dim; ii++)
+            {
+                if(this->size(ii+1) != v.size(ii+1))
+                {
+                    throw MatrixException("Size of submatrix is not compatible in assignment!");
+                }
+            }
+            for(size_t ii = 0; ii < v.numel(); ii++)
+            {
+                this->operator()(ii) = v(ii);
+            }
         }
         
         return *this;
     }
 
 	template<class T, size_t dim>
-	size_t matrix<T,dim>::size(const size_t &n) const
+	size_t matrix<T,dim,DENSE_MATRIX>::size(const size_t &n) const
 	{
-		if(n > dim || n == 0)
-		{
-			throw MatrixException("Invalid dimension in size().");
+	    if(n > dim || n == 0)
+	    {
+		    throw MatrixException("Invalid dimension in size().");
+	    }
+	    if(!submat)
+	    {
+		    return mSize[n-1];
 		}
-		return mSize[n-1];
+		else
+		{
+		    int N_i;
+		    if(mSpan[n-1].get_all())
+	        {
+	            N_i = mSize[n-1];
+	        }
+	        else
+	        {
+	            int r1 = mSpan[n-1].get_first();
+	            int r2 = mSpan[n-1].get_last();
+	            int r_inc = mSpan[n-1].get_inc();
+	            N_i = (r2 - r1)/r_inc + 1;
+	        }
+	        if(N_i < 0)
+	        {
+	            N_i = 0;
+	        }
+	        return ((size_t)N_i);
+		}
 	}
 	
 	template<class T, size_t dim>
-	void matrix<T,dim>::resize(const std::array<size_t,dim> &pSize)
+	void matrix<T,dim,DENSE_MATRIX>::resize(const std::array<size_t,dim> &pSize)
 	{
 		matrix<T,dim> B = *this;
 		std::array<size_t,dim> bakSize = mSize;
@@ -885,7 +1048,7 @@ namespace keycpp
 	    }
         mData.resize(total_size);
         
-		for(size_t index_old = 0; index_old < B.mData.size(); index_old++)
+		for(size_t index_old = 0; index_old < B.numel(); index_old++)
 		{
 		    size_t temp = index_old;
 		    std::array<size_t, dim> index_all;
@@ -921,12 +1084,12 @@ namespace keycpp
                 index_new += index_all[ii]*prod;
             }
             
-            mData[index_new] = B.mData[index_old];
+            mData[index_new] = B(index_old);
         }
 	}
 	
 	template<class T, size_t dim>
-	void matrix<T,dim>::resize(const matrix<size_t> &pSize)
+	void matrix<T,dim,DENSE_MATRIX>::resize(const matrix<size_t> &pSize)
 	{
 	    if(pSize.size(2) != dim)
 	    {
@@ -949,7 +1112,7 @@ namespace keycpp
 	    }
         mData.resize(total_size);
         
-		for(size_t index_old = 0; index_old < B.mData.size(); index_old++)
+		for(size_t index_old = 0; index_old < B.numel(); index_old++)
 		{
 		    size_t temp = index_old;
 		    std::array<size_t, dim> index_all;
@@ -985,12 +1148,12 @@ namespace keycpp
                 index_new += index_all[ii]*prod;
             }
             
-            mData[index_new] = B.mData[index_old];
+            mData[index_new] = B(index_old);
         }
 	}
        
     template<class T, size_t dim>
-    void matrix<T,dim>::resize(const size_t &pSize)
+    void matrix<T,dim,DENSE_MATRIX>::resize(const size_t &pSize)
     {
         static_assert(dim == 2,"This version of resize is not supported for dimensions greater than 2.");
         if(!this->isVec())
@@ -1014,7 +1177,7 @@ namespace keycpp
 
 	
 	template<class T, size_t dim>
-	bool matrix<T,dim>::empty() const
+	bool matrix<T,dim,DENSE_MATRIX>::empty() const
 	{
 		for(size_t ii = 0; ii < dim; ii++)
 		{
@@ -1028,7 +1191,7 @@ namespace keycpp
 	}
 	
 	template<class T, size_t dim>
-	matrix<T,2> matrix<T,dim>::row(const size_t &n)
+	matrix<T,2> matrix<T,dim,DENSE_MATRIX>::row(const size_t &n)
 	{
 	    static_assert(dim == 2,"This function is only available for matrices of dimension 2.");
 		if(n > mSize[0])
@@ -1041,12 +1204,12 @@ namespace keycpp
 		}
 		vector_k<T> temp(&mData[n],mSize[1],mSize[0]);
 		
-		matrix<T,2> Row(true, temp);
+		matrix<T,2> Row(true, temp, 1, mSize[1]);
 		return Row;
 	}
 
 	template<class T, size_t dim>
-	matrix<T,2> matrix<T,dim>::col(const size_t &n)
+	matrix<T,2> matrix<T,dim,DENSE_MATRIX>::col(const size_t &n)
 	{
 	    static_assert(dim == 2,"This function is only available for matrices of dimension 2.");
 		if(n > mSize[1])
@@ -1060,12 +1223,13 @@ namespace keycpp
 		
 		vector_k<T> temp(&mData[n*mSize[0]],mSize[0],1);
 		
-		matrix<T,2> Col(true, temp);
+		matrix<T,2> Col(true, temp, mSize[0], 1);
+		
 		return Col;
 	}
 
 	template<class T, size_t dim>
-	matrix<T,2> matrix<T,dim>::row(const size_t &n) const
+	matrix<T,2> matrix<T,dim,DENSE_MATRIX>::row(const size_t &n) const
 	{
 	    static_assert(dim == 2,"This function is only available for matrices of dimension 2.");
 		if(n > mSize[0] || n < 0)
@@ -1087,7 +1251,7 @@ namespace keycpp
 	}
 
 	template<class T, size_t dim>
-	matrix<T,2> matrix<T,dim>::col(const size_t &n) const
+	matrix<T,2> matrix<T,dim,DENSE_MATRIX>::col(const size_t &n) const
 	{
 	    static_assert(dim == 2,"This function is only available for matrices of dimension 2.");
 		if(n > mSize[1])
@@ -1098,7 +1262,7 @@ namespace keycpp
 		{
 			throw MatrixException("Cannot use method col() on empty matrix!");
 		}
-		matrix<T,2> Col(mSize[0]);
+		matrix<T,2> Col(mSize[0],1);
 
 		for(size_t ii = 0; ii < mSize[0]; ii++)
 		{
@@ -1109,13 +1273,127 @@ namespace keycpp
 	}
 	
 	template<class T, size_t dim>
-	void matrix<T,dim>::reserve(const size_t &N)
+	void matrix<T,dim,DENSE_MATRIX>::reserve(const size_t &N)
 	{
 		mData.reserve(N);
 	}
-
-
+	
     // Matrix Operations:
+
+	template<class V,class U>
+	matrix<decltype(std::declval<V>()*std::declval<U>()),2> operator*(const matrix<V,2> &A, const matrix<U,2> &B)
+	{
+		if(A.empty() || B.empty())
+		{
+			throw MatrixException("Cannot perform operation on empty matrix!");
+		}
+		if(A.size(2) != B.size(1))
+		{
+			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix multiplication!");
+		}
+		matrix<decltype(std::declval<V>()*std::declval<U>()),2> C(A.size(1),B.size(2));
+		for(size_t kk = 0; kk < B.size(2); kk++)
+		{
+			for(size_t ii = 0; ii < A.size(1); ii++)
+			{
+				C(ii,kk) = 0.0;
+				for(size_t jj = 0; jj < A.size(2); jj++)
+				{
+					C(ii,kk) += A(ii,jj)*B(jj,kk);
+				}
+			}
+		}
+		return C;
+	}
+	
+	template<>
+	inline matrix<double,2> operator*(const matrix<double,2> &A, const matrix<double,2> &B)
+	{
+		if(A.empty() || B.empty())
+		{
+			throw MatrixException("Cannot perform operation on empty matrix!");
+		}
+		if(A.size(2) != B.size(1))
+		{
+			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix multiplication!");
+		}
+		
+		matrix<double> C(A.size(1),B.size(2));
+		
+		if(A.get_inc() == 1 && B.get_inc() == 1 && !A.get_submat() && !B.get_submat())
+		{
+		    int m = (int)A.size(1);
+		    int k = (int)A.size(2);
+		    int n = (int)B.size(2);
+            char TRANS = 'N';
+            double ALPHA = 1.0;
+            int LDA = m;
+            int LDB = k;
+            double BETA = 0.0;
+            int LDC = m;
+
+            dgemm_(&TRANS, &TRANS, &m, &n, &k, &ALPHA, &A.mData[0], &LDA, &B.mData[0], &LDB, &BETA, &C.mData[0], &LDC);
+        }
+        else
+        {
+            for(size_t kk = 0; kk < B.size(2); kk++)
+		    {
+			    for(size_t ii = 0; ii < A.size(1); ii++)
+			    {
+				    C(ii,kk) = 0.0;
+				    for(size_t jj = 0; jj < A.size(2); jj++)
+				    {
+					    C(ii,kk) += A(ii,jj)*B(jj,kk);
+				    }
+			    }
+		    }
+        }
+		return C;
+    }
+	
+	template<>
+	inline matrix<std::complex<double>,2> operator*(const matrix<std::complex<double>,2> &A, const matrix<std::complex<double>,2> &B)
+	{
+		if(A.empty() || B.empty())
+		{
+			throw MatrixException("Cannot perform operation on empty matrix!");
+		}
+		if(A.size(2) != B.size(1))
+		{
+			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix multiplication!");
+		}
+		
+		matrix<std::complex<double>> C(A.size(1),B.size(2));
+		if(A.get_inc() == 1 && B.get_inc() == 1 && !A.get_submat() && !B.get_submat())
+		{
+		    int m = (int)A.size(1);
+		    int k = (int)A.size(2);
+		    int n = (int)B.size(2);
+            char TRANS = 'N';
+            std::complex<double> ALPHA = 1.0;
+            int LDA = m;
+            int LDB = k;
+            std::complex<double> BETA = 0.0;
+            int LDC = m;
+
+            zgemm_(&TRANS, &TRANS, &m, &n, &k, &ALPHA, &A.mData[0], &LDA, &B.mData[0], &LDB, &BETA, &C.mData[0], &LDC);
+        }
+        else
+        {
+            for(size_t kk = 0; kk < B.size(2); kk++)
+		    {
+			    for(size_t ii = 0; ii < A.size(1); ii++)
+			    {
+				    C(ii,kk) = 0.0;
+				    for(size_t jj = 0; jj < A.size(2); jj++)
+				    {
+					    C(ii,kk) += A(ii,jj)*B(jj,kk);
+				    }
+			    }
+		    }
+        }
+		return C;
+    }
     
 	template<class T, class U, size_t dim> matrix<decltype(std::declval<T>()*std::declval<U>()),dim> operator+(const matrix<T,dim>& A, const U& a)
 	{
@@ -1142,16 +1420,12 @@ namespace keycpp
 	template<class T, class U, size_t dim>
 	matrix<decltype(std::declval<T>()*std::declval<U>()),dim> operator+(const matrix<U,dim> &A, const matrix<T,dim> &B)
 	{
-		if(A.empty())
+		if(A.empty() || B.empty())
 		{
 			throw MatrixException("Cannot perform operation on empty matrix!");
 		}
 		for(int ii = 0; ii < dim; ii++)
 		{
-		    if(B.size(ii+1) <= 0)
-		    {
-		        throw MatrixException("Cannot perform operation on empty matrix!");
-		    }
 		    if(A.size(ii+1) != B.size(ii+1))
 		    {
 		        throw MatrixException("Matrix dimensions are not compatible in matrix-matrix addition!");
@@ -1191,19 +1465,15 @@ namespace keycpp
 	template<class T, class U, size_t dim>
 	matrix<decltype(std::declval<U>() - std::declval<T>()),dim> operator-(const matrix<U,dim> &A, const matrix<T,dim> &B)
 	{
-		if(A.empty())
+		if(A.empty() || B.empty())
 		{
 			throw MatrixException("Cannot perform operation on empty matrix!");
 		}
 		for(int ii = 0; ii < dim; ii++)
 		{
-		    if(B.size(ii+1) <= 0)
-		    {
-		        throw MatrixException("Cannot perform operation on empty matrix!");
-		    }
 		    if(A.size(ii+1) != B.size(ii+1))
 		    {
-		        throw MatrixException("Matrix dimensions are not compatible in matrix-matrix addition!");
+		        throw MatrixException("Matrix dimensions are not compatible in matrix-matrix subtraction!");
 		    }
 		}
 		matrix<decltype(std::declval<U>() - std::declval<T>()),dim> C;
@@ -1250,13 +1520,11 @@ namespace keycpp
 	
 	template<class T,size_t dim> matrix<T,dim> operator+(const matrix<T,dim>& A)
 	{
-		matrix<T,dim> B(A.size(1),A.size(2));
-		for(size_t ii = 0; ii < B.size(1); ii++)
+		matrix<T,dim> B;
+		B.resize(size(A));
+		for(size_t ii = 0; ii < B.numel(); ii++)
 		{
-			for(size_t jj = 0; jj < B.size(2); jj++)
-			{
-				B(ii,jj) = A(ii,jj);
-			}
+		    B(ii) = A(ii);
 		}
 		return B;
 	}
@@ -1265,7 +1533,6 @@ namespace keycpp
 	{
 		matrix<decltype(std::declval<T>()*std::declval<U>()),dim> B;
 		B.resize(size(A));
-		
 		for(size_t ii = 0; ii < A.numel(); ii++)
 		{
 			B(ii) = A(ii)/a;
@@ -1330,6 +1597,33 @@ namespace keycpp
 		    return T();
 		}
 	}
+	
+	template<class T, size_t dim>
+	std::ostream& operator<<(std::ostream &out, const matrix<T,dim> &A)
+	{
+	    static_assert((dim == 2 || dim == 1),"This function is only available for matrices of dimension 1 or 2.");
+	    
+	    if(dim == 2)
+	    {
+            for(size_t ii = 0; ii < A.size(1); ii++)
+            {
+                for(size_t jj = 0; jj < A.size(2); jj++)
+                {
+                    out << A(ii,jj) << " ";
+                }
+                out << std::endl;
+            }
+        }
+        else if(dim == 1)
+        {
+            for(size_t ii = 0; ii < A.size(1); ii++)
+            {
+                out << A(ii) << std::endl;
+            }
+        }
+        
+        return out;
+    }
 }
 
 #endif

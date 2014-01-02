@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1565" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1565" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1598" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1598" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
@@ -35,14 +35,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1566" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1566" bodyend="-1"/>
+        <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1599" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1599" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1564" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1563" bodyend="1567"/>
+    <location file="/media/Storage/Research/open_source/keycpp/include/keycpp.h" line="1597" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/keycpp.h" bodystart="1596" bodyend="1600"/>
     <listofallmembers>
       <member refid="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01keycpp_1_1matrix_3_01_t_00_012_01_4_01_4_1a4d549d1550d19b6be904aa97edd0cb79" prot="public" virt="non-virtual"><scope>boost::numeric::odeint::is_resizeable&lt; keycpp::matrix&lt; T, 2 &gt; &gt;</scope><name>type</name></member>
       <member refid="structboost_1_1numeric_1_1odeint_1_1is__resizeable_3_01keycpp_1_1matrix_3_01_t_00_012_01_4_01_4_1a4723f948d595b03a70ef4447e460ce54" prot="public" virt="non-virtual"><scope>boost::numeric::odeint::is_resizeable&lt; keycpp::matrix&lt; T, 2 &gt; &gt;</scope><name>value</name></member>

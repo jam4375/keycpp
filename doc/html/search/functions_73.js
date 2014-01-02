@@ -30,7 +30,7 @@ var searchData=
   ['set_5fzrange',['set_zrange',['../class_gnuplot.html#a7273f6a48024117b4d234d0251106e78',1,'Gnuplot']]],
   ['showonscreen',['showonscreen',['../class_gnuplot.html#a356d2faaa79f08d13fec9718b776b28d',1,'Gnuplot']]],
   ['sin',['sin',['../namespacekeycpp.html#a18a3ebbda3c25527ae280f5c5725ff4e',1,'keycpp::sin(const matrix&lt; std::complex&lt; T &gt;, dim &gt; &amp;A)'],['../namespacekeycpp.html#aedb234b850e34f9331031d39084fdbb0',1,'keycpp::sin(const matrix&lt; T, dim &gt; &amp;A)']]],
-  ['size',['size',['../namespacekeycpp.html#a3bffa5a846e181974d7bfe2ab41fe03a',1,'keycpp::size(const matrix&lt; T, dim &gt; &amp;A)'],['../namespacekeycpp.html#a2824156817719ffe96a842dd0ef27ae5',1,'keycpp::size(const matrix&lt; T &gt; &amp;A, const int &amp;dim)']]],
+  ['size',['size',['../namespacekeycpp.html#a3bffa5a846e181974d7bfe2ab41fe03a',1,'keycpp::size(const matrix&lt; T, dim &gt; &amp;A)'],['../namespacekeycpp.html#a737223780bc4bcda96ca2142a2ac3de9',1,'keycpp::size(const matrix&lt; T, dim &gt; &amp;A, const int &amp;n)']]],
   ['sprintf',['sprintf',['../namespacekeycpp.html#a9d70a761d33bbc2bdec6b4e0eb43d517',1,'keycpp']]],
   ['sqrt',['sqrt',['../namespacekeycpp.html#a28a50cdc90b4c6f56bf9a7c144c4ac95',1,'keycpp::sqrt(const matrix&lt; std::complex&lt; T &gt;, dim &gt; &amp;A)'],['../namespacekeycpp.html#a1c9bd9044cff082d4bb16bf36903ca2f',1,'keycpp::sqrt(const matrix&lt; T, dim &gt; &amp;A)']]],
   ['stdev',['stdev',['../namespacekeycpp.html#ada4b54cb009afd7217ea23f1778021c1',1,'keycpp::stdev(matrix&lt; T, 2 &gt; v1)'],['../namespacekeycpp.html#a3742d74c104a006f442440544dbc22e8',1,'keycpp::stdev(matrix&lt; std::complex&lt; double &gt;, 2 &gt; v1)']]],

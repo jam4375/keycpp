@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.4">
+  <compounddef id="classkeycpp_1_1span" kind="class" prot="public">
+    <compoundname>keycpp::span</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classkeycpp_1_1span_1ad8ea92382ae3f9bd9aaab26c261b3570" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t keycpp::span::m_first</definition>
+        <argsstring></argsstring>
+        <name>m_first</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="51" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classkeycpp_1_1span_1a8bbe66a711361247cb72429b9d94f771" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t keycpp::span::m_last</definition>
+        <argsstring></argsstring>
+        <name>m_last</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="51" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classkeycpp_1_1span_1aeea66da156485472b71791d9c59ac120" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int keycpp::span::m_inc</definition>
+        <argsstring></argsstring>
+        <name>m_inc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="52" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classkeycpp_1_1span_1ab7d8ef38751a5aebcb6c6125f9f65883" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool keycpp::span::all</definition>
+        <argsstring></argsstring>
+        <name>all</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="53" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkeycpp_1_1span_1a279b79d875c36e967cec45e64be7b28f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>keycpp::span::span</definition>
+        <argsstring>()</argsstring>
+        <name>span</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="56" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1span_1ad14b1ff84f399e89e68e585ef0df5e42" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>keycpp::span::span</definition>
+        <argsstring>(size_t first, size_t last)</argsstring>
+        <name>span</name>
+        <param>
+          <type>size_t</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>last</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="57" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1span_1aa14489067efe56804337de9aa54db0fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>keycpp::span::span</definition>
+        <argsstring>(size_t first, int increment, size_t last)</argsstring>
+        <name>span</name>
+        <param>
+          <type>size_t</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>increment</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>last</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="58" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1span_1a2d08cfa7acc311ce4a84b643552b3c3d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t keycpp::span::get_first</definition>
+        <argsstring>() const </argsstring>
+        <name>get_first</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="60" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="60" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1span_1a79ff6d6e90e6b788d795ff7f58693233" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t keycpp::span::get_last</definition>
+        <argsstring>() const </argsstring>
+        <name>get_last</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="61" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1span_1a889525badfe9ffd0e591b311a2b1272f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int keycpp::span::get_inc</definition>
+        <argsstring>() const </argsstring>
+        <name>get_inc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="62" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeycpp_1_1span_1aacf4341d384dc0a5d5258feb626d6d0b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool keycpp::span::get_all</definition>
+        <argsstring>() const </argsstring>
+        <name>get_all</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="63" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="63" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/media/Storage/Research/open_source/keycpp/include/Matrix.h" line="49" column="1" bodyfile="/media/Storage/Research/open_source/keycpp/include/Matrix.h" bodystart="48" bodyend="64"/>
+    <listofallmembers>
+      <member refid="classkeycpp_1_1span_1ab7d8ef38751a5aebcb6c6125f9f65883" prot="private" virt="non-virtual"><scope>keycpp::span</scope><name>all</name></member>
+      <member refid="classkeycpp_1_1span_1aacf4341d384dc0a5d5258feb626d6d0b" prot="public" virt="non-virtual"><scope>keycpp::span</scope><name>get_all</name></member>
+      <member refid="classkeycpp_1_1span_1a2d08cfa7acc311ce4a84b643552b3c3d" prot="public" virt="non-virtual"><scope>keycpp::span</scope><name>get_first</name></member>
+      <member refid="classkeycpp_1_1span_1a889525badfe9ffd0e591b311a2b1272f" prot="public" virt="non-virtual"><scope>keycpp::span</scope><name>get_inc</name></member>
+      <member refid="classkeycpp_1_1span_1a79ff6d6e90e6b788d795ff7f58693233" prot="public" virt="non-virtual"><scope>keycpp::span</scope><name>get_last</name></member>
+      <member refid="classkeycpp_1_1span_1ad8ea92382ae3f9bd9aaab26c261b3570" prot="private" virt="non-virtual"><scope>keycpp::span</scope><name>m_first</name></member>
+      <member refid="classkeycpp_1_1span_1aeea66da156485472b71791d9c59ac120" prot="private" virt="non-virtual"><scope>keycpp::span</scope><name>m_inc</name></member>
+      <member refid="classkeycpp_1_1span_1a8bbe66a711361247cb72429b9d94f771" prot="private" virt="non-virtual"><scope>keycpp::span</scope><name>m_last</name></member>
+      <member refid="classkeycpp_1_1span_1a279b79d875c36e967cec45e64be7b28f" prot="public" virt="non-virtual"><scope>keycpp::span</scope><name>span</name></member>
+      <member refid="classkeycpp_1_1span_1ad14b1ff84f399e89e68e585ef0df5e42" prot="public" virt="non-virtual"><scope>keycpp::span</scope><name>span</name></member>
+      <member refid="classkeycpp_1_1span_1aa14489067efe56804337de9aa54db0fd" prot="public" virt="non-virtual"><scope>keycpp::span</scope><name>span</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
