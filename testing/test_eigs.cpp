@@ -12,7 +12,9 @@ BOOST_AUTO_TEST_CASE(eigs_test)
         std::complex<double> i = std::complex<double>(0.0,1.0);
         
         int n = 100;
-        keycpp::matrix<std::complex<double>> A = keycpp::rand(n,n) + i*keycpp::rand(n,n);
+        std::complex<double> val = 10.0*i + 10.0;
+        keycpp::matrix<std::complex<double>> A = keycpp::eye<std::complex<double> >(n);
+        A(0,0) = val;
 
         int nev = 3; // The number of values to calculate
 

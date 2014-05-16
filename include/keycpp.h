@@ -44,38 +44,6 @@ namespace keycpp
 	static constexpr double Inf = std::numeric_limits<double>::infinity();
 	static constexpr double NaN = std::numeric_limits<double>::quiet_NaN();
 }
-
-//#include "SparseMatrix.h"
-
-namespace keycpp
-{
-    namespace helper
-    {
-        #include "IML/gmres.h"
-    }
-
-    template<class T>
-    class nullPreconditioner
-    {
-        public:
-            matrix<T>& solve(matrix<T> &y)
-            {
-                return y;
-            }
-            matrix<T>& trans_solve(matrix<T> &y)
-            {
-                return y;
-            }
-            const matrix<T>& solve(const matrix<T> &y) const
-            {
-                return y;
-            }
-            const matrix<T>& trans_solve(const matrix<T> &y) const
-            {
-                return y;
-            }
-    };
-}
 	
 namespace keycpp
 {
@@ -1667,7 +1635,7 @@ namespace keycpp
 	template<class T>
 	matrix<T> fftshift(matrix<T> A, size_t dim = 0)
 	{
-	    if(dim == 0 && !A.isVec() || dim > 2)
+	    if((dim == 0 && !A.isVec()) || dim > 2)
 	    {
 	        throw KeyCppException("Error in fftshift!");
 	    }
@@ -1691,7 +1659,6 @@ namespace keycpp
 	    }
 	    else
 	    {
-	        size_t N = A.size(dim);
 	        matrix<T> B(A.size(1),A.size(2));
 	        if(dim == 1)
 	        {
@@ -1714,7 +1681,7 @@ namespace keycpp
 	template<class T>
 	matrix<T> ifftshift(matrix<T> A, size_t dim = 0)
 	{
-	    if(dim == 0 && !A.isVec() || dim > 2)
+	    if((dim == 0 && !A.isVec()) || dim > 2)
 	    {
 	        throw KeyCppException("Error in ifftshift!");
 	    }
@@ -1738,7 +1705,6 @@ namespace keycpp
 	    }
 	    else
 	    {
-	        size_t N = A.size(dim);
 	        matrix<T> B(A.size(1),A.size(2));
 	        if(dim == 1)
 	        {

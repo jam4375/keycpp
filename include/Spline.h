@@ -33,20 +33,20 @@ namespace keycpp
 	class Spline
 	{
 	private:
+		int n;
+		
 		matrix<U,2> x;
 		matrix<T,2> y;
 
-		matrix<T,2> s;
-		matrix<T,2> h;
-		matrix<T,2> f;
+		matrix<T,2> s{};
+		matrix<T,2> h{};
+		matrix<T,2> f{};
 
-		matrix<T,2> tri; // tridiagonal array
-		matrix<T,2> a;
-		matrix<T,2> b;
-		matrix<T,2> c;
-		matrix<T,2> d;
-
-		int n;
+		matrix<T,2> tri{}; // tridiagonal array
+		matrix<T,2> a{};
+		matrix<T,2> b{};
+		matrix<T,2> c{};
+		matrix<T,2> d{};
 	
 		int find_spline();  // create the tridiagonal matrix
 		int tridiagonal();  // solve the tridiagonal matrix and find coefficients

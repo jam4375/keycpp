@@ -35,8 +35,7 @@ BOOST_AUTO_TEST_CASE(fft_test)
         keycpp::matrix<double,2> t = keycpp::linspace(0.0,(double)(L-1),L)*T;
         keycpp::matrix<double,2> y = keycpp::sin(2.0*keycpp::pi*t);
         keycpp::matrix<std::complex<double>,2> Y = keycpp::ifft(keycpp::fft(y));
-        
-        BOOST_CHECK(keycpp::norm(keycpp::abs(Y-y)) < 1.0e-6);
+        BOOST_CHECK(keycpp::norm(keycpp::abs(Y-y)) < 1.0e-5);
     }
 }
 

@@ -89,9 +89,9 @@ If writing parallel applications, especially using OpenMP, it is highly recommen
 \includelineno output.txt
 \n
 <b>\c Plot Output</b>
-![First plot from the example program.](plot1.png)
+![First plot from the example program.](../../examples/plot1.png)
 \n
-![Second plot from the example program.](plot2.png)
+![Second plot from the example program.](../../examples/plot2.png)
 \n
 
 # MATLAB/Octave to KeyCpp Conversion Chart

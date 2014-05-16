@@ -11,7 +11,7 @@ else
         LIBS=-lm -lblas -llapack -larpack
 endif
 
-_DEPS = Figure.h Spline.h keycpp.h vector_k.h Matrix.h SparseMatrix.h znaupd.h kiss_fft.h gnuplot_i.h
+_DEPS = Figure.h Spline.h keycpp.h vector_k.h Matrix.h znaupd.h kiss_fft.h gnuplot_i.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ = example.o
