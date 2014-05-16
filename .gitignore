@@ -40,6 +40,6 @@ Thumbs.db
 ##################
 example
 lib*.a
-./doc/html/*
-./doc/latex/*
-./doc/xml/*
+/doc/html/*
+/doc/latex/*
+/doc/xml/*
