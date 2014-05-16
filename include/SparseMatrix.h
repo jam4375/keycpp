@@ -8,6 +8,7 @@
 #include <vector>
 #include <stdarg.h>
 #include "vector_k.h"
+#include "Matrix.h"
 #include "Eigen/Sparse"
 
 #define DENSE_MATRIX 0
@@ -103,8 +104,8 @@ namespace keycpp
 	    template<class V>
 	    friend matrix<V,2,SPARSE_MATRIX> transpose(const matrix<V,2,SPARSE_MATRIX> &A);
 	    friend void mv(int n, std::complex<double> *in, std::complex<double> *out, const matrix<std::complex<double>,2,SPARSE_MATRIX> &A);
-	    friend void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, std::string which, const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, const matrix<std::complex<double>,2,SPARSE_MATRIX> &B);
-	    friend void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::string which, const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, const matrix<std::complex<double>,2,SPARSE_MATRIX> &B);
+	    friend void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, std::string which, const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, const matrix<std::complex<double>,2,SPARSE_MATRIX> &B, eigs_opt *opt);
+	    friend void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::string which, const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, const matrix<std::complex<double>,2,SPARSE_MATRIX> &B, eigs_opt *opt);
         
         operator T()
         {

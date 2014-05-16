@@ -34,10 +34,13 @@ namespace keycpp
 	            const std::complex<double> *A, const int *LDA, const std::complex<double> *X,
 	            const int *INCX, const std::complex<double> *BETA, std::complex<double> *Y, const int *INCY);
 	}
+
+    class eigs_opt;
 	
 	std::string sprintf(const std::string &fmt, ...);
     template<class T> void disp(const T &x, std::ostream& outStream = std::cout);
 	template<class T> matrix<T,2> max(const matrix<T,2> &A);
+	template<class T, size_t dim> matrix<size_t,2> size(const matrix<T,dim> &A);
 
 	class MatrixException : public std::runtime_error
 	{
@@ -98,9 +101,17 @@ namespace keycpp
         matrix<T,dim>& operator-=(const matrix<U,dim> &B);
 		bool operator!=(const matrix<T,dim> &B) const;
 		bool operator==(const matrix<T,dim> &B) const;
+		template<class U>
+		matrix<decltype(std::declval<T>()*std::declval<U>()),dim>& trans_mult(const matrix<U,dim> &v) const;
         template<class U>
 		matrix<T,dim>& operator=(const matrix<U,dim> &v);
+        template<class U>
+		matrix<T,dim>& operator=(const vector_k<U> &v);
+		matrix<T,dim>& operator=(const T &a);
+		template<class U>
+		matrix<T,dim>& operator=(const U &a);
 		matrix<T,dim>& operator=(const matrix<T,dim> &v);
+		matrix<T,dim>& operator=(const vector_k<T> &v);
 		size_t size(const size_t &n) const;
 		void resize(const std::array<size_t,dim> &pSize);
 		void resize(const matrix<size_t,2> &pSize);
@@ -161,8 +172,8 @@ namespace keycpp
         friend double norm(const matrix<double> &A_in, std::string method);
         friend void mv_special(int n, std::complex<double> *in, std::complex<double> *out, const matrix<std::complex<double>> &A, matrix<std::complex<double>> &Y, int *iw);
         friend void mv(int n, std::complex<double> *in, std::complex<double> *out, const matrix<std::complex<double>> &A);
-        friend void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, std::complex<double> sigma, const matrix<std::complex<double>> &A);
-        friend void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::complex<double> sigma, const matrix<std::complex<double>> &A);
+        friend void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, std::complex<double> sigma, const matrix<std::complex<double>> &A, eigs_opt *opt);
+        friend void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::complex<double> sigma, const matrix<std::complex<double>> &A, eigs_opt *opt);
 		
         operator vector_k<T>()
         {
@@ -920,6 +931,35 @@ namespace keycpp
 		}
 		return true;
 	}
+	
+	
+	template<class T, size_t dim>
+	template<class U>
+	matrix<decltype(std::declval<T>()*std::declval<U>()),dim>& matrix<T,dim,DENSE_MATRIX>::trans_mult(const matrix<U,dim> &B) const
+	{
+	    static_assert(dim == 2, "This method is only supported for matrices of dimension 2.");
+		if(this->empty() || B.empty())
+		{
+			throw MatrixException("Cannot perform operation on empty matrix!");
+		}
+		if(this->size(1) != B.size(1))
+		{
+			throw MatrixException("Matrix dimensions are not compatible in matrix-matrix multiplication!");
+		}
+		matrix<decltype(std::declval<T>()*std::declval<U>()),2> C(this->size(2),B.size(2));
+		for(size_t kk = 0; kk < B.size(2); kk++)
+		{
+			for(size_t ii = 0; ii < this->size(2); ii++)
+			{
+				C(ii,kk) = 0.0;
+				for(size_t jj = 0; jj < this->size(1); jj++)
+				{
+					C(ii,kk) += this->operator()(jj,ii)*B(jj,kk);
+				}
+			}
+		}
+		return C;
+	}
 
 	template<class T, size_t dim>
 	bool matrix<T,dim,DENSE_MATRIX>::operator!=(const matrix<T,dim> &B) const
@@ -931,9 +971,98 @@ namespace keycpp
     template<class U>
     matrix<T,dim>& matrix<T,dim,DENSE_MATRIX>::operator=(const matrix<U,dim,DENSE_MATRIX> &v)
     {
+        if(this->empty())
+        {
+            matrix<size_t> temp(dim);
+            for(size_t ii = 0; ii < dim; ii++)
+            {
+                temp(ii) = v.size(ii+1);
+            }
+            resize(temp);
+        }
         if(!submat && !v.get_submat())
         {
-            if(mSize != v.get_mSize() && !(numel() == v.numel() && isVec() && v.isVec()))
+            if(mSize != v.get_mSize() && !(numel() == v.numel() && isVec() == v.isVec()))
+            {
+                resize(v.get_mSize());
+            }
+            for(size_t ii = 0; ii < v.numel(); ii++)
+            {
+                mData[ii] = v(ii);
+            }
+        }
+        else
+        {
+            for(size_t ii = 0; ii < dim; ii++)
+            {
+                if(this->size(ii+1) != v.size(ii+1))
+                {
+                    throw MatrixException("Size of submatrix is not compatible in assignment!");
+                }
+            }
+            for(size_t ii = 0; ii < v.numel(); ii++)
+            {
+                this->operator()(ii) = v(ii);
+            }
+        }
+        
+        return *this;
+    }
+
+    template<class T, size_t dim>
+    template<class U>
+    matrix<T,dim>& matrix<T,dim,DENSE_MATRIX>::operator=(const vector_k<U> &v)
+    {
+        if(this->empty())
+        {
+            resize(v.size());
+        }
+        if(!submat)
+        {
+            if(numel() != v.size())
+            {
+                resize(v.size());
+            }
+            for(size_t ii = 0; ii < v.size(); ii++)
+            {
+                mData[ii] = v[ii];
+            }
+        }
+        else
+        {
+            if(this->numel() != v.size())
+            {
+                throw MatrixException("Size of submatrix is not compatible in assignment!");
+            }
+            
+            for(size_t ii = 0; ii < v.size(); ii++)
+            {
+                this->operator()(ii) = v[ii];
+            }
+        }
+        
+        return *this;
+    }
+    
+    template<class T, size_t dim>
+    matrix<T,dim>& matrix<T,dim,DENSE_MATRIX>::operator=(const matrix<T,dim,DENSE_MATRIX> &v)
+    {
+        if(this == &v)
+        {
+            return *this;
+        }
+        if(this->empty())
+        {
+            matrix<size_t> temp(dim);
+            for(size_t ii = 0; ii < dim; ii++)
+            {
+                temp(ii) = v.size(ii+1);
+            }
+            resize(temp);
+        }
+        if(!submat && !v.get_submat())
+        {
+            if(mSize != v.get_mSize() && !(numel() == v.numel() && isVec() == v.isVec()))
             {
                 resize(v.get_mSize());
             }
@@ -961,35 +1090,94 @@ namespace keycpp
     }
     
     template<class T, size_t dim>
-    matrix<T,dim>& matrix<T,dim,DENSE_MATRIX>::operator=(const matrix<T,dim,DENSE_MATRIX> &v)
+    matrix<T,dim>& matrix<T,dim,DENSE_MATRIX>::operator=(const vector_k<T> &v)
     {
-        if(this == &v)
+        if(this->empty())
         {
-            return *this;
+            resize(v.size());
         }
-        if(!submat && !v.get_submat())
+        if(!submat)
         {
-            if(mSize != v.get_mSize() && !(numel() == v.numel() && isVec() && v.isVec()))
+            if(numel() != v.size())
             {
-                resize(v.get_mSize());
+                resize(v.size());
             }
-            for(size_t ii = 0; ii < v.numel(); ii++)
+            for(size_t ii = 0; ii < v.size(); ii++)
             {
-                mData[ii] = v(ii);
+                mData[ii] = v[ii];
             }
         }
         else
         {
+            if(this->numel() != v.size())
+            {
+                throw MatrixException("Size of submatrix is not compatible in assignment!");
+            }
+            
+            for(size_t ii = 0; ii < v.size(); ii++)
+            {
+                this->operator()(ii) = v[ii];
+            }
+        }
+        
+        return *this;
+    }
+    
+    template<class T, size_t dim>
+    template<class U>
+    matrix<T,dim>& matrix<T,dim,DENSE_MATRIX>::operator=(const U &a)
+    {
+        if(this->empty())
+        {
+            matrix<size_t> temp(dim);
             for(size_t ii = 0; ii < dim; ii++)
             {
-                if(this->size(ii+1) != v.size(ii+1))
-                {
-                    throw MatrixException("Size of submatrix is not compatible in assignment!");
-                }
+                temp(ii) = 1;
             }
-            for(size_t ii = 0; ii < v.numel(); ii++)
+            resize(temp);
+        }
+        if(!submat)
+        {
+            for(size_t ii = 0; ii < numel(); ii++)
             {
-                this->operator()(ii) = v(ii);
+                mData[ii] = a;
+            }
+        }
+        else
+        {
+            for(size_t ii = 0; ii < numel(); ii++)
+            {
+                this->operator()(ii) = a;
+            }
+        }
+        
+        return *this;
+    }
+    
+    template<class T, size_t dim>
+    matrix<T,dim>& matrix<T,dim,DENSE_MATRIX>::operator=(const T &a)
+    {
+        if(this->empty())
+        {
+            matrix<size_t> temp(dim);
+            for(size_t ii = 0; ii < dim; ii++)
+            {
+                temp(ii) = 1;
+            }
+            resize(temp);
+        }
+        if(!submat)
+        {
+            for(size_t ii = 0; ii < numel(); ii++)
+            {
+                mData[ii] = a;
+            }
+        }
+        else
+        {
+            for(size_t ii = 0; ii < numel(); ii++)
+            {
+                this->operator()(ii) = a;
             }
         }
         

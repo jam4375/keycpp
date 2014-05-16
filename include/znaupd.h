@@ -1,10 +1,162 @@
 #include <cmath>
 #include <complex>
 #include <vector>
-#include "Eigen/Sparse"
+#include <sstream>
+#include "Matrix.h"
 
 namespace keycpp
 {
+	class eigs_opt
+	{
+	    public:
+	        int maxit{300};
+	        matrix<std::complex<double>> v0{};
+	};
+	
+	class znaupdException : public std::runtime_error
+	{
+		public:
+		    int code;
+			znaupdException(int ii) : std::runtime_error(""), code(ii), m_what("")
+			{
+                switch(code)
+                {
+                    case 1:
+                        m_what = "\nMaximum number of iterations taken. All possible eigenvalues of OP has been found. IPARAM(5) returns the number of wanted converged Ritz values.";
+                        break;
+                    case 2:
+                        m_what = "\nNo longer an informational error. Deprecated starting with release 2 of ARPACK.";
+                        break;
+                    case 3:
+                        m_what = "\nNo shifts could be applied during a cycle of the Implicitly restarted Arnoldi iteration. One possibility is to increase the size of NCV relative to NEV.";
+                        break;
+                    case -1:
+                        m_what = "\nN must be positive.";
+                        break;
+                    case -2:
+                        m_what = "\nNEV must be positive.";
+                        break;
+                    case -3:
+                        m_what = "\nNCV-NEV >= 2 and less than or equal to N.";
+                        break;
+                    case -4:
+                        m_what = "\nThe maximum number of Arnoldi update iteration must be greater than zero.";
+                        break;
+                    case -5:
+                        m_what = "\nWHICH must be one of 'LM', 'SM', 'LR', 'SR', 'LI', 'SI'";
+                        break;
+                    case -6:
+                        m_what = "\nBMAT must be one of 'I' or 'G'.";
+                        break;
+                    case -7:
+                        m_what = "\nLength of private work array is not sufficient.";
+                        break;
+                    case -8:
+                        m_what = "\nError return from LAPACK eigenvalue calculation;";
+                        break;
+                    case -9:
+                        m_what = "\nStarting vector is zero.";
+                        break;
+                    case -10:
+                        m_what = "\nIPARAM(7) must be 1,2,3.";
+                        break;
+                    case -11:
+                        m_what = "\nIPARAM(7) = 1 and BMAT = 'G' are incompatable.";
+                        break;
+                    case -12:
+                        m_what = "\nIPARAM(1) must be equal to 0 or 1.";
+                        break;
+                    case -9999:
+                        m_what = "\nCould not build an Arnoldi factorization. User input error highly likely.  Please check actual array dimensions and layout. IPARAM(5) returns the size of the current Arnoldi factorization.";
+                        break;
+                    default:
+                        std::stringstream sstm;
+                        sstm << "\nUnknown error in znaupd with info = " << code;
+                        m_what = sstm.str();
+                        break;
+                }
+			}
+			
+            virtual ~znaupdException() throw () {}
+			
+	        const char* what() const throw()
+	        {
+		        return m_what.c_str();
+	        }
+	        
+	    private:
+		    std::string m_what;
+	};
+	
+	class zneupdException : public std::runtime_error
+	{
+		public:
+		    int code;
+			zneupdException(int ii) : std::runtime_error(""), code(ii), m_what("")
+			{
+                switch(code)
+                {
+                    case 1:
+                        m_what = "\nThe Schur form computed by LAPACK routine csheqr could not be reordered by LAPACK routine ztrsen. Re-enter subroutine ZNEUPD with IPARAM(5)=NCV and increase the size of the array D to have dimension at least dimension NCV and allocate at least NCV columns for Z. NOTE: Not necessary if Z and V share the same space. Please notify the authors if this error occurs.";
+                        break;
+                    case -1:
+                        m_what = "\nN must be positive.";
+                        break;
+                    case -2:
+                        m_what = "\nNEV must be positive.";
+                        break;
+                    case -3:
+                        m_what = "\nNCV-NEV >= 2 and less than or equal to N.";
+                        break;
+                    case -5:
+                        m_what = "\nWHICH must be one of 'LM', 'SM', 'LR', 'SR', 'LI', 'SI'";
+                        break;
+                    case -6:
+                        m_what = "\nBMAT must be one of 'I' or 'G'.";
+                        break;
+                    case -7:
+                        m_what = "\nLength of private work WORKL array is not sufficient.";
+                        break;
+                    case -8:
+                        m_what = "\nError return from LAPACK eigenvalue calculation. This should never happened.";
+                        break;
+                    case -9:
+                        m_what = "\nError return from calculation of eigenvectors. Informational error from LAPACK routine ztrevc.";
+                        break;
+                    case -10:
+                        m_what = "\nIPARAM(7) must be 1,2,3";
+                        break;
+                    case -11:
+                        m_what = "\nIPARAM(7) = 1 and BMAT = 'G' are incompatible.";
+                        break;
+                    case -12:
+                        m_what = "\nHOWMNY = 'S' not yet implemented";
+                        break;
+                    case -13:
+                        m_what = "\nHOWMNY must be one of 'A' or 'P' if RVEC = .true.";
+                        break;
+                    case -14:
+                        m_what = "\nZNAUPD did not find any eigenvalues to sufficient accuracy.";
+                        break;
+                    default:
+                        std::stringstream sstm;
+                        sstm << "\nUnknown error in zneupd with info = " << code;
+                        m_what = sstm.str();
+                        break;
+                }
+			}
+			
+            virtual ~zneupdException() throw () {}
+			
+	        const char* what() const throw()
+	        {
+		        return m_what.c_str();
+	        }
+	        
+	    private:
+		    std::string m_what;
+	};
+
     extern "C" void znaupd_(int *ido, char *bmat, int *n, char *which,
 			    int *nev, double *tol, std::complex<double> *resid,
 			    int *ncv, std::complex<double> *v, int *ldv,
@@ -21,6 +173,7 @@ namespace keycpp
 			    int *ipntr, std::complex<double> *workd,
 			    std::complex<double> *workl, int *lworkl,
 			    double *rwork, int *ierr);
+			    
 
     inline void mv(int n, std::complex<double> *in, std::complex<double> *out, const matrix<std::complex<double>> &A)
     {
@@ -35,7 +188,7 @@ namespace keycpp
         zgemv_(&TRANS, &m, &n, &ALPHA, &A.mData[0], &LDA, &in[0],&INCX, &BETA, &out[0], &INCb);
     }
     
-    inline void mv(int n, std::complex<double> *in, std::complex<double> *out, const matrix<std::complex<double>,2,SPARSE_MATRIX> &A)
+    /*inline void mv(int n, std::complex<double> *in, std::complex<double> *out, const matrix<std::complex<double>,2,SPARSE_MATRIX> &A)
     {
         for(size_t ii = 0; ii < (size_t)n; ii++)
         {
@@ -49,7 +202,7 @@ namespace keycpp
                 out[A.rowInd[ii]] += A.mData[ii]*in[jj];
             }
         }
-    }
+    }*/
 
     inline void mv_special(int n, std::complex<double> *in, std::complex<double> *out, const matrix<std::complex<double>> &A, matrix<std::complex<double>> &Y, int *iw)
     {
@@ -78,7 +231,7 @@ namespace keycpp
         }
     }
 
-    inline void mv_special(int n, std::complex<double> *in, std::complex<double> *out, const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, Eigen::SparseLU<Eigen::SparseMatrix<std::complex<double>, Eigen::ColMajor>, Eigen::COLAMDOrdering<int> > &solver)
+    /*inline void mv_special(int n, std::complex<double> *in, std::complex<double> *out, const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, Eigen::SparseLU<Eigen::SparseMatrix<std::complex<double>, Eigen::ColMajor>, Eigen::COLAMDOrdering<int> > &solver)
     {
         vector_k<std::complex<double>> temp(in,n,1);
         matrix<std::complex<double>> temp2(true,temp,n,1);
@@ -95,11 +248,22 @@ namespace keycpp
         {
             out[ii] = x[ii];
         }
-    }
+    }*/
 
     template<int type>
-    void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, std::string which, const matrix<std::complex<double>,2,type> &A)
+    void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, std::string which, const matrix<std::complex<double>,2,type> &A, eigs_opt *opt_base)
     {
+        eigs_opt opt;
+        
+        if(opt_base == NULL)
+        {
+            opt = eigs_opt();
+        }
+        else
+        {
+            opt = *opt_base;
+        }
+        
         int ido = 0;
 
         char bmat[2] = "I";
@@ -123,7 +287,7 @@ namespace keycpp
         int *iparam;
         iparam = new int[11];
         iparam[0] = 1;
-        iparam[2] = 30*n;
+        iparam[2] = opt.maxit;
         iparam[6] = 1;
 
         int *ipntr;
@@ -138,8 +302,17 @@ namespace keycpp
 
         double *rwork;
         rwork = new double[ncv];
+        
 
         int info = 0;
+        if(opt.v0.numel() == (size_t)n)
+        {
+            info = 1;
+            for(int ii = 0; ii < n; ii++)
+            {
+                resid[ii] = opt.v0(ii);
+            }
+        }
 
         int rvec = 0;
 
@@ -217,7 +390,13 @@ namespace keycpp
                     }
                 }
             }
-
+            
+            opt.v0 = matrix<std::complex<double>>(n);
+            for(int ii = 0; ii < n; ii++)
+            {
+                opt.v0(ii) = resid[ii];
+            }
+            
             delete [] rwork;
             delete [] workev;
             delete [] resid;
@@ -232,8 +411,19 @@ namespace keycpp
     }
 
     template<int type>
-    void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::string which, const matrix<std::complex<double>,2,type> &A)
+    void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::string which, const matrix<std::complex<double>,2,type> &A, eigs_opt *opt_base)
     {
+        eigs_opt opt;
+        
+        if(opt_base == NULL)
+        {
+            opt = eigs_opt();
+        }
+        else
+        {
+            opt = *opt_base;
+        }
+        
         int ido = 0;
         char bmat[2] = "I";
         //char which[3] = "SM";
@@ -249,10 +439,11 @@ namespace keycpp
         std::complex<double> *v;
         int ldv = n;
         v = new std::complex<double>[ldv*ncv];
+
         int *iparam;
         iparam = new int[11];
         iparam[0] = 1;
-        iparam[2] = 30*n;
+        iparam[2] = opt.maxit;
         iparam[6] = 1;
         int *ipntr;
         ipntr = new int[14];
@@ -264,6 +455,14 @@ namespace keycpp
         double *rwork;
         rwork = new double[ncv];
         int info = 0;
+        if(opt.v0.numel() == (size_t)n)
+        {
+            info = 1;
+            for(int ii = 0; ii < n; ii++)
+            {
+                resid[ii] = opt.v0(ii);
+            }
+        }
         int rvec = 1;  // Changed from above
         int *select;
         select = new int[ncv];
@@ -351,6 +550,12 @@ namespace keycpp
                     }
                 }
             }
+            
+            opt.v0 = matrix<std::complex<double>>(n);
+            for(int ii = 0; ii < n; ii++)
+            {
+                opt.v0(ii) = resid[ii];
+            }
 
             delete [] rwork;
             delete [] workev;
@@ -365,7 +570,7 @@ namespace keycpp
         }
     }
 
-    inline matrix<std::complex<double>,2> eigs(const matrix<std::complex<double>,2,DENSE_MATRIX> &A, size_t k = 6, std::string sigma = "LM", matrix<std::complex<double>,2> *vr_return = NULL)
+    inline matrix<std::complex<double>,2> eigs(const matrix<std::complex<double>,2,DENSE_MATRIX> &A, size_t k = 6, std::string sigma = "LM", matrix<std::complex<double>,2> *vr_return = NULL, eigs_opt *opt = NULL)
     {
         if(A.empty())
         {
@@ -392,17 +597,17 @@ namespace keycpp
         if(vr_return == NULL)
         {
             int n = A.size(1);
-            znaupd(n, k, eig_val, sigma, A);
+            znaupd(n, k, eig_val, sigma, A, opt);
         }
         else
         {
             int n = A.size(1);
-            znaupd(n, k, eig_val, *vr_return, sigma, A);
+            znaupd(n, k, eig_val, *vr_return, sigma, A, opt);
         }
         return eig_val;
     }
 
-    inline matrix<std::complex<double>,2> eigs(const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, size_t k = 6, std::string sigma = "LM", matrix<std::complex<double>,2> *vr_return = NULL)
+    /*inline matrix<std::complex<double>,2> eigs(const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, size_t k = 6, std::string sigma = "LM", matrix<std::complex<double>,2> *vr_return = NULL, eigs_opt *opt = NULL)
     {
         if(A.empty())
         {
@@ -423,18 +628,29 @@ namespace keycpp
         if(vr_return == NULL)
         {
             int n = A.size(1);
-            znaupd(n, k, eig_val, sigma, A);
+            znaupd(n, k, eig_val, sigma, A, opt);
         }
         else
         {
             int n = A.size(1);
-            znaupd(n, k, eig_val, *vr_return, sigma, A);
+            znaupd(n, k, eig_val, *vr_return, sigma, A, opt);
         }
         return eig_val;
-    }
+    }*/
 
-    inline void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, std::complex<double> sigma, const matrix<std::complex<double>> &A)
+    inline void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, std::complex<double> sigma, const matrix<std::complex<double>> &A, eigs_opt *opt_base)
     {
+        eigs_opt opt;
+        
+        if(opt_base == NULL)
+        {
+            opt = eigs_opt();
+        }
+        else
+        {
+            opt = *opt_base;
+        }
+        
         int ido = 0;
 
         char bmat[2] = "I";
@@ -467,7 +683,7 @@ namespace keycpp
         iparam = new int[11]; /* An array used to pass information to the routines
         about their functional modes. */
         iparam[0] = 1;   // Specifies the shift strategy (1->exact)
-        iparam[2] = 30*n; // Maximum number of iterations
+        iparam[2] = opt.maxit; // Maximum number of iterations
         iparam[6] = 3;   /* Sets the mode of znaupd.
         1 is exact shifting,
         2 is user-supplied shifts,
@@ -492,6 +708,14 @@ namespace keycpp
 
         int info = 0; /* Passes convergence information out of the iteration
         routine. */
+        if(opt.v0.numel() == (size_t)n)
+        {
+            info = 1;
+            for(int ii = 0; ii < n; ii++)
+            {
+                resid[ii] = opt.v0(ii);
+            }
+        }
 
         int rvec = 0; /* Specifies that eigenvectors should not be calculated */
 
@@ -599,6 +823,12 @@ namespace keycpp
                     }
                 }
             }
+            
+            opt.v0 = matrix<std::complex<double>>(n);
+            for(int ii = 0; ii < n; ii++)
+            {
+                opt.v0(ii) = resid[ii];
+            }
 
             delete [] iw;
             delete [] rwork;
@@ -614,8 +844,19 @@ namespace keycpp
         }
     }
 
-    inline void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::complex<double> sigma, const matrix<std::complex<double>> &A)
+    inline void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::complex<double> sigma, const matrix<std::complex<double>> &A, eigs_opt *opt_base)
     {
+        eigs_opt opt;
+        
+        if(opt_base == NULL)
+        {
+            opt = eigs_opt();
+        }
+        else
+        {
+            opt = *opt_base;
+        }
+        
         int ido = 0;
         char bmat[2] = "I";
         std::string which = "LM";
@@ -635,10 +876,11 @@ namespace keycpp
         std::complex<double> *v;
         int ldv = n;
         v = new std::complex<double>[ldv*ncv];
+
         int *iparam;
         iparam = new int[11];
         iparam[0] = 1;
-        iparam[2] = 30*n;
+        iparam[2] = opt.maxit;
         iparam[6] = 3;
         int *ipntr;
         ipntr = new int[14];
@@ -650,6 +892,14 @@ namespace keycpp
         double *rwork;
         rwork = new double[ncv];
         int info = 0;
+        if(opt.v0.numel() == (size_t)n)
+        {
+            info = 1;
+            for(int ii = 0; ii < n; ii++)
+            {
+                resid[ii] = opt.v0(ii);
+            }
+        }
         int rvec = 1;  // Changed from above
         int *select;
         select = new int[ncv];
@@ -751,6 +1001,12 @@ namespace keycpp
                     }
                 }
             }
+            
+            opt.v0 = matrix<std::complex<double>>(n);
+            for(int ii = 0; ii < n; ii++)
+            {
+                opt.v0(ii) = resid[ii];
+            }
 
             delete [] iw;
             delete [] rwork;
@@ -767,7 +1023,7 @@ namespace keycpp
     }
 
 
-    inline matrix<std::complex<double>,2> eigs(const matrix<std::complex<double>,2> &A, size_t k, std::complex<double> sigma, matrix<std::complex<double>,2> *vr_return = NULL)
+    inline matrix<std::complex<double>,2> eigs(const matrix<std::complex<double>,2> &A, size_t k, std::complex<double> sigma, matrix<std::complex<double>,2> *vr_return = NULL, eigs_opt *opt = NULL)
     {
         if(A.empty())
         {
@@ -794,18 +1050,29 @@ namespace keycpp
         if(vr_return == NULL)
         {
             int n = A.size(1);
-            znaupd_shift_invert(n, k, eig_val, sigma, A);
+            znaupd_shift_invert(n, k, eig_val, sigma, A, opt);
         }
         else
         {
             int n = A.size(1);
-            znaupd_shift_invert(n, k, eig_val, *vr_return, sigma, A);
+            znaupd_shift_invert(n, k, eig_val, *vr_return, sigma, A, opt);
         }
         return eig_val;
     }
 
-    inline void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, std::string which, const matrix<std::complex<double>> &A, const matrix<std::complex<double>> &B)
+    inline void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, std::string which, const matrix<std::complex<double>> &A, const matrix<std::complex<double>> &B, eigs_opt *opt_base)
     {
+        eigs_opt opt;
+        
+        if(opt_base == NULL)
+        {
+            opt = eigs_opt();
+        }
+        else
+        {
+            opt = *opt_base;
+        }
+        
         int ido = 0;
 
         char bmat[2] = "I";
@@ -832,7 +1099,7 @@ namespace keycpp
         int *iparam;
         iparam = new int[11];
         iparam[0] = 1;
-        iparam[2] = 30*n;
+        iparam[2] = opt.maxit;
         iparam[6] = 1;
 
         int *ipntr;
@@ -849,6 +1116,14 @@ namespace keycpp
         rwork = new double[ncv];
 
         int info = 0;
+        if(opt.v0.numel() == (size_t)n)
+        {
+            info = 1;
+            for(int ii = 0; ii < n; ii++)
+            {
+                resid[ii] = opt.v0(ii);
+            }
+        }
 
         int rvec = 0;
 
@@ -927,6 +1202,12 @@ namespace keycpp
                     }
                 }
             }
+            
+            opt.v0 = matrix<std::complex<double>>(n);
+            for(int ii = 0; ii < n; ii++)
+            {
+                opt.v0(ii) = resid[ii];
+            }
 
             delete [] iw;
             delete [] rwork;
@@ -942,8 +1223,19 @@ namespace keycpp
         }
     }
 
-    inline void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::string which, const matrix<std::complex<double>> &A, const matrix<std::complex<double>> &B)
+    inline void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::string which, const matrix<std::complex<double>> &A, const matrix<std::complex<double>> &B, eigs_opt *opt_base)
     {
+        eigs_opt opt;
+        
+        if(opt_base == NULL)
+        {
+            opt = eigs_opt();
+        }
+        else
+        {
+            opt = *opt_base;
+        }
+        
         int ido = 0;
         char bmat[2] = "I";
         //char which[3] = "SM";
@@ -963,10 +1255,11 @@ namespace keycpp
         std::complex<double> *v;
         int ldv = n;
         v = new std::complex<double>[ldv*ncv];
+
         int *iparam;
         iparam = new int[11];
         iparam[0] = 1;
-        iparam[2] = 30*n;
+        iparam[2] = opt.maxit;
         iparam[6] = 1;
         int *ipntr;
         ipntr = new int[14];
@@ -978,6 +1271,14 @@ namespace keycpp
         double *rwork;
         rwork = new double[ncv];
         int info = 0;
+        if(opt.v0.numel() == (size_t)n)
+        {
+            info = 1;
+            for(int ii = 0; ii < n; ii++)
+            {
+                resid[ii] = opt.v0(ii);
+            }
+        }
         int rvec = 1;  // Changed from above
         int *select;
         select = new int[ncv];
@@ -1065,6 +1366,12 @@ namespace keycpp
                     }
                 }
             }
+            
+            opt.v0 = matrix<std::complex<double>>(n);
+            for(int ii = 0; ii < n; ii++)
+            {
+                opt.v0(ii) = resid[ii];
+            }
 
             delete [] iw;
             delete [] rwork;
@@ -1080,8 +1387,19 @@ namespace keycpp
         }
     }
 
-    inline void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, std::string which, const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, const matrix<std::complex<double>,2,SPARSE_MATRIX> &B)
+    /*inline void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, std::string which, const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, const matrix<std::complex<double>,2,SPARSE_MATRIX> &B, eigs_opt *opt_base)
     {
+        eigs_opt opt;
+        
+        if(opt_base == NULL)
+        {
+            opt = eigs_opt();
+        }
+        else
+        {
+            opt = *opt_base;
+        }
+        
         int ido = 0;
 
         char bmat[2] = "I";
@@ -1112,7 +1430,7 @@ namespace keycpp
         int *iparam;
         iparam = new int[11];
         iparam[0] = 1;
-        iparam[2] = 30*n;
+        iparam[2] = opt.maxit;
         iparam[6] = 1;
 
         int *ipntr;
@@ -1129,6 +1447,14 @@ namespace keycpp
         rwork = new double[ncv];
 
         int info = 0;
+        if(opt.v0.numel() == (size_t)n)
+        {
+            info = 1;
+            for(int ii = 0; ii < n; ii++)
+            {
+                resid[ii] = opt.v0(ii);
+            }
+        }
 
         int rvec = 0;
 
@@ -1207,6 +1533,12 @@ namespace keycpp
                     }
                 }
             }
+            
+            opt.v0 = matrix<std::complex<double>>(n);
+            for(int ii = 0; ii < n; ii++)
+            {
+                opt.v0(ii) = resid[ii];
+            }
 
             delete [] rwork;
             delete [] workev;
@@ -1219,10 +1551,21 @@ namespace keycpp
             delete [] select;
             delete [] d;
         }
-    }
+    }*/
 
-    inline void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::string which, const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, const matrix<std::complex<double>,2,SPARSE_MATRIX> &B)
+    /*inline void znaupd(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::string which, const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, const matrix<std::complex<double>,2,SPARSE_MATRIX> &B, eigs_opt *opt_base)
     {
+        eigs_opt opt;
+        
+        if(opt_base == NULL)
+        {
+            opt = eigs_opt();
+        }
+        else
+        {
+            opt = *opt_base;
+        }
+        
         int ido = 0;
         char bmat[2] = "I";
         //char which[3] = "SM";
@@ -1246,10 +1589,11 @@ namespace keycpp
         std::complex<double> *v;
         int ldv = n;
         v = new std::complex<double>[ldv*ncv];
+
         int *iparam;
         iparam = new int[11];
         iparam[0] = 1;
-        iparam[2] = 30*n;
+        iparam[2] = opt.maxit;
         iparam[6] = 1;
         int *ipntr;
         ipntr = new int[14];
@@ -1261,6 +1605,14 @@ namespace keycpp
         double *rwork;
         rwork = new double[ncv];
         int info = 0;
+        if(opt.v0.numel() == (size_t)n)
+        {
+            info = 1;
+            for(int ii = 0; ii < n; ii++)
+            {
+                resid[ii] = opt.v0(ii);
+            }
+        }
         int rvec = 1;  // Changed from above
         int *select;
         select = new int[ncv];
@@ -1348,6 +1700,12 @@ namespace keycpp
                     }
                 }
             }
+            
+            opt.v0 = matrix<std::complex<double>>(n);
+            for(int ii = 0; ii < n; ii++)
+            {
+                opt.v0(ii) = resid[ii];
+            }
 
             delete [] rwork;
             delete [] workev;
@@ -1360,9 +1718,9 @@ namespace keycpp
             delete [] select;
             delete [] d;
         }
-    }
+    }*/
 
-    inline matrix<std::complex<double>,2> eigs(const matrix<std::complex<double>,2> &A, const matrix<std::complex<double>,2> &B, size_t k = 6, std::string sigma = "LM", matrix<std::complex<double>,2> *vr_return = NULL)
+    inline matrix<std::complex<double>,2> eigs(const matrix<std::complex<double>,2> &A, const matrix<std::complex<double>,2> &B, size_t k = 6, std::string sigma = "LM", matrix<std::complex<double>,2> *vr_return = NULL, eigs_opt *opt = NULL)
     {
         if(A.empty() || B.empty())
         {
@@ -1393,17 +1751,17 @@ namespace keycpp
         if(vr_return == NULL)
         {
             int n = A.size(1);
-            znaupd(n, k, eig_val, sigma, A, B);
+            znaupd(n, k, eig_val, sigma, A, B, opt);
         }
         else
         {
             int n = A.size(1);
-            znaupd(n, k, eig_val, *vr_return, sigma, A, B);
+            znaupd(n, k, eig_val, *vr_return, sigma, A, B, opt);
         }
         return eig_val;
     }
 
-    inline matrix<std::complex<double>,2> eigs(const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, const matrix<std::complex<double>,2,SPARSE_MATRIX> &B, size_t k = 6, std::string sigma = "LM", matrix<std::complex<double>,2> *vr_return = NULL)
+    /*inline matrix<std::complex<double>,2> eigs(const matrix<std::complex<double>,2,SPARSE_MATRIX> &A, const matrix<std::complex<double>,2,SPARSE_MATRIX> &B, size_t k = 6, std::string sigma = "LM", matrix<std::complex<double>,2> *vr_return = NULL, eigs_opt *opt = NULL)
     {
         if(A.empty() || B.empty())
         {
@@ -1427,18 +1785,29 @@ namespace keycpp
         if(vr_return == NULL)
         {
             int n = A.size(1);
-            znaupd(n, k, eig_val, sigma, A, B);
+            znaupd(n, k, eig_val, sigma, A, B, opt);
         }
         else
         {
             int n = A.size(1);
-            znaupd(n, k, eig_val, *vr_return, sigma, A, B);
+            znaupd(n, k, eig_val, *vr_return, sigma, A, B, opt);
         }
         return eig_val;
-    }
+    }*/
 
-    inline void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, std::complex<double> sigma, const matrix<std::complex<double>> &A, const matrix<std::complex<double>> &B)
+    inline void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, std::complex<double> sigma, const matrix<std::complex<double>> &A, const matrix<std::complex<double>> &B, eigs_opt *opt_base)
     {
+        eigs_opt opt;
+        
+        if(opt_base == NULL)
+        {
+            opt = eigs_opt();
+        }
+        else
+        {
+            opt = *opt_base;
+        }
+        
         int ido = 0;
 
         char bmat[2] = "I";
@@ -1454,7 +1823,7 @@ namespace keycpp
         resid = new std::complex<double>[n];
 
         int ncv = 2*nev + 1;
-        if(ncv>=n)
+        if(ncv > n)
         {
             ncv = n;
         }
@@ -1466,7 +1835,7 @@ namespace keycpp
         int *iparam;
         iparam = new int[11];
         iparam[0] = 1;
-        iparam[2] = 30*n;
+        iparam[2] = opt.maxit;
         iparam[6] = 1;
 
         int *ipntr;
@@ -1483,6 +1852,14 @@ namespace keycpp
         rwork = new double[ncv];
 
         int info = 0;
+        if(opt.v0.numel() == (size_t)n)
+        {
+            info = 1;
+            for(int ii = 0; ii < n; ii++)
+            {
+                resid[ii] = opt.v0(ii);
+            }
+        }
 
         int rvec = 0;
 
@@ -1496,7 +1873,6 @@ namespace keycpp
         std::complex<double> sigma_temp;
 
         int ierr;
-
         do
         {
             znaupd_(&ido, bmat, &n, &which_char[0], &nev, &tol, resid, &ncv, v, &ldv, iparam, ipntr, workd, workl, &lworkl, rwork, &info);
@@ -1508,15 +1884,9 @@ namespace keycpp
             }
         } while((ido == 1) || (ido == -1));
 
-
-        if(info<0)
+        if(info != 0)
         {
-            if(info == -5)
-            {
-                throw KeyCppException("Invalid sigma provided to eigs!");
-            }
-            std::cout << "Error with znaupd, info = " << info << "\n";
-            std::cout << "Check documentation in znaupd\n\n";
+            throw znaupdException(info);
         }
         else
         {
@@ -1527,16 +1897,7 @@ namespace keycpp
 
             if(ierr!=0)
             {
-                std::cout << "Error with zneupd, info = " << ierr << "\n";
-                std::cout << "Check the documentation of zneupd.\n\n";
-            }
-            else if(info==1)
-            {
-                std::cout << "Maximum number of iterations reached.\n\n";
-            }else if(info==3)
-            {
-                std::cout << "No shifts could be applied during implicit\n";
-                std::cout << "Arnoldi update, try increasing NCV.\n\n";
+                throw zneupdException(ierr);
             }
 
 
@@ -1561,6 +1922,12 @@ namespace keycpp
                     }
                 }
             }
+            
+            opt.v0 = matrix<std::complex<double>>(n);
+            for(int ii = 0; ii < n; ii++)
+            {
+                opt.v0(ii) = resid[ii];
+            }
 
             delete [] iw;
             delete [] rwork;
@@ -1576,8 +1943,19 @@ namespace keycpp
         }
     }
 
-    inline void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::complex<double> sigma, const matrix<std::complex<double>> &A, const matrix<std::complex<double>> &B)
+    inline void znaupd_shift_invert(int n, int nev, matrix<std::complex<double>> &Evals, matrix<std::complex<double>> &Evecs, std::complex<double> sigma, const matrix<std::complex<double>> &A, const matrix<std::complex<double>> &B, eigs_opt *opt_base)
     {
+        eigs_opt opt;
+        
+        if(opt_base == NULL)
+        {
+            opt = eigs_opt();
+        }
+        else
+        {
+            opt = *opt_base;
+        }
+        
         int ido = 0;
         char bmat[2] = "I";
         std::string which = "LM";
@@ -1590,7 +1968,7 @@ namespace keycpp
         std::complex<double> *resid;
         resid = new std::complex<double>[n];
         int ncv = 2*nev + 1;
-        if (ncv>n)
+        if(ncv > n)
         {
             ncv = n;
         }
@@ -1599,8 +1977,9 @@ namespace keycpp
         v = new std::complex<double>[ldv*ncv];
         int *iparam;
         iparam = new int[11];
+        
         iparam[0] = 1;
-        iparam[2] = 30*n;
+        iparam[2] = opt.maxit;
         iparam[6] = 1;
         int *ipntr;
         ipntr = new int[14];
@@ -1612,6 +1991,14 @@ namespace keycpp
         double *rwork;
         rwork = new double[ncv];
         int info = 0;
+        if(opt.v0.numel() == (size_t)n)
+        {
+            info = 1;
+            for(int ii = 0; ii < n; ii++)
+            {
+                resid[ii] = opt.v0(ii);
+            }
+        }
         int rvec = 1;  // Changed from above
         int *select;
         select = new int[ncv];
@@ -1634,14 +2021,9 @@ namespace keycpp
             }
         } while((ido==1)||(ido==-1));
 
-        if(info<0)
+        if(info != 0)
         {
-            if(info == -5)
-            {
-                throw KeyCppException("Invalid sigma provided to eigs!");
-            }
-            std::cout << "Error with znaupd, info = " << info << "\n";
-            std::cout << "Check documentation in znaupd\n\n";
+            throw znaupdException(info);
         }
         else
         {
@@ -1652,17 +2034,7 @@ namespace keycpp
 
             if(ierr!=0)
             {
-                std::cout << "Error with zneupd, info = " << ierr << "\n";
-                std::cout << "Check the documentation of zneupd.\n\n";
-            }
-            else if(info==1)
-            {
-                std::cout << "Maximum number of iterations reached.\n\n";
-            }
-            else if(info==3)
-            {
-                std::cout << "No shifts could be applied during implicit\n";
-                std::cout << "Arnoldi update, try increasing NCV.\n\n";
+                throw zneupdException(ierr);
             }
 
             Evals = matrix<std::complex<double>>(nev,nev);
@@ -1699,7 +2071,13 @@ namespace keycpp
                     }
                 }
             }
-
+            
+            opt.v0 = matrix<std::complex<double>>(n);
+            for(int ii = 0; ii < n; ii++)
+            {
+                opt.v0(ii) = resid[ii];
+            }
+            
             delete [] iw;
             delete [] rwork;
             delete [] workev;
@@ -1715,7 +2093,7 @@ namespace keycpp
     }
 
 
-    inline matrix<std::complex<double>,2> eigs(const matrix<std::complex<double>,2> &A, const matrix<std::complex<double>,2> &B, size_t k, std::complex<double> sigma, matrix<std::complex<double>,2> *vr_return = NULL)
+    inline matrix<std::complex<double>,2> eigs(const matrix<std::complex<double>,2> &A, const matrix<std::complex<double>,2> &B, size_t k, std::complex<double> sigma, matrix<std::complex<double>,2> *vr_return = NULL, eigs_opt *opt = NULL)
     {
         if(A.empty() || B.empty())
         {
@@ -1746,12 +2124,12 @@ namespace keycpp
         if(vr_return == NULL)
         {
             int n = A.size(1);
-            znaupd_shift_invert(n, k, eig_val, sigma, A, B);
+            znaupd_shift_invert(n, k, eig_val, sigma, A, B, opt);
         }
         else
         {
             int n = A.size(1);
-            znaupd_shift_invert(n, k, eig_val, *vr_return, sigma, A, B);
+            znaupd_shift_invert(n, k, eig_val, *vr_return, sigma, A, B, opt);
         }
         return eig_val;
     }

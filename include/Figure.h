@@ -3,6 +3,10 @@
 #ifndef FIGURE_H_
 #define FIGURE_H_
 
+#ifndef _GLIBCXX_USE_NANOSLEEP
+#define _GLIBCXX_USE_NANOSLEEP
+#endif
+
 #include <cmath>
 #include <vector>
 #include <complex>
@@ -74,11 +78,12 @@ namespace keycpp
 		bool logscale_y = false;
 		vector_k<bool> contour_plot;
 		vector_k<std::string> contour_filename;
+		vector_k<std::string> contourf_filename;
         std::ostringstream cmdstr;
 	};
 	
     inline Plots::Plots(const Plots& other) :
-    hold_on_bool(other.hold_on_bool), hist_bool(other.hist_bool), num_plots(other.num_plots), x_plot_data(other.x_plot_data), y_plot_data(other.y_plot_data), plot_format(other.plot_format), plot_linewidth(other.plot_linewidth), plot_markersize(other.plot_markersize), plot_val(other.plot_val), legend_entries(other.legend_entries), legend_location(other.legend_location), legend_box(other.legend_box), m_xlabel(other.m_xlabel), m_ylabel(other.m_ylabel), m_title(other.m_title), ymin(other.ymin), ymax(other.ymax), xmin(other.xmin), xmax(other.xmax), grid_on_bool(other.grid_on_bool), logscale_x(other.logscale_x), logscale_y(other.logscale_y), contour_plot(other.contour_plot), contour_filename(other.contour_filename), cmdstr()
+    hold_on_bool(other.hold_on_bool), hist_bool(other.hist_bool), num_plots(other.num_plots), x_plot_data(other.x_plot_data), y_plot_data(other.y_plot_data), plot_format(other.plot_format), plot_linewidth(other.plot_linewidth), plot_markersize(other.plot_markersize), plot_val(other.plot_val), legend_entries(other.legend_entries), legend_location(other.legend_location), legend_box(other.legend_box), m_xlabel(other.m_xlabel), m_ylabel(other.m_ylabel), m_title(other.m_title), ymin(other.ymin), ymax(other.ymax), xmin(other.xmin), xmax(other.xmax), grid_on_bool(other.grid_on_bool), logscale_x(other.logscale_x), logscale_y(other.logscale_y), contour_plot(other.contour_plot), contour_filename(other.contour_filename), contourf_filename(other.contourf_filename), cmdstr()
     {}
     
     inline Plots& Plots::operator=(const Plots& other)
@@ -107,6 +112,7 @@ namespace keycpp
         logscale_y = other.logscale_y;
         contour_plot = other.contour_plot;
         contour_filename = other.contour_filename;
+        contourf_filename = other.contourf_filename;
         
         return *this;
     }
@@ -152,9 +158,9 @@ namespace keycpp
 		template<class T> void plot(matrix<T> y, std::string format, std::string property1, double val1);
 		template<class T> void plot(matrix<T> y, std::string format, std::string property1, double val1, std::string property2, double val2);
 		template<class T> void plot(matrix<T> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
-		template<class T> void plot(matrix<T> x, matrix<T> y, std::string format, std::string property1, double val1);
-		template<class T> void plot(matrix<T> x, matrix<T> y, std::string format, std::string property1, double val1, std::string property2, double val2);
-		template<class T> void plot(matrix<T> x, matrix<T> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
+		template<class U, class T> void plot(matrix<U> x, matrix<T> y, std::string format, std::string property1, double val1);
+		template<class U, class T> void plot(matrix<U> x, matrix<T> y, std::string format, std::string property1, double val1, std::string property2, double val2);
+		template<class U, class T> void plot(matrix<U> x, matrix<T> y, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
 		
 		template<class U, class T> void semilogx(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1);
 		template<class U, class T> void semilogx(matrix<U,2> x, matrix<T,2> y, std::string format, std::string property1, double val1, std::string property2, double val2);
@@ -191,7 +197,7 @@ namespace keycpp
 	    template<class T, class U, class V>
 	    void contour(matrix<T> x, matrix<U> y, matrix<V> z, std::string format, std::string property1, double val1, std::string property2, double val2);
 		template<class T, class U, class V>
-	    void contour(matrix<T> x, matrix<U> y, matrix<V> z, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
+	    void contour(matrix<T> x, matrix<U> y, matrix<V> z, std::string arguments, double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
 	    
 	    template<class T, class U, class V>
 	    void contour(matrix<T> x, matrix<U> y, matrix<V> z, int N_levels, std::string format, std::string property1, double val1);
@@ -199,6 +205,34 @@ namespace keycpp
 	    void contour(matrix<T> x, matrix<U> y, matrix<V> z, int N_levels, std::string format, std::string property1, double val1, std::string property2, double val2);
 		template<class T, class U, class V>
 	    void contour(matrix<T> x, matrix<U> y, matrix<V> z, int N_levels = 10, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
+	    
+	    template<class T, class U, class V>
+	    void contour(matrix<T> x, matrix<U> y, matrix<V> z, matrix<V> levels, std::string format, std::string property1, double val1);
+	    template<class T, class U, class V>
+	    void contour(matrix<T> x, matrix<U> y, matrix<V> z, matrix<V> levels, std::string format, std::string property1, double val1, std::string property2, double val2);
+		template<class T, class U, class V>
+	    void contour(matrix<T> x, matrix<U> y, matrix<V> z, matrix<V> levels, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
+		
+	    template<class T, class U, class V>
+	    void contourf(matrix<T> x, matrix<U> y, matrix<V> z, std::string format, std::string property1, double val1);
+	    template<class T, class U, class V>
+	    void contourf(matrix<T> x, matrix<U> y, matrix<V> z, std::string format, std::string property1, double val1, std::string property2, double val2);
+		template<class T, class U, class V>
+	    void contourf(matrix<T> x, matrix<U> y, matrix<V> z, std::string arguments, double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
+	    
+	    template<class T, class U, class V>
+	    void contourf(matrix<T> x, matrix<U> y, matrix<V> z, int N_levels, std::string format, std::string property1, double val1);
+	    template<class T, class U, class V>
+	    void contourf(matrix<T> x, matrix<U> y, matrix<V> z, int N_levels, std::string format, std::string property1, double val1, std::string property2, double val2);
+		template<class T, class U, class V>
+	    void contourf(matrix<T> x, matrix<U> y, matrix<V> z, int N_levels = 10, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
+	    
+	    template<class T, class U, class V>
+	    void contourf(matrix<T> x, matrix<U> y, matrix<V> z, matrix<V> levels, std::string format, std::string property1, double val1);
+	    template<class T, class U, class V>
+	    void contourf(matrix<T> x, matrix<U> y, matrix<V> z, matrix<V> levels, std::string format, std::string property1, double val1, std::string property2, double val2);
+		template<class T, class U, class V>
+	    void contourf(matrix<T> x, matrix<U> y, matrix<V> z, matrix<V> levels, std::string arguments = "", double val = -1, double lw = 2, double ps = 1.5, std::string legend_entry = "");
 	};
 	
 	inline Figure::Figure() try : g("lines"), colors(), p(1), term(""), filename("")
@@ -573,6 +607,9 @@ namespace keycpp
 			        }
 			        g.cmd("set termoption dashed");
 			        g.cmd("set border linewidth 1.5");
+			        
+			        //g.cmd("set palette rgbformulae 33,13,10");
+			        g.cmd("set palette defined ( 0 '#000090', 1 '#000fff', 2 '#0090ff', 3 '#0fffee', 4     '#90ff70', 5 '#ffee00', 6 '#ff7000', 7 '#ee0000', 8 '#7f0000')");
 			    }
 			    
 			    
@@ -763,7 +800,15 @@ namespace keycpp
                 }
                 else
                 {
-                    p[current_plot].cmdstr << "\"" << p[current_plot].contour_filename[p[current_plot].num_plots-1] << "\" ";
+                    if(!p[current_plot].contourf_filename[p[current_plot].num_plots-1].empty())
+                    {
+                        p[current_plot].cmdstr << "\"" << p[current_plot].contourf_filename[p[current_plot].num_plots-1] << "\" with image, ";
+                        p[current_plot].cmdstr << "\"" << p[current_plot].contour_filename[p[current_plot].num_plots-1] << "\" ";
+                    }
+                    else
+                    {
+                        p[current_plot].cmdstr << "\"" << p[current_plot].contour_filename[p[current_plot].num_plots-1] << "\" ";
+                    }
                 }
 
                 if(legend_entry.empty())
@@ -825,6 +870,7 @@ namespace keycpp
 			p[current_plot].hist_bool.push_back(hist_bool);
 		    p[current_plot].contour_plot.push_back(false);
 		    p[current_plot].contour_filename.push_back("");
+		    p[current_plot].contourf_filename.push_back("");
 		}
 		
 		return;
@@ -923,7 +969,7 @@ namespace keycpp
 	    }
 	}
 	
-	template<class T> void Figure::plot(matrix<T> x, matrix<T> y, std::string format, std::string property1, double val1)
+	template<class U, class T> void Figure::plot(matrix<U> x, matrix<T> y, std::string format, std::string property1, double val1)
 	{
 	    if(x.isVec() && y.isVec())
 	    {
@@ -992,7 +1038,7 @@ namespace keycpp
 	    }
 	}
 	
-	template<class T> void Figure::plot(matrix<T> x, matrix<T> y, std::string format, std::string property1, double val1, std::string property2, double val2)
+	template<class U, class T> void Figure::plot(matrix<U> x, matrix<T> y, std::string format, std::string property1, double val1, std::string property2, double val2)
 	{
 	    if(x.isVec() && y.isVec())
 	    {
@@ -1061,7 +1107,7 @@ namespace keycpp
 	    }
 	}
 	
-	template<class T> void Figure::plot(matrix<T> x, matrix<T> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
+	template<class U, class T> void Figure::plot(matrix<U> x, matrix<T> y, std::string arguments, double val, double lw, double ps, std::string legend_entry)
 	{
 	    if(x.isVec() && y.isVec())
 	    {
@@ -1829,7 +1875,7 @@ namespace keycpp
             tmp.close();
 		    
 		    double max_z = max(max(z)), min_z = min(min(z));
-		    double delta_z = (max_z - min_z)/((double)N_levels-1.0);
+		    double delta_z = (max_z - min_z)/((double)N_levels+1.0);
 		    
 		    std::stringstream ss1;
 		    ss1 << "reset\n";
@@ -1856,6 +1902,628 @@ namespace keycpp
 			
 		    p[current_plot].contour_plot.push_back(true);
 		    p[current_plot].contour_filename.push_back(name);
+		    p[current_plot].contourf_filename.push_back("");
+	    }
+	    catch(GnuplotException ge)
+	    {
+		    std::cout << ge.what() << std::endl;
+	    }
+	}
+	
+	template<class T, class U, class V>
+	void Figure::contour(matrix<T> x, matrix<U> y, matrix<V> z, matrix<V> levels, std::string format, std::string property1, double val1)
+	{
+		std::transform(format.begin(), format.end(), format.begin(), ::tolower);
+		std::transform(property1.begin(), property1.end(), property1.begin(), ::tolower);
+		
+		double lw = 2;
+		double ps = 1.5;
+		if(!property1.empty())
+		{
+			if(property1.find("linewidth") != std::string::npos)
+			{
+				property1.erase(property1.find("linewidth"),9);
+				if(!property1.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				lw = val1;
+				contour(x,y,z,levels,format,-1,lw,ps);
+			}
+			else if(property1.find("markersize") != std::string::npos)
+			{
+				property1.erase(property1.find("markersize"),10);
+				if(!property1.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				ps = val1;
+				contour(x,y,z,levels,format,-1,lw,ps);
+			}
+		}
+		else
+		{
+			throw FigureException("Invalid property while plotting in Figure!");
+		}
+	}
+	
+	template<class T, class U, class V>
+	void Figure::contour(matrix<T> x, matrix<U> y, matrix<V> z, matrix<V> levels, std::string format, std::string property1, double val1, std::string property2, double val2)
+	{
+		std::transform(format.begin(), format.end(), format.begin(), ::tolower);
+		std::transform(property1.begin(), property1.end(), property1.begin(), ::tolower);
+		std::transform(property2.begin(), property2.end(), property2.begin(), ::tolower);
+		double lw = 2;
+		double ps = 1.5;
+		bool lw_found = false, ps_found = false;
+		if(!property1.empty())
+		{
+			if(property1.find("linewidth") != std::string::npos)
+			{
+				property1.erase(property1.find("linewidth"),9);
+				if(!property1.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				lw = val1;
+				lw_found = true;
+			}
+			else if(property1.find("markersize") != std::string::npos)
+			{
+				property1.erase(property1.find("markersize"),10);
+				if(!property1.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				ps = val1;
+				ps_found = true;
+			}
+		}
+		else
+		{
+			throw FigureException("Invalid property while plotting in Figure!");
+		}
+		
+		if(!property2.empty())
+		{
+			if(property2.find("linewidth") != std::string::npos)
+			{
+				property2.erase(property2.find("linewidth"),9);
+				if(!property2.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				lw = val2;
+				if(lw_found == true)
+				{
+					throw FigureException("Property is specified multiple times while plotting!");
+				}
+			}
+			else if(property2.find("markersize") != std::string::npos)
+			{
+				property2.erase(property2.find("markersize"),10);
+				if(!property2.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				ps = val2;
+				if(ps_found == true)
+				{
+					throw FigureException("Property is specified multiple times while plotting!");
+				}
+			}
+		}
+		else
+		{
+			throw FigureException("Invalid property while plotting in Figure!");
+		}
+		contour(x,y,z,levels,format,-1,lw,ps);
+	}
+	
+	template<class T, class U, class V>
+	void Figure::contour(matrix<T> x, matrix<U> y, matrix<V> z, matrix<V> levels, std::string arguments, double val, double lw, double ps, std::string legend_entry)
+	{
+	    try
+	    {
+			p[current_plot].xmin = min(min(x));
+			p[current_plot].xmax = max(max(x));
+			p[current_plot].ymin = min(min(y));
+			p[current_plot].ymax = max(max(y));
+			
+		    Gnuplot g2;
+		    
+            std::ofstream tmp2;
+            std::string name = g2.create_tmpfile(tmp2);
+            if(name.empty())
+            {
+                throw FigureException("Error creating temporary file!");
+            }
+            tmp2.flush();
+            tmp2.close();
+		    
+            std::ofstream tmp;
+            std::string name_tmp = g2.create_tmpfile(tmp);
+            if(name_tmp.empty())
+            {
+                throw FigureException("Error creating temporary file!");
+            }
+
+            for(size_t jj = 0; jj < x.size(2); jj++)
+            {
+                for(size_t ii = 0; ii < x.size(1); ii++)
+                {
+                    tmp << x(ii,jj) << " " << y(ii,jj) << " " << z(ii,jj) << std::endl;
+                }
+                tmp << std::endl;
+            }
+            tmp.flush();
+            tmp.close();
+		    
+		    std::stringstream ss1;
+		    ss1 << "reset\n";
+		    ss1 << "set xrange [" << p[current_plot].xmin << ":" << p[current_plot].xmax << "]\n";
+		    ss1 << "set yrange [" << p[current_plot].ymin << ":" << p[current_plot].ymax << "]\n";
+		    ss1 << "set contour base\n";
+		    ss1 << "set cntrparam levels discrete ";
+		    for(size_t ii = 0; ii < levels.numel(); ii++)
+		    {
+		        ss1 << levels(ii);
+		        if(ii < (levels.numel()-1))
+		        {
+		            ss1 << ", ";
+		        }
+		    }
+		    ss1 << "\nunset surface\n";
+		    ss1 << "set table \"" << name << "\"\n";
+		    ss1 << "splot \"" << name_tmp << "\"\n";
+		    ss1 << "unset table\n";
+		    
+		    g2.cmd(ss1.str());
+		    
+		    p[current_plot].num_plots++;
+		    
+			p[current_plot].x_plot_data.push_back(matrix<double,2>());
+			p[current_plot].y_plot_data.push_back(matrix<double,2>());
+			p[current_plot].plot_format.push_back(arguments);
+			p[current_plot].plot_linewidth.push_back(lw);
+			p[current_plot].plot_markersize.push_back(ps);
+			p[current_plot].plot_val.push_back(val);
+			p[current_plot].hist_bool.push_back(false);
+			
+		    p[current_plot].contour_plot.push_back(true);
+		    p[current_plot].contour_filename.push_back(name);
+		    p[current_plot].contourf_filename.push_back("");
+	    }
+	    catch(GnuplotException ge)
+	    {
+		    std::cout << ge.what() << std::endl;
+	    }
+	}
+	
+	
+	
+	template<class T, class U, class V>
+	void Figure::contourf(matrix<T> x, matrix<U> y, matrix<V> z, std::string format, std::string property1, double val1)
+	{
+		contourf(x,y,z,10,format,property1,val1);
+	}
+	
+	template<class T, class U, class V>
+	void Figure::contourf(matrix<T> x, matrix<U> y, matrix<V> z, std::string format, std::string property1, double val1, std::string property2, double val2)
+	{
+		contourf(x,y,z,10,format,property1,val1,property2,val2);
+	}
+	
+	template<class T, class U, class V>
+	void Figure::contourf(matrix<T> x, matrix<U> y, matrix<V> z, std::string arguments, double val, double lw, double ps, std::string legend_entry)
+	{
+		contourf(x,y,z,10,arguments, val, lw, ps, legend_entry);
+	}
+	
+	template<class T, class U, class V>
+	void Figure::contourf(matrix<T> x, matrix<U> y, matrix<V> z, int N_levels, std::string format, std::string property1, double val1)
+	{
+		std::transform(format.begin(), format.end(), format.begin(), ::tolower);
+		std::transform(property1.begin(), property1.end(), property1.begin(), ::tolower);
+		
+		double lw = 2;
+		double ps = 1.5;
+		if(!property1.empty())
+		{
+			if(property1.find("linewidth") != std::string::npos)
+			{
+				property1.erase(property1.find("linewidth"),9);
+				if(!property1.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				lw = val1;
+				contourf(x,y,z,N_levels,format,-1,lw,ps);
+			}
+			else if(property1.find("markersize") != std::string::npos)
+			{
+				property1.erase(property1.find("markersize"),10);
+				if(!property1.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				ps = val1;
+				contourf(x,y,z,N_levels,format,-1,lw,ps);
+			}
+		}
+		else
+		{
+			throw FigureException("Invalid property while plotting in Figure!");
+		}
+	}
+	
+	template<class T, class U, class V>
+	void Figure::contourf(matrix<T> x, matrix<U> y, matrix<V> z, int N_levels, std::string format, std::string property1, double val1, std::string property2, double val2)
+	{
+		std::transform(format.begin(), format.end(), format.begin(), ::tolower);
+		std::transform(property1.begin(), property1.end(), property1.begin(), ::tolower);
+		std::transform(property2.begin(), property2.end(), property2.begin(), ::tolower);
+		double lw = 2;
+		double ps = 1.5;
+		bool lw_found = false, ps_found = false;
+		if(!property1.empty())
+		{
+			if(property1.find("linewidth") != std::string::npos)
+			{
+				property1.erase(property1.find("linewidth"),9);
+				if(!property1.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				lw = val1;
+				lw_found = true;
+			}
+			else if(property1.find("markersize") != std::string::npos)
+			{
+				property1.erase(property1.find("markersize"),10);
+				if(!property1.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				ps = val1;
+				ps_found = true;
+			}
+		}
+		else
+		{
+			throw FigureException("Invalid property while plotting in Figure!");
+		}
+		
+		if(!property2.empty())
+		{
+			if(property2.find("linewidth") != std::string::npos)
+			{
+				property2.erase(property2.find("linewidth"),9);
+				if(!property2.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				lw = val2;
+				if(lw_found == true)
+				{
+					throw FigureException("Property is specified multiple times while plotting!");
+				}
+			}
+			else if(property2.find("markersize") != std::string::npos)
+			{
+				property2.erase(property2.find("markersize"),10);
+				if(!property2.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				ps = val2;
+				if(ps_found == true)
+				{
+					throw FigureException("Property is specified multiple times while plotting!");
+				}
+			}
+		}
+		else
+		{
+			throw FigureException("Invalid property while plotting in Figure!");
+		}
+		contourf(x,y,z,N_levels,format,-1,lw,ps);
+	}
+	
+	template<class T, class U, class V>
+	void Figure::contourf(matrix<T> x, matrix<U> y, matrix<V> z, int N_levels, std::string arguments, double val, double lw, double ps, std::string legend_entry)
+	{
+	    try
+	    {
+			p[current_plot].xmin = min(min(x));
+			p[current_plot].xmax = max(max(x));
+			p[current_plot].ymin = min(min(y));
+			p[current_plot].ymax = max(max(y));
+			
+		    Gnuplot g2;
+		    
+            std::ofstream tmp2;
+            std::string name = g2.create_tmpfile(tmp2);
+            if(name.empty())
+            {
+                throw FigureException("Error creating temporary file!");
+            }
+            tmp2.flush();
+            tmp2.close();
+		    
+            std::ofstream tmp3;
+            std::string name2 = g2.create_tmpfile(tmp3);
+            if(name2.empty())
+            {
+                throw FigureException("Error creating temporary file!");
+            }
+            tmp3.flush();
+            tmp3.close();
+		    
+            std::ofstream tmp;
+            std::string name_tmp = g2.create_tmpfile(tmp);
+            if(name_tmp.empty())
+            {
+                throw FigureException("Error creating temporary file!");
+            }
+
+            for(size_t jj = 0; jj < x.size(2); jj++)
+            {
+                for(size_t ii = 0; ii < x.size(1); ii++)
+                {
+                    tmp << x(ii,jj) << " " << y(ii,jj) << " " << z(ii,jj) << std::endl;
+                }
+                tmp << std::endl;
+            }
+            tmp.flush();
+            tmp.close();
+		    
+		    std::stringstream ss2;
+		    ss2 << "reset\n";
+		    ss2 << "set xrange [" << p[current_plot].xmin << ":" << p[current_plot].xmax << "]\n";
+		    ss2 << "set yrange [" << p[current_plot].ymin << ":" << p[current_plot].ymax << "]\n";
+		    ss2 << "set table \"" << name2 << "\"\n";
+		    ss2 << "splot \"" << name_tmp << "\"\n";
+		    ss2 << "unset table\n";
+		    g2.cmd(ss2.str());
+		    
+		    double max_z = max(max(z)), min_z = min(min(z));
+		    double delta_z = (max_z - min_z)/((double)N_levels+1.0);
+		    
+		    std::stringstream ss1;
+		    ss1 << "reset\n";
+		    ss1 << "set xrange [" << p[current_plot].xmin << ":" << p[current_plot].xmax << "]\n";
+		    ss1 << "set yrange [" << p[current_plot].ymin << ":" << p[current_plot].ymax << "]\n";
+		    ss1 << "set contour base\n";
+		    ss1 << "set cntrparam level incremental " << min_z << ", " << delta_z << ", " << max_z << "\n";
+		    ss1 << "unset surface\n";
+		    ss1 << "set table \"" << name << "\"\n";
+		    ss1 << "splot \"" << name_tmp << "\"\n";
+		    ss1 << "unset table\n";
+		    
+		    g2.cmd(ss1.str());
+		    
+		    p[current_plot].num_plots++;
+		    
+			p[current_plot].x_plot_data.push_back(matrix<double,2>());
+			p[current_plot].y_plot_data.push_back(matrix<double,2>());
+			p[current_plot].plot_format.push_back(arguments);
+			p[current_plot].plot_linewidth.push_back(lw);
+			p[current_plot].plot_markersize.push_back(ps);
+			p[current_plot].plot_val.push_back(val);
+			p[current_plot].hist_bool.push_back(false);
+			
+		    p[current_plot].contour_plot.push_back(true);
+		    p[current_plot].contour_filename.push_back(name);
+		    p[current_plot].contourf_filename.push_back(name2);
+	    }
+	    catch(GnuplotException ge)
+	    {
+		    std::cout << ge.what() << std::endl;
+	    }
+	}
+	
+	template<class T, class U, class V>
+	void Figure::contourf(matrix<T> x, matrix<U> y, matrix<V> z, matrix<V> levels, std::string format, std::string property1, double val1)
+	{
+		std::transform(format.begin(), format.end(), format.begin(), ::tolower);
+		std::transform(property1.begin(), property1.end(), property1.begin(), ::tolower);
+		
+		double lw = 2;
+		double ps = 1.5;
+		if(!property1.empty())
+		{
+			if(property1.find("linewidth") != std::string::npos)
+			{
+				property1.erase(property1.find("linewidth"),9);
+				if(!property1.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				lw = val1;
+				contourf(x,y,z,levels,format,-1,lw,ps);
+			}
+			else if(property1.find("markersize") != std::string::npos)
+			{
+				property1.erase(property1.find("markersize"),10);
+				if(!property1.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				ps = val1;
+				contourf(x,y,z,levels,format,-1,lw,ps);
+			}
+		}
+		else
+		{
+			throw FigureException("Invalid property while plotting in Figure!");
+		}
+	}
+	
+	template<class T, class U, class V>
+	void Figure::contourf(matrix<T> x, matrix<U> y, matrix<V> z, matrix<V> levels, std::string format, std::string property1, double val1, std::string property2, double val2)
+	{
+		std::transform(format.begin(), format.end(), format.begin(), ::tolower);
+		std::transform(property1.begin(), property1.end(), property1.begin(), ::tolower);
+		std::transform(property2.begin(), property2.end(), property2.begin(), ::tolower);
+		double lw = 2;
+		double ps = 1.5;
+		bool lw_found = false, ps_found = false;
+		if(!property1.empty())
+		{
+			if(property1.find("linewidth") != std::string::npos)
+			{
+				property1.erase(property1.find("linewidth"),9);
+				if(!property1.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				lw = val1;
+				lw_found = true;
+			}
+			else if(property1.find("markersize") != std::string::npos)
+			{
+				property1.erase(property1.find("markersize"),10);
+				if(!property1.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				ps = val1;
+				ps_found = true;
+			}
+		}
+		else
+		{
+			throw FigureException("Invalid property while plotting in Figure!");
+		}
+		
+		if(!property2.empty())
+		{
+			if(property2.find("linewidth") != std::string::npos)
+			{
+				property2.erase(property2.find("linewidth"),9);
+				if(!property2.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				lw = val2;
+				if(lw_found == true)
+				{
+					throw FigureException("Property is specified multiple times while plotting!");
+				}
+			}
+			else if(property2.find("markersize") != std::string::npos)
+			{
+				property2.erase(property2.find("markersize"),10);
+				if(!property2.empty())
+				{
+					throw FigureException("Unknown property string in Figure!");
+				}
+				ps = val2;
+				if(ps_found == true)
+				{
+					throw FigureException("Property is specified multiple times while plotting!");
+				}
+			}
+		}
+		else
+		{
+			throw FigureException("Invalid property while plotting in Figure!");
+		}
+		contourf(x,y,z,levels,format,-1,lw,ps);
+	}
+	
+	template<class T, class U, class V>
+	void Figure::contourf(matrix<T> x, matrix<U> y, matrix<V> z, matrix<V> levels, std::string arguments, double val, double lw, double ps, std::string legend_entry)
+	{
+	    try
+	    {
+			p[current_plot].xmin = min(min(x));
+			p[current_plot].xmax = max(max(x));
+			p[current_plot].ymin = min(min(y));
+			p[current_plot].ymax = max(max(y));
+			
+		    Gnuplot g2;
+		    
+            std::ofstream tmp2;
+            std::string name = g2.create_tmpfile(tmp2);
+            if(name.empty())
+            {
+                throw FigureException("Error creating temporary file!");
+            }
+            tmp2.flush();
+            tmp2.close();
+		    
+            std::ofstream tmp3;
+            std::string name2 = g2.create_tmpfile(tmp3);
+            if(name2.empty())
+            {
+                throw FigureException("Error creating temporary file!");
+            }
+            tmp3.flush();
+            tmp3.close();
+		    
+            std::ofstream tmp;
+            std::string name_tmp = g2.create_tmpfile(tmp);
+            if(name_tmp.empty())
+            {
+                throw FigureException("Error creating temporary file!");
+            }
+
+            for(size_t jj = 0; jj < x.size(2); jj++)
+            {
+                for(size_t ii = 0; ii < x.size(1); ii++)
+                {
+                    tmp << x(ii,jj) << " " << y(ii,jj) << " " << z(ii,jj) << std::endl;
+                }
+                tmp << std::endl;
+            }
+            tmp.flush();
+            tmp.close();
+		    
+		    std::stringstream ss2;
+		    ss2 << "reset\n";
+		    ss2 << "set xrange [" << p[current_plot].xmin << ":" << p[current_plot].xmax << "]\n";
+		    ss2 << "set yrange [" << p[current_plot].ymin << ":" << p[current_plot].ymax << "]\n";
+		    ss2 << "set table \"" << name2 << "\"\n";
+		    ss2 << "splot \"" << name_tmp << "\"\n";
+		    ss2 << "unset table\n";
+		    g2.cmd(ss2.str());
+		    
+		    std::stringstream ss1;
+		    ss1 << "reset\n";
+		    ss1 << "set xrange [" << p[current_plot].xmin << ":" << p[current_plot].xmax << "]\n";
+		    ss1 << "set yrange [" << p[current_plot].ymin << ":" << p[current_plot].ymax << "]\n";
+		    ss1 << "set contour base\n";
+		    ss1 << "set cntrparam levels discrete ";
+		    for(size_t ii = 0; ii < levels.numel(); ii++)
+		    {
+		        ss1 << levels(ii);
+		        if(ii < (levels.numel()-1))
+		        {
+		            ss1 << ", ";
+		        }
+		    }
+		    ss1 << "\nunset surface\n";
+		    ss1 << "set table \"" << name << "\"\n";
+		    ss1 << "splot \"" << name_tmp << "\"\n";
+		    ss1 << "unset table\n";
+		    
+		    g2.cmd(ss1.str());
+		    
+		    p[current_plot].num_plots++;
+		    
+			p[current_plot].x_plot_data.push_back(matrix<double,2>());
+			p[current_plot].y_plot_data.push_back(matrix<double,2>());
+			p[current_plot].plot_format.push_back(arguments);
+			p[current_plot].plot_linewidth.push_back(lw);
+			p[current_plot].plot_markersize.push_back(ps);
+			p[current_plot].plot_val.push_back(val);
+			p[current_plot].hist_bool.push_back(false);
+			
+		    p[current_plot].contour_plot.push_back(true);
+		    p[current_plot].contour_filename.push_back(name);
+		    p[current_plot].contourf_filename.push_back(name2);
 	    }
 	    catch(GnuplotException ge)
 	    {

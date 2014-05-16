@@ -1,4 +1,4 @@
-// Matlab.h -- Common Matlab functions implemented in C++
+// keycpp.h -- Common Matlab functions implemented in C++
 /** @file */
 
 #ifndef KEYCPP_H_
@@ -45,7 +45,37 @@ namespace keycpp
 	static constexpr double NaN = std::numeric_limits<double>::quiet_NaN();
 }
 
-#include "SparseMatrix.h"
+//#include "SparseMatrix.h"
+
+namespace keycpp
+{
+    namespace helper
+    {
+        #include "IML/gmres.h"
+    }
+
+    template<class T>
+    class nullPreconditioner
+    {
+        public:
+            matrix<T>& solve(matrix<T> &y)
+            {
+                return y;
+            }
+            matrix<T>& trans_solve(matrix<T> &y)
+            {
+                return y;
+            }
+            const matrix<T>& solve(const matrix<T> &y) const
+            {
+                return y;
+            }
+            const matrix<T>& trans_solve(const matrix<T> &y) const
+            {
+                return y;
+            }
+    };
+}
 	
 namespace keycpp
 {
@@ -298,22 +328,6 @@ namespace keycpp
 		return B;
 	}
 	
-	/** \brief Returns a vector of differences between adjacent elements.
-     */
-	template<class T> vector_k<T> diff(const vector_k<T> &v1)
-	{
-	    if(v1.empty())
-	    {
-	        throw KeyCppException("Cannot compute diff() on empty vector!");
-	    }
-		vector_k<T> v2(v1.size()-1);
-		for(size_t ii = 0; ii < v2.size(); ii++)
-		{
-		    v2[ii] = v1[ii+1] - v1[ii];
-		}
-		return v2;
-	}
-	
 	/** \brief Returns a matrix of row differences between adjacent rows.
 	 *
 	 *   TODO: Add recursive functionality and make sure it picks first non-singleton dimension.
@@ -325,15 +339,30 @@ namespace keycpp
 	    {
 	        throw KeyCppException("Cannot compute diff() on empty matrix!");
 	    }
-		matrix<T> B(A.size(1)-1,A.size(2));
-		for(size_t ii = 0; ii < B.size(1); ii++)
+		
+		if(!A.isVec())
 		{
-		    for(size_t jj = 0; jj < B.size(2); jj++)
+		    matrix<T> B(A.size(1)-1,A.size(2));
+		    for(size_t ii = 0; ii < B.size(1); ii++)
 		    {
-			    B(ii,jj) = A(ii+1,jj) - A(ii,jj);
-			}
-		}
-		return B;
+		        for(size_t jj = 0; jj < B.size(2); jj++)
+		        {
+			        B(ii,jj) = A(ii+1,jj) - A(ii,jj);
+			    }
+		    }
+		
+		    return B;
+        }
+        else
+        {
+		    matrix<T> B(A.numel()-1);
+		    for(size_t ii = 0; ii < B.numel(); ii++)
+		    {
+			    B(ii) = A(ii+1) - A(ii);
+		    }
+		
+		    return B;
+        }
 	}
 
 	template<class T,size_t dim> matrix<std::complex<T>,dim> conj(const matrix<std::complex<T>,dim> &A)
@@ -511,7 +540,7 @@ namespace keycpp
 	template<class T, size_t dim>
     matrix<std::complex<T>,dim> csqrt(const matrix<std::complex<T>,dim> &A)
     {
-        return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&csqrt<T>));
+        return eop(A, static_cast<std::complex<T> (*)(const std::complex<T> &)>(&csqrt));
     }
 	
 	/** \brief Return a vector containing the csqrt of each element of A.
@@ -1158,20 +1187,28 @@ namespace keycpp
 	
 	/** \brief Computes the mean of vector v1.
 	 */
-	template<class T> T mean(const matrix<T,2>& v1)
+	template<class T> matrix<T,2> mean(const matrix<T,2>& v1)
 	{
-	    if(v1.size(1) > 1)
+	    if(v1.isVec())
 	    {
-	        throw KeyCppException("This function requires the number of rows to be equal to 1.");
-	    }
-		T m = T(0);
-		double tot = 0.0;
-		for(size_t ii = 0; ii < v1.size(2); ii++)
-		{
-			m += v1(ii);
-			tot += 1.0;
+		    matrix<T,2> m(1);
+		    double tot = 0.0;
+		    for(size_t ii = 0; ii < v1.numel(); ii++)
+		    {
+			    m(0) += v1(ii);
+			    tot += 1.0;
+		    }
+		    return m/tot;
 		}
-		return m/tot;
+		else
+		{
+		    matrix<T,2> m(v1.size(2));
+		    for(size_t ii = 0; ii < v1.size(2); ii++)
+		    {
+		        m(ii) = mean(v1.col(ii));
+		    }
+		    return m;
+		}
 	}
 	
 	template<class T, class U> T interp1_vec(const matrix<U,2> &x, const matrix<T,2> &y, const U &x_interp, std::string method = "linear", Extrap extrap = Extrap())
@@ -1575,7 +1612,7 @@ namespace keycpp
 
 		for(int ii = 0; ii < N; ii++)
 		{
-			u_hat(ii) = std::complex<T>((T)cx_out[ii].r,(T)cx_out[ii].i);
+			u_hat(ii) = std::complex<double>((double)cx_out[ii].r,(double)cx_out[ii].i);
 		}
 
 		free(cfg);
@@ -1583,6 +1620,142 @@ namespace keycpp
 		delete [] cx_out;
 
 		return u_hat;
+	}
+
+	template<class T> matrix<std::complex<double>,2> ifft(const matrix<T,2> &u, int N = -1)
+	{
+		if(u.empty())
+		{
+			throw KeyCppException("Error in ifft()! Empty vector supplied!");
+		}
+		if(!u.isVec())
+		{
+			throw KeyCppException("Error in ifft()! u must have a singleton dimension!");
+		}
+		
+		if(N < 0)
+		{
+			N = u.length();
+		}
+		
+		kiss_fft_cpx *cx_in = new kiss_fft_cpx[N];
+		kiss_fft_cpx *cx_out = new kiss_fft_cpx[N];
+
+		matrix<std::complex<double>,2> u_hat(N);
+
+		for(int ii = 0; ii < N; ii++)
+		{
+			cx_in[ii].r = real((std::complex<double>)u(ii));
+			cx_in[ii].i = imag((std::complex<double>)u(ii));
+		}
+
+		kiss_fft_cfg cfg = kiss_fft_alloc(N,true,NULL,NULL);
+		kiss_fft(cfg,cx_in,cx_out);
+
+		for(int ii = 0; ii < N; ii++)
+		{
+			u_hat(ii) = std::complex<double>((double)cx_out[ii].r,(double)cx_out[ii].i)/((double)N);
+		}
+
+		free(cfg);
+		delete [] cx_in;
+		delete [] cx_out;
+
+		return u_hat;
+	}
+	
+	template<class T>
+	matrix<T> fftshift(matrix<T> A, size_t dim = 0)
+	{
+	    if(dim == 0 && !A.isVec() || dim > 2)
+	    {
+	        throw KeyCppException("Error in fftshift!");
+	    }
+	    if(dim == 0)
+	    {
+	        size_t N = A.numel();
+	        matrix<T> B(N);
+	        size_t m = std::ceil(N/2);
+	        for(size_t ii = 0; ii < N; ii++)
+	        {
+	            if(ii >= N-m)
+	            {
+	                B(ii-(N-m)) = A(ii);
+	            }
+	            else
+	            {
+	                B(ii+m) = A(ii);
+	            }
+	        }
+	        return B;
+	    }
+	    else
+	    {
+	        size_t N = A.size(dim);
+	        matrix<T> B(A.size(1),A.size(2));
+	        if(dim == 1)
+	        {
+	            for(size_t ii = 0; ii < A.size(2); ii++)
+	            {
+	                B.col(ii) = fftshift(A.col(ii));
+	            }
+	        }
+	        else
+	        {
+	            for(size_t ii = 0; ii < A.size(1); ii++)
+	            {
+	                B.row(ii) = fftshift(A.row(ii));
+	            }
+	        }
+	        return B;
+	    }
+	}
+	
+	template<class T>
+	matrix<T> ifftshift(matrix<T> A, size_t dim = 0)
+	{
+	    if(dim == 0 && !A.isVec() || dim > 2)
+	    {
+	        throw KeyCppException("Error in ifftshift!");
+	    }
+	    if(dim == 0)
+	    {
+	        size_t N = A.numel();
+	        matrix<T> B(N);
+	        size_t m = std::floor(N/2);
+	        for(size_t ii = 0; ii < N; ii++)
+	        {
+	            if(ii >= m)
+	            {
+	                B(ii-m) = A(ii);
+	            }
+	            else
+	            {
+	                B(ii+N-m) = A(ii);
+	            }
+	        }
+	        return B;
+	    }
+	    else
+	    {
+	        size_t N = A.size(dim);
+	        matrix<T> B(A.size(1),A.size(2));
+	        if(dim == 1)
+	        {
+	            for(size_t ii = 0; ii < A.size(2); ii++)
+	            {
+	                B.col(ii) = ifftshift(A.col(ii));
+	            }
+	        }
+	        else
+	        {
+	            for(size_t ii = 0; ii < A.size(1); ii++)
+	            {
+	                B.row(ii) = ifftshift(A.row(ii));
+	            }
+	        }
+	        return B;
+	    }
 	}
 }
 	
@@ -1708,17 +1881,19 @@ namespace keycpp
 		matrix<size_t> index;
 	};
 	
-	template<class T> Sort_Matrix<T> sort(const matrix<T> &A, const size_t &dim = 2, std::string method = "ascend")
+	template<class T> Sort_Matrix<T> sort(const matrix<T> &AA, const size_t &dim = 2, std::string method = "ascend")
 	{
 		std::transform(method.begin(), method.end(), method.begin(), ::tolower);
 		if(method.compare("ascend") != 0 && method.compare("descend") != 0)
 		{
 			throw KeyCppException("Invalid sort method!");
 		}
-		if(A.empty())
+		if(AA.empty())
 		{
 			throw KeyCppException("Tried to sort empty matrix!");
 		}
+		matrix<T> A(AA);
+		
 		if(!A.isVec())
 		{
 		    bool swapped = true;
@@ -2047,14 +2222,14 @@ namespace keycpp
 	        {
 	            throw KeyCppException("Inputs must be vectors in dot()!");
 	        }
-	        if(A.length(1) != B.length(1))
+	        if(A.numel() != B.numel())
 	        {
 	            throw KeyCppException("Vectors must be same size in dot()!");
 	        }
-	        decltype(std::declval<T>()*std::declval<U>()) result = 0.0;
-	        for(size_t ii = 0; ii < A.length(); ii++)
+	        matrix<decltype(std::declval<T>()*std::declval<U>())> result(1);
+	        for(size_t ii = 0; ii < A.numel(); ii++)
 	        {
-	            result += A(ii)*B(ii);
+	            result(0) += A(ii)*B(ii);
 	        }
 	        return result;
 	    }
@@ -2299,7 +2474,7 @@ namespace keycpp
 	template<class T>
 	bool isreal(const T &a)
 	{
-        if(abs(imag(a)) < eps)
+        if(std::abs(imag(a)) < eps)
         {
             return true;
         }
@@ -2337,6 +2512,14 @@ namespace keycpp
 	matrix<T,dim> ceil(const matrix<T,dim> &A)
 	{
 	    return eop(A,static_cast<T (*)(T)>(&std::ceil));
+	}
+	
+	/** \brief Rounds the elements of A towards the closest integer.
+	 */
+	template<class T, size_t dim>
+	matrix<T,dim> round(const matrix<T,dim> &A)
+	{
+	    return eop(A,static_cast<T (*)(T)>(&std::round));
 	}
 	
 	/** \brief Rounds the real and imaginary parts of std::complex<double> a towards
@@ -2513,6 +2696,28 @@ namespace keycpp
         }
         return in;
     }
+
+    inline std::string removeQuotes(std::string in)
+    {
+	    bool stop = false;
+	    while(in.length() > 0 && !stop)
+	    {
+		    if(in.at(0) == '\"')
+		    {
+			    in = in.substr(1,in.length()-1);
+		    }
+		    else if(in.at(in.length()-1) == '\"')
+		    {
+			    in = in.substr(0,in.length()-1);
+		    }
+		    else
+		    {
+			    stop = true;
+		    }
+	    }
+
+	    return in;
+    }
     
     /** \brief Returns a matrix containing the data read from a text file. Values must be white space separated. */
     inline matrix<double> importdata(std::string filename)
@@ -2622,52 +2827,119 @@ namespace keycpp
     
     /** \brief Returns the standard deviation of inputed vector. */
     template<class T>
-    T stdev(matrix<T,2> v1)
+    matrix<T,2> stdev(matrix<T,2> v1)
     {
-        if(v1.size(1) > 1)
+        if(v1.isVec())
         {
-            throw KeyCppException("This function requires the number of rows to be equal to 1.");
+            T v_bar = mean(v1);
+            matrix<T,2> temp(1);
+            for(size_t ii = 0; ii < v1.numel(); ii++)
+            {
+                temp(0) += std::abs((v1(ii) - v_bar)*conj(v1(ii) - v_bar));
+            }
+            temp(0) = std::sqrt(temp(0)/((double)v1.numel()-1.0));
+            
+            return temp;
         }
-        T v_bar = mean(v1);
-        T temp = 0.0;
-        for(size_t ii = 0; ii < v1.size(2); ii++)
+        else
         {
-            temp += std::abs((v1(ii) - v_bar)*conj(v1(ii) - v_bar));
+            matrix<T,2> temp(v1.size(2));
+            for(size_t ii = 0; ii < v1.size(2); ii++)
+            {
+                temp(ii) = stdev(v1.col(ii));
+            }
+            return temp;
         }
-        temp = std::sqrt(temp/((double)v1.size(2)-1.0));
-        
-        return temp;
     }
     
     /** \brief Returns the standard deviation of inputed vector. */
-    inline double stdev(matrix<std::complex<double>,2> v1)
+    inline matrix<double,2> stdev(matrix<std::complex<double>,2> v1)
     {
-        if(v1.size(1) > 1)
+        if(v1.isVec())
         {
-            throw KeyCppException("This function requires the number of rows to be equal to 1.");
+            std::complex<double> v_bar = mean(v1);
+            matrix<double,2> temp(1);
+            for(size_t ii = 0; ii < v1.numel(); ii++)
+            {
+                temp(0) += std::abs((v1(ii) - v_bar)*conj(v1(ii) - v_bar));
+            }
+            temp(0) = std::sqrt(temp(0)/((double)v1.numel()-1.0));
+            
+            return temp;
         }
-        std::complex<double> v_bar = mean(v1);
-        double temp = 0.0;
-        for(size_t ii = 0; ii < v1.size(2); ii++)
+        else
         {
-            temp += std::abs((v1(ii) - v_bar)*conj(v1(ii) - v_bar));
+            matrix<double,2> temp(v1.size(2));
+            for(size_t ii = 0; ii < v1.size(2); ii++)
+            {
+                temp(ii) = stdev(v1.col(ii));
+            }
+            return temp;
         }
-        temp = std::sqrt(temp/((double)v1.size(2)-1.0));
-        
-        return temp;
     }
     
     /** \brief Returns the variance (square of standard deviation) for inputed vector. */
     template<class T>
     T var(matrix<T,2> v1)
     {
-        return pow(stdev(v1),2.0);
+        return pow(stdev(v1),2);
     }
     
     /** \brief Returns the variance (square of standard deviation) for inputed vector. */
     inline double var(matrix<std::complex<double>,2> v1)
     {
-        return pow(stdev(v1),2.0);
+        return pow(stdev(v1),2);
+    }
+    
+    template<class T> matrix<double> rms(const matrix<T,2> &A, size_t dimension)
+    {
+        if(dimension > 2 || dimension < 1)
+        {
+            throw KeyCppException("Invalid dimension in rms()!");
+        }
+        size_t N;
+        if(dimension == 2)
+        {
+            N = A.size(1);
+            matrix<double> B(N);
+            for(size_t jj = 0; jj < N; jj++)
+            {
+                for(size_t ii = 0; ii < A.size(dimension); ii++)
+                {
+                    B(jj) += std::abs(A(jj,ii))*std::abs(A(jj,ii));
+                }
+                B(jj) = std::sqrt(B(jj)/A.size(dimension));
+            }
+            return B;
+        }
+        else
+        {
+            N = A.size(2);
+            matrix<double> B(N);
+            for(size_t jj = 0; jj < N; jj++)
+            {
+                for(size_t ii = 0; ii < A.size(dimension); ii++)
+                {
+                    B(jj) += std::abs(A(ii,jj))*std::abs(A(ii,jj));
+                }
+                B(jj) = std::sqrt(B(jj)/A.size(dimension));
+            }
+            return B;
+        }
+    }
+    
+    template<class T> matrix<double> rms(const matrix<T,2> &A)
+    {
+        size_t dimension = 0;
+        for(size_t ii = 0; ii < 2; ii++)
+        {
+            dimension = ii+1;
+            if(A.size(ii+1) > 1)
+            {
+                break;
+            }
+        }
+        return rms(A,dimension);
     }
     
     namespace rng_ns
@@ -3482,8 +3754,15 @@ namespace keycpp
         double anorm;
 		if(method.compare("2") == 0)
 		{
-		    auto svd_out = svd(A_in);
-		    anorm = max(max(svd_out.S));
+		    if(A_in.isVec())
+		    {
+		        anorm = sqrt(sum(times(abs(A_in),abs(A_in))));
+		    }
+		    else
+		    {
+		        auto svd_out = svd(A_in);
+		        anorm = max(max(svd_out.S));
+		    }
 		}
 		else
 		{
@@ -3670,8 +3949,15 @@ namespace keycpp
         double anorm;
 		if(method.compare("2") == 0)
 		{
-		    auto svd_out = svd(A_in);
-		    anorm = max(max(svd_out.S));
+		    if(A_in.isVec())
+		    {
+		        anorm = sqrt(sum(times(abs(A_in),abs(A_in))));
+		    }
+		    else
+		    {
+		        auto svd_out = svd(A_in);
+		        anorm = max(max(svd_out.S));
+		    }
 		}
 		else
 		{
@@ -4075,6 +4361,84 @@ namespace keycpp
             return_struct.Y = repmat(transpose(y),1,numel(x));
         }
         return return_struct;
+    }
+    
+    inline matrix<double> gallery(std::string type, int n, int k)
+    {
+		std::transform(type.begin(), type.end(), type.begin(), ::tolower);
+		
+		if(type.compare("orthog") == 0)
+		{
+		    if(k == -1)
+		    {
+		        matrix<double> Q(n,n);
+		        for(int ii = 0; ii < n; ii++)
+		        {
+		            for(int jj = 0; jj < n; jj++)
+		            {
+		                double iii = ii, jjj = jj;
+		                Q(ii,jj) = std::cos((iii)*(jjj)*pi/(n-1.0));
+		            }
+		        }
+		        return Q;
+		    }
+		    else
+		    {
+		        throw KeyCppException("Unrecognized option in gallery!");
+		    }
+		}
+    }
+    
+    /*inline std::complex<double> str2complex(std::string str)
+    {
+        std::string dummy = removeWhiteSpace(str);
+        std::stringstream ss;
+        ss << dummy;
+        std::getline(ss,dummy,'+');
+        dummy = removeWhiteSpace(dummy);
+        
+        // Check if that + was in front of the first number
+        if(dummy.empty())
+        {
+            std::stringstream ss2;
+            ss2 << ss.str();
+            
+            std::getline(ss2,dummy,'+');
+            if(ss2.rdbuf()->in_avail() == 0)
+            {
+		        ss2.str("");
+		        ss2.clear();
+		        ss2 << ss.str();
+                
+                std::getline(ss2,dummy,'-');
+                if(ss2.rdbuf()->in_avail() == 0)
+                {
+                    std::cerr << "Invalid string in str2complex.\n";
+                    return std::complex<double>();
+                }
+                // dummy should now contain the first number which is positive:
+                
+            }
+        }
+    }*/
+    
+    template<class T, class U>
+    decltype(std::declval<T>() % std::declval<U>()) mod(const T& a, const U& b)
+    {
+        decltype(std::declval<T>() % std::declval<U>()) r = a % b;
+        return r < 0 ? r + b : r;
+    }
+    
+    template<class T>
+    matrix<T> pow(const matrix<T> &A, double n)
+    {
+        matrix<T> B(A.size(1), A.size(2));
+        for(size_t ii = 0; ii < A.numel(); ii++)
+        {
+            B(ii) = std::pow(A(ii),n);
+        }
+        
+        return B;
     }
 }
 

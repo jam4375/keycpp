@@ -38,7 +38,7 @@ BOOST_AUTO_TEST_CASE(eigs_test)
         BOOST_CHECK((abs(keycpp::norm(A*Evecs - B*Evecs*Evals)) < tol));
     }
     
-    // Test for sparse matrix
+    /*// Test for sparse matrix
     {
         keycpp::matrix<std::complex<double>> Evecs, Evals;
         std::complex<double> i = std::complex<double>(0.0,1.0);
@@ -54,7 +54,7 @@ BOOST_AUTO_TEST_CASE(eigs_test)
         Evals = keycpp::eigs(B, nev, "LM", &Evecs);
         
         BOOST_CHECK((abs(keycpp::norm(B*Evecs - Evecs*Evals)) < tol));
-    }
+    }*/
 }
 
 BOOST_AUTO_TEST_SUITE_END()
