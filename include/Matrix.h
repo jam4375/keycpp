@@ -84,9 +84,9 @@ namespace keycpp
 		matrix(const std::initializer_list<std::initializer_list<T>>& lst);
 		matrix(const std::initializer_list<T>& lst);
 		T& operator()(const size_t &i, const size_t &j, const size_t &k, ...);
-		T operator()(const size_t &i, const size_t &j, const size_t &k, ...) const;
+		const T& operator()(const size_t &i, const size_t &j, const size_t &k, ...) const;
 		T& operator()(const size_t &i, const size_t &j);
-		T operator()(const size_t &i, const size_t &j) const;
+		const T& operator()(const size_t &i, const size_t &j) const;
 		matrix<T,2> operator()(const size_t &i, const span &cols);
 		matrix<T,2> operator()(const span &rows, const size_t &j);
 		matrix<T,2> operator()(const span &rows, const span &cols);
@@ -94,7 +94,7 @@ namespace keycpp
 		matrix<T,2> operator()(const span &rows, const size_t &j) const;
 		matrix<T,2> operator()(const span &rows, const span &cols) const;
 		T& operator()(const size_t &i);
-		T operator()(const size_t &i) const;
+		const T& operator()(const size_t &i) const;
 		template<class U>
         matrix<T,dim>& operator+=(const matrix<U,dim> &B);
 		template<class U>
@@ -199,6 +199,18 @@ namespace keycpp
 
             return this->operator()(0);
         };
+        
+        template<class U>
+        operator matrix<U>()
+        {
+            matrix<U> B(this->size(1),this->size(2));
+            for(size_t ii = 0; ii < this->numel(); ii++)
+            {
+                B(ii) = this->operator()(ii);
+            }
+
+            return B;
+        }
         
         bool get_submat() const
         {
@@ -450,7 +462,7 @@ namespace keycpp
 	}
 
 	template<class T, size_t dim>
-	T matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i, const size_t &j, const size_t &k, ...) const
+	const T& matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i, const size_t &j, const size_t &k, ...) const
 	{
 	    static_assert(dim >= 3,"This function is a specialization for matrices of dimension greater than or equal to 3.");
 		if(mData.empty())
@@ -546,7 +558,7 @@ namespace keycpp
 	}
 
 	template<class T, size_t dim>
-	T matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i, const size_t &j) const
+	const T& matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i, const size_t &j) const
 	{
 	    static_assert(dim == 2,"This function is a specialization for matrices of dimension 2.");
 		if(i > (this->size(1)-1) || j > (this->size(2)-1))
@@ -605,9 +617,9 @@ namespace keycpp
 		span_all[0] = span(i,i);
 		span_all[1] = cols;
 		
-		matrix<T,2> submat(true, temp, mSize[0], mSize[1], span_all);
+		matrix<T,2> submat_return(true, temp, mSize[0], mSize[1], span_all);
 		
-		return submat;
+		return submat_return;
 	}
 	
 	template<class T, size_t dim>
@@ -621,9 +633,9 @@ namespace keycpp
 		span_all[0] = rows;
 		span_all[1] = span(j,j);
 		
-		matrix<T,2> submat(true, temp, mSize[0], mSize[1], span_all);
+		matrix<T,2> submat_return(true, temp, mSize[0], mSize[1], span_all);
 		
-		return submat;
+		return submat_return;
 	}
 	
 	template<class T, size_t dim>
@@ -637,9 +649,9 @@ namespace keycpp
 		span_all[0] = rows;
 		span_all[1] = cols;
 		
-		matrix<T,2> submat(true, temp, mSize[0], mSize[1], span_all);
+		matrix<T,2> submat_return(true, temp, mSize[0], mSize[1], span_all);
 		
-		return submat;
+		return submat_return;
 	}
 	
 	template<class T, size_t dim>
@@ -835,7 +847,7 @@ namespace keycpp
 	}
 
 	template<class T, size_t dim>
-	T matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i) const
+	const T& matrix<T,dim,DENSE_MATRIX>::operator()(const size_t &i) const
 	{
 	    if(i > this->numel()-1)
 	    {
@@ -1347,6 +1359,10 @@ namespace keycpp
         if(!this->isVec())
         {
             mSize[0] = pSize;
+            if(mSize[1] == 0)
+            {
+                mSize[1] = 1;
+            }
         }
         else
         {

@@ -257,43 +257,39 @@ namespace keycpp
         return out;
     }
 
-    /** \brief Returns the product of all the elements of the vector x.
-     */
-	template<class T> T prod(const vector_k<T> &x)
-	{
-	    if(x.empty())
-	    {
-	        return 1.0;
-	    }
-		T x_out;
-		x_out = x[0];
-		for(size_t ii = 1; ii < x.size(); ii++)
-		{
-			x_out *= x[ii];
-		}
-		return x_out;
-	}
-
     /** \brief Returns a vector containing the product of all the elements in each
      *         column of the matrix A.
      */
-	template<class T> vector_k<T> prod(const matrix<T> &A)
+	template<class T> matrix<T> prod(const matrix<T> &A)
 	{
-	    if(A.size(1) <= 0 || A.size(2) <= 0)
+	    if(A.empty())
 	    {
-	        vector_k<T> x(1);
-	        x[0] = 1.0;
+	        matrix<T> x(1);
+	        x(0) = 1.0;
 	        return x;
 	    }
-		vector_k<T> B = A.row(0);
-		for(size_t jj = 0; jj < A.size(2); jj++)
-		{
-		    for(size_t ii = 1; ii < A.size(1); ii++)
+	    if(A.isVec())
+	    {
+		    matrix<T> B(1);
+		    B(0) = A(0);
+		    for(size_t jj = 1; jj < A.numel(); jj++)
 		    {
-			    B[jj] *= A(ii,jj);
-			}
+			        B(0) *= A(jj);
+		    }
+		    return B;
+	    }
+	    else
+	    {
+		    matrix<T> B = A.row(0);
+		    for(size_t jj = 0; jj < A.size(2); jj++)
+		    {
+		        for(size_t ii = 1; ii < A.size(1); ii++)
+		        {
+			        B(jj) *= A(ii,jj);
+			    }
+		    }
+		    return B;
 		}
-		return B;
 	}
 	
 	/** \brief Returns a matrix of row differences between adjacent rows.
@@ -774,6 +770,90 @@ namespace keycpp
 		return C;
 	}
 	
+	template<class T, class U, class V, size_t dim> matrix<decltype(std::declval<T>()*std::declval<U>()*std::declval<V>()),dim> times(const matrix<T,dim>& A, const matrix<U,dim>& B, const matrix<V,dim>& C)
+	{
+	    if(A.empty() || B.empty() || C.empty())
+	    {
+	        throw KeyCppException("Cannot multiply an empty matrix!");
+	    }
+	    if(size(A) != size(B))
+	    {
+	        throw KeyCppException("Matrix dimensions must agree in times().");
+	    }
+	    if(size(A) != size(C))
+	    {
+	        throw KeyCppException("Matrix dimensions must agree in times().");
+	    }
+		matrix<decltype(std::declval<T>()*std::declval<U>()*std::declval<V>()),dim> D;
+		D.resize(size(A));
+		for(int ii = 0; ii < A.numel(); ii++)
+		{
+		    D(ii) = A(ii)*B(ii)*C(ii);
+		}
+		
+		return D;
+	}
+	
+	template<class T, class U, class V, class W, size_t dim> matrix<decltype(std::declval<T>()*std::declval<U>()*std::declval<V>()*std::declval<W>()),dim> times(const matrix<T,dim>& A, const matrix<U,dim>& B, const matrix<V,dim>& C, const matrix<W,dim>& D)
+	{
+	    if(A.empty() || B.empty() || C.empty() || D.empty())
+	    {
+	        throw KeyCppException("Cannot multiply an empty matrix!");
+	    }
+	    if(size(A) != size(B))
+	    {
+	        throw KeyCppException("Matrix dimensions must agree in times().");
+	    }
+	    if(size(A) != size(C))
+	    {
+	        throw KeyCppException("Matrix dimensions must agree in times().");
+	    }
+	    if(size(A) != size(D))
+	    {
+	        throw KeyCppException("Matrix dimensions must agree in times().");
+	    }
+		matrix<decltype(std::declval<T>()*std::declval<U>()*std::declval<V>()*std::declval<W>()),dim> E;
+		E.resize(size(A));
+		for(int ii = 0; ii < A.numel(); ii++)
+		{
+		    E(ii) = A(ii)*B(ii)*C(ii)*D(ii);
+		}
+		
+		return E;
+	}
+	
+	template<class T, class U, class V, class W, class X, size_t dim> matrix<decltype(std::declval<T>()*std::declval<U>()*std::declval<V>()*std::declval<W>()*std::declval<X>()),dim> times(const matrix<T,dim>& A, const matrix<U,dim>& B, const matrix<V,dim>& C, const matrix<W,dim>& D, const matrix<X,dim>& E)
+	{
+	    if(A.empty() || B.empty() || C.empty() || D.empty() || E.empty())
+	    {
+	        throw KeyCppException("Cannot multiply an empty matrix!");
+	    }
+	    if(size(A) != size(B))
+	    {
+	        throw KeyCppException("Matrix dimensions must agree in times().");
+	    }
+	    if(size(A) != size(C))
+	    {
+	        throw KeyCppException("Matrix dimensions must agree in times().");
+	    }
+	    if(size(A) != size(D))
+	    {
+	        throw KeyCppException("Matrix dimensions must agree in times().");
+	    }
+	    if(size(A) != size(E))
+	    {
+	        throw KeyCppException("Matrix dimensions must agree in times().");
+	    }
+		matrix<decltype(std::declval<T>()*std::declval<U>()*std::declval<V>()*std::declval<W>()*std::declval<X>()),dim> F;
+		F.resize(size(A));
+		for(int ii = 0; ii < A.numel(); ii++)
+		{
+		    F(ii) = A(ii)*B(ii)*C(ii)*D(ii)*E(ii);
+		}
+		
+		return F;
+	}
+	
 	/** \brief Performs right array division on matrices A and B.
 	 *
 	 *  Each element of A is divided by each element of B. The matrix that is
@@ -824,9 +904,19 @@ namespace keycpp
 		return C;
 	}
 
-	template<class T> int sign(const T &val)
+	template<class T> double sign(const T &val)
 	{
 	    return (T(0) < val) - (val < T(0));
+	}
+	
+	template<class T> matrix<double> sign(const matrix<T> &A)
+	{
+	    matrix<double> B(A.size(1),A.size(2));
+	    for(size_t ii = 0; ii < B.numel(); ii++)
+	    {
+	        B(ii) = (T(0) < A(ii)) - (A(ii) < T(0));
+	    }
+	    return B;
 	}
 	
 	template<class T> T angle(const std::complex<T> &x)
@@ -1801,7 +1891,7 @@ namespace keycpp
 		}
 		if(!ICs.isVec())
 		{
-			throw KeyCppException("Error in ode45()! Initial conditions must have one singleton dimension!");
+			throw KeyCppException("Error in ode45()! Initial conditions must be a vector!");
 		}
 		if(x_ode.length() < 2 || !x_ode.isVec())
 		{
@@ -2523,15 +2613,15 @@ namespace keycpp
 	 *         of the companion matrix.
 	 */
 	template<class T>
-	matrix<T,2> roots(const matrix<T,2> &p)
+	matrix<std::complex<double>,2> roots(const matrix<T,2> &p)
 	{
 	    size_t n = p.numel()-1;
-	    matrix<T> A = diag(ones<T>(n-1),-1);
+	    matrix<T> A = diag(diag(ones<T>(n-1)),-1);
 	    for(size_t ii = 0; ii < A.size(2); ii++)
 	    {
             A(0,ii) = -p(ii+1)/p(0);
         }
-        matrix<T,2> v = eig(A);
+        matrix<std::complex<double>,2> v = transpose(diag(eig(A)));
         return v;
 	}
 	
@@ -2801,7 +2891,7 @@ namespace keycpp
             matrix<T,2> temp(1);
             for(size_t ii = 0; ii < v1.numel(); ii++)
             {
-                temp(0) += std::abs((v1(ii) - v_bar)*conj(v1(ii) - v_bar));
+                temp(0) += std::abs(v1(ii) - v_bar)*std::abs(v1(ii) - v_bar);
             }
             temp(0) = std::sqrt(temp(0)/((double)v1.numel()-1.0));
             

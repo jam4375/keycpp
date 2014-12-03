@@ -67,11 +67,15 @@ namespace keycpp
 	{
 		if(N != X.length() || N != Y.length())
 		{
-			std::cout << "ERROR!! Problem with size of inputed matrices to Spline!\n";
+			std::cerr << "ERROR!! Problem with size of inputed matrices to Spline!\n";
+		}
+		if(N < 3)
+		{
+			std::cerr << "ERROR!! Must have at least 3 points for cubic spline!\n";
 		}
 		if(!X.isVec() || !Y.isVec())
 		{
-			std::cout << "ERROR!! Problem with size of inputed matrices to Spline!\n";
+			std::cerr << "ERROR!! Problem with size of inputed matrices to Spline!\n";
 		}
 
 		s = matrix<T,2>(n);
