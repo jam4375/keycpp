@@ -1,6 +1,6 @@
 IDIR =../include
 CC=g++
-CFLAGS=-I$(IDIR) -std=c++11 -O3 -Wall -Wextra -pedantic
+CFLAGS=-I$(IDIR) -std=c++11 -O3 -g -Wall -Wextra -pedantic
 
 ODIR=obj
 LDIR =../lib

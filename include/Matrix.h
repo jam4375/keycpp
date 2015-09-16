@@ -128,7 +128,22 @@ namespace keycpp
 		void reserve(const size_t &N);
         size_t length() const
         {
-            return *std::max_element(mSize.begin(), mSize.end());
+            if(!submat)
+            {
+                return *std::max_element(mSize.begin(), mSize.end());
+            }
+            else
+            {
+                size_t temp = 0;
+                for(size_t ii = 0; ii < dim; ii++)
+                {
+                    if(this->size(ii+1) > temp)
+                    {
+                        temp = this->size(ii+1);
+                    }
+                }
+                return temp;
+            }
         };
         size_t numel() const
         {

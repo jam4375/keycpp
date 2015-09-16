@@ -43,3 +43,4 @@ lib*.a
 /doc/html/*
 /doc/latex/*
 /doc/xml/*
+/testing/test

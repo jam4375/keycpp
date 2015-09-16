@@ -291,6 +291,13 @@ namespace keycpp
 		    return B;
 		}
 	}
+    
+    template<class T, class U>
+    decltype(std::declval<T>() % std::declval<U>()) mod(const T& a, const U& b)
+    {
+        decltype(std::declval<T>() % std::declval<U>()) r = a % b;
+        return r < 0 ? r + b : r;
+    }
 	
 	/** \brief Returns a matrix of row differences between adjacent rows.
 	 *
@@ -1557,6 +1564,131 @@ namespace keycpp
 		}
 		return z;
 	}
+	
+    /// Method by: Fornberg B. Calculation of weights in finite difference formulas. SIAM Review 1998; 40(3):685–691.
+    inline matrix<double> calc_weights(double x_loc, matrix<double> x, int q, int m)
+    {
+        matrix<double> c(q+1,m+1);
+
+        double c1 = 1.0;
+        double c4 = x(0) - x_loc;
+
+        c(0,0) = 1.0;
+
+        for(int ii = 1; ii < q+1; ii++)
+        {
+            int mn;
+            if(ii < m)
+            {
+                mn = ii;
+            }
+            else
+            {
+                mn = m;
+            }
+            double c2 = 1.0;
+            double c5 = c4;
+            c4 = x(ii) - x_loc;
+            for(int jj = 0; jj < ii; jj++)
+            {
+                double c3 = x(ii) - x(jj);
+                c2 = c2*c3;
+                if(jj == ii-1)
+                {
+                    for(int kk = mn; kk > 0; kk--)
+                    {
+                        c(ii,kk) = c1*(((double)kk)*c(ii-1,kk-1) - c5*c(ii-1,kk))/c2;
+                    }
+                    c(ii,0) = -c1*c5*c(ii-1,0)/c2;
+                }
+                for(int kk = mn; kk > 0; kk--)
+                {
+                    c(jj,kk) = (c4*c(jj,kk) - ((double)kk)*c(jj,kk-1))/c3;
+                }
+                c(jj,0) = c4*c(jj,0)/c3;
+            }
+            c1 = c2;
+        }
+        
+        return c;
+    }
+    
+    inline matrix<size_t> calc_s(int N, int q, bool periodic)
+    {
+        matrix<size_t> s(N+1);
+        if(!periodic)
+        {
+            if(mod(q,2) == 0)
+            {
+                for(int ii = 0; ii < q/2; ii++)
+                {
+                    s(ii) = 0;
+                }
+                for(int ii = q/2; ii < N-q/2+1; ii++)
+                {
+                    s(ii) = ii - q/2;
+                }
+                for(int ii = N-q/2+1; ii < N+1; ii++)
+                {
+                    s(ii) = N-q;
+                }
+            }
+            else
+            {
+                for(int ii = 0; ii < (q-1)/2; ii++)
+                {
+                    s(ii) = 0;
+                }
+                for(int ii = (q-1)/2; ii < N-(q+1)/2+1; ii++)
+                {
+                    s(ii) = ii - (q-1)/2;
+                }
+                for(int ii = N-(q+1)/2+1; ii < N+1; ii++)
+                {
+                    s(ii) = N-q;
+                }
+            }
+        }
+        else
+        {
+            if(mod(q,2) == 0)
+            {
+                for(int ii = 0; ii < N+1; ii++)
+                {
+                    s(ii) = mod(ii - q/2,N+1);
+                }
+            }
+            else
+            {
+                for(int ii = 0; ii < N+1; ii++)
+                {
+                    s(ii) = mod(ii - (q-1)/2,N+1);
+                }
+            }
+        }
+        return s;
+    }
+
+    inline matrix<double> calc_weights_mat(matrix<double> x, size_t q, size_t n)
+    {
+        matrix<double> C(x.numel(),x.numel());
+        auto s = calc_s(x.numel()-1,q,false);
+        for(size_t ii = 0; ii < x.numel(); ii++)
+        {
+            matrix<double> temp1(q+1);
+            for(size_t jj = 0; jj < q+1; jj++)
+            {
+                temp1(jj) = x(s(ii) + jj);
+            }
+            auto temp2 = calc_weights(x(ii),temp1,q,n);
+            
+            for(size_t jj = 0; jj < q+1; jj++)
+            {
+                C(ii,s(ii) + jj) = temp2(jj,n);
+            }
+        }
+        return C;
+    }
 
 
 	template<class T, class U> matrix<T,2> diffxy(const matrix<U,2> &eta, const matrix<T,2> &u, const int &index = 2)
@@ -1572,6 +1704,7 @@ namespace keycpp
 		    {
 			    throw KeyCppException("Error in diffxy()! Matrix sizes are not compatible!");
 		    }
+            
 		    size_t N = u.size(1);
 		    size_t P = u.size(2);
 
@@ -1580,22 +1713,38 @@ namespace keycpp
 		    {
 			    for(size_t p = 0; p < P; p++)
 			    {
-				    for(size_t n = 0; n < N-1; n++)
-				    {
-					    du(n,p) = (u(n+1,p) - u(n,p))/(eta(n+1,p) - eta(n,p));
-				    }
-				    du(N-1,p) = (u(N-1,p) - u(N-2,p))/(eta(N-1,p) - eta(N-2,p));
+			        int q;
+			        if(N > 5)
+			        {
+			            q = 4;
+			        }
+			        else
+			        {
+			            q = N-1;
+			        }
+			    
+                    auto C = calc_weights_mat(eta.col(p),q,1);
+                    
+                    du.col(p) = C*u.col(p);
 			    }
 		    }
 		    else
 		    {
 			    for(size_t n = 0; n < N; n++)
 			    {
-				    for(size_t p = 0; p < P-1; p++)
-				    {
-					    du(n,p) = (u(n,p+1) - u(n,p))/(eta(n,p+1) - eta(n,p));
-				    }
-				    du(n,P-1) = (u(n,P-1) - u(n,P-2))/(eta(n,P-1) - eta(n,P-2));
+			        int q;
+			        if(P > 5)
+			        {
+			            q = 4;
+			        }
+			        else
+			        {
+			            q = P-1;
+			        }
+			        
+                    auto C = calc_weights_mat(eta.row(n),q,1);
+                    
+                    du.row(n) = transpose(C*transpose(u.row(n)));
 			    }
 		    }
 
@@ -1607,6 +1756,19 @@ namespace keycpp
             {
                 throw KeyCppException("Error in diffxy()! Vector and matrix sizes are not compatible!");
             }
+            
+	        int q;
+	        if(numel(eta) > 5)
+	        {
+	            q = 4;
+	        }
+	        else
+	        {
+	            q = numel(eta)-1;
+	        }
+            
+            auto C = calc_weights_mat(eta,q,1);
+            
             size_t N = u.size(1);
             size_t P = u.size(2);
 
@@ -1615,22 +1777,14 @@ namespace keycpp
             {
                 for(size_t p = 0; p < P; p++)
                 {
-                    for(size_t ii = 0; ii < N-1; ii++)
-                    {
-                        du(ii,p) = (u(ii+1,p) - u(ii,p))/(eta(ii+1) - eta(ii));
-                    }
-                    du(N-1,p) = (u(N-1,p) - u(N-2,p))/(eta(N-1) - eta(N-2));
+                    du.col(p) = C*u.col(p);
                 }
             }
             else
             {
                 for(size_t ii = 0; ii < N; ii++)
                 {
-                    for(size_t p = 0; p < P-1; p++)
-                    {
-                        du(ii,p) = (u(ii,p+1) - u(ii,p))/(eta(p+1) - eta(p));
-                    }
-                    du(ii,P-1) = (u(ii,P-1) - u(ii,P-2))/(eta(P-1) - eta(P-2));
+                    du.row(ii) = transpose(C*transpose(u.row(ii)));
                 }
             }
 
@@ -4477,13 +4631,6 @@ namespace keycpp
             }
         }
     }*/
-    
-    template<class T, class U>
-    decltype(std::declval<T>() % std::declval<U>()) mod(const T& a, const U& b)
-    {
-        decltype(std::declval<T>() % std::declval<U>()) r = a % b;
-        return r < 0 ? r + b : r;
-    }
     
     template<class T>
     matrix<T> pow(const matrix<T> &A, double n)
